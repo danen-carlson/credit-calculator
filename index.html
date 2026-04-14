@@ -26,11 +26,29 @@
           <span class="step-number">1</span>
           <h2>What are you buying?</h2>
         </div>
-        <div class="input-group">
-          <label for="purchase-amount">Purchase Amount</label>
-          <div class="input-with-prefix">
-            <span class="prefix">$</span>
-            <input type="number" id="purchase-amount" placeholder="500" min="1" step="0.01" inputmode="decimal">
+        <div class="input-row">
+          <div class="input-group">
+            <label for="purchase-amount">Purchase Amount</label>
+            <div class="input-with-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="purchase-amount" placeholder="500" min="1" step="0.01" inputmode="decimal">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="payoff-months">Pay Off In</label>
+            <select id="payoff-months" class="select-large">
+              <option value="1">1 month (Pay in full)</option>
+              <option value="2">2 months</option>
+              <option value="3">3 months</option>
+              <option value="4">4 months</option>
+              <option value="6" selected>6 months</option>
+              <option value="9">9 months</option>
+              <option value="12">12 months</option>
+              <option value="15">15 months</option>
+              <option value="18">18 months</option>
+              <option value="24">24 months</option>
+              <option value="36">36 months</option>
+            </select>
           </div>
         </div>
         <div class="input-group">
@@ -46,116 +64,94 @@
       </div>
     </section>
 
-    <!-- Step 2: Payment Methods -->
+    <!-- Step 2: Payment Methods (Collapsed by default) -->
     <section class="step" id="step-methods">
       <div class="container">
-        <div class="step-header">
+        <div class="step-header collapsible" id="methods-header">
           <span class="step-number">2</span>
-          <h2>Which payment options do you have?</h2>
+          <h2>Payment Options <span class="selected-count">(Using defaults)</span></h2>
+          <button class="btn-expand" id="expand-methods-btn">Change ▼</button>
         </div>
-        <p class="step-desc">Select all that apply. We'll compare them for you.</p>
+        <div id="methods-content" class="methods-content collapsed">
+          <p class="step-desc">Select all that apply. We'll compare them for you.</p>
 
-        <!-- Filters -->
-        <div class="toggle-bar">
-          <label class="toggle-label">
-            <input type="checkbox" id="toggle-show-bnpl" checked>
-            <span class="toggle-switch"></span>
-            <span>Buy Now, Pay Later</span>
-          </label>
-          <label class="toggle-label">
-            <input type="checkbox" id="toggle-show-cards" checked>
-            <span class="toggle-switch"></span>
-            <span>Credit Cards</span>
-          </label>
-          <label class="toggle-label">
-            <input type="checkbox" id="toggle-hide-annual-fee">
-            <span class="toggle-switch"></span>
-            <span>Hide cards with annual fees</span>
-          </label>
-        </div>
-
-        <!-- BNPL Section -->
-        <div class="method-section">
-          <h3>Buy Now, Pay Later</h3>
-          <div class="method-grid" id="bnpl-grid">
-            <!-- Populated by JS -->
+          <!-- Filters -->
+          <div class="toggle-bar">
+            <label class="toggle-label">
+              <input type="checkbox" id="toggle-show-bnpl" checked>
+              <span class="toggle-switch"></span>
+              <span>Buy Now, Pay Later</span>
+            </label>
+            <label class="toggle-label">
+              <input type="checkbox" id="toggle-show-cards" checked>
+              <span class="toggle-switch"></span>
+              <span>Credit Cards</span>
+            </label>
+            <label class="toggle-label">
+              <input type="checkbox" id="toggle-hide-annual-fee">
+              <span class="toggle-switch"></span>
+              <span>Hide cards with annual fees</span>
+            </label>
           </div>
-        </div>
 
-        <!-- Credit Cards Section -->
-        <div class="method-section">
-          <h3>Credit Cards</h3>
-          <div class="method-grid" id="card-grid">
-            <!-- Populated by JS -->
-          </div>
-        </div>
-
-        <!-- Custom Method -->
-        <div class="method-section">
-          <button class="btn-add" id="add-custom-btn">+ Add Your Own Card or Service</button>
-          <div id="custom-form" class="custom-form hidden">
-            <div class="custom-form-grid">
-              <div class="input-group">
-                <label for="custom-name">Name</label>
-                <input type="text" id="custom-name" placeholder="My Chase Card">
-              </div>
-              <div class="input-group">
-                <label for="custom-type">Type</label>
-                <select id="custom-type">
-                  <option value="credit-card">Credit Card</option>
-                  <option value="bnpl-monthly">BNPL / Payment Plan</option>
-                  <option value="store-card">Store Card</option>
-                </select>
-              </div>
-              <div class="input-group">
-                <label for="custom-apr">Regular APR %</label>
-                <input type="number" id="custom-apr" placeholder="22.99" min="0" max="99" step="0.01">
-              </div>
-              <div class="input-group">
-                <label for="custom-rewards">Cash Back / Rewards %</label>
-                <input type="number" id="custom-rewards" placeholder="2" min="0" max="20" step="0.01">
-              </div>
-              <div class="input-group">
-                <label for="custom-intro-apr">Intro APR % <small>(0 if 0% promo)</small></label>
-                <input type="number" id="custom-intro-apr" placeholder="0" min="0" max="99" step="0.01">
-              </div>
-              <div class="input-group">
-                <label for="custom-intro-months">Intro Period (months)</label>
-                <input type="number" id="custom-intro-months" placeholder="15" min="0" max="60">
-              </div>
-            </div>
-            <div class="custom-form-actions">
-              <button class="btn-primary btn-small" id="save-custom-btn">Add to Comparison</button>
-              <button class="btn-ghost btn-small" id="cancel-custom-btn">Cancel</button>
+          <!-- BNPL Section -->
+          <div class="method-section">
+            <h3>Buy Now, Pay Later</h3>
+            <div class="method-grid" id="bnpl-grid">
+              <!-- Populated by JS -->
             </div>
           </div>
-          <div id="custom-methods-list"></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Step 3: Payoff Rate -->
-    <section class="step" id="step-payoff">
-      <div class="container">
-        <div class="step-header">
-          <span class="step-number">3</span>
-          <h2>How fast will you pay it off?</h2>
-        </div>
-        <p class="step-desc">For credit cards, we'll show you the cost at this rate plus pay-in-full and minimum payments for comparison.</p>
-        <div class="slider-group">
-          <div class="slider-labels">
-            <span>Minimum</span>
-            <span class="slider-value" id="payoff-pct-display">20% of balance/mo</span>
-            <span>Pay in full</span>
+          <!-- Credit Cards Section -->
+          <div class="method-section">
+            <h3>Credit Cards</h3>
+            <div class="method-grid" id="card-grid">
+              <!-- Populated by JS -->
+            </div>
           </div>
-          <input type="range" id="payoff-pct" min="2" max="100" value="20" step="1" class="slider">
-          <div class="slider-presets">
-            <button class="preset-btn" data-value="2">Min (2%)</button>
-            <button class="preset-btn" data-value="10">10%</button>
-            <button class="preset-btn active" data-value="20">20%</button>
-            <button class="preset-btn" data-value="50">50%</button>
-            <button class="preset-btn" data-value="100">Full</button>
+
+          <!-- Custom Method -->
+          <div class="method-section">
+            <button class="btn-add" id="add-custom-btn">+ Add Your Own Card or Service</button>
+            <div id="custom-form" class="custom-form hidden">
+              <div class="custom-form-grid">
+                <div class="input-group">
+                  <label for="custom-name">Name</label>
+                  <input type="text" id="custom-name" placeholder="My Chase Card">
+                </div>
+                <div class="input-group">
+                  <label for="custom-type">Type</label>
+                  <select id="custom-type">
+                    <option value="credit-card">Credit Card</option>
+                    <option value="bnpl-monthly">BNPL / Payment Plan</option>
+                    <option value="store-card">Store Card</option>
+                  </select>
+                </div>
+                <div class="input-group">
+                  <label for="custom-apr">Regular APR %</label>
+                  <input type="number" id="custom-apr" placeholder="22.99" min="0" max="99" step="0.01">
+                </div>
+                <div class="input-group">
+                  <label for="custom-rewards">Cash Back / Rewards %</label>
+                  <input type="number" id="custom-rewards" placeholder="2" min="0" max="20" step="0.01">
+                </div>
+                <div class="input-group">
+                  <label for="custom-intro-apr">Intro APR % <small>(0 if 0% promo)</small></label>
+                  <input type="number" id="custom-intro-apr" placeholder="0" min="0" max="99" step="0.01">
+                </div>
+                <div class="input-group">
+                  <label for="custom-intro-months">Intro Period (months)</label>
+                  <input type="number" id="custom-intro-months" placeholder="15" min="0" max="60">
+                </div>
+              </div>
+              <div class="custom-form-actions">
+                <button class="btn-primary btn-small" id="save-custom-btn">Add to Comparison</button>
+                <button class="btn-ghost btn-small" id="cancel-custom-btn">Cancel</button>
+              </div>
+            </div>
+            <div id="custom-methods-list"></div>
           </div>
+          <button class="btn-ghost btn-small" id="collapse-methods-btn" style="margin-top: 1rem;">Done</button>
         </div>
       </div>
     </section>
@@ -176,32 +172,23 @@
         </div>
         <p class="step-desc" id="results-subtitle"></p>
 
-        <!-- Quick Summary Cards -->
-        <div id="quick-summary" class="quick-summary hidden">
-          <h3 class="tier-heading">🎯 Quick Picks by Timeline</h3>
-          <div class="summary-grid">
-            <div class="summary-card" id="summary-30d">
-              <div class="summary-icon">⚡</div>
-              <div class="summary-title">Pay Off in ~30 Days</div>
-              <div class="summary-best" id="best-30d-name">—</div>
-              <div class="summary-cost" id="best-30d-cost">—</div>
-              <div class="summary-why" id="best-30d-why">Best for immediate payoff</div>
-            </div>
-            <div class="summary-card" id="summary-6m">
-              <div class="summary-icon">📅</div>
-              <div class="summary-title">Pay Off in ~6 Months</div>
-              <div class="summary-best" id="best-6m-name">—</div>
-              <div class="summary-cost" id="best-6m-cost">—</div>
-              <div class="summary-why" id="best-6m-why">Best medium-term option</div>
-            </div>
-            <div class="summary-card" id="summary-18m">
-              <div class="summary-icon">🏦</div>
-              <div class="summary-title">Pay Off in ~18 Months</div>
-              <div class="summary-best" id="best-18m-name">—</div>
-              <div class="summary-cost" id="best-18m-cost">—</div>
-              <div class="summary-why" id="best-18m-why">Best long-term option</div>
-            </div>
-          </div>
+        <!-- Best Match Section -->
+        <div id="best-match-section" class="best-match-section hidden">
+          <h3 class="tier-heading">🎯 Best Match for Your Timeline</h3>
+          <div id="best-match-card" class="best-match-card"></div>
+        </div>
+
+        <!-- New Card Option (if better with intro APR) -->
+        <div id="new-card-option" class="new-card-option hidden">
+          <h3 class="tier-heading">🎁 Could be cheaper with a new card</h3>
+          <p class="tier-desc">These cards offer 0% intro APR. If approved, you'd pay no interest for the intro period.</p>
+          <div id="new-card-cards"></div>
+        </div>
+
+        <!-- Alternatives Within ±2 Months -->
+        <div id="alternatives-section" class="alternatives-section hidden">
+          <h3 class="tier-heading">Other Options (±2 months from your target)</h3>
+          <div id="alternatives-cards"></div>
         </div>
         <div id="affiliate-disclosure" class="disclosure hidden">
           Advertiser Disclosure: Some of the offers on this page are from companies that compensate us. This may influence which products we feature, but it does not affect our rankings — those are based purely on math.

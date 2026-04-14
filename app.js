@@ -5,7 +5,7 @@
 const state = {
   selectedMethods: new Set(),
   customMethods: [],
-  payoffPct: 20,
+  payoffMonths: 6,
   results: [],
   hideAnnualFee: false,
   showBnpl: true,
@@ -152,42 +152,64 @@ function removeCustom(id) {
   renderCustomTags();
 }
 
-// ── Payoff slider ──────────────────────────────────────────────────────────
+// ── Calculate ──────────────────────────────────────────────────────────────
 
-const slider = document.getElementById('payoff-pct');
-const sliderDisplay = document.getElementById('payoff-pct-display');
-const presetBtns = document.querySelectorAll('.preset-btn');
+// ── Collapsible Methods Section ──────────────────────────────────────────────
 
-function updateSliderDisplay(val) {
-  const v = parseInt(val);
-  state.payoffPct = v;
-  if (v >= 100) {
-    sliderDisplay.textContent = 'Pay in full';
-  } else if (v <= 2) {
-    sliderDisplay.textContent = 'Minimum payments (~2%)';
-  } else {
-    sliderDisplay.textContent = `${v}% of balance/mo`;
+const methodsHeader = document.getElementById('methods-header');
+const methodsContent = document.getElementById('methods-content');
+const expandBtn = document.getElementById('expand-methods-btn');
+const collapseBtn = document.getElementById('collapse-methods-btn');
+
+function toggleMethods() {
+  const isCollapsed = methodsContent.classList.contains('collapsed');
+  methodsContent.classList.toggle('collapsed', !isCollapsed);
+  expandBtn.textContent = isCollapsed ? 'Change ▼' : 'Change ▶';
+  updateSelectedCount();
+}
+
+function expandMethods() {
+  methodsContent.classList.remove('collapsed');
+  expandBtn.textContent = 'Change ▼';
+}
+
+function collapseMethods() {
+  methodsContent.classList.add('collapsed');
+  expandBtn.textContent = 'Change ▶';
+  updateSelectedCount();
+}
+
+function updateSelectedCount() {
+  const count = state.selectedMethods.size + state.customMethods.length;
+  const countText = document.querySelector('.selected-count');
+  if (countText) {
+    countText.textContent = count > 0 ? `(${count} selected)` : '(Using defaults)';
   }
-  // Update active preset
-  presetBtns.forEach(btn => {
-    btn.classList.toggle('active', parseInt(btn.dataset.value) === v);
+}
+
+if (methodsHeader) methodsHeader.addEventListener('click', (e) => {
+  if (e.target !== expandBtn && !e.target.closest('#collapse-methods-btn')) {
+    toggleMethods();
+  }
+});
+
+if (expandBtn) expandBtn.addEventListener('click', expandMethods);
+if (collapseBtn) collapseBtn.addEventListener('click', collapseMethods);
+
+// ── Months selector ──────────────────────────────────────────────────────────
+
+const monthsSelect = document.getElementById('payoff-months');
+if (monthsSelect) {
+  monthsSelect.addEventListener('change', (e) => {
+    state.payoffMonths = parseInt(e.target.value);
   });
 }
 
-slider.addEventListener('input', (e) => updateSliderDisplay(e.target.value));
-
-presetBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const v = btn.dataset.value;
-    slider.value = v;
-    updateSliderDisplay(v);
-  });
-});
-
-// ── Calculate ──────────────────────────────────────────────────────────────
+// ── Calculate ────────────────────────────────────────────────────────────────
 
 document.getElementById('calculate-btn').addEventListener('click', () => {
   const amount = parseFloat(document.getElementById('purchase-amount').value);
+  const targetMonths = parseInt(document.getElementById('payoff-months').value) || 6;
 
   if (!amount || amount <= 0) {
     alert('Please enter a purchase amount.');
@@ -200,26 +222,27 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
     return;
   }
 
+  state.payoffMonths = targetMonths;
   const creditScore = document.getElementById('credit-score').value;
   const allMethods = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
   const selectedMethods = allMethods.filter(m => state.selectedMethods.has(m.id));
 
-  const { all, zeroInterestTier, monthlyTier } = calculateOptions({
+  const { all, newCardOptions, alternatives } = calculateOptions({
     amount,
     creditScore,
     selectedMethods,
-    payoffPct: state.payoffPct
+    targetMonths
   });
 
   state.results = all;
-  renderResults(all, zeroInterestTier, monthlyTier, amount);
+  renderResults(all, newCardOptions, alternatives, amount, targetMonths);
   document.getElementById('results-section').classList.remove('hidden');
   document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 // ── Render results ─────────────────────────────────────────────────────────
 
-function renderResults(all, zeroTier, monthlyTier, amount) {
+function renderResults(all, newCardOptions, alternatives, amount, targetMonths) {
   const container = document.getElementById('results-cards');
   container.innerHTML = '';
 
@@ -244,215 +267,299 @@ function renderResults(all, zeroTier, monthlyTier, amount) {
   }
 
   const subtitle = document.getElementById('results-subtitle');
-  subtitle.textContent = `Comparing ${all.length} options for your ${fmt(amount)} purchase.`;
+  subtitle.textContent = `Best options for your ${fmt(amount)} purchase paid off in ${targetMonths} months.`;
 
-  // Render quick summary cards
-  renderQuickSummary(all, amount);
+  // Best Match Section
+  const bestMatchSection = document.getElementById('best-match-section');
+  const bestMatchCard = document.getElementById('best-match-card');
+  bestMatchSection.classList.remove('hidden');
 
-  // Zero-interest tier
-  if (zeroTier.length > 0) {
-    container.innerHTML += '<h3 class="tier-heading">⚡ Zero Interest Options</h3><p class="tier-desc">Pay it off quickly with no interest charges.</p>';
-    zeroTier.slice(0, 6).forEach((r, i) => {
-      container.appendChild(createResultCard(r, i + 1, zeroTier[0]));
+  // Find best match - exact or closest term match
+  const bestMatch = all[0]; // Already sorted by net cost
+  bestMatchCard.innerHTML = '';
+  bestMatchCard.appendChild(createResultCard(bestMatch, 1, bestMatch, true));
+
+  // Add "why this is best" badge
+  const whyBadge = document.createElement('div');
+  whyBadge.className = 'best-match-why';
+  const monthlyPmt = bestMatch.monthlyPayment || (bestMatch.principal / (bestMatch.termMonths || targetMonths));
+  whyBadge.innerHTML = `✓ ${fmt(monthlyPmt)}/mo · ${bestMatch.termDisplay || targetMonths + ' months'} · Lowest total cost`;
+  bestMatchCard.insertBefore(whyBadge, bestMatchCard.firstChild);
+
+  // New Card Options (if any with savings)
+  const newCardSection = document.getElementById('new-card-option');
+  const newCardContainer = document.getElementById('new-card-cards');
+  const hasSavings = newCardOptions.some(o => o.savingsVsExisting > 0);
+
+  if (hasSavings && newCardOptions.length > 0) {
+    newCardSection.classList.remove('hidden');
+    newCardContainer.innerHTML = '';
+    newCardOptions.slice(0, 2).forEach((o, i) => {
+      newCardContainer.appendChild(createNewCardOptionCard(o, i + 1));
     });
+  } else {
+    newCardSection.classList.add('hidden');
   }
 
-  // Monthly payment tier
-  if (monthlyTier.length > 0) {
-    container.innerHTML += '<h3 class="tier-heading">📅 Monthly Payment Plans</h3><p class="tier-desc">Spread payments over months. Interest applies based on your credit score.</p>';
-    // Re-rank within this tier
-    const sorted = [...monthlyTier].sort((a, b) => a.netCost - b.netCost);
-    sorted.slice(0, 10).forEach((r, i) => {
-      container.appendChild(createResultCard(r, i + 1, sorted[0]));
+  // Alternatives Section
+  const altSection = document.getElementById('alternatives-section');
+  const altContainer = document.getElementById('alternatives-cards');
+
+  if (alternatives.length > 0) {
+    altSection.classList.remove('hidden');
+    altContainer.innerHTML = '';
+    alternatives.slice(0, 5).forEach((r, i) => {
+      altContainer.appendChild(createResultCard(r, i + 2, bestMatch));
     });
+  } else {
+    altSection.classList.add('hidden');
   }
 
+  // Keep the payoff table at bottom
   renderPayoffTable(all);
 }
 
-function renderQuickSummary(all, amount) {
-  const summarySection = document.getElementById('quick-summary');
-  summarySection.classList.remove('hidden');
+function createNewCardOptionCard(o, rank) {
+  const card = document.createElement('div');
+  card.className = 'result-card';
 
-  const creditScore = document.getElementById('credit-score').value;
+  const withinIntro = o.termMonths <= (o.introMonths || 0);
+  const savingsText = o.savingsVsExisting > 0 ? `Save ${fmt(o.savingsVsExisting)} vs existing card` : '';
 
-  // Calculate best option for each timeframe
-  const best30d = findBestForTimeframe(all, amount, 1, creditScore); // ~1 month (pay in full)
-  const best6m = findBestForTimeframe(all, amount, 6, creditScore);    // 6 months
-  const best18m = findBestForTimeframe(all, amount, 18, creditScore); // 18 months
+  card.innerHTML = `
+    <div class="new-card-badge">🎁 New Card Offer</div>
+    <div class="result-header">
+      <div>
+        <div class="result-name">${o.name}</div>
+        <div class="result-type">${o.type}</div>
+      </div>
+      <div class="result-cost">
+        <div class="result-total">${fmt(o.netCost)}</div>
+        ${savingsText ? `<div class="result-savings">${savingsText}</div>` : ''}
+      </div>
+    </div>
+    <div class="result-details">
+      <div class="detail-item">
+        <span class="detail-label">Monthly Payment</span>
+        <span class="detail-value">${fmt(o.monthlyPayment)}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Interest</span>
+        <span class="detail-value good">${o.interestPaid === 0 ? '$0 ✓' : fmt(o.interestPaid)}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Term</span>
+        <span class="detail-value">${o.termDisplay}</span>
+      </div>
+    </div>
+    <div class="result-notes good-note" style="margin-top: 10px;">
+      ${o.why}
+    </div>
+    ${AFFILIATE_LINKS[o.id] ? `<a href="${AFFILIATE_LINKS[o.id]}" target="_blank" rel="noopener sponsored" class="btn-apply">Apply Now →</a>` : ''}
+  `;
 
-  // Update 30-day card
-  updateSummaryCard('30d', best30d, amount);
-  updateSummaryCard('6m', best6m, amount);
-  updateSummaryCard('18m', best18m, amount);
+  return card;
 }
 
-function findBestForTimeframe(allOptions, amount, months, creditScore) {
-  const scored = allOptions.map(option => {
-    const result = calculateForTimeframe(option, amount, months, creditScore);
-    return { option, ...result };
-  });
-
-  // Sort by net cost (lowest first)
-  scored.sort((a, b) => a.netCost - b.netCost);
-  return scored[0];
+function createResultCard(r, rank, best, isBestMatch = false) {
+  if (isBestMatch) {
+    // Simplified card for best match
+    return createBestMatchCard(r);
+  }
+  return createStandardResultCard(r, rank, best);
 }
 
-function calculateForTimeframe(option, amount, months, creditScore) {
-  // Handle different option types
-  if (option.subtype === 'bnpl') {
-    // Pay in 4 is ~6 weeks, not good for 6mo+ unless paying early
-    if (months <= 2) {
-      // Use as-is for short term
-      return {
-        netCost: option.netCost,
-        monthlyPayment: option.monthlyPayment,
-        termDisplay: option.termDisplay,
-        interestPaid: option.interestPaid,
-        fees: option.fees,
-        isEarlyPayoff: false,
-        why: option.interestPaid === 0 ? '0% interest' : 'Lowest fees'
-      };
-    } else {
-      // For longer terms, Pay in 4 isn't ideal — mark it
-      return {
-        netCost: option.netCost + 999999, // Penalize
-        monthlyPayment: option.monthlyPayment,
-        termDisplay: option.termDisplay,
-        interestPaid: option.interestPaid,
-        fees: option.fees,
-        isEarlyPayoff: true,
-        why: '6-week term only'
-      };
+function createBestMatchCard(r) {
+  const card = document.createElement('div');
+  card.className = 'result-card';
+
+  const costColor = r.interestPaid > r.principal * 0.1 ? 'danger'
+    : r.interestPaid > 0 ? 'warning' : 'good';
+
+  const isCreditCard = r.subtype === 'credit-card';
+  const aprDisplay = isCreditCard && r.effectiveApr ? `<span class="apr-value">${r.effectiveApr.toFixed(1)}% APR</span>` : '';
+
+  let html = `
+    <div class="result-header">
+      <div>
+        <div class="result-name">${r.name}</div>
+        <div class="result-type">${r.type}</div>
+      </div>
+      <div class="result-cost">
+        <div class="result-total">${fmt(r.netCost)}</div>
+        ${r.rewardsEarned > 0 ? `<div class="result-savings">Incl. ${fmt(r.rewardsEarned)} rewards</div>` : ''}
+      </div>
+    </div>
+    <div class="result-details">
+      <div class="detail-item">
+        <span class="detail-label">Monthly Payment</span>
+        <span class="detail-value">${fmt(r.monthlyPayment || r.principal / (r.termMonths || 6))}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Interest / Fees</span>
+        <span class="detail-value ${costColor}">${r.interestPaid + r.fees > 0 ? fmt(r.interestPaid + r.fees) : '$0 ✓'}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Term</span>
+        <span class="detail-value">${r.termDisplay || '—'}</span>
+      </div>
+    </div>
+  `;
+
+  // Add APR comparison for credit cards
+  if (isCreditCard && r.effectiveApr) {
+    html += `
+      <div class="apr-comparison">
+        <span class="apr-label">Interest rate:</span>
+        ${aprDisplay}
+      </div>
+    `;
+  }
+
+  // Notes & warnings
+  const allNotes = [...(r.notes || []), ...(r.warnings || [])];
+  if (allNotes.length > 0) {
+    const isWarning = r.warnings && r.warnings.length > 0;
+    html += `<div class="result-notes ${!isWarning ? 'good-note' : ''}">
+      ${allNotes.map(n => `• ${n}`).join('<br>')}
+    </div>`;
+  }
+
+  // Affiliate button
+  const affiliateUrl = AFFILIATE_LINKS[r.id];
+  if (affiliateUrl) {
+    const btnLabel = r.subtype === 'bnpl' ? 'Sign Up' : 'Learn More';
+    html += `<a href="${affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-apply">${btnLabel} →</a>`;
+  }
+
+  card.innerHTML = html;
+  return card;
+}
+
+function createStandardResultCard(r, rank, best) {
+  const card = document.createElement('div');
+  card.className = 'result-card';
+
+  const rankLabels = ['Best Choice', '2nd Best', '3rd', '4th', '5th', '6th', '7th', '8th', '9th', '10th'];
+  const rankClasses = ['rank-1', 'rank-2', 'rank-3', 'rank-4', 'rank-5'];
+  const savings = rank > 1 ? r.netCost - best.netCost : null;
+
+  const costColor = r.interestPaid > r.principal * 0.1 ? 'danger'
+    : r.interestPaid > 0 ? 'warning' : 'good';
+
+  const isCreditCard = r.subtype === 'credit-card';
+  const aprDisplay = isCreditCard && r.effectiveApr ? `<span class="apr-value">${r.effectiveApr.toFixed(1)}% APR</span>` : '';
+
+  let html = `
+    <div class="result-rank ${rankClasses[Math.min(rank - 1, 4)]}">${rankLabels[Math.min(rank - 1, 9)]}</div>
+    <div class="result-header">
+      <div>
+        <div class="result-name">${r.name}</div>
+        <div class="result-type">${r.type}</div>
+      </div>
+      <div class="result-cost">
+        <div class="result-total">${fmt(r.netCost)}</div>
+        ${savings !== null ? `<div class="result-savings">+${fmt(savings)} more</div>` : ''}
+        ${rank === 1 && r.rewardsEarned > 0 ? `<div class="result-savings">Incl. ${fmt(r.rewardsEarned)} rewards</div>` : ''}
+      </div>
+    </div>
+    <div class="result-details">
+      <div class="detail-item">
+        <span class="detail-label">${r.paymentLabel ? 'Schedule' : 'Monthly Payment'}</span>
+        <span class="detail-value">${r.paymentLabel || fmt(r.monthlyPayment)}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Interest / Fees</span>
+        <span class="detail-value ${costColor}">${r.interestPaid + r.fees > 0 ? fmt(r.interestPaid + r.fees) : '$0 ✓'}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Term</span>
+        <span class="detail-value">${r.termDisplay || '—'}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Rewards</span>
+        <span class="detail-value good">${r.rewardsEarned > 0 ? fmt(r.rewardsEarned) : '—'}</span>
+      </div>
+    </div>
+  `;
+
+  // APR comparison for credit cards
+  if (isCreditCard && r.effectiveApr) {
+    html += `
+      <div class="apr-comparison">
+        <span class="apr-label">Interest rate:</span>
+        ${aprDisplay}
+      </div>
+    `;
+  }
+
+  // Scenario table for credit cards
+  if (r.scenarios && r.scenarios.length > 1) {
+    const minScenario = r.scenarios.find(s => s.label === 'Minimum payments');
+    const minIsDangerous = minScenario && minScenario.interestPaid > r.principal * 0.1;
+
+    html += `
+      <table class="scenario-table">
+        <thead>
+          <tr>
+            <th>Payoff Plan</th>
+            <th>Monthly</th>
+            <th>Interest</th>
+            <th>Total Cost</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${r.scenarios.map(s => {
+            const isMin = s.label === 'Minimum payments';
+            const cls = s.isDefault ? 'scenario-highlight'
+              : (isMin && s.interestPaid > 0) ? 'scenario-danger'
+              : '';
+            const interestCell = s.interestPaid > 0
+              ? `<span style="color:var(--danger);font-weight:600">${fmt(s.interestPaid)}</span>`
+              : '<span style="color:var(--success)">$0</span>';
+            const costCell = isMin && s.interestPaid > 0
+              ? `<strong style="color:var(--danger)">${fmt(s.netCost)}</strong>`
+              : `<strong>${fmt(s.netCost)}</strong>`;
+            return `<tr class="${cls}">
+              <td class="scenario-label">${isMin && s.interestPaid > 0 ? '⚠️ ' + s.label : s.label}</td>
+              <td>${fmt(s.monthlyPayment)}</td>
+              <td>${interestCell}</td>
+              <td>${costCell}</td>
+              <td>${s.termDisplay}</td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+    `;
+
+    if (minIsDangerous) {
+      const pctMore = ((minScenario.netCost / r.principal - 1) * 100).toFixed(0);
+      html += `<div class="result-notes" style="margin-top:8px">
+        ⚠️ <strong>Minimum payments trap:</strong> You'd pay ${pctMore}% more (${fmt(minScenario.interestPaid)} in interest) and take ${minScenario.termDisplay} to pay off this ${fmt(r.principal)} purchase.
+      </div>`;
     }
   }
 
-  if (option.subtype === 'bnpl-monthly') {
-    // Find the best term option that matches closest to target months
-    if (option.scenarios && option.scenarios.length > 0) {
-      // Find scenario closest to target months
-      const bestScenario = option.scenarios.reduce((best, s) => {
-        const bestDiff = Math.abs(best.termMonths - months);
-        const currDiff = Math.abs(s.termMonths - months);
-        return currDiff < bestDiff ? s : best;
-      });
-
-      // If paying off early (shorter than the plan), still pay the full amount
-      const isShorterTerm = months < bestScenario.termMonths;
-      const netCost = isShorterTerm ? amount : bestScenario.netCost;
-
-      return {
-        netCost: netCost,
-        monthlyPayment: bestScenario.monthlyPayment,
-        termDisplay: isShorterTerm ? `${months} months` : bestScenario.termDisplay,
-        interestPaid: isShorterTerm ? 0 : bestScenario.interestPaid,
-        fees: isShorterTerm ? 0 : 0,
-        isEarlyPayoff: isShorterTerm,
-        why: isShorterTerm ? 'Pay early, no interest' : `${bestScenario.termMonths}-month plan`
-      };
-    }
+  // Notes & warnings
+  const allNotes = [...(r.notes || []), ...(r.warnings || [])];
+  if (allNotes.length > 0) {
+    const isWarning = r.warnings && r.warnings.length > 0;
+    html += `<div class="result-notes ${!isWarning ? 'good-note' : ''}">
+      ${allNotes.map(n => `• ${n}`).join('<br>')}
+    </div>`;
   }
 
-  // Credit cards — calculate carrying balance for X months
-  if (option.subtype === 'credit-card') {
-    const effectiveApr = option.effectiveApr || 0;
-    const introMonths = option.scenarios ? 
-      option.scenarios.find(s => s.label.includes('intro'))?.termMonths || 0 : 0;
-
-    // If within intro period, no interest
-    if (introMonths >= months && introMonths > 0) {
-      const monthlyPmt = amount / months;
-      return {
-        netCost: amount - (option.rewardsEarned || 0),
-        monthlyPayment: monthlyPmt,
-        termDisplay: `${months} months`,
-        interestPaid: 0,
-        fees: option.fees || 0,
-        isEarlyPayoff: false,
-        why: `${introMonths}-month 0% intro APR`
-      };
-    }
-
-    // Calculate interest for carrying balance
-    const r = effectiveApr / 100 / 12;
-    const monthlyPmt = amount / months;
-    let balance = amount;
-    let totalInt = 0;
-
-    for (let i = 0; i < months; i++) {
-      // Interest on remaining balance (after accounting for intro period)
-      const monthInterest = balance * r;
-      totalInt += monthInterest;
-      balance = balance - monthlyPmt + monthInterest;
-      if (balance <= 0) break;
-    }
-
-    const netCost = amount + totalInt + (option.fees || 0) - (option.rewardsEarned || 0);
-
-    return {
-      netCost: netCost,
-      monthlyPayment: monthlyPmt,
-      termDisplay: `${months} months`,
-      interestPaid: totalInt,
-      fees: option.fees || 0,
-      isEarlyPayoff: false,
-      why: effectiveApr > 0 ? `${effectiveApr.toFixed(1)}% APR` : '0% APR'
-    };
+  // Affiliate button
+  const affiliateUrl = AFFILIATE_LINKS[r.id];
+  if (affiliateUrl) {
+    const btnLabel = r.subtype === 'bnpl' ? 'Sign Up' : 'Learn More';
+    html += `<a href="${affiliateUrl}" target="_blank" rel="noopener sponsored" class="btn-apply">${btnLabel} →</a>`;
   }
 
-  // Default fallback
-  return {
-    netCost: option.netCost,
-    monthlyPayment: option.monthlyPayment,
-    termDisplay: option.termDisplay,
-    interestPaid: option.interestPaid,
-    fees: option.fees,
-    isEarlyPayoff: false,
-    why: 'Standard terms'
-  };
+  card.innerHTML = html;
+  return card;
 }
-
-function updateSummaryCard(timeframe, best, amount) {
-  const nameEl = document.getElementById(`best-${timeframe}-name`);
-  const costEl = document.getElementById(`best-${timeframe}-cost`);
-  const whyEl = document.getElementById(`best-${timeframe}-why`);
-  const cardEl = document.getElementById(`summary-${timeframe}`);
-
-  if (!best) {
-    nameEl.textContent = 'No options';
-    costEl.textContent = '—';
-    whyEl.textContent = 'Select more payment methods';
-    return;
-  }
-
-  const option = best.option;
-  const hasInterestOrFees = (best.interestPaid || 0) + (best.fees || 0) > 0;
-
-  nameEl.textContent = option.name;
-  costEl.textContent = fmt(best.netCost);
-  costEl.className = hasInterestOrFees ? 'summary-cost has-fees' : 'summary-cost';
-
-  // Build the "why" text
-  let whyText = best.why || '';
-  if (best.monthlyPayment) {
-    const paymentText = best.monthlyPayment >= amount ? 
-      'Pay in full' : 
-      `${fmt(best.monthlyPayment)}/mo`;
-    whyText = `${paymentText} · ${whyText}`;
-  }
-
-  whyEl.textContent = whyText;
-
-  // Style the card based on type
-  cardEl.classList.remove('recommended', 'credit-card-best');
-  if (option.subtype === 'bnpl' && best.interestPaid === 0) {
-    cardEl.classList.add('recommended');
-  } else if (option.subtype === 'credit-card' && best.interestPaid === 0) {
-    cardEl.classList.add('credit-card-best');
-  }
-}
-
-function createResultCard(r, rank, best) {
   const card = document.createElement('div');
   card.className = 'result-card';
 
@@ -675,3 +782,10 @@ BNPL_MONTHLY_PLANS.forEach(m => state.selectedMethods.add(m.id));
 CREDIT_CARDS.forEach(m => state.selectedMethods.add(m.id));
 
 renderMethodCards();
+updateSelectedCount();
+
+// Set initial months from select
+const monthsSelectInit = document.getElementById('payoff-months');
+if (monthsSelectInit) {
+  state.payoffMonths = parseInt(monthsSelectInit.value) || 6;
+}
