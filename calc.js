@@ -161,7 +161,7 @@ function evaluateBnpl(method, amount) {
   return result;
 }
 
-function evaluateBnplMonthly(method, amount, creditScore) {
+function evaluateBnplMonthly(method, amount, creditScore, targetMonths) {
   if (amount < (method.minPurchase || 0)) return null;
   if (method.maxPurchase && amount > method.maxPurchase) return null;
 
@@ -170,8 +170,12 @@ function evaluateBnplMonthly(method, amount, creditScore) {
   const mult = scoreMultipliers[creditScore] || 0.5;
   const estimatedApr = method.aprMin + (method.aprMax - method.aprMin) * mult;
   
-  // Pick the best term option for the amount (prefer 12 months as default display)
-  const preferredTerm = method.termOptions.includes(12) ? 12 : method.termOptions[Math.floor(method.termOptions.length / 2)];
+  // Find the best term option closest to target months
+  const preferredTerm = targetMonths 
+    ? method.termOptions.reduce((closest, months) => {
+        return Math.abs(months - targetMonths) < Math.abs(closest - targetMonths) ? months : closest;
+      })
+    : (method.termOptions.includes(12) ? 12 : method.termOptions[Math.floor(method.termOptions.length / 2)]);
   
   // Build scenarios for each term option
   const scenarios = method.termOptions.map(months => {
@@ -326,11 +330,11 @@ function evaluateCreditCard(method, amount, creditScore, payoffPct) {
 
 // ── Custom method evaluation ───────────────────────────────────────────────
 
-function evaluateCustom(method, amount, creditScore, payoffPct) {
+function evaluateCustom(method, amount, creditScore, targetMonths) {
   if (method.type === 'bnpl-monthly' || method.type === 'bnpl-4') {
     // Treat custom BNPL as simple interest-bearing installment
     const rate = method.interestRate || 0;
-    const months = method.termMonths || 12;
+    const months = targetMonths || method.termMonths || 12;
     const interest = totalInterest(amount, rate, months);
     return {
       id: method.id,
@@ -354,26 +358,35 @@ function evaluateCustom(method, amount, creditScore, payoffPct) {
       scenarios: null
     };
   }
-  // Credit card or store card
-  return evaluateCreditCard(method, amount, creditScore, payoffPct);
+  // Credit card or store card - use no intro version for fair comparison
+  return evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths);
 }
 
 // ── Main entry point ───────────────────────────────────────────────────────
 
-function calculateOptions({ amount, creditScore, selectedMethods, payoffPct }) {
+function calculateOptions({ amount, creditScore, selectedMethods, targetMonths }) {
   const results = [];
+  const newCardOptions = [];
 
   for (const method of selectedMethods) {
     try {
       let result;
+      let newCardResult = null;
+
       if (method.id && method.id.startsWith('custom-')) {
-        result = evaluateCustom(method, amount, creditScore, payoffPct);
+        result = evaluateCustom(method, amount, creditScore, targetMonths);
       } else if (method.type === 'bnpl-4') {
         result = evaluateBnpl(method, amount);
       } else if (method.type === 'bnpl-monthly') {
-        result = evaluateBnplMonthly(method, amount, creditScore);
+        result = evaluateBnplMonthly(method, amount, creditScore, targetMonths);
       } else {
-        result = evaluateCreditCard(method, amount, creditScore, payoffPct);
+        // Calculate WITHOUT intro APR for fair comparison
+        result = evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths);
+        // Also calculate WITH intro APR for "new card" option
+        if (method.hasIntroApr && method.introAprMonths > 0) {
+          newCardResult = evaluateCreditCardWithIntro(method, amount, creditScore, targetMonths);
+          if (newCardResult) newCardOptions.push(newCardResult);
+        }
       }
       if (result) results.push(result);
     } catch (e) {
@@ -385,16 +398,124 @@ function calculateOptions({ amount, creditScore, selectedMethods, payoffPct }) {
   results.sort((a, b) => a.netCost - b.netCost);
   results.forEach((r, i) => { r.rank = i + 1; });
 
-  // Split into tiers
-  const zeroInterestTier = results.filter(r => 
-    r.subtype === 'bnpl' || (r.subtype === 'credit-card' && r.interestPaid === 0 && r.fees === 0)
-  );
-  const monthlyTier = results.filter(r => 
-    r.subtype === 'bnpl-monthly' || r.subtype === 'credit-card' || r.subtype === 'custom'
-  );
+  // Find alternatives within ±2 months of target
+  const alternatives = results.filter(r => {
+    const termDiff = Math.abs((r.termMonths || 0) - targetMonths);
+    return termDiff <= 2 && termDiff > 0; // Exclude exact match (that's the best match)
+  });
 
-  return { all: results.slice(0, 15), zeroInterestTier, monthlyTier };
+  // Sort new card options
+  newCardOptions.sort((a, b) => a.netCost - b.netCost);
+
+  return { all: results.slice(0, 15), newCardOptions: newCardOptions.slice(0, 3), alternatives };
 }
+
+// Calculate credit card WITHOUT intro APR benefits (fair comparison)
+function evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths) {
+  const effectiveApr = getScoreAdjustedApr(method.interestRate, creditScore);
+  const fees = method.annualFee || 0;
+  const rewardsEarned = (amount * (method.pointsRate || 0) / 100) * (method.pointValue || 1);
+
+  // Calculate interest for target months at regular APR
+  const r = effectiveApr / 100 / 12;
+  const monthlyPmt = amount / targetMonths;
+  let balance = amount;
+  let totalInt = 0;
+
+  for (let i = 0; i < targetMonths; i++) {
+    const monthInterest = balance * r;
+    totalInt += monthInterest;
+    balance = balance - monthlyPmt + monthInterest;
+    if (balance <= 0) break;
+  }
+
+  const netCost = amount + totalInt + fees - rewardsEarned;
+
+  return {
+    id: method.id,
+    name: method.name,
+    type: 'Credit Card (existing)',
+    subtype: 'credit-card',
+    principal: amount,
+    interestPaid: totalInt,
+    fees: fees,
+    rewardsEarned: rewardsEarned,
+    totalCost: amount + totalInt + fees,
+    netCost: netCost,
+    monthlyPayment: monthlyPmt,
+    termMonths: targetMonths,
+    termDisplay: `${targetMonths} months`,
+    availability: 'anywhere',
+    isNewCardOption: false,
+    why: `${effectiveApr.toFixed(1)}% APR on existing card`,
+    effectiveApr: effectiveApr
+  };
+}
+
+// Calculate credit card WITH intro APR (new card option)
+function evaluateCreditCardWithIntro(method, amount, creditScore, targetMonths) {
+  const effectiveApr = getScoreAdjustedApr(method.interestRate, creditScore);
+  const introMonths = method.introAprMonths || 0;
+  const withinIntro = targetMonths <= introMonths;
+
+  const fees = method.annualFee || 0;
+  const rewardsEarned = (amount * (method.pointsRate || 0) / 100) * (method.pointValue || 1);
+  const monthlyPmt = amount / targetMonths;
+
+  // Calculate interest if paying over target months with intro period
+  let interestPaid = 0;
+  if (!withinIntro && effectiveApr > 0) {
+    const r = effectiveApr / 100 / 12;
+    let balance = amount;
+    for (let i = 0; i < targetMonths; i++) {
+      if (i >= introMonths) {
+        const monthInterest = balance * r;
+        interestPaid += monthInterest;
+        balance += monthInterest;
+      }
+      balance -= monthlyPmt;
+      if (balance <= 0) break;
+    }
+  }
+
+  const netCost = amount + interestPaid + fees - rewardsEarned;
+
+  // Calculate what this same card would cost WITHOUT intro (existing card)
+  const r = effectiveApr / 100 / 12;
+  let balanceExisting = amount;
+  let interestExisting = 0;
+  for (let i = 0; i < targetMonths; i++) {
+    const monthInterest = balanceExisting * r;
+    interestExisting += monthInterest;
+    balanceExisting = balanceExisting - monthlyPmt + monthInterest;
+    if (balanceExisting <= 0) break;
+  }
+  const netCostExisting = amount + interestExisting + fees - rewardsEarned;
+
+  return {
+    id: method.id,
+    name: method.name,
+    type: 'Credit Card (new)',
+    subtype: 'credit-card',
+    principal: amount,
+    interestPaid: interestPaid,
+    fees: fees,
+    rewardsEarned: rewardsEarned,
+    totalCost: amount + interestPaid + fees,
+    netCost: netCost,
+    monthlyPayment: monthlyPmt,
+    termMonths: targetMonths,
+    termDisplay: `${targetMonths} months`,
+    availability: 'anywhere',
+    isNewCardOption: true,
+    introMonths: introMonths,
+    hasIntroApr: true,
+    why: withinIntro ? `${introMonths}-month 0% intro APR` : `${introMonths} mo 0% intro, then ${effectiveApr.toFixed(1)}% APR`,
+    savingsVsExisting: netCostExisting - netCost
+  };
+}
+
+
 
 // ── Annual fee breakeven & blended rewards ──────────────────────────────────
 
