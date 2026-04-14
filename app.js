@@ -246,6 +246,9 @@ function renderResults(all, zeroTier, monthlyTier, amount) {
   const subtitle = document.getElementById('results-subtitle');
   subtitle.textContent = `Comparing ${all.length} options for your ${fmt(amount)} purchase.`;
 
+  // Render quick summary cards
+  renderQuickSummary(all, amount);
+
   // Zero-interest tier
   if (zeroTier.length > 0) {
     container.innerHTML += '<h3 class="tier-heading">⚡ Zero Interest Options</h3><p class="tier-desc">Pay it off quickly with no interest charges.</p>';
@@ -265,6 +268,188 @@ function renderResults(all, zeroTier, monthlyTier, amount) {
   }
 
   renderPayoffTable(all);
+}
+
+function renderQuickSummary(all, amount) {
+  const summarySection = document.getElementById('quick-summary');
+  summarySection.classList.remove('hidden');
+
+  const creditScore = document.getElementById('credit-score').value;
+
+  // Calculate best option for each timeframe
+  const best30d = findBestForTimeframe(all, amount, 1, creditScore); // ~1 month (pay in full)
+  const best6m = findBestForTimeframe(all, amount, 6, creditScore);    // 6 months
+  const best18m = findBestForTimeframe(all, amount, 18, creditScore); // 18 months
+
+  // Update 30-day card
+  updateSummaryCard('30d', best30d, amount);
+  updateSummaryCard('6m', best6m, amount);
+  updateSummaryCard('18m', best18m, amount);
+}
+
+function findBestForTimeframe(allOptions, amount, months, creditScore) {
+  const scored = allOptions.map(option => {
+    const result = calculateForTimeframe(option, amount, months, creditScore);
+    return { option, ...result };
+  });
+
+  // Sort by net cost (lowest first)
+  scored.sort((a, b) => a.netCost - b.netCost);
+  return scored[0];
+}
+
+function calculateForTimeframe(option, amount, months, creditScore) {
+  // Handle different option types
+  if (option.subtype === 'bnpl') {
+    // Pay in 4 is ~6 weeks, not good for 6mo+ unless paying early
+    if (months <= 2) {
+      // Use as-is for short term
+      return {
+        netCost: option.netCost,
+        monthlyPayment: option.monthlyPayment,
+        termDisplay: option.termDisplay,
+        interestPaid: option.interestPaid,
+        fees: option.fees,
+        isEarlyPayoff: false,
+        why: option.interestPaid === 0 ? '0% interest' : 'Lowest fees'
+      };
+    } else {
+      // For longer terms, Pay in 4 isn't ideal — mark it
+      return {
+        netCost: option.netCost + 999999, // Penalize
+        monthlyPayment: option.monthlyPayment,
+        termDisplay: option.termDisplay,
+        interestPaid: option.interestPaid,
+        fees: option.fees,
+        isEarlyPayoff: true,
+        why: '6-week term only'
+      };
+    }
+  }
+
+  if (option.subtype === 'bnpl-monthly') {
+    // Find the best term option that matches closest to target months
+    if (option.scenarios && option.scenarios.length > 0) {
+      // Find scenario closest to target months
+      const bestScenario = option.scenarios.reduce((best, s) => {
+        const bestDiff = Math.abs(best.termMonths - months);
+        const currDiff = Math.abs(s.termMonths - months);
+        return currDiff < bestDiff ? s : best;
+      });
+
+      // If paying off early (shorter than the plan), still pay the full amount
+      const isShorterTerm = months < bestScenario.termMonths;
+      const netCost = isShorterTerm ? amount : bestScenario.netCost;
+
+      return {
+        netCost: netCost,
+        monthlyPayment: bestScenario.monthlyPayment,
+        termDisplay: isShorterTerm ? `${months} months` : bestScenario.termDisplay,
+        interestPaid: isShorterTerm ? 0 : bestScenario.interestPaid,
+        fees: isShorterTerm ? 0 : 0,
+        isEarlyPayoff: isShorterTerm,
+        why: isShorterTerm ? 'Pay early, no interest' : `${bestScenario.termMonths}-month plan`
+      };
+    }
+  }
+
+  // Credit cards — calculate carrying balance for X months
+  if (option.subtype === 'credit-card') {
+    const effectiveApr = option.effectiveApr || 0;
+    const introMonths = option.scenarios ? 
+      option.scenarios.find(s => s.label.includes('intro'))?.termMonths || 0 : 0;
+
+    // If within intro period, no interest
+    if (introMonths >= months && introMonths > 0) {
+      const monthlyPmt = amount / months;
+      return {
+        netCost: amount - (option.rewardsEarned || 0),
+        monthlyPayment: monthlyPmt,
+        termDisplay: `${months} months`,
+        interestPaid: 0,
+        fees: option.fees || 0,
+        isEarlyPayoff: false,
+        why: `${introMonths}-month 0% intro APR`
+      };
+    }
+
+    // Calculate interest for carrying balance
+    const r = effectiveApr / 100 / 12;
+    const monthlyPmt = amount / months;
+    let balance = amount;
+    let totalInt = 0;
+
+    for (let i = 0; i < months; i++) {
+      // Interest on remaining balance (after accounting for intro period)
+      const monthInterest = balance * r;
+      totalInt += monthInterest;
+      balance = balance - monthlyPmt + monthInterest;
+      if (balance <= 0) break;
+    }
+
+    const netCost = amount + totalInt + (option.fees || 0) - (option.rewardsEarned || 0);
+
+    return {
+      netCost: netCost,
+      monthlyPayment: monthlyPmt,
+      termDisplay: `${months} months`,
+      interestPaid: totalInt,
+      fees: option.fees || 0,
+      isEarlyPayoff: false,
+      why: effectiveApr > 0 ? `${effectiveApr.toFixed(1)}% APR` : '0% APR'
+    };
+  }
+
+  // Default fallback
+  return {
+    netCost: option.netCost,
+    monthlyPayment: option.monthlyPayment,
+    termDisplay: option.termDisplay,
+    interestPaid: option.interestPaid,
+    fees: option.fees,
+    isEarlyPayoff: false,
+    why: 'Standard terms'
+  };
+}
+
+function updateSummaryCard(timeframe, best, amount) {
+  const nameEl = document.getElementById(`best-${timeframe}-name`);
+  const costEl = document.getElementById(`best-${timeframe}-cost`);
+  const whyEl = document.getElementById(`best-${timeframe}-why`);
+  const cardEl = document.getElementById(`summary-${timeframe}`);
+
+  if (!best) {
+    nameEl.textContent = 'No options';
+    costEl.textContent = '—';
+    whyEl.textContent = 'Select more payment methods';
+    return;
+  }
+
+  const option = best.option;
+  const hasInterestOrFees = (best.interestPaid || 0) + (best.fees || 0) > 0;
+
+  nameEl.textContent = option.name;
+  costEl.textContent = fmt(best.netCost);
+  costEl.className = hasInterestOrFees ? 'summary-cost has-fees' : 'summary-cost';
+
+  // Build the "why" text
+  let whyText = best.why || '';
+  if (best.monthlyPayment) {
+    const paymentText = best.monthlyPayment >= amount ? 
+      'Pay in full' : 
+      `${fmt(best.monthlyPayment)}/mo`;
+    whyText = `${paymentText} · ${whyText}`;
+  }
+
+  whyEl.textContent = whyText;
+
+  // Style the card based on type
+  cardEl.classList.remove('recommended', 'credit-card-best');
+  if (option.subtype === 'bnpl' && best.interestPaid === 0) {
+    cardEl.classList.add('recommended');
+  } else if (option.subtype === 'credit-card' && best.interestPaid === 0) {
+    cardEl.classList.add('credit-card-best');
+  }
 }
 
 function createResultCard(r, rank, best) {
