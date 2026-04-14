@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartPay Calculator — Find the Best Way to Pay</title>
+  <meta name="description" content="Compare credit cards, BNPL services, and payment plans to find the cheapest way to make your purchase.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">💳 SmartPay <span>Calculator</span></h1>
+        <p class="tagline">Find the cheapest way to pay for anything</p>
+      </div>
+    </header>
+
+    <!-- Step 1: Purchase Info -->
+    <section class="step" id="step-purchase">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h2>What are you buying?</h2>
+        </div>
+        <div class="input-group">
+          <label for="purchase-amount">Purchase Amount</label>
+          <div class="input-with-prefix">
+            <span class="prefix">$</span>
+            <input type="number" id="purchase-amount" placeholder="500" min="1" step="0.01" inputmode="decimal">
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="credit-score">Your Credit Score Range</label>
+          <select id="credit-score">
+            <option value="excellent">Excellent (720+)</option>
+            <option value="good" selected>Good (670–719)</option>
+            <option value="fair">Fair (580–669)</option>
+            <option value="poor">Poor (below 580)</option>
+            <option value="unknown">Not sure</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 2: Payment Methods -->
+    <section class="step" id="step-methods">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h2>Which payment options do you have?</h2>
+        </div>
+        <p class="step-desc">Select all that apply. We'll compare them for you.</p>
+
+        <!-- Filters -->
+        <div class="toggle-bar">
+          <label class="toggle-label">
+            <input type="checkbox" id="toggle-show-bnpl" checked>
+            <span class="toggle-switch"></span>
+            <span>Buy Now, Pay Later</span>
+          </label>
+          <label class="toggle-label">
+            <input type="checkbox" id="toggle-show-cards" checked>
+            <span class="toggle-switch"></span>
+            <span>Credit Cards</span>
+          </label>
+          <label class="toggle-label">
+            <input type="checkbox" id="toggle-hide-annual-fee">
+            <span class="toggle-switch"></span>
+            <span>Hide cards with annual fees</span>
+          </label>
+        </div>
+
+        <!-- BNPL Section -->
+        <div class="method-section">
+          <h3>Buy Now, Pay Later</h3>
+          <div class="method-grid" id="bnpl-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Credit Cards Section -->
+        <div class="method-section">
+          <h3>Credit Cards</h3>
+          <div class="method-grid" id="card-grid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Custom Method -->
+        <div class="method-section">
+          <button class="btn-add" id="add-custom-btn">+ Add Your Own Card or Service</button>
+          <div id="custom-form" class="custom-form hidden">
+            <div class="custom-form-grid">
+              <div class="input-group">
+                <label for="custom-name">Name</label>
+                <input type="text" id="custom-name" placeholder="My Chase Card">
+              </div>
+              <div class="input-group">
+                <label for="custom-type">Type</label>
+                <select id="custom-type">
+                  <option value="credit-card">Credit Card</option>
+                  <option value="bnpl-monthly">BNPL / Payment Plan</option>
+                  <option value="store-card">Store Card</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label for="custom-apr">Regular APR %</label>
+                <input type="number" id="custom-apr" placeholder="22.99" min="0" max="99" step="0.01">
+              </div>
+              <div class="input-group">
+                <label for="custom-rewards">Cash Back / Rewards %</label>
+                <input type="number" id="custom-rewards" placeholder="2" min="0" max="20" step="0.01">
+              </div>
+              <div class="input-group">
+                <label for="custom-intro-apr">Intro APR % <small>(0 if 0% promo)</small></label>
+                <input type="number" id="custom-intro-apr" placeholder="0" min="0" max="99" step="0.01">
+              </div>
+              <div class="input-group">
+                <label for="custom-intro-months">Intro Period (months)</label>
+                <input type="number" id="custom-intro-months" placeholder="15" min="0" max="60">
+              </div>
+            </div>
+            <div class="custom-form-actions">
+              <button class="btn-primary btn-small" id="save-custom-btn">Add to Comparison</button>
+              <button class="btn-ghost btn-small" id="cancel-custom-btn">Cancel</button>
+            </div>
+          </div>
+          <div id="custom-methods-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: Payoff Rate -->
+    <section class="step" id="step-payoff">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <h2>How fast will you pay it off?</h2>
+        </div>
+        <p class="step-desc">For credit cards, we'll show you the cost at this rate plus pay-in-full and minimum payments for comparison.</p>
+        <div class="slider-group">
+          <div class="slider-labels">
+            <span>Minimum</span>
+            <span class="slider-value" id="payoff-pct-display">20% of balance/mo</span>
+            <span>Pay in full</span>
+          </div>
+          <input type="range" id="payoff-pct" min="2" max="100" value="20" step="1" class="slider">
+          <div class="slider-presets">
+            <button class="preset-btn" data-value="2">Min (2%)</button>
+            <button class="preset-btn" data-value="10">10%</button>
+            <button class="preset-btn active" data-value="20">20%</button>
+            <button class="preset-btn" data-value="50">50%</button>
+            <button class="preset-btn" data-value="100">Full</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculate Button -->
+    <section class="step">
+      <div class="container">
+        <button class="btn-primary btn-large" id="calculate-btn">Compare My Options</button>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="step hidden" id="results-section">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">✓</span>
+          <h2>Your Best Options</h2>
+        </div>
+        <p class="step-desc" id="results-subtitle"></p>
+        <div id="affiliate-disclosure" class="disclosure hidden">
+          Advertiser Disclosure: Some of the offers on this page are from companies that compensate us. This may influence which products we feature, but it does not affect our rankings — those are based purely on math.
+        </div>
+        <div id="results-cards"></div>
+
+        <!-- Credit Score CTA -->
+        <div id="credit-score-cta" class="hidden">
+          <div class="cta-box">
+            <strong>Not sure about your credit score?</strong>
+            <span>Check it free — it won't affect your score.</span>
+            <a href="#" id="credit-karma-link" target="_blank" rel="noopener sponsored" class="btn-primary btn-small">Check Free on Credit Karma</a>
+          </div>
+        </div>
+
+        <!-- Payoff Comparison Table -->
+        <div id="payoff-comparison" class="hidden">
+          <h3 class="comparison-title">Payoff Comparison</h3>
+          <div id="payoff-table-wrapper"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>SmartPay Calculator is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="calc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
