@@ -560,6 +560,8 @@ function createStandardResultCard(r, rank, best) {
   card.innerHTML = html;
   return card;
 }
+
+function createStandardResultCard(r, rank, best) {
   const card = document.createElement('div');
   card.className = 'result-card';
 
@@ -788,4 +790,9 @@ updateSelectedCount();
 const monthsSelectInit = document.getElementById('payoff-months');
 if (monthsSelectInit) {
   state.payoffMonths = parseInt(monthsSelectInit.value) || 6;
+}
+
+// Ensure methods content starts collapsed
+if (methodsContent) {
+  methodsContent.classList.add('collapsed');
 }
