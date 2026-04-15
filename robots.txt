@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://creditstud.io/sitemap.xml
