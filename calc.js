@@ -376,7 +376,11 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths }
       if (method.id && method.id.startsWith('custom-')) {
         result = evaluateCustom(method, amount, creditScore, targetMonths);
       } else if (method.type === 'bnpl-4') {
-        result = evaluateBnpl(method, amount);
+        // Only show Pay in 4 if target is <= 3 months (6 weeks = ~1.5 months)
+        // Otherwise it's not a viable option for the user's timeline
+        if (targetMonths <= 3) {
+          result = evaluateBnpl(method, amount);
+        }
       } else if (method.type === 'bnpl-monthly') {
         result = evaluateBnplMonthly(method, amount, creditScore, targetMonths);
       } else {

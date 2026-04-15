@@ -196,13 +196,74 @@ if (methodsHeader) methodsHeader.addEventListener('click', (e) => {
 if (expandBtn) expandBtn.addEventListener('click', expandMethods);
 if (collapseBtn) collapseBtn.addEventListener('click', collapseMethods);
 
-// ── Months selector ──────────────────────────────────────────────────────────
+// ── Months slider and live estimate ──────────────────────────────────────────
 
-const monthsSelect = document.getElementById('payoff-months');
-if (monthsSelect) {
-  monthsSelect.addEventListener('change', (e) => {
-    state.payoffMonths = parseInt(e.target.value);
-  });
+const monthsSlider = document.getElementById('payoff-months');
+const monthsDisplay = document.getElementById('payoff-months-display');
+const quickEstimate = document.getElementById('quick-estimate');
+const estimatePayment = document.getElementById('estimate-payment');
+const estimateTotal = document.getElementById('estimate-total');
+const purchaseInput = document.getElementById('purchase-amount');
+
+function updateMonthsDisplay(val) {
+  const months = parseInt(val);
+  const label = months === 1 ? '1 month' : months + ' months';
+  if (monthsDisplay) monthsDisplay.textContent = label;
+  state.payoffMonths = months;
+  updateLiveEstimate();
+}
+
+function updateLiveEstimate() {
+  const amount = parseFloat(purchaseInput?.value);
+  const months = parseInt(monthsSlider?.value) || 6;
+
+  if (!amount || amount <= 0) {
+    if (quickEstimate) quickEstimate.classList.add('hidden');
+    return;
+  }
+
+  // Show estimate section
+  if (quickEstimate) quickEstimate.classList.remove('hidden');
+
+  // Base monthly payment (principal only)
+  const baseMonthly = amount / months;
+
+  // Estimated interest: avg 20% APR kicks in after 2 months
+  // Only charge interest on remaining balance after month 2
+  const avgApr = 0.20;
+  const monthlyRate = avgApr / 12;
+  const graceMonths = 2;
+
+  let totalInterest = 0;
+  let balance = amount;
+
+  for (let i = 0; i < months; i++) {
+    // Subtract principal portion
+    balance -= baseMonthly;
+    // Add interest if past grace period and still have balance
+    if (i >= graceMonths && balance > 0) {
+      totalInterest += balance * monthlyRate;
+      balance += balance * monthlyRate;
+    }
+  }
+
+  const totalCost = amount + totalInterest;
+  const effectiveMonthly = totalCost / months;
+
+  if (estimatePayment) {
+    estimatePayment.textContent = fmt(effectiveMonthly) + '/mo';
+  }
+  if (estimateTotal) {
+    estimateTotal.textContent = fmt(totalCost) + ' total';
+  }
+}
+
+if (monthsSlider) {
+  monthsSlider.addEventListener('input', (e) => updateMonthsDisplay(e.target.value));
+}
+
+if (purchaseInput) {
+  purchaseInput.addEventListener('input', updateLiveEstimate);
 }
 
 // ── Calculate ────────────────────────────────────────────────────────────────
@@ -876,10 +937,11 @@ CREDIT_CARDS.forEach(m => state.selectedMethods.add(m.id));
 renderMethodCards();
 updateSelectedCount();
 
-// Set initial months from select
-const monthsSelectInit = document.getElementById('payoff-months');
-if (monthsSelectInit) {
-  state.payoffMonths = parseInt(monthsSelectInit.value) || 6;
+// Set initial months from slider
+const monthsSliderInit = document.getElementById('payoff-months');
+if (monthsSliderInit) {
+  state.payoffMonths = parseInt(monthsSliderInit.value) || 6;
+  updateMonthsDisplay(state.payoffMonths);
 }
 
 // Ensure methods content starts collapsed
