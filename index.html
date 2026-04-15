@@ -35,21 +35,30 @@
             </div>
           </div>
           <div class="input-group">
-            <label for="payoff-months">Pay Off In</label>
-            <select id="payoff-months" class="select-large">
-              <option value="1">1 month (Pay in full)</option>
-              <option value="2">2 months</option>
-              <option value="3">3 months</option>
-              <option value="4">4 months</option>
-              <option value="6" selected>6 months</option>
-              <option value="9">9 months</option>
-              <option value="12">12 months</option>
-              <option value="15">15 months</option>
-              <option value="18">18 months</option>
-              <option value="24">24 months</option>
-              <option value="36">36 months</option>
-            </select>
+            <label for="payoff-months">Pay Off In <span id="payoff-months-display" class="months-display">6 months</span></label>
+            <input type="range" id="payoff-months" min="1" max="36" value="6" step="1" class="slider months-slider">
+            <div class="slider-labels months-labels">
+              <span>1mo</span>
+              <span>6mo</span>
+              <span>12mo</span>
+              <span>18mo</span>
+              <span>24mo</span>
+              <span>36mo</span>
+            </div>
           </div>
+        </div>
+
+        <!-- Quick Estimate -->
+        <div id="quick-estimate" class="quick-estimate hidden">
+          <div class="estimate-row">
+            <span class="estimate-label">Estimated Monthly Payment:</span>
+            <span class="estimate-value" id="estimate-payment">—</span>
+          </div>
+          <div class="estimate-row">
+            <span class="estimate-label">Est. Total with Interest (after 2mo grace):</span>
+            <span class="estimate-value" id="estimate-total">—</span>
+          </div>
+          <div class="estimate-note">Based on avg 20% APR after 2-month grace period</div>
         </div>
         <div class="input-group">
           <label for="credit-score">Your Credit Score Range</label>

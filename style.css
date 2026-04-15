@@ -919,6 +919,77 @@ input:focus, select:focus {
   }
 }
 
+/* Months Slider */
+.months-display {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 0.25rem 0.625rem;
+  border-radius: 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.months-slider {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.months-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* Quick Estimate */
+.quick-estimate {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1.5px solid #bae6fd;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.estimate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.estimate-row:last-of-type {
+  margin-bottom: 0.375rem;
+}
+
+.estimate-label {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.estimate-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.estimate-note {
+  font-size: 0.6875rem;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 0.375rem;
+  padding-top: 0.375rem;
+  border-top: 1px solid #bae6fd;
+}
+
 .select-large {
   font-size: 1rem;
   padding: 0.75rem 1rem;
