@@ -47,6 +47,33 @@ body {
   text-align: center;
 }
 
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-link.active {
+  color: white;
+  background: rgba(255,255,255,0.15);
+}
+
 .logo {
   font-size: 1.75rem;
   font-weight: 700;
