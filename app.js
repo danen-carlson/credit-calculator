@@ -235,14 +235,15 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
   });
 
   state.results = all;
-  renderResults(all, newCardOptions, alternatives, amount, targetMonths);
+  const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
+  renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore);
   document.getElementById('results-section').classList.remove('hidden');
   document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 // ── Render results ─────────────────────────────────────────────────────────
 
-function renderResults(all, newCardOptions, alternatives, amount, targetMonths) {
+function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore) {
   const container = document.getElementById('results-cards');
   container.innerHTML = '';
 
@@ -309,11 +310,14 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths) 
     altSection.classList.remove('hidden');
     altContainer.innerHTML = '';
     alternatives.slice(0, 5).forEach((r, i) => {
-      altContainer.appendChild(createResultCard(r, i + 2, bestMatch));
+      altContainer.appendChild(createCompactResultCard(r, i + 2, bestMatch));
     });
   } else {
     altSection.classList.add('hidden');
   }
+
+  // Other Time Periods Section
+  renderOtherPeriods(methodsList, amount, creditScore, targetMonths);
 
   // Keep the payoff table at bottom
   renderPayoffTable(all);
@@ -558,6 +562,92 @@ function createStandardResultCard(r, rank, best) {
   }
 
   card.innerHTML = html;
+  return card;
+}
+
+function renderOtherPeriods(allMethods, amount, creditScore, currentMonths) {
+  const container = document.getElementById('other-periods-grid');
+  container.innerHTML = '';
+
+  // Define periods to compare: 1, 3, 6, 12, 18, 24 months (excluding current)
+  const periods = [1, 3, 6, 12, 18, 24].filter(p => Math.abs(p - currentMonths) > 1);
+
+  periods.forEach(months => {
+    const card = document.createElement('div');
+    card.className = 'period-card' + (months === currentMonths ? ' selected' : '');
+
+    // Calculate best option for this timeframe
+    const { all } = calculateOptions({
+      amount,
+      creditScore,
+      selectedMethods: allMethods.filter(m => state.selectedMethods.has(m.id)),
+      targetMonths: months
+    });
+
+    if (all.length === 0) return;
+
+    const best = all[0];
+    const hasInterest = (best.interestPaid || 0) + (best.fees || 0) > 0;
+    const monthlyPmt = best.monthlyPayment || (amount / months);
+
+    card.innerHTML = `
+      <div class="period-header">
+        <span class="period-months">${months === 1 ? '1 month' : months + ' months'}</span>
+        <span class="period-cost ${hasInterest ? 'has-interest' : ''}">${fmt(best.netCost)}</span>
+      </div>
+      <div class="period-best">${best.name}</div>
+      <div class="period-payment">${fmt(monthlyPmt)}/mo</div>
+    `;
+
+    // Click to update the main calculator
+    card.addEventListener('click', () => {
+      document.getElementById('payoff-months').value = months;
+      state.payoffMonths = months;
+      document.getElementById('calculate-btn').click();
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function createCompactResultCard(r, rank, best) {
+  const card = document.createElement('div');
+  card.className = 'result-card compact';
+
+  const rankLabels = ['🥈', '🥉', '4th', '5th', '6th'];
+  const savings = r.netCost - best.netCost;
+  const costColor = r.interestPaid > 0 ? 'warning' : 'good';
+
+  card.innerHTML = `
+    <div class="result-header" style="margin-bottom: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-size: 0.875rem;">${rankLabels[Math.min(rank - 2, 4)]}</span>
+        <div>
+          <div class="result-name" style="font-size: 0.9375rem;">${r.name}</div>
+          <div class="result-type" style="font-size: 0.75rem;">${r.type}</div>
+        </div>
+      </div>
+      <div class="result-cost" style="text-align: right;">
+        <div class="result-total" style="font-size: 1.125rem;">${fmt(r.netCost)}</div>
+        ${savings > 0 ? `<div style="font-size: 0.7rem; color: var(--warning);">+${fmt(savings)}</div>` : ''}
+      </div>
+    </div>
+    <div class="result-details" style="grid-template-columns: repeat(3, 1fr); gap: 0.5rem; padding-top: 0.5rem; border-top: 1px solid var(--border);">
+      <div class="detail-item">
+        <span class="detail-label" style="font-size: 0.65rem;">Monthly</span>
+        <span class="detail-value" style="font-size: 0.8125rem;">${fmt(r.monthlyPayment || r.principal / (r.termMonths || 6))}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label" style="font-size: 0.65rem;">Interest</span>
+        <span class="detail-value ${costColor}" style="font-size: 0.8125rem;">${r.interestPaid + r.fees > 0 ? fmt(r.interestPaid + r.fees) : '$0'}</span>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label" style="font-size: 0.65rem;">Term</span>
+        <span class="detail-value" style="font-size: 0.8125rem;">${r.termDisplay || '—'}</span>
+      </div>
+    </div>
+  `;
+
   return card;
 }
 
