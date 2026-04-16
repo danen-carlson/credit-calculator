@@ -312,6 +312,186 @@
   margin-bottom: 2px;
 }
 
+/* Consolidation Simulation */
+.consolidation-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.consolidation-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.btn-consolidate {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-consolidate:hover {
+  background: var(--primary-hover);
+}
+
+.btn-reset-consolidation {
+  margin-left: 10px;
+}
+
+.consolidation-results-card {
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.consolidation-results-card.positive {
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+  border-color: var(--success);
+}
+
+.consolidation-results-card.negative {
+  background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+  border-color: var(--danger);
+}
+
+.consolidation-results-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.consolidation-results-header h3 {
+  margin: 4px 0 0;
+  font-size: 1.1rem;
+}
+
+.consolidation-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.consolidation-net {
+  font-size: 1.6rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.consolidation-net.positive {
+  color: var(--success);
+}
+
+.consolidation-net.negative {
+  color: var(--danger);
+}
+
+.consolidation-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.consolidation-stat {
+  background: rgba(255,255,255,0.75);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.consolidation-stat span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.consolidation-stat strong {
+  font-size: 1rem;
+}
+
+.consolidation-detail-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 18px;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.consolidation-warnings {
+  background: var(--warning-light);
+  border: 1.5px solid var(--warning);
+  color: var(--warning);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+}
+
+.consolidation-warnings div + div {
+  margin-top: 4px;
+}
+
+.consolidation-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.comparison-card {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.comparison-card.recommended {
+  border-color: var(--primary);
+}
+
+.comparison-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.consolidation-recommendation {
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-weight: 600;
+}
+
+.consolidation-recommendation.positive {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.consolidation-recommendation.negative {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
 /* Chart Section */
 .chart-section {
   background: var(--surface);
@@ -652,6 +832,12 @@
   .debt-card {
     grid-template-columns: 1fr 1fr;
   }
+  .consolidation-inputs,
+  .consolidation-summary-grid,
+  .consolidation-detail-row,
+  .consolidation-comparison {
+    grid-template-columns: 1fr;
+  }
   .debt-card .btn-remove {
     grid-column: 1 / -1;
     justify-self: end;
@@ -674,6 +860,12 @@
 @media (max-width: 600px) {
   .planner-header {
     padding: 28px 0 24px;
+  }
+  .consolidation-results-header {
+    flex-direction: column;
+  }
+  .consolidation-net {
+    font-size: 1.3rem;
   }
   .logo {
     font-size: 1.4rem;

@@ -156,6 +156,95 @@
       </div>
     </section>
 
+    <!-- Step 3: Debt Consolidation (Balance Transfer) -->
+    <section class="step" id="step-consolidation">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <h2>Debt Consolidation</h2>
+        </div>
+        <p class="step-desc">Move high-interest debt to a 0% APR card and save on interest.</p>
+
+        <div class="consolidation-section">
+          <div class="input-group">
+            <label>Select Debt to Consolidate</label>
+            <select id="consolidate-debt-select" class="select-large">
+              <option value="">— Choose a debt —</option>
+              <!-- Populated by JS -->
+            </select>
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label>Transfer Amount</label>
+              <div class="input-with-prefix">
+                <span class="prefix">$</span>
+                <input type="number" id="transfer-amount" min="0" step="0.01" inputmode="decimal" placeholder="0" style="padding-left:38px;">
+              </div>
+              <small style="color:var(--text-secondary);">Max: debt balance</small>
+            </div>
+
+            <div class="input-group">
+              <label>Transfer Fee %</label>
+              <div class="input-with-prefix">
+                <input type="number" id="transfer-fee" min="0" max="100" step="0.01" inputmode="decimal" value="0">
+                <span class="suffix">%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>New Card Terms</label>
+            <select id="new-card-select" class="select-large">
+              <option value="custom">Custom Card</option>
+              <option value="citi-double-cash">Citi Double Cash (18mo 0% APR, $0 fee)</option>
+              <option value="chase-freedom">Chase Freedom Flex (15mo 0% APR, 3% fee)</option>
+              <option value="discover-it">Discover it (15mo 0% APR, 3% fee)</option>
+              <option value="amex-blue">Amex Blue Cash (15mo 0% APR, 3% fee)</option>
+            </select>
+          </div>
+
+          <div id="custom-card-fields" style="display:none;margin-top:16px;">
+            <div class="input-row">
+              <div class="input-group">
+                <label>Credit Limit</label>
+                <div class="input-with-prefix">
+                  <span class="prefix">$</span>
+                  <input type="number" id="card-limit" min="0" step="0.01" inputmode="decimal" placeholder="5000" style="padding-left:38px;">
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label>0% APR Term</label>
+                <div class="input-with-prefix">
+                  <input type="number" id="intro-term" min="0" max="24" step="1" value="15">
+                  <span class="suffix">months</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-row">
+              <div class="input-group">
+                <label>Post-Promo APR</label>
+                <div class="input-with-prefix">
+                  <input type="number" id="post-apr" min="0" max="30" step="0.01" value="18.99">
+                  <span class="suffix">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align:center;margin:24px 0;">
+            <button class="btn-primary" onclick="simulateConsolidation()">🔮 Simulate Consolidation</button>
+          </div>
+
+          <div id="consolidation-results" style="display:none;margin-top:24px;">
+            <!-- Results rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Step 3: Results Dashboard -->
     <section class="step" id="step-results">
       <div class="container">
@@ -166,6 +255,48 @@
         <p class="step-desc">Three strategies compared side by side. The winner is highlighted.</p>
 
         <div id="results-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3.5: Balance Transfer Consolidation -->
+    <section class="step" id="step-consolidation">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">💸</span>
+          <h2>Balance Transfer Consolidation</h2>
+        </div>
+        <p class="step-desc">See how much you could save by transferring a debt to a 0% APR balance transfer card. This is a "what-if" simulation — it won't change your main plan.</p>
+
+        <div class="consolidation-card">
+          <div class="consolidation-inputs">
+            <div class="input-group">
+              <label>Select Debt to Transfer</label>
+              <select id="consolidation-debt-select">
+                <option value="">— Choose a debt —</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Balance Transfer Card</label>
+              <select id="consolidation-card-select">
+                <option value="">— Choose a card —</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Transfer Amount</label>
+              <div class="input-with-prefix">
+                <span class="prefix">$</span>
+                <input type="number" id="consolidation-amount" value="0" min="0" step="100" inputmode="numeric" style="padding-left:38px;">
+              </div>
+              <small id="consolidation-limit-info" style="color:var(--text-secondary);font-size:0.75rem;margin-top:4px;display:block;"></small>
+            </div>
+          </div>
+          <button class="btn-consolidate" id="consolidate-btn" onclick="runConsolidation()">🔍 Simulate Consolidation</button>
+          <button class="btn-ghost btn-reset-consolidation" id="reset-consolidation-btn" onclick="resetConsolidation()" style="display:none;">↩ Reset Simulation</button>
+        </div>
+
+        <div id="consolidation-results" style="display:none;">
           <!-- Rendered by JS -->
         </div>
       </div>
