@@ -8,8 +8,43 @@ let extraPayment = 200;
 let results = { minimum: null, snowball: null, avalanche: null };
 let currentChartStrategy = 'snowball';
 let scheduleOpen = false;
+let consolidationResults = null;
 
 const DEBT_COLORS = ['#2563eb', '#7c3aed', '#059669', '#d97706', '#dc2626', '#0891b2', '#4f46e5', '#c026d3'];
+const BALANCE_TRANSFER_CARDS = [
+  {
+    id: 'citi-double-cash',
+    name: 'Citi Double Cash',
+    introAprMonths: 18,
+    transferFeePct: 0,
+    postPromoApr: 18.24,
+    creditLimit: 8000
+  },
+  {
+    id: 'chase-freedom-flex',
+    name: 'Chase Freedom Flex',
+    introAprMonths: 15,
+    transferFeePct: 3,
+    postPromoApr: 20.24,
+    creditLimit: 6000
+  },
+  {
+    id: 'discover-it',
+    name: 'Discover it',
+    introAprMonths: 15,
+    transferFeePct: 3,
+    postPromoApr: 19.24,
+    creditLimit: 7000
+  },
+  {
+    id: 'amex-blue-cash',
+    name: 'Amex Blue Cash',
+    introAprMonths: 15,
+    transferFeePct: 3,
+    postPromoApr: 21.24,
+    creditLimit: 7500
+  }
+];
 
 // ========================
 // DEBT MANAGEMENT
@@ -25,6 +60,7 @@ function addDebt(name, balance, apr, minPayment) {
   });
   renderDebtCards();
   updateSummary();
+  updateConsolidationOptions();
   recalculate();
 }
 
@@ -32,6 +68,8 @@ function removeDebt(id) {
   debts = debts.filter(d => d.id !== id);
   renderDebtCards();
   updateSummary();
+  updateConsolidationOptions();
+  resetConsolidation();
   recalculate();
 }
 
@@ -44,6 +82,8 @@ function updateDebt(id, field, value) {
     debt[field] = parseFloat(value) || 0;
   }
   updateSummary();
+  updateConsolidationOptions();
+  resetConsolidation();
   recalculate();
 }
 
@@ -135,7 +175,9 @@ function simulateMinimums(debtsList) {
     balance: d.balance,
     apr: d.apr,
     minPayment: d.minPayment,
-    monthlyRate: d.apr / 100 / 12
+    monthlyRate: d.apr / 100 / 12,
+    promoApr: d.promoApr,
+    promoMonths: d.promoMonths || 0
   }));
 
   const months = [];
@@ -162,7 +204,10 @@ function simulateMinimums(debtsList) {
       }
       allPaid = false;
 
-      const interest = d.balance * d.monthlyRate;
+      const activeMonthlyRate = m < (d.promoMonths || 0)
+        ? ((d.promoApr || 0) / 100 / 12)
+        : d.monthlyRate;
+      const interest = d.balance * activeMonthlyRate;
       let payment = Math.min(d.minPayment, d.balance + interest);
       const principal = payment - interest;
       d.balance = Math.max(0, d.balance - principal);
@@ -191,7 +236,9 @@ function simulateStrategy(debtsList, extra, sortFn) {
     balance: d.balance,
     apr: d.apr,
     minPayment: d.minPayment,
-    monthlyRate: d.apr / 100 / 12
+    monthlyRate: d.apr / 100 / 12,
+    promoApr: d.promoApr,
+    promoMonths: d.promoMonths || 0
   }));
 
   const months = [];
@@ -221,7 +268,10 @@ function simulateStrategy(debtsList, extra, sortFn) {
     const interests = {};
     sim.forEach(d => {
       if (d.balance > 0) {
-        interests[d.name] = d.balance * d.monthlyRate;
+        const activeMonthlyRate = m < (d.promoMonths || 0)
+          ? ((d.promoApr || 0) / 100 / 12)
+          : d.monthlyRate;
+        interests[d.name] = d.balance * activeMonthlyRate;
       }
     });
 
@@ -317,6 +367,7 @@ function recalculate() {
   try { renderCharts(); } catch(e) { console.warn('Charts render error:', e); }
   try { renderSchedule(); } catch(e) { console.warn('Schedule render error:', e); }
   try { renderRecommendations(); } catch(e) { console.warn('Recommendations render error:', e); }
+  try { if (consolidationResults) renderConsolidationResults(consolidationResults); } catch(e) { console.warn('Consolidation render error:', e); }
 }
 
 function renderResults() {
@@ -553,6 +604,227 @@ function renderRecommendations() {
 // ========================
 // UTILITIES
 // ========================
+function updateConsolidationOptions() {
+  const debtSelect = document.getElementById('consolidation-debt-select');
+  const cardSelect = document.getElementById('consolidation-card-select');
+  if (!debtSelect || !cardSelect) return;
+
+  const selectedDebt = debtSelect.value;
+  const selectedCard = cardSelect.value;
+
+  debtSelect.innerHTML = '<option value="">— Choose a debt —</option>' + debts
+    .filter(d => d.balance > 0)
+    .map(d => `<option value="${d.id}">${escapeHtml(d.name)} — ${formatCurrency(d.balance)} at ${d.apr.toFixed(2)}% APR</option>`)
+    .join('');
+
+  cardSelect.innerHTML = '<option value="">— Choose a card —</option>' + BALANCE_TRANSFER_CARDS
+    .map(card => `<option value="${card.id}">${card.name} — ${card.introAprMonths} mo 0% APR • ${card.transferFeePct}% fee • Limit ${formatCurrency(card.creditLimit)}</option>`)
+    .join('');
+
+  if (debts.some(d => String(d.id) === selectedDebt)) debtSelect.value = selectedDebt;
+  if (BALANCE_TRANSFER_CARDS.some(card => card.id === selectedCard)) cardSelect.value = selectedCard;
+
+  updateConsolidationAmountHint();
+}
+
+function updateConsolidationAmountHint() {
+  const debtSelect = document.getElementById('consolidation-debt-select');
+  const cardSelect = document.getElementById('consolidation-card-select');
+  const amountInput = document.getElementById('consolidation-amount');
+  const info = document.getElementById('consolidation-limit-info');
+  if (!debtSelect || !cardSelect || !amountInput || !info) return;
+
+  const debt = debts.find(d => String(d.id) === debtSelect.value);
+  const card = BALANCE_TRANSFER_CARDS.find(c => c.id === cardSelect.value);
+
+  if (!debt) {
+    amountInput.value = 0;
+    info.textContent = 'Pick a debt to see the maximum transferable amount.';
+    return;
+  }
+
+  const maxTransfer = card ? Math.min(debt.balance, card.creditLimit) : debt.balance;
+  amountInput.max = maxTransfer;
+  if (!parseFloat(amountInput.value) || parseFloat(amountInput.value) > maxTransfer) {
+    amountInput.value = Math.round(maxTransfer);
+  }
+
+  if (!card) {
+    info.textContent = `Debt balance available to transfer: ${formatCurrency(debt.balance)}.`;
+    return;
+  }
+
+  const capped = debt.balance > card.creditLimit;
+  info.textContent = `You can transfer up to ${formatCurrency(maxTransfer)} to ${card.name}${capped ? ` (limited by ${formatCurrency(card.creditLimit)} credit limit)` : ''}.`;
+}
+
+function simulateConsolidation(debtId, newCardTerms, transferAmount) {
+  const targetDebt = debts.find(d => d.id === debtId);
+  if (!targetDebt || !newCardTerms || !results.minimum) return null;
+
+  const originalTransferAmount = Math.max(0, parseFloat(transferAmount) || 0);
+  const cappedTransferAmount = Math.min(originalTransferAmount || targetDebt.balance, targetDebt.balance, newCardTerms.creditLimit);
+  const transferFee = cappedTransferAmount * (newCardTerms.transferFeePct / 100);
+  const transferredBalance = cappedTransferAmount + transferFee;
+  const originalTotalMin = debts.reduce((sum, debt) => sum + debt.minPayment, 0);
+  const transferredMinPayment = Math.max(Math.ceil(transferredBalance * 0.02), 35);
+
+  const clonedDebts = debts.map(debt => ({ ...debt }));
+  const clonedTarget = clonedDebts.find(debt => debt.id === debtId);
+  clonedTarget.balance = Math.max(0, clonedTarget.balance - cappedTransferAmount);
+  if (clonedTarget.balance <= 0.005) clonedTarget.minPayment = 0;
+
+  clonedDebts.push({
+    id: Math.max(...clonedDebts.map(debt => debt.id), 0) + 1,
+    name: `${newCardTerms.name} (Transferred Balance)`,
+    balance: transferredBalance,
+    apr: newCardTerms.postPromoApr,
+    promoApr: 0,
+    promoMonths: newCardTerms.introAprMonths,
+    minPayment: transferredMinPayment
+  });
+
+  const minimum = simulateMinimums(clonedDebts);
+  const snowball = simulateStrategy(clonedDebts, extraPayment, (a, b) => a.balance - b.balance);
+  const avalanche = simulateStrategy(clonedDebts, extraPayment, (a, b) => b.apr - a.apr);
+
+  const originalBest = [results.minimum, results.snowball, results.avalanche]
+    .filter(Boolean)
+    .sort((a, b) => a.totalInterest - b.totalInterest)[0];
+  const consolidatedBest = [minimum, snowball, avalanche].sort((a, b) => a.totalInterest - b.totalInterest)[0];
+
+  const warnings = [];
+  if (targetDebt.balance > newCardTerms.creditLimit) {
+    warnings.push(`Insufficient credit limit: only ${formatCurrency(newCardTerms.creditLimit)} of ${formatCurrency(targetDebt.balance)} can be transferred.`);
+  }
+  if (newCardTerms.postPromoApr >= targetDebt.apr) {
+    warnings.push(`Post-promo APR (${newCardTerms.postPromoApr.toFixed(2)}%) is not lower than your current APR (${targetDebt.apr.toFixed(2)}%).`);
+  }
+  if (transferFee > 0 && transferFee >= (originalBest.totalInterest - consolidatedBest.totalInterest)) {
+    warnings.push('The transfer fee eats up most or all of the projected interest savings.');
+  }
+  if (cappedTransferAmount <= 0) {
+    warnings.push('No balance could be transferred with the current settings.');
+  }
+
+  return {
+    debtId,
+    debtName: targetDebt.name,
+    newCardTerms,
+    requestedTransferAmount: originalTransferAmount,
+    transferAmount: cappedTransferAmount,
+    transferFee,
+    transferredBalance,
+    originalBest,
+    consolidatedBest,
+    originalResults: { ...results },
+    consolidatedResults: { minimum, snowball, avalanche },
+    interestSaved: originalBest.totalInterest - consolidatedBest.totalInterest,
+    timeSaved: originalBest.debtFreeMonths - consolidatedBest.debtFreeMonths,
+    transferCost: transferFee,
+    netSavings: (originalBest.totalInterest - consolidatedBest.totalInterest) - transferFee,
+    originalDebtFreeDate: originalBest.debtFreeDate,
+    newDebtFreeDate: consolidatedBest.debtFreeDate,
+    originalTotalMin,
+    newTotalMin: clonedDebts.reduce((sum, debt) => sum + debt.minPayment, 0),
+    warnings,
+    recommendation: ((originalBest.totalInterest - consolidatedBest.totalInterest) - transferFee) > 0
+      ? `This consolidation saves you ${formatCurrency((originalBest.totalInterest - consolidatedBest.totalInterest) - transferFee)} and is recommended.`
+      : `Not worth it — you'd lose ${formatCurrency(Math.abs(((originalBest.totalInterest - consolidatedBest.totalInterest) - transferFee)))}.`
+  };
+}
+
+function renderConsolidationResults(resultsData) {
+  const container = document.getElementById('consolidation-results');
+  const resetBtn = document.getElementById('reset-consolidation-btn');
+  if (!container) return;
+
+  const outcomeClass = resultsData.netSavings >= 0 ? 'positive' : 'negative';
+  const outcomeIcon = resultsData.netSavings >= 0 ? '✅' : '⚠️';
+  const warningsHtml = resultsData.warnings.length
+    ? `<div class="consolidation-warnings">${resultsData.warnings.map(w => `<div>${escapeHtml(w)}</div>`).join('')}</div>`
+    : '';
+
+  container.style.display = 'block';
+  if (resetBtn) resetBtn.style.display = 'inline-flex';
+  container.innerHTML = `
+    <div class="consolidation-results-card ${outcomeClass}">
+      <div class="consolidation-results-header">
+        <div>
+          <div class="consolidation-eyebrow">${escapeHtml(resultsData.debtName)} → ${escapeHtml(resultsData.newCardTerms.name)}</div>
+          <h3>${outcomeIcon} Balance Transfer Simulation</h3>
+        </div>
+        <div class="consolidation-net ${outcomeClass}">${resultsData.netSavings >= 0 ? '+' : '-'}${formatCurrency(Math.abs(resultsData.netSavings))}</div>
+      </div>
+
+      <div class="consolidation-summary-grid">
+        <div class="consolidation-stat"><span>Interest saved</span><strong>${formatCurrency(resultsData.interestSaved)}</strong></div>
+        <div class="consolidation-stat"><span>Time saved</span><strong>${resultsData.timeSaved} months</strong></div>
+        <div class="consolidation-stat"><span>Total transfer fee</span><strong>${formatCurrency(resultsData.transferCost)}</strong></div>
+        <div class="consolidation-stat"><span>Net savings</span><strong>${resultsData.netSavings >= 0 ? '+' : '-'}${formatCurrency(Math.abs(resultsData.netSavings))}</strong></div>
+        <div class="consolidation-stat"><span>New debt-free date</span><strong>${formatDate(resultsData.newDebtFreeDate)}</strong></div>
+        <div class="consolidation-stat"><span>Original debt-free date</span><strong>${formatDate(resultsData.originalDebtFreeDate)}</strong></div>
+      </div>
+
+      <div class="consolidation-detail-row">
+        <div><strong>Transfer amount:</strong> ${formatCurrency(resultsData.transferAmount)}</div>
+        <div><strong>New transferred balance:</strong> ${formatCurrency(resultsData.transferredBalance)}</div>
+        <div><strong>Promo period:</strong> ${resultsData.newCardTerms.introAprMonths} months at 0% APR</div>
+        <div><strong>Post-promo APR:</strong> ${resultsData.newCardTerms.postPromoApr.toFixed(2)}%</div>
+      </div>
+
+      ${warningsHtml}
+
+      <div class="consolidation-comparison">
+        <div class="comparison-card">
+          <div class="comparison-title">Original best plan</div>
+          <div><strong>${formatCurrency(resultsData.originalBest.totalInterest)}</strong> interest</div>
+          <div>${resultsData.originalBest.debtFreeMonths} months</div>
+          <div>${formatDate(resultsData.originalDebtFreeDate)}</div>
+        </div>
+        <div class="comparison-card recommended">
+          <div class="comparison-title">Best consolidated plan</div>
+          <div><strong>${formatCurrency(resultsData.consolidatedBest.totalInterest)}</strong> interest</div>
+          <div>${resultsData.consolidatedBest.debtFreeMonths} months</div>
+          <div>${formatDate(resultsData.newDebtFreeDate)}</div>
+        </div>
+      </div>
+
+      <div class="consolidation-recommendation ${outcomeClass}">${escapeHtml(resultsData.recommendation)}</div>
+    </div>
+  `;
+}
+
+function runConsolidation() {
+  const debtSelect = document.getElementById('consolidation-debt-select');
+  const cardSelect = document.getElementById('consolidation-card-select');
+  const amountInput = document.getElementById('consolidation-amount');
+  if (!debtSelect || !cardSelect || !amountInput) return;
+
+  const debtId = parseInt(debtSelect.value, 10);
+  const card = BALANCE_TRANSFER_CARDS.find(c => c.id === cardSelect.value);
+  if (!debtId || !card) {
+    alert('Choose a debt and a balance transfer card first.');
+    return;
+  }
+
+  consolidationResults = simulateConsolidation(debtId, card, parseFloat(amountInput.value) || 0);
+  if (consolidationResults) {
+    renderConsolidationResults(consolidationResults);
+  }
+}
+
+function resetConsolidation() {
+  consolidationResults = null;
+  const container = document.getElementById('consolidation-results');
+  const resetBtn = document.getElementById('reset-consolidation-btn');
+  if (container) {
+    container.innerHTML = '';
+    container.style.display = 'none';
+  }
+  if (resetBtn) resetBtn.style.display = 'none';
+}
+
 function formatCurrency(amount) {
   return '$' + Math.round(amount).toLocaleString('en-US');
 }
@@ -600,10 +872,25 @@ function init() {
     debounceTimer = setTimeout(() => updateExtraPayment(input.value), 100);
   });
 
+  const consolidationDebtSelect = document.getElementById('consolidation-debt-select');
+  const consolidationCardSelect = document.getElementById('consolidation-card-select');
+  const consolidationAmount = document.getElementById('consolidation-amount');
+  if (consolidationDebtSelect) consolidationDebtSelect.addEventListener('change', updateConsolidationAmountHint);
+  if (consolidationCardSelect) consolidationCardSelect.addEventListener('change', updateConsolidationAmountHint);
+  if (consolidationAmount) consolidationAmount.addEventListener('input', () => {
+    consolidationResults = null;
+    const resultsEl = document.getElementById('consolidation-results');
+    const resetBtn = document.getElementById('reset-consolidation-btn');
+    if (resultsEl) resultsEl.style.display = 'none';
+    if (resetBtn) resetBtn.style.display = 'none';
+  });
+
   // Pre-populate with example debts
   addDebt('Credit Card 1', 4200, 22.99, 84);
   addDebt('Credit Card 2', 8500, 18.49, 170);
   addDebt('Car Loan', 12300, 6.49, 285);
+
+  updateConsolidationOptions();
 
   // Initial calculation
   updateExtraPayment(200);
