@@ -68,7 +68,7 @@
 #### US Bank Cash+ Visa Signature
 - **Issuer:** U.S. Bank
 - **Annual Fee:** $0
-- **Sign-up Bonus:** $200 bonus after spending $1,000 in first 120 days
+- **Sign-up Bonus:** $200 bonus after spending $1,000 in first 90 days
 - **Rewards Structure:**
   - 5% cash back on two categories of your choice (up to $2,000 combined per quarter)
   - 2% on one everyday category (gas stations, grocery stores, or restaurants)
@@ -84,7 +84,7 @@
 #### Chase Sapphire Preferred
 - **Issuer:** Chase
 - **Annual Fee:** $95
-- **Sign-up Bonus:** 60,000 bonus points after spending $4,000 in first 3 months (worth ~$750–$900 in travel)
+- **Sign-up Bonus:** 60,000–75,000 bonus points after spending $4,000–$5,000 in first 3 months (worth ~$750–$900 in travel)
 - **Rewards Structure:**
   - 5x on travel purchased through Chase Ultimate Rewards
   - 3x on dining (including delivery and takeout)
@@ -98,8 +98,8 @@
 
 #### American Express Gold Card
 - **Issuer:** American Express
-- **Annual Fee:** $250
-- **Sign-up Bonus:** 60,000 Membership Rewards points after spending $6,000 in first 6 months
+- **Annual Fee:** $325
+- **Sign-up Bonus:** Up to 100,000 Membership Rewards points after spending $6,000 in first 6 months
 - **Rewards Structure:**
   - 4x on dining at restaurants worldwide and on takeout/delivery in the US
   - 4x at US supermarkets (up to $25,000 per year, then 1x)
@@ -127,7 +127,7 @@
 
 #### American Express Blue Cash Preferred
 - **Issuer:** American Express
-- **Annual Fee:** $0 intro first year, then $150
+- **Annual Fee:** $0 intro first year, then $95
 - **Sign-up Bonus:** $250 statement credit after spending $3,000 in first 6 months
 - **Rewards Structure:**
   - 6% cash back at US supermarkets (up to $6,000 per year, then 1%)
@@ -256,7 +256,7 @@ Credit card affiliate programs are a major revenue source for comparison sites. 
 | **Discover** | CJ, Impact | $50–$120+ per approved application | Cashback Match makes it a strong converter |
 | **Wells Fargo** | FlexOffers | $40–$80 per approved application | Active Cash is their most promoted card |
 | **US Bank** | Various | $30–$75 per approved application | Cash+ is their most popular affiliate card |
-| **Coinbase** | Impact, direct | Varies — often CPA + revenue share | Growing program as crypto adoption increases |
+| **Coinbase** | Impact, direct | 50% of trading fees for first 3 months | Growing program as crypto adoption increases |
 
 ### Key Affiliate Networks for Credit Cards:
 - **CJ Affiliate (Commission Junction):** Largest network for credit card offers. Chase, Amex, Capital One, Discover all have presence.
@@ -312,10 +312,10 @@ Credit card affiliate programs are a major revenue source for comparison sites. 
 | Chase Freedom Flex | $0 | 1% | 5% (rotating) | $200 | Category optimization |
 | Discover it Cash Back | $0 | 1% | 5% (rotating) | Cashback Match | First-year value |
 | US Bank Cash+ | $0 | 1% | 5% (chosen) | $200 | Custom categories |
-| Chase Sapphire Preferred | $95 | 1x | 5x (Chase travel) | 60K pts (~$750–$900) | Travel beginners |
-| Amex Gold | $250 | 1x | 4x (dining/groceries) | 60K pts | Dining/grocery heavy |
+| Chase Sapphire Preferred | $95 | 1x | 5x (Chase travel) | 60K–75K pts (~$750–$900) | Travel beginners |
+| Amex Gold | $325 | 1x | 4x (dining/groceries) | Up to 100K pts | Dining/grocery heavy |
 | Capital One Venture X | $395 | 2x | 10x (Capital One travel) | 75K miles (~$750) | Premium travelers |
-| Amex Blue Cash Preferred | $150 (Y1: $0) | 1% | 6% (groceries/streaming) | $250 | Grocery families |
+| Amex Blue Cash Preferred | $95 (Y1: $0) | 1% | 6% (groceries/streaming) | $250 | Grocery families |
 | Citi Custom Cash | $0 | 1% | 5% (top category) | $200 | Single-category maximizers |
 | **Coinbase Card (Free)** | **$0** | **1% crypto** | **2% crypto (dining)** | **$10–$50 crypto** | **Crypto earners** |
 | **Coinbase Card (One)** | **$360/yr** | **2% crypto** | **4% crypto (dining)** | **$10–$50 crypto** | **Crypto + trading** |
