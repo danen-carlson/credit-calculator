@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io</title>
+  <meta name="description" content="Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards.">
+  <link rel="canonical" href="https://creditstud.io/rewards/">
+  <meta property="og:title" content="Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io">
+  <meta property="og:description" content="Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards.">
+  <meta property="og:url" content="https://creditstud.io/rewards/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStudio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="rewards.css">
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the credit card rewards calculator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter your monthly spending in each category (groceries, dining, gas, travel, etc.). The calculator multiplies your spending by each card's earn rate, converts points to dollar value using current valuations, subtracts annual fees, and ranks cards by net annual rewards value. Results update instantly as you adjust your spending."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are credit card rewards points worth?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Point values vary by program. As of April 2026, Chase Ultimate Rewards points are worth ~2.05 cents each, Amex Membership Rewards ~2.0 cents, Capital One Miles ~1.85 cents, and cashback is always 1 cent per point. Travel redemptions and transfer partners can increase value significantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are crypto credit card rewards better than cashback?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Crypto rewards have higher upside potential but come with volatility risk. A card earning 4% in Bitcoin could be worth much more if crypto prices rise, or less if they fall. Cashback is stable and predictable. The Coinbase Card (debit) offers up to 4% crypto back with no annual fee, while the Coinbase One Credit Card offers 4% Bitcoin back with a $30/month subscription."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I get a card with an annual fee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your spending. A card with a $95 annual fee that earns $400 more in rewards than a no-fee card is still $305 ahead. Our calculator factors in annual fees automatically — just look at the net annual value. Premium travel cards like the Capital One Venture X have high fees ($395) but come with credits ($300 travel credit) that offset much of the cost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best credit card for everyday spending?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For most people, the best everyday card depends on their spending patterns. Heavy grocery spenders benefit from the Amex Blue Cash Preferred (6% at supermarkets). Those who want simplicity do well with the Citi Double Cash or Wells Fargo Active Cash (2% on everything). Travelers maximize value with the Chase Sapphire Preferred. Use our calculator to find your personal best card based on your actual spending."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="rewards-header">
+      <div class="container">
+        <nav class="top-nav">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/debt-planner/" class="nav-link">Debt Planner</a>
+          <a href="/rewards/" class="nav-link active">Rewards</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+        </nav>
+        <h1 class="logo">💳 Credit<span>Studio</span></h1>
+        <p class="header-subtitle">Find the credit card that earns you the most rewards</p>
+      </div>
+    </header>
+
+    <!-- Step 1: Your Monthly Spending -->
+    <section class="step" id="step-spending">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h2>Your Monthly Spending</h2>
+        </div>
+        <p class="step-desc">Adjust the sliders or type amounts. Results update instantly. Defaults are based on average US household spending.</p>
+
+        <div id="spending-grid" class="spending-grid">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="spending-summary">
+          <div class="spending-summary-item">
+            <div class="spending-summary-label">Monthly Total</div>
+            <div class="spending-summary-value" id="total-monthly">$0</div>
+          </div>
+          <div class="spending-summary-item">
+            <div class="spending-summary-label">Annual Total</div>
+            <div class="spending-summary-value" id="total-annual">$0</div>
+          </div>
+        </div>
+
+        <!-- Crypto Toggle -->
+        <div class="crypto-toggle-section">
+          <label class="toggle-label" style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.9rem;padding:14px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);">
+            <input type="checkbox" id="crypto-toggle" onchange="toggleCrypto(this)" style="display:none;">
+            <span class="toggle-switch"></span>
+            <span>🪙 I'm interested in earning crypto rewards</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 2: Results -->
+    <section class="step" id="step-results">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h2>Your Best Cards</h2>
+        </div>
+        <p class="step-desc">Ranked by net annual rewards value (earnings minus annual fee).</p>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All Cards</button>
+          <button class="filter-btn" data-filter="cashback" onclick="setFilter('cashback')">💵 Cashback</button>
+          <button class="filter-btn" data-filter="travel" onclick="setFilter('travel')">✈️ Travel</button>
+          <button class="filter-btn" data-filter="tiered" onclick="setFilter('tiered')">🔄 Tiered</button>
+          <button class="filter-btn" data-filter="grocery" onclick="setFilter('grocery')">🛒 Grocery</button>
+          <button class="filter-btn" data-filter="crypto" onclick="setFilter('crypto')">₿ Crypto</button>
+        </div>
+
+        <div id="affiliate-disclosure" class="disclosure">
+          Advertiser Disclosure: Some of the offers on this page are from companies that compensate us. This may influence which products we feature, but it does not affect our rankings — those are based purely on math.
+        </div>
+
+        <div id="results-container" class="results-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Comparison Section -->
+        <div id="comparison-section" class="comparison-section hidden">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Crypto Corner -->
+        <div id="crypto-corner" class="crypto-corner hidden">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="step">
+      <div class="container">
+        <div class="seo-content">
+          <h2>How the Credit Card Rewards Calculator Works</h2>
+          <p>Our calculator takes your actual monthly spending across eight categories — groceries, dining, gas, travel, online shopping, streaming, utilities, and everything else — and runs it against a database of 16 popular credit cards. For each card, we multiply your spending by the card's earn rate in each category, convert points to dollar value using current valuations from The Points Guy, subtract the annual fee, and rank the results by net annual value. It's pure math — no opinions, no bias.</p>
+
+          <h2>What Are Rewards Points Worth?</h2>
+          <p>Not all points are created equal. Cashback is always worth 1 cent per point. Travel points vary: Chase Ultimate Rewards points are valued at 2.05 cents each, Amex Membership Rewards at 2.0 cents, and Capital One Miles at 1.85 cents. These valuations reflect typical redemption value through each program's travel portal. Transferring points to airline or hotel partners can sometimes yield even higher value — 3-5 cents per point or more — but requires more effort and flexibility.</p>
+
+          <h2>Credit Card Rewards vs. Crypto Rewards</h2>
+          <p>Crypto rewards cards like the Coinbase Card offer a different proposition: instead of fixed cashback or points, you earn cryptocurrency (Bitcoin, Ethereum, etc.) on every purchase. The upside is that your rewards could appreciate significantly over time. The downside is volatility — your rewards could also lose value. The Coinbase Card is a debit card (not credit), meaning you spend from your existing crypto balance. The Coinbase One Credit Card offers 4% Bitcoin back but requires a $30/month subscription. Use our calculator's Crypto Corner to see how crypto rewards compare to traditional cards at your spending level.</p>
+
+          <p>Want to learn more? Check out our <a href="/blog/best-0-apr-credit-cards.html">guide to the best 0% APR credit cards</a> for financing large purchases, or read our <a href="/blog/bnpl-vs-credit-card.html">comparison of BNPL vs. credit cards</a> to understand the full cost of different payment methods.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>CreditStudio Rewards Calculator is for informational purposes only. Card terms, rates, and rewards may change. Always verify details with the card issuer before applying.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="cards-data.js"></script>
+  <script src="rewards.js"></script>
+</body>
+</html>
