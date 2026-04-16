@@ -200,6 +200,12 @@
             <!-- Rendered by JS -->
           </div>
         </div>
+
+        <div id="chart-error" style="display:none;text-align:center;padding:20px;background:var(--warning-light);border-radius:var(--radius);margin-top:16px;">
+          <div style="color:var(--warning);font-weight:500;margin-bottom:8px;">📉 Charts failed to load</div>
+          <button class="btn-ghost" onclick="retryCharts()" style="padding:8px 16px;font-size:0.9rem;">🔄 Retry Charts</button>
+          <div style="font-size:0.8rem;color:var(--text-secondary);margin-top:8px;">Chart.js might be blocked or loading slowly</div>
+        </div>
       </div>
     </section>
 
