@@ -6,13 +6,41 @@ let milestoneChart = null;
 const DEBT_COLORS = ['#2563eb', '#7c3aed', '#059669', '#d97706', '#dc2626', '#0891b2', '#4f46e5', '#c026d3'];
 const DEBT_COLORS_ALPHA = DEBT_COLORS.map(c => c + '40');
 
-function renderCharts() {
+function renderCharts(retryCount = 0) {
+  // If Chart.js not loaded yet, retry with backoff
+  if (typeof Chart === 'undefined') {
+    if (retryCount < 5) {
+      const delay = Math.pow(1.5, retryCount) * 200; // 200ms, 300ms, 450ms, 675ms, 1012ms
+      setTimeout(() => renderCharts(retryCount + 1), delay);
+      return;
+    } else {
+      console.warn('Chart.js failed to load after 5 retries');
+      
+      // Show error message
+      const errorEl = document.getElementById('chart-error');
+      if (errorEl) errorEl.style.display = 'block';
+      
+      return;
+    }
+  }
+
+  // Hide error if charts render successfully
+  const errorEl = document.getElementById('chart-error');
+  if (errorEl) errorEl.style.display = 'none';
+
   try {
     renderDebtOverTimeChart();
   } catch(e) { console.warn('Chart render error:', e); }
   try {
     renderMilestoneChart();
   } catch(e) { console.warn('Milestone render error:', e); }
+}
+
+// Manual retry function for the button
+function retryCharts() {
+  const errorEl = document.getElementById('chart-error');
+  if (errorEl) errorEl.style.display = 'none';
+  renderCharts(0); // Start fresh retry
 }
 
 function renderDebtOverTimeChart() {
