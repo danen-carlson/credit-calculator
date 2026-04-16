@@ -362,12 +362,40 @@ function calculateAll() {
 // RENDERING
 // ========================
 function recalculate() {
-  try { calculateAll(); } catch(e) { console.warn('Calc error:', e); }
-  try { renderResults(); } catch(e) { console.warn('Results render error:', e); }
-  try { renderCharts(); } catch(e) { console.warn('Charts render error:', e); }
-  try { renderSchedule(); } catch(e) { console.warn('Schedule render error:', e); }
-  try { renderRecommendations(); } catch(e) { console.warn('Recommendations render error:', e); }
-  try { if (consolidationResults) renderConsolidationResults(consolidationResults); } catch(e) { console.warn('Consolidation render error:', e); }
+  console.log('Recalculate started');
+  try { 
+    console.log('Running calculateAll');
+    calculateAll(); 
+    console.log('calculateAll complete', { results: Object.keys(results).map(k => `${k}:${!!results[k]}`) });
+  } catch(e) { console.warn('Calc error:', e); }
+  try { 
+    console.log('Rendering results');
+    renderResults(); 
+    console.log('Results rendered');
+  } catch(e) { console.warn('Results render error:', e); }
+  try { 
+    console.log('Rendering charts');
+    renderCharts(); 
+    console.log('Charts rendered');
+  } catch(e) { console.warn('Charts render error:', e); }
+  try { 
+    console.log('Rendering schedule');
+    renderSchedule(); 
+    console.log('Schedule rendered');
+  } catch(e) { console.warn('Schedule render error:', e); }
+  try { 
+    console.log('Rendering recommendations');
+    renderRecommendations(); 
+    console.log('Recommendations rendered');
+  } catch(e) { console.warn('Recommendations render error:', e); }
+  try { 
+    if (consolidationResults) {
+      console.log('Rendering consolidation results');
+      renderConsolidationResults(consolidationResults); 
+      console.log('Consolidation results rendered');
+    }
+  } catch(e) { console.warn('Consolidation render error:', e); }
+  console.log('Recalculate complete');
 }
 
 function renderResults() {
@@ -850,8 +878,10 @@ function escapeHtml(str) {
 // INITIALIZATION
 // ========================
 function init() {
+  console.log('Init started');
   // Bind add debt button FIRST (before any calculations that might error)
   document.getElementById('add-debt-btn').addEventListener('click', () => {
+    console.log('Add debt button clicked');
     addDebt('', 0, 0, 0);
   });
 
@@ -886,14 +916,18 @@ function init() {
   });
 
   // Pre-populate with example debts
+  console.log('Adding example debts');
   addDebt('Credit Card 1', 4200, 22.99, 84);
   addDebt('Credit Card 2', 8500, 18.49, 170);
   addDebt('Car Loan', 12300, 6.49, 285);
+  console.log('Example debts added');
 
   updateConsolidationOptions();
 
   // Initial calculation
+  console.log('Starting initial calculation');
   updateExtraPayment(200);
+  console.log('Init complete');
 }
 
 // Run on DOM ready
