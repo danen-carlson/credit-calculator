@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Payoff Planner — Snowball vs Avalanche Calculator | CreditStud.io</title>
+  <meta name="description" content="Free debt payoff planner. Compare snowball vs avalanche strategies, see your debt-free date, and visualize your path to zero debt.">
+  <link rel="canonical" href="https://creditstud.io/debt-planner/">
+  <meta property="og:title" content="Debt Payoff Planner — Snowball vs Avalanche Calculator | CreditStud.io">
+  <meta property="og:description" content="Free debt payoff planner. Compare snowball vs avalanche strategies, see your debt-free date, and visualize your path to zero debt.">
+  <meta property="og:url" content="https://creditstud.io/debt-planner/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStudio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="planner.css">
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the debt snowball method?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The debt snowball method, popularized by Dave Ramsey, involves paying minimum payments on all debts while putting any extra money toward your smallest balance first. Once that debt is paid off, you roll its payment amount into the next smallest balance, creating a 'snowball' effect. This method is psychologically motivating because you see quick wins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the debt avalanche method?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The debt avalanche method (also called debt stacking) involves paying minimums on all debts while directing extra payments to the debt with the highest interest rate first. Once that's paid off, you move to the next highest rate. This is mathematically optimal and saves the most money on interest over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which is better: debt snowball or debt avalanche?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The avalanche method saves more money on interest, while the snowball method provides quicker psychological wins. Research shows the best method is the one you'll actually stick with. If you need motivation, try snowball. If you're disciplined and want to minimize cost, try avalanche."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate my debt-free date?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To calculate your debt-free date, list all debts with their balances, interest rates, and minimum payments. Then simulate paying them off month by month, applying extra payments according to your chosen strategy (snowball or avalanche). Our free Debt Payoff Planner does this calculation instantly and shows you exactly when you'll be debt-free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I pay off debt or invest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your debt interest rate is above 7-8%, paying it off first usually makes more sense than investing. High-interest credit card debt (15-25% APR) is essentially a guaranteed return when you pay it down. For lower-rate debt like mortgages, investing may yield better returns. Use our planner to see exactly how much interest you'll save with extra payments."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="planner-header">
+      <div class="container">
+        <nav class="top-nav">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+          <a href="/debt-planner/" class="nav-link active">Debt Planner</a>
+        </nav>
+        <h1 class="logo">💳 Credit<span>Studio</span></h1>
+        <p class="header-subtitle">Your path to zero debt — visualized</p>
+      </div>
+    </header>
+
+    <!-- Step 1: Add Your Debts -->
+    <section class="step" id="step-debts">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h2>Add Your Debts</h2>
+        </div>
+        <p class="step-desc">Enter each debt below. We've pre-filled some examples — edit or remove them.</p>
+
+        <div id="debt-list" class="debt-list">
+          <!-- Debt cards rendered by JS -->
+        </div>
+
+        <button class="btn-add" id="add-debt-btn" style="margin-top:12px;">+ Add Another Debt</button>
+
+        <!-- Total Debt Summary -->
+        <div class="debt-summary" id="debt-summary">
+          <div class="debt-summary-item">
+            <div class="debt-summary-label">Total Balance</div>
+            <div class="debt-summary-value" id="total-balance">$0</div>
+          </div>
+          <div class="debt-summary-item">
+            <div class="debt-summary-label">Total Min Payments</div>
+            <div class="debt-summary-value" id="total-min">$0</div>
+          </div>
+          <div class="debt-summary-item">
+            <div class="debt-summary-label">Weighted Avg APR</div>
+            <div class="debt-summary-value" id="weighted-apr">0%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 2: Extra Payment -->
+    <section class="step" id="step-extra">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h2>Extra Monthly Payment</h2>
+        </div>
+        <p class="step-desc">How much extra can you put toward debt each month? Move the slider and watch your debt-free date change.</p>
+
+        <div class="extra-payment-section">
+          <div class="extra-payment-display">
+            <div>
+              <div class="extra-payment-amount" id="extra-amount">$200</div>
+              <div class="extra-payment-total">Total monthly: <strong id="extra-total">$0</strong></div>
+            </div>
+          </div>
+          <input type="range" id="extra-slider" class="slider" min="0" max="2000" value="200" step="25">
+          <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+            <div class="input-with-prefix" style="width:140px;">
+              <span class="prefix">$</span>
+              <input type="number" id="extra-input" value="200" min="0" step="25" inputmode="numeric" style="padding-left:38px;">
+            </div>
+            <span style="font-size:0.85rem;color:var(--text-secondary);">per month extra</span>
+          </div>
+          <div class="slider-presets">
+            <button class="preset-btn" data-value="0" onclick="setPreset(0)">$0</button>
+            <button class="preset-btn" data-value="50" onclick="setPreset(50)">$50</button>
+            <button class="preset-btn" data-value="100" onclick="setPreset(100)">$100</button>
+            <button class="preset-btn active" data-value="200" onclick="setPreset(200)">$200</button>
+            <button class="preset-btn" data-value="300" onclick="setPreset(300)">$300</button>
+            <button class="preset-btn" data-value="500" onclick="setPreset(500)">$500</button>
+            <button class="preset-btn" data-value="750" onclick="setPreset(750)">$750</button>
+            <button class="preset-btn" data-value="1000" onclick="setPreset(1000)">$1,000</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: Results Dashboard -->
+    <section class="step" id="step-results">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <h2>Your Payoff Plan</h2>
+        </div>
+        <p class="step-desc">Three strategies compared side by side. The winner is highlighted.</p>
+
+        <div id="results-container">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 4: Visual Timeline -->
+    <section class="step" id="step-charts">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">4</span>
+          <h2>Visualize Your Progress</h2>
+        </div>
+        <p class="step-desc">Watch your debts shrink over time. Switch between strategies to compare.</p>
+
+        <div class="chart-toggle">
+          <button class="chart-toggle-btn active" data-strategy="snowball" onclick="setChartStrategy('snowball')">🔵 Snowball</button>
+          <button class="chart-toggle-btn" data-strategy="avalanche" onclick="setChartStrategy('avalanche')">🟣 Avalanche</button>
+        </div>
+
+        <!-- Chart 1: Debt Over Time -->
+        <div class="chart-section">
+          <h3>📉 Your Debt Over Time</h3>
+          <div class="chart-container">
+            <canvas id="debt-over-time-chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Payoff Milestones -->
+        <div class="chart-section">
+          <h3>🏁 Payoff Milestones</h3>
+          <div id="milestone-timeline">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 5: Monthly Schedule -->
+    <section class="step" id="step-schedule">
+      <div class="container">
+        <div class="schedule-section">
+          <div class="schedule-header" onclick="toggleSchedule()">
+            <h3>📅 Monthly Payment Schedule</h3>
+            <span class="schedule-toggle-icon" id="schedule-icon">▼</span>
+          </div>
+          <div class="schedule-body" id="schedule-body">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:16px;">
+          <button class="print-btn" onclick="window.print()">🖨️ Print Your Plan</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 6: Smart Recommendations -->
+    <section class="step" id="step-recommendations">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">💡</span>
+          <h2>Smart Recommendations</h2>
+        </div>
+        <p class="step-desc">Personalized tips based on your debt profile.</p>
+
+        <div id="recommendations" class="recommendations">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="step">
+      <div class="container">
+        <div class="seo-content">
+          <h2>What Is the Debt Snowball Method?</h2>
+          <p>The debt snowball method is a debt repayment strategy popularized by financial expert Dave Ramsey. Here's how it works: you make minimum payments on all your debts, then put any extra money toward the debt with the <strong>smallest balance</strong>. Once that smallest debt is paid off, you take the money you were putting toward it (minimum + extra) and apply it to the next smallest balance. This creates a "snowball" effect — as each debt is eliminated, the amount you can put toward the next one grows larger and larger.</p>
+          <p>The snowball method is <strong>psychologically powerful</strong>. Getting quick wins by eliminating small debts early builds momentum and motivation, which helps you stay committed to your payoff plan. Studies have shown that people using the snowball method are more likely to stick with their debt repayment plan because they see tangible progress faster.</p>
+
+          <h2>What Is the Debt Avalanche Method?</h2>
+          <p>The debt avalanche method (also called debt stacking) takes a more mathematical approach. Instead of targeting the smallest balance, you direct all extra payments to the debt with the <strong>highest interest rate</strong>. Once that's paid off, you move to the next highest rate. This strategy is <strong>mathematically optimal</strong> — it minimizes the total interest you'll pay over the life of your debts.</p>
+          <p>The avalanche method can save you hundreds or even thousands of dollars compared to the snowball method, especially when you have high-interest credit card debt. The tradeoff is that it may take longer to see your first debt fully paid off, which can feel discouraging for some people.</p>
+
+          <h2>Which Method Is Better?</h2>
+          <p>The honest answer: <strong>the best method is the one you'll actually stick with.</strong> If you need quick wins to stay motivated, the snowball method might be your best bet. If you're disciplined and want to minimize total cost, the avalanche method is the clear winner. Use our free Debt Payoff Planner above to compare both strategies with your actual numbers — seeing the difference in black and white often makes the decision easy.</p>
+          <p>Many financial advisors recommend a hybrid approach: use the snowball method for smaller debts to build momentum, then switch to avalanche for larger balances. Or simply pick one and commit. The most important thing is to <strong>start paying more than the minimum</strong> — even an extra $50/month can shave months or years off your debt-free date.</p>
+          <p>Want to learn more? Read our guide on <a href="/blog/bnpl-vs-credit-card.html">BNPL vs credit card costs</a> to understand how different payment methods affect your overall debt, or check out <a href="/blog/best-0-apr-credit-cards.html">the best 0% APR credit cards</a> for balance transfer opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>CreditStudio Debt Planner is for informational purposes only. Results are estimates based on the information you provide. Actual results may vary.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="planner.js"></script>
+  <script src="charts.js"></script>
+</body>
+</html>
