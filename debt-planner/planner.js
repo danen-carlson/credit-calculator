@@ -286,16 +286,26 @@ function simulateStrategy(debtsList, extra, sortFn) {
 }
 
 function calculateAll() {
+  console.log('calculateAll called:', { debts: debts.length, allZero: debts.every(d => d.balance <= 0) });
   if (debts.length === 0 || debts.every(d => d.balance <= 0)) {
     results = { minimum: null, snowball: null, avalanche: null };
     return;
   }
 
-  results.minimum = simulateMinimums(debts);
+  try {
+    results.minimum = simulateMinimums(debts);
+    console.log('Minimum simulation complete');
+  } catch(e) { console.error('Minimum sim error:', e); }
 
-  results.snowball = simulateStrategy(debts, extraPayment, (a, b) => a.balance - b.balance);
+  try {
+    results.snowball = simulateStrategy(debts, extraPayment, (a, b) => a.balance - b.balance);
+    console.log('Snowball simulation complete');
+  } catch(e) { console.error('Snowball sim error:', e); }
 
-  results.avalanche = simulateStrategy(debts, extraPayment, (a, b) => b.apr - a.apr);
+  try {
+    results.avalanche = simulateStrategy(debts, extraPayment, (a, b) => b.apr - a.apr);
+    console.log('Avalanche simulation complete');
+  } catch(e) { console.error('Avalanche sim error:', e); }
 }
 
 // ========================
