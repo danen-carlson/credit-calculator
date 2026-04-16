@@ -7,10 +7,13 @@ const DEBT_COLORS = ['#2563eb', '#7c3aed', '#059669', '#d97706', '#dc2626', '#08
 const DEBT_COLORS_ALPHA = DEBT_COLORS.map(c => c + '40');
 
 function renderCharts(retryCount = 0) {
+  console.log('renderCharts called', { retryCount, chartJsLoaded: typeof Chart !== 'undefined' });
+  
   // If Chart.js not loaded yet, retry with backoff
   if (typeof Chart === 'undefined') {
     if (retryCount < 5) {
       const delay = Math.pow(1.5, retryCount) * 200; // 200ms, 300ms, 450ms, 675ms, 1012ms
+      console.log('Chart.js not loaded, retrying in', delay, 'ms');
       setTimeout(() => renderCharts(retryCount + 1), delay);
       return;
     } else {
@@ -34,6 +37,7 @@ function renderCharts(retryCount = 0) {
   try {
     renderMilestoneChart();
   } catch(e) { console.warn('Milestone render error:', e); }
+  console.log('renderCharts completed');
 }
 
 // Manual retry function for the button
@@ -158,10 +162,19 @@ function renderMilestoneChart() {
   const container = document.getElementById('milestone-timeline');
   if (!container) return;
 
+  console.log('Milestone chart render called', { currentChartStrategy, resultsAvailable: !!results, debtsLength: debts.length });
   const result = results[currentChartStrategy];
-  console.log('Milestone render attempt:', { result: !!result, months: result?.months?.length, debts: debts.length });
+  console.log('Milestone data check:', { 
+    resultExists: !!result, 
+    monthsLength: result?.months?.length,
+    minimum: !!results?.minimum,
+    snowball: !!results?.snowball,
+    avalanche: !!results?.avalanche
+  });
+  
   if (!result || result.months.length === 0) {
     container.innerHTML = '<p style="color:var(--text-secondary);text-align:center;padding:20px;">No data to display.</p>';
+    console.log('Milestone chart: No data to display');
     return;
   }
 
