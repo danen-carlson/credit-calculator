@@ -7,8 +7,12 @@ const DEBT_COLORS = ['#2563eb', '#7c3aed', '#059669', '#d97706', '#dc2626', '#08
 const DEBT_COLORS_ALPHA = DEBT_COLORS.map(c => c + '40');
 
 function renderCharts() {
-  renderDebtOverTimeChart();
-  renderMilestoneChart();
+  try {
+    renderDebtOverTimeChart();
+  } catch(e) { console.warn('Chart render error:', e); }
+  try {
+    renderMilestoneChart();
+  } catch(e) { console.warn('Milestone render error:', e); }
 }
 
 function renderDebtOverTimeChart() {
@@ -24,6 +28,8 @@ function renderDebtOverTimeChart() {
 
   const result = results[currentChartStrategy];
   if (!result || result.months.length === 0) return;
+
+  if (typeof Chart === 'undefined') return;
 
   const debtNames = debts.map(d => d.name);
   const maxMonths = result.months.length;
@@ -55,7 +61,8 @@ function renderDebtOverTimeChart() {
     return '';
   });
 
-  debtChart = new Chart(ctx, {
+  try {
+    debtChart = new Chart(ctx, {
     type: 'line',
     data: { labels, datasets },
     options: {
@@ -116,6 +123,7 @@ function renderDebtOverTimeChart() {
       }
     }
   });
+  } catch(e) { console.warn('Chart.js not loaded yet'); }
 }
 
 function renderMilestoneChart() {
