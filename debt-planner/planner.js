@@ -302,11 +302,11 @@ function calculateAll() {
 // RENDERING
 // ========================
 function recalculate() {
-  calculateAll();
-  renderResults();
-  renderCharts();
-  renderSchedule();
-  renderRecommendations();
+  try { calculateAll(); } catch(e) { console.warn('Calc error:', e); }
+  try { renderResults(); } catch(e) { console.warn('Results render error:', e); }
+  try { renderCharts(); } catch(e) { console.warn('Charts render error:', e); }
+  try { renderSchedule(); } catch(e) { console.warn('Schedule render error:', e); }
+  try { renderRecommendations(); } catch(e) { console.warn('Recommendations render error:', e); }
 }
 
 function renderResults() {
@@ -568,10 +568,10 @@ function escapeHtml(str) {
 // INITIALIZATION
 // ========================
 function init() {
-  // Pre-populate with example debts
-  addDebt('Credit Card 1', 4200, 22.99, 84);
-  addDebt('Credit Card 2', 8500, 18.49, 170);
-  addDebt('Car Loan', 12300, 6.49, 285);
+  // Bind add debt button FIRST (before any calculations that might error)
+  document.getElementById('add-debt-btn').addEventListener('click', () => {
+    addDebt('', 0, 0, 0);
+  });
 
   // Set up slider
   const slider = document.getElementById('extra-slider');
@@ -590,10 +590,10 @@ function init() {
     debounceTimer = setTimeout(() => updateExtraPayment(input.value), 100);
   });
 
-  // Bind add debt button
-  document.getElementById('add-debt-btn').addEventListener('click', () => {
-    addDebt('', 0, 0, 0);
-  });
+  // Pre-populate with example debts
+  addDebt('Credit Card 1', 4200, 22.99, 84);
+  addDebt('Credit Card 2', 8500, 18.49, 170);
+  addDebt('Car Loan', 12300, 6.49, 285);
 
   // Initial calculation
   updateExtraPayment(200);
