@@ -1,0 +1,794 @@
+// Rewards Calculator — Main Logic
+// CreditStud.io
+
+(function() {
+  'use strict';
+
+  // Default spending values (BLS Consumer Expenditure Survey, adjusted 2026)
+  const defaultSpending = {
+    groceries: 540,
+    dining: 350,
+    gas: 250,
+    travel: 150,
+    online: 300,
+    streaming: 65,
+    utilities: 200,
+    everything: 600
+  };
+
+  const categoryIcons = {
+    groceries: '🛒',
+    dining: '🍽️',
+    gas: '⛽',
+    travel: '✈️',
+    online: '📦',
+    streaming: '📺',
+    utilities: '💡',
+    everything: '🔹'
+  };
+
+  const categoryLabels = {
+    groceries: 'Groceries',
+    dining: 'Dining/Restaurants',
+    gas: 'Gas/Transportation',
+    travel: 'Travel',
+    online: 'Online Shopping',
+    streaming: 'Streaming/Subscriptions',
+    utilities: 'Utilities',
+    everything: 'Everything Else'
+  };
+
+  // Bar chart colors
+  const barColors = [
+    '#2563eb', '#059669', '#d97706', '#dc2626',
+    '#7c3aed', '#0891b2', '#be185d', '#6b7280'
+  ];
+
+  let currentSpending = { ...defaultSpending };
+  let showCrypto = false;
+  let compareSelected = new Set();
+  let activeFilter = 'all';
+
+  // ===================== CALCULATIONS =====================
+
+  function calculateCardRewards(card, spending) {
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+    const breakdown = {};
+    let totalAnnual = 0;
+
+    // Special handling for Citi Custom Cash
+    if (card.id === 'citi-custom-cash') {
+      return calculateCitiCustomCash(spending, card.pointValue);
+    }
+
+    // Special handling for US Bank Cash+
+    if (card.id === 'us-bank-cash-plus') {
+      return calculateUSBCashPlus(spending, card.pointValue);
+    }
+
+    // Special handling for Chase Freedom Flex (rotating categories)
+    if (card.id === 'chase-freedom-flex') {
+      return calculateChaseFreedomFlex(spending, card.pointValue);
+    }
+
+    // Special handling for Discover it Cash Back (rotating categories)
+    if (card.id === 'discover-it-cash-back') {
+      return calculateDiscoverItCashBack(spending);
+    }
+
+    // Special handling for Amex Gold (grocery cap)
+    if (card.id === 'amex-gold') {
+      return calculateAmexGold(spending, card.pointValue);
+    }
+
+    // Special handling for Amex Blue Cash Preferred (grocery cap)
+    if (card.id === 'amex-blue-cash-preferred') {
+      return calculateAmexBCP(spending, card.pointValue);
+    }
+
+    // Special handling for Amex Blue Cash Everyday (grocery cap)
+    if (card.id === 'amex-blue-cash-everyday') {
+      return calculateAmexBCE(spending, card.pointValue);
+    }
+
+    // Standard calculation for all other cards
+    for (const cat of categories) {
+      const monthlySpend = spending[cat] || 0;
+      const reward = card.rewards[cat];
+      if (!reward) continue;
+
+      const rate = reward.rate;
+      let annualValue;
+
+      if (card.pointValue === 1.0) {
+        // Cashback: rate is already the cashback percentage
+        annualValue = monthlySpend * (rate / 100) * 12;
+      } else {
+        // Points card: rate = points per dollar, pointValue = cents per point
+        const annualPoints = monthlySpend * rate * 12;
+        annualValue = annualPoints * (card.pointValue / 100);
+      }
+
+      breakdown[cat] = {
+        monthlySpend,
+        rate,
+        annualPoints: card.pointValue !== 1.0 ? monthlySpend * rate * 12 : 0,
+        annualValue
+      };
+      totalAnnual += annualValue;
+    }
+
+    return {
+      grossAnnual: totalAnnual,
+      annualFee: card.annualFee,
+      netAnnual: totalAnnual - card.annualFee,
+      breakdown
+    };
+  }
+
+  function calculateCitiCustomCash(spending, pointValue) {
+    const eligibleCategories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities'];
+    const breakdown = {};
+    let totalAnnual = 0;
+
+    // Find top eligible category
+    let topCat = 'everything';
+    let topSpend = 0;
+    for (const cat of eligibleCategories) {
+      if ((spending[cat] || 0) > topSpend) {
+        topSpend = spending[cat] || 0;
+        topCat = cat;
+      }
+    }
+
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    for (const cat of categories) {
+      const monthlySpend = spending[cat] || 0;
+      let rate = 1; // base rate
+
+      if (cat === topCat) {
+        // 5% on up to $500, then 1%
+        const cappedSpend = Math.min(monthlySpend, 500);
+        const overSpend = Math.max(0, monthlySpend - 500);
+        const annualValue = cappedSpend * 0.05 * 12 + overSpend * 0.01 * 12;
+        breakdown[cat] = { monthlySpend, rate: 5, annualPoints: 0, annualValue, note: '5% up to $500/mo' };
+        totalAnnual += annualValue;
+      } else {
+        const annualValue = monthlySpend * 0.01 * 12;
+        breakdown[cat] = { monthlySpend, rate: 1, annualPoints: 0, annualValue };
+        totalAnnual += annualValue;
+      }
+    }
+
+    return {
+      grossAnnual: totalAnnual,
+      annualFee: 0,
+      netAnnual: totalAnnual,
+      breakdown,
+      note: `Top category: ${categoryLabels[topCat]} ($${topSpend}/mo)`
+    };
+  }
+
+  function calculateUSBCashPlus(spending, pointValue) {
+    const breakdown = {};
+    let totalAnnual = 0;
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    for (const cat of categories) {
+      const monthlySpend = spending[cat] || 0;
+      const reward = cardDataForUSB.rewards[cat];
+      const rate = reward.rate;
+      // Cashback card: rate is already the percentage
+      const annualValue = monthlySpend * (rate / 100) * 12;
+
+      breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue };
+      totalAnnual += annualValue;
+    }
+
+    return {
+      grossAnnual: totalAnnual,
+      annualFee: 0,
+      netAnnual: totalAnnual,
+      breakdown
+    };
+  }
+
+  // Inline USB card data for calculation
+  const cardDataForUSB = {
+    rewards: {
+      groceries: { rate: 1 },
+      dining: { rate: 1 },
+      gas: { rate: 5 },
+      travel: { rate: 1 },
+      online: { rate: 1 },
+      streaming: { rate: 2 },
+      utilities: { rate: 5 },
+      everything: { rate: 1 }
+    }
+  };
+
+  function calculateChaseFreedomFlex(spending, pointValue) {
+    const breakdown = {};
+    let totalAnnual = 0;
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    for (const cat of categories) {
+      const monthlySpend = spending[cat] || 0;
+      let rate = 1; // base
+
+      if (cat === 'dining') {
+        rate = 3;
+      }
+      // Rotating categories: estimate ~2% effective across non-dining categories
+      // (5% on ~25% of spend, 1% on rest = ~2% average)
+      if (cat !== 'dining') {
+        rate = 2;
+      }
+
+      const annualValue = monthlySpend * (rate / 100) * 12 * (pointValue / 100);
+      breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue, note: cat === 'dining' ? '3x dining' : '~2% avg (rotating 5%)' };
+      totalAnnual += annualValue;
+    }
+
+    return {
+      grossAnnual: totalAnnual,
+      annualFee: 0,
+      netAnnual: totalAnnual,
+      breakdown
+    };
+  }
+
+  function calculateDiscoverItCashBack(spending) {
+    const breakdown = {};
+    let totalAnnual = 0;
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    for (const cat of categories) {
+      const monthlySpend = spending[cat] || 0;
+      // ~2% effective average (5% rotating on ~25% of spend)
+      const rate = 2;
+      const annualValue = monthlySpend * (rate / 100) * 12;
+      breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue, note: '~2% avg (5% rotating)' };
+      totalAnnual += annualValue;
+    }
+
+    return {
+      grossAnnual: totalAnnual,
+      annualFee: 0,
+      netAnnual: totalAnnual,
+      breakdown,
+      note: 'First year: Cashback Match doubles earnings!'
+    };
+  }
+
+  function calculateAmexGold(spending, pointValue) {
+    const breakdown = {};
+    let totalAnnual = 0;
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    for (const cat of categories) {
+      const monthlySpend = spending[cat] || 0;
+      let rate = 1;
+
+      if (cat === 'groceries') {
+        rate = 4;
+        // Cap: $25,000/yr = $2,083.33/mo
+        const monthlyCap = 2083.33;
+        const cappedSpend = Math.min(monthlySpend, monthlyCap);
+        const overSpend = Math.max(0, monthlySpend - monthlyCap);
+        const annualValue = (cappedSpend * 0.04 * 12 + overSpend * 0.01 * 12) * (pointValue / 100);
+        breakdown[cat] = { monthlySpend, rate: 4, annualPoints: 0, annualValue, note: '4x up to $25k/yr' };
+        totalAnnual += annualValue;
+        continue;
+      }
+
+      if (cat === 'dining') rate = 4;
+      if (cat === 'travel') rate = 3;
+
+      const annualValue = monthlySpend * (rate / 100) * 12 * (pointValue / 100);
+      breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue };
+      totalAnnual += annualValue;
+    }
+
+    return {
+      grossAnnual: totalAnnual,
+      annualFee: 250,
+      netAnnual: totalAnnual - 250,
+      breakdown,
+      note: 'Includes $240/yr in credits (Uber + Dining)'
+    };
+  }
+
+  function calculateAmexBCP(spending, pointValue) {
+    const breakdown = {};
+    let totalAnnual = 0;
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    for (const cat of categories) {
+      const monthlySpend = spending[cat] || 0;
+      let rate = 1;
+
+      if (cat === 'groceries') {
+        rate = 6;
+        // Cap: $6,000/yr = $500/mo
+        const cappedSpend = Math.min(monthlySpend, 500);
+        const overSpend = Math.max(0, monthlySpend - 500);
+        const annualValue = cappedSpend * 0.06 * 12 + overSpend * 0.01 * 12;
+        breakdown[cat] = { monthlySpend, rate: 6, annualPoints: 0, annualValue, note: '6% up to $6k/yr' };
+        totalAnnual += annualValue;
+        continue;
+      }
+
+      if (cat === 'streaming') rate = 6;
+      if (cat === 'gas') rate = 3;
+
+      const annualValue = monthlySpend * (rate / 100) * 12;
+      breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue };
+      totalAnnual += annualValue;
+    }
+
+    return {
+      grossAnnual: totalAnnual,
+      annualFee: 95,
+      netAnnual: totalAnnual - 95,
+      breakdown
+    };
+  }
+
+  function calculateAmexBCE(spending, pointValue) {
+    const breakdown = {};
+    let totalAnnual = 0;
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    for (const cat of categories) {
+      const monthlySpend = spending[cat] || 0;
+      let rate = 1;
+
+      if (cat === 'groceries') {
+        rate = 3;
+        const cappedSpend = Math.min(monthlySpend, 500);
+        const overSpend = Math.max(0, monthlySpend - 500);
+        const annualValue = cappedSpend * 0.03 * 12 + overSpend * 0.01 * 12;
+        breakdown[cat] = { monthlySpend, rate: 3, annualPoints: 0, annualValue, note: '3% up to $6k/yr' };
+        totalAnnual += annualValue;
+        continue;
+      }
+
+      if (cat === 'gas') rate = 3;
+      if (cat === 'online') rate = 3;
+
+      const annualValue = monthlySpend * (rate / 100) * 12;
+      breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue };
+      totalAnnual += annualValue;
+    }
+
+    return {
+      grossAnnual: totalAnnual,
+      annualFee: 0,
+      netAnnual: totalAnnual,
+      breakdown
+    };
+  }
+
+  // ===================== RENDERING =====================
+
+  function formatCurrency(amount) {
+    if (amount < 0) return '-$' + Math.abs(amount).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    return '$' + amount.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  }
+
+  function renderResults() {
+    const container = document.getElementById('results-container');
+    if (!container) return;
+
+    // Calculate all cards
+    const results = cardsData.map(card => {
+      // Filter out crypto cards if toggle is off
+      if (card.isCrypto && !showCrypto) return null;
+
+      const calc = calculateCardRewards(card, currentSpending);
+      return { ...card, ...calc };
+    }).filter(Boolean);
+
+    // Sort by net annual value
+    results.sort((a, b) => b.netAnnual - a.netAnnual);
+
+    // Apply filter
+    let filtered = results;
+    if (activeFilter !== 'all') {
+      filtered = results.filter(r => r.type === activeFilter);
+    }
+
+    if (filtered.length === 0) {
+      container.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:40px 0;">No cards match your filter. Try a different category or enable crypto rewards.</p>';
+      return;
+    }
+
+    container.innerHTML = filtered.map((card, index) => {
+      const rank = index + 1;
+      const rankClass = rank === 1 ? 'gold' : rank === 2 ? 'silver' : rank === 3 ? 'bronze' : 'default';
+      const cardType = typeConfig[card.type] || typeConfig.cashback;
+      const isNegative = card.netAnnual < 0;
+
+      // Build breakdown bar
+      const breakdownHTML = buildBreakdownBar(card.breakdown);
+
+      // Build perks list
+      const perksHTML = card.perks.map(p => `<li>${p}</li>`).join('');
+
+      // Compare checkbox
+      const isChecked = compareSelected.has(card.id) ? 'checked' : '';
+
+      return `
+        <div class="result-card rank-${rank}" data-card-id="${card.id}">
+          <span class="result-rank-badge ${rankClass}">#${rank}</span>
+          <div class="result-top-row">
+            <div class="result-card-info">
+              <div class="result-card-name">${card.name}</div>
+              <div class="result-card-issuer">${card.issuer}</div>
+              <span class="result-card-type-badge" style="background:${cardType.bg};color:${cardType.color};">${cardType.icon} ${cardType.label}</span>
+            </div>
+            <div class="result-value-section">
+              <div class="result-net-value ${isNegative ? 'negative' : ''}">${formatCurrency(card.netAnnual)}</div>
+              <div class="result-gross-label">net annual value</div>
+            </div>
+          </div>
+
+          ${card.bestFor ? `<div class="result-best-for">🏷️ Best for: ${card.bestFor}</div>` : ''}
+
+          ${card.note ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">${card.note}</div>` : ''}
+
+          <div class="rewards-breakdown">
+            <div class="rewards-breakdown-title">Rewards Breakdown</div>
+            ${breakdownHTML}
+          </div>
+
+          <div class="result-value-details">
+            <div class="value-detail">
+              <span class="value-detail-label">Gross Rewards</span>
+              <span class="value-detail-value positive">${formatCurrency(card.grossAnnual)}</span>
+            </div>
+            <div class="value-detail">
+              <span class="value-detail-label">Annual Fee</span>
+              <span class="value-detail-value negative">-${formatCurrency(card.annualFee)}</span>
+            </div>
+            <div class="value-detail">
+              <span class="value-detail-label">Point Value</span>
+              <span class="value-detail-value">${card.pointValue}¢</span>
+            </div>
+            ${card.signupBonus && card.signupBonus.value > 0 ? `
+            <div class="value-detail">
+              <span class="value-detail-label">Signup Bonus</span>
+              <span class="value-detail-value positive">${formatCurrency(card.signupBonus.value)}</span>
+            </div>` : ''}
+          </div>
+
+          <div class="result-perks">
+            <div class="result-perks-title">Key Perks</div>
+            <ul class="result-perks-list">${perksHTML}</ul>
+          </div>
+
+          <a href="${card.affiliateLink || '#'}" class="btn-apply" onclick="event.preventDefault();">Apply Now</a>
+
+          <label class="result-compare-check">
+            <input type="checkbox" data-card-id="${card.id}" ${isChecked} onchange="toggleCompare(this)">
+            Compare this card
+          </label>
+        </div>
+      `;
+    }).join('');
+
+    // Render comparison if 2+ selected
+    renderComparison(results);
+
+    // Render crypto corner
+    renderCryptoCorner(results);
+  }
+
+  function buildBreakdownBar(breakdown) {
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+    const total = Object.values(breakdown).reduce((sum, b) => sum + b.annualValue, 0);
+    if (total === 0) return '<div style="font-size:0.8rem;color:var(--text-secondary);">No rewards earned</div>';
+
+    let barHTML = '<div class="breakdown-bar">';
+    let legendHTML = '<div class="breakdown-legend">';
+
+    categories.forEach((cat, i) => {
+      const b = breakdown[cat];
+      if (!b || b.annualValue <= 0) return;
+      const pct = Math.max((b.annualValue / total) * 100, 3);
+      const color = barColors[i];
+      const label = cat.charAt(0).toUpperCase() + cat.slice(0, 2);
+
+      barHTML += `<div class="breakdown-segment" style="width:${pct}%;background:${color};" title="${categoryLabels[cat]}: ${formatCurrency(b.annualValue)}">${pct > 12 ? formatCurrency(b.annualValue) : ''}</div>`;
+      legendHTML += `<span class="breakdown-legend-item"><span class="breakdown-legend-dot" style="background:${color}"></span>${categoryLabels[cat]}: ${formatCurrency(b.annualValue)}</span>`;
+    });
+
+    barHTML += '</div>';
+    legendHTML += '</div>';
+
+    return barHTML + legendHTML;
+  }
+
+  function renderComparison(allResults) {
+    const section = document.getElementById('comparison-section');
+    if (!section) return;
+
+    const selected = allResults.filter(c => compareSelected.has(c.id));
+
+    if (selected.length < 2) {
+      section.classList.add('hidden');
+      return;
+    }
+
+    if (selected.length > 3) {
+      // Remove the last selected
+      const lastId = Array.from(compareSelected).pop();
+      compareSelected.delete(lastId);
+    }
+
+    section.classList.remove('hidden');
+
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    let html = `
+      <div class="comparison-header">
+        <h3>📊 Side-by-Side Comparison</h3>
+        <button class="btn-ghost btn-small" onclick="clearCompare()">Clear Selection</button>
+      </div>
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              ${selected.map(c => `<th>${c.name}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody>
+    `;
+
+    // Category earnings rows
+    for (const cat of categories) {
+      const values = selected.map(c => c.breakdown[cat]?.annualValue || 0);
+      const maxVal = Math.max(...values);
+
+      html += `<tr class="category-row">
+        <td>${categoryIcons[cat]} ${categoryLabels[cat]}</td>
+        ${values.map(v => {
+          const isWinner = v === maxVal && maxVal > 0;
+          return `<td class="${isWinner ? 'winner-cell' : ''}">${formatCurrency(v)}</td>`;
+        }).join('')}
+      </tr>`;
+    }
+
+    // Annual fee row
+    html += `<tr>
+      <td><strong>Annual Fee</strong></td>
+      ${selected.map(c => `<td class="negative" style="color:var(--danger);">-${formatCurrency(c.annualFee)}</td>`).join('')}
+    </tr>`;
+
+    // Total row
+    html += `<tr class="total-row">
+      <td><strong>Net Annual Value</strong></td>
+      ${selected.map(c => `<td style="color:var(--success);font-size:1.05rem;">${formatCurrency(c.netAnnual)}</td>`).join('')}
+    </tr>`;
+
+    // Perks row
+    html += `<tr>
+      <td><strong>Key Perks</strong></td>
+      ${selected.map(c => `<td><ul style="padding-left:16px;margin:0;font-size:0.8rem;">${c.perks.map(p => `<li>${p}</li>`).join('')}</ul></td>`).join('')}
+    </tr>`;
+
+    html += '</tbody></table></div>';
+
+    section.innerHTML = html;
+  }
+
+  function renderCryptoCorner(allResults) {
+    const section = document.getElementById('crypto-corner');
+    if (!section) return;
+
+    if (!showCrypto) {
+      section.classList.add('hidden');
+      return;
+    }
+
+    section.classList.remove('hidden');
+
+    const coinbaseCard = allResults.find(c => c.id === 'coinbase-card');
+    const coinbaseOne = allResults.find(c => c.id === 'coinbase-one-credit');
+    const bestNonCrypto = allResults.find(c => !c.isCrypto);
+
+    const totalMonthlySpend = Object.values(currentSpending).reduce((s, v) => s + v, 0);
+    const coinbaseAnnual = coinbaseCard ? coinbaseCard.grossAnnual : 0;
+
+    // Crypto projections
+    const projections = [
+      { label: 'Current Value', value: coinbaseAnnual, growth: 0 },
+      { label: '+10% growth (1yr)', value: coinbaseAnnual * 1.10, growth: 10 },
+      { label: '+25% growth (1yr)', value: coinbaseAnnual * 1.25, growth: 25 },
+      { label: '+50% growth (1yr)', value: coinbaseAnnual * 1.50, growth: 50 },
+      { label: '-20% drop (1yr)', value: coinbaseAnnual * 0.80, growth: -20 }
+    ];
+
+    // Estimate BTC earned (at ~$85,000/BTC)
+    const btcPrice = 85000;
+    const btcEarned = coinbaseAnnual / btcPrice;
+
+    html = `
+      <div class="crypto-corner-header">
+        <span style="font-size:1.5rem;">₿</span>
+        <h3>Crypto Rewards Corner</h3>
+      </div>
+
+      <div class="crypto-corner-grid">
+        <div class="crypto-stat-card">
+          <div class="crypto-stat-label">Annual Crypto Rewards</div>
+          <div class="crypto-stat-value">${formatCurrency(coinbaseAnnual)}</div>
+        </div>
+        <div class="crypto-stat-card">
+          <div class="crypto-stat-label">Estimated BTC Earned</div>
+          <div class="crypto-stat-value">₿${btcEarned.toFixed(6)}</div>
+        </div>
+        <div class="crypto-stat-card">
+          <div class="crypto-stat-label">Earn Rate</div>
+          <div class="crypto-stat-value">Up to 4%</div>
+        </div>
+        <div class="crypto-stat-card">
+          <div class="crypto-stat-label">Card Type</div>
+          <div class="crypto-stat-value" style="font-size:1rem;">Visa Debit</div>
+        </div>
+      </div>
+
+      ${bestNonCrypto ? `
+      <div style="margin-top:16px;background:white;border-radius:var(--radius-sm);padding:14px 16px;">
+        <strong style="font-size:0.85rem;">💡 Credit vs Crypto Comparison</strong>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin:8px 0 0;">
+          Your best credit card (<strong>${bestNonCrypto.name}</strong>) earns you <strong>${formatCurrency(bestNonCrypto.netAnnual)}/year</strong> in rewards.
+          If your Coinbase rewards grow <strong>10%/year</strong>, they'd be worth <strong>${formatCurrency(coinbaseAnnual * 1.10)}</strong> — 
+          ${coinbaseAnnual * 1.10 > bestNonCrypto.netAnnual ? 'outperforming your best credit card!' : 'still below your best credit card.'}
+        </p>
+      </div>` : ''}
+
+      <div class="crypto-projection">
+        <h4>📈 Value Projection (1 Year)</h4>
+        ${projections.map(p => `
+          <div class="projection-row">
+            <span>${p.label}</span>
+            <span style="font-weight:${p.growth !== 0 ? '700' : '500'};color:${p.growth > 0 ? 'var(--success)' : p.growth < 0 ? 'var(--danger)' : 'var(--text)'};">${formatCurrency(p.value)}</span>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="crypto-volatility-note">
+        <strong>⚠️ Crypto rewards are volatile</strong>
+        Your ${formatCurrency(coinbaseAnnual)} in Bitcoin today could be worth significantly more or less tomorrow. 
+        The Coinbase Card is a <strong>debit card</strong> (not credit) — you spend from your existing crypto balance. 
+        Spending crypto may be a taxable event. Consult a tax professional.
+      </div>
+
+      ${coinbaseOne ? `
+      <div style="margin-top:16px;background:white;border-radius:var(--radius-sm);padding:14px 16px;">
+        <strong style="font-size:0.85rem;">Coinbase One Credit Card</strong>
+        <p style="font-size:0.85rem;color:var(--text-secondary);margin:8px 0 0;">
+          Earns <strong>4% Bitcoin back</strong> on all purchases with a Coinbase One subscription (~$30/mo).
+          Net annual value: <strong style="color:${coinbaseOne.netAnnual >= 0 ? 'var(--success)' : 'var(--danger)'};">${formatCurrency(coinbaseOne.netAnnual)}</strong>
+          ${coinbaseOne.netAnnual >= 0 ? '— worth it if you value Bitcoin rewards!' : '— the subscription cost outweighs rewards at your current spending.'}
+        </p>
+      </div>` : ''}
+    `;
+
+    section.innerHTML = html;
+  }
+
+  // ===================== SPENDING INPUTS =====================
+
+  function initSpendingInputs() {
+    const grid = document.getElementById('spending-grid');
+    if (!grid) return;
+
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+
+    grid.innerHTML = categories.map(cat => `
+      <div class="spending-item">
+        <label>
+          <span><span class="category-icon">${categoryIcons[cat]}</span>${categoryLabels[cat]}</span>
+          <span class="value-display" id="display-${cat}">$${currentSpending[cat]}</span>
+        </label>
+        <input type="range" class="spending-slider" id="slider-${cat}" 
+          min="0" max="2000" step="10" value="${currentSpending[cat]}"
+          oninput="updateSpending('${cat}', this.value)">
+        <input type="number" class="spending-number-input" id="input-${cat}"
+          value="${currentSpending[cat]}" min="0" step="10"
+          oninput="updateSpending('${cat}', this.value)">
+      </div>
+    `).join('');
+
+    updateSpendingSummary();
+  }
+
+  function updateSpending(category, value) {
+    const num = parseInt(value) || 0;
+    currentSpending[category] = Math.max(0, num);
+
+    // Sync slider and input
+    const slider = document.getElementById(`slider-${category}`);
+    const input = document.getElementById(`input-${category}`);
+    const display = document.getElementById(`display-${category}`);
+
+    if (slider) slider.value = currentSpending[category];
+    if (input && document.activeElement !== input) input.value = currentSpending[category];
+    if (display) display.textContent = '$' + currentSpending[category].toLocaleString();
+
+    updateSpendingSummary();
+    renderResults();
+  }
+
+  function updateSpendingSummary() {
+    const total = Object.values(currentSpending).reduce((s, v) => s + v, 0);
+    const monthlyEl = document.getElementById('total-monthly');
+    const annualEl = document.getElementById('total-annual');
+
+    if (monthlyEl) monthlyEl.textContent = '$' + total.toLocaleString();
+    if (annualEl) annualEl.textContent = '$' + (total * 12).toLocaleString();
+  }
+
+  // ===================== EVENT HANDLERS =====================
+
+  window.updateSpending = updateSpending;
+
+  window.toggleCompare = function(checkbox) {
+    const cardId = checkbox.dataset.cardId;
+    if (checkbox.checked) {
+      if (compareSelected.size >= 3) {
+        checkbox.checked = false;
+        alert('You can compare up to 3 cards at a time.');
+        return;
+      }
+      compareSelected.add(cardId);
+    } else {
+      compareSelected.delete(cardId);
+    }
+    renderResults();
+  };
+
+  window.clearCompare = function() {
+    compareSelected.clear();
+    renderResults();
+  };
+
+  window.setFilter = function(type) {
+    activeFilter = type;
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === type);
+    });
+    renderResults();
+  };
+
+  window.toggleCrypto = function(checkbox) {
+    showCrypto = checkbox.checked;
+    renderResults();
+  };
+
+  // ===================== INIT =====================
+
+  function init() {
+    initSpendingInputs();
+    renderResults();
+
+    // Animate numbers on load
+    setTimeout(() => {
+      document.querySelectorAll('.result-card').forEach((card, i) => {
+        card.style.animationDelay = `${i * 0.05}s`;
+      });
+    }, 100);
+  }
+
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
