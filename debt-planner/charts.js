@@ -159,6 +159,7 @@ function renderMilestoneChart() {
   if (!container) return;
 
   const result = results[currentChartStrategy];
+  console.log('Milestone render attempt:', { result: !!result, months: result?.months?.length, debts: debts.length });
   if (!result || result.months.length === 0) {
     container.innerHTML = '<p style="color:var(--text-secondary);text-align:center;padding:20px;">No data to display.</p>';
     return;
