@@ -15,8 +15,9 @@ const DEBT_COLORS = ['#2563eb', '#7c3aed', '#059669', '#d97706', '#dc2626', '#08
 // DEBT MANAGEMENT
 // ========================
 function addDebt(name, balance, apr, minPayment) {
+  const nextId = debts.length > 0 ? Math.max(...debts.map(d => d.id)) + 1 : 1;
   debts.push({
-    id: Date.now() + Math.random(),
+    id: nextId,
     name: name || `Debt ${debts.length + 1}`,
     balance: parseFloat(balance) || 0,
     apr: parseFloat(apr) || 0,
@@ -587,6 +588,11 @@ function init() {
     slider.value = input.value;
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => updateExtraPayment(input.value), 100);
+  });
+
+  // Bind add debt button
+  document.getElementById('add-debt-btn').addEventListener('click', () => {
+    addDebt('', 0, 0, 0);
   });
 
   // Initial calculation
