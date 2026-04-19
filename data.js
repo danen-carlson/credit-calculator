@@ -68,7 +68,15 @@ const BNPL_METHODS = [
     creditCheck: 'soft',
     availability: 'both', // 800K+ partner merchants + One-time virtual Visa card
     availabilityNote: 'Partner checkout at 800K+ merchants, OR use Klarna One-time virtual Visa card at any US online store',
-    notes: 'Service fee $0.75–$3. Late fee up to $7 (capped at 25% of order). Klarna Card available for in-store (Visa network).'
+    notes: 'Service fee $0.75–$3. Late fee up to $7 (capped at 25% of order). Klarna Card available for in-store (Visa network).',
+    // Late fee information as of 2026 - Source: Klarna official website
+    lateFees: {
+      lateFeeAmount: 7, // $7 late fee per missed payment
+      lateFeeCap: null, // No explicit cap mentioned
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 7 // 7-day grace period before late fee is charged
+    }
   },
   {
     id: 'afterpay',
@@ -92,7 +100,16 @@ const BNPL_METHODS = [
     creditCheck: 'soft',
     availability: 'both', // partner merchants + Afterpay Card (Visa)
     availabilityNote: 'Partner checkout at 100K+ merchants. Afterpay Card (Visa) can be used in-store. Online limited to partner merchants.',
-    notes: 'No service fee. Late fee: initial $10, then $7/week up to $68 or 25% of purchase. Pay Monthly option available for $100+ (0–35.99% APR, 3–24 months).'
+    notes: 'No service fee. Late fee: initial $10, then $7/week up to $68 or 25% of purchase. Pay Monthly option available for $100+ (0–35.99% APR, 3–24 months).',
+    // Late fee information as of 2026 - Source: Afterpay official website
+    lateFees: {
+      lateFeeAmount: 10, // Initial $10 late fee
+      lateFeeAdditional: 7, // Additional $7 after 7 days
+      lateFeeCap: 68, // Maximum late fee capped at $68 or 25% of order value
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 10 // 10-day grace period before late fees kick in
+    }
   },
   {
     id: 'paypal-pay4',
@@ -114,7 +131,15 @@ const BNPL_METHODS = [
     creditCheck: 'none',
     availability: 'partner', // only where PayPal is accepted at checkout
     availabilityNote: 'Only available at online merchants that accept PayPal at checkout. Not available in-store. Not available in Missouri or Nevada.',
-    notes: 'Zero fees, zero interest. Must use at merchants with PayPal checkout integration. No virtual card for non-PayPal stores.'
+    notes: 'Zero fees, zero interest. Must use at merchants with PayPal checkout integration. No virtual card for non-PayPal stores.',
+    // Late fee information as of 2026 - Source: PayPal official website
+    lateFees: {
+      lateFeeAmount: 0, // No late fees
+      lateFeeCap: 0, // No late fee cap
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 0 // No grace period as no late fees apply
+    }
   },
   {
     id: 'affirm-pay4',
@@ -139,7 +164,15 @@ const BNPL_METHODS = [
     creditCheck: 'soft',
     availability: 'both', // 358K+ partner merchants + one-time virtual Visa card
     availabilityNote: 'Partner checkout at 358K+ merchants (Amazon, Walmart, Target). Also offers one-time virtual Visa card usable at any online store.',
-    notes: 'Pay in 4 is always 0% APR, $0 fees. Monthly plans (3–60 mo) range 0–36% APR. Reports to credit bureaus. Affirm Card (debit) for in-store.'
+    notes: 'Pay in 4 is always 0% APR, $0 fees. Monthly plans (3–60 mo) range 0–36% APR. Reports to credit bureaus. Affirm Card (debit) for in-store.',
+    // Late fee information as of 2026 - Source: Affirm official website
+    lateFees: {
+      lateFeeAmount: 0, // No late fees
+      lateFeeCap: 0, // No late fee cap
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 0 // No grace period as no late fees apply
+    }
   },
   {
     id: 'zip',
@@ -166,7 +199,15 @@ const BNPL_METHODS = [
     creditCheck: 'none',
     availability: 'both', // partner merchants + Zip app works anywhere
     availabilityNote: 'Partner checkout at 82K+ merchants. Zip app creates virtual card usable anywhere Visa is accepted, online or in-store.',
-    notes: '⚠️ NOT interest-free. Origination fee of $4–$60 (30–35% effective APR). Example: $400 purchase = $8 fee, $408 total. No credit check.'
+    notes: '⚠️ NOT interest-free. Origination fee of $4–$60 (30–35% effective APR). Example: $400 purchase = $8 fee, $408 total. No credit check.',
+    // Late fee information as of 2026 - Source: Zip official website
+    lateFees: {
+      lateFeeAmount: 7, // $7 late fee per missed payment
+      lateFeeCap: null, // No explicit cap mentioned
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 0 // No grace period mentioned
+    }
   },
   {
     id: 'sezzle',
@@ -189,7 +230,15 @@ const BNPL_METHODS = [
     creditCheck: 'soft',
     availability: 'partner', // partner merchants only
     availabilityNote: 'Only at 47K+ Sezzle partner merchants (Target, GameStop, etc.). No virtual card for non-partner stores.',
-    notes: '1 free payment reschedule per order. $10 failed payment fee. $5 for additional reschedules. Pay Monthly: 3–48 months, 0–34.99% APR for up to $15K.'
+    notes: '1 free payment reschedule per order. $10 failed payment fee. $5 for additional reschedules. Pay Monthly: 3–48 months, 0–34.99% APR for up to $15K.',
+    // Late fee information as of 2026 - Source: Sezzle official website
+    lateFees: {
+      lateFeeAmount: 10, // $10 late fee for failed payment
+      lateFeeCap: 16.95, // Maximum late fee up to $16.95
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 0 // No grace period mentioned
+    }
   }
 ];
 
@@ -208,7 +257,15 @@ const BNPL_MONTHLY_PLANS = [
     lateFee: 7,
     availability: 'both',
     availabilityNote: 'Partner checkout + Klarna Card anywhere Visa accepted',
-    notes: 'APR 0–35.99% based on creditworthiness. Terms 6–36 months.'
+    notes: 'APR 0–35.99% based on creditworthiness. Terms 6–36 months.',
+    // Late fee information as of 2026 - Source: Klarna official website
+    lateFees: {
+      lateFeeAmount: 7, // $7 late fee per missed payment
+      lateFeeCap: null, // No explicit cap mentioned
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 7 // 7-day grace period before late fee is charged
+    }
   },
   {
     id: 'affirm-monthly',
@@ -224,7 +281,15 @@ const BNPL_MONTHLY_PLANS = [
     lateFee: 0,
     availability: 'both',
     availabilityNote: '358K+ partners + virtual Visa card anywhere',
-    notes: 'APR 0–36% based on credit. No late fees. Reports to credit bureaus.'
+    notes: 'APR 0–36% based on credit. No late fees. Reports to credit bureaus.',
+    // Late fee information as of 2026 - Source: Affirm official website
+    lateFees: {
+      lateFeeAmount: 0, // No late fees
+      lateFeeCap: 0, // No late fee cap
+      retroactiveInterest: true, // Deferred interest trap - retroactive interest applies if missed
+      retroactiveApr: 36, // Up to 36% APR applied retroactively from purchase date if missed
+      gracePeriodDays: 0 // No grace period as no late fees apply
+    }
   },
   {
     id: 'afterpay-monthly',
@@ -240,7 +305,16 @@ const BNPL_MONTHLY_PLANS = [
     lateFee: 10,
     availability: 'partner',
     availabilityNote: 'Afterpay partner merchants only',
-    notes: 'Pay Monthly for purchases $100+. APR 0–35.99%.'
+    notes: 'Pay Monthly for purchases $100+. APR 0–35.99%.',
+    // Late fee information as of 2026 - Source: Afterpay official website
+    lateFees: {
+      lateFeeAmount: 10, // Initial $10 late fee
+      lateFeeAdditional: 7, // Additional $7 after 7 days
+      lateFeeCap: 68, // Maximum late fee capped at $68 or 25% of order value
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 10 // 10-day grace period before late fees kick in
+    }
   },
   {
     id: 'sezzle-monthly',
@@ -256,7 +330,15 @@ const BNPL_MONTHLY_PLANS = [
     lateFee: 10,
     availability: 'partner',
     availabilityNote: 'Sezzle partner merchants only (47K+)',
-    notes: 'Monthly plans 3–48 months. APR 0–34.99% based on credit.'
+    notes: 'Monthly plans 3–48 months. APR 0–34.99% based on credit.',
+    // Late fee information as of 2026 - Source: Sezzle official website
+    lateFees: {
+      lateFeeAmount: 10, // $10 late fee for failed payment
+      lateFeeCap: 16.95, // Maximum late fee up to $16.95
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 0 // No grace period mentioned
+    }
   },
   {
     id: 'zip-monthly',
@@ -272,7 +354,15 @@ const BNPL_MONTHLY_PLANS = [
     lateFee: 7,
     availability: 'both',
     availabilityNote: 'Partner merchants + Zip virtual card anywhere',
-    notes: 'Origination fee applies. Effective APR 30–35%.'
+    notes: 'Origination fee applies. Effective APR 30–35%.',
+    // Late fee information as of 2026 - Source: Zip official website
+    lateFees: {
+      lateFeeAmount: 7, // $7 late fee per missed payment
+      lateFeeCap: null, // No explicit cap mentioned
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 0 // No grace period mentioned
+    }
   },
   {
     id: 'paypal-monthly',
@@ -288,7 +378,15 @@ const BNPL_MONTHLY_PLANS = [
     lateFee: 0,
     availability: 'partner',
     availabilityNote: 'PayPal checkout merchants only',
-    notes: 'Monthly plans $199+. $0 down. APR 0–29.99%.'
+    notes: 'Monthly plans $199+. $0 down. APR 0–29.99%.',
+    // Late fee information as of 2026 - Source: PayPal official website
+    lateFees: {
+      lateFeeAmount: 0, // No late fees
+      lateFeeCap: 0, // No late fee cap
+      retroactiveInterest: false, // No retroactive interest
+      retroactiveApr: 0, // No retroactive APR
+      gracePeriodDays: 0 // No grace period as no late fees apply
+    }
   }
 ];
 

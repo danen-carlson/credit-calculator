@@ -9,6 +9,27 @@ let results = { minimum: null, snowball: null, avalanche: null };
 let currentChartStrategy = 'snowball';
 let scheduleOpen = false;
 let consolidationResults = null;
+let strategyComparisonChart = null;
+
+// Emit a debts-changed event so the share URL module can re-serialize.
+function notifyDebtsChanged() {
+  window.debts = debts;
+  try { document.dispatchEvent(new Event('debts-changed')); } catch (_) { /* older browsers */ }
+}
+
+// Expose a setter for the share hydrator to replace the debt list
+window.setDebts = function (next) {
+  if (!Array.isArray(next)) return;
+  debts = next.map((d, i) => ({
+    id: d.id ?? i + 1,
+    name: d.name || `Debt ${i + 1}`,
+    balance: parseFloat(d.balance) || 0,
+    apr: parseFloat(d.apr) || 0,
+    minPayment: parseFloat(d.minPayment) || 0
+  }));
+  window.debts = debts;
+};
+window.debts = debts;
 
 const DEBT_COLORS = ['#2563eb', '#7c3aed', '#059669', '#d97706', '#dc2626', '#0891b2', '#4f46e5', '#c026d3'];
 const BALANCE_TRANSFER_CARDS = [
@@ -62,6 +83,7 @@ function addDebt(name, balance, apr, minPayment) {
   updateSummary();
   updateConsolidationOptions();
   recalculate();
+  notifyDebtsChanged();
 }
 
 function removeDebt(id) {
@@ -71,6 +93,7 @@ function removeDebt(id) {
   updateConsolidationOptions();
   resetConsolidation();
   recalculate();
+  notifyDebtsChanged();
 }
 
 function updateDebt(id, field, value) {
@@ -85,6 +108,7 @@ function updateDebt(id, field, value) {
   updateConsolidationOptions();
   resetConsolidation();
   recalculate();
+  notifyDebtsChanged();
 }
 
 function renderDebtCards() {
@@ -936,3 +960,8 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+
+// Expose helpers for the share-state module to call after URL hydration.
+window.renderDebtCards = renderDebtCards;
+window.updateSummary = updateSummary;
+window.recalculate = recalculate;

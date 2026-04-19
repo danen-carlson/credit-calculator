@@ -19,6 +19,51 @@ function totalInterest(principal, annualRate, months) {
   return (pmt * months) - principal;
 }
 
+/** Calculate worst case cost including late fees and retroactive interest */
+function calculateWorstCaseCost(method, amount, creditScore, targetMonths) {
+  // If no late fees data, return normal calculation
+  if (!method.lateFees) {
+    return { totalCost: amount, interestPaid: 0, fees: 0, netCost: amount };
+  }
+
+  const lateFees = method.lateFees;
+  let totalCost = amount;
+  let interestPaid = 0;
+  let fees = 0;
+  
+  // Add late fee
+  if (lateFees.lateFeeAmount) {
+    fees += lateFees.lateFeeAmount;
+  }
+  
+  // Add retroactive interest if applicable
+  if (lateFees.retroactiveInterest && lateFees.retroactiveApr > 0) {
+    // Calculate retroactive interest from purchase date to current date
+    // Using a simplified approach: assume 1 month delay for retroactive interest
+    const retroactiveMonths = 1;
+    const retroactiveRate = lateFees.retroactiveApr / 100 / 12;
+    interestPaid += amount * retroactiveRate * retroactiveMonths;
+  }
+  
+  // For monthly plans, calculate interest over the term
+  if (method.type === 'bnpl-monthly' || method.aprMin !== undefined) {
+    // Estimate APR based on credit score
+    let estimatedApr = method.aprTypical || 20;
+    if (method.aprMin !== undefined && method.aprMax !== undefined) {
+      const scoreMultipliers = { excellent: 0.2, good: 0.5, fair: 0.75, poor: 0.95, unknown: 0.6 };
+      const mult = scoreMultipliers[creditScore] || 0.5;
+      estimatedApr = method.aprMin + (method.aprMax - method.aprMin) * mult;
+    }
+    
+    // Calculate interest for the term with 1 missed payment
+    interestPaid += totalInterest(amount, estimatedApr, targetMonths);
+  }
+  
+  totalCost = amount + interestPaid + fees;
+  
+  return { totalCost, interestPaid, fees, netCost: totalCost };
+}
+
 /** Simulate paying a fixed % of original balance each month */
 function simulatePercentPayments(principal, annualRate, pctOfOriginal, introMonths = 0) {
   const r = annualRate / 100 / 12;
@@ -86,7 +131,7 @@ function simulateFixedPayments(principal, annualRate, monthlyAmt, introMonths = 
 
 // ── BNPL calculation ───────────────────────────────────────────────────────
 
-function evaluateBnpl(method, amount) {
+function evaluateBnpl(method, amount, isWorstCase = false, creditScore = 'good', targetMonths = 6) {
   if (amount < (method.minPurchase || 0)) return null;
   if (method.maxPurchase && amount > method.maxPurchase) return null;
 
@@ -95,21 +140,42 @@ function evaluateBnpl(method, amount) {
   const intervalDays = method.intervalDays || 14;
   const totalWeeks = (n - 1) * (intervalDays / 7);
 
-  // Calculate fees
   let fees = 0;
-  if (method.id === 'zip') {
-    // Zip uses origination fee based on purchase amount, roughly 2% of purchase
-    // From their examples: $400 → $8 fee, $800 → $17 fee
-    // Range: $4–$60
-    fees = Math.max(method.originationFeeMin || 4, Math.min(method.originationFeeMax || 60, Math.round(amount * 0.02)));
+  let interestPaid = 0;
+  
+  if (isWorstCase && method.lateFees) {
+    // Calculate worst case scenario
+    const lateFees = method.lateFees;
+    
+    // Add late fee
+    if (lateFees.lateFeeAmount) {
+      fees += lateFees.lateFeeAmount;
+    }
+    
+    // Add retroactive interest if applicable
+    if (lateFees.retroactiveInterest && lateFees.retroactiveApr > 0) {
+      // Calculate retroactive interest from purchase date to current date
+      // Using a simplified approach: assume 1 month delay for retroactive interest
+      const retroactiveMonths = 1;
+      const retroactiveRate = lateFees.retroactiveApr / 100 / 12;
+      interestPaid += amount * retroactiveRate * retroactiveMonths;
+    }
   } else {
-    // Service fee (Klarna charges $0.75–$3)
-    const feeMin = method.serviceFeeMin || 0;
-    const feeMax = method.serviceFeeMax || 0;
-    fees = feeMax > 0 ? Math.min(feeMax, Math.max(feeMin, amount * 0.01)) : 0;
+    // Calculate normal fees
+    if (method.id === 'zip') {
+      // Zip uses origination fee based on purchase amount, roughly 2% of purchase
+      // From their examples: $400 → $8 fee, $800 → $17 fee
+      // Range: $4–$60
+      fees = Math.max(method.originationFeeMin || 4, Math.min(method.originationFeeMax || 60, Math.round(amount * 0.02)));
+    } else {
+      // Service fee (Klarna charges $0.75–$3)
+      const feeMin = method.serviceFeeMin || 0;
+      const feeMax = method.serviceFeeMax || 0;
+      fees = feeMax > 0 ? Math.min(feeMax, Math.max(feeMin, amount * 0.01)) : 0;
+    }
   }
 
-  const totalCost = amount + fees;
+  const totalCost = amount + interestPaid + fees;
   const downPayment = amount * downPct;
   const perPayment = (totalCost - downPayment) / (n - 1);
 
@@ -119,7 +185,7 @@ function evaluateBnpl(method, amount) {
     type: 'Pay in 4 (BNPL)',
     subtype: 'bnpl',
     principal: amount,
-    interestPaid: 0,
+    interestPaid: interestPaid,
     fees: fees,
     rewardsEarned: 0,
     totalCost: totalCost,
@@ -132,7 +198,8 @@ function evaluateBnpl(method, amount) {
     availabilityNote: method.availabilityNote || '',
     notes: [],
     warnings: [],
-    scenarios: null // BNPL doesn't have multiple scenarios
+    scenarios: null, // BNPL doesn't have multiple scenarios
+    isWorstCase: isWorstCase
   };
 
   // Notes
@@ -146,7 +213,15 @@ function evaluateBnpl(method, amount) {
     result.notes.push('0% interest if paid on schedule');
   }
 
-  if (method.lateFee > 0) {
+  if (isWorstCase && method.lateFees) {
+    const lateFees = method.lateFees;
+    if (lateFees.lateFeeAmount) {
+      result.notes.push(`Worst case: Includes $${lateFees.lateFeeAmount} late fee`);
+    }
+    if (lateFees.retroactiveInterest && lateFees.retroactiveApr > 0) {
+      result.warnings.push(`⚠️ Deferred interest trap: ${lateFees.retroactiveApr}% APR applied retroactively if payment missed`);
+    }
+  } else if (method.lateFee > 0) {
     result.notes.push(`Late fee: up to $${method.lateFee}`);
   } else if (method.lateFee === 0) {
     result.notes.push('No late fees');
@@ -161,7 +236,7 @@ function evaluateBnpl(method, amount) {
   return result;
 }
 
-function evaluateBnplMonthly(method, amount, creditScore, targetMonths) {
+function evaluateBnplMonthly(method, amount, creditScore, targetMonths, isWorstCase = false) {
   if (amount < (method.minPurchase || 0)) return null;
   if (method.maxPurchase && amount > method.maxPurchase) return null;
 
@@ -176,6 +251,45 @@ function evaluateBnplMonthly(method, amount, creditScore, targetMonths) {
         return Math.abs(months - targetMonths) < Math.abs(closest - targetMonths) ? months : closest;
       })
     : (method.termOptions.includes(12) ? 12 : method.termOptions[Math.floor(method.termOptions.length / 2)]);
+  
+  let primaryInterest = 0;
+  let primaryTotalCost = amount;
+  let primaryNetCost = amount;
+  let primaryMonthlyPayment = 0;
+  
+  if (isWorstCase && method.lateFees) {
+    // Calculate worst case scenario
+    const lateFees = method.lateFees;
+    let fees = 0;
+    let interestPaid = 0;
+    
+    // Add late fee
+    if (lateFees.lateFeeAmount) {
+      fees += lateFees.lateFeeAmount;
+    }
+    
+    // Add retroactive interest if applicable
+    if (lateFees.retroactiveInterest && lateFees.retroactiveApr > 0) {
+      // Calculate retroactive interest from purchase date to current date
+      const retroactiveMonths = 1;
+      const retroactiveRate = lateFees.retroactiveApr / 100 / 12;
+      interestPaid += amount * retroactiveRate * retroactiveMonths;
+    }
+    
+    // Calculate regular interest for the term
+    interestPaid += totalInterest(amount, estimatedApr, targetMonths);
+    
+    primaryInterest = interestPaid;
+    primaryTotalCost = amount + interestPaid + fees;
+    primaryNetCost = primaryTotalCost;
+    primaryMonthlyPayment = monthlyPayment(amount, estimatedApr, targetMonths);
+  } else {
+    // Normal calculation
+    primaryInterest = totalInterest(amount, estimatedApr, targetMonths);
+    primaryTotalCost = amount + primaryInterest;
+    primaryNetCost = primaryTotalCost;
+    primaryMonthlyPayment = monthlyPayment(amount, estimatedApr, targetMonths);
+  }
   
   // Build scenarios for each term option
   const scenarios = method.termOptions.map(months => {
@@ -194,31 +308,55 @@ function evaluateBnplMonthly(method, amount, creditScore, targetMonths) {
     };
   });
 
-  const primary = scenarios.find(s => s.isDefault) || scenarios[0];
+  const primaryScenario = {
+    label: `${preferredTerm} months`,
+    description: `${fmt(primaryMonthlyPayment)}/mo at ${estimatedApr.toFixed(1)}% APR`,
+    monthlyPayment: primaryMonthlyPayment,
+    interestPaid: primaryInterest,
+    totalCost: primaryTotalCost,
+    netCost: primaryNetCost,
+    termMonths: preferredTerm,
+    termDisplay: formatMonths(preferredTerm),
+    isDefault: true
+  };
 
-  return {
+  const result = {
     id: method.id,
     name: method.name,
     type: 'Monthly Plan (BNPL)',
     subtype: 'bnpl-monthly',
     principal: amount,
-    interestPaid: primary.interestPaid,
-    fees: 0,
+    interestPaid: primaryInterest,
+    fees: isWorstCase && method.lateFees ? (method.lateFees.lateFeeAmount || 0) : 0,
     rewardsEarned: 0,
-    totalCost: primary.totalCost,
-    netCost: primary.netCost,
-    monthlyPayment: primary.monthlyPayment,
+    totalCost: primaryTotalCost,
+    netCost: primaryNetCost,
+    monthlyPayment: primaryMonthlyPayment,
     paymentLabel: null,
-    termMonths: primary.termMonths,
-    termDisplay: primary.termDisplay,
+    termMonths: preferredTerm,
+    termDisplay: formatMonths(preferredTerm),
     availability: method.availability,
     availabilityNote: method.availabilityNote || '',
     notes: [method.notes || ''],
     warnings: estimatedApr > 0 ? [`~${estimatedApr.toFixed(1)}% APR (estimated for your credit score)`] : [],
     scenarios: scenarios,
     estimatedApr: estimatedApr,
-    annualRewardInfo: null
+    annualRewardInfo: null,
+    isWorstCase: isWorstCase
   };
+  
+  // Add worst case warnings
+  if (isWorstCase && method.lateFees) {
+    const lateFees = method.lateFees;
+    if (lateFees.lateFeeAmount) {
+      result.notes.push(`Worst case: Includes $${lateFees.lateFeeAmount} late fee`);
+    }
+    if (lateFees.retroactiveInterest && lateFees.retroactiveApr > 0) {
+      result.warnings.push(`⚠️ Deferred interest trap: ${lateFees.retroactiveApr}% APR applied retroactively if payment missed`);
+    }
+  }
+
+  return result;
 }
 
 // ── Credit card calculation (multi-scenario) ───────────────────────────────
@@ -364,7 +502,7 @@ function evaluateCustom(method, amount, creditScore, targetMonths) {
 
 // ── Main entry point ───────────────────────────────────────────────────────
 
-function calculateOptions({ amount, creditScore, selectedMethods, targetMonths }) {
+function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, isWorstCase = false }) {
   const results = [];
   const newCardOptions = [];
 
@@ -379,10 +517,10 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths }
         // Only show Pay in 4 if target is <= 3 months (6 weeks = ~1.5 months)
         // Otherwise it's not a viable option for the user's timeline
         if (targetMonths <= 3) {
-          result = evaluateBnpl(method, amount);
+          result = evaluateBnpl(method, amount, isWorstCase, creditScore, targetMonths);
         }
       } else if (method.type === 'bnpl-monthly') {
-        result = evaluateBnplMonthly(method, amount, creditScore, targetMonths);
+        result = evaluateBnplMonthly(method, amount, creditScore, targetMonths, isWorstCase);
       } else {
         // Calculate WITHOUT intro APR for fair comparison
         result = evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths);

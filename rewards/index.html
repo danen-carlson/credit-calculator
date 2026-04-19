@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="rewards.css">
+  <link rel="stylesheet" href="../shared/share.css">
 
   <!-- FAQ JSON-LD Schema -->
   <script type="application/ld+json">
@@ -60,6 +61,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "For most people, the best everyday card depends on their spending patterns. Heavy grocery spenders benefit from the Amex Blue Cash Preferred (6% at supermarkets). Those who want simplicity do well with the Citi Double Cash or Wells Fargo Active Cash (2% on everything). Travelers maximize value with the Chase Sapphire Preferred. Use our calculator to find your personal best card based on your actual spending."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between First Year and Ongoing value?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First Year value includes signup bonuses which can significantly boost a card's value but are only available in the first year. Ongoing value excludes signup bonuses and represents the card's long-term earning potential. Some cards like the Discover it Cash Back offer special first-year benefits (like Cashback Match) that double your earnings. Use the toggle to compare cards based on your priorities: short-term gain (First Year) or long-term value (Ongoing)."
         }
       }
     ]
@@ -129,6 +138,20 @@
         </div>
         <p class="step-desc">Ranked by net annual rewards value (earnings minus annual fee).</p>
 
+        <!-- Year Toggle -->
+        <div class="year-toggle-container">
+          <fieldset class="year-toggle-fieldset" role="radiogroup" aria-label="Toggle between first year and ongoing value">
+            <legend class="year-toggle-legend">Calculation Period</legend>
+            <div class="year-toggle-group">
+              <input type="radio" id="first-year" name="year-toggle" value="first" checked onchange="setYearView('first')">
+              <label for="first-year" class="year-toggle-label">First Year</label>
+              
+              <input type="radio" id="ongoing" name="year-toggle" value="ongoing" onchange="setYearView('ongoing')">
+              <label for="ongoing" class="year-toggle-label">Ongoing</label>
+            </div>
+          </fieldset>
+        </div>
+
         <!-- Filter Bar -->
         <div class="filter-bar">
           <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All Cards</button>
@@ -145,6 +168,12 @@
 
         <div id="results-container" class="results-container">
           <!-- Populated by JS -->
+        </div>
+
+        <!-- Share / data stamp row -->
+        <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
+          <div id="share-mount"></div>
+          <div id="data-stamp-mount"></div>
         </div>
 
         <!-- Comparison Section -->
@@ -187,5 +216,30 @@
 
   <script src="cards-data.js"></script>
   <script src="rewards.js"></script>
+  <script src="../shared/share.js"></script>
+  <script>
+    // Wire share.js to the rewards calculator.
+    // Spending inputs are tracked dynamically by gathering all number inputs inside #spending-grid.
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.CreditStudShare) return;
+
+      // Collect all spending input ids inside the spending grid for automatic tracking
+      const spendingIds = Array.from(document.querySelectorAll('#spending-grid input[type="number"]'))
+        .map(el => el.id)
+        .filter(Boolean);
+
+      window.CreditStudShare.init({
+        pageKey: 'rewards',
+        simpleInputs: [
+          ...spendingIds,
+          'crypto-toggle',
+          'first-year',
+          'ongoing'
+        ],
+        shareButtonMount: '#share-mount',
+        stampMount: '#data-stamp-mount'
+      });
+    });
+  </script>
 </body>
 </html>
