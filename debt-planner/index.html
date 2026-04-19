@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="planner.css">
+  <link rel="stylesheet" href="../shared/share.css">
 
   <!-- FAQ JSON-LD Schema -->
   <script type="application/ld+json">
@@ -99,6 +100,12 @@
         </div>
 
         <button class="btn-add" id="add-debt-btn" style="margin-top:12px;">+ Add Another Debt</button>
+
+        <!-- Share / data stamp row -->
+        <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
+          <div id="share-mount"></div>
+          <div id="data-stamp-mount"></div>
+        </div>
 
         <!-- Total Debt Summary -->
         <div class="debt-summary" id="debt-summary">
@@ -234,7 +241,18 @@
           </div>
         </div>
 
-        <!-- Chart 2: Payoff Milestones -->
+        <!-- Chart 2: Strategy Comparison -->
+        <div class="chart-section">
+          <h3>⚖️ Strategy Comparison</h3>
+          <div class="chart-container">
+            <canvas id="strategy-comparison-chart" aria-label="Comparison of debt balance over time for snowball, avalanche, and custom strategies"></canvas>
+          </div>
+          <div id="strategy-comparison-table-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Chart 3: Payoff Milestones -->
         <div class="chart-section">
           <h3>🏁 Payoff Milestones</h3>
           <div id="milestone-timeline">
@@ -316,5 +334,50 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="planner.js"></script>
   <script src="charts.js"></script>
+  <script src="../shared/share.js"></script>
+  <script>
+    // Wire share.js to the debt planner.
+    // The debt list is dynamic so we serialize it as JSON via a customField.
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.CreditStudShare) return;
+
+      const config = {
+        pageKey: 'debt',
+        simpleInputs: ['extra-input', 'extra-slider'],
+        customFields: [
+          {
+            name: 'debts',
+            json: true,
+            get: () => (typeof window.debts !== 'undefined' ? window.debts : []),
+            set: (val) => {
+              if (!Array.isArray(val)) return;
+              if (typeof window.setDebts === 'function') {
+                window.setDebts(val);
+              } else if (typeof window.debts !== 'undefined') {
+                window.debts.length = 0;
+                val.forEach(d => window.debts.push(d));
+              }
+              if (typeof window.renderDebtCards === 'function') window.renderDebtCards();
+              if (typeof window.updateSummary === 'function') window.updateSummary();
+              if (typeof window.recalculate === 'function') window.recalculate();
+            }
+          }
+        ],
+        shareButtonMount: '#share-mount',
+        stampMount: '#data-stamp-mount',
+        onHydrate: () => {
+          if (typeof window.recalculate === 'function') window.recalculate();
+        }
+      };
+
+      window.CreditStudShare.init(config);
+
+      // Ask the planner to notify us when the dynamic debt list changes
+      window.__shareConfig = config;
+      document.addEventListener('debts-changed', () => {
+        window.CreditStudShare.notifyChange(config);
+      });
+    });
+  </script>
 </body>
 </html>

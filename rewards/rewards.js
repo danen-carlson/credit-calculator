@@ -48,47 +48,79 @@
   let showCrypto = false;
   let compareSelected = new Set();
   let activeFilter = 'all';
+  let yearView = 'first'; // 'first' or 'ongoing'
+  let previousRankings = {}; // Store previous rankings for comparison
 
   // ===================== CALCULATIONS =====================
 
-  function calculateCardRewards(card, spending) {
+  // Check if signup bonus requirements are met
+  function isSignupBonusEligible(card, spending) {
+    // If no signup bonus or no requirement, it's eligible
+    if (!card.signupBonus || !card.signupBonus.requirement) {
+      return { eligible: true };
+    }
+    
+    const req = card.signupBonus.requirement;
+    
+    // Parse requirement like "$4,000 spend in 3 months"
+    const match = req.match(/\$(\d+(?:,\d+)?)\s+spend\s+in\s+(\d+)\s+months?/i);
+    if (!match) {
+      return { eligible: true }; // If we can't parse, assume eligible
+    }
+    
+    const requiredAmount = parseInt(match[1].replace(/,/g, ''));
+    const requiredMonths = parseInt(match[2]);
+    
+    // Calculate projected spending over required months
+    const totalMonthly = Object.values(spending).reduce((sum, v) => sum + v, 0);
+    const projectedSpending = totalMonthly * requiredMonths;
+    
+    return { 
+      eligible: projectedSpending >= requiredAmount,
+      requiredAmount,
+      requiredMonths,
+      projectedSpending
+    };
+  }
+
+  function calculateCardRewards(card, spending, yearView = 'ongoing') {
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
     const breakdown = {};
     let totalAnnual = 0;
 
     // Special handling for Citi Custom Cash
     if (card.id === 'citi-custom-cash') {
-      return calculateCitiCustomCash(spending, card.pointValue);
+      return calculateCitiCustomCash(spending, card.pointValue, yearView);
     }
 
     // Special handling for US Bank Cash+
     if (card.id === 'us-bank-cash-plus') {
-      return calculateUSBCashPlus(spending, card.pointValue);
+      return calculateUSBCashPlus(spending, card.pointValue, yearView);
     }
 
     // Special handling for Chase Freedom Flex (rotating categories)
     if (card.id === 'chase-freedom-flex') {
-      return calculateChaseFreedomFlex(spending, card.pointValue);
+      return calculateChaseFreedomFlex(spending, card.pointValue, yearView);
     }
 
     // Special handling for Discover it Cash Back (rotating categories)
     if (card.id === 'discover-it-cash-back') {
-      return calculateDiscoverItCashBack(spending);
+      return calculateDiscoverItCashBack(spending, yearView);
     }
 
     // Special handling for Amex Gold (grocery cap)
     if (card.id === 'amex-gold') {
-      return calculateAmexGold(spending, card.pointValue);
+      return calculateAmexGold(spending, card.pointValue, yearView);
     }
 
     // Special handling for Amex Blue Cash Preferred (grocery cap)
     if (card.id === 'amex-blue-cash-preferred') {
-      return calculateAmexBCP(spending, card.pointValue);
+      return calculateAmexBCP(spending, card.pointValue, yearView);
     }
 
     // Special handling for Amex Blue Cash Everyday (grocery cap)
     if (card.id === 'amex-blue-cash-everyday') {
-      return calculateAmexBCE(spending, card.pointValue);
+      return calculateAmexBCE(spending, card.pointValue, yearView);
     }
 
     // Standard calculation for all other cards
@@ -118,15 +150,35 @@
       totalAnnual += annualValue;
     }
 
+    // Calculate net annual value
+    let netAnnual = totalAnnual - card.annualFee;
+    let grossAnnual = totalAnnual;
+    let signupBonusValue = 0;
+    let bonusNote = '';
+    
+    // Handle signup bonus for first year view
+    if (yearView === 'first' && card.signupBonus && card.signupBonus.value > 0) {
+      const eligibility = isSignupBonusEligible(card, spending);
+      if (eligibility.eligible) {
+        signupBonusValue = card.signupBonus.value;
+        netAnnual += signupBonusValue;
+        grossAnnual += signupBonusValue;
+      } else {
+        bonusNote = `Bonus not eligible: Need $${eligibility.requiredAmount.toLocaleString()} in ${eligibility.requiredMonths} months, projected $${eligibility.projectedSpending.toLocaleString()}`;
+      }
+    }
+
     return {
-      grossAnnual: totalAnnual,
+      grossAnnual,
       annualFee: card.annualFee,
-      netAnnual: totalAnnual - card.annualFee,
+      netAnnual,
+      signupBonusValue,
+      bonusNote,
       breakdown
     };
   }
 
-  function calculateCitiCustomCash(spending, pointValue) {
+  function calculateCitiCustomCash(spending, pointValue, yearView = 'ongoing') {
     const eligibleCategories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities'];
     const breakdown = {};
     let totalAnnual = 0;
@@ -161,16 +213,37 @@
       }
     }
 
+    // Calculate net annual value
+    let netAnnual = totalAnnual;
+    let grossAnnual = totalAnnual;
+    let signupBonusValue = 0;
+    let bonusNote = '';
+    
+    // Handle signup bonus for first year view
+    const card = cardsData.find(c => c.id === 'citi-custom-cash');
+    if (yearView === 'first' && card && card.signupBonus && card.signupBonus.value > 0) {
+      const eligibility = isSignupBonusEligible(card, spending);
+      if (eligibility.eligible) {
+        signupBonusValue = card.signupBonus.value;
+        netAnnual += signupBonusValue;
+        grossAnnual += signupBonusValue;
+      } else {
+        bonusNote = `Bonus not eligible: Need $${eligibility.requiredAmount.toLocaleString()} in ${eligibility.requiredMonths} months, projected $${eligibility.projectedSpending.toLocaleString()}`;
+      }
+    }
+
     return {
-      grossAnnual: totalAnnual,
+      grossAnnual,
       annualFee: 0,
-      netAnnual: totalAnnual,
+      netAnnual,
+      signupBonusValue,
+      bonusNote,
       breakdown,
       note: `Top category: ${categoryLabels[topCat]} ($${topSpend}/mo)`
     };
   }
 
-  function calculateUSBCashPlus(spending, pointValue) {
+  function calculateUSBCashPlus(spending, pointValue, yearView = 'ongoing') {
     const breakdown = {};
     let totalAnnual = 0;
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
@@ -186,10 +259,31 @@
       totalAnnual += annualValue;
     }
 
+    // Calculate net annual value
+    let netAnnual = totalAnnual;
+    let grossAnnual = totalAnnual;
+    let signupBonusValue = 0;
+    let bonusNote = '';
+    
+    // Handle signup bonus for first year view
+    const card = cardsData.find(c => c.id === 'us-bank-cash-plus');
+    if (yearView === 'first' && card && card.signupBonus && card.signupBonus.value > 0) {
+      const eligibility = isSignupBonusEligible(card, spending);
+      if (eligibility.eligible) {
+        signupBonusValue = card.signupBonus.value;
+        netAnnual += signupBonusValue;
+        grossAnnual += signupBonusValue;
+      } else {
+        bonusNote = `Bonus not eligible: Need $${eligibility.requiredAmount.toLocaleString()} in ${eligibility.requiredMonths} days, projected $${eligibility.projectedSpending.toLocaleString()}`;
+      }
+    }
+
     return {
-      grossAnnual: totalAnnual,
+      grossAnnual,
       annualFee: 0,
-      netAnnual: totalAnnual,
+      netAnnual,
+      signupBonusValue,
+      bonusNote,
       breakdown
     };
   }
@@ -208,7 +302,7 @@
     }
   };
 
-  function calculateChaseFreedomFlex(spending, pointValue) {
+  function calculateChaseFreedomFlex(spending, pointValue, yearView = 'ongoing') {
     const breakdown = {};
     let totalAnnual = 0;
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
@@ -231,15 +325,36 @@
       totalAnnual += annualValue;
     }
 
+    // Calculate net annual value
+    let netAnnual = totalAnnual;
+    let grossAnnual = totalAnnual;
+    let signupBonusValue = 0;
+    let bonusNote = '';
+    
+    // Handle signup bonus for first year view
+    const card = cardsData.find(c => c.id === 'chase-freedom-flex');
+    if (yearView === 'first' && card && card.signupBonus && card.signupBonus.value > 0) {
+      const eligibility = isSignupBonusEligible(card, spending);
+      if (eligibility.eligible) {
+        signupBonusValue = card.signupBonus.value;
+        netAnnual += signupBonusValue;
+        grossAnnual += signupBonusValue;
+      } else {
+        bonusNote = `Bonus not eligible: Need $${eligibility.requiredAmount.toLocaleString()} in ${eligibility.requiredMonths} months, projected $${eligibility.projectedSpending.toLocaleString()}`;
+      }
+    }
+
     return {
-      grossAnnual: totalAnnual,
+      grossAnnual,
       annualFee: 0,
-      netAnnual: totalAnnual,
+      netAnnual,
+      signupBonusValue,
+      bonusNote,
       breakdown
     };
   }
 
-  function calculateDiscoverItCashBack(spending) {
+  function calculateDiscoverItCashBack(spending, yearView = 'ongoing') {
     const breakdown = {};
     let totalAnnual = 0;
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
@@ -253,16 +368,38 @@
       totalAnnual += annualValue;
     }
 
+    // Calculate net annual value
+    let netAnnual = totalAnnual;
+    let grossAnnual = totalAnnual;
+    let signupBonusValue = 0;
+    let bonusNote = '';
+    let note = '';
+    
+    // Handle signup bonus for first year view
+    const card = cardsData.find(c => c.id === 'discover-it-cash-back');
+    if (yearView === 'first') {
+      // For Discover it, the "bonus" is the cashback match which doubles earnings
+      // This is handled differently - it's not a traditional signup bonus
+      note = 'First year: Cashback Match doubles earnings!';
+      // In first year, the value is doubled
+      netAnnual = totalAnnual * 2;
+      grossAnnual = totalAnnual * 2;
+    } else {
+      note = 'Second year+: Regular cashback earnings';
+    }
+
     return {
-      grossAnnual: totalAnnual,
+      grossAnnual,
       annualFee: 0,
-      netAnnual: totalAnnual,
+      netAnnual,
+      signupBonusValue,
+      bonusNote,
       breakdown,
-      note: 'First year: Cashback Match doubles earnings!'
+      note
     };
   }
 
-  function calculateAmexGold(spending, pointValue) {
+  function calculateAmexGold(spending, pointValue, yearView = 'ongoing') {
     const breakdown = {};
     let totalAnnual = 0;
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
@@ -291,16 +428,38 @@
       totalAnnual += annualValue;
     }
 
+    // Calculate net annual value
+    let netAnnual = totalAnnual - 250; // Subtract annual fee
+    let grossAnnual = totalAnnual;
+    let signupBonusValue = 0;
+    let bonusNote = '';
+    let note = 'Includes $240/yr in credits (Uber + Dining)';
+    
+    // Handle signup bonus for first year view
+    const card = cardsData.find(c => c.id === 'amex-gold');
+    if (yearView === 'first' && card && card.signupBonus && card.signupBonus.value > 0) {
+      const eligibility = isSignupBonusEligible(card, spending);
+      if (eligibility.eligible) {
+        signupBonusValue = card.signupBonus.value;
+        netAnnual += signupBonusValue;
+        grossAnnual += signupBonusValue;
+      } else {
+        bonusNote = `Bonus not eligible: Need $${eligibility.requiredAmount.toLocaleString()} in ${eligibility.requiredMonths} months, projected $${eligibility.projectedSpending.toLocaleString()}`;
+      }
+    }
+
     return {
-      grossAnnual: totalAnnual,
+      grossAnnual,
       annualFee: 250,
-      netAnnual: totalAnnual - 250,
+      netAnnual,
+      signupBonusValue,
+      bonusNote,
       breakdown,
-      note: 'Includes $240/yr in credits (Uber + Dining)'
+      note
     };
   }
 
-  function calculateAmexBCP(spending, pointValue) {
+  function calculateAmexBCP(spending, pointValue, yearView = 'ongoing') {
     const breakdown = {};
     let totalAnnual = 0;
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
@@ -328,15 +487,36 @@
       totalAnnual += annualValue;
     }
 
+    // Calculate net annual value
+    let netAnnual = totalAnnual - 95; // Subtract annual fee
+    let grossAnnual = totalAnnual;
+    let signupBonusValue = 0;
+    let bonusNote = '';
+    
+    // Handle signup bonus for first year view
+    const card = cardsData.find(c => c.id === 'amex-blue-cash-preferred');
+    if (yearView === 'first' && card && card.signupBonus && card.signupBonus.value > 0) {
+      const eligibility = isSignupBonusEligible(card, spending);
+      if (eligibility.eligible) {
+        signupBonusValue = card.signupBonus.value;
+        netAnnual += signupBonusValue;
+        grossAnnual += signupBonusValue;
+      } else {
+        bonusNote = `Bonus not eligible: Need $${eligibility.requiredAmount.toLocaleString()} in ${eligibility.requiredMonths} months, projected $${eligibility.projectedSpending.toLocaleString()}`;
+      }
+    }
+
     return {
-      grossAnnual: totalAnnual,
+      grossAnnual,
       annualFee: 95,
-      netAnnual: totalAnnual - 95,
+      netAnnual,
+      signupBonusValue,
+      bonusNote,
       breakdown
     };
   }
 
-  function calculateAmexBCE(spending, pointValue) {
+  function calculateAmexBCE(spending, pointValue, yearView = 'ongoing') {
     const breakdown = {};
     let totalAnnual = 0;
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
@@ -363,10 +543,31 @@
       totalAnnual += annualValue;
     }
 
+    // Calculate net annual value
+    let netAnnual = totalAnnual;
+    let grossAnnual = totalAnnual;
+    let signupBonusValue = 0;
+    let bonusNote = '';
+    
+    // Handle signup bonus for first year view
+    const card = cardsData.find(c => c.id === 'amex-blue-cash-everyday');
+    if (yearView === 'first' && card && card.signupBonus && card.signupBonus.value > 0) {
+      const eligibility = isSignupBonusEligible(card, spending);
+      if (eligibility.eligible) {
+        signupBonusValue = card.signupBonus.value;
+        netAnnual += signupBonusValue;
+        grossAnnual += signupBonusValue;
+      } else {
+        bonusNote = `Bonus not eligible: Need $${eligibility.requiredAmount.toLocaleString()} in ${eligibility.requiredMonths} months, projected $${eligibility.projectedSpending.toLocaleString()}`;
+      }
+    }
+
     return {
-      grossAnnual: totalAnnual,
+      grossAnnual,
       annualFee: 0,
-      netAnnual: totalAnnual,
+      netAnnual,
+      signupBonusValue,
+      bonusNote,
       breakdown
     };
   }
@@ -382,17 +583,23 @@
     const container = document.getElementById('results-container');
     if (!container) return;
 
-    // Calculate all cards
+    // Calculate all cards with current year view
     const results = cardsData.map(card => {
       // Filter out crypto cards if toggle is off
       if (card.isCrypto && !showCrypto) return null;
 
-      const calc = calculateCardRewards(card, currentSpending);
+      const calc = calculateCardRewards(card, currentSpending, yearView);
       return { ...card, ...calc };
     }).filter(Boolean);
 
     // Sort by net annual value
     results.sort((a, b) => b.netAnnual - a.netAnnual);
+
+    // Store current rankings for next comparison
+    const currentRankings = {};
+    results.forEach((card, index) => {
+      currentRankings[card.id] = index + 1;
+    });
 
     // Apply filter
     let filtered = results;
@@ -411,6 +618,20 @@
       const cardType = typeConfig[card.type] || typeConfig.cashback;
       const isNegative = card.netAnnual < 0;
 
+      // Check for ranking change
+      let rankChangeBadge = '';
+      if (previousRankings[card.id] && previousRankings[card.id] !== rank) {
+        const change = previousRankings[card.id] - rank;
+        if (change > 0) {
+          rankChangeBadge = `<span class="rank-change-badge" style="background:#10b981;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">↑${change} ${yearView === 'first' ? 'in Year 1' : 'in Ongoing'}</span>`;
+        } else {
+          rankChangeBadge = `<span class="rank-change-badge" style="background:#ef4444;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">↓${Math.abs(change)} ${yearView === 'first' ? 'in Year 1' : 'in Ongoing'}</span>`;
+        }
+      } else if (!previousRankings[card.id] && yearView === 'first') {
+        // New to the list in first year view
+        rankChangeBadge = `<span class="rank-change-badge" style="background:#3b82f6;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">New in Year 1</span>`;
+      }
+
       // Build breakdown bar
       const breakdownHTML = buildBreakdownBar(card.breakdown);
 
@@ -425,7 +646,7 @@
           <span class="result-rank-badge ${rankClass}">#${rank}</span>
           <div class="result-top-row">
             <div class="result-card-info">
-              <div class="result-card-name">${card.name}</div>
+              <div class="result-card-name">${card.name}${rankChangeBadge}</div>
               <div class="result-card-issuer">${card.issuer}</div>
               <span class="result-card-type-badge" style="background:${cardType.bg};color:${cardType.color};">${cardType.icon} ${cardType.label}</span>
             </div>
@@ -437,6 +658,7 @@
 
           ${card.bestFor ? `<div class="result-best-for">🏷️ Best for: ${card.bestFor}</div>` : ''}
 
+          ${card.bonusNote ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">⚠️ ${card.bonusNote}</div>` : ''}
           ${card.note ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">${card.note}</div>` : ''}
 
           <div class="rewards-breakdown">
@@ -457,10 +679,10 @@
               <span class="value-detail-label">Point Value</span>
               <span class="value-detail-value">${card.pointValue}¢</span>
             </div>
-            ${card.signupBonus && card.signupBonus.value > 0 ? `
+            ${card.signupBonusValue && card.signupBonusValue > 0 ? `
             <div class="value-detail">
               <span class="value-detail-label">Signup Bonus</span>
-              <span class="value-detail-value positive">${formatCurrency(card.signupBonus.value)}</span>
+              <span class="value-detail-value positive">${formatCurrency(card.signupBonusValue)}</span>
             </div>` : ''}
           </div>
 
@@ -478,6 +700,9 @@
         </div>
       `;
     }).join('');
+
+    // Store current rankings for next comparison
+    previousRankings = currentRankings;
 
     // Render comparison if 2+ selected
     renderComparison(results);
@@ -763,6 +988,11 @@
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.filter === type);
     });
+    renderResults();
+  };
+
+  window.setYearView = function(view) {
+    yearView = view;
     renderResults();
   };
 

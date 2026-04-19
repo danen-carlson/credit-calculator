@@ -160,6 +160,13 @@
   animation: slideIn 0.3s ease-out;
 }
 
+.rank-change-badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
 .result-card.rank-1 {
   border-color: var(--success);
   box-shadow: 0 4px 16px rgba(5, 150, 105, 0.12);
@@ -629,6 +636,51 @@
   line-height: 1.5;
 }
 
+/* Year Toggle */
+.year-toggle-container {
+  margin-bottom: 16px;
+}
+
+.year-toggle-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.year-toggle-legend {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.year-toggle-group {
+  display: inline-flex;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 4px;
+}
+
+.year-toggle-group input[type="radio"] {
+  display: none;
+}
+
+.year-toggle-label {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.year-toggle-group input[type="radio"]:checked + .year-toggle-label {
+  background: var(--primary);
+  color: white;
+}
+
 /* Filter Bar */
 .filter-bar {
   display: flex;
@@ -658,7 +710,6 @@
   background: var(--primary);
   color: white;
   border-color: var(--primary);
-}
 
 /* Responsive */
 @media (max-width: 700px) {
@@ -692,6 +743,16 @@
   .result-value-details {
     flex-wrap: wrap;
     gap: 12px;
+  }
+
+  .year-toggle-group {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .year-toggle-label {
+    text-align: center;
+    padding: 8px 16px;
   }
 }
 

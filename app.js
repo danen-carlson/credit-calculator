@@ -9,7 +9,8 @@ const state = {
   results: [],
   hideAnnualFee: false,
   showBnpl: true,
-  showCards: true
+  showCards: true,
+  isWorstCase: false // Toggle for normal vs worst-case scenario
 };
 
 // ── Render method selection cards ──────────────────────────────────────────
@@ -304,6 +305,120 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
 
 // ── Render results ─────────────────────────────────────────────────────────
 
+function addScenarioToggle() {
+  // Check if toggle already exists
+  if (document.getElementById('scenario-toggle-container')) return;
+
+  const resultsSection = document.getElementById('results-section');
+  const container = document.createElement('div');
+  container.id = 'scenario-toggle-container';
+  container.className = 'scenario-toggle-container';
+  container.innerHTML = `
+    <div class="scenario-toggle" role="radiogroup" aria-label="Payment scenario">
+      <style>
+        .scenario-toggle-container {
+          margin: 1.5rem 0;
+          padding: 1rem;
+          background: var(--surface);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+        }
+        
+        .scenario-toggle-legend {
+          font-weight: 600;
+          margin-bottom: 0.75rem;
+          color: var(--text);
+        }
+        
+        .scenario-toggle-options {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+        
+        .scenario-toggle-option {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        
+        .scenario-toggle-option input[type="radio"] {
+          accent-color: var(--primary);
+        }
+        
+        .scenario-toggle-option label {
+          cursor: pointer;
+          font-weight: 500;
+        }
+        
+        @media (max-width: 600px) {
+          .scenario-toggle-options {
+            flex-direction: column;
+            gap: 0.75rem;
+          }
+        }
+      </style>
+      <div class="scenario-toggle-legend">Payment Scenario</div>
+      <div class="scenario-toggle-options">
+        <div class="scenario-toggle-option">
+          <input type="radio" id="normal-payoff" name="scenario" value="normal" ${!state.isWorstCase ? 'checked' : ''}>
+          <label for="normal-payoff">Normal payoff</label>
+        </div>
+        <div class="scenario-toggle-option">
+          <input type="radio" id="worst-case" name="scenario" value="worst" ${state.isWorstCase ? 'checked' : ''}>
+          <label for="worst-case">Worst case (1 missed payment)</label>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  // Insert after the step-header but before the results content
+  const stepHeader = resultsSection.querySelector('.step-header');
+  if (stepHeader && stepHeader.nextSibling) {
+    resultsSection.insertBefore(container, stepHeader.nextSibling);
+  } else {
+    resultsSection.querySelector('.container').insertBefore(container, resultsSection.querySelector('.container').firstChild);
+  }
+  
+  // Add event listeners
+  document.getElementById('normal-payoff').addEventListener('change', function() {
+    if (this.checked) {
+      state.isWorstCase = false;
+      recalculateResults();
+    }
+  });
+  
+  document.getElementById('worst-case').addEventListener('change', function() {
+    if (this.checked) {
+      state.isWorstCase = true;
+      recalculateResults();
+    }
+  });
+}
+
+function recalculateResults() {
+  const amount = parseFloat(document.getElementById('purchase-amount').value);
+  const targetMonths = state.payoffMonths;
+  const creditScore = document.getElementById('credit-score').value;
+  
+  if (!amount || amount <= 0) return;
+  
+  const allMethods = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
+  const selectedMethods = allMethods.filter(m => state.selectedMethods.has(m.id));
+
+  const { all, newCardOptions, alternatives } = calculateOptions({
+    amount,
+    creditScore,
+    selectedMethods,
+    targetMonths,
+    isWorstCase: state.isWorstCase
+  });
+
+  state.results = all;
+  const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
+  renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore);
+}
+
 function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore) {
   const container = document.getElementById('results-cards');
   container.innerHTML = '';
@@ -331,6 +446,9 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths, 
   const subtitle = document.getElementById('results-subtitle');
   subtitle.textContent = `Best options for your ${fmt(amount)} purchase paid off in ${targetMonths} months.`;
 
+  // Add scenario toggle
+  addScenarioToggle();
+
   // Best Match Section
   const bestMatchSection = document.getElementById('best-match-section');
   const bestMatchCard = document.getElementById('best-match-card');
@@ -347,6 +465,15 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths, 
   const monthlyPmt = bestMatch.monthlyPayment || (bestMatch.principal / (bestMatch.termMonths || targetMonths));
   whyBadge.innerHTML = `✓ ${fmt(monthlyPmt)}/mo · ${bestMatch.termDisplay || targetMonths + ' months'} · Lowest total cost`;
   bestMatchCard.insertBefore(whyBadge, bestMatchCard.firstChild);
+  
+  // Add warning for worst case scenarios
+  if (state.isWorstCase) {
+    const warning = document.createElement('div');
+    warning.className = 'result-notes';
+    warning.style.marginTop = '1rem';
+    warning.innerHTML = '⚠️ <strong>Worst Case Scenario:</strong> These results include late fees and potential retroactive interest for one missed payment.';
+    bestMatchCard.insertBefore(warning, bestMatchCard.firstChild);
+  }
 
   // New Card Options (if any with savings)
   const newCardSection = document.getElementById('new-card-option');
@@ -444,6 +571,25 @@ function createBestMatchCard(r) {
   const isCreditCard = r.subtype === 'credit-card';
   const aprDisplay = isCreditCard && r.effectiveApr ? `<span class="apr-value">${r.effectiveApr.toFixed(1)}% APR</span>` : '';
 
+  // Add late fee tooltip for BNPL methods
+  let lateFeeTooltip = '';
+  if (r.subtype === 'bnpl' || r.subtype === 'bnpl-monthly') {
+    // Find the original method to get late fee info
+    const allMethods = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS];
+    const method = allMethods.find(m => m.id === r.id);
+    if (method && method.lateFees) {
+      const lateFees = method.lateFees;
+      lateFeeTooltip = `
+        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-secondary);">
+          <strong>Late Fee Policy:</strong> 
+          ${lateFees.lateFeeAmount ? `$${lateFees.lateFeeAmount} per missed payment` : 'No late fees'}
+          ${lateFees.gracePeriodDays ? ` (${lateFees.gracePeriodDays} day grace period)` : ''}
+          ${lateFees.retroactiveInterest ? `. ⚠️ Retroactive interest of ${lateFees.retroactiveApr}% APR may apply.` : ''}
+        </div>
+      `;
+    }
+  }
+
   let html = `
     <div class="result-header">
       <div>
@@ -481,6 +627,11 @@ function createBestMatchCard(r) {
     `;
   }
 
+  // Add late fee tooltip
+  if (lateFeeTooltip) {
+    html += lateFeeTooltip;
+  }
+
   // Notes & warnings
   const allNotes = [...(r.notes || []), ...(r.warnings || [])];
   if (allNotes.length > 0) {
@@ -488,6 +639,15 @@ function createBestMatchCard(r) {
     html += `<div class="result-notes ${!isWarning ? 'good-note' : ''}">
       ${allNotes.map(n => `• ${n}`).join('<br>')}
     </div>`;
+  }
+
+  // Add warning callout for dramatically worse worst case
+  if (r.isWorstCase && r.warnings && r.warnings.some(w => w.includes('Deferred interest trap'))) {
+    html += `
+      <div class="result-notes" style="margin-top: 10px; border-left: 4px solid var(--danger); padding-left: 10px;">
+        ⚠️ <strong>Warning:</strong> This option becomes dramatically more expensive if you miss a payment due to deferred interest.
+      </div>
+    `;
   }
 
   // Affiliate button
@@ -730,6 +890,25 @@ function createStandardResultCard(r, rank, best) {
     : r.availability === 'both' ? '<span class="availability-badge avail-both">Anywhere (virtual card) + partners</span>'
     : '';
 
+  // Add late fee tooltip for BNPL methods
+  let lateFeeTooltip = '';
+  if (r.subtype === 'bnpl' || r.subtype === 'bnpl-monthly') {
+    // Find the original method to get late fee info
+    const allMethods = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS];
+    const method = allMethods.find(m => m.id === r.id);
+    if (method && method.lateFees) {
+      const lateFees = method.lateFees;
+      lateFeeTooltip = `
+        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-secondary);">
+          <strong>Late Fee Policy:</strong> 
+          ${lateFees.lateFeeAmount ? `$${lateFees.lateFeeAmount} per missed payment` : 'No late fees'}
+          ${lateFees.gracePeriodDays ? ` (${lateFees.gracePeriodDays} day grace period)` : ''}
+          ${lateFees.retroactiveInterest ? `. ⚠️ Retroactive interest of ${lateFees.retroactiveApr}% APR may apply.` : ''}
+        </div>
+      `;
+    }
+  }
+
   let html = `
     <div class="result-rank ${rankClasses[Math.min(rank - 1, 4)]}">${rankLabels[Math.min(rank - 1, 9)]}</div>
     <div class="result-header">
@@ -763,6 +942,11 @@ function createStandardResultCard(r, rank, best) {
       </div>
     </div>
   `;
+
+  // Add late fee tooltip
+  if (lateFeeTooltip) {
+    html += lateFeeTooltip;
+  }
 
   // Scenario table for credit cards — always show so user sees the danger of minimums
   if (r.scenarios && r.scenarios.length > 1) {
@@ -845,6 +1029,15 @@ function createStandardResultCard(r, rank, best) {
     html += `<div class="result-notes ${!isWarning ? 'good-note' : ''}">
       ${allNotes.map(n => `• ${n}`).join('<br>')}
     </div>`;
+  }
+
+  // Add warning callout for dramatically worse worst case
+  if (r.isWorstCase && r.warnings && r.warnings.some(w => w.includes('Deferred interest trap'))) {
+    html += `
+      <div class="result-notes" style="margin-top: 10px; border-left: 4px solid var(--danger); padding-left: 10px;">
+        ⚠️ <strong>Warning:</strong> This option becomes dramatically more expensive if you miss a payment due to deferred interest.
+      </div>
+    `;
   }
 
   // Affiliate button
