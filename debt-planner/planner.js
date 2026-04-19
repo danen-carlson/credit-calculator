@@ -9,7 +9,7 @@ let results = { minimum: null, snowball: null, avalanche: null };
 let currentChartStrategy = 'snowball';
 let scheduleOpen = false;
 let consolidationResults = null;
-let strategyComparisonChart = null;
+// `strategyComparisonChart` lives in charts.js to keep chart state co-located
 
 // Emit a debts-changed event so the share URL module can re-serialize.
 function notifyDebtsChanged() {
@@ -31,7 +31,7 @@ window.setDebts = function (next) {
 };
 window.debts = debts;
 
-const DEBT_COLORS = ['#2563eb', '#7c3aed', '#059669', '#d97706', '#dc2626', '#0891b2', '#4f46e5', '#c026d3'];
+// DEBT_COLORS is defined in charts.js — that's the only place it's used
 const BALANCE_TRANSFER_CARDS = [
   {
     id: 'citi-double-cash',
