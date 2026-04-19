@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shared/share.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440"
    crossorigin="anonymous"></script>
 </head>
@@ -184,6 +185,12 @@
         </div>
         <p class="step-desc" id="results-subtitle"></p>
 
+        <!-- Share / data stamp row (injected by share.js) -->
+        <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
+          <div id="share-mount"></div>
+          <div id="data-stamp-mount"></div>
+        </div>
+
         <!-- Best Match Section -->
         <div id="best-match-section" class="best-match-section hidden">
           <h3 class="tier-heading">🎯 Best Match for Your Timeline</h3>
@@ -242,5 +249,25 @@
   <script src="data.js"></script>
   <script src="calc.js"></script>
   <script src="app.js"></script>
+  <script src="shared/share.js"></script>
+  <script>
+    // Wire share.js to the homepage calculator
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.CreditStudShare) return;
+      window.CreditStudShare.init({
+        pageKey: 'home',
+        simpleInputs: [
+          'purchase-amount',
+          'payoff-months',
+          'credit-score',
+          'toggle-hide-annual-fee',
+          'toggle-show-bnpl',
+          'toggle-show-cards'
+        ],
+        shareButtonMount: '#share-mount',
+        stampMount: '#data-stamp-mount'
+      });
+    });
+  </script>
 </body>
 </html>
