@@ -1,0 +1,75 @@
+/* Shared styles for share button + data-freshness stamp
+ * Loaded on all 3 calculator pages.
+ */
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.share-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(99, 102, 241, 0.35);
+}
+
+.share-btn:active {
+  transform: translateY(0);
+}
+
+.share-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.45);
+}
+
+.share-btn-success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.data-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #64748b;
+  padding: 0.35rem 0.75rem;
+  background: rgba(100, 116, 139, 0.08);
+  border-radius: 6px;
+  cursor: help;
+}
+
+.data-stamp-dot {
+  color: #10b981;
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+.data-stamp-text strong {
+  color: #334155;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .share-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .data-stamp {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
