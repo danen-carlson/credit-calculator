@@ -270,40 +270,85 @@ if (purchaseInput) {
 // ── Calculate ────────────────────────────────────────────────────────────────
 
 document.getElementById('calculate-btn').addEventListener('click', () => {
-  try {
-  const amount = parseFloat(document.getElementById('purchase-amount').value);
-  const targetMonths = parseInt(document.getElementById('payoff-months').value) || 6;
-
-  if (!amount || amount <= 0) {
-    alert('Please enter a purchase amount.');
-    document.getElementById('purchase-amount').focus();
-    return;
+  // Show loading state
+  const button = document.getElementById('calculate-btn');
+  const originalText = button.textContent;
+  button.textContent = 'Calculating...';
+  button.classList.add('btn-loading');
+  button.disabled = true;
+  
+  // Show skeleton
+  const skeleton = document.getElementById('results-skeleton');
+  if (skeleton) {
+    skeleton.classList.add('active');
+    document.getElementById('results-section').setAttribute('aria-busy', 'true');
   }
+  
+  // Use setTimeout to allow UI to update before heavy computation
+  setTimeout(() => {
+    try {
+      const amount = parseFloat(document.getElementById('purchase-amount').value);
+      const targetMonths = parseInt(document.getElementById('payoff-months').value) || 6;
 
-  if (state.selectedMethods.size === 0) {
-    alert('Please select at least one payment method to compare.');
-    return;
-  }
+      if (!amount || amount <= 0) {
+        resetButton(button, originalText);
+        hideSkeleton(skeleton);
+        alert('Please enter a purchase amount.');
+        document.getElementById('purchase-amount').focus();
+        return;
+      }
 
-  state.payoffMonths = targetMonths;
-  const creditScore = document.getElementById('credit-score').value;
-  const allMethods = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
-  const selectedMethods = allMethods.filter(m => state.selectedMethods.has(m.id));
+      if (state.selectedMethods.size === 0) {
+        resetButton(button, originalText);
+        hideSkeleton(skeleton);
+        alert('Please select at least one payment method to compare.');
+        return;
+      }
 
-  const { all, newCardOptions, alternatives } = calculateOptions({
-    amount,
-    creditScore,
-    selectedMethods,
-    targetMonths
-  });
+      state.payoffMonths = targetMonths;
+      const creditScore = document.getElementById('credit-score').value;
+      const allMethods = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
+      const selectedMethods = allMethods.filter(m => state.selectedMethods.has(m.id));
 
-  state.results = all;
-  const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
-  renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore);
-  document.getElementById('results-section').classList.remove('hidden');
-  document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } catch(err) { console.error('Compare My Options error:', err); alert('Something went wrong: ' + err.message); }
+      const { all, newCardOptions, alternatives } = calculateOptions({
+        amount,
+        creditScore,
+        selectedMethods,
+        targetMonths
+      });
+
+      state.results = all;
+      const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
+      renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore);
+      document.getElementById('results-section').classList.remove('hidden');
+      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Hide skeleton after rendering
+      hideSkeleton(skeleton);
+    } catch(err) { 
+      console.error('Compare My Options error:', err); 
+      resetButton(button, originalText);
+      hideSkeleton(skeleton);
+      alert('Something went wrong: ' + err.message); 
+    } finally {
+      // Ensure button is reset even if an error occurs
+      resetButton(button, originalText);
+    }
+  }, 0);
 });
+
+function resetButton(button, originalText) {
+  button.textContent = originalText;
+  button.classList.remove('btn-loading');
+  button.disabled = false;
+}
+
+function hideSkeleton(skeleton) {
+  if (skeleton) {
+    skeleton.classList.remove('active');
+    document.getElementById('results-section').removeAttribute('aria-busy');
+  }
+}
 
 // ── Render results ─────────────────────────────────────────────────────────
 
