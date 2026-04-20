@@ -1103,6 +1103,9 @@ function createStandardResultCard(r, rank, best) {
 function renderPayoffTable(results) {
   const wrapper = document.getElementById('payoff-table-wrapper');
   const section = document.getElementById('payoff-comparison');
+  
+  // Add wrapper class for responsive scrolling
+  wrapper.className = 'payoff-table-wrapper';
 
   const table = document.createElement('table');
   table.className = 'payoff-table';

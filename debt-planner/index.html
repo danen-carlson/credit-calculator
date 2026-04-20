@@ -163,6 +163,15 @@
   <div id="app">
     <!-- Skip to content link -->
     <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+    
+    <!-- Site-wide disclosure banner -->
+    <div class="site-disclosure-banner">
+      <div class="site-disclosure-container">
+        CreditStudio may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations. 
+        <a href="/disclosure.html">Learn more</a>
+      </div>
+    </div>
+    
     <!-- Header -->
     <header class="planner-header">
       <div class="container">
@@ -384,6 +393,8 @@
 
         <div style="text-align:center;margin-top:16px;">
           <button class="print-btn" onclick="window.print()">🖨️ Print Your Plan</button>
+          <button id="export-csv-btn" class="btn-ghost" style="margin-left: 10px;" onclick="exportAmortizationCSV()" aria-label="Export amortization schedule as CSV">📊 Export Schedule (CSV)</button>
+          <div id="export-status" aria-live="polite" style="margin-top: 8px; font-size: 0.85rem; color: var(--success);"></div>
         </div>
       </div>
     </section>
@@ -427,6 +438,7 @@
     <footer class="footer">
       <div class="container">
         <p>CreditStudio Debt Planner is for informational purposes only. Results are estimates based on the information you provide. Actual results may vary.</p>
+        <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
       </div>
     </footer>
   </div>

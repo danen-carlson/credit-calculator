@@ -234,6 +234,9 @@ input:focus, select:focus {
   cursor: pointer;
   font-size: 0.875rem;
   user-select: none;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
+  padding: 5px 0;
 }
 
 .toggle-label small {
@@ -245,10 +248,10 @@ input:focus, select:focus {
 }
 
 .toggle-switch {
-  width: 38px;
-  height: 22px;
+  width: 44px; /* Increased for better tap target */
+  height: 24px; /* Increased for better tap target */
   background: var(--border);
-  border-radius: 11px;
+  border-radius: 12px;
   position: relative;
   flex-shrink: 0;
   transition: background 0.2s;
@@ -257,12 +260,12 @@ input:focus, select:focus {
 .toggle-switch::after {
   content: '';
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 20px; /* Increased size */
+  height: 20px; /* Increased size */
   background: white;
   border-radius: 50%;
-  top: 3px;
-  left: 3px;
+  top: 2px; /* Adjusted positioning */
+  left: 2px; /* Adjusted positioning */
   transition: transform 0.2s;
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
@@ -272,7 +275,7 @@ input:focus, select:focus {
 }
 
 .toggle-label input:checked + .toggle-switch::after {
-  transform: translateX(16px);
+  transform: translateX(20px); /* Adjusted for new size */
 }
 
 /* Method Grid */
@@ -364,6 +367,8 @@ input:focus, select:focus {
   padding: 14px 16px;
   cursor: pointer;
   transition: all 0.2s;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
 }
 
 .radio-card:hover {
@@ -408,6 +413,9 @@ input:focus, select:focus {
   font-family: inherit;
   cursor: pointer;
   transition: background 0.2s;
+  /* Minimum tap target size for mobile */
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .btn-primary:hover {
@@ -419,11 +427,16 @@ input:focus, select:focus {
   padding: 16px;
   font-size: 1.1rem;
   border-radius: var(--radius);
+  /* Larger tap target for primary actions */
+  min-height: 50px;
 }
 
 .btn-small {
   padding: 8px 16px;
   font-size: 0.875rem;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .btn-ghost {
@@ -436,6 +449,9 @@ input:focus, select:focus {
   font-family: inherit;
   cursor: pointer;
   transition: all 0.2s;
+  /* Minimum tap target size for mobile */
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .btn-ghost:hover {
@@ -455,6 +471,8 @@ input:focus, select:focus {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
+  /* Minimum tap target size for mobile */
+  min-height: 44px;
 }
 
 .btn-add:hover {
@@ -604,6 +622,34 @@ input:focus, select:focus {
 
 .result-notes.good-note::before { content: "✓ "; }
 
+/* Mobile enhancements for result cards */
+@media (max-width: 600px) {
+  .result-card {
+    padding: 16px;
+  }
+  
+  .result-name {
+    font-size: 1.2rem; /* Slightly larger on mobile for readability */
+  }
+  
+  .result-total {
+    font-size: 1.5rem; /* Larger on mobile for key numbers */
+  }
+  
+  .result-details {
+    grid-template-columns: 1fr 1fr; /* Two columns on mobile */
+    gap: 10px;
+  }
+  
+  .detail-label {
+    font-size: 0.75rem; /* Slightly larger on mobile */
+  }
+  
+  .detail-value {
+    font-size: 1rem; /* Larger on mobile for better readability */
+  }
+}
+
 /* Payoff Comparison */
 .comparison-title {
   font-size: 1.1rem;
@@ -611,14 +657,20 @@ input:focus, select:focus {
   margin: 28px 0 14px;
 }
 
+/* Responsive table wrapper for horizontal scrolling on mobile */
+.payoff-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
 .payoff-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.85rem;
   background: var(--surface);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+  min-width: 500px; /* Ensure table doesn't compress on small screens */
 }
 
 .payoff-table thead {
@@ -633,11 +685,13 @@ input:focus, select:focus {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--text-secondary);
+  white-space: nowrap; /* Prevent header text from wrapping */
 }
 
 .payoff-table td {
   padding: 10px 14px;
   border-top: 1px solid var(--border);
+  white-space: nowrap; /* Prevent cell content from wrapping */
 }
 
 .payoff-table tr.best-row td {
@@ -889,6 +943,32 @@ input:focus, select:focus {
   border-radius: var(--radius-sm);
   margin-bottom: 16px;
   line-height: 1.5;
+}
+
+/* Site-wide disclosure banner */
+.site-disclosure-banner {
+  background: #fff8e6;
+  border-bottom: 1px solid #ffd54f;
+  padding: 12px 0;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #5d4037;
+}
+
+.site-disclosure-banner a {
+  color: #e65100;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.site-disclosure-banner a:hover {
+  color: #bf360c;
+}
+
+.site-disclosure-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Credit Score CTA */
