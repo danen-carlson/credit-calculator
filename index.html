@@ -9,6 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="shared/share.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CreditStud">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440"
    crossorigin="anonymous"></script>
 </head>
@@ -247,6 +253,33 @@
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="step">
+      <div class="container">
+        <div class="seo-content">
+          <h2>Frequently Asked Questions</h2>
+          
+          <h3>How does the CreditStudio calculator work?</h3>
+          <p>Our calculator compares the total cost of different payment options for your purchase. Enter the purchase amount and your desired payoff timeline, and we'll show you which credit cards, BNPL services, or payment plans will cost you the least in interest and fees. We factor in regular APR, intro APR periods, annual fees, and rewards to give you a complete picture.</p>
+          
+          <h3>What payment options does CreditStudio compare?</h3>
+          <p>We compare credit cards (including those with 0% intro APR offers), buy-now-pay-later services like Klarna, Afterpay, and Affirm, store cards, and personal loans. You can also add your own cards or services to the comparison for a personalized analysis.</p>
+          
+          <h3>Are the results personalized to my credit score?</h3>
+          <p>Yes, your credit score affects which cards and interest rates we show you. Select your credit score range when entering your purchase details, and we'll tailor the results accordingly. Excellent credit (720+) unlocks the best rates and offers, while fair or poor credit will show more realistic options.</p>
+          
+          <h3>Does using the calculator affect my credit score?</h3>
+          <p>No, using our calculator has no impact on your credit score. We're just doing math based on publicly available information about credit card offers and BNPL terms. To actually get a card, you'll need to apply directly with the issuer, which may involve a hard credit inquiry.</p>
+          
+          <h3>How often is the data updated?</h3>
+          <p>We update our database of credit card offers, BNPL terms, and interest rates monthly. Major changes (like new 0% APR promotions or policy updates) are added as soon as we become aware of them. All information is verified for accuracy before publication.</p>
+          
+          <h3>Is CreditStudio free to use?</h3>
+          <p>Yes, our calculators and tools are completely free. We make money through affiliate commissions when you apply for cards through our site, but this doesn't affect our rankings or recommendations. All results are based purely on math and cost calculations.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -278,5 +311,63 @@
       });
     });
   </script>
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does the CreditStudio calculator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our calculator compares the total cost of different payment options for your purchase. Enter the purchase amount and your desired payoff timeline, and we'll show you which credit cards, BNPL services, or payment plans will cost you the least in interest and fees. We factor in regular APR, intro APR periods, annual fees, and rewards to give you a complete picture."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment options does CreditStudio compare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We compare credit cards (including those with 0% intro APR offers), buy-now-pay-later services like Klarna, Afterpay, and Affirm, store cards, and personal loans. You can also add your own cards or services to the comparison for a personalized analysis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the results personalized to my credit score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, your credit score affects which cards and interest rates we show you. Select your credit score range when entering your purchase details, and we'll tailor the results accordingly. Excellent credit (720+) unlocks the best rates and offers, while fair or poor credit will show more realistic options."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does using the calculator affect my credit score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, using our calculator has no impact on your credit score. We're just doing math based on publicly available information about credit card offers and BNPL terms. To actually get a card, you'll need to apply directly with the issuer, which may involve a hard credit inquiry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often is the data updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We update our database of credit card offers, BNPL terms, and interest rates monthly. Major changes (like new 0% APR promotions or policy updates) are added as soon as we become aware of them. All information is verified for accuracy before publication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is CreditStudio free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, our calculators and tools are completely free. We make money through affiliate commissions when you apply for cards through our site, but this doesn't affect our rankings or recommendations. All results are based purely on math and cost calculations."
+        }
+      }
+    ]
+  }
+  </script>
+  <script defer src="/shared/pwa.js"></script>
 </body>
 </html>

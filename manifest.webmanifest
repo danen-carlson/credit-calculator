@@ -1,0 +1,21 @@
+{
+  "name": "CreditStud.io — Credit Card & Debt Tools",
+  "short_name": "CreditStud",
+  "description": "Compare credit cards, calculate rewards, plan debt payoff, and model BNPL risk.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fb",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "lang": "en",
+  "categories": ["finance", "utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
