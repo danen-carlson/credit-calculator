@@ -20,13 +20,16 @@
 (function () {
   'use strict';
 
-  // Single source of truth for data freshness. Bump when cards-data.js or data.js changes.
-  const DATA_VERSION = {
-    lastUpdated: '2026-04-18',   // ISO date
+  // Single source of truth for data freshness.
+  // Fallback defaults — overridden by /data-version.json at runtime.
+  const DATA_VERSION_DEFAULTS = {
+    lastUpdated: '2026-04-18',
     displayDate: 'April 18, 2026',
     source: 'Provider websites + manual verification',
     refreshSchedule: 'Weekly automated scrape + manual review'
   };
+
+  let DATA_VERSION = { ...DATA_VERSION_DEFAULTS };
 
   let debounceTimer = null;
 
@@ -168,10 +171,20 @@
     mount.appendChild(btn);
   }
 
-  function mountDataStamp(config) {
+  async function mountDataStamp(config) {
     if (!config.stampMount) return;
     const mount = document.querySelector(config.stampMount);
     if (!mount) return;
+
+    // Fetch live data version from /data-version.json (written by weekly scraper).
+    // Falls back to hardcoded defaults if fetch fails.
+    try {
+      const resp = await fetch('/data-version.json');
+      if (resp.ok) {
+        const json = await resp.json();
+        DATA_VERSION = { ...DATA_VERSION, ...json };
+      }
+    } catch (_) { /* network error or missing file — use defaults */ }
 
     const stamp = document.createElement('div');
     stamp.className = 'data-stamp';
