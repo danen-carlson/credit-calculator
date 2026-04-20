@@ -374,13 +374,14 @@ function addScenarioToggle() {
     </div>
   `;
   
-  // Insert after the step-header but before the results content
+  // Insert the toggle after the step-header inside the results container
+  // Use stepHeader.after() to avoid parentNode mismatches from innerHTML
   const innerContainer = resultsSection.querySelector('.container') || resultsSection;
   const stepHeader = innerContainer.querySelector('.step-header');
-  if (stepHeader && stepHeader.nextSibling) {
-    innerContainer.insertBefore(container, stepHeader.nextSibling);
+  if (stepHeader) {
+    stepHeader.after(container);
   } else {
-    innerContainer.insertBefore(container, innerContainer.firstChild);
+    innerContainer.prepend(container);
   }
   
   // Add event listeners
