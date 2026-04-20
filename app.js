@@ -375,11 +375,12 @@ function addScenarioToggle() {
   `;
   
   // Insert after the step-header but before the results content
-  const stepHeader = resultsSection.querySelector('.step-header');
+  const innerContainer = resultsSection.querySelector('.container') || resultsSection;
+  const stepHeader = innerContainer.querySelector('.step-header');
   if (stepHeader && stepHeader.nextSibling) {
-    resultsSection.insertBefore(container, stepHeader.nextSibling);
+    innerContainer.insertBefore(container, stepHeader.nextSibling);
   } else {
-    resultsSection.querySelector('.container').insertBefore(container, resultsSection.querySelector('.container').firstChild);
+    innerContainer.insertBefore(container, innerContainer.firstChild);
   }
   
   // Add event listeners
