@@ -973,6 +973,78 @@ input:focus, select:focus {
 .result-card:nth-child(4) { animation-delay: 0.15s; }
 .result-card:nth-child(5) { animation-delay: 0.2s; }
 
+/* Loading States and Skeleton Screens */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--surface);
+  border-radius: var(--radius);
+  z-index: 10;
+  display: none;
+}
+
+.skeleton.active {
+  display: block;
+}
+
+.skeleton-bar {
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  animation: shimmer 1.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-bar {
+    animation: none;
+    background: #f0f0f0;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-placeholder {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
 /* Input Row Layout */
 .input-row {
   display: grid;
@@ -1020,6 +1092,24 @@ input:focus, select:focus {
   padding: 1rem 1.25rem;
   margin-top: 1rem;
   animation: fadeIn 0.3s ease;
+}
+
+/* Results Section Skeleton */
+#results-section {
+  position: relative;
+}
+
+#results-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  display: none;
+}
+
+#results-skeleton.active {
+  display: block;
 }
 
 @keyframes fadeIn {
@@ -1370,4 +1460,168 @@ input:focus, select:focus {
 /* Quick Summary Cards (keeping for reference, now Best Match) */
 .best-match-section {
   margin: 1.5rem 0 2rem;
+}
+
+/* Print Styles */
+@media print {
+  /* Hide navigation, footer, and other non-essential elements */
+  .top-nav,
+  .footer,
+  .btn-add,
+  .btn-expand,
+  .btn-ghost,
+  .btn-primary:not(.print-btn),
+  .toggle-bar,
+  .methods-content:not(.collapsed),
+  .chart-section,
+  .chart-toggle,
+  .schedule-header,
+  .filter-bar,
+  .year-toggle-container,
+  .crypto-toggle-section,
+  .consolidation-card,
+  #consolidation-results,
+  #credit-score-cta,
+  #affiliate-disclosure,
+  .disclosure,
+  .seo-content,
+  .breadcrumbs,
+  .step-header.collapsible .btn-expand,
+  .print-btn {
+    display: none !important;
+  }
+  
+  /* Show all results content */
+  .methods-content.collapsed {
+    max-height: none !important;
+    opacity: 1 !important;
+    padding-top: 1rem !important;
+  }
+  
+  /* Force black text on white background for readability */
+  body,
+  .header,
+  .result-card,
+  .payoff-table,
+  .scenario-table,
+  .period-card,
+  .debt-summary,
+  .spending-summary,
+  .extra-payment-section,
+  .consolidation-results-card,
+  .recommendations,
+  .milestone,
+  .schedule-month,
+  .article-header,
+  .article-body,
+  .article-meta,
+  .seo-content {
+    color: black !important;
+    background: white !important;
+    border-color: #000 !important;
+  }
+  
+  /* Ensure text remains readable */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  /* Set sensible margins */
+  @page {
+    margin: 0.75in;
+  }
+  
+  /* Prevent breaking inside important elements */
+  .result-card,
+  .payoff-table,
+  .scenario-table,
+  .period-card,
+  .debt-summary,
+  .spending-summary,
+  .consolidation-results-card,
+  .milestone,
+  .schedule-month,
+  table tr {
+    break-inside: avoid;
+  }
+  
+  /* Show calculator inputs as summary at top */
+  .input-group,
+  .spending-category,
+  .debt-card {
+    border: 1px solid #000;
+    padding: 8px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+  }
+  
+  /* Show link URLs after link text for external links */
+  a[href^='http']::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    word-break: break-all;
+  }
+  
+  /* Hide link URLs for navigation links */
+  .top-nav a[href^='http']::after,
+  .breadcrumbs a[href^='http']::after {
+    content: '' !important;
+  }
+  
+  /* Ensure tables display properly */
+  .payoff-table,
+  .scenario-table,
+  .strategy-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+  
+  .payoff-table th,
+  .payoff-table td,
+  .scenario-table th,
+  .scenario-table td,
+  .strategy-comparison-table th,
+  .strategy-comparison-table td {
+    border: 1px solid #000;
+    padding: 4px;
+    text-align: left;
+  }
+  
+  /* Show proper page title */
+  .logo {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Show Last updated stamp */
+  .article-meta,
+  #data-stamp-mount {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Improve contrast for important elements */
+  .result-card:first-child {
+    border: 2px solid #000 !important;
+  }
+  
+  .result-total,
+  .step-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  /* Keep one main chart per page if charts are printed */
+  .chart-container {
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  /* Show expand/collapse buttons as static text */
+  .step-header.collapsible h2::after {
+    content: " (Details)";
+    font-size: 0.8rem;
+    color: #666;
+  }
 }
