@@ -80,6 +80,8 @@
 </head>
 <body>
   <div id="app">
+    <!-- Skip to content link -->
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
     <!-- Header -->
     <header class="rewards-header">
       <div class="container">
@@ -96,7 +98,7 @@
 
     <!-- Step 1: Your Monthly Spending -->
     <section class="step" id="step-spending">
-      <div class="container">
+      <div class="container" id="main">
         <div class="step-header">
           <span class="step-number">1</span>
           <h2>Your Monthly Spending</h2>
@@ -154,19 +156,19 @@
 
         <!-- Filter Bar -->
         <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All Cards</button>
-          <button class="filter-btn" data-filter="cashback" onclick="setFilter('cashback')">💵 Cashback</button>
-          <button class="filter-btn" data-filter="travel" onclick="setFilter('travel')">✈️ Travel</button>
-          <button class="filter-btn" data-filter="tiered" onclick="setFilter('tiered')">🔄 Tiered</button>
-          <button class="filter-btn" data-filter="grocery" onclick="setFilter('grocery')">🛒 Grocery</button>
-          <button class="filter-btn" data-filter="crypto" onclick="setFilter('crypto')">₿ Crypto</button>
+          <button class="filter-btn active" data-filter="all" onclick="setFilter('all')" aria-label="Show all credit cards">All Cards</button>
+          <button class="filter-btn" data-filter="cashback" onclick="setFilter('cashback')" aria-label="Show cashback credit cards">💵 Cashback</button>
+          <button class="filter-btn" data-filter="travel" onclick="setFilter('travel')" aria-label="Show travel credit cards">✈️ Travel</button>
+          <button class="filter-btn" data-filter="tiered" onclick="setFilter('tiered')" aria-label="Show tiered reward credit cards">🔄 Tiered</button>
+          <button class="filter-btn" data-filter="grocery" onclick="setFilter('grocery')" aria-label="Show grocery reward credit cards">🛒 Grocery</button>
+          <button class="filter-btn" data-filter="crypto" onclick="setFilter('crypto')" aria-label="Show crypto reward credit cards">₿ Crypto</button>
         </div>
 
         <div id="affiliate-disclosure" class="disclosure">
           Advertiser Disclosure: Some of the offers on this page are from companies that compensate us. This may influence which products we feature, but it does not affect our rankings — those are based purely on math.
         </div>
 
-        <div id="results-container" class="results-container">
+        <div id="results-container" class="results-container" aria-live="polite">
           <!-- Populated by JS -->
         </div>
 
@@ -177,7 +179,7 @@
         </div>
 
         <!-- Comparison Section -->
-        <div id="comparison-section" class="comparison-section hidden">
+        <div id="comparison-section" class="comparison-section hidden" aria-live="polite">
           <!-- Populated by JS -->
         </div>
 

@@ -14,6 +14,8 @@
 </head>
 <body>
   <div id="app">
+    <!-- Skip to content link -->
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
     <!-- Header -->
     <header class="header">
       <div class="container">
@@ -83,7 +85,7 @@
         <div class="step-header collapsible" id="methods-header">
           <span class="step-number">2</span>
           <h2>Payment Options <span class="selected-count">(Using defaults)</span></h2>
-          <button class="btn-expand" id="expand-methods-btn">Change ▼</button>
+          <button class="btn-expand" id="expand-methods-btn" aria-label="Expand payment options">Change ▼</button>
         </div>
         <div id="methods-content" class="methods-content collapsed">
           <p class="step-desc">Select all that apply. We'll compare them for you.</p>
@@ -125,7 +127,7 @@
 
           <!-- Custom Method -->
           <div class="method-section">
-            <button class="btn-add" id="add-custom-btn">+ Add Your Own Card or Service</button>
+            <button class="btn-add" id="add-custom-btn" aria-label="Add custom card or service">+ Add Your Own Card or Service</button>
             <div id="custom-form" class="custom-form hidden">
               <div class="custom-form-grid">
                 <div class="input-group">
@@ -159,12 +161,12 @@
               </div>
               <div class="custom-form-actions">
                 <button class="btn-primary btn-small" id="save-custom-btn">Add to Comparison</button>
-                <button class="btn-ghost btn-small" id="cancel-custom-btn">Cancel</button>
+                <button class="btn-ghost btn-small" id="cancel-custom-btn" aria-label="Cancel adding custom card">Cancel</button>
               </div>
             </div>
             <div id="custom-methods-list"></div>
           </div>
-          <button class="btn-ghost btn-small" id="collapse-methods-btn" style="margin-top: 1rem;">Done</button>
+          <button class="btn-ghost btn-small" id="collapse-methods-btn" style="margin-top: 1rem;" aria-label="Collapse payment options">Done</button>
         </div>
       </div>
     </section>
@@ -178,7 +180,7 @@
 
     <!-- Results -->
     <section class="step hidden" id="results-section">
-      <div class="container">
+      <div class="container" id="main">
         <div class="step-header">
           <span class="step-number">✓</span>
           <h2>Your Best Options</h2>
@@ -192,7 +194,7 @@
         </div>
 
         <!-- Best Match Section -->
-        <div id="best-match-section" class="best-match-section hidden">
+        <div id="best-match-section" class="best-match-section hidden" aria-live="polite">
           <h3 class="tier-heading">🎯 Best Match for Your Timeline</h3>
           <div id="best-match-card" class="best-match-card"></div>
         </div>
@@ -205,7 +207,7 @@
         </div>
 
         <!-- Alternatives Within ±2 Months -->
-        <div id="alternatives-section" class="alternatives-section hidden">
+        <div id="alternatives-section" class="alternatives-section hidden" aria-live="polite">
           <h3 class="tier-heading">Other Options (±2 months from your target)</h3>
           <div id="alternatives-cards"></div>
         </div>

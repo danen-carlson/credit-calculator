@@ -396,6 +396,19 @@ function recalculate() {
     console.log('Rendering results');
     renderResults(); 
     console.log('Results rendered');
+    
+    // Announce calculation completion for screen readers
+    const statusEl = document.getElementById('debt-calc-status');
+    if (statusEl) {
+      const bestResult = results.avalanche || results.snowball;
+      if (bestResult) {
+        const months = bestResult.debtFreeMonths;
+        const dateStr = bestResult.debtFreeMonths >= 360 ? '30+ years' : formatDate(bestResult.debtFreeDate);
+        statusEl.textContent = `Calculated payoff in ${months} months, debt-free by ${dateStr}`;
+      } else {
+        statusEl.textContent = 'Calculation complete';
+      }
+    }
   } catch(e) { console.warn('Results render error:', e); }
   try { 
     console.log('Rendering charts');

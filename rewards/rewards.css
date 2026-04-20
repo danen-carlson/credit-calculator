@@ -351,6 +351,10 @@
 .value-detail-value.positive { color: var(--success); }
 .value-detail-value.negative { color: var(--danger); }
 
+/* Add icons for colorblind accessibility */
+.value-detail-value.positive::before { content: "✓ "; }
+.value-detail-value.negative::before { content: "❌ "; }
+
 /* Perks */
 .result-perks {
   margin: 12px 0;
@@ -478,6 +482,8 @@
   font-weight: 700;
   color: var(--success);
 }
+
+.comparison-table .winner-cell::before { content: "🏆 "; }
 
 .comparison-table .total-row td {
   font-weight: 700;
