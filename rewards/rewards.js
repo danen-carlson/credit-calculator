@@ -583,132 +583,158 @@
     const container = document.getElementById('results-container');
     if (!container) return;
 
-    // Calculate all cards with current year view
-    const results = cardsData.map(card => {
-      // Filter out crypto cards if toggle is off
-      if (card.isCrypto && !showCrypto) return null;
-
-      const calc = calculateCardRewards(card, currentSpending, yearView);
-      return { ...card, ...calc };
-    }).filter(Boolean);
-
-    // Sort by net annual value
-    results.sort((a, b) => b.netAnnual - a.netAnnual);
-
-    // Store current rankings for next comparison
-    const currentRankings = {};
-    results.forEach((card, index) => {
-      currentRankings[card.id] = index + 1;
-    });
-
-    // Apply filter
-    let filtered = results;
-    if (activeFilter !== 'all') {
-      filtered = results.filter(r => r.type === activeFilter);
+    // Show skeleton
+    const skeleton = document.getElementById('rewards-skeleton');
+    if (skeleton) {
+      skeleton.classList.add('active');
+      container.setAttribute('aria-busy', 'true');
     }
 
-    if (filtered.length === 0) {
-      container.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:40px 0;">No cards match your filter. Try a different category or enable crypto rewards.</p>';
-      return;
-    }
+    // Use setTimeout to allow UI to update before heavy computation
+    setTimeout(() => {
+      try {
+        // Calculate all cards with current year view
+        const results = cardsData.map(card => {
+          // Filter out crypto cards if toggle is off
+          if (card.isCrypto && !showCrypto) return null;
 
-    container.innerHTML = filtered.map((card, index) => {
-      const rank = index + 1;
-      const rankClass = rank === 1 ? 'gold' : rank === 2 ? 'silver' : rank === 3 ? 'bronze' : 'default';
-      const cardType = typeConfig[card.type] || typeConfig.cashback;
-      const isNegative = card.netAnnual < 0;
+          const calc = calculateCardRewards(card, currentSpending, yearView);
+          return { ...card, ...calc };
+        }).filter(Boolean);
 
-      // Check for ranking change
-      let rankChangeBadge = '';
-      if (previousRankings[card.id] && previousRankings[card.id] !== rank) {
-        const change = previousRankings[card.id] - rank;
-        if (change > 0) {
-          rankChangeBadge = `<span class="rank-change-badge" style="background:#10b981;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">↑${change} ${yearView === 'first' ? 'in Year 1' : 'in Ongoing'}</span>`;
-        } else {
-          rankChangeBadge = `<span class="rank-change-badge" style="background:#ef4444;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">↓${Math.abs(change)} ${yearView === 'first' ? 'in Year 1' : 'in Ongoing'}</span>`;
+        // Sort by net annual value
+        results.sort((a, b) => b.netAnnual - a.netAnnual);
+
+        // Store current rankings for next comparison
+        const currentRankings = {};
+        results.forEach((card, index) => {
+          currentRankings[card.id] = index + 1;
+        });
+
+        // Apply filter
+        let filtered = results;
+        if (activeFilter !== 'all') {
+          filtered = results.filter(r => r.type === activeFilter);
         }
-      } else if (!previousRankings[card.id] && yearView === 'first') {
-        // New to the list in first year view
-        rankChangeBadge = `<span class="rank-change-badge" style="background:#3b82f6;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">New in Year 1</span>`;
+
+        if (filtered.length === 0) {
+          container.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:40px 0;">No cards match your filter. Try a different category or enable crypto rewards.</p>';
+          hideSkeleton(skeleton);
+          return;
+        }
+
+        container.innerHTML = filtered.map((card, index) => {
+          const rank = index + 1;
+          const rankClass = rank === 1 ? 'gold' : rank === 2 ? 'silver' : rank === 3 ? 'bronze' : 'default';
+          const cardType = typeConfig[card.type] || typeConfig.cashback;
+          const isNegative = card.netAnnual < 0;
+
+          // Check for ranking change
+          let rankChangeBadge = '';
+          if (previousRankings[card.id] && previousRankings[card.id] !== rank) {
+            const change = previousRankings[card.id] - rank;
+            if (change > 0) {
+              rankChangeBadge = `<span class="rank-change-badge" style="background:#10b981;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">↑${change} ${yearView === 'first' ? 'in Year 1' : 'in Ongoing'}</span>`;
+            } else {
+              rankChangeBadge = `<span class="rank-change-badge" style="background:#ef4444;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">↓${Math.abs(change)} ${yearView === 'first' ? 'in Year 1' : 'in Ongoing'}</span>`;
+            }
+          } else if (!previousRankings[card.id] && yearView === 'first') {
+            // New to the list in first year view
+            rankChangeBadge = `<span class="rank-change-badge" style="background:#3b82f6;color:white;padding:2px 6px;border-radius:10px;font-size:0.7rem;margin-left:8px;">New in Year 1</span>`;
+          }
+
+          // Build breakdown bar
+          const breakdownHTML = buildBreakdownBar(card.breakdown);
+
+          // Build perks list
+          const perksHTML = card.perks.map(p => `<li>${p}</li>`).join('');
+
+          // Compare checkbox
+          const isChecked = compareSelected.has(card.id) ? 'checked' : '';
+
+          return `
+            <div class="result-card rank-${rank}" data-card-id="${card.id}">
+              <span class="result-rank-badge ${rankClass}">#${rank}</span>
+              <div class="result-top-row">
+                <div class="result-card-info">
+                  <div class="result-card-name">${card.name}${rankChangeBadge}</div>
+                  <div class="result-card-issuer">${card.issuer}</div>
+                  <span class="result-card-type-badge" style="background:${cardType.bg};color:${cardType.color};">${cardType.icon} ${cardType.label}</span>
+                </div>
+                <div class="result-value-section">
+                  <div class="result-net-value ${isNegative ? 'negative' : ''}">${formatCurrency(card.netAnnual)}</div>
+                  <div class="result-gross-label">net annual value</div>
+                </div>
+              </div>
+
+              ${card.bestFor ? `<div class="result-best-for">🏷️ Best for: ${card.bestFor}</div>` : ''}
+
+              ${card.bonusNote ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">⚠️ ${card.bonusNote}</div>` : ''}
+              ${card.note ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">${card.note}</div>` : ''}
+
+              <div class="rewards-breakdown">
+                <div class="rewards-breakdown-title">Rewards Breakdown</div>
+                ${breakdownHTML}
+              </div>
+
+              <div class="result-value-details">
+                <div class="value-detail">
+                  <span class="value-detail-label">Gross Rewards</span>
+                  <span class="value-detail-value positive">${formatCurrency(card.grossAnnual)}</span>
+                </div>
+                <div class="value-detail">
+                  <span class="value-detail-label">Annual Fee</span>
+                  <span class="value-detail-value negative">-${formatCurrency(card.annualFee)}</span>
+                </div>
+                <div class="value-detail">
+                  <span class="value-detail-label">Point Value</span>
+                  <span class="value-detail-value">${card.pointValue}¢</span>
+                </div>
+                ${card.signupBonusValue && card.signupBonusValue > 0 ? `
+                <div class="value-detail">
+                  <span class="value-detail-label">Signup Bonus</span>
+                  <span class="value-detail-value positive">${formatCurrency(card.signupBonusValue)}</span>
+                </div>` : ''}
+              </div>
+
+              <div class="result-perks">
+                <div class="result-perks-title">Key Perks</div>
+                <ul class="result-perks-list">${perksHTML}</ul>
+              </div>
+
+              <a href="${card.affiliateLink || '#'}" class="btn-apply" onclick="event.preventDefault();">Apply Now</a>
+
+              <label class="result-compare-check">
+                <input type="checkbox" data-card-id="${card.id}" ${isChecked} onchange="toggleCompare(this)">
+                Compare this card
+              </label>
+            </div>
+          `;
+        }).join('');
+
+        // Store current rankings for next comparison
+        previousRankings = currentRankings;
+
+        // Render comparison if 2+ selected
+        renderComparison(results);
+
+        // Render crypto corner
+        renderCryptoCorner(results);
+      } finally {
+        // Hide skeleton after rendering
+        hideSkeleton(skeleton);
       }
+    }, 0);
+  }
 
-      // Build breakdown bar
-      const breakdownHTML = buildBreakdownBar(card.breakdown);
-
-      // Build perks list
-      const perksHTML = card.perks.map(p => `<li>${p}</li>`).join('');
-
-      // Compare checkbox
-      const isChecked = compareSelected.has(card.id) ? 'checked' : '';
-
-      return `
-        <div class="result-card rank-${rank}" data-card-id="${card.id}">
-          <span class="result-rank-badge ${rankClass}">#${rank}</span>
-          <div class="result-top-row">
-            <div class="result-card-info">
-              <div class="result-card-name">${card.name}${rankChangeBadge}</div>
-              <div class="result-card-issuer">${card.issuer}</div>
-              <span class="result-card-type-badge" style="background:${cardType.bg};color:${cardType.color};">${cardType.icon} ${cardType.label}</span>
-            </div>
-            <div class="result-value-section">
-              <div class="result-net-value ${isNegative ? 'negative' : ''}">${formatCurrency(card.netAnnual)}</div>
-              <div class="result-gross-label">net annual value</div>
-            </div>
-          </div>
-
-          ${card.bestFor ? `<div class="result-best-for">🏷️ Best for: ${card.bestFor}</div>` : ''}
-
-          ${card.bonusNote ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">⚠️ ${card.bonusNote}</div>` : ''}
-          ${card.note ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">${card.note}</div>` : ''}
-
-          <div class="rewards-breakdown">
-            <div class="rewards-breakdown-title">Rewards Breakdown</div>
-            ${breakdownHTML}
-          </div>
-
-          <div class="result-value-details">
-            <div class="value-detail">
-              <span class="value-detail-label">Gross Rewards</span>
-              <span class="value-detail-value positive">${formatCurrency(card.grossAnnual)}</span>
-            </div>
-            <div class="value-detail">
-              <span class="value-detail-label">Annual Fee</span>
-              <span class="value-detail-value negative">-${formatCurrency(card.annualFee)}</span>
-            </div>
-            <div class="value-detail">
-              <span class="value-detail-label">Point Value</span>
-              <span class="value-detail-value">${card.pointValue}¢</span>
-            </div>
-            ${card.signupBonusValue && card.signupBonusValue > 0 ? `
-            <div class="value-detail">
-              <span class="value-detail-label">Signup Bonus</span>
-              <span class="value-detail-value positive">${formatCurrency(card.signupBonusValue)}</span>
-            </div>` : ''}
-          </div>
-
-          <div class="result-perks">
-            <div class="result-perks-title">Key Perks</div>
-            <ul class="result-perks-list">${perksHTML}</ul>
-          </div>
-
-          <a href="${card.affiliateLink || '#'}" class="btn-apply" onclick="event.preventDefault();">Apply Now</a>
-
-          <label class="result-compare-check">
-            <input type="checkbox" data-card-id="${card.id}" ${isChecked} onchange="toggleCompare(this)">
-            Compare this card
-          </label>
-        </div>
-      `;
-    }).join('');
-
-    // Store current rankings for next comparison
-    previousRankings = currentRankings;
-
-    // Render comparison if 2+ selected
-    renderComparison(results);
-
-    // Render crypto corner
-    renderCryptoCorner(results);
+  function hideSkeleton(skeleton) {
+    if (skeleton) {
+      skeleton.classList.remove('active');
+      const container = document.getElementById('results-container');
+      if (container) {
+        container.removeAttribute('aria-busy');
+      }
+    }
   }
 
   function buildBreakdownBar(breakdown) {

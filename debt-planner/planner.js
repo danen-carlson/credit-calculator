@@ -387,52 +387,79 @@ function calculateAll() {
 // ========================
 function recalculate() {
   console.log('Recalculate started');
-  try { 
-    console.log('Running calculateAll');
-    calculateAll(); 
-    console.log('calculateAll complete', { results: Object.keys(results).map(k => `${k}:${!!results[k]}`) });
-  } catch(e) { console.warn('Calc error:', e); }
-  try { 
-    console.log('Rendering results');
-    renderResults(); 
-    console.log('Results rendered');
-    
-    // Announce calculation completion for screen readers
-    const statusEl = document.getElementById('debt-calc-status');
-    if (statusEl) {
-      const bestResult = results.avalanche || results.snowball;
-      if (bestResult) {
-        const months = bestResult.debtFreeMonths;
-        const dateStr = bestResult.debtFreeMonths >= 360 ? '30+ years' : formatDate(bestResult.debtFreeDate);
-        statusEl.textContent = `Calculated payoff in ${months} months, debt-free by ${dateStr}`;
-      } else {
-        statusEl.textContent = 'Calculation complete';
+  
+  // Show skeleton
+  const skeleton = document.getElementById('debt-skeleton');
+  if (skeleton) {
+    skeleton.classList.add('active');
+    const container = document.getElementById('results-container');
+    if (container) {
+      container.setAttribute('aria-busy', 'true');
+    }
+  }
+  
+  // Use setTimeout to allow UI to update before heavy computation
+  setTimeout(() => {
+    try { 
+      console.log('Running calculateAll');
+      calculateAll(); 
+      console.log('calculateAll complete', { results: Object.keys(results).map(k => `${k}:${!!results[k]}`) });
+    } catch(e) { console.warn('Calc error:', e); }
+    try { 
+      console.log('Rendering results');
+      renderResults(); 
+      console.log('Results rendered');
+      
+      // Announce calculation completion for screen readers
+      const statusEl = document.getElementById('debt-calc-status');
+      if (statusEl) {
+        const bestResult = results.avalanche || results.snowball;
+        if (bestResult) {
+          const months = bestResult.debtFreeMonths;
+          const dateStr = bestResult.debtFreeMonths >= 360 ? '30+ years' : formatDate(bestResult.debtFreeDate);
+          statusEl.textContent = `Calculated payoff in ${months} months, debt-free by ${dateStr}`;
+        } else {
+          statusEl.textContent = 'Calculation complete';
+        }
       }
+    } catch(e) { console.warn('Results render error:', e); }
+    try { 
+      console.log('Rendering charts');
+      renderCharts(); 
+      console.log('Charts rendered');
+    } catch(e) { console.warn('Charts render error:', e); }
+    try { 
+      console.log('Rendering schedule');
+      renderSchedule(); 
+      console.log('Schedule rendered');
+    } catch(e) { console.warn('Schedule render error:', e); }
+    try { 
+      console.log('Rendering recommendations');
+      renderRecommendations(); 
+      console.log('Recommendations rendered');
+    } catch(e) { console.warn('Recommendations render error:', e); }
+    try { 
+      if (consolidationResults) {
+        console.log('Rendering consolidation results');
+        renderConsolidationResults(consolidationResults); 
+        console.log('Consolidation results rendered');
+      }
+    } catch(e) { console.warn('Consolidation render error:', e); }
+    console.log('Recalculate complete');
+    
+    // Hide skeleton after all rendering is complete
+    hideSkeleton(skeleton);
+  }, 0);
+}
+
+function hideSkeleton(skeleton) {
+  if (skeleton) {
+    skeleton.classList.remove('active');
+    const container = document.getElementById('results-container');
+    if (container) {
+      container.removeAttribute('aria-busy');
     }
-  } catch(e) { console.warn('Results render error:', e); }
-  try { 
-    console.log('Rendering charts');
-    renderCharts(); 
-    console.log('Charts rendered');
-  } catch(e) { console.warn('Charts render error:', e); }
-  try { 
-    console.log('Rendering schedule');
-    renderSchedule(); 
-    console.log('Schedule rendered');
-  } catch(e) { console.warn('Schedule render error:', e); }
-  try { 
-    console.log('Rendering recommendations');
-    renderRecommendations(); 
-    console.log('Recommendations rendered');
-  } catch(e) { console.warn('Recommendations render error:', e); }
-  try { 
-    if (consolidationResults) {
-      console.log('Rendering consolidation results');
-      renderConsolidationResults(consolidationResults); 
-      console.log('Consolidation results rendered');
-    }
-  } catch(e) { console.warn('Consolidation render error:', e); }
-  console.log('Recalculate complete');
+  }
 }
 
 function renderResults() {
@@ -864,19 +891,40 @@ function runConsolidation() {
   const debtSelect = document.getElementById('consolidation-debt-select');
   const cardSelect = document.getElementById('consolidation-card-select');
   const amountInput = document.getElementById('consolidation-amount');
+  const button = document.getElementById('consolidate-btn');
   if (!debtSelect || !cardSelect || !amountInput) return;
+
+  // Show loading state on button
+  const originalText = button.textContent;
+  button.textContent = 'Simulating...';
+  button.classList.add('btn-loading');
+  button.disabled = true;
 
   const debtId = parseInt(debtSelect.value, 10);
   const card = BALANCE_TRANSFER_CARDS.find(c => c.id === cardSelect.value);
   if (!debtId || !card) {
+    resetConsolidationButton(button, originalText);
     alert('Choose a debt and a balance transfer card first.');
     return;
   }
 
-  consolidationResults = simulateConsolidation(debtId, card, parseFloat(amountInput.value) || 0);
-  if (consolidationResults) {
-    renderConsolidationResults(consolidationResults);
-  }
+  // Use setTimeout to allow UI to update before heavy computation
+  setTimeout(() => {
+    try {
+      consolidationResults = simulateConsolidation(debtId, card, parseFloat(amountInput.value) || 0);
+      if (consolidationResults) {
+        renderConsolidationResults(consolidationResults);
+      }
+    } finally {
+      resetConsolidationButton(button, originalText);
+    }
+  }, 0);
+}
+
+function resetConsolidationButton(button, originalText) {
+  button.textContent = originalText;
+  button.classList.remove('btn-loading');
+  button.disabled = false;
 }
 
 function resetConsolidation() {
