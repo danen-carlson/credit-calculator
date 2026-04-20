@@ -67,6 +67,95 @@
   }
   </script>
 
+  <!-- HowTo JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Pay Off Debt Faster Using Snowball vs Avalanche",
+    "description": "Steps to use the debt payoff planner to compare snowball and avalanche strategies and find your fastest path to becoming debt-free.",
+    "totalTime": "PT10M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "CreditStudio Debt Payoff Planner"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Add Your Debts",
+        "text": "Enter each debt including the balance, interest rate, and minimum payment. We've pre-filled some examples to get you started.",
+        "position": 1
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Set Your Extra Monthly Payment",
+        "text": "Determine how much extra you can put toward debt each month. Move the slider or enter a specific amount to see how it affects your debt-free date.",
+        "position": 2
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Compare Strategies",
+        "text": "Review the three payoff strategies side by side: snowball (smallest balance first), avalanche (highest interest rate first), and custom (your own approach). The winner is highlighted.",
+        "position": 3
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Explore Balance Transfer Options",
+        "text": "See how much you could save by transferring a high-interest debt to a 0% APR balance transfer card using the consolidation simulator.",
+        "position": 4
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Visualize Your Progress",
+        "text": "View interactive charts showing your debt decreasing over time, strategy comparisons, and payoff milestones to stay motivated.",
+        "position": 5
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Print Your Plan",
+        "text": "Generate a printable monthly payment schedule to follow as you work toward becoming debt-free.",
+        "position": 6
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://creditstud.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Debt Planner",
+        "item": "https://creditstud.io/debt-planner/"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CreditStud">
+
   <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440" crossorigin="anonymous"></script>
 </head>
@@ -391,5 +480,6 @@
       });
     });
   </script>
+  <script defer src="/shared/pwa.js"></script>
 </body>
 </html>

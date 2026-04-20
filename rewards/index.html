@@ -75,6 +75,89 @@
   }
   </script>
 
+  <!-- HowTo JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Maximize Credit Card Rewards",
+    "description": "Steps to find the credit card that earns you the most rewards based on your spending habits.",
+    "totalTime": "PT5M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "CreditStudio Rewards Calculator"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Enter Your Monthly Spending",
+        "text": "Adjust the sliders or type amounts in each spending category. Results update instantly. Defaults are based on average US household spending.",
+        "position": 1
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Select Calculation Period",
+        "text": "Toggle between First Year value (includes signup bonuses) and Ongoing value (excludes signup bonuses) based on whether you prioritize short-term gains or long-term value.",
+        "position": 2
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Filter by Card Type",
+        "text": "Use the filter buttons to narrow results by card type: cashback, travel, tiered rewards, grocery rewards, or crypto rewards.",
+        "position": 3
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Review Ranked Results",
+        "text": "Cards are ranked by net annual rewards value (earnings minus annual fee). The top cards offer the most value for your specific spending patterns.",
+        "position": 4
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Consider Crypto Rewards",
+        "text": "If interested in crypto rewards, toggle the crypto option to see cards that offer cryptocurrency back on purchases.",
+        "position": 5
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://creditstud.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rewards",
+        "item": "https://creditstud.io/rewards/"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CreditStud">
+
   <!-- AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440" crossorigin="anonymous"></script>
 </head>
@@ -250,5 +333,6 @@
       });
     });
   </script>
+  <script defer src="/shared/pwa.js"></script>
 </body>
 </html>
