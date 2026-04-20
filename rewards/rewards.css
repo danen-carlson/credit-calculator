@@ -455,13 +455,15 @@
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  /* Ensure minimum height for scroll indication */
+  min-height: 150px;
 }
 
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.85rem;
-  min-width: 500px;
+  min-width: 500px; /* Prevent table from compressing on small screens */
 }
 
 .comparison-table thead {
@@ -477,6 +479,7 @@
   letter-spacing: 0.04em;
   color: var(--text-secondary);
   border-bottom: 2px solid var(--border);
+  white-space: nowrap; /* Prevent header text from wrapping */
 }
 
 .comparison-table th:first-child {
@@ -486,6 +489,7 @@
 .comparison-table td {
   padding: 10px 14px;
   border-bottom: 1px solid var(--border);
+  white-space: nowrap; /* Prevent cell content from wrapping */
 }
 
 .comparison-table tbody tr:last-child td {
@@ -509,6 +513,22 @@
   font-size: 0.95rem;
   border-top: 2px solid var(--border);
   background: #f8f9fb;
+}
+
+/* Mobile enhancements for comparison table */
+@media (max-width: 600px) {
+  .comparison-table {
+    font-size: 0.8rem; /* Slightly smaller font on mobile */
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 8px 10px; /* Reduce padding on mobile */
+  }
+  
+  .comparison-table .total-row td {
+    font-size: 1rem; /* Larger font for totals on mobile */
+  }
 }
 
 /* Crypto Corner */
@@ -699,11 +719,25 @@
   border-radius: 16px;
   transition: all 0.2s;
   user-select: none;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .year-toggle-group input[type="radio"]:checked + .year-toggle-label {
   background: var(--primary);
   color: white;
+}
+
+/* Mobile enhancements for year toggle */
+@media (max-width: 600px) {
+  .year-toggle-label {
+    font-size: 0.9rem; /* Slightly larger on mobile */
+    padding: 8px 16px; /* More padding on mobile */
+  }
 }
 
 /* Filter Bar */
@@ -724,6 +758,12 @@
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .filter-btn:hover {
@@ -735,6 +775,18 @@
   background: var(--primary);
   color: white;
   border-color: var(--primary);
+}
+
+/* Mobile enhancements for filter bar */
+@media (max-width: 600px) {
+  .filter-bar {
+    gap: 6px; /* Reduce gap on mobile */
+  }
+  
+  .filter-btn {
+    font-size: 0.85rem; /* Slightly larger on mobile */
+    padding: 8px 12px; /* Adjust padding for better touch targets */
+  }
 }
 
 /* Loading States */

@@ -460,6 +460,16 @@ function hideSkeleton(skeleton) {
       container.removeAttribute('aria-busy');
     }
   }
+  
+  // Show/hide export button based on whether results are available
+  const exportBtn = document.getElementById('export-csv-btn');
+  if (exportBtn) {
+    const hasResults = results && 
+      ((results.minimum && results.minimum.months && results.minimum.months.length > 0) ||
+       (results.snowball && results.snowball.months && results.snowball.months.length > 0) ||
+       (results.avalanche && results.avalanche.months && results.avalanche.months.length > 0));
+    exportBtn.style.display = hasResults ? 'inline-block' : 'none';
+  }
 }
 
 function renderResults() {
@@ -1013,6 +1023,9 @@ function init() {
   console.log('Starting initial calculation');
   updateExtraPayment(200);
   console.log('Init complete');
+  
+  // Initialize export button state
+  hideSkeleton();
 }
 
 // Run on DOM ready
@@ -1022,7 +1035,66 @@ if (document.readyState === 'loading') {
   init();
 }
 
+// Export amortization schedule as CSV
+function exportAmortizationCSV() {
+  const result = results[currentChartStrategy];
+  if (!result || !result.months || result.months.length === 0) {
+    alert("No amortization data available. Please add debts and run a calculation first.");
+    return;
+  }
+
+  // Create CSV content
+  let csvContent = "Month,Debt Name,Payment,Principal,Interest,Remaining Balance\n";
+  
+  // Process each month
+  result.months.forEach(month => {
+    // Process each payment in the month
+    month.payments.forEach(payment => {
+      // Escape fields that might contain commas
+      const escapeField = (field) => {
+        const str = String(field);
+        return str.includes(',') ? `"${str}"` : str;
+      };
+      
+      csvContent += [
+        month.month,
+        escapeField(payment.name),
+        payment.payment.toFixed(2),
+        payment.principal.toFixed(2),
+        payment.interest.toFixed(2),
+        payment.balance.toFixed(2)
+      ].join(',') + '\n';
+    });
+  });
+
+  // Create filename with current date
+  const now = new Date();
+  const dateString = now.toISOString().split('T')[0]; // YYYY-MM-DD format
+  const filename = `creditstudio-amortization-${dateString}.csv`;
+
+  // Create and trigger download
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  const url = URL.createObjectURL(blob);
+  link.setAttribute('href', url);
+  link.setAttribute('download', filename);
+  link.style.visibility = 'hidden';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  // Show confirmation message
+  const statusEl = document.getElementById('export-status');
+  if (statusEl) {
+    statusEl.textContent = 'CSV file downloaded successfully!';
+    setTimeout(() => {
+      statusEl.textContent = '';
+    }, 3000);
+  }
+}
+
 // Expose helpers for the share-state module to call after URL hydration.
 window.renderDebtCards = renderDebtCards;
 window.updateSummary = updateSummary;
 window.recalculate = recalculate;
+window.exportAmortizationCSV = exportAmortizationCSV;

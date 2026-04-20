@@ -46,11 +46,13 @@
 .debt-card .input-group input {
   font-size: 0.9rem;
   padding: 8px 12px;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
 }
 
 .debt-card .btn-remove {
-  width: 32px;
-  height: 32px;
+  width: 44px; /* Increased for better tap target */
+  height: 44px; /* Increased for better tap target */
   border: none;
   background: var(--danger-light);
   color: var(--danger);
@@ -68,6 +70,18 @@
 .debt-card .btn-remove:hover {
   background: var(--danger);
   color: white;
+}
+
+/* Mobile enhancements for debt cards */
+@media (max-width: 600px) {
+  .debt-card {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 10px;
+  }
+  
+  .debt-card .btn-remove {
+    justify-self: end; /* Align to end on mobile */
+  }
 }
 
 /* Total Debt Summary */
@@ -641,13 +655,15 @@
 .strategy-comparison-table-wrapper {
   margin-top: 20px;
   overflow-x: auto;
+  /* Ensure minimum height for scroll indication */
+  min-height: 150px;
 }
 
 .strategy-comparison-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.85rem;
-  min-width: 400px;
+  min-width: 500px; /* Increased for better mobile experience */
 }
 
 .strategy-comparison-table thead {
@@ -663,11 +679,13 @@
   letter-spacing: 0.04em;
   color: var(--text-secondary);
   border-bottom: 1px solid var(--border);
+  white-space: nowrap; /* Prevent header text from wrapping */
 }
 
 .strategy-comparison-table td {
   padding: 12px 14px;
   border-bottom: 1px solid #f1f3f7;
+  white-space: nowrap; /* Prevent cell content from wrapping */
 }
 
 .strategy-comparison-table tr.optimal-row {
@@ -699,6 +717,28 @@
   font-size: 0.65rem;
   font-weight: 600;
   margin-left: 8px;
+}
+
+/* Mobile enhancements for strategy comparison table */
+@media (max-width: 600px) {
+  .strategy-comparison-table {
+    font-size: 0.8rem; /* Slightly smaller on mobile */
+    min-width: 400px; /* Adjusted for mobile */
+  }
+  
+  .strategy-comparison-table th,
+  .strategy-comparison-table td {
+    padding: 8px 10px; /* Reduce padding on mobile */
+  }
+  
+  .strategy-name-cell {
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+  }
+  
+  .optimal-badge {
+    margin-left: 0;
+    margin-top: 4px; /* Move to new line on small screens */
+  }
 }
 
 /* Milestone Timeline */
@@ -775,6 +815,8 @@
   cursor: pointer;
   user-select: none;
   transition: background 0.2s;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
 }
 
 .schedule-header:hover {
@@ -816,7 +858,7 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 0.8rem;
-  min-width: 500px;
+  min-width: 600px; /* Increased for better mobile experience */
 }
 
 .schedule-table thead {
@@ -855,6 +897,27 @@
 .schedule-table .target-marker {
   color: var(--primary);
   font-weight: 600;
+}
+
+/* Mobile enhancements for schedule table */
+@media (max-width: 600px) {
+  .schedule-table {
+    font-size: 0.75rem; /* Slightly smaller on mobile */
+    min-width: 500px; /* Adjusted for mobile */
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    padding: 6px 8px; /* Reduce padding on mobile */
+  }
+  
+  .schedule-header {
+    padding: 12px 16px; /* Reduce padding on mobile */
+  }
+  
+  .schedule-header h3 {
+    font-size: 1.1rem; /* Slightly larger on mobile */
+  }
 }
 
 /* Recommendations */
@@ -913,6 +976,14 @@
   text-decoration: underline;
 }
 
+/* Add Debt Button */
+#add-debt-btn {
+  width: 100%; /* Full width on mobile */
+  padding: 12px 16px; /* Ensure minimum tap target size */
+  font-size: 1rem; /* Larger font on mobile */
+  min-height: 44px; /* Minimum tap target size */
+}
+
 /* Print Button */
 .print-btn {
   display: inline-flex;
@@ -927,11 +998,21 @@
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
 }
 
 .print-btn:hover {
   border-color: var(--text-secondary);
   color: var(--text);
+}
+
+/* Mobile enhancements for buttons */
+@media (max-width: 600px) {
+  #add-debt-btn {
+    font-size: 1.1rem; /* Larger font on mobile */
+    padding: 14px 16px; /* More padding on mobile */
+  }
 }
 
 /* SEO Content */
