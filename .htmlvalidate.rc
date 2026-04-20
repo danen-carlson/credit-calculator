@@ -1,0 +1,10 @@
+{
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "attribute-Deprecated": "off",
+    "no-inline-style": "off",
+    "script-type": "off",
+    "require-sri": "off",
+    "td-colspan": "off"
+  }
+}
