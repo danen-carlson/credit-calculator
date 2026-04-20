@@ -242,6 +242,11 @@
   color: var(--warning);
 }
 
+/* Add icons for colorblind accessibility */
+.strategy-card .strategy-metric-value.success::before { content: "✓ "; }
+.strategy-card .strategy-metric-value.danger::before { content: "❌ "; }
+.strategy-card .strategy-metric-value.warning::before { content: "⚠️ "; }
+
 .strategy-savings {
   margin-top: 12px;
   padding-top: 12px;
@@ -270,6 +275,10 @@
 .savings-value.negative {
   color: var(--danger);
 }
+
+/* Add icons for colorblind accessibility */
+.savings-value.positive::before { content: "✓ "; }
+.savings-value.negative::before { content: "❌ "; }
 
 /* Savings Comparison Banner */
 .savings-banner {
@@ -400,6 +409,10 @@
 .consolidation-net.negative {
   color: var(--danger);
 }
+
+/* Add icons for colorblind accessibility */
+.consolidation-net.positive::before { content: "✓ "; }
+.consolidation-net.negative::before { content: "❌ "; }
 
 .consolidation-summary-grid {
   display: grid;

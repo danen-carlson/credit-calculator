@@ -270,6 +270,7 @@ if (purchaseInput) {
 // ── Calculate ────────────────────────────────────────────────────────────────
 
 document.getElementById('calculate-btn').addEventListener('click', () => {
+  try {
   const amount = parseFloat(document.getElementById('purchase-amount').value);
   const targetMonths = parseInt(document.getElementById('payoff-months').value) || 6;
 
@@ -301,6 +302,7 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
   renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore);
   document.getElementById('results-section').classList.remove('hidden');
   document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } catch(err) { console.error('Compare My Options error:', err); alert('Something went wrong: ' + err.message); }
 });
 
 // ── Render results ─────────────────────────────────────────────────────────

@@ -72,6 +72,8 @@
 </head>
 <body>
   <div id="app">
+    <!-- Skip to content link -->
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
     <!-- Header -->
     <header class="planner-header">
       <div class="container">
@@ -88,7 +90,7 @@
 
     <!-- Step 1: Add Your Debts -->
     <section class="step" id="step-debts">
-      <div class="container">
+      <div class="container" id="main">
         <div class="step-header">
           <span class="step-number">1</span>
           <h2>Add Your Debts</h2>
@@ -99,7 +101,7 @@
           <!-- Debt cards rendered by JS -->
         </div>
 
-        <button class="btn-add" id="add-debt-btn" style="margin-top:12px;">+ Add Another Debt</button>
+        <button class="btn-add" id="add-debt-btn" style="margin-top:12px;" aria-label="Add another debt">+ Add Another Debt</button>
 
         <!-- Share / data stamp row -->
         <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
@@ -150,14 +152,14 @@
             <span style="font-size:0.85rem;color:var(--text-secondary);">per month extra</span>
           </div>
           <div class="slider-presets">
-            <button class="preset-btn" data-value="0" onclick="setPreset(0)">$0</button>
-            <button class="preset-btn" data-value="50" onclick="setPreset(50)">$50</button>
-            <button class="preset-btn" data-value="100" onclick="setPreset(100)">$100</button>
-            <button class="preset-btn active" data-value="200" onclick="setPreset(200)">$200</button>
-            <button class="preset-btn" data-value="300" onclick="setPreset(300)">$300</button>
-            <button class="preset-btn" data-value="500" onclick="setPreset(500)">$500</button>
-            <button class="preset-btn" data-value="750" onclick="setPreset(750)">$750</button>
-            <button class="preset-btn" data-value="1000" onclick="setPreset(1000)">$1,000</button>
+            <button class="preset-btn" data-value="0" onclick="setPreset(0)" aria-label="Set extra payment to $0">$0</button>
+            <button class="preset-btn" data-value="50" onclick="setPreset(50)" aria-label="Set extra payment to $50">$50</button>
+            <button class="preset-btn" data-value="100" onclick="setPreset(100)" aria-label="Set extra payment to $100">$100</button>
+            <button class="preset-btn active" data-value="200" onclick="setPreset(200)" aria-label="Set extra payment to $200">$200</button>
+            <button class="preset-btn" data-value="300" onclick="setPreset(300)" aria-label="Set extra payment to $300">$300</button>
+            <button class="preset-btn" data-value="500" onclick="setPreset(500)" aria-label="Set extra payment to $500">$500</button>
+            <button class="preset-btn" data-value="750" onclick="setPreset(750)" aria-label="Set extra payment to $750">$750</button>
+            <button class="preset-btn" data-value="1000" onclick="setPreset(1000)" aria-label="Set extra payment to $1,000">$1,000</button>
           </div>
         </div>
       </div>
@@ -171,7 +173,10 @@
         </div>
         <p class="step-desc">Three strategies compared side by side. The winner is highlighted.</p>
 
-        <div id="results-container">
+        <!-- Status announcement for screen readers -->
+        <div id="debt-calc-status" class="sr-only" aria-live="polite"></div>
+
+        <div id="results-container" aria-live="polite">
           <!-- Rendered by JS -->
         </div>
       </div>
@@ -209,8 +214,8 @@
               <small id="consolidation-limit-info" style="color:var(--text-secondary);font-size:0.75rem;margin-top:4px;display:block;"></small>
             </div>
           </div>
-          <button class="btn-consolidate" id="consolidate-btn" onclick="runConsolidation()">🔍 Simulate Consolidation</button>
-          <button class="btn-ghost btn-reset-consolidation" id="reset-consolidation-btn" onclick="resetConsolidation()" style="display:none;">↩ Reset Simulation</button>
+          <button class="btn-consolidate" id="consolidate-btn" onclick="runConsolidation()" aria-label="Simulate debt consolidation">🔍 Simulate Consolidation</button>
+          <button class="btn-ghost btn-reset-consolidation" id="reset-consolidation-btn" onclick="resetConsolidation()" style="display:none;" aria-label="Reset debt consolidation simulation">↩ Reset Simulation</button>
         </div>
 
         <div id="consolidation-results" style="display:none;">
@@ -229,8 +234,8 @@
         <p class="step-desc">Watch your debts shrink over time. Switch between strategies to compare.</p>
 
         <div class="chart-toggle">
-          <button class="chart-toggle-btn active" data-strategy="snowball" onclick="setChartStrategy('snowball')">🔵 Snowball</button>
-          <button class="chart-toggle-btn" data-strategy="avalanche" onclick="setChartStrategy('avalanche')">🟣 Avalanche</button>
+          <button class="chart-toggle-btn active" data-strategy="snowball" onclick="setChartStrategy('snowball')" aria-label="Show snowball strategy chart">🔵 Snowball</button>
+          <button class="chart-toggle-btn" data-strategy="avalanche" onclick="setChartStrategy('avalanche')" aria-label="Show avalanche strategy chart">🟣 Avalanche</button>
         </div>
 
         <!-- Chart 1: Debt Over Time -->
