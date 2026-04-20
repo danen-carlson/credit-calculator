@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  position: relative;
 }
 
 .debt-card {
@@ -165,6 +166,25 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+/* Results Container Skeleton */
+#results-container {
+  position: relative;
+}
+
+#debt-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  display: none;
+}
+
+#debt-skeleton.active {
+  display: block;
 }
 
 .strategy-card {
@@ -354,8 +374,70 @@
   background: var(--primary-hover);
 }
 
+/* Loading States */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .btn-reset-consolidation {
   margin-left: 10px;
+}
+
+/* Skeleton Styles (inherited from main CSS) */
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--surface);
+  border-radius: var(--radius);
+  z-index: 10;
+  display: none;
+}
+
+.skeleton.active {
+  display: block;
+}
+
+.skeleton-bar {
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  animation: shimmer 1.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-bar {
+    animation: none;
+    background: #f0f0f0;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 .consolidation-results-card {
