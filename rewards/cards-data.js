@@ -24,6 +24,7 @@ const cardsData = [
     perks: ['2% on everything — no categories to track', 'No annual fee', 'No foreign transaction fees', '0% intro APR for 18 months on balance transfers'],
     bestFor: 'Simplicity Seekers',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -47,6 +48,7 @@ const cardsData = [
     perks: ['2% cash rewards on all purchases', '$200 cash rewards bonus', 'No annual fee', 'Cell phone protection'],
     bestFor: 'Flat-Rate Earners',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -70,6 +72,7 @@ const cardsData = [
     perks: ['2% unlimited cashback into Fidelity account', 'No annual fee', 'No foreign transaction fees', 'Great for investors — auto-deposits to brokerage'],
     bestFor: 'Investors',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -93,6 +96,7 @@ const cardsData = [
     perks: ['2% on all purchases (3% on PayPal)', 'No annual fee', 'Redeem to PayPal or bank account', 'No foreign transaction fees'],
     bestFor: 'PayPal Users',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -117,6 +121,7 @@ const cardsData = [
     perks: ['5% rotating quarterly categories (up to $1,500)', '3% on dining and drugstores', 'Earns Chase Ultimate Rewards points', 'No annual fee'],
     bestFor: 'Category Optimizers',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -141,6 +146,7 @@ const cardsData = [
     perks: ['5% rotating quarterly categories (up to $1,500)', 'First-year cashback match — doubles ALL earnings', 'No annual fee, ever', 'Free FICO credit score'],
     bestFor: 'First-Year Value',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -164,6 +170,7 @@ const cardsData = [
     perks: ['5% on 2 chosen categories (up to $3,000/quarter combined)', '2% on 1 everyday category', 'Utilities & gas at 5% are top picks', 'No annual fee'],
     bestFor: 'Utility & Gas Spenders',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -187,6 +194,7 @@ const cardsData = [
     perks: ['5% on your top spend category each month (up to $500)', 'Auto-detects — no activation needed', 'No annual fee', '0% intro APR for 15 months'],
     bestFor: 'Top-Category Spenders',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -210,6 +218,7 @@ const cardsData = [
     perks: ['25% more value when redeeming through Chase Travel', '$50 annual hotel credit', 'Trip cancellation/interruption insurance', 'No foreign transaction fees'],
     bestFor: 'Travelers & Diners',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -233,6 +242,7 @@ const cardsData = [
     perks: ['$120 annual Uber Cash ($10/mo)', '$120 annual dining credit ($10/mo at select restaurants)', '4x at restaurants & US supermarkets', 'No foreign transaction fees'],
     bestFor: 'Foodies',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -256,6 +266,7 @@ const cardsData = [
     perks: ['$300 annual travel credit (effective fee: $95)', '10,000 anniversary bonus miles ($185 value)', 'Priority Pass & Capital One lounge access', 'TSA PreCheck/Global Entry credit'],
     bestFor: 'Premium Travelers',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -279,6 +290,7 @@ const cardsData = [
     perks: ['2x miles on every purchase', '5x on hotels & rental cars via Capital One Travel', 'Transfer partners for outsized redemptions', 'No foreign transaction fees'],
     bestFor: 'Everyday Travel Earners',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -302,6 +314,7 @@ const cardsData = [
     perks: ['6% cashback at US supermarkets (up to $6k/yr)', '6% on select streaming subscriptions', '3% on transit and gas stations', 'Return protection & purchase security'],
     bestFor: 'Grocery Shoppers',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -325,6 +338,7 @@ const cardsData = [
     perks: ['3% at US supermarkets (up to $6k/yr)', '3% on gas stations', '3% on online retail purchases', 'No annual fee'],
     bestFor: 'No-Fee Grocery Earners',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: false
   },
   {
@@ -348,6 +362,7 @@ const cardsData = [
     perks: ['Up to 4% crypto back on purchases', 'Choose your reward crypto (BTC, ETH, DOGE, etc.)', 'No annual fee, no credit check', 'Visa debit — spend from your crypto balance'],
     bestFor: 'Crypto Earners',
     affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: true
   },
   {
@@ -371,6 +386,55 @@ const cardsData = [
     perks: ['4% Bitcoin back on all purchases', 'Requires Coinbase One subscription (~$30/mo)', 'Credit card — builds credit history', 'Zero trading fees on Coinbase'],
     bestFor: 'Crypto Maximalists',
     affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: true
+  },
+  {
+    id: 'gemini-credit',
+    name: 'Gemini Credit Card',
+    issuer: 'Gemini / WebBank',
+    type: 'crypto',
+    annualFee: 0,
+    signupBonus: { amount: 100, unit: 'crypto', value: 100, requirement: '$500 spend in 90 days' },
+    rewards: {
+      groceries: { rate: 3 },
+      dining: { rate: 3 },
+      gas: { rate: 3 },
+      travel: { rate: 3 },
+      online: { rate: 3 },
+      streaming: { rate: 3 },
+      utilities: { rate: 3 },
+      everything: { rate: 3 }
+    },
+    pointValue: 1.0,
+    perks: ['3% crypto back on all purchases', 'Instant crypto rewards deposited weekly', 'No annual fee', 'Mobile app with real-time spending insights'],
+    bestFor: 'Gemini Users',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: true
+  },
+  {
+    id: 'square-cash-card',
+    name: 'Cash App Card',
+    issuer: 'Square / Lincoln Savings Bank',
+    type: 'crypto',
+    annualFee: 0,
+    signupBonus: { amount: 0, unit: 'crypto', value: 0, requirement: '' },
+    rewards: {
+      groceries: { rate: 2, note: 'With Boosts' },
+      dining: { rate: 2, note: 'With Boosts' },
+      gas: { rate: 2, note: 'With Boosts' },
+      travel: { rate: 2, note: 'With Boosts' },
+      online: { rate: 2, note: 'With Boosts' },
+      streaming: { rate: 2, note: 'With Boosts' },
+      utilities: { rate: 2, note: 'With Boosts' },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['Bitcoin rewards with automatic deposits', 'No annual fee', 'Cash App integration', 'Boosts for extra rewards in select categories'],
+    bestFor: 'Cash App Users',
+    affiliateLink: '',
+    affiliateNetwork: '',
     isCrypto: true
   }
 ];
