@@ -331,6 +331,11 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
       const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
       renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore);
       document.getElementById('results-section').classList.remove('hidden');
+      // Show email capture after first results
+      if (!bnplEmailCaptureShown && typeof EmailCapture !== 'undefined') {
+        bnplEmailCaptureShown = true;
+        setTimeout(function() { new EmailCapture('bnpl').showIfEligible(); }, 2000);
+      }
       document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
       
       // Hide skeleton after rendering

@@ -4,6 +4,9 @@
 (function() {
   'use strict';
 
+  // Email capture — show once after first calculation, then dismiss for 7 days
+  let emailCaptureShown = false;
+
   // Default spending values (BLS Consumer Expenditure Survey, adjusted 2026)
   const defaultSpending = {
     groceries: 540,
@@ -1136,6 +1139,11 @@
 
     updateSpendingSummary();
     renderResults();
+    // Show email capture after first results
+    if (!emailCaptureShown && typeof EmailCapture !== 'undefined') {
+      emailCaptureShown = true;
+      setTimeout(function() { new EmailCapture('rewards').showIfEligible(); }, 2000);
+    }
   }
 
   function updateSpendingSummary() {

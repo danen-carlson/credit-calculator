@@ -436,6 +436,11 @@ function recalculate() {
       console.log('Rendering results');
       renderResults(); 
       console.log('Results rendered');
+      // Show email capture after first results
+      if (!debtEmailCaptureShown && typeof EmailCapture !== 'undefined') {
+        debtEmailCaptureShown = true;
+        setTimeout(function() { new EmailCapture('debt').showIfEligible(); }, 2000);
+      }
       
       // Announce calculation completion for screen readers
       const statusEl = document.getElementById('debt-calc-status');
