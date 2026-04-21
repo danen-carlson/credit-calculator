@@ -9,6 +9,10 @@ let results = { minimum: null, snowball: null, avalanche: null };
 let currentChartStrategy = 'snowball';
 let scheduleOpen = false;
 let consolidationResults = null;
+// Credit score simulator state
+let creditScore = 700; // Default credit score
+let totalCreditLimits = 15000; // Default total credit limits
+let currentBalances = 5000; // Default current balances
 // `strategyComparisonChart` lives in charts.js to keep chart state co-located
 
 // Emit a debts-changed event so the share URL module can re-serialize.
@@ -970,6 +974,255 @@ function escapeHtml(str) {
 }
 
 // ========================
+// CREDIT SCORE SIMULATOR
+// ========================
+
+function updateCreditScore(value) {
+  creditScore = Math.max(300, Math.min(850, parseInt(value) || 700));
+  document.getElementById('credit-score-value').textContent = creditScore;
+  document.getElementById('credit-score-slider').value = creditScore;
+  document.getElementById('credit-score-input').value = creditScore;
+  renderCreditScoreSimulator();
+}
+
+function updateCreditLimits(value) {
+  totalCreditLimits = Math.max(0, parseFloat(value) || 0);
+  document.getElementById('credit-limits-value').textContent = formatCurrency(totalCreditLimits);
+  document.getElementById('credit-limits-slider').value = totalCreditLimits;
+  document.getElementById('credit-limits-input').value = totalCreditLimits;
+  renderCreditScoreSimulator();
+}
+
+function updateBalances(value) {
+  currentBalances = Math.max(0, parseFloat(value) || 0);
+  document.getElementById('balances-value').textContent = formatCurrency(currentBalances);
+  document.getElementById('balances-slider').value = currentBalances;
+  document.getElementById('balances-input').value = currentBalances;
+  renderCreditScoreSimulator();
+}
+
+function calculateUtilizationImpact(balance, limit) {
+  if (limit <= 0) return 0;
+  const utilization = (balance / limit) * 100;
+  
+  // Credit score impact model based on utilization brackets
+  if (utilization < 10) {
+    return { impact: 15, label: 'Excellent', color: '#10b981' }; // +10-20 points
+  } else if (utilization < 30) {
+    return { impact: 0, label: 'Good', color: '#10b981' }; // Neutral
+  } else if (utilization < 50) {
+    return { impact: -20, label: 'Fair', color: '#f59e0b' }; // -10 to -30 points
+  } else {
+    return { impact: -40, label: 'Poor', color: '#ef4444' }; // Significant hit
+  }
+}
+
+function renderCreditScoreSimulator() {
+  const simulatorSection = document.getElementById('credit-score-simulator');
+  if (!simulatorSection) return;
+  
+  // Calculate current utilization
+  const currentUtilization = totalCreditLimits > 0 ? (currentBalances / totalCreditLimits) * 100 : 0;
+  const currentImpact = calculateUtilizationImpact(currentBalances, totalCreditLimits);
+  
+  // Generate projected utilization over time
+  const projections = [];
+  let projectedBalances = currentBalances;
+  let projectedScore = creditScore;
+  
+  // If we have debt payoff results, project utilization over time
+  const result = results[currentChartStrategy];
+  if (result && result.months && result.months.length > 0) {
+    // Take snapshots at regular intervals
+    const interval = Math.max(1, Math.floor(result.months.length / 12));
+    for (let i = 0; i < result.months.length; i += interval) {
+      const month = result.months[i];
+      const monthDate = new Date();
+      monthDate.setMonth(monthDate.getMonth() + month.month);
+      
+      // Calculate total debt balance for this month
+      let totalDebt = 0;
+      month.balances.forEach(b => {
+        totalDebt += b.balance;
+      });
+      
+      // Projected utilization
+      const projectedUtil = totalCreditLimits > 0 ? (totalDebt / totalCreditLimits) * 100 : 0;
+      const impact = calculateUtilizationImpact(totalDebt, totalCreditLimits);
+      const projectedScoreForMonth = Math.max(300, Math.min(850, creditScore + impact.impact));
+      
+      projections.push({
+        month: month.month,
+        date: monthDate,
+        balance: totalDebt,
+        utilization: projectedUtil,
+        score: projectedScoreForMonth,
+        impact: impact
+      });
+      
+      // Stop if debt is paid off
+      if (totalDebt <= 0) break;
+    }
+    
+    // Add final point if not already included
+    if (projections.length === 0 || projections[projections.length - 1].balance > 0) {
+      const lastMonth = result.months[result.months.length - 1];
+      if (lastMonth) {
+        const monthDate = new Date();
+        monthDate.setMonth(monthDate.getMonth() + lastMonth.month);
+        
+        let totalDebt = 0;
+        lastMonth.balances.forEach(b => {
+          totalDebt += b.balance;
+        });
+        
+        const projectedUtil = totalCreditLimits > 0 ? (totalDebt / totalCreditLimits) * 100 : 0;
+        const impact = calculateUtilizationImpact(totalDebt, totalCreditLimits);
+        const projectedScoreForMonth = Math.max(300, Math.min(850, creditScore + impact.impact));
+        
+        projections.push({
+          month: lastMonth.month,
+          date: monthDate,
+          balance: totalDebt,
+          utilization: projectedUtil,
+          score: projectedScoreForMonth,
+          impact: impact
+        });
+      }
+    }
+  }
+  
+  // Generate utilization brackets explanation
+  const utilizationExplanation = `
+    <div class="utilization-explanation">
+      <h4>💳 Credit Utilization Brackets</h4>
+      <div class="utilization-tier excellent">
+        <div class="tier-label">Excellent (0-10%)</div>
+        <div class="tier-impact">+10-20 points boost</div>
+      </div>
+      <div class="utilization-tier good">
+        <div class="tier-label">Good (10-30%)</div>
+        <div class="tier-impact">Neutral impact</div>
+      </div>
+      <div class="utilization-tier fair">
+        <div class="tier-label">Fair (30-50%)</div>
+        <div class="tier-impact">-10 to -30 points</div>
+      </div>
+      <div class="utilization-tier poor">
+        <div class="tier-label">Poor (50%+)</div>
+        <div class="tier-impact">Significant point loss</div>
+      </div>
+      <p style="margin-top:12px;font-size:0.85rem;color:var(--text-secondary);">
+        Your current utilization is <strong>${currentUtilization.toFixed(1)}%</strong>, 
+        which puts you in the <strong style="color:${currentImpact.color}">${currentImpact.label}</strong> range.
+      </p>
+    </div>
+  `;
+  
+  // Generate projections table
+  let projectionsHTML = '';
+  if (projections.length > 0) {
+    projectionsHTML = `
+      <div class="projections-table-wrapper">
+        <table class="projections-table">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Date</th>
+              <th>Debt Balance</th>
+              <th>Utilization</th>
+              <th>Projected Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${projections.map(p => `
+              <tr>
+                <td>${p.month}</td>
+                <td>${p.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</td>
+                <td>${formatCurrency(p.balance)}</td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <span>${p.utilization.toFixed(1)}%</span>
+                    <div style="flex:1;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;">
+                      <div style="height:100%;width:${Math.min(100, p.utilization)}%;background:${p.impact.color};"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <span>${p.score}</span>
+                    <span style="font-size:0.8rem;color:${p.impact.color}">${p.impact.impact > 0 ? '↑' : p.impact.impact < 0 ? '↓' : '→'}</span>
+                  </div>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+  
+  simulatorSection.innerHTML = `
+    <div class="credit-score-simulator-content">
+      <h3>📈 Credit Score Impact Simulator</h3>
+      
+      <div class="credit-score-inputs">
+        <div class="input-group">
+          <label>Current Credit Score</label>
+          <div class="slider-container">
+            <input type="range" id="credit-score-slider" class="slider" min="300" max="850" value="${creditScore}" 
+                   oninput="updateCreditScore(this.value)">
+            <div class="slider-value" id="credit-score-value">${creditScore}</div>
+          </div>
+          <input type="number" id="credit-score-input" class="number-input" min="300" max="850" value="${creditScore}"
+                 oninput="updateCreditScore(this.value)">
+        </div>
+        
+        <div class="input-group">
+          <label>Total Credit Limits</label>
+          <div class="slider-container">
+            <input type="range" id="credit-limits-slider" class="slider" min="0" max="50000" step="100" value="${totalCreditLimits}"
+                   oninput="updateCreditLimits(this.value)">
+            <div class="slider-value" id="credit-limits-value">${formatCurrency(totalCreditLimits)}</div>
+          </div>
+          <div class="input-with-prefix">
+            <span class="prefix">$</span>
+            <input type="number" id="credit-limits-input" class="number-input" min="0" step="100" value="${totalCreditLimits}"
+                   oninput="updateCreditLimits(this.value)" style="padding-left:24px;">
+          </div>
+        </div>
+        
+        <div class="input-group">
+          <label>Current Balances</label>
+          <div class="slider-container">
+            <input type="range" id="balances-slider" class="slider" min="0" max="${totalCreditLimits > 0 ? totalCreditLimits : 50000}" step="100" value="${currentBalances}"
+                   oninput="updateBalances(this.value)">
+            <div class="slider-value" id="balances-value">${formatCurrency(currentBalances)}</div>
+          </div>
+          <div class="input-with-prefix">
+            <span class="prefix">$</span>
+            <input type="number" id="balances-input" class="number-input" min="0" step="100" value="${currentBalances}"
+                   oninput="updateBalances(this.value)" style="padding-left:24px;">
+          </div>
+        </div>
+      </div>
+      
+      <div class="credit-score-info">
+        <div class="score-display">
+          <div class="current-score">Current Score: <span class="score-value">${creditScore}</span></div>
+          <div class="utilization-display">Utilization: <span class="utilization-value" style="color:${currentImpact.color}">${currentUtilization.toFixed(1)}%</span></div>
+          <div class="projected-impact">Projected Impact: <span class="impact-value" style="color:${currentImpact.color}">${currentImpact.impact > 0 ? '+' : ''}${currentImpact.impact} points</span></div>
+        </div>
+      </div>
+      
+      ${utilizationExplanation}
+      
+      ${projectionsHTML}
+    </div>
+  `;
+}
+
+// ========================
 // INITIALIZATION
 // ========================
 function init() {
@@ -1010,6 +1263,59 @@ function init() {
     if (resetBtn) resetBtn.style.display = 'none';
   });
 
+  // Set up credit score simulator sliders
+  const creditScoreSlider = document.getElementById('credit-score-slider');
+  const creditScoreInput = document.getElementById('credit-score-input');
+  const creditLimitsSlider = document.getElementById('credit-limits-slider');
+  const creditLimitsInput = document.getElementById('credit-limits-input');
+  const balancesSlider = document.getElementById('balances-slider');
+  const balancesInput = document.getElementById('balances-input');
+  
+  if (creditScoreSlider && creditScoreInput) {
+    let creditScoreTimer;
+    creditScoreSlider.addEventListener('input', () => {
+      creditScoreInput.value = creditScoreSlider.value;
+      clearTimeout(creditScoreTimer);
+      creditScoreTimer = setTimeout(() => updateCreditScore(creditScoreSlider.value), 100);
+    });
+    
+    creditScoreInput.addEventListener('input', () => {
+      creditScoreSlider.value = creditScoreInput.value;
+      clearTimeout(creditScoreTimer);
+      creditScoreTimer = setTimeout(() => updateCreditScore(creditScoreInput.value), 100);
+    });
+  }
+  
+  if (creditLimitsSlider && creditLimitsInput) {
+    let creditLimitsTimer;
+    creditLimitsSlider.addEventListener('input', () => {
+      creditLimitsInput.value = creditLimitsSlider.value;
+      clearTimeout(creditLimitsTimer);
+      creditLimitsTimer = setTimeout(() => updateCreditLimits(creditLimitsSlider.value), 100);
+    });
+    
+    creditLimitsInput.addEventListener('input', () => {
+      creditLimitsSlider.value = creditLimitsInput.value;
+      clearTimeout(creditLimitsTimer);
+      creditLimitsTimer = setTimeout(() => updateCreditLimits(creditLimitsInput.value), 100);
+    });
+  }
+  
+  if (balancesSlider && balancesInput) {
+    let balancesTimer;
+    balancesSlider.addEventListener('input', () => {
+      balancesInput.value = balancesSlider.value;
+      clearTimeout(balancesTimer);
+      balancesTimer = setTimeout(() => updateBalances(balancesSlider.value), 100);
+    });
+    
+    balancesInput.addEventListener('input', () => {
+      balancesSlider.value = balancesInput.value;
+      clearTimeout(balancesTimer);
+      balancesTimer = setTimeout(() => updateBalances(balancesInput.value), 100);
+    });
+  }
+
   // Pre-populate with example debts
   console.log('Adding example debts');
   addDebt('Credit Card 1', 4200, 22.99, 84);
@@ -1034,6 +1340,41 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+
+// Event delegation for data-action attributes
+document.addEventListener('click', function(event) {
+  const action = event.target.closest('[data-action]')?.getAttribute('data-action');
+  if (!action) return;
+  
+  switch (action) {
+    case 'set-preset':
+      const value = event.target.closest('[data-value]')?.getAttribute('data-value');
+      if (value !== undefined) setPreset(parseInt(value, 10));
+      break;
+    case 'run-consolidation':
+      runConsolidation();
+      break;
+    case 'reset-consolidation':
+      resetConsolidation();
+      break;
+    case 'set-chart-strategy':
+      const strategy = event.target.closest('[data-strategy]')?.getAttribute('data-strategy');
+      if (strategy) setChartStrategy(strategy);
+      break;
+    case 'retry-charts':
+      retryCharts();
+      break;
+    case 'toggle-schedule':
+      toggleSchedule();
+      break;
+    case 'print':
+      window.print();
+      break;
+    case 'export-csv':
+      exportAmortizationCSV();
+      break;
+  }
+});
 
 // Export amortization schedule as CSV
 function exportAmortizationCSV() {
@@ -1098,3 +1439,6 @@ window.renderDebtCards = renderDebtCards;
 window.updateSummary = updateSummary;
 window.recalculate = recalculate;
 window.exportAmortizationCSV = exportAmortizationCSV;
+window.updateCreditScore = updateCreditScore;
+window.updateCreditLimits = updateCreditLimits;
+window.updateBalances = updateBalances;

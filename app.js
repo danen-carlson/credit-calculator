@@ -2,6 +2,16 @@
  * SmartPay Calculator — UI Controller
  */
 
+// Cached DOM element references
+const domCache = {};
+
+function getCachedElement(id) {
+  if (!domCache[id]) {
+    domCache[id] = document.getElementById(id);
+  }
+  return domCache[id];
+}
+
 const state = {
   selectedMethods: new Set(),
   customMethods: [],
@@ -80,24 +90,24 @@ function toggleMethod(id) {
 
 // ── Custom method handling ─────────────────────────────────────────────────
 
-document.getElementById('add-custom-btn').addEventListener('click', () => {
-  document.getElementById('custom-form').classList.remove('hidden');
-  document.getElementById('add-custom-btn').classList.add('hidden');
+getCachedElement('add-custom-btn').addEventListener('click', () => {
+  getCachedElement('custom-form').classList.remove('hidden');
+  getCachedElement('add-custom-btn').classList.add('hidden');
 });
 
-document.getElementById('cancel-custom-btn').addEventListener('click', () => {
-  document.getElementById('custom-form').classList.add('hidden');
-  document.getElementById('add-custom-btn').classList.remove('hidden');
+getCachedElement('cancel-custom-btn').addEventListener('click', () => {
+  getCachedElement('custom-form').classList.add('hidden');
+  getCachedElement('add-custom-btn').classList.remove('hidden');
   clearCustomForm();
 });
 
-document.getElementById('save-custom-btn').addEventListener('click', () => {
-  const name = document.getElementById('custom-name').value.trim();
-  const type = document.getElementById('custom-type').value;
-  const apr = parseFloat(document.getElementById('custom-apr').value) || 0;
-  const rewards = parseFloat(document.getElementById('custom-rewards').value) || 0;
-  const introApr = parseFloat(document.getElementById('custom-intro-apr').value) || 0;
-  const introMonths = parseInt(document.getElementById('custom-intro-months').value) || 0;
+getCachedElement('save-custom-btn').addEventListener('click', () => {
+  const name = getCachedElement('custom-name').value.trim();
+  const type = getCachedElement('custom-type').value;
+  const apr = parseFloat(getCachedElement('custom-apr').value) || 0;
+  const rewards = parseFloat(getCachedElement('custom-rewards').value) || 0;
+  const introApr = parseFloat(getCachedElement('custom-intro-apr').value) || 0;
+  const introMonths = parseInt(getCachedElement('custom-intro-months').value) || 0;
 
   if (!name) { alert('Please enter a name for your card or service.'); return; }
 
@@ -127,12 +137,12 @@ document.getElementById('save-custom-btn').addEventListener('click', () => {
 
 function clearCustomForm() {
   ['custom-name', 'custom-apr', 'custom-rewards', 'custom-intro-apr', 'custom-intro-months']
-    .forEach(id => { document.getElementById(id).value = ''; });
-  document.getElementById('custom-type').value = 'credit-card';
+    .forEach(id => { getCachedElement(id).value = ''; });
+  getCachedElement('custom-type').value = 'credit-card';
 }
 
 function renderCustomTags() {
-  const container = document.getElementById('custom-methods-list');
+  const container = getCachedElement('custom-methods-list');
   container.innerHTML = '';
   state.customMethods.forEach(m => {
     const tag = document.createElement('div');
@@ -157,10 +167,10 @@ function removeCustom(id) {
 
 // ── Collapsible Methods Section ──────────────────────────────────────────────
 
-const methodsHeader = document.getElementById('methods-header');
-const methodsContent = document.getElementById('methods-content');
-const expandBtn = document.getElementById('expand-methods-btn');
-const collapseBtn = document.getElementById('collapse-methods-btn');
+const methodsHeader = getCachedElement('methods-header');
+const methodsContent = getCachedElement('methods-content');
+const expandBtn = getCachedElement('expand-methods-btn');
+const collapseBtn = getCachedElement('collapse-methods-btn');
 
 function toggleMethods() {
   const isCollapsed = methodsContent.classList.contains('collapsed');

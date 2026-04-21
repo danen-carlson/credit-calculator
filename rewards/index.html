@@ -222,7 +222,7 @@
         <!-- Crypto Toggle -->
         <div class="crypto-toggle-section">
           <label class="toggle-label" style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.9rem;padding:14px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);">
-            <input type="checkbox" id="crypto-toggle" onchange="toggleCrypto(this)" style="display:none;">
+            <input type="checkbox" id="crypto-toggle" data-action="toggle-crypto" style="display:none;">
             <span class="toggle-switch"></span>
             <span>🪙 I'm interested in earning crypto rewards</span>
           </label>
@@ -244,10 +244,10 @@
           <fieldset class="year-toggle-fieldset" role="radiogroup" aria-label="Toggle between first year and ongoing value">
             <legend class="year-toggle-legend">Calculation Period</legend>
             <div class="year-toggle-group">
-              <input type="radio" id="first-year" name="year-toggle" value="first" checked onchange="setYearView('first')">
+              <input type="radio" id="first-year" name="year-toggle" value="first" checked data-action="set-year-view">
               <label for="first-year" class="year-toggle-label">First Year</label>
               
-              <input type="radio" id="ongoing" name="year-toggle" value="ongoing" onchange="setYearView('ongoing')">
+              <input type="radio" id="ongoing" name="year-toggle" value="ongoing" data-action="set-year-view">
               <label for="ongoing" class="year-toggle-label">Ongoing</label>
             </div>
           </fieldset>
@@ -255,12 +255,12 @@
 
         <!-- Filter Bar -->
         <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all" onclick="setFilter('all')" aria-label="Show all credit cards">All Cards</button>
-          <button class="filter-btn" data-filter="cashback" onclick="setFilter('cashback')" aria-label="Show cashback credit cards">💵 Cashback</button>
-          <button class="filter-btn" data-filter="travel" onclick="setFilter('travel')" aria-label="Show travel credit cards">✈️ Travel</button>
-          <button class="filter-btn" data-filter="tiered" onclick="setFilter('tiered')" aria-label="Show tiered reward credit cards">🔄 Tiered</button>
-          <button class="filter-btn" data-filter="grocery" onclick="setFilter('grocery')" aria-label="Show grocery reward credit cards">🛒 Grocery</button>
-          <button class="filter-btn" data-filter="crypto" onclick="setFilter('crypto')" aria-label="Show crypto reward credit cards">₿ Crypto</button>
+          <button class="filter-btn active" data-filter="all" data-action="set-filter" aria-label="Show all credit cards">All Cards</button>
+          <button class="filter-btn" data-filter="cashback" data-action="set-filter" aria-label="Show cashback credit cards">💵 Cashback</button>
+          <button class="filter-btn" data-filter="travel" data-action="set-filter" aria-label="Show travel credit cards">✈️ Travel</button>
+          <button class="filter-btn" data-filter="tiered" data-action="set-filter" aria-label="Show tiered reward credit cards">🔄 Tiered</button>
+          <button class="filter-btn" data-filter="grocery" data-action="set-filter" aria-label="Show grocery reward credit cards">🛒 Grocery</button>
+          <button class="filter-btn" data-filter="crypto" data-action="set-filter" aria-label="Show crypto reward credit cards">₿ Crypto</button>
         </div>
 
         <div id="affiliate-disclosure" class="disclosure">
@@ -291,6 +291,11 @@
 
         <!-- Crypto Corner -->
         <div id="crypto-corner" class="crypto-corner hidden">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Wallet Section -->
+        <div id="wallet-section" class="wallet-section">
           <!-- Populated by JS -->
         </div>
       </div>

@@ -188,3 +188,143 @@
   border-color: #10b981;
   color: #065f46;
 }
+
+/* ============================================ */
+/* Email Capture Widget                         */
+/* ============================================ */
+.email-capture-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.email-capture-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.email-capture-modal {
+  background: white;
+  border-radius: 12px 12px 0 0;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.email-capture-overlay.visible .email-capture-modal {
+  transform: translateY(0);
+}
+
+.email-capture-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6b7280;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.email-capture-close:hover {
+  background: #f3f4f6;
+}
+
+.email-capture-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.email-capture-input {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+  line-height: 1.5;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.email-capture-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.email-capture-button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.email-capture-button:hover {
+  background: #1d4ed8;
+}
+
+.email-capture-button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
+
+.email-capture-privacy {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-align: center;
+  margin: 16px 0 0;
+  line-height: 1.4;
+}
+
+.email-capture-inline {
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  background: #f9fafb;
+  margin: 20px 0;
+}
+
+.email-capture-inline-button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.email-capture-inline-button:hover {
+  background: #1d4ed8;
+}
