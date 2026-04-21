@@ -190,9 +190,14 @@ function updateSummary() {
 // ========================
 function updateExtraPayment(value) {
   extraPayment = Math.max(0, parseFloat(value) || 0);
-  document.getElementById('extra-amount').textContent = formatCurrency(extraPayment);
+  
+  // Cache DOM elements to avoid duplicate queries
+  const extraAmountEl = document.getElementById('extra-amount');
+  const extraTotalEl = document.getElementById('extra-total');
+  
+  if (extraAmountEl) extraAmountEl.textContent = formatCurrency(extraPayment);
   const totalMin = debts.reduce((s, d) => s + d.minPayment, 0);
-  document.getElementById('extra-total').textContent = formatCurrency(totalMin + extraPayment);
+  if (extraTotalEl) extraTotalEl.textContent = formatCurrency(totalMin + extraPayment);
 
   // Update preset buttons
   document.querySelectorAll('.preset-btn').forEach(btn => {
@@ -203,8 +208,12 @@ function updateExtraPayment(value) {
 }
 
 function setPreset(value) {
-  document.getElementById('extra-slider').value = value;
-  document.getElementById('extra-input').value = value;
+  // Cache DOM elements to avoid duplicate queries
+  const extraSliderEl = document.getElementById('extra-slider');
+  const extraInputEl = document.getElementById('extra-input');
+  
+  if (extraSliderEl) extraSliderEl.value = value;
+  if (extraInputEl) extraInputEl.value = value;
   updateExtraPayment(value);
 }
 
