@@ -573,6 +573,30 @@ const CREDIT_CARDS = [
     blendedRate: 2.1, // slight boost from 5x hotels
     blendedPointValue: 1.4,
     notes: '5x on hotels/rentals (Capital One Travel), 2x everything else. Miles worth ~1¢ (statement credit) to 1.85¢ (transfer partners). $95 annual fee.'
+  },
+  {
+    id: 'amazon-prime-visa',
+    name: 'Amazon Prime Rewards Visa',
+    type: 'credit-card',
+    detail: '5% Amazon & Whole Foods · 2% dining/gas/drugstores · No annual fee',
+    interestRate: 22.24,
+    hasIntroApr: false,
+    introAprRate: null,
+    introAprMonths: 0,
+    pointsRate: 5.0, // Amazon rate for single purchase
+    pointValue: 1.0,
+    annualFee: 0,
+    annualFeeNote: 'Requires Amazon Prime ($139/yr)',
+    lateFee: 40,
+    rewardTiers: [
+      { category: 'amazon', rate: 5.0, note: 'Amazon.com & Whole Foods Market' },
+      { category: 'dining', rate: 2.0 },
+      { category: 'gas', rate: 2.0 },
+      { category: 'drugstores', rate: 2.0 },
+      { category: 'everything', rate: 1.0 }
+    ],
+    blendedRate: 2.3, // weighted avg for typical household
+    notes: '5% Amazon.com & Whole Foods (Prime members), 2% restaurants/gas/drugstores, 1% everything else. $0 annual fee but requires Prime ($139/yr). $150 Amazon gift card upon approval.'
   }
 ];
 

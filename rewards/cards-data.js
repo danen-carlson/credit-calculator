@@ -342,6 +342,32 @@ const cardsData = [
     isCrypto: false
   },
   {
+    id: 'amazon-prime-visa',
+    name: 'Amazon Prime Rewards Visa Signature',
+    issuer: 'Chase',
+    type: 'cashback',
+    annualFee: 0,
+    annualFeeNote: 'Requires Amazon Prime membership ($139/yr)',
+    signupBonus: { amount: 150, unit: 'cash', value: 150, requirement: 'Amazon gift card upon approval + 5% back on purchases' },
+    rewards: {
+      groceries: { rate: 2, note: 'Whole Foods Market' },
+      dining: { rate: 2 },
+      gas: { rate: 2 },
+      travel: { rate: 1 },
+      online: { rate: 5, note: 'Amazon.com & Whole Foods' },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 },
+      amazon: { rate: 5, note: 'Amazon.com & Whole Foods Market' }
+    },
+    pointValue: 1.0,
+    perks: ['5% back at Amazon.com & Whole Foods (Prime members)', '$150 Amazon gift card upon approval', '2% back at restaurants, gas stations & drugstores', '1% back on everything else', 'No annual fee (Prime membership required)', 'No foreign transaction fees', 'Purchase protection & extended warranty'],
+    bestFor: 'Amazon Shoppers',
+    affiliateLink: '',
+    affiliateNetwork: 'cj',
+    isCrypto: false
+  },
+  {
     id: 'coinbase-card',
     name: 'Coinbase Card',
     issuer: 'Coinbase / Pathward',
