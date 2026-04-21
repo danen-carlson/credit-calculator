@@ -1,5 +1,5 @@
 {
-  "_comment": "Scrape targets for weekly data refresh. Each entry maps a card/BNPL ID (matching data.js / cards-data.js) to a source URL and selector recipe. The runner treats these as a source of hints — missing fields are OK and cause skips, not failures. Targets with _manual=true are JS-rendered and should be checked manually.",
+  "_comment": "Scrape targets for weekly data refresh. Each entry maps a card/BNPL ID (matching data.js / cards-data.js) to a source URL and selector recipe. The runner treats these as a source of hints \u2014 missing fields are OK and cause skips, not failures. Targets with _manual=true are JS-rendered and should be checked manually.",
   "cards": [
     {
       "id": "chase-sapphire-preferred",
@@ -107,6 +107,15 @@
       "fields": {
         "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*(?:rewards|cash back)\\s*(?:bonus|after|when)",
         "annualFee": "regex:Annual Fee.*?\\$0|\\$0.*?annual fee|No annual fee"
+      }
+    },
+    {
+      "id": "amazon-prime-visa",
+      "name": "Amazon Prime Rewards Visa Signature",
+      "url": "https://creditcards.chase.com/cash-back-credit-cards/amazon-prime-rewards",
+      "fields": {
+        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*(?:gift card|Amazon)",
+        "annualFee": "regex:No annual fee|\\$0\\s*annual"
       }
     }
   ],
