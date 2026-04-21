@@ -52,7 +52,7 @@ const BNPL_METHODS = [
     type: 'bnpl-4',
     detail: 'Pay in 4 · 0% interest · Works anywhere via virtual card',
     affiliateLink: '',
-    affiliateNetwork: ''
+    affiliateNetwork: '',
     // Payment schedule: 25% down + 3 payments every 2 weeks
     // Service fee: $0.75–$3.00 per purchase
     downPaymentPct: 25,
@@ -88,7 +88,7 @@ const BNPL_METHODS = [
     type: 'bnpl-4',
     detail: 'Pay in 4 · 0% interest at partner brands · Late fees apply',
     affiliateLink: '',
-    affiliateNetwork: ''
+    affiliateNetwork: '',
     // Payment schedule: 25% down + 3 payments every 2 weeks
     downPaymentPct: 25,
     numPayments: 4,
@@ -157,7 +157,7 @@ const BNPL_METHODS = [
     type: 'bnpl-4',
     detail: 'Pay in 4 · 0% APR · Works anywhere via virtual card',
     affiliateLink: '',
-    affiliateNetwork: ''
+    affiliateNetwork: '',
     // Pay in 4: 25% down + 3 biweekly payments
     // Monthly plans: 3–60 months, 0–36% APR
     downPaymentPct: 25,
@@ -194,7 +194,7 @@ const BNPL_METHODS = [
     type: 'bnpl-4',
     detail: 'Pay in 4 · Origination fee ($4–$60) · ~30–35% APR',
     affiliateLink: '',
-    affiliateNetwork: ''
+    affiliateNetwork: '',
     // Payment schedule: 25% down + 3 payments every 2 weeks
     // NOT interest-free — charges origination fee = 30-35% APR equivalent
     downPaymentPct: 25,
@@ -233,7 +233,7 @@ const BNPL_METHODS = [
     type: 'bnpl-4',
     detail: 'Pay in 4 · 0% interest · 1 free reschedule',
     affiliateLink: '',
-    affiliateNetwork: ''
+    affiliateNetwork: '',
     // Offers Pay in 2, Pay in 4, and Pay Monthly
     downPaymentPct: 25,
     numPayments: 4,
