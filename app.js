@@ -204,7 +204,7 @@ if (methodsHeader) methodsHeader.addEventListener('click', (e) => {
   }
 });
 
-if (expandBtn) expandBtn.addEventListener('click', expandMethods);
+if (expandBtn) expandBtn.addEventListener('click', toggleMethods);
 if (collapseBtn) collapseBtn.addEventListener('click', collapseMethods);
 
 // ── Months slider and live estimate ──────────────────────────────────────────
