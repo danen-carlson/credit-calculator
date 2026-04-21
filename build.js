@@ -7,7 +7,8 @@ const sharedDir = path.join(repoDir, 'shared');
 const partials = {
   header: fs.readFileSync(path.join(sharedDir, 'header.html'), 'utf8').trim(),
   footer: fs.readFileSync(path.join(sharedDir, 'footer.html'), 'utf8').trim(),
-  disclosure: fs.readFileSync(path.join(sharedDir, 'disclosure-banner.html'), 'utf8').trim()
+  disclosure: fs.readFileSync(path.join(sharedDir, 'disclosure-banner.html'), 'utf8').trim(),
+  emailCaptureCSS: fs.readFileSync(path.join(sharedDir, 'email-capture.css'), 'utf8').trim()
 };
 
 const targetFiles = [
@@ -15,7 +16,13 @@ const targetFiles = [
   'rewards/index.html',
   'debt-planner/index.html',
   'blog/index.html',
-  'disclosure.html'
+  'disclosure.html',
+  'learn/index.html',
+  'learn/pay-off-10k-debt.html',
+  'learn/bnpl-interest-calculator.html',
+  'learn/balance-transfer-calculator.html',
+  'learn/crypto-credit-card-rewards.html',
+  'learn/snowball-vs-avalanche.html'
 ];
 
 for (const relPath of targetFiles) {
