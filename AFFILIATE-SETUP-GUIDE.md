@@ -201,3 +201,33 @@ Skip Bankrate/CreditCards.com for now — they want established sites with signi
 - [ ] Submit sitemap to Google Search Console
 - [ ] Set CJ 5-month dormancy deadline calendar reminder
 - [ ] Configure ACH/direct deposit in each network
+
+## Part 4: Affiliate Data Schema (Updated Apr 21, 2026)
+
+All cards in `rewards/cards-data.js` and BNPL providers in `data.js` now have:
+
+```javascript
+{
+  // ... other fields ...
+  affiliateLink: '',     // Full affiliate tracking URL (e.g. from CJ/Impact)
+  affiliateNetwork: ''   // 'CJ', 'Impact', 'FlexOffers', or '' if none
+}
+```
+
+**When you get approved:**
+1. Paste the **exact** affiliate link into `affiliateLink`
+2. Set `affiliateNetwork` to the network name
+3. Commit with message like "feat: add [Card Name] affiliate link via [Network]"
+4. Test the link works (opens issuer application with tracking)
+
+**Apply Button Logic:**
+- `affiliateLink` populated → "Apply Now" button with tracking
+- Empty → "Learn More" links to issuer site
+- FTC disclosure always shown below button
+
+**Tasks #62-64: Apply to Networks**
+1. **FlexOffers** (easiest): flexoffers.com → Sign up → Submit site → Approved in 2 days
+2. **CJ Affiliate**: cj.com → Sign up → Site review → Capital One/Discover easy; Chase/Amex hard
+3. **Impact**: impact.com → Sign up → Strict review (needs traffic/blog) → Chase/Amex here
+
+After approval, search for programs by advertiser name (e.g. "Chase Sapphire", "Citi Double Cash"). Apply individually.
