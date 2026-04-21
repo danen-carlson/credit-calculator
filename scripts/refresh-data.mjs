@@ -34,9 +34,10 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 
-const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) CreditStudioDataRefresh/1.0 (+https://creditstud.io/bot)';
-const DELAY_MS = 2000;
-const TIMEOUT_MS = 20_000;
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36';
+const BOT_UA = 'CreditStudioDataRefresh/1.0 (+https://creditstud.io/bot)';
+const DELAY_MS = 2500;
+const TIMEOUT_MS = 25_000;
 
 const args = new Set(process.argv.slice(2));
 const DRY_RUN = args.has('--dry-run');
@@ -57,8 +58,12 @@ async function fetchText(url) {
     const res = await fetch(url, {
       headers: {
         'User-Agent': UA,
-        'Accept': 'text/html,application/xhtml+xml',
+        'Accept': 'text/html,application/xhtml+xml,application/xhtml+xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache',
+        'From': BOT_UA,
       },
       signal: ctrl.signal,
       redirect: 'follow',
@@ -91,11 +96,15 @@ function extractField(text, rule) {
     const re = new RegExp(pattern, 'i');
     const m = text.match(re);
     if (!m) return null;
-    const val = m[1] ?? m[0];
+    // Use first non-undefined capture group, or full match
+    const val = m[1] ?? m[2] ?? m[0];
     // Normalize: strip commas from numbers, parse to number if numeric.
     const numeric = val.replace(/,/g, '');
     if (/^\d+(\.\d+)?$/.test(numeric)) return Number(numeric);
-    if (/^no annual fee|^\$0/i.test(val)) return 0;
+    if (/^no annual fee|^\$0|^0%/i.test(val)) return 0;
+    if (/interest-?free|no interest/i.test(val)) return 0;
+    // Reject overly-long matches (likely a false positive from paragraph text)
+    if (val.length > 50) return null;
     return val;
   } catch (e) {
     log('warn', `bad regex: ${pattern} (${e.message})`);
@@ -189,6 +198,12 @@ async function main() {
   const results = [];
   for (let i = 0; i < allTargets.length; i++) {
     const t = allTargets[i];
+    // Skip JS-rendered targets that require manual checking
+    if (t._manual) {
+      log('info', `[${i + 1}/${allTargets.length}] skipping ${t.id} (manual-check only, JS-rendered)`);
+      results.push({ id: t.id, name: t.name, url: t.url, scraped: {}, changes: [], errors: ['manual-check: JS-rendered page, requires manual verification'] });
+      continue;
+    }
     log('info', `[${i + 1}/${allTargets.length}] scraping ${t.id}`);
     const scraped = await scrapeTarget(t);
     const currentText = t.kind === 'card' ? currentCards[t.id] : currentBnpl[t.id];
