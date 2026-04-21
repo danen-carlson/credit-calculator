@@ -46,6 +46,9 @@ function renderCharts(retryCount = 0) {
   try {
     renderMilestoneChart();
   } catch(e) { console.warn('Milestone render error:', e); }
+  try {
+    renderCreditScoreChart();
+  } catch(e) { console.warn('Credit score chart render error:', e); }
   console.log('renderCharts completed');
 }
 
@@ -463,4 +466,238 @@ function renderStrategyComparisonTable() {
   `;
 
   container.innerHTML = html;
+}
+
+// ========================
+// CREDIT SCORE CHART
+// ========================
+
+function renderCreditScoreChart() {
+  const canvas = document.getElementById('credit-score-chart');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+
+  // Destroy existing chart if it exists
+  if (window.creditScoreChart) {
+    window.creditScoreChart.destroy();
+    window.creditScoreChart = null;
+  }
+
+  // Get the current strategy result
+  const result = results[currentChartStrategy];
+  if (!result || !result.months || result.months.length === 0) return;
+
+  // Get credit score simulator values
+  const { creditScore, totalCreditLimits, currentBalances } = window;
+  
+  // Generate data points for credit score projection
+  const dataPoints = [];
+  const interval = Math.max(1, Math.floor(result.months.length / 12));
+  
+  for (let i = 0; i < result.months.length; i += interval) {
+    const month = result.months[i];
+    const monthDate = new Date();
+    monthDate.setMonth(monthDate.getMonth() + month.month);
+    
+    // Calculate total debt balance for this month
+    let totalDebt = 0;
+    month.balances.forEach(b => {
+      totalDebt += b.balance;
+    });
+    
+    // Projected utilization
+    const projectedUtil = totalCreditLimits > 0 ? (totalDebt / totalCreditLimits) * 100 : 0;
+    
+    // Calculate credit score impact
+    let impact = 0;
+    if (projectedUtil < 10) {
+      impact = 15; // +10-20 points
+    } else if (projectedUtil < 30) {
+      impact = 0; // Neutral
+    } else if (projectedUtil < 50) {
+      impact = -20; // -10 to -30 points
+    } else {
+      impact = -40; // Significant hit
+    }
+    
+    const projectedScore = Math.max(300, Math.min(850, creditScore + impact));
+    
+    dataPoints.push({
+      month: month.month,
+      date: monthDate,
+      debtBalance: totalDebt,
+      utilization: projectedUtil,
+      score: projectedScore
+    });
+    
+    // Stop if debt is paid off
+    if (totalDebt <= 0) break;
+  }
+  
+  // Add final point if not already included
+  if (dataPoints.length === 0 || dataPoints[dataPoints.length - 1].debtBalance > 0) {
+    const lastMonth = result.months[result.months.length - 1];
+    if (lastMonth) {
+      const monthDate = new Date();
+      monthDate.setMonth(monthDate.getMonth() + lastMonth.month);
+      
+      let totalDebt = 0;
+      lastMonth.balances.forEach(b => {
+        totalDebt += b.balance;
+      });
+      
+      const projectedUtil = totalCreditLimits > 0 ? (totalDebt / totalCreditLimits) * 100 : 0;
+      
+      // Calculate credit score impact
+      let impact = 0;
+      if (projectedUtil < 10) {
+        impact = 15; // +10-20 points
+      } else if (projectedUtil < 30) {
+        impact = 0; // Neutral
+      } else if (projectedUtil < 50) {
+        impact = -20; // -10 to -30 points
+      } else {
+        impact = -40; // Significant hit
+      }
+      
+      const projectedScore = Math.max(300, Math.min(850, creditScore + impact));
+      
+      dataPoints.push({
+        month: lastMonth.month,
+        date: monthDate,
+        debtBalance: totalDebt,
+        utilization: projectedUtil,
+        score: projectedScore
+      });
+    }
+  }
+  
+  // Prepare chart data
+  const labels = dataPoints.map(point => 
+    point.month % 6 === 0 || point.month === 1 || point.month === dataPoints[dataPoints.length - 1].month
+      ? `Month ${point.month}`
+      : ''
+  );
+  
+  const scores = dataPoints.map(point => point.score);
+  
+  // Create the chart with dual axes
+  window.creditScoreChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Debt Balance',
+          data: dataPoints.map(point => point.debtBalance),
+          borderColor: '#2563eb',
+          backgroundColor: 'rgba(37, 99, 235, 0.1)',
+          yAxisID: 'y',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          borderWidth: 2
+        },
+        {
+          label: 'Credit Score',
+          data: scores,
+          borderColor: '#10b981',
+          backgroundColor: 'rgba(16, 185, 129, 0.1)',
+          yAxisID: 'y1',
+          fill: false,
+          tension: 0.3,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          borderWidth: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      aspectRatio: 2,
+      interaction: {
+        mode: 'index',
+        intersect: false
+      },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'circle',
+            padding: 16,
+            font: { family: 'Inter, sans-serif', size: 12 }
+          }
+        },
+        tooltip: {
+          backgroundColor: 'rgba(26, 29, 35, 0.9)',
+          titleFont: { family: 'Inter, sans-serif', weight: '600' },
+          bodyFont: { family: 'Inter, sans-serif' },
+          padding: 12,
+          cornerRadius: 8,
+          callbacks: {
+            title: (items) => `Month ${items[0].dataIndex + 1}`,
+            label: function(context) {
+              if (context.datasetIndex === 0) {
+                return `${context.dataset.label}: $${Math.round(context.parsed.y).toLocaleString()}`;
+              } else {
+                return `${context.dataset.label}: ${Math.round(context.parsed.y)}`;
+              }
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: {
+            font: { family: 'Inter, sans-serif', size: 11 },
+            color: '#5f6775',
+            maxRotation: 0
+          }
+        },
+        y: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+          grid: { color: '#f1f3f7' },
+          ticks: {
+            font: { family: 'Inter, sans-serif', size: 11 },
+            color: '#5f6775',
+            callback: (val) => '$' + (val >= 1000 ? (val / 1000).toFixed(val % 1000 === 0 ? 0 : 1) + 'k' : val)
+          },
+          title: {
+            display: true,
+            text: 'Debt Balance',
+            font: { size: 12 }
+          }
+        },
+        y1: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          grid: { drawOnChartArea: false },
+          min: 300,
+          max: 850,
+          ticks: {
+            font: { family: 'Inter, sans-serif', size: 11 },
+            color: '#5f6775',
+            callback: (val) => val
+          },
+          title: {
+            display: true,
+            text: 'Credit Score',
+            font: { size: 12 }
+          }
+        }
+      },
+      animation: {
+        duration: 600,
+        easing: 'easeOutQuart'
+      }
+    }
+  });
 }

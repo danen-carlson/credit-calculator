@@ -50,6 +50,8 @@
   let activeFilter = 'all';
   let yearView = 'first'; // 'first' or 'ongoing'
   let previousRankings = {}; // Store previous rankings for comparison
+  let walletCards = []; // Wallet state
+  let walletOpen = false; // Track if wallet panel is open
 
   // ===================== CALCULATIONS =====================
 
@@ -708,6 +710,10 @@
                 <input type="checkbox" data-card-id="${card.id}" ${isChecked} onchange="toggleCompare(this)">
                 Compare this card
               </label>
+              
+              <button class="btn-add-to-wallet" onclick="addToWallet('${card.id}')">
+                Add to Wallet
+              </button>
             </div>
           `;
         }).join('');
@@ -720,6 +726,9 @@
 
         // Render crypto corner
         renderCryptoCorner(results);
+
+        // Render wallet
+        renderWallet();
       } finally {
         // Hide skeleton after rendering
         hideSkeleton(skeleton);
@@ -745,15 +754,40 @@
     let barHTML = '<div class="breakdown-bar">';
     let legendHTML = '<div class="breakdown-legend">';
 
+    // Find best card for each category in wallet
+    const categoryBestCards = {};
+    if (walletCards.length > 0) {
+      categories.forEach(cat => {
+        let bestCard = null;
+        let bestValue = -1;
+        
+        walletCards.forEach(card => {
+          const calc = calculateCardRewards(card, currentSpending, yearView);
+          const value = calc.breakdown[cat] ? calc.breakdown[cat].annualValue : 0;
+          if (value > bestValue) {
+            bestValue = value;
+            bestCard = card;
+          }
+        });
+        
+        if (bestCard && bestValue > 0) {
+          categoryBestCards[cat] = bestCard.id;
+        }
+      });
+    }
+
     categories.forEach((cat, i) => {
       const b = breakdown[cat];
       if (!b || b.annualValue <= 0) return;
       const pct = Math.max((b.annualValue / total) * 100, 3);
       const color = barColors[i];
-      const label = cat.charAt(0).toUpperCase() + cat.slice(0, 2);
+      
+      // Check if this is the best card in wallet for this category
+      const isBestInWallet = walletCards.length > 0 && categoryBestCards[cat] === breakdown.cardId;
+      const highlightClass = isBestInWallet ? ' best-in-wallet' : '';
 
-      barHTML += `<div class="breakdown-segment" style="width:${pct}%;background:${color};" title="${categoryLabels[cat]}: ${formatCurrency(b.annualValue)}">${pct > 12 ? formatCurrency(b.annualValue) : ''}</div>`;
-      legendHTML += `<span class="breakdown-legend-item"><span class="breakdown-legend-dot" style="background:${color}"></span>${categoryLabels[cat]}: ${formatCurrency(b.annualValue)}</span>`;
+      barHTML += `<div class="breakdown-segment${highlightClass}" style="width:${pct}%;background:${color};" title="${categoryLabels[cat]}: ${formatCurrency(b.annualValue)}">${pct > 12 ? formatCurrency(b.annualValue) : ''}</div>`;
+      legendHTML += `<span class="breakdown-legend-item"><span class="breakdown-legend-dot" style="background:${color}"></span>${categoryLabels[cat]}: ${formatCurrency(b.annualValue)}${isBestInWallet ? ' ★' : ''}</span>`;
     });
 
     barHTML += '</div>';
@@ -933,6 +967,129 @@
     section.innerHTML = html;
   }
 
+  // ===================== WALLET RENDERING =====================
+
+  function renderWallet() {
+    const section = document.getElementById('wallet-section');
+    if (!section) return;
+
+    // Calculate wallet totals
+    let walletTotal = 0;
+    let bestSingleCardValue = 0;
+    
+    if (walletCards.length > 0) {
+      // Calculate combined wallet value
+      walletTotal = walletCards.reduce((total, card) => {
+        const calc = calculateCardRewards(card, currentSpending, yearView);
+        return total + calc.netAnnual;
+      }, 0);
+      
+      // Find best single card value from results
+      // We need to get the results from the current context
+      // For now, we'll leave this as 0 and calculate it properly later
+    }
+
+    if (walletCards.length === 0) {
+      section.innerHTML = `
+        <div class="wallet-header">
+          <h3>💳 My Card Wallet</h3>
+          <button id="wallet-toggle" class="btn-ghost btn-small" onclick="toggleWallet()">Show Wallet ▼</button>
+        </div>
+        <div class="wallet-content">
+          <p style="text-align:center;color:var(--text-secondary);padding:20px;">Your wallet is empty. Add cards to your wallet to see category recommendations and combined value.</p>
+        </div>
+      `;
+      return;
+    }
+
+    // Build wallet card tiles
+    const walletCardsHTML = walletCards.map(card => {
+      const calc = calculateCardRewards(card, currentSpending, yearView);
+      const cardType = typeConfig[card.type] || typeConfig.cashback;
+      
+      // Find best categories for this card
+      const bestCategories = [];
+      const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+      
+      categories.forEach(cat => {
+        let bestCard = null;
+        let bestValue = -1;
+        
+        walletCards.forEach(walletCard => {
+          const walletCalc = calculateCardRewards(walletCard, currentSpending, yearView);
+          const value = walletCalc.breakdown[cat] ? walletCalc.breakdown[cat].annualValue : 0;
+          if (value > bestValue) {
+            bestValue = value;
+            bestCard = walletCard;
+          }
+        });
+        
+        if (bestCard && bestCard.id === card.id && bestValue > 0) {
+          bestCategories.push({
+            category: cat,
+            label: categoryLabels[cat],
+            icon: categoryIcons[cat],
+            value: bestValue
+          });
+        }
+      });
+      
+      const bestCategoriesHTML = bestCategories.map(cat => `
+        <span class="category-badge" title="${cat.label}: ${formatCurrency(cat.value)}">
+          ${cat.icon} ${cat.label.split(' ')[0]}
+        </span>
+      `).join('');
+      
+      return `
+        <div class="wallet-card-tile">
+          <div class="wallet-card-header">
+            <div>
+              <div class="wallet-card-name">${card.name}</div>
+              <div class="wallet-card-issuer">${card.issuer}</div>
+            </div>
+            <button class="btn-remove-wallet" onclick="removeFromWallet('${card.id}')" title="Remove from wallet">✕</button>
+          </div>
+          <div class="wallet-card-type">
+            <span class="result-card-type-badge" style="background:${cardType.bg};color:${cardType.color};font-size:0.7rem;padding:2px 6px;">${cardType.icon} ${cardType.label}</span>
+          </div>
+          <div class="wallet-card-value">
+            <div class="wallet-card-net-value">${formatCurrency(calc.netAnnual)}</div>
+            <div class="wallet-card-value-label">net annual value</div>
+          </div>
+          ${bestCategories.length > 0 ? `
+          <div class="wallet-card-categories">
+            <div class="wallet-card-categories-title">Best for:</div>
+            <div class="category-badges">
+              ${bestCategoriesHTML}
+            </div>
+          </div>` : ''}
+        </div>
+      `;
+    }).join('');
+
+    section.innerHTML = `
+      <div class="wallet-header">
+        <h3>💳 My Card Wallet</h3>
+        <button id="wallet-toggle" class="btn-ghost btn-small" onclick="toggleWallet()">${walletOpen ? 'Hide Wallet ▲' : 'Show Wallet ▼'}</button>
+      </div>
+      <div class="wallet-content ${walletOpen ? 'open' : ''}">
+        <div class="wallet-stats">
+          <div class="wallet-stat">
+            <div class="wallet-stat-label">Cards in Wallet</div>
+            <div class="wallet-stat-value">${walletCards.length}</div>
+          </div>
+          <div class="wallet-stat">
+            <div class="wallet-stat-label">Combined Annual Value</div>
+            <div class="wallet-stat-value">${formatCurrency(walletTotal)}</div>
+          </div>
+        </div>
+        <div class="wallet-cards-grid">
+          ${walletCardsHTML}
+        </div>
+      </div>
+    `;
+  }
+
   // ===================== SPENDING INPUTS =====================
 
   function initSpendingInputs() {
@@ -1027,6 +1184,51 @@
     renderResults();
   };
 
+  // ===================== WALLET FUNCTIONS =====================
+
+  window.addToWallet = function(cardId) {
+    const card = cardsData.find(c => c.id === cardId);
+    if (!card) return;
+    
+    // Check if card is already in wallet
+    if (walletCards.some(c => c.id === cardId)) return;
+    
+    // Add to wallet (limit to 10 cards)
+    if (walletCards.length >= 10) {
+      alert('You can only have 10 cards in your wallet.');
+      return;
+    }
+    
+    walletCards.push(card);
+    renderWallet();
+    renderResults(); // Re-render to update category highlights
+  };
+
+  window.removeFromWallet = function(cardId) {
+    walletCards = walletCards.filter(c => c.id !== cardId);
+    renderWallet();
+    renderResults(); // Re-render to update category highlights
+  };
+
+  window.toggleWallet = function() {
+    walletOpen = !walletOpen;
+    const walletSection = document.getElementById('wallet-section');
+    const toggleBtn = document.getElementById('wallet-toggle');
+    
+    if (walletSection) {
+      walletSection.classList.toggle('open', walletOpen);
+    }
+    
+    if (toggleBtn) {
+      toggleBtn.classList.toggle('active', walletOpen);
+      toggleBtn.innerHTML = walletOpen ? 'Hide Wallet ▲' : 'Show Wallet ▼';
+    }
+    
+    if (walletOpen) {
+      renderWallet();
+    }
+  };
+
   // ===================== INIT =====================
 
   function init() {
@@ -1047,4 +1249,28 @@
   } else {
     init();
   }
+  
+  // Event delegation for data-action attributes
+  document.addEventListener('click', function(event) {
+    const action = event.target.closest('[data-action]')?.getAttribute('data-action');
+    if (!action) return;
+    
+    switch (action) {
+      case 'set-filter':
+        const filter = event.target.closest('[data-filter]')?.getAttribute('data-filter');
+        if (filter) setFilter(filter);
+        break;
+      case 'set-year-view':
+        const yearView = event.target.getAttribute('value');
+        if (yearView) setYearView(yearView);
+        break;
+    }
+  });
+  
+  // Handle crypto toggle change
+  document.addEventListener('change', function(event) {
+    if (event.target.id === 'crypto-toggle' && event.target.hasAttribute('data-action')) {
+      toggleCrypto(event.target);
+    }
+  });
 })();

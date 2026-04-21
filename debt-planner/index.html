@@ -257,14 +257,14 @@
             <span style="font-size:0.85rem;color:var(--text-secondary);">per month extra</span>
           </div>
           <div class="slider-presets">
-            <button class="preset-btn" data-value="0" onclick="setPreset(0)" aria-label="Set extra payment to $0">$0</button>
-            <button class="preset-btn" data-value="50" onclick="setPreset(50)" aria-label="Set extra payment to $50">$50</button>
-            <button class="preset-btn" data-value="100" onclick="setPreset(100)" aria-label="Set extra payment to $100">$100</button>
-            <button class="preset-btn active" data-value="200" onclick="setPreset(200)" aria-label="Set extra payment to $200">$200</button>
-            <button class="preset-btn" data-value="300" onclick="setPreset(300)" aria-label="Set extra payment to $300">$300</button>
-            <button class="preset-btn" data-value="500" onclick="setPreset(500)" aria-label="Set extra payment to $500">$500</button>
-            <button class="preset-btn" data-value="750" onclick="setPreset(750)" aria-label="Set extra payment to $750">$750</button>
-            <button class="preset-btn" data-value="1000" onclick="setPreset(1000)" aria-label="Set extra payment to $1,000">$1,000</button>
+            <button class="preset-btn" data-value="0" data-action="set-preset" aria-label="Set extra payment to $0">$0</button>
+            <button class="preset-btn" data-value="50" data-action="set-preset" aria-label="Set extra payment to $50">$50</button>
+            <button class="preset-btn" data-value="100" data-action="set-preset" aria-label="Set extra payment to $100">$100</button>
+            <button class="preset-btn active" data-value="200" data-action="set-preset" aria-label="Set extra payment to $200">$200</button>
+            <button class="preset-btn" data-value="300" data-action="set-preset" aria-label="Set extra payment to $300">$300</button>
+            <button class="preset-btn" data-value="500" data-action="set-preset" aria-label="Set extra payment to $500">$500</button>
+            <button class="preset-btn" data-value="750" data-action="set-preset" aria-label="Set extra payment to $750">$750</button>
+            <button class="preset-btn" data-value="1000" data-action="set-preset" aria-label="Set extra payment to $1,000">$1,000</button>
           </div>
         </div>
       </div>
@@ -326,8 +326,8 @@
               <small id="consolidation-limit-info" style="color:var(--text-secondary);font-size:0.75rem;margin-top:4px;display:block;"></small>
             </div>
           </div>
-          <button class="btn-consolidate" id="consolidate-btn" onclick="runConsolidation()" aria-label="Simulate debt consolidation">🔍 Simulate Consolidation</button>
-          <button class="btn-ghost btn-reset-consolidation" id="reset-consolidation-btn" onclick="resetConsolidation()" style="display:none;" aria-label="Reset debt consolidation simulation">↩ Reset Simulation</button>
+          <button class="btn-consolidate" id="consolidate-btn" data-action="run-consolidation" aria-label="Simulate debt consolidation">🔍 Simulate Consolidation</button>
+          <button class="btn-ghost btn-reset-consolidation" id="reset-consolidation-btn" data-action="reset-consolidation" style="display:none;" aria-label="Reset debt consolidation simulation">↩ Reset Simulation</button>
         </div>
 
         <div id="consolidation-results" style="display:none;">
@@ -346,8 +346,8 @@
         <p class="step-desc">Watch your debts shrink over time. Switch between strategies to compare.</p>
 
         <div class="chart-toggle">
-          <button class="chart-toggle-btn active" data-strategy="snowball" onclick="setChartStrategy('snowball')" aria-label="Show snowball strategy chart">🔵 Snowball</button>
-          <button class="chart-toggle-btn" data-strategy="avalanche" onclick="setChartStrategy('avalanche')" aria-label="Show avalanche strategy chart">🟣 Avalanche</button>
+          <button class="chart-toggle-btn active" data-strategy="snowball" data-action="set-chart-strategy" aria-label="Show snowball strategy chart">🔵 Snowball</button>
+          <button class="chart-toggle-btn" data-strategy="avalanche" data-action="set-chart-strategy" aria-label="Show avalanche strategy chart">🟣 Avalanche</button>
         </div>
 
         <!-- Chart 1: Debt Over Time -->
@@ -379,8 +379,19 @@
 
         <div id="chart-error" style="display:none;text-align:center;padding:20px;background:var(--warning-light);border-radius:var(--radius);margin-top:16px;">
           <div style="color:var(--warning);font-weight:500;margin-bottom:8px;">📉 Charts failed to load</div>
-          <button class="btn-ghost" onclick="retryCharts()" style="padding:8px 16px;font-size:0.9rem;">🔄 Retry Charts</button>
+          <button class="btn-ghost" data-action="retry-charts" style="padding:8px 16px;font-size:0.9rem;">🔄 Retry Charts</button>
           <div style="font-size:0.8rem;color:var(--text-secondary);margin-top:8px;">Chart.js might be blocked or loading slowly</div>
+        </div>
+
+        <!-- Credit Score Simulator -->
+        <div class="chart-section">
+          <h3>📈 Credit Score Impact</h3>
+          <div class="chart-container">
+            <canvas id="credit-score-chart" aria-label="Credit score projection over time"></canvas>
+          </div>
+          <div id="credit-score-simulator">
+            <!-- Rendered by JS -->
+          </div>
         </div>
       </div>
     </section>
@@ -389,7 +400,7 @@
     <section class="step" id="step-schedule">
       <div class="container">
         <div class="schedule-section">
-          <div class="schedule-header" onclick="toggleSchedule()">
+          <div class="schedule-header" data-action="toggle-schedule">
             <h3>📅 Monthly Payment Schedule</h3>
             <span class="schedule-toggle-icon" id="schedule-icon">▼</span>
           </div>
@@ -399,8 +410,8 @@
         </div>
 
         <div style="text-align:center;margin-top:16px;">
-          <button class="print-btn" onclick="window.print()">🖨️ Print Your Plan</button>
-          <button id="export-csv-btn" class="btn-ghost" style="margin-left: 10px;" onclick="exportAmortizationCSV()" aria-label="Export amortization schedule as CSV">📊 Export Schedule (CSV)</button>
+          <button class="print-btn" data-action="print">🖨️ Print Your Plan</button>
+          <button id="export-csv-btn" class="btn-ghost" style="margin-left: 10px;" data-action="export-csv" aria-label="Export amortization schedule as CSV">📊 Export Schedule (CSV)</button>
           <div id="export-status" aria-live="polite" style="margin-top: 8px; font-size: 0.85rem; color: var(--success);"></div>
         </div>
       </div>
