@@ -705,9 +705,10 @@
               </div>
 
               ${window.renderApplyButton ? window.renderApplyButton(card) : (card.affiliateLink ? `
-              <a href="${card.affiliateLink}" class="btn-apply" target="_blank" rel="noopener noreferrer">Apply Now →</a>
+              <a href="${card.affiliateLink}" class="btn-apply" target="_blank" rel="nofollow sponsored noopener">Apply Now →</a>
+              <div class="ftc-disclosure">We may earn a commission when you apply. <a href="/disclosure.html">See our disclosure</a>.</div>
               ` : `
-              <a href="#card-${card.id}" class="btn-apply">Learn More</a>
+              <a href="#card-${card.id}" class="btn-apply btn-learn-more">Learn More</a>
               `)}
 
               <label class="result-compare-check">

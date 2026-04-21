@@ -170,14 +170,19 @@ function updateSummary() {
     ? debts.reduce((s, d) => s + d.apr * (d.balance / totalBalance), 0)
     : 0;
 
-  document.getElementById('total-balance').textContent = formatCurrency(totalBalance);
-  document.getElementById('total-min').textContent = formatCurrency(totalMin);
-  document.getElementById('weighted-apr').textContent = weightedApr.toFixed(2) + '%';
+  // Cache DOM elements to avoid duplicate queries
+  const totalBalanceEl = document.getElementById('total-balance');
+  const totalMinEl = document.getElementById('total-min');
+  const weightedAprEl = document.getElementById('weighted-apr');
+  
+  if (totalBalanceEl) totalBalanceEl.textContent = formatCurrency(totalBalance);
+  if (totalMinEl) totalMinEl.textContent = formatCurrency(totalMin);
+  if (weightedAprEl) weightedAprEl.textContent = weightedApr.toFixed(2) + '%';
 
   // Update slider max based on debt size
   const slider = document.getElementById('extra-slider');
   const suggestedMax = Math.max(1000, Math.ceil(totalBalance / 12 / 100) * 100);
-  slider.max = suggestedMax;
+  if (slider) slider.max = suggestedMax;
 }
 
 // ========================

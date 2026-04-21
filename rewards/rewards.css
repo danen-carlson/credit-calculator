@@ -1107,3 +1107,31 @@
     break-inside: avoid;
   }
 }
+
+
+/* Affiliate Apply Button */
+.btn-apply {
+  display: inline-block;
+  padding: 10px 24px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-apply:hover { background: #1d4ed8; }
+.btn-apply-sm { padding: 6px 14px; font-size: 0.85rem; }
+.btn-learn-more { background: #6b7280; }
+.btn-learn-more:hover { background: #4b5563; }
+
+.ftc-disclosure {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 4px;
+  font-style: italic;
+}
+.ftc-disclosure a { color: #6b7280; text-decoration: underline; }
