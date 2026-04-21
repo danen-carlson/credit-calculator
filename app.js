@@ -227,6 +227,8 @@ function updateMonthsDisplay(val) {
 function updateLiveEstimate() {
   const amount = parseFloat(purchaseInput?.value);
   const months = parseInt(monthsSlider?.value) || 6;
+  const creditScoreEl = document.getElementById('credit-score');
+  const creditScore = creditScoreEl ? creditScoreEl.value : 'good';
 
   if (!amount || amount <= 0) {
     if (quickEstimate) quickEstimate.classList.add('hidden');
@@ -239,23 +241,30 @@ function updateLiveEstimate() {
   // Base monthly payment (principal only)
   const baseMonthly = amount / months;
 
-  // Estimated interest: avg 20% APR kicks in after 2 months
-  // Only charge interest on remaining balance after month 2
-  const avgApr = 0.20;
-  const monthlyRate = avgApr / 12;
-  const graceMonths = 2;
+  // Estimated interest: APR adjusted by credit score
+  // Score adjustments: excellent -3%, good baseline, fair +3%, poor +8%
+  const aprByScore = {
+    excellent: 0.17,  // ~17% avg for excellent credit
+    good: 0.20,        // ~20% avg for good credit
+    fair: 0.23,        // ~23% avg for fair credit
+    poor: 0.28          // ~28% avg for poor credit
+  };
+  const avgApr = aprByScore[creditScore] || aprByScore['good'];
+  const monthlyRate = avgApr;  // annual rate
+  const graceMonths = 2;  // most cards give ~2 month grace before interest kicks in
 
+  // Simple amortization with grace period
   let totalInterest = 0;
   let balance = amount;
+  const r = avgApr / 12;  // monthly rate
 
   for (let i = 0; i < months; i++) {
-    // Subtract principal portion
-    balance -= baseMonthly;
-    // Add interest if past grace period and still have balance
     if (i >= graceMonths && balance > 0) {
-      totalInterest += balance * monthlyRate;
-      balance += balance * monthlyRate;
+      const interest = balance * r;
+      totalInterest += interest;
+      balance += interest;
     }
+    balance -= baseMonthly;
   }
 
   const totalCost = amount + totalInterest;
@@ -267,6 +276,13 @@ function updateLiveEstimate() {
   if (estimateTotal) {
     estimateTotal.textContent = fmt(totalCost) + ' total';
   }
+  // Show estimated APR in the estimate label
+  const estimateLabel = document.querySelector('.estimate-label');
+  if (estimateLabel) {
+    const scoreLabels = { excellent: 'Excellent', good: 'Good', fair: 'Fair', poor: 'Poor' };
+    const aprPct = (avgApr * 100).toFixed(0);
+    estimateLabel.textContent = `Estimated Monthly Payment (${scoreLabels[creditScore] || 'Good'} credit · ~${aprPct}% APR):`;
+  }
 }
 
 if (monthsSlider) {
@@ -275,6 +291,12 @@ if (monthsSlider) {
 
 if (purchaseInput) {
   purchaseInput.addEventListener('input', updateLiveEstimate);
+}
+
+// Credit score also updates the live estimate
+const creditScoreInput = document.getElementById('credit-score');
+if (creditScoreInput) {
+  creditScoreInput.addEventListener('change', updateLiveEstimate);
 }
 
 // ── Calculate ────────────────────────────────────────────────────────────────
