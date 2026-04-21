@@ -1,20 +1,20 @@
 {
-  "_comment": "Scrape targets for weekly data refresh. Each entry maps a card/BNPL ID (matching data.js / cards-data.js) to a source URL and selector recipe. The runner treats these as a source of hints — missing fields are OK and cause skips, not failures.",
+  "_comment": "Scrape targets for weekly data refresh. Each entry maps a card/BNPL ID (matching data.js / cards-data.js) to a source URL and selector recipe. The runner treats these as a source of hints — missing fields are OK and cause skips, not failures. Targets with _manual=true are JS-rendered and should be checked manually.",
   "cards": [
     {
       "id": "chase-sapphire-preferred",
       "name": "Chase Sapphire Preferred",
-      "url": "https://creditcards.chase.com/a1/sapphire/preferrednaep",
+      "url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
       "fields": {
         "signupBonus.amount": "regex:(\\d[\\d,]*)\\s*(?:bonus points|points bonus)",
         "signupBonus.requirement": "regex:spend\\s+\\$?([\\d,]+)\\s+on\\s+purchases",
-        "annualFee": "regex:annual fee\\s*of\\s*\\$(\\d+)"
+        "annualFee": "regex:annual fee\\s*(?:of\\s*)?\\$(\\d+)|\\$(\\d+)\\s*Annual Fee"
       }
     },
     {
       "id": "chase-freedom-flex",
       "name": "Chase Freedom Flex",
-      "url": "https://creditcards.chase.com/a1/freedom/flexnaep",
+      "url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
       "fields": {
         "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*cash\\s*back",
         "annualFee": "regex:\\$0\\s*annual\\s*fee|No annual fee"
@@ -24,35 +24,32 @@
       "id": "amex-gold",
       "name": "American Express Gold",
       "url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
-      "fields": {
-        "signupBonus.amount": "regex:(\\d{2,3},?\\d{3})\\s*(?:Membership Rewards|points)",
-        "annualFee": "regex:annual fee[^\\$]*\\$(\\d{2,3})"
-      }
+      "_manual": true,
+      "_note": "Amex pages are heavily JS-rendered; plain fetch returns empty shell. Check manually at url.",
+      "fields": {}
     },
     {
       "id": "amex-blue-cash-preferred",
       "name": "Amex Blue Cash Preferred",
       "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
-      "fields": {
-        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*(?:back|statement credit)",
-        "annualFee": "regex:\\$(\\d{2,3})\\s*annual fee"
-      }
+      "_manual": true,
+      "_note": "JS-rendered, plain fetch returns empty. Check manually.",
+      "fields": {}
     },
     {
       "id": "amex-blue-cash-everyday",
       "name": "Amex Blue Cash Everyday",
       "url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-everyday/",
-      "fields": {
-        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*(?:back|statement credit)",
-        "annualFee": "regex:\\$0|No annual fee"
-      }
+      "_manual": true,
+      "_note": "JS-rendered, plain fetch returns empty. Check manually.",
+      "fields": {}
     },
     {
       "id": "discover-it-cash-back",
       "name": "Discover it Cash Back",
       "url": "https://www.discover.com/credit-cards/cash-back/it-card.html",
       "fields": {
-        "annualFee": "regex:\\$0\\s*annual fee|No annual fee"
+        "annualFee": "regex:\\$0\\s*annual\\s*fee|No annual fee"
       }
     },
     {
@@ -60,18 +57,20 @@
       "name": "Capital One Venture",
       "url": "https://www.capitalone.com/credit-cards/venture/",
       "fields": {
-        "signupBonus.amount": "regex:(\\d{2,3},?\\d{3})\\s*(?:bonus miles|miles)",
-        "signupBonus.requirement": "regex:spend\\s+\\$?([\\d,]+)",
-        "annualFee": "regex:\\$(\\d{2,3})\\s*annual fee"
+        "signupBonus.amount": "regex:(\\d{2,3},?\\d{3})\\s*(?:bonus miles|miles)\\s*(?:after|when|if|for|by)",
+        "signupBonus.requirement": "regex:spend\\s+\\$?([\\d,]+)\\s+on\\s+purchases",
+        "annualFee": "regex:\\$(\\d{2,3})\\s*Annual\\s*Fee"
       }
     },
     {
       "id": "capital-one-venture-x",
       "name": "Capital One Venture X",
       "url": "https://www.capitalone.com/credit-cards/venture-x/",
+      "_manual": true,
+      "_note": "Capital One JS-rendered pages have SSR content but regex extraction is unreliable. Check manually.",
       "fields": {
-        "signupBonus.amount": "regex:(\\d{2,3},?\\d{3})\\s*(?:bonus miles|miles)",
-        "annualFee": "regex:\\$(\\d{2,3})\\s*annual fee"
+        "signupBonus.amount": "regex:(\\d{2,3},?\\d{3})\\s*(?:bonus miles|miles)\\s*(?:after|when|if|for|by)",
+        "annualFee": "regex:\\$(\\d{2,3})\\s*Annual\\s*Fee"
       }
     },
     {
@@ -79,26 +78,26 @@
       "name": "Citi Double Cash",
       "url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
       "fields": {
-        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*cash back",
-        "annualFee": "regex:\\$0|No annual fee"
+        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*cash\\s*back\\s*(?:after|when|on|for|by)",
+        "annualFee": "regex:Annual Fee\\s*\\$0|\\$0\\s*Annual Fee|No Annual Fee"
       }
     },
     {
       "id": "citi-custom-cash",
       "name": "Citi Custom Cash",
-      "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card",
+      "url": "https://www.citi.com/credit-cards/citi-custom-cash-credit-card/additional-information",
       "fields": {
-        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*cash back",
-        "annualFee": "regex:\\$0|No annual fee"
+        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*cash\\s*back\\s*(?:after|when|on|for|by)",
+        "annualFee": "regex:Annual Fee\\s*\\$0|\\$0\\s*Annual Fee|No Annual Fee"
       }
     },
     {
       "id": "wells-fargo-active-cash",
       "name": "Wells Fargo Active Cash",
-      "url": "https://www.wellsfargo.com/credit-cards/active-cash-visa-card/",
+      "url": "https://creditcards.wellsfargo.com/active-cash-credit-card",
       "fields": {
-        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*cash rewards",
-        "annualFee": "regex:\\$0|No annual fee"
+        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*cash\\s*(?:rewards|back)\\s*(?:bonus|after|when)",
+        "annualFee": "regex:Annual Fee.*?\\$0|\\$0.*?annual fee|No annual fee"
       }
     },
     {
@@ -106,8 +105,8 @@
       "name": "U.S. Bank Cash+",
       "url": "https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html",
       "fields": {
-        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*rewards",
-        "annualFee": "regex:\\$0|No annual fee"
+        "signupBonus.amount": "regex:\\$(\\d{2,3})\\s*(?:rewards|cash back)\\s*(?:bonus|after|when)",
+        "annualFee": "regex:Annual Fee.*?\\$0|\\$0.*?annual fee|No annual fee"
       }
     }
   ],
@@ -115,12 +114,11 @@
     {
       "id": "klarna-pay4",
       "name": "Klarna Pay in 4",
-      "url": "https://www.klarna.com/us/customer-service/pay-in-4/",
+      "url": "https://www.klarna.com/us/pay-in-4/",
       "fields": {
-        "numPayments": "regex:(\\d)\\s*(?:payments|installments)",
-        "interestRate": "regex:(0)%?\\s*interest",
-        "serviceFeeMin": "regex:\\$(\\d\\.\\d{2})\\s*service fee",
-        "serviceFeeMax": "regex:\\$(\\d\\.\\d{2})\\s*service fee"
+        "numPayments": "regex:split\\s+(?:your\\s+)?purchase\\s+into\\s+(\\d)\\s*(?:interest-?free\\s*)?(?:payments|installments)|(\\d)\\s*interest-?free\\s*payments",
+        "interestRate": "regex:(0)%\\s*interest|interest-?free|no interest",
+        "lateFee": "regex:\\$(\\d+)\\s*late\\s*fee"
       }
     },
     {
@@ -128,8 +126,9 @@
       "name": "Afterpay",
       "url": "https://www.afterpay.com/en-US/how-it-works",
       "fields": {
-        "numPayments": "regex:(\\d)\\s*(?:payments|installments)",
-        "intervalDays": "regex:every\\s*(\\d+)\\s*weeks?"
+        "numPayments": "regex:(\\d)\\s*(?:interest-?free\\s*)?(?:payments|installments)",
+        "intervalDays": "regex:every\\s*(\\d+)\\s*weeks?",
+        "lateFee": "regex:\\$(\\d+)\\s*late\\s*fee"
       }
     },
     {
@@ -137,17 +136,18 @@
       "name": "Affirm Pay in 4",
       "url": "https://www.affirm.com/how-it-works",
       "fields": {
-        "numPayments": "regex:(\\d)\\s*(?:payments|installments)",
-        "interestRate": "regex:(\\d+(?:\\.\\d+)?)%?\\s*APR"
-      }
+        "numPayments": "regex:Pay\\s+in\\s+(\\d)|(?:split|divide)\\s+(?:your\\s+)?(?:purchase|payment)\\s+into\\s+(\\d)",
+        "interestRate": "regex:0%\\s*APR"
+      },
+      "_note": "Affirm shows 0-36% APR range for loans; Pay-in-4 is always 0%. Only extract 0% specifically."
     },
     {
       "id": "paypal-pay4",
       "name": "PayPal Pay in 4",
-      "url": "https://www.paypal.com/us/digital-wallet/ways-to-pay/buy-now-pay-later/pay-in-4",
+      "url": "https://www.paypal.com/us/digital-wallet/ways-to-pay/buy-now-pay-later",
       "fields": {
-        "numPayments": "regex:(\\d)\\s*(?:payments|installments)",
-        "interestRate": "regex:(0)%?\\s*interest"
+        "numPayments": "regex:Pay\\s+in\\s+(\\d)|split.*?into\\s+(\\d)\\s*payments",
+        "interestRate": "regex:0%\\s*(?:interest|APR)|interest-?free|no interest"
       }
     },
     {
@@ -155,8 +155,8 @@
       "name": "Zip (Quadpay)",
       "url": "https://zip.co/us/how-it-works",
       "fields": {
-        "numPayments": "regex:(\\d)\\s*(?:payments|installments)",
-        "serviceFeeMin": "regex:\\$(\\d)\\s*fee"
+        "numPayments": "regex:(\\d)\\s*(?:equal\\s*)?(?:installments|payments)|split.*?into\\s+(\\d)",
+        "serviceFeeMin": "regex:\\$(\\d)\\s*(?:per\\s*installment\\s*)?(?:convenience|service)\\s*fee"
       }
     }
   ]

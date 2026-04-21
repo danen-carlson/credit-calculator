@@ -105,7 +105,7 @@ const cardsData = [
     issuer: 'Chase',
     type: 'tiered',
     annualFee: 0,
-    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$500 spend in 3 months' },
+    signupBonus: { amount: 500, unit: 'cash', value: 500, requirement: '$500 spend in 3 months' },
     rewards: {
       groceries: { rate: 1 },
       dining: { rate: 3 },
@@ -203,7 +203,7 @@ const cardsData = [
     issuer: 'Chase',
     type: 'travel',
     annualFee: 95,
-    signupBonus: { amount: 60000, unit: 'points', value: 1230, requirement: '$4,000 spend in 3 months' },
+    signupBonus: { amount: 75000, unit: 'points', value: 1538, requirement: '$5,000 spend in 3 months' },
     rewards: {
       groceries: { rate: 3, note: 'Online grocery purchases' },
       dining: { rate: 3 },
