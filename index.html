@@ -3,22 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CreditStudio — Find the Cheapest Credit Payment Option</title>
-  <meta name="description" content="Compare credit cards, BNPL services, and payment plans to find the cheapest credit payment option.">
+  <title>CreditStud.io — Free Credit Card & Debt Calculators</title>
+  <meta name="description" content="Compare credit cards, plan debt payoff, and find the best rewards. Free calculators that do the math for you — no sign-up required.">
+  <link rel="canonical" href="https://creditstud.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="shared/components.css">
-  <link rel="stylesheet" href="shared/share.css">
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#2563eb">
   <link rel="icon" type="image/svg+xml" href="/icon.svg">
   <link rel="apple-touch-icon" href="/icon.svg">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="CreditStud">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440"
-   crossorigin="anonymous"></script>
-<!-- GA4 -->
+  <meta property="og:title" content="CreditStud.io — Free Credit Card & Debt Calculators">
+  <meta property="og:description" content="Compare credit cards, plan debt payoff, and find the best rewards. Free calculators that do the math for you.">
+  <meta property="og:url" content="https://creditstud.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStud.io">
+  <script async src="https://pagead2goosyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440" crossorigin="anonymous"></script>
+  <!-- DISCLOSURE -->
+<div class="site-disclosure-banner">
+  <div class="site-disclosure-container">
+    CreditStudio may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations. 
+    <a href="/disclosure.html">Learn more</a>
+  </div>
+</div>
+<!-- /DISCLOSURE -->
+  <!-- FAQ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Is CreditStudio free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, all our calculators and tools are completely free. We earn affiliate commissions when you apply for cards through our site, but this never affects our rankings — those are based purely on math."}},
+      {"@type": "Question", "name": "Does using the calculator affect my credit score?", "acceptedAnswer": {"@type": "Answer", "text": "No. Our calculators are just math — no credit checks, no personal data collected, no impact on your score whatsoever."}},
+      {"@type": "Question", "name": "How accurate are the results?", "acceptedAnswer": {"@type": "Answer", "text": "We use publicly available APR, fee, and reward data updated monthly. Results reflect current terms, but actual offers may vary by credit profile."}},
+      {"@type": "Question", "name": "What's the difference between the calculators?", "acceptedAnswer": {"@type": "Answer", "text": "Credit Comparison finds the cheapest way to finance a specific purchase. Debt Planner helps you pay off existing debt faster. Rewards Calculator finds the best credit card for your spending habits."}}
+    ]
+  }
+  </script>
+  <!-- BreadcrumbList JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://creditstud.io/"}
+    ]
+  }
+  </script>
+  <!-- GA4 -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-99CP2NLCD9"></script>
 <script>
@@ -31,375 +66,140 @@
 </head>
 <body>
   <div id="app">
-    <!-- Skip to content link -->
     <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
-    
-    <!-- DISCLOSURE -->
-<div class="site-disclosure-banner">
-  <div class="site-disclosure-container">
-    CreditStudio may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations. 
-    <a href="/disclosure.html">Learn more</a>
-  </div>
-</div>
-<!-- /DISCLOSURE -->
-<!-- /DISCLOSURE -->
-<!-- /DISCLOSURE -->
-    
-    <!-- HEADER -->
-<header class="header">
-  <div class="container">
-    <nav class="top-nav">
-      <a href="/" class="nav-link">Home</a>
-      <a href="/debt-planner/" class="nav-link">Debt Planner</a>
-      <a href="/rewards/" class="nav-link">Rewards</a>
-      <a href="/blog/" class="nav-link">Blog</a>
-    </nav>
-    <h1 class="logo">💳 Credit<span>Studio</span></h1>
-    <p class="header-subtitle">Find the cheapest credit payment option</p>
-  </div>
-</header>
-<!-- /HEADER -->
-<!-- /HEADER -->
-<!-- /HEADER -->
 
-    <!-- Step 1: Purchase Info -->
-    <section class="step" id="step-purchase">
+    <header class="header">
       <div class="container">
-        <div class="step-header">
-          <span class="step-number">1</span>
-          <h2>What are you buying?</h2>
-        </div>
-        <div class="input-row">
-          <div class="input-group">
-            <label for="purchase-amount">Purchase Amount</label>
-            <div class="input-with-prefix">
-              <span class="prefix">$</span>
-              <input type="number" id="purchase-amount" placeholder="500" min="1" step="0.01" inputmode="decimal">
-            </div>
-          </div>
-          <div class="input-group">
-            <label for="payoff-months">Pay Off In <span id="payoff-months-display" class="months-display">6 months</span></label>
-            <input type="range" id="payoff-months" min="1" max="36" value="6" step="1" class="slider months-slider">
-            <div class="slider-labels months-labels">
-              <span>1mo</span>
-              <span>6mo</span>
-              <span>12mo</span>
-              <span>18mo</span>
-              <span>24mo</span>
-              <span>36mo</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Estimate -->
-        <div id="quick-estimate" class="quick-estimate hidden">
-          <div class="estimate-row">
-            <span class="estimate-label">Estimated Monthly Payment:</span>
-            <span class="estimate-value" id="estimate-payment">—</span>
-          </div>
-        </div>
-        <div class="input-group">
-          <label for="credit-score">Your Credit Score Range</label>
-          <select id="credit-score">
-            <option value="excellent">Excellent (720+)</option>
-            <option value="good" selected>Good (670–719)</option>
-            <option value="fair">Fair (580–669)</option>
-            <option value="poor">Poor (below 580)</option>
-            <option value="unknown">Not sure</option>
-          </select>
-        </div>
+        <nav class="top-nav">
+          <a href="/" class="nav-link active">Home</a>
+          <a href="/compare/" class="nav-link">Compare</a>
+          <a href="/debt-planner/" class="nav-link">Debt Planner</a>
+          <a href="/rewards/" class="nav-link">Rewards</a>
+          <a href="/blog/" class="nav-link">Blog</a>
+        </nav>
+        <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+        <p class="header-subtitle">Free calculators that do the math for you</p>
       </div>
-    </section>
+    </header>
 
-    <!-- Step 2: Payment Methods (Collapsed by default) -->
-    <section class="step" id="step-methods">
+    <main id="main">
+      <!-- Hero Section -->
+      <section class="landing-hero" style="text-align:center; padding:3rem 1rem 2rem; max-width:800px; margin:0 auto;">
+        <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">Find the Cheapest Way to Pay</h2>
+        <p style="font-size:1.15rem; color:#4b5563; max-width:600px; margin:0 auto 2rem;">Whether you're buying something new, paying off debt, or choosing a credit card — we'll crunch the numbers so you don't have to.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
+          <a href="/compare/" class="btn-primary btn-large" style="text-decoration:none;">Compare Payment Options →</a>
+          <a href="/debt-planner/" class="btn-ghost btn-large" style="text-decoration:none;">Plan Debt Payoff →</a>
+        </div>
+      </section>
+
+      <!-- Calculator Cards -->
+      <section style="padding:2rem 1rem; max-width:900px; margin:0 auto;">
+        <div class="calc-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem;">
+
+          <!-- Credit Comparison -->
+          <a href="/compare/" class="calc-card" style="display:block; padding:2rem; background:#fff; border:1px solid #e2e6ed; border-radius:16px; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
+            <div style="font-size:2.5rem; margin-bottom:0.75rem;">💳</div>
+            <h3 style="font-size:1.25rem; font-weight:700; color:#111; margin:0 0 0.5rem;">Credit Comparison</h3>
+            <p style="color:#4b5563; font-size:0.9rem; line-height:1.5; margin:0 0 1rem;">Compare credit cards, BNPL services, and payment plans side by side. Enter a purchase amount and find the cheapest way to pay.</p>
+            <span style="color:#2563eb; font-weight:600; font-size:0.85rem;">Try it now →</span>
+          </a>
+
+          <!-- Debt Planner -->
+          <a href="/debt-planner/" class="calc-card" style="display:block; padding:2rem; background:#fff; border:1px solid #e2e6ed; border-radius:16px; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
+            <div style="font-size:2.5rem; margin-bottom:0.75rem;">💰</div>
+            <h3 style="font-size:1.25rem; font-weight:700; color:#111; margin:0 0 0.5rem;">Debt Planner</h3>
+            <p style="color:#4b5563; font-size:0.9rem; line-height:1.5; margin:0 0 1rem;">Create a personalized payoff plan. Compare snowball vs avalanche, model balance transfers, and see your debt-free date with a credit score simulator.</p>
+            <span style="color:#2563eb; font-weight:600; font-size:0.85rem;">Try it now →</span>
+          </a>
+
+          <!-- Rewards Calculator -->
+          <a href="/rewards/" class="calc-card" style="display:block; padding:2rem; background:#fff; border:1px solid #e2e6ed; border-radius:16px; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
+            <div style="font-size:2.5rem; margin-bottom:0.75rem;">🏆</div>
+            <h3 style="font-size:1.25rem; font-weight:700; color:#111; margin:0 0 0.5rem;">Rewards Calculator</h3>
+            <p style="color:#4b5563; font-size:0.9rem; line-height:1.5; margin:0 0 1rem;">Find the best credit card for your spending habits. Compare cash back, points, and annual fees across 30+ cards. Build your wallet for maximum rewards.</p>
+            <span style="color:#2563eb; font-weight:600; font-size:0.85rem;">Try it now →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section style="padding:2rem 1rem; max-width:800px; margin:0 auto;">
+        <h2 style="text-align:center; font-size:1.5rem; font-weight:700; margin-bottom:1.5rem;">How It Works</h2>
+        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center;">
+          <div style="flex:1; min-width:200px; text-align:center; padding:1.25rem;">
+            <div style="font-size:2rem; margin-bottom:0.5rem;">📝</div>
+            <h3 style="font-size:1rem; font-weight:600; margin:0 0 0.25rem;">1. Enter your info</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Purchase amount, credit score, and payoff timeline</p>
+          </div>
+          <div style="flex:1; min-width:200px; text-align:center; padding:1.25rem;">
+            <div style="font-size:2rem; margin-bottom:0.5rem;">🧮</div>
+            <h3 style="font-size:1rem; font-weight:600; margin:0 0 0.25rem;">2. Compare options</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">We crunch the numbers — APR, fees, rewards, intro offers</p>
+          </div>
+          <div style="flex:1; min-width:200px; text-align:center; padding:1.25rem;">
+            <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
+            <h3 style="font-size:1rem; font-weight:600; margin:0 0 0.25rem;">3. Choose & save</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Pick the cheapest option and share or bookmark your results</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Popular Questions / Learn Links -->
+      <section style="padding:2rem 1rem 3rem; max-width:800px; margin:0 auto;">
+        <h2 style="text-align:center; font-size:1.5rem; font-weight:700; margin-bottom:1rem;">Popular Questions</h2>
+        <div class="faq-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
+          <a href="/learn/pay-off-10k-debt.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
+            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">Fastest way to pay off $10K debt?</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Compare snowball vs avalanche with a pre-filled calculator</p>
+          </a>
+          <a href="/learn/bnpl-interest-calculator.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
+            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">BNPL interest rate calculator</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">See the true cost of Klarna, Afterpay, and Affirm</p>
+          </a>
+          <a href="/learn/balance-transfer-calculator.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
+            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">0% APR balance transfer calculator</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Calculate how much you save with a balance transfer</p>
+          </a>
+          <a href="/learn/crypto-credit-card-rewards.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
+            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">Are crypto credit cards worth it?</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Compare crypto rewards vs cash back with real data</p>
+          </a>
+          <a href="/learn/snowball-vs-avalanche.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
+            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">Snowball vs Avalanche: Which is better?</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Side-by-side comparison with interactive calculator</p>
+          </a>
+          <a href="/merchant/" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
+            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">Best credit card for…</h3>
+            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Amazon, groceries, gas, travel — find the best card for your spending</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
       <div class="container">
-        <div class="step-header collapsible" id="methods-header">
-          <span class="step-number">2</span>
-          <h2>Payment Options <span class="selected-count">(Using defaults)</span></h2>
-          <button class="btn-expand" id="expand-methods-btn" aria-label="Expand payment options">Change ▼</button>
-        </div>
-        <div id="methods-content" class="methods-content collapsed">
-          <p class="step-desc">Select all that apply. We'll compare them for you.</p>
-
-          <!-- Filters -->
-          <div class="toggle-bar">
-            <label class="toggle-label">
-              <input type="checkbox" id="toggle-show-bnpl" checked>
-              <span class="toggle-switch"></span>
-              <span>Buy Now, Pay Later</span>
-            </label>
-            <label class="toggle-label">
-              <input type="checkbox" id="toggle-show-cards" checked>
-              <span class="toggle-switch"></span>
-              <span>Credit Cards</span>
-            </label>
-            <label class="toggle-label">
-              <input type="checkbox" id="toggle-hide-annual-fee">
-              <span class="toggle-switch"></span>
-              <span>Hide cards with annual fees</span>
-            </label>
-          </div>
-
-          <!-- BNPL Section -->
-          <div class="method-section">
-            <h3>Buy Now, Pay Later</h3>
-            <div class="method-grid" id="bnpl-grid">
-              <!-- Populated by JS -->
-            </div>
-          </div>
-
-          <!-- Credit Cards Section -->
-          <div class="method-section">
-            <h3>Credit Cards</h3>
-            <div class="method-grid" id="card-grid">
-              <!-- Populated by JS -->
-            </div>
-          </div>
-
-          <!-- Custom Method -->
-          <div class="method-section">
-            <button class="btn-add" id="add-custom-btn" aria-label="Add custom card or service">+ Add Your Own Card or Service</button>
-            <div id="custom-form" class="custom-form hidden">
-              <div class="custom-form-grid">
-                <div class="input-group">
-                  <label for="custom-name">Name</label>
-                  <input type="text" id="custom-name" placeholder="My Chase Card">
-                </div>
-                <div class="input-group">
-                  <label for="custom-type">Type</label>
-                  <select id="custom-type">
-                    <option value="credit-card">Credit Card</option>
-                    <option value="bnpl-monthly">BNPL / Payment Plan</option>
-                    <option value="store-card">Store Card</option>
-                  </select>
-                </div>
-                <div class="input-group">
-                  <label for="custom-apr">Regular APR %</label>
-                  <input type="number" id="custom-apr" placeholder="22.99" min="0" max="99" step="0.01">
-                </div>
-                <div class="input-group">
-                  <label for="custom-rewards">Cash Back / Rewards %</label>
-                  <input type="number" id="custom-rewards" placeholder="2" min="0" max="20" step="0.01">
-                </div>
-                <div class="input-group">
-                  <label for="custom-intro-apr">Intro APR % <small>(0 if 0% promo)</small></label>
-                  <input type="number" id="custom-intro-apr" placeholder="0" min="0" max="99" step="0.01">
-                </div>
-                <div class="input-group">
-                  <label for="custom-intro-months">Intro Period (months)</label>
-                  <input type="number" id="custom-intro-months" placeholder="15" min="0" max="60">
-                </div>
-              </div>
-              <div class="custom-form-actions">
-                <button class="btn-primary btn-small" id="save-custom-btn">Add to Comparison</button>
-                <button class="btn-ghost btn-small" id="cancel-custom-btn" aria-label="Cancel adding custom card">Cancel</button>
-              </div>
-            </div>
-            <div id="custom-methods-list"></div>
-          </div>
-          <button class="btn-ghost btn-small" id="collapse-methods-btn" style="margin-top: 1rem;" aria-label="Collapse payment options">Done</button>
-        </div>
+        <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary. <a href="/disclosure.html">Affiliate Disclosure</a></p>
+        <p style="margin-top: 8px; font-size: 0.85rem;">
+          <a href="/compare/">Credit Comparison</a> ·
+          <a href="/debt-planner/">Debt Planner</a> ·
+          <a href="/rewards/">Rewards</a> ·
+          <a href="/learn/">Learn</a> ·
+          <a href="/merchant/">Merchants</a> ·
+          <a href="/blog/">Blog</a>
+        </p>
       </div>
-    </section>
-
-    <!-- Calculate Button -->
-    <section class="step">
-      <div class="container">
-        <button class="btn-primary btn-large" id="calculate-btn">Compare My Options</button>
-      </div>
-    </section>
-
-    <!-- Results -->
-    <section class="step hidden" id="results-section">
-      <div class="container" id="main">
-        <div id="results-skeleton" class="skeleton">
-          <div class="skeleton-bar" style="width: 60%;"></div>
-          <div class="skeleton-bar" style="width: 100%;"></div>
-          <div class="skeleton-bar" style="width: 80%;"></div>
-          <div class="skeleton-bar" style="width: 90%;"></div>
-          <div class="skeleton-bar" style="width: 70%;"></div>
-        </div>
-        <div class="step-header">
-          <span class="step-number">✓</span>
-          <h2>Your Best Options</h2>
-        </div>
-        <p class="step-desc" id="results-subtitle"></p>
-
-        <!-- Share / data stamp row (injected by share.js) -->
-        <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
-          <div id="share-mount"></div>
-          <div id="data-stamp-mount"></div>
-        </div>
-
-        <!-- Best Match Section -->
-        <div id="best-match-section" class="best-match-section hidden" aria-live="polite">
-          <h3 class="tier-heading">🎯 Best Match for Your Timeline</h3>
-          <div id="best-match-card" class="best-match-card"></div>
-        </div>
-
-        <!-- New Card Option (if better with intro APR) -->
-        <div id="new-card-option" class="new-card-option hidden">
-          <h3 class="tier-heading">🎁 Could be cheaper with a new card</h3>
-          <p class="tier-desc">These cards offer 0% intro APR. If approved, you'd pay no interest for the intro period.</p>
-          <div id="new-card-cards"></div>
-        </div>
-
-        <!-- Alternatives Within ±2 Months -->
-        <div id="alternatives-section" class="alternatives-section hidden" aria-live="polite">
-          <h3 class="tier-heading">Other Options (±2 months from your target)</h3>
-          <div id="alternatives-cards"></div>
-        </div>
-
-        <!-- Other Time Periods Comparison -->
-        <div id="other-periods-section" class="other-periods-section">
-          <h3 class="tier-heading">💡 What if you paid it off faster or slower?</h3>
-          <p class="tier-desc">See how your best option changes with different payoff timelines.</p>
-          <div id="other-periods-grid" class="other-periods-grid"></div>
-        </div>
-        <div id="affiliate-disclosure" class="disclosure hidden">
-          Advertiser Disclosure: Some of the offers on this page are from companies that compensate us. This may influence which products we feature, but it does not affect our rankings — those are based purely on math.
-        </div>
-        <div id="results-cards"></div>
-
-        <!-- Credit Score CTA -->
-        <div id="credit-score-cta" class="hidden">
-          <div class="cta-box">
-            <strong>Not sure about your credit score?</strong>
-            <span>Check it free — it won't affect your score.</span>
-            <a href="#" id="credit-karma-link" target="_blank" rel="noopener sponsored" class="btn-primary btn-small">Check Free on Credit Karma</a>
-          </div>
-        </div>
-
-        <!-- Payoff Comparison Table -->
-        <div id="payoff-comparison" class="hidden">
-          <h3 class="comparison-title">Payoff Comparison</h3>
-          <div id="payoff-table-wrapper"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="step">
-      <div class="container">
-        <div class="seo-content">
-          <h2>Frequently Asked Questions</h2>
-          
-          <h3>How does the CreditStudio calculator work?</h3>
-          <p>Our calculator compares the total cost of different payment options for your purchase. Enter the purchase amount and your desired payoff timeline, and we'll show you which credit cards, BNPL services, or payment plans will cost you the least in interest and fees. We factor in regular APR, intro APR periods, annual fees, and rewards to give you a complete picture.</p>
-          
-          <h3>What payment options does CreditStudio compare?</h3>
-          <p>We compare credit cards (including those with 0% intro APR offers), buy-now-pay-later services like Klarna, Afterpay, and Affirm, store cards, and personal loans. You can also add your own cards or services to the comparison for a personalized analysis.</p>
-          
-          <h3>Are the results personalized to my credit score?</h3>
-          <p>Yes, your credit score affects which cards and interest rates we show you. Select your credit score range when entering your purchase details, and we'll tailor the results accordingly. Excellent credit (720+) unlocks the best rates and offers, while fair or poor credit will show more realistic options.</p>
-          
-          <h3>Does using the calculator affect my credit score?</h3>
-          <p>No, using our calculator has no impact on your credit score. We're just doing math based on publicly available information about credit card offers and BNPL terms. To actually get a card, you'll need to apply directly with the issuer, which may involve a hard credit inquiry.</p>
-          
-          <h3>How often is the data updated?</h3>
-          <p>We update our database of credit card offers, BNPL terms, and interest rates monthly. Major changes (like new 0% APR promotions or policy updates) are added as soon as we become aware of them. All information is verified for accuracy before publication.</p>
-          
-          <h3>Is CreditStudio free to use?</h3>
-          <p>Yes, our calculators and tools are completely free. We make money through affiliate commissions when you apply for cards through our site, but this doesn't affect our rankings or recommendations. All results are based purely on math and cost calculations.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <p>CreditStudio is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
-    <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
-  </div>
-</footer>
-<!-- /FOOTER -->
-<!-- /FOOTER -->
-<!-- /FOOTER -->
+    </footer>
   </div>
 
-  <script src="data.js"></script>
-  <script src="calc.js"></script>
-  <link rel="stylesheet" href="shared/email-capture.css">
-<script src="shared/email-capture.js"></script>
-  <script src="app.js"></script>
-  <script src="shared/share.js"></script>
-  <script>
-    // Wire share.js to the homepage calculator
-    document.addEventListener('DOMContentLoaded', () => {
-      if (!window.CreditStudShare) return;
-      window.CreditStudShare.init({
-        pageKey: 'home',
-        simpleInputs: [
-          'purchase-amount',
-          'payoff-months',
-          'credit-score',
-          'toggle-hide-annual-fee',
-          'toggle-show-bnpl',
-          'toggle-show-cards'
-        ],
-        shareButtonMount: '#share-mount',
-        stampMount: '#data-stamp-mount'
-      });
-    });
-  </script>
-  <!-- FAQ JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How does the CreditStudio calculator work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our calculator compares the total cost of different payment options for your purchase. Enter the purchase amount and your desired payoff timeline, and we'll show you which credit cards, BNPL services, or payment plans will cost you the least in interest and fees. We factor in regular APR, intro APR periods, annual fees, and rewards to give you a complete picture."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What payment options does CreditStudio compare?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We compare credit cards (including those with 0% intro APR offers), buy-now-pay-later services like Klarna, Afterpay, and Affirm, store cards, and personal loans. You can also add your own cards or services to the comparison for a personalized analysis."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are the results personalized to my credit score?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, your credit score affects which cards and interest rates we show you. Select your credit score range when entering your purchase details, and we'll tailor the results accordingly. Excellent credit (720+) unlocks the best rates and offers, while fair or poor credit will show more realistic options."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does using the calculator affect my credit score?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, using our calculator has no impact on your credit score. We're just doing math based on publicly available information about credit card offers and BNPL terms. To actually get a card, you'll need to apply directly with the issuer, which may involve a hard credit inquiry."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How often is the data updated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We update our database of credit card offers, BNPL terms, and interest rates monthly. Major changes (like new 0% APR promotions or policy updates) are added as soon as we become aware of them. All information is verified for accuracy before publication."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is CreditStudio free to use?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our calculators and tools are completely free. We make money through affiliate commissions when you apply for cards through our site, but this doesn't affect our rankings or recommendations. All results are based purely on math and cost calculations."
-        }
-      }
-    ]
-  }
-  </script>
-  <script defer src="/shared/pwa.js"></script>
+  <style>
+    .calc-card:hover, .faq-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 600px) {
+      .landing-hero h2 { font-size: 1.5rem; }
+    }
+  </style>
 </body>
 </html>

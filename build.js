@@ -14,6 +14,7 @@ const partials = {
 
 const targetFiles = [
   'index.html',
+  'compare/index.html',
   'rewards/index.html',
   'debt-planner/index.html',
   'blog/index.html',
