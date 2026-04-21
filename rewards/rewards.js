@@ -704,7 +704,11 @@
                 <ul class="result-perks-list">${perksHTML}</ul>
               </div>
 
-              <a href="${card.affiliateLink || '#'}" class="btn-apply" onclick="event.preventDefault();">Apply Now</a>
+              ${card.affiliateLink ? '
+              <a href="${card.affiliateLink}" class="btn-apply" target="_blank" rel="noopener noreferrer">Apply Now →</a>
+              ' : '
+              <a href="#card-${card.id}" class="btn-apply">Learn More</a>
+              '}
 
               <label class="result-compare-check">
                 <input type="checkbox" data-card-id="${card.id}" ${isChecked} onchange="toggleCompare(this)">

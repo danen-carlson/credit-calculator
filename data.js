@@ -51,6 +51,8 @@ const BNPL_METHODS = [
     name: 'Klarna',
     type: 'bnpl-4',
     detail: 'Pay in 4 · 0% interest · Works anywhere via virtual card',
+    affiliateLink: '',
+    affiliateNetwork: ''
     // Payment schedule: 25% down + 3 payments every 2 weeks
     // Service fee: $0.75–$3.00 per purchase
     downPaymentPct: 25,
@@ -69,6 +71,8 @@ const BNPL_METHODS = [
     availability: 'both', // 800K+ partner merchants + One-time virtual Visa card
     availabilityNote: 'Partner checkout at 800K+ merchants, OR use Klarna One-time virtual Visa card at any US online store',
     notes: 'Service fee $0.75–$3. Late fee up to $7 (capped at 25% of order). Klarna Card available for in-store (Visa network).',
+    affiliateLink: '',
+    affiliateNetwork: '',
     // Late fee information as of 2026 - Source: Klarna official website
     lateFees: {
       lateFeeAmount: 7, // $7 late fee per missed payment
@@ -83,6 +87,8 @@ const BNPL_METHODS = [
     name: 'Afterpay',
     type: 'bnpl-4',
     detail: 'Pay in 4 · 0% interest at partner brands · Late fees apply',
+    affiliateLink: '',
+    affiliateNetwork: ''
     // Payment schedule: 25% down + 3 payments every 2 weeks
     downPaymentPct: 25,
     numPayments: 4,
@@ -101,6 +107,8 @@ const BNPL_METHODS = [
     availability: 'both', // partner merchants + Afterpay Card (Visa)
     availabilityNote: 'Partner checkout at 100K+ merchants. Afterpay Card (Visa) can be used in-store. Online limited to partner merchants.',
     notes: 'No service fee. Late fee: initial $10, then $7/week up to $68 or 25% of purchase. Pay Monthly option available for $100+ (0–35.99% APR, 3–24 months).',
+    affiliateLink: '',
+    affiliateNetwork: '',
     // Late fee information as of 2026 - Source: Afterpay official website
     lateFees: {
       lateFeeAmount: 10, // Initial $10 late fee
@@ -132,6 +140,8 @@ const BNPL_METHODS = [
     availability: 'partner', // only where PayPal is accepted at checkout
     availabilityNote: 'Only available at online merchants that accept PayPal at checkout. Not available in-store. Not available in Missouri or Nevada.',
     notes: 'Zero fees, zero interest. Must use at merchants with PayPal checkout integration. No virtual card for non-PayPal stores.',
+    affiliateLink: '',
+    affiliateNetwork: '',
     // Late fee information as of 2026 - Source: PayPal official website
     lateFees: {
       lateFeeAmount: 0, // No late fees
@@ -146,6 +156,8 @@ const BNPL_METHODS = [
     name: 'Affirm',
     type: 'bnpl-4',
     detail: 'Pay in 4 · 0% APR · Works anywhere via virtual card',
+    affiliateLink: '',
+    affiliateNetwork: ''
     // Pay in 4: 25% down + 3 biweekly payments
     // Monthly plans: 3–60 months, 0–36% APR
     downPaymentPct: 25,
@@ -165,6 +177,8 @@ const BNPL_METHODS = [
     availability: 'both', // 358K+ partner merchants + one-time virtual Visa card
     availabilityNote: 'Partner checkout at 358K+ merchants (Amazon, Walmart, Target). Also offers one-time virtual Visa card usable at any online store.',
     notes: 'Pay in 4 is always 0% APR, $0 fees. Monthly plans (3–60 mo) range 0–36% APR. Reports to credit bureaus. Affirm Card (debit) for in-store.',
+    affiliateLink: '',
+    affiliateNetwork: '',
     // Late fee information as of 2026 - Source: Affirm official website
     lateFees: {
       lateFeeAmount: 0, // No late fees
@@ -179,6 +193,8 @@ const BNPL_METHODS = [
     name: 'Zip',
     type: 'bnpl-4',
     detail: 'Pay in 4 · Origination fee ($4–$60) · ~30–35% APR',
+    affiliateLink: '',
+    affiliateNetwork: ''
     // Payment schedule: 25% down + 3 payments every 2 weeks
     // NOT interest-free — charges origination fee = 30-35% APR equivalent
     downPaymentPct: 25,
@@ -200,6 +216,8 @@ const BNPL_METHODS = [
     availability: 'both', // partner merchants + Zip app works anywhere
     availabilityNote: 'Partner checkout at 82K+ merchants. Zip app creates virtual card usable anywhere Visa is accepted, online or in-store.',
     notes: '⚠️ NOT interest-free. Origination fee of $4–$60 (30–35% effective APR). Example: $400 purchase = $8 fee, $408 total. No credit check.',
+    affiliateLink: '',
+    affiliateNetwork: '',
     // Late fee information as of 2026 - Source: Zip official website
     lateFees: {
       lateFeeAmount: 7, // $7 late fee per missed payment
@@ -214,6 +232,8 @@ const BNPL_METHODS = [
     name: 'Sezzle',
     type: 'bnpl-4',
     detail: 'Pay in 4 · 0% interest · 1 free reschedule',
+    affiliateLink: '',
+    affiliateNetwork: ''
     // Offers Pay in 2, Pay in 4, and Pay Monthly
     downPaymentPct: 25,
     numPayments: 4,
@@ -231,6 +251,8 @@ const BNPL_METHODS = [
     availability: 'partner', // partner merchants only
     availabilityNote: 'Only at 47K+ Sezzle partner merchants (Target, GameStop, etc.). No virtual card for non-partner stores.',
     notes: '1 free payment reschedule per order. $10 failed payment fee. $5 for additional reschedules. Pay Monthly: 3–48 months, 0–34.99% APR for up to $15K.',
+    affiliateLink: '',
+    affiliateNetwork: '',
     // Late fee information as of 2026 - Source: Sezzle official website
     lateFees: {
       lateFeeAmount: 10, // $10 late fee for failed payment
@@ -248,6 +270,8 @@ const BNPL_MONTHLY_PLANS = [
     name: 'Klarna Monthly',
     type: 'bnpl-monthly',
     detail: '6–36 months · 0–35.99% APR',
+    affiliateLink: '',
+    affiliateNetwork: '',
     aprMin: 0,
     aprMax: 35.99,
     aprTypical: 19.99,
@@ -272,6 +296,8 @@ const BNPL_MONTHLY_PLANS = [
     name: 'Affirm Monthly',
     type: 'bnpl-monthly',
     detail: '3–60 months · 0–36% APR',
+    affiliateLink: '',
+    affiliateNetwork: '',
     aprMin: 0,
     aprMax: 36,
     aprTypical: 15,
@@ -296,6 +322,8 @@ const BNPL_MONTHLY_PLANS = [
     name: 'Afterpay Monthly',
     type: 'bnpl-monthly',
     detail: '3–24 months · 0–35.99% APR',
+    affiliateLink: '',
+    affiliateNetwork: '',
     aprMin: 0,
     aprMax: 35.99,
     aprTypical: 20,
@@ -321,6 +349,8 @@ const BNPL_MONTHLY_PLANS = [
     name: 'Sezzle Monthly',
     type: 'bnpl-monthly',
     detail: '3–48 months · 0–34.99% APR',
+    affiliateLink: '',
+    affiliateNetwork: '',
     aprMin: 0,
     aprMax: 34.99,
     aprTypical: 20,
@@ -345,6 +375,8 @@ const BNPL_MONTHLY_PLANS = [
     name: 'Zip Monthly',
     type: 'bnpl-monthly',
     detail: '3–24 months · 30–35% APR',
+    affiliateLink: '',
+    affiliateNetwork: '',
     aprMin: 30,
     aprMax: 35,
     aprTypical: 32.5,
@@ -369,6 +401,8 @@ const BNPL_MONTHLY_PLANS = [
     name: 'PayPal Pay Monthly',
     type: 'bnpl-monthly',
     detail: '6–24 months · 0–29.99% APR',
+    affiliateLink: '',
+    affiliateNetwork: '',
     aprMin: 0,
     aprMax: 29.99,
     aprTypical: 15,
@@ -405,6 +439,8 @@ const CREDIT_CARDS = [
     pointValue: 0,
     annualFee: 0,
     lateFee: 0,
+    affiliateLink: '',
+    affiliateNetwork: '',
     rewardTiers: [], // no rewards at all
     blendedRate: 0,
     notes: 'No late fees ever. Good for large purchases you\'ll pay off within 12 months.'

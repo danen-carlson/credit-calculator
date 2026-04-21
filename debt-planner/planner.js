@@ -29,6 +29,7 @@ window.setDebts = function (next) {
     name: d.name || `Debt ${i + 1}`,
     balance: parseFloat(d.balance) || 0,
     apr: parseFloat(d.apr) || 0,
+    originalApr: parseFloat(d.originalApr) || parseFloat(d.apr) || 0, // Store original APR
     minPayment: parseFloat(d.minPayment) || 0
   }));
   window.debts = debts;
@@ -81,6 +82,7 @@ function addDebt(name, balance, apr, minPayment) {
     name: name || `Debt ${debts.length + 1}`,
     balance: parseFloat(balance) || 0,
     apr: parseFloat(apr) || 0,
+    originalApr: parseFloat(apr) || 0, // Store original APR for credit score adjustments
     minPayment: parseFloat(minPayment) || 0
   });
   renderDebtCards();
@@ -103,11 +105,18 @@ function removeDebt(id) {
 function updateDebt(id, field, value) {
   const debt = debts.find(d => d.id === id);
   if (!debt) return;
+  
   if (field === 'name') {
     debt.name = value;
+  } else if (field === 'apr') {
+    // When manually updating APR, update the original APR as well
+    const newApr = parseFloat(value) || 0;
+    debt.apr = newApr;
+    debt.originalApr = newApr;
   } else {
     debt[field] = parseFloat(value) || 0;
   }
+  
   updateSummary();
   updateConsolidationOptions();
   resetConsolidation();
@@ -711,74 +720,131 @@ function renderRecommendations() {
 // UTILITIES
 // ========================
 function updateConsolidationOptions() {
-  const debtSelect = document.getElementById('consolidation-debt-select');
+  const debtCheckboxesContainer = document.getElementById('consolidation-debt-checkboxes');
   const cardSelect = document.getElementById('consolidation-card-select');
-  if (!debtSelect || !cardSelect) return;
+  if (!debtCheckboxesContainer || !cardSelect) return;
 
-  const selectedDebt = debtSelect.value;
-  const selectedCard = cardSelect.value;
-
-  debtSelect.innerHTML = '<option value="">— Choose a debt —</option>' + debts
-    .filter(d => d.balance > 0)
-    .map(d => `<option value="${d.id}">${escapeHtml(d.name)} — ${formatCurrency(d.balance)} at ${d.apr.toFixed(2)}% APR</option>`)
-    .join('');
+  // Populate debt checkboxes
+  if (debts.filter(d => d.balance > 0).length > 0) {
+    debtCheckboxesContainer.innerHTML = debts
+      .filter(d => d.balance > 0)
+      .map(d => `
+        <div class="debt-checkbox-item">
+          <label>
+            <input type="checkbox" 
+                   class="debt-checkbox" 
+                   data-debt-id="${d.id}" 
+                   data-debt-balance="${d.balance}" 
+                   onchange="handleDebtCheckboxChange()">
+            ${escapeHtml(d.name)} — ${formatCurrency(d.balance)} at ${d.apr.toFixed(2)}% APR
+          </label>
+        </div>
+      `)
+      .join('');
+  } else {
+    debtCheckboxesContainer.innerHTML = '<p style="color:var(--text-secondary);">No debts available for transfer.</p>';
+  }
 
   cardSelect.innerHTML = '<option value="">— Choose a card —</option>' + BALANCE_TRANSFER_CARDS
     .map(card => `<option value="${card.id}">${card.name} — ${card.introAprMonths} mo 0% APR • ${card.transferFeePct}% fee • Limit ${formatCurrency(card.creditLimit)}</option>`)
     .join('');
 
-  if (debts.some(d => String(d.id) === selectedDebt)) debtSelect.value = selectedDebt;
-  if (BALANCE_TRANSFER_CARDS.some(card => card.id === selectedCard)) cardSelect.value = selectedCard;
-
   updateConsolidationAmountHint();
 }
 
 function updateConsolidationAmountHint() {
-  const debtSelect = document.getElementById('consolidation-debt-select');
+  const debtCheckboxes = document.querySelectorAll('.debt-checkbox:checked');
   const cardSelect = document.getElementById('consolidation-card-select');
   const amountInput = document.getElementById('consolidation-amount');
   const info = document.getElementById('consolidation-limit-info');
-  if (!debtSelect || !cardSelect || !amountInput || !info) return;
+  if (!cardSelect || !amountInput || !info) return;
 
-  const debt = debts.find(d => String(d.id) === debtSelect.value);
+  // Get selected debts
+  const selectedDebts = Array.from(debtCheckboxes).map(cb => ({
+    id: parseInt(cb.dataset.debtId),
+    balance: parseFloat(cb.dataset.debtBalance)
+  }));
+
+  // If no debts selected, show default message
+  if (selectedDebts.length === 0) {
+    amountInput.value = 5000; // Default transfer amount
+    info.textContent = 'Select debts to see the maximum transferable amount. Default transfer amount: $5,000.';
+    return;
+  }
+
+  // Calculate total balance of selected debts
+  const totalSelectedBalance = selectedDebts.reduce((sum, debt) => sum + debt.balance, 0);
+  
+  // Get selected card
   const card = BALANCE_TRANSFER_CARDS.find(c => c.id === cardSelect.value);
 
-  if (!debt) {
-    amountInput.value = 0;
-    info.textContent = 'Pick a debt to see the maximum transferable amount.';
-    return;
+  // Default transfer amount is $5,000 (common approved amount for good credit)
+  let defaultTransferAmount = 5000;
+  
+  // Cap at total selected balance
+  defaultTransferAmount = Math.min(defaultTransferAmount, totalSelectedBalance);
+  
+  // If card is selected, also cap at card limit
+  if (card) {
+    defaultTransferAmount = Math.min(defaultTransferAmount, card.creditLimit);
   }
-
-  const maxTransfer = card ? Math.min(debt.balance, card.creditLimit) : debt.balance;
-  amountInput.max = maxTransfer;
-  if (!parseFloat(amountInput.value) || parseFloat(amountInput.value) > maxTransfer) {
-    amountInput.value = Math.round(maxTransfer);
-  }
+  
+  amountInput.value = Math.round(defaultTransferAmount);
 
   if (!card) {
-    info.textContent = `Debt balance available to transfer: ${formatCurrency(debt.balance)}.`;
+    info.textContent = `Total balance of selected debts: ${formatCurrency(totalSelectedBalance)}. Default transfer amount: ${formatCurrency(defaultTransferAmount)}.`;
     return;
   }
 
-  const capped = debt.balance > card.creditLimit;
-  info.textContent = `You can transfer up to ${formatCurrency(maxTransfer)} to ${card.name}${capped ? ` (limited by ${formatCurrency(card.creditLimit)} credit limit)` : ''}.`;
+  const cappedByCard = defaultTransferAmount >= card.creditLimit;
+  const cappedByBalance = defaultTransferAmount >= totalSelectedBalance;
+  
+  let capInfo = '';
+  if (cappedByCard && cappedByBalance) {
+    capInfo = ' (limited by both card limit and total debt balance)';
+  } else if (cappedByCard) {
+    capInfo = ` (limited by ${formatCurrency(card.creditLimit)} card limit)`;
+  } else if (cappedByBalance) {
+    capInfo = ' (limited by total debt balance)';
+  }
+  
+  info.textContent = `Default transfer amount: ${formatCurrency(defaultTransferAmount)} to ${card.name}${capInfo}.`;
 }
 
-function simulateConsolidation(debtId, newCardTerms, transferAmount) {
-  const targetDebt = debts.find(d => d.id === debtId);
-  if (!targetDebt || !newCardTerms || !results.minimum) return null;
+function simulateConsolidation(selectedDebtIds, newCardTerms, transferAmount) {
+  // Get selected debts
+  const selectedDebts = debts.filter(d => selectedDebtIds.includes(d.id));
+  
+  if (selectedDebts.length === 0 || !newCardTerms || !results.minimum) return null;
 
   const originalTransferAmount = Math.max(0, parseFloat(transferAmount) || 0);
-  const cappedTransferAmount = Math.min(originalTransferAmount || targetDebt.balance, targetDebt.balance, newCardTerms.creditLimit);
+  
+  // Calculate total balance of selected debts
+  const totalSelectedBalance = selectedDebts.reduce((sum, debt) => sum + debt.balance, 0);
+  
+  // Validate that total transfer doesn't exceed sum of selected debt balances
+  if (originalTransferAmount > totalSelectedBalance) {
+    alert(`Transfer amount cannot exceed total balance of selected debts (${formatCurrency(totalSelectedBalance)}).`);
+    return null;
+  }
+  
+  // Cap transfer amount at card limit
+  const cappedTransferAmount = Math.min(originalTransferAmount, totalSelectedBalance, newCardTerms.creditLimit);
   const transferFee = cappedTransferAmount * (newCardTerms.transferFeePct / 100);
   const transferredBalance = cappedTransferAmount + transferFee;
   const originalTotalMin = debts.reduce((sum, debt) => sum + debt.minPayment, 0);
   const transferredMinPayment = Math.max(Math.ceil(transferredBalance * 0.02), 35);
 
   const clonedDebts = debts.map(debt => ({ ...debt }));
-  const clonedTarget = clonedDebts.find(debt => debt.id === debtId);
-  clonedTarget.balance = Math.max(0, clonedTarget.balance - cappedTransferAmount);
-  if (clonedTarget.balance <= 0.005) clonedTarget.minPayment = 0;
+  
+  // Reduce balance of each selected debt proportionally
+  const transferRatio = cappedTransferAmount / totalSelectedBalance;
+  selectedDebts.forEach(debt => {
+    const clonedDebt = clonedDebts.find(d => d.id === debt.id);
+    const amountToTransfer = debt.balance * transferRatio;
+    clonedDebt.balance = Math.max(0, clonedDebt.balance - amountToTransfer);
+    if (clonedDebt.balance <= 0.005) clonedDebt.minPayment = 0;
+  });
 
   clonedDebts.push({
     id: Math.max(...clonedDebts.map(debt => debt.id), 0) + 1,
@@ -800,22 +866,38 @@ function simulateConsolidation(debtId, newCardTerms, transferAmount) {
   const consolidatedBest = [minimum, snowball, avalanche].sort((a, b) => a.totalInterest - b.totalInterest)[0];
 
   const warnings = [];
-  if (targetDebt.balance > newCardTerms.creditLimit) {
-    warnings.push(`Insufficient credit limit: only ${formatCurrency(newCardTerms.creditLimit)} of ${formatCurrency(targetDebt.balance)} can be transferred.`);
+  
+  if (totalSelectedBalance > newCardTerms.creditLimit) {
+    warnings.push(`Insufficient credit limit: only ${formatCurrency(newCardTerms.creditLimit)} of ${formatCurrency(totalSelectedBalance)} can be transferred.`);
   }
-  if (newCardTerms.postPromoApr >= targetDebt.apr) {
-    warnings.push(`Post-promo APR (${newCardTerms.postPromoApr.toFixed(2)}%) is not lower than your current APR (${targetDebt.apr.toFixed(2)}%).`);
+  
+  // Check if post-promo APR is better than average of selected debts
+  const avgSelectedApr = selectedDebts.reduce((sum, debt) => sum + debt.apr, 0) / selectedDebts.length;
+  if (newCardTerms.postPromoApr >= avgSelectedApr) {
+    warnings.push(`Post-promo APR (${newCardTerms.postPromoApr.toFixed(2)}%) is not lower than your average selected debt APR (${avgSelectedApr.toFixed(2)}%).`);
   }
+  
   if (transferFee > 0 && transferFee >= (originalBest.totalInterest - consolidatedBest.totalInterest)) {
     warnings.push('The transfer fee eats up most or all of the projected interest savings.');
   }
+  
   if (cappedTransferAmount <= 0) {
     warnings.push('No balance could be transferred with the current settings.');
   }
 
+  // Create a descriptive debt name for multiple debts
+  let debtNames;
+  if (selectedDebts.length === 1) {
+    debtNames = selectedDebts[0].name;
+  } else if (selectedDebts.length === 2) {
+    debtNames = `${selectedDebts[0].name} and ${selectedDebts[1].name}`;
+  } else {
+    debtNames = `${selectedDebts[0].name} and ${selectedDebts.length - 1} other debts`;
+  }
+
   return {
-    debtId,
-    debtName: targetDebt.name,
+    debtIds: selectedDebtIds,
+    debtNames: debtNames,
     newCardTerms,
     requestedTransferAmount: originalTransferAmount,
     transferAmount: cappedTransferAmount,
@@ -857,7 +939,7 @@ function renderConsolidationResults(resultsData) {
     <div class="consolidation-results-card ${outcomeClass}">
       <div class="consolidation-results-header">
         <div>
-          <div class="consolidation-eyebrow">${escapeHtml(resultsData.debtName)} → ${escapeHtml(resultsData.newCardTerms.name)}</div>
+          <div class="consolidation-eyebrow">${escapeHtml(resultsData.debtNames)} → ${escapeHtml(resultsData.newCardTerms.name)}</div>
           <h3>${outcomeIcon} Balance Transfer Simulation</h3>
         </div>
         <div class="consolidation-net ${outcomeClass}">${resultsData.netSavings >= 0 ? '+' : '-'}${formatCurrency(Math.abs(resultsData.netSavings))}</div>
@@ -902,11 +984,11 @@ function renderConsolidationResults(resultsData) {
 }
 
 function runConsolidation() {
-  const debtSelect = document.getElementById('consolidation-debt-select');
+  const debtCheckboxes = document.querySelectorAll('.debt-checkbox:checked');
   const cardSelect = document.getElementById('consolidation-card-select');
   const amountInput = document.getElementById('consolidation-amount');
   const button = document.getElementById('consolidate-btn');
-  if (!debtSelect || !cardSelect || !amountInput) return;
+  if (!cardSelect || !amountInput) return;
 
   // Show loading state on button
   const originalText = button.textContent;
@@ -914,18 +996,20 @@ function runConsolidation() {
   button.classList.add('btn-loading');
   button.disabled = true;
 
-  const debtId = parseInt(debtSelect.value, 10);
+  // Get selected debt IDs
+  const selectedDebtIds = Array.from(debtCheckboxes).map(cb => parseInt(cb.dataset.debtId));
+  
   const card = BALANCE_TRANSFER_CARDS.find(c => c.id === cardSelect.value);
-  if (!debtId || !card) {
+  if (selectedDebtIds.length === 0 || !card) {
     resetConsolidationButton(button, originalText);
-    alert('Choose a debt and a balance transfer card first.');
+    alert('Select at least one debt and choose a balance transfer card first.');
     return;
   }
 
   // Use setTimeout to allow UI to update before heavy computation
   setTimeout(() => {
     try {
-      consolidationResults = simulateConsolidation(debtId, card, parseFloat(amountInput.value) || 0);
+      consolidationResults = simulateConsolidation(selectedDebtIds, card, parseFloat(amountInput.value) || 0);
       if (consolidationResults) {
         renderConsolidationResults(consolidationResults);
       }
@@ -939,6 +1023,14 @@ function resetConsolidationButton(button, originalText) {
   button.textContent = originalText;
   button.classList.remove('btn-loading');
   button.disabled = false;
+}
+
+function handleDebtCheckboxChange() {
+  // Update the transfer amount hint when debt selection changes
+  updateConsolidationAmountHint();
+  
+  // Reset consolidation results when selection changes
+  resetConsolidation();
 }
 
 function resetConsolidation() {
@@ -978,11 +1070,50 @@ function escapeHtml(str) {
 // ========================
 
 function updateCreditScore(value) {
+  const oldCreditScore = creditScore;
   creditScore = Math.max(300, Math.min(850, parseInt(value) || 700));
   document.getElementById('credit-score-value').textContent = creditScore;
   document.getElementById('credit-score-slider').value = creditScore;
   document.getElementById('credit-score-input').value = creditScore;
+  
+  // Update debt APRs based on credit score change
+  if (oldCreditScore !== creditScore) {
+    updateDebtAPRsBasedOnCreditScore(oldCreditScore, creditScore);
+  }
+  
   renderCreditScoreSimulator();
+}
+
+// Update debt APRs when credit score changes
+function updateDebtAPRsBasedOnCreditScore(oldScore, newScore) {
+  // Only update if there are debts
+  if (debts.length === 0) return;
+  
+  // Calculate the change in credit score
+  const scoreChange = newScore - oldScore;
+  
+  // Update each debt's APR based on credit score change
+  debts.forEach(debt => {
+    // Store original APR if not already stored
+    if (debt.originalApr === undefined) {
+      debt.originalApr = debt.apr;
+    }
+    
+    // Adjust APR based on credit score change
+    // Higher credit score = lower APR (improved terms)
+    // Lower credit score = higher APR (worse terms)
+    // Using a simplified model where APR changes by 0.1% per 10 credit score points
+    const aprAdjustment = -scoreChange * 0.01; // Negative because higher score means lower APR
+    debt.apr = Math.max(0, debt.originalApr + aprAdjustment);
+  });
+  
+  // Re-render debt cards to show updated APRs
+  renderDebtCards();
+  
+  // Update summary and recalculate payoff plans
+  updateSummary();
+  recalculate();
+  notifyDebtsChanged();
 }
 
 function updateCreditLimits(value) {
@@ -1250,10 +1381,8 @@ function init() {
     debounceTimer = setTimeout(() => updateExtraPayment(input.value), 100);
   });
 
-  const consolidationDebtSelect = document.getElementById('consolidation-debt-select');
   const consolidationCardSelect = document.getElementById('consolidation-card-select');
   const consolidationAmount = document.getElementById('consolidation-amount');
-  if (consolidationDebtSelect) consolidationDebtSelect.addEventListener('change', updateConsolidationAmountHint);
   if (consolidationCardSelect) consolidationCardSelect.addEventListener('change', updateConsolidationAmountHint);
   if (consolidationAmount) consolidationAmount.addEventListener('input', () => {
     consolidationResults = null;
