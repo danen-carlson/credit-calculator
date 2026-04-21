@@ -8,7 +8,8 @@ const partials = {
   header: fs.readFileSync(path.join(sharedDir, 'header.html'), 'utf8').trim(),
   footer: fs.readFileSync(path.join(sharedDir, 'footer.html'), 'utf8').trim(),
   disclosure: fs.readFileSync(path.join(sharedDir, 'disclosure-banner.html'), 'utf8').trim(),
-  emailCaptureCSS: fs.readFileSync(path.join(sharedDir, 'email-capture.css'), 'utf8').trim()
+  emailCaptureCSS: fs.readFileSync(path.join(sharedDir, 'email-capture.css'), 'utf8').trim(),
+  ga4: fs.readFileSync(path.join(sharedDir, 'ga4.html'), 'utf8').trim()
 };
 
 const targetFiles = [
@@ -22,7 +23,18 @@ const targetFiles = [
   'learn/bnpl-interest-calculator.html',
   'learn/balance-transfer-calculator.html',
   'learn/crypto-credit-card-rewards.html',
-  'learn/snowball-vs-avalanche.html'
+  'learn/snowball-vs-avalanche.html',
+  'merchant/index.html',
+  'merchant/amazon.html',
+  'merchant/costco.html',
+  'merchant/target.html',
+  'merchant/walmart.html',
+  'merchant/groceries.html',
+  'merchant/home-improvement.html',
+  'merchant/gas-stations.html',
+  'merchant/restaurants.html',
+  'merchant/streaming.html',
+  'merchant/travel.html'
 ];
 
 for (const relPath of targetFiles) {
