@@ -55,6 +55,7 @@
   let previousRankings = {}; // Store previous rankings for comparison
   let walletCards = []; // Wallet state
   let walletOpen = false; // Track if wallet panel is open
+  let includeAnnualCredits = false; // Include annual credits in first-year value
 
   // ===================== CALCULATIONS =====================
 
@@ -160,12 +161,18 @@
     let grossAnnual = totalAnnual;
     let signupBonusValue = 0;
     let bonusNote = '';
+    let annualCreditsNote = '';
     
     // Handle signup bonus for first year view
     if (yearView === 'first' && card.signupBonus && card.signupBonus.value > 0) {
       const eligibility = isSignupBonusEligible(card, spending);
       if (eligibility.eligible) {
         signupBonusValue = card.signupBonus.value;
+        // Add annual credits if toggle is on
+        if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
+          signupBonusValue += card.annualCredits;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+        }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
       } else {
@@ -178,6 +185,7 @@
       annualFee: card.annualFee,
       netAnnual,
       signupBonusValue,
+      annualCreditsNote,
       bonusNote,
       breakdown
     };
@@ -223,6 +231,7 @@
     let grossAnnual = totalAnnual;
     let signupBonusValue = 0;
     let bonusNote = '';
+    let annualCreditsNote = '';
     
     // Handle signup bonus for first year view
     const card = cardsData.find(c => c.id === 'citi-custom-cash');
@@ -230,6 +239,11 @@
       const eligibility = isSignupBonusEligible(card, spending);
       if (eligibility.eligible) {
         signupBonusValue = card.signupBonus.value;
+        // Add annual credits if toggle is on
+        if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
+          signupBonusValue += card.annualCredits;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+        }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
       } else {
@@ -242,6 +256,7 @@
       annualFee: 0,
       netAnnual,
       signupBonusValue,
+      annualCreditsNote,
       bonusNote,
       breakdown,
       note: `Top category: ${categoryLabels[topCat]} ($${topSpend}/mo)`
@@ -269,6 +284,7 @@
     let grossAnnual = totalAnnual;
     let signupBonusValue = 0;
     let bonusNote = '';
+    let annualCreditsNote = '';
     
     // Handle signup bonus for first year view
     const card = cardsData.find(c => c.id === 'us-bank-cash-plus');
@@ -276,6 +292,11 @@
       const eligibility = isSignupBonusEligible(card, spending);
       if (eligibility.eligible) {
         signupBonusValue = card.signupBonus.value;
+        // Add annual credits if toggle is on
+        if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
+          signupBonusValue += card.annualCredits;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+        }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
       } else {
@@ -288,6 +309,7 @@
       annualFee: 0,
       netAnnual,
       signupBonusValue,
+      annualCreditsNote,
       bonusNote,
       breakdown
     };
@@ -335,6 +357,7 @@
     let grossAnnual = totalAnnual;
     let signupBonusValue = 0;
     let bonusNote = '';
+    let annualCreditsNote = '';
     
     // Handle signup bonus for first year view
     const card = cardsData.find(c => c.id === 'chase-freedom-flex');
@@ -342,6 +365,11 @@
       const eligibility = isSignupBonusEligible(card, spending);
       if (eligibility.eligible) {
         signupBonusValue = card.signupBonus.value;
+        // Add annual credits if toggle is on
+        if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
+          signupBonusValue += card.annualCredits;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+        }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
       } else {
@@ -354,6 +382,7 @@
       annualFee: 0,
       netAnnual,
       signupBonusValue,
+      annualCreditsNote,
       bonusNote,
       breakdown
     };
@@ -378,6 +407,7 @@
     let grossAnnual = totalAnnual;
     let signupBonusValue = 0;
     let bonusNote = '';
+    let annualCreditsNote = '';
     let note = '';
     
     // Handle signup bonus for first year view
@@ -398,6 +428,7 @@
       annualFee: 0,
       netAnnual,
       signupBonusValue,
+      annualCreditsNote,
       bonusNote,
       breakdown,
       note
@@ -438,6 +469,7 @@
     let grossAnnual = totalAnnual;
     let signupBonusValue = 0;
     let bonusNote = '';
+    let annualCreditsNote = '';
     let note = 'Includes $240/yr in credits (Uber + Dining)';
     
     // Handle signup bonus for first year view
@@ -446,6 +478,11 @@
       const eligibility = isSignupBonusEligible(card, spending);
       if (eligibility.eligible) {
         signupBonusValue = card.signupBonus.value;
+        // Add annual credits if toggle is on
+        if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
+          signupBonusValue += card.annualCredits;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+        }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
       } else {
@@ -458,6 +495,7 @@
       annualFee: 250,
       netAnnual,
       signupBonusValue,
+      annualCreditsNote,
       bonusNote,
       breakdown,
       note
@@ -497,6 +535,7 @@
     let grossAnnual = totalAnnual;
     let signupBonusValue = 0;
     let bonusNote = '';
+    let annualCreditsNote = '';
     
     // Handle signup bonus for first year view
     const card = cardsData.find(c => c.id === 'amex-blue-cash-preferred');
@@ -504,6 +543,11 @@
       const eligibility = isSignupBonusEligible(card, spending);
       if (eligibility.eligible) {
         signupBonusValue = card.signupBonus.value;
+        // Add annual credits if toggle is on
+        if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
+          signupBonusValue += card.annualCredits;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+        }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
       } else {
@@ -516,6 +560,7 @@
       annualFee: 95,
       netAnnual,
       signupBonusValue,
+      annualCreditsNote,
       bonusNote,
       breakdown
     };
@@ -553,6 +598,7 @@
     let grossAnnual = totalAnnual;
     let signupBonusValue = 0;
     let bonusNote = '';
+    let annualCreditsNote = '';
     
     // Handle signup bonus for first year view
     const card = cardsData.find(c => c.id === 'amex-blue-cash-everyday');
@@ -560,6 +606,11 @@
       const eligibility = isSignupBonusEligible(card, spending);
       if (eligibility.eligible) {
         signupBonusValue = card.signupBonus.value;
+        // Add annual credits if toggle is on
+        if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
+          signupBonusValue += card.annualCredits;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+        }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
       } else {
@@ -572,6 +623,7 @@
       annualFee: 0,
       netAnnual,
       signupBonusValue,
+      annualCreditsNote,
       bonusNote,
       breakdown
     };
@@ -698,7 +750,7 @@
                 ${card.signupBonusValue && card.signupBonusValue > 0 ? `
                 <div class="value-detail">
                   <span class="value-detail-label">Signup Bonus</span>
-                  <span class="value-detail-value positive">${formatCurrency(card.signupBonusValue)}</span>
+                  <span class="value-detail-value positive">${formatCurrency(card.signupBonusValue)}${card.annualCreditsNote || ''}</span>
                 </div>` : ''}
               </div>
 
@@ -1284,6 +1336,10 @@
   document.addEventListener('change', function(event) {
     if (event.target.id === 'crypto-toggle' && event.target.hasAttribute('data-action')) {
       toggleCrypto(event.target);
+    }
+    if (event.target.id === 'include-annual-credits') {
+      includeAnnualCredits = event.target.checked;
+      renderCards(currentFilter);
     }
   });
 })();
