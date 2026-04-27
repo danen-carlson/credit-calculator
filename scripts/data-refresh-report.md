@@ -1,9 +1,9 @@
 # Credit Data Refresh Report
 
-- **Run:** 2026-04-21T23:10:00.126Z
-- **Targets scraped:** 17
-- **Changes detected:** 3
-- **Errors / blank scrapes:** 4
+- **Run:** 2026-04-27T16:26:08.476Z
+- **Targets scraped:** 18
+- **Changes detected:** 4
+- **Errors / blank scrapes:** 5
 
 ## 🔔 Changes Detected
 
@@ -12,8 +12,14 @@ Source: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
 
 | Field | Current | Scraped |
 |---|---|---|
-| `signupBonus.amount` | `60000` | `75000` |
-| `signupBonus.requirement` | `$4` | `5000` |
+| `signupBonus.requirement` | `$5` | `5000` |
+
+### Chase Freedom Flex (`chase-freedom-flex`)
+Source: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+
+| Field | Current | Scraped |
+|---|---|---|
+| `signupBonus.amount` | `500` | `200` |
 
 ### Capital One Venture (`capital-one-venture`)
 Source: https://www.capitalone.com/credit-cards/venture/
@@ -37,3 +43,4 @@ These targets returned no extractable data. Selectors may be stale or the site m
 - **Amex Blue Cash Preferred** (`amex-blue-cash-preferred`): manual-check: JS-rendered page, requires manual verification
 - **Amex Blue Cash Everyday** (`amex-blue-cash-everyday`): manual-check: JS-rendered page, requires manual verification
 - **Capital One Venture X** (`capital-one-venture-x`): manual-check: JS-rendered page, requires manual verification
+- **Klarna Pay in 4** (`klarna-pay4`): no fields extracted (selectors may be stale)
