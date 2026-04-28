@@ -11,6 +11,11 @@
   <meta property="og:url" content="https://creditstud.io/rewards/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CreditStud.io">
+  <meta property="og:image" content="https://creditstud.io/og-images/rewards.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io">
+  <meta name="twitter:description" content="Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards.">
+  <meta name="twitter:image" content="https://creditstud.io/og-images/rewards.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
@@ -216,6 +221,13 @@
         </div>
         <p class="step-desc">Adjust the sliders or type amounts. Results update instantly. Defaults are based on average US household spending.</p>
 
+        <!-- Annual / Monthly Toggle -->
+        <div class="spending-mode-toggle">
+          <button class="spending-mode-btn active" data-mode="monthly" onclick="setSpendingMode('monthly')">Monthly</button>
+          <button class="spending-mode-btn" data-mode="annual" onclick="setSpendingMode('annual')">Annual</button>
+          <span class="spending-mode-note" id="spending-mode-note">Showing monthly amounts</span>
+        </div>
+
         <div id="spending-grid" class="spending-grid">
           <!-- Populated by JS -->
         </div>
@@ -238,6 +250,23 @@
             <span class="toggle-switch"></span>
             <span>🪙 I'm interested in earning crypto rewards</span>
           </label>
+        </div>
+
+        <!-- Cards I Already Have -->
+        <div class="cards-owned-section">
+          <button class="cards-owned-toggle" onclick="toggleCardsOwnedPanel()">
+            🃏 Cards I Already Have
+            <span class="cards-owned-count" id="cards-owned-count"></span>
+            <span class="cards-owned-chevron">▼</span>
+          </button>
+          <div class="cards-owned-panel" id="cards-owned-panel">
+            <div class="cards-owned-panel-inner">
+              <p class="cards-owned-hint">Select cards you currently own (they'll be hidden from results) or previously had (signup bonus may apply again).</p>
+              <div id="cards-owned-list" class="cards-owned-list">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -282,6 +311,10 @@
           <button class="filter-btn" data-filter="tiered" data-action="set-filter" aria-label="Show tiered reward credit cards">🔄 Tiered</button>
           <button class="filter-btn" data-filter="grocery" data-action="set-filter" aria-label="Show grocery reward credit cards">🛒 Grocery</button>
           <button class="filter-btn" data-filter="crypto" data-action="set-filter" aria-label="Show crypto reward credit cards">₿ Crypto</button>
+          <label class="filter-toggle-label" style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:0.8rem;padding:6px 12px;border:1.5px solid var(--border);border-radius:20px;background:var(--surface);white-space:nowrap;">
+            <input type="checkbox" id="no-annual-fee-toggle" onchange="toggleNoAnnualFee(this)" style="width:16px;height:16px;accent-color:var(--primary);">
+            No annual fee
+          </label>
         </div>
 
         <div id="affiliate-disclosure" class="disclosure">
@@ -302,7 +335,7 @@
         <!-- Share / data stamp row -->
         <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
           <div id="share-mount"></div>
-          <div id="data-stamp-mount"></div>
+          <div id="data-stamp-mount"><span class="data-verified-stamp">Rates verified: 2026-04-28</span></div>
         </div>
 
         <!-- Comparison Section -->
@@ -317,6 +350,11 @@
 
         <!-- Wallet Section -->
         <div id="wallet-section" class="wallet-section">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- What's Next CTA -->
+        <div id="whats-next-section">
           <!-- Populated by JS -->
         </div>
       </div>
