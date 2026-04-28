@@ -1,1 +1,480 @@
-{'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'Is BNPL worse than a credit card?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'BNPL services typically have 0% interest rates but charge late fees ($7-68) and sometimes service fees. Credit cards have higher interest rates (15-25% APR) but offer stronger consumer protections, rewards, and credit building. For disciplined users who pay on time, BNPL can be cheaper. For those who carry balances, credit cards may be more flexible.'}}, {'@type': 'Question', 'name': 'What happens if I miss a BNPL payment?', 'acceptedAnswer': {'@type': 'Answer', 'text': "Late fees vary by service: Klarna charges $7+, Afterpay charges $10 initially then $7 weekly up to $68 or 25% of purchase. Some services freeze accounts for missed payments. Unlike credit cards, BNPL services typically don't report on-time payments to credit bureaus, but they do report delinquencies."}}, {'@type': 'Question', 'name': 'Do BNPL services affect my credit score?', 'acceptedAnswer': {'@type': 'Answer', 'text': "Most BNPL services perform soft credit pulls that don't impact your score. Klarna and Affirm report to credit bureaus, potentially helping or hurting your score. Other services like Afterpay and PayPal Pay in 4 generally don't report, so on-time payments won't help your score but missed payments won't hurt it either."}}, {'@type': 'Question', 'name': 'Which BNPL service is the cheapest?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'PayPal Pay in 4 and Affirm Pay in 4 are the cheapest with 0% interest and no fees. Afterpay charges no fees but has steep late fees. Klarna charges small service fees ($0.75-3.00) plus late fees. Zip charges upfront origination fees equivalent to 30-35% APR, making it the most expensive option.'}}, {'@type': 'Question', 'name': 'Can I use BNPL for any purchase?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Availability varies by service. Klarna and Affirm offer virtual cards usable anywhere online. Afterpay and Zip work at partner merchants plus offer physical cards for in-store use. PayPal Pay in 4 is limited to online merchants with PayPal checkout integration. Always check if your retailer accepts your preferred BNPL service.'}}, {'@type': 'Question', 'name': 'How do I calculate the true cost of using BNPL services?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Our BNPL interest calculator factors in purchase amount, payment schedule, potential late fees, and service fees to show the total cost of your purchase. It compares different BNPL services side-by-side so you can choose the most cost-effective option.'}}, {'@type': 'Question', 'name': 'What are the interest rates for BNPL services?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'While most BNPL services advertise 0% interest, some longer-term plans charge interest rates up to 36%. Affirm offers both interest-free options and longer-term plans with rates up to 36%. Klarna also offers financing options with similar rates. Always check the terms before agreeing to a payment plan.'}}]}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNPL Interest Rate Calculator — Compare Afterpay, Klarna, Affirm & Zip — CreditStud.io</title>
+  <meta name="description" content="Understand the true cost of Buy Now Pay Later services. Compare interest rates, late fees, and total cost across Afterpay, Klarna, Affirm, and Zip with our BNPL interest calculator.">
+  <link rel="canonical" href="https://creditstud.io/learn/bnpl-interest-calculator.html">
+  <meta property="og:title" content="BNPL Interest Rate Calculator — Compare Afterpay, Klarna, Affirm & Zip">
+  <meta property="og:description" content="Understand the true cost of Buy Now Pay Later services. Compare interest rates, late fees, and total cost across Afterpay, Klarna, Affirm, and Zip.">
+  <meta property="og:url" content="https://creditstud.io/learn/bnpl-interest-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BNPL Interest Rate Calculator — Compare Afterpay, Klarna, Affirm & Zip">
+  <meta name="twitter:description" content="Understand the true cost of Buy Now Pay Later services. Compare interest rates, late fees, and total cost across Afterpay, Klarna, Affirm, and Zip.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shared/components.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is BNPL worse than a credit card?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BNPL services typically have 0% interest rates but charge late fees ($7-68) and sometimes service fees. Credit cards have higher interest rates (15-25% APR) but offer stronger consumer protections, rewards, and credit building. For disciplined users who pay on time, BNPL can be cheaper. For those who carry balances, credit cards may be more flexible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I miss a BNPL payment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Late fees vary by service: Klarna charges $7+, Afterpay charges $10 initially then $7 weekly up to $68 or 25% of purchase. Some services freeze accounts for missed payments. Unlike credit cards, BNPL services typically don't report on-time payments to credit bureaus, but they do report delinquencies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do BNPL services affect my credit score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most BNPL services perform soft credit pulls that don't impact your score. Klarna and Affirm report to credit bureaus, potentially helping or hurting your score. Other services like Afterpay and PayPal Pay in 4 generally don't report, so on-time payments won't help your score but missed payments won't hurt it either."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which BNPL service is the cheapest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PayPal Pay in 4 and Affirm Pay in 4 are the cheapest with 0% interest and no fees. Afterpay charges no fees but has steep late fees. Klarna charges small service fees ($0.75-3.00) plus late fees. Zip charges upfront origination fees equivalent to 30-35% APR, making it the most expensive option."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use BNPL for any purchase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Availability varies by service. Klarna and Affirm offer virtual cards usable anywhere online. Afterpay and Zip work at partner merchants plus offer physical cards for in-store use. PayPal Pay in 4 is limited to online merchants with PayPal checkout integration. Always check if your retailer accepts your preferred BNPL service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate the true cost of using BNPL services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our BNPL interest calculator factors in purchase amount, payment schedule, potential late fees, and service fees to show the total cost of your purchase. It compares different BNPL services side-by-side so you can choose the most cost-effective option."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the interest rates for BNPL services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While most BNPL services advertise 0% interest, some longer-term plans charge interest rates up to 36%. Affirm offers both interest-free options and longer-term plans with rates up to 36%. Klarna also offers financing options with similar rates. Always check the terms before agreeing to a payment plan."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "BNPL Interest Rate Calculator — Compare Afterpay, Klarna, Affirm & Zip",
+    "description": "Understand the true cost of Buy Now Pay Later services. Compare interest rates, late fees, and total cost across Afterpay, Klarna, Affirm, and Zip with our BNPL interest calculator.",
+    "author": {
+      "@type": "Organization",
+      "name": "CreditStud.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CreditStud.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://creditstud.io/icon.svg"
+      }
+    },
+    "datePublished": "2026-04-15",
+    "dateModified": "2026-04-28",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://creditstud.io/learn/bnpl-interest-calculator.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+
+  <!-- DISCLOSURE -->
+<div class="site-disclosure-banner">
+  <div class="site-disclosure-container">
+    CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations. 
+    <a href="/disclosure.html">Learn more</a>
+  </div>
+</div>
+<!-- /DISCLOSURE -->
+
+  <!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <nav class="top-nav">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/compare/" class="nav-link">Compare</a>
+      <a href="/debt-planner/" class="nav-link">Debt Planner</a>
+      <a href="/rewards/" class="nav-link">Rewards</a>
+      <a href="/learn/" class="nav-link">Learn</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+    </nav>
+    <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+    <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
+  </div>
+</header>
+<!-- /HEADER -->
+
+  <main>
+    <div class="container" id="main">
+      <nav class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">›</span><a href="/learn/">Learn</a><span class="sep">›</span>BNPL Interest Calculator
+      </nav>
+
+      <article class="seo-content">
+        <h1>Buy Now Pay Later Interest Rate Calculator</h1>
+        <p class="article-meta">
+          <span>📅 Last updated April 28, 2026</span> · <span>By CreditStud.io Editorial Team</span>
+        </p>
+
+        <p><small><em>Affiliate disclosure: CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our recommendations.</em></small></p>
+
+        <p class="lead">Buy Now Pay Later sounds free — "4 interest-free payments!" — but the true cost depends on late fees, service charges, and which provider you use. A single missed Afterpay payment can cost up to $68 in fees. A $500 purchase through Zip can end up costing $150+ in hidden charges. Here's how to calculate the real cost and pick the cheapest option for your purchase.</p>
+
+        <div class="cta-box">
+          <h3>💳 Compare BNPL Options for Your Purchase</h3>
+          <p>Enter your purchase amount and see the total cost across Afterpay, Klarna, Affirm, and Zip — including all fees, interest, and late payment penalties.</p>
+          <a href="/compare/?amount=500" class="cta-button">Compare BNPL Options →</a>
+        </div>
+
+        <h2>How BNPL Services Actually Work</h2>
+
+        <p>Most BNPL services split your purchase into equal installments — typically 4 payments over 6 weeks. The first payment is due at checkout, and the remaining three are billed every 2 weeks. If you pay on time, most services charge $0 in interest. But the details vary significantly between providers, and those differences can cost you.</p>
+
+        <h3>The big four at a glance</h3>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Afterpay</th>
+                <th>Klarna</th>
+                <th>Affirm</th>
+                <th>Zip</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Payment structure</strong></td>
+                <td>4 payments over 6 weeks</td>
+                <td>Pay in 4 (or monthly financing)</td>
+                <td>4 payments or monthly financing</td>
+                <td>4 payments over 6 weeks</td>
+              </tr>
+              <tr>
+                <td><strong>Interest (on Pay in 4)</strong></td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>0%</td>
+                <td>0% (but see fees)</td>
+              </tr>
+              <tr>
+                <td><strong>Late fees</strong></td>
+                <td>$10, then $7/week up to $68 or 25%</td>
+                <td>$7 max (Pay in 4); varies for financing</td>
+                <td>No late fees</td>
+                <td>$5–$10 per missed payment</td>
+              </tr>
+              <tr>
+                <td><strong>Monthly financing APR</strong></td>
+                <td>N/A</td>
+                <td>0–33.99%</td>
+                <td>0–36%</td>
+                <td>N/A (installments only)</td>
+              </tr>
+              <tr>
+                <td><strong>Service/origination fee</strong></td>
+                <td>$0</td>
+                <td>$0–$3/month for some plans</td>
+                <td>$0</td>
+                <td>$1–$7.95 per installment (!)</td>
+              </tr>
+              <tr>
+                <td><strong>Credit check</strong></td>
+                <td>Soft (no impact)</td>
+                <td>Soft for Pay in 4; hard for financing</td>
+                <td>Soft for Pay in 4; hard for financing</td>
+                <td>Soft (no impact)</td>
+              </tr>
+              <tr>
+                <td><strong>Credit reporting</strong></td>
+                <td>No (negative only in some cases)</td>
+                <td>Yes (for financing)</td>
+                <td>Yes (for financing)</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How Much Does BNPL Actually Cost? Real Examples</h2>
+
+        <p>The "0% interest" claim is only true if you pay on time and choose the 4-payment option. Let's look at what happens with a realistic $500 purchase:</p>
+
+        <h3>$500 purchase — paid on time (best case)</h3>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>4 Payments of</th>
+                <th>Monthly Fee</th>
+                <th>Total Cost</th>
+                <th>Effective APR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td><strong>Afterpay</strong></td>
+                <td>$125</td>
+                <td>$0</td>
+                <td><strong>$500</strong></td>
+                <td>0%</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Klarna (Pay in 4)</strong></td>
+                <td>$125</td>
+                <td>$0</td>
+                <td><strong>$500</strong></td>
+                <td>0%</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Affirm (Pay in 4)</strong></td>
+                <td>$125</td>
+                <td>$0</td>
+                <td><strong>$500</strong></td>
+                <td>0%</td>
+              </tr>
+              <tr>
+                <td>Zip</td>
+                <td>$125 + $5.95/installment</td>
+                <td>$23.80 in fees</td>
+                <td><strong>$523.80</strong></td>
+                <td>~30% APR equivalent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>On-time, Afterpay, Klarna, and Affirm all cost exactly $0 in fees. Zip charges $5.95 per installment — adding <strong>$23.80 to a $500 purchase</strong>, which works out to an APR-equivalent of roughly 30%. That's worse than many credit cards.</p>
+
+        <h3>$500 purchase — one payment missed</h3>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Late Fee</th>
+                <th>Total Cost</th>
+                <th>Effective APR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Afterpay</td>
+                <td>$10 initial + $7 cap</td>
+                <td>$517</td>
+                <td>~17%</td>
+              </tr>
+              <tr>
+                <td>Klarna</td>
+                <td>$7</td>
+                <td>$507</td>
+                <td>~7%</td>
+              </tr>
+              <tr>
+                <td>Affirm</td>
+                <td>$0 (no late fees)</td>
+                <td>$500</td>
+                <td>0%</td>
+              </tr>
+              <tr>
+                <td>Zip</td>
+                <td>$5–$10</td>
+                <td>$529–$534</td>
+                <td>~30–35%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Miss one payment and Afterpay adds $17 in fees. Zip's per-installment fee plus a late penalty pushes the total past $530 on a $500 purchase. Affirm is the only major service that doesn't charge late fees at all.</p>
+
+        <h2>BNPL vs Credit Cards: Which Is Cheaper?</h2>
+
+        <p>The answer depends entirely on whether you pay on time and whether you carry a balance. Here's the honest comparison:</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>BNPL (on-time)</th>
+                <th>BNPL (1 late payment)</th>
+                <th>Credit Card (paid in full)</th>
+                <th>Credit Card (carrying balance)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>$500 purchase total cost</strong></td>
+                <td>$500 (Afterpay, Klarna, Affirm)</td>
+                <td>$507–$534</td>
+                <td>$500</td>
+                <td>$550–$625+</td>
+              </tr>
+              <tr>
+                <td><strong>Effective APR</strong></td>
+                <td>0%</td>
+                <td>7–35%</td>
+                <td>0% (grace period)</td>
+                <td>22–30%</td>
+              </tr>
+              <tr>
+                <td><strong>Credit score impact</strong></td>
+                <td>None or negative only</td>
+                <td>Negative if reported</td>
+                <td>Positive (on-time)</td>
+                <td>Negative (high utilization)</td>
+              </tr>
+              <tr>
+                <td><strong>Consumer protections</strong></td>
+                <td>Limited (disputes difficult)</td>
+                <td>Limited</td>
+                <td>Strong (chargebacks, Section 75)</td>
+                <td>Strong</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-box warning">
+          <strong>⚠️ The trap:</strong> BNPL feels free because there's no interest — but late fees add up fast, and BNPL doesn't help your credit score the way responsible credit card use does. A $68 Afterpay late fee on a $200 purchase is effectively a 34% APR. Use our <a href="/compare/?amount=500">BNPL comparison calculator</a> to see the real numbers for your situation.
+        </div>
+
+        <h2>When BNPL Makes Sense (and When It Doesn't)</h2>
+
+        <h3>BNPL is smart when:</h3>
+        <ul>
+          <li>You're buying something you <strong>can afford in full</strong> but want to spread payments for cash flow</li>
+          <li>You use Afterpay, Klarna Pay in 4, or Affirm Pay in 4 — <strong>0% interest, no fees if on time</strong></li>
+          <li>You set up autopay and have the money in your account</li>
+          <li>The merchant offers a <strong>BNPL discount</strong> (some do)</li>
+        </ul>
+
+        <h3>BNPL is risky when:</h3>
+        <ul>
+          <li>You're using it because you <strong>can't afford the full price</strong> — this is how people spiral into multiple BNPL payments</li>
+          <li>You're using <strong>Zip</strong>, which charges per-installment fees regardless of on-time payment</li>
+          <li>You're choosing <strong>Klarna or Affirm monthly financing</strong> at 20–36% APR — at that rate, a credit card is usually better</li>
+          <li>You have <strong>multiple active BNPL plans</strong> — it's easy to lose track of total obligations</li>
+        </ul>
+
+        <h2>The Hidden Cost of BNPL: Overextension</h2>
+
+        <p>The biggest risk isn't the fees — it's the temptation to overspend. A 2025 LendingTree survey found that <strong>46% of BNPL users have bought something they couldn't afford</strong> using these services, and 30% have struggled to make payments on multiple plans simultaneously.</p>
+
+        <p>Here's the math: if you have three BNPL plans running at the same time — a $200 jacket on Afterpay, a $400 TV on Klarna, and a $150 pair of shoes on Affirm — you're committing to <strong>$187.50 every two weeks</strong> in BNPL payments alone. That's $375/month on top of your regular expenses, and it's easy to lose track.</p>
+
+        <p><strong>The rule of thumb:</strong> Total all your BNPL commitments at once. If the monthly total exceeds 10% of your take-home pay, you're overextended.</p>
+
+        <h2>How to Use BNPL Responsibly</h2>
+
+        <ol>
+          <li><strong>Never have more than 2 active plans at once.</strong> This keeps payments manageable and visible.</li>
+          <li><strong>Only use the Pay in 4 option.</strong> Monthly financing at 20–36% APR is rarely the best choice.</li>
+          <li><strong>Set up autopay.</strong> Late fees are where BNPL providers make their money — don't be the customer who pays for everyone else.</li>
+          <li><strong>Avoid Zip if alternatives exist.</strong> Per-installment fees make it more expensive than a credit card.</li>
+          <li><strong>Use Affirm if you hate late fees.</strong> It's the only major BNPL that doesn't charge them.</li>
+          <li><strong>Compare before you click.</strong> Our <a href="/compare/?amount=500">BNPL comparison tool</a> shows you the all-in cost for your specific purchase across all providers.</li>
+        </ol>
+
+        <h2>FAQ</h2>
+
+        <h3>Is BNPL worse than a credit card?</h3>
+        <p>BNPL services typically have 0% interest rates but charge late fees ($7–68) and sometimes service fees. Credit cards have higher interest rates (15–25% APR) but offer stronger consumer protections, rewards, and credit building. For disciplined users who pay on time, BNPL can be cheaper. For those who carry balances, credit cards may be more flexible.</p>
+
+        <h3>What happens if I miss a BNPL payment?</h3>
+        <p>Late fees vary by service: Klarna charges $7+, Afterpay charges $10 initially then $7 weekly up to $68 or 25% of purchase. Some services freeze accounts for missed payments. Unlike credit cards, BNPL services typically don't report on-time payments to credit bureaus, but they do report delinquencies.</p>
+
+        <h3>Do BNPL services affect my credit score?</h3>
+        <p>Most BNPL services perform soft credit pulls that don't impact your score. Klarna and Affirm report to credit bureaus, potentially helping or hurting your score. Other services like Afterpay and PayPal Pay in 4 generally don't report, so on-time payments won't help your score but missed payments won't hurt it either.</p>
+
+        <h3>Which BNPL service is the cheapest?</h3>
+        <p>PayPal Pay in 4 and Affirm Pay in 4 are the cheapest with 0% interest and no fees. Afterpay charges no fees but has steep late fees. Klarna charges small service fees ($0.75–3.00) plus late fees. Zip charges upfront origination fees equivalent to 30–35% APR, making it the most expensive option.</p>
+
+        <h3>Can I use BNPL for any purchase?</h3>
+        <p>Availability varies by service. Klarna and Affirm offer virtual cards usable anywhere online. Afterpay and Zip work at partner merchants plus offer physical cards for in-store use. PayPal Pay in 4 is limited to online merchants with PayPal checkout integration. Always check if your retailer accepts your preferred BNPL service.</p>
+
+        <h3>How do I calculate the true cost of using BNPL services?</h3>
+        <p>Our BNPL interest calculator factors in purchase amount, payment schedule, potential late fees, and service fees to show the total cost of your purchase. It compares different BNPL services side-by-side so you can choose the most cost-effective option.</p>
+
+        <h3>What are the interest rates for BNPL services?</h3>
+        <p>While most BNPL services advertise 0% interest, some longer-term plans charge interest rates up to 36%. Affirm offers both interest-free options and longer-term plans with rates up to 36%. Klarna also offers financing options with similar rates. Always check the terms before agreeing to a payment plan.</p>
+
+        <div class="related-articles">
+          <h3>📚 Related Resources</h3>
+          <div class="related-grid">
+            <a href="/learn/pay-off-10k-debt.html" class="related-card">
+              <div class="related-card-icon">🎯</div>
+              <h4>Fastest Way to Pay Off $10K Debt</h4>
+              <p>Proven strategies and real numbers for eliminating credit card debt fast.</p>
+            </a>
+            <a href="/learn/balance-transfer-calculator.html" class="related-card">
+              <div class="related-card-icon">🔄</div>
+              <h4>0% APR Balance Transfer Calculator</h4>
+              <p>See how much you save by transferring high-interest debt to 0% APR.</p>
+            </a>
+            <a href="/compare/?amount=500" class="related-card">
+              <div class="related-card-icon">🔍</div>
+              <h4>Compare Credit Cards & BNPL</h4>
+              <p>Side-by-side comparison of every payment option for your purchase.</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+    <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
+  </div>
+</footer>
+<!-- /FOOTER -->
+
+  <script defer src="/shared/pwa.js"></script>
+</body>
+</html>

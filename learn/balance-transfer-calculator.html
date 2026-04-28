@@ -1,1 +1,441 @@
-{'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'How much can I save with a balance transfer?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Transferring a $10,000 balance from a 22.99% APR card to a 0% APR card for 18 months can save $2,000+ in interest. Just watch out for 3-5% transfer fees ($300-500) and ensure you pay off the balance before the promo ends.'}}, {'@type': 'Question', 'name': 'What is a good balance transfer offer?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Look for cards with: 1) Long 0% intro APR periods (18-21 months), 2) Low or no balance transfer fees (0-3%), 3) No annual fee, 4) Reasonable regular APR after the intro period (under 20%), 5) Compatible credit score requirements. Our calculator helps you compare offers side-by-side.'}}, {'@type': 'Question', 'name': 'How do balance transfer fees work?', 'acceptedAnswer': {'@type': 'Answer', 'text': "Most cards charge 3-5% of the transferred amount as a fee. For a $10,000 transfer, that's $300-500. Some cards offer promotional 0% transfer fees for limited time. Calculate whether the interest savings outweigh the transfer fee using our balance transfer calculator."}}, {'@type': 'Question', 'name': 'What happens after the 0% APR period ends?', 'acceptedAnswer': {'@type': 'Answer', 'text': "Any remaining balance will be subject to the regular purchase APR, typically 17-27%. If you haven't paid off the transferred balance, you'll start accruing interest at this higher rate. Our calculator shows your remaining balance at the end of the intro period so you can plan accordingly."}}, {'@type': 'Question', 'name': 'Can I transfer balances between cards from the same bank?', 'acceptedAnswer': {'@type': 'Answer', 'text': "Generally no - most banks don't allow balance transfers between their own cards. You'll need to transfer between cards from different issuers. Check with your specific bank for their policies."}}, {'@type': 'Question', 'name': 'How do I calculate if a balance transfer is worth it?', 'acceptedAnswer': {'@type': 'Answer', 'text': "Our 0% APR balance transfer calculator compares your current card's interest costs against the new card's transfer fee and post-promo interest. It shows your break-even point and net savings over time, factoring in your monthly payment amount and the length of the 0% APR offer."}}, {'@type': 'Question', 'name': 'What credit score do I need for the best balance transfer cards?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'The best 0% APR balance transfer offers typically require good to excellent credit (670+). Some cards offer shorter 0% periods for fair credit (630-669). If your score is lower, focus on improving it before applying, as multiple hard inquiries can further damage your score.'}}]}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0% APR Balance Transfer Calculator — Should You Transfer Your Balance? — CreditStud.io</title>
+  <meta name="description" content="Calculate how much you can save by transferring credit card debt to a 0% APR card. Factor in transfer fees, promo periods, and post-promo rates to make the right call.">
+  <link rel="canonical" href="https://creditstud.io/learn/balance-transfer-calculator.html">
+  <meta property="og:title" content="0% APR Balance Transfer Calculator — Should You Transfer Your Balance?">
+  <meta property="og:description" content="Calculate your savings from transferring high-interest debt to a 0% APR card. Factor in transfer fees, promo periods, and post-promo rates.">
+  <meta property="og:url" content="https://creditstud.io/learn/balance-transfer-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="0% APR Balance Transfer Calculator — Should You Transfer Your Balance?">
+  <meta name="twitter:description" content="Calculate your savings from transferring high-interest debt to a 0% APR card.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shared/components.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much can I save with a balance transfer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Transferring a $10,000 balance from a 22.99% APR card to a 0% APR card for 18 months can save $2,000+ in interest. Just watch out for 3-5% transfer fees ($300-500) and ensure you pay off the balance before the promo ends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good balance transfer offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Look for cards with: 1) Long 0% intro APR periods (18-21 months), 2) Low or no balance transfer fees (0-3%), 3) No annual fee, 4) Reasonable regular APR after the intro period (under 20%), 5) Compatible credit score requirements. Our calculator helps you compare offers side-by-side."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do balance transfer fees work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most cards charge 3-5% of the transferred amount as a fee. For a $10,000 transfer, that's $300-500. Some cards offer promotional 0% transfer fees for limited time. Calculate whether the interest savings outweigh the transfer fee using our balance transfer calculator."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after the 0% APR period ends?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any remaining balance will be subject to the regular purchase APR, typically 17-27%. If you haven't paid off the transferred balance, you'll start accruing interest at this higher rate. Our calculator shows your remaining balance at the end of the intro period so you can plan accordingly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I transfer balances between cards from the same bank?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally no - most banks don't allow balance transfers between their own cards. You'll need to transfer between cards from different issuers. Check with your specific bank for their policies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate if a balance transfer is worth it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our 0% APR balance transfer calculator compares your current card's interest costs against the new card's transfer fee and post-promo interest. It shows your break-even point and net savings over time, factoring in your monthly payment amount and the length of the 0% APR offer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What credit score do I need for the best balance transfer cards?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The best 0% APR balance transfer offers typically require good to excellent credit (670+). Some cards offer shorter 0% periods for fair credit (630-669). If your score is lower, focus on improving it before applying, as multiple hard inquiries can further damage your score."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "0% APR Balance Transfer Calculator: Should You Transfer Your Balance?",
+    "description": "Calculate how much you can save by transferring credit card debt to a 0% APR card. Factor in transfer fees, promo periods, and post-promo rates.",
+    "author": {
+      "@type": "Organization",
+      "name": "CreditStud.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CreditStud.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://creditstud.io/icon.svg"
+      }
+    },
+    "datePublished": "2026-04-15",
+    "dateModified": "2026-04-28",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://creditstud.io/learn/balance-transfer-calculator.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+
+  <!-- DISCLOSURE -->
+<div class="site-disclosure-banner">
+  <div class="site-disclosure-container">
+    CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations. 
+    <a href="/disclosure.html">Learn more</a>
+  </div>
+</div>
+<!-- /DISCLOSURE -->
+
+  <!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <nav class="top-nav">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/compare/" class="nav-link">Compare</a>
+      <a href="/debt-planner/" class="nav-link">Debt Planner</a>
+      <a href="/rewards/" class="nav-link">Rewards</a>
+      <a href="/learn/" class="nav-link">Learn</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+    </nav>
+    <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+    <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
+  </div>
+</header>
+<!-- /HEADER -->
+
+  <main>
+    <div class="container" id="main">
+      <nav class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">›</span><a href="/learn/">Learn</a><span class="sep">›</span>Balance Transfer Calculator
+      </nav>
+
+      <article class="seo-content">
+        <h1>0% APR Balance Transfer Calculator: Should You Transfer Your Balance?</h1>
+        <p class="article-meta">
+          <span>📅 Last updated April 28, 2026</span> · <span>By CreditStud.io Editorial Team</span>
+        </p>
+
+        <p><small><em>Affiliate disclosure: CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our recommendations.</em></small></p>
+
+        <p class="lead">Transferring a $10,000 balance from a 22% APR card to a 0% APR card for 18 months saves you over <strong>$2,800 in interest</strong> — even after paying the 3% transfer fee. That's not marketing fluff; that's simple math. But a balance transfer only saves money if you pick the right card, understand the fees, and have a plan to pay off the balance before the promotional period ends. This guide shows you how.</p>
+
+        <div class="cta-box">
+          <h3>💳 Model a Balance Transfer With Your Numbers</h3>
+          <p>See exactly how much you'd save by transferring your balance. Plug in your current APR, balance, and monthly payment to compare strategies side by side.</p>
+          <a href="/debt-planner/" class="cta-button">Model a Balance Transfer →</a>
+        </div>
+
+        <h2>How Balance Transfers Work (and Where People Mess Up)</h2>
+
+        <p>A balance transfer moves your existing credit card debt to a new card with a 0% (or very low) introductory APR — typically for 12–21 months. During that promo period, you pay no interest on the transferred balance. Every dollar goes toward principal, so you cut months or years off your payoff timeline.</p>
+
+        <h3>The three numbers that matter</h3>
+        <ul>
+          <li><strong>Transfer fee:</strong> Usually 3–5% of the amount you transfer (so $300–$500 on $10,000). Some cards waive this fee as an intro offer.</li>
+          <li><strong>Promo period:</strong> How long the 0% APR lasts. The best cards offer 18–21 months.</li>
+          <li><strong>Regular APR:</strong> What happens after the promo ends — typically 17–27%. If you still have a balance when the 0% period expires, interest kicks in at this rate.</li>
+        </ul>
+
+        <h3>Three common mistakes</h3>
+        <ol>
+          <li><strong>Not paying off the balance before the promo ends.</strong> If you transfer $10,000 and still owe $4,000 when the 0% period expires, that $4,000 starts accruing interest at 22%+ immediately. The savings evaporate.</li>
+          <li><strong>Charging new purchases on the transfer card.</strong> Some cards have 0% on transfers but charge full APR on new purchases — and payments go toward the 0% balance first, meaning the purchase balance compounds at full rate. Read the fine print.</li>
+          <li><strong>Missing a payment.</strong> One late payment can void your 0% APR, triggering retroactive interest at the regular rate. Set up autopay for at least the minimum.</li>
+        </ol>
+
+        <h2>The Best Balance Transfer Cards (2026)</h2>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Card</th>
+                <th>0% Intro APR</th>
+                <th>Transfer Fee</th>
+                <th>Regular APR</th>
+                <th>Annual Fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td><strong>Wells Fargo Reflect</strong></td>
+                <td>21 months</td>
+                <td>3% ($5 min)</td>
+                <td>17.49–29.49%</td>
+                <td>$0</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Citi Diamond Preferred</strong></td>
+                <td>12 months</td>
+                <td>3% ($5 min)</td>
+                <td>17.49–28.49%</td>
+                <td>$0</td>
+              </tr>
+              <tr>
+                <td>BankAmericard</td>
+                <td>18 billing cycles</td>
+                <td>3%</td>
+                <td>17.49–27.49%</td>
+                <td>$0</td>
+              </tr>
+              <tr>
+                <td>Citi Simplicity</td>
+                <td>12 months</td>
+                <td>3% ($5 min)</td>
+                <td>18.49–29.24%</td>
+                <td>$0</td>
+              </tr>
+              <tr>
+                <td>Chase Slate Edge</td>
+                <td>18 months</td>
+                <td>3%</td>
+                <td>17.49–26.49%</td>
+                <td>$0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-box success">
+          <strong>✅ What to look for:</strong> The longest 0% period you can get (18–21 months), the lowest transfer fee (3% is standard; some cards offer 0% intro fees), and no annual fee. The regular APR matters less if you plan to pay off the full balance during the promo period.
+        </div>
+
+        <h2>The Math: How Much You Actually Save</h2>
+
+        <h3>Scenario: $10,000 balance at 22% APR</h3>
+
+        <p>Here's what happens when you transfer $10,000 from a 22% APR card to a 0% APR card for 18 months, paying $600/month:</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Keep on Current Card</th>
+                <th>Transfer to 0% APR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Starting balance</td>
+                <td>$10,000</td>
+                <td>$10,300 (with 3% fee)</td>
+              </tr>
+              <tr>
+                <td>APR</td>
+                <td>22%</td>
+                <td>0% for 18 months</td>
+              </tr>
+              <tr>
+                <td>Monthly payment</td>
+                <td>$600</td>
+                <td>$600</td>
+              </tr>
+              <tr>
+                <td>Interest paid during 18 months</td>
+                <td>$2,993</td>
+                <td>$0</td>
+              </tr>
+              <tr>
+                <td>Transfer fee</td>
+                <td>$0</td>
+                <td>$300</td>
+              </tr>
+              <tr>
+                <td>Balance after 18 months</td>
+                <td>$2,807</td>
+                <td>$0 (paid off!)</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Total interest + fees</strong></td>
+                <td><strong>$2,993</strong></td>
+                <td><strong>$300</strong></td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Net savings</strong></td>
+                <td>—</td>
+                <td><strong>$2,693</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>You save <strong>$2,693</strong> even after the transfer fee — and you're completely debt-free 18 months from now instead of still owing $2,807. The math is overwhelmingly in favor of transferring.</p>
+
+        <h3>What if you can't pay it off in 18 months?</h3>
+
+        <p>Let's say you can only afford $400/month:</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Keep on Current Card</th>
+                <th>Transfer to 0% (18 mo)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Starting balance</td>
+                <td>$10,000</td>
+                <td>$10,300 (with 3% fee)</td>
+              </tr>
+              <tr>
+                <td>Monthly payment</td>
+                <td>$400</td>
+                <td>$400</td>
+              </tr>
+              <tr>
+                <td>Balance after 18-month promo</td>
+                <td>$4,687</td>
+                <td>$3,100</td>
+              </tr>
+              <tr>
+                <td>Interest from month 19 on (at 22%)</td>
+                <td>Continues compounding</td>
+                <td>$3,100 × 22% APR until paid</td>
+              </tr>
+              <tr>
+                <td>Total interest over full payoff</td>
+                <td>~$5,850</td>
+                <td>~$1,100</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Net savings</strong></td>
+                <td>—</td>
+                <td><strong>~$4,450</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Even if you can't fully pay off the balance during the 0% period, the transfer still saves you thousands. But the savings shrink if you carry a large balance past the promo — which is why you should pay as much as possible during those interest-free months.</p>
+
+        <h2>When a Balance Transfer ISN'T Worth It</h2>
+
+        <p>A balance transfer isn't always the right move. Here's when to skip it:</p>
+
+        <ul>
+          <li><strong>Your balance is under $1,000.</strong> The 3% fee ($30) might exceed the interest you'd save in a short payoff. If you can pay off $1,000 in 3–4 months, the interest savings are minimal.</li>
+          <li><strong>You can't get approved.</strong> Balance transfer cards require good-to-excellent credit (670+). Hard inquiries from rejected applications can lower your score by 5–10 points.</li>
+          <li><strong>You'll keep using the old card.</strong> Freeing up credit on your old card and charging it up again is how people end up with <strong>twice the debt</strong>. Cut up or freeze the old card the day you transfer.</li>
+          <li><strong>The promo period is under 12 months.</strong> Cards offering only 6–9 months of 0% APR don't give you enough runway — especially on larger balances. Aim for 15+ months.</li>
+          <li><strong>The transfer fee exceeds your interest savings.</strong> On a $500 balance at 15% APR that you'd pay off in 6 months, the total interest is ~$45. A 3% transfer fee costs $15. That's a net savings of only $30 — probably not worth the hard inquiry.</li>
+        </ul>
+
+        <div class="info-box warning">
+          <strong>⚠️ The golden rule:</strong> A balance transfer only saves money if you <strong>stop using the old card</strong> and <strong>pay off the new card before the promo ends</strong>. Violate either rule and the savings disappear. Use our <a href="/debt-planner/">debt planner</a> to map out your payoff plan before you transfer.
+        </div>
+
+        <h2>How to Execute a Balance Transfer (Step by Step)</h2>
+
+        <ol>
+          <li><strong>Check your credit score.</strong> You need 670+ for the best offers. Check for free at AnnualCreditReport.com or your bank's app.</li>
+          <li><strong>Compare cards.</strong> Use our <a href="/debt-planner/">debt planner</a> to calculate your savings with different promo periods and transfer fees.</li>
+          <li><strong>Apply for the card.</strong> This triggers a hard inquiry (5–10 point score drop). Apply for only one card to minimize impact.</li>
+          <li><strong>Request the transfer within 60 days.</strong> Most cards require you to initiate the transfer within 60 days of account opening to get the 0% promo rate. You'll need your old card number and balance.</li>
+          <li><strong>Verify the transfer.</strong> It can take 7–14 days. Keep paying the old card's minimum until the transfer posts — missing a payment before the transfer completes damages your credit.</li>
+          <li><strong>Freeze the old card.</strong> Literally. Don't use it. Your available credit will be maxed on the new card, so you need discipline.</li>
+          <li><strong>Set up autopay.</strong> One missed payment can void your 0% APR. Set it for the minimum, then manually pay extra each month.</li>
+          <li><strong>Pay off the balance before the promo ends.</strong> Divide your balance by the number of remaining months to find your target monthly payment.</li>
+        </ol>
+
+        <h2>FAQ</h2>
+
+        <h3>How much can I save with a balance transfer?</h3>
+        <p>Transferring a $10,000 balance from a 22.99% APR card to a 0% APR card for 18 months can save $2,000+ in interest. Just watch out for 3–5% transfer fees ($300–$500) and ensure you pay off the balance before the promo ends.</p>
+
+        <h3>What is a good balance transfer offer?</h3>
+        <p>Look for cards with: 1) Long 0% intro APR periods (18–21 months), 2) Low or no balance transfer fees (0–3%), 3) No annual fee, 4) Reasonable regular APR after the intro period (under 20%), 5) Compatible credit score requirements. Our calculator helps you compare offers side-by-side.</p>
+
+        <h3>How do balance transfer fees work?</h3>
+        <p>Most cards charge 3–5% of the transferred amount as a fee. For a $10,000 transfer, that's $300–$500. Some cards offer promotional 0% transfer fees for a limited time. Calculate whether the interest savings outweigh the transfer fee using our balance transfer calculator.</p>
+
+        <h3>What happens after the 0% APR period ends?</h3>
+        <p>Any remaining balance will be subject to the regular purchase APR, typically 17–27%. If you haven't paid off the transferred balance, you'll start accruing interest at this higher rate. Our calculator shows your remaining balance at the end of the intro period so you can plan accordingly.</p>
+
+        <h3>Can I transfer balances between cards from the same bank?</h3>
+        <p>Generally no — most banks don't allow balance transfers between their own cards. You'll need to transfer between cards from different issuers. Check with your specific bank for their policies.</p>
+
+        <h3>How do I calculate if a balance transfer is worth it?</h3>
+        <p>Our 0% APR balance transfer calculator compares your current card's interest costs against the new card's transfer fee and post-promo interest. It shows your break-even point and net savings over time, factoring in your monthly payment amount and the length of the 0% APR offer.</p>
+
+        <h3>What credit score do I need for the best balance transfer cards?</h3>
+        <p>The best 0% APR balance transfer offers typically require good to excellent credit (670+). Some cards offer shorter 0% periods for fair credit (630–669). If your score is lower, focus on improving it before applying, as multiple hard inquiries can further damage your score.</p>
+
+        <div class="related-articles">
+          <h3>📚 Related Resources</h3>
+          <div class="related-grid">
+            <a href="/learn/pay-off-10k-debt.html" class="related-card">
+              <div class="related-card-icon">🎯</div>
+              <h4>Fastest Way to Pay Off $10K Debt</h4>
+              <p>Compare avalanche, snowball, balance transfers, and consolidation with real numbers.</p>
+            </a>
+            <a href="/learn/snowball-vs-avalanche.html" class="related-card">
+              <div class="related-card-icon">⚖️</div>
+              <h4>Snowball vs Avalanche: Which Is Better?</h4>
+              <p>Side-by-side comparison of the two most popular debt elimination methods.</p>
+            </a>
+            <a href="/blog/credit-card-benefits-youre-not-using.html" class="related-card">
+              <div class="related-card-icon">💳</div>
+              <h4>Credit Card Benefits You're Not Using</h4>
+              <p>12 overlooked perks worth $1,000+/year on cards you already have.</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+    <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
+  </div>
+</footer>
+<!-- /FOOTER -->
+
+  <script defer src="/shared/pwa.js"></script>
+</body>
+</html>
