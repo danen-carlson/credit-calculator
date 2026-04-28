@@ -57,6 +57,58 @@
   let walletOpen = false; // Track if wallet panel is open
   let includeAnnualCredits = false; // Include annual credits in first-year value
 
+  // ===================== NEW STATE =====================
+  let noAnnualFee = false; // Filter: hide cards with annualFee > 0
+  let spendingMode = 'monthly'; // 'monthly' or 'annual'
+  let cardsOwnership = {}; // { cardId: 'have' | 'had' } — persisted in localStorage
+  let customCategories = []; // [{ id, name, amount, mapTo }] — persisted in localStorage
+  let nextCustomId = 1;
+
+  // Foreign transaction fee map (derived from perks + known data)
+  // Cards NOT listed with a fee and not saying "No foreign transaction fees" are assumed to have 3%
+  const ftxFeeMap = {
+    'citi-double-cash': 0,
+    'fidelity-rewards-visa': 0,
+    'paypal-cashback-mastercard': 0,
+    'chase-sapphire-preferred': 0,
+    'amex-gold': 0,
+    'capital-one-venture-x': 0,
+    'capital-one-venture': 0,
+    'amazon-prime-visa': 0,
+    'discover-it-cash-back': 0,
+    'chase-freedom-flex': 3,
+    'wells-fargo-active-cash': 3,
+    'us-bank-cash-plus': 3,
+    'citi-custom-cash': 3,
+    'amex-blue-cash-preferred': 3,
+    'amex-blue-cash-everyday': 3,
+    'coinbase-card': 0,
+    'coinbase-one-credit': 0,
+    'gemini-credit': 0,
+    'square-cash-card': 0
+  };
+
+  function getForeignTransactionFee(card) {
+    // Try perks first
+    if (card.perks && card.perks.some(p => p.includes('No foreign transaction fee'))) return 0;
+    // Then check our map
+    if (card.id in ftxFeeMap) return ftxFeeMap[card.id];
+    // Default: no fee info means 0 for non-travel cards, 3% for travel
+    if (card.type === 'travel') return 3;
+    return 0;
+  }
+
+  function getFtxBadge(card) {
+    const fee = getForeignTransactionFee(card);
+    if (fee > 0) {
+      return `<span class="ftx-badge ftx-fee" title="${fee}% foreign transaction fee">⚠️ ${fee}% FTX fee</span>`;
+    }
+    if (card.type === 'travel' || card.id === 'amazon-prime-visa') {
+      return `<span class="ftx-badge ftx-free" title="No foreign transaction fee">✅ No FTX fee</span>`;
+    }
+    return '';
+  }
+
   // ===================== CALCULATIONS =====================
 
   // Check if signup bonus requirements are met
@@ -87,6 +139,49 @@
       requiredMonths,
       projectedSpending
     };
+  }
+
+  // Get effective spending, incorporating annual toggle and custom categories
+  function getEffectiveSpending() {
+    const spending = { ...currentSpending };
+    // Add custom categories mapped to standard ones
+    customCategories.forEach(cat => {
+      if (cat.mapTo && spending.hasOwnProperty(cat.mapTo)) {
+        spending[cat.mapTo] += cat.amount;
+      } else {
+        // Unmapped custom categories go into "everything"
+        spending.everything += cat.amount;
+      }
+    });
+    return spending;
+  }
+
+  // Generate "Why this card?" reasoning
+  function generateReasoning(card, calcResult, spending) {
+    const breakdown = calcResult.breakdown;
+    if (!breakdown) return '';
+    // Find the category with the highest annual value
+    let bestCat = null;
+    let bestValue = 0;
+    let bestRate = 0;
+    for (const cat of Object.keys(breakdown)) {
+      if (breakdown[cat].annualValue > bestValue) {
+        bestValue = breakdown[cat].annualValue;
+        bestCat = cat;
+        bestRate = breakdown[cat].rate;
+      }
+    }
+    if (!bestCat) return '';
+    const monthlySpend = spending[bestCat] || 0;
+    const catName = categoryLabels[bestCat] || bestCat;
+    let reason = `${bestRate > 1 ? bestRate + '% on ' + catName + ' (your highest spend at $' + monthlySpend.toLocaleString() + '/mo)' : 'flat-rate earnings across all categories'}`;
+    if (calcResult.signupBonusValue > 0) {
+      reason += `, plus the $${calcResult.signupBonusValue} welcome bonus`;
+    }
+    if (card.annualFee === 0) {
+      reason += ', with no annual fee';
+    }
+    return reason;
   }
 
   function calculateCardRewards(card, spending, yearView = 'ongoing') {
@@ -753,12 +848,24 @@
     // Use setTimeout to allow UI to update before heavy computation
     setTimeout(() => {
       try {
+        // Get effective spending (with custom categories)
+        const effectiveSpending = getEffectiveSpending();
+
         // Calculate all cards with current year view
         const results = cardsData.map(card => {
           // Filter out crypto cards if toggle is off
           if (card.isCrypto && !showCrypto) return null;
 
-          const calc = calculateCardRewards(card, currentSpending, yearView);
+          // Check if user currently has this card → exclude from results
+          const ownership = cardsOwnership[card.id];
+          if (ownership === 'have') return null;
+
+          // Filter out cards with annual fee if noAnnualFee toggle is on
+          if (noAnnualFee && card.annualFee > 0) return null;
+
+          // For "had" cards, enable signup bonus eligibility
+          const effectiveYearView = ownership === 'had' && yearView === 'ongoing' ? 'first' : yearView;
+          const calc = calculateCardRewards(card, effectiveSpending, effectiveYearView);
           return { ...card, ...calc };
         }).filter(Boolean);
 
@@ -778,8 +885,10 @@
         }
 
         if (filtered.length === 0) {
-          container.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:40px 0;">No cards match your filter. Try a different category or enable crypto rewards.</p>';
+          container.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:40px 0;">No cards match your filters. Try adjusting your filters or removing some exclusions.</p>';
           hideSkeleton(skeleton);
+          // Still show What's Next CTA
+          renderWhatsNext();
           return;
         }
 
@@ -812,6 +921,21 @@
           // Compare checkbox
           const isChecked = compareSelected.has(card.id) ? 'checked' : '';
 
+          // Why this card? reasoning (top 3 only)
+          let reasoningHTML = '';
+          if (rank <= 3) {
+            const reason = generateReasoning(card, card, effectiveSpending);
+            if (reason) {
+              reasoningHTML = `<div class="result-reasoning">💡 ${reason}</div>`;
+            }
+          }
+
+          // FTX badge
+          const ftxBadge = getFtxBadge(card);
+
+          // Previously had badge
+          const hadBadge = cardsOwnership[card.id] === 'had' ? '<span class="had-badge" title="You previously had this card — signup bonus eligible">🔄 Bonus eligible again</span>' : '';
+
           return `
             <div class="result-card rank-${rank}" data-card-id="${card.id}">
               <span class="result-rank-badge ${rankClass}">#${rank}</span>
@@ -827,7 +951,11 @@
                 </div>
               </div>
 
+              <div class="result-badges-row">${ftxBadge}${hadBadge}</div>
+
               ${card.bestFor ? `<div class="result-best-for">🏷️ Best for: ${card.bestFor}</div>` : ''}
+
+              ${reasoningHTML}
 
               ${card.bonusNote ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">⚠️ ${card.bonusNote}</div>` : ''}
               ${card.note ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">${card.note}</div>` : ''}
@@ -897,11 +1025,49 @@
 
         // Render wallet
         renderWallet();
+
+        // Render What's Next CTA
+        renderWhatsNext();
+
+        // Render data stamp
+        renderDataStamp();
       } finally {
         // Hide skeleton after rendering
         hideSkeleton(skeleton);
       }
     }, 0);
+  }
+
+  function renderWhatsNext() {
+    const section = document.getElementById('whats-next-section');
+    if (!section) return;
+    section.innerHTML = `
+      <div class="whats-next-panel">
+        <h3>🔍 What's Next?</h3>
+        <div class="whats-next-cards">
+          <a href="/debt-planner/" class="whats-next-card">
+            <div class="whats-next-icon">💰</div>
+            <div class="whats-next-title">Pay Off Existing Debt</div>
+            <div class="whats-next-desc">Plan your debt payoff strategy and see how fast you can be debt-free.</div>
+          </a>
+          <a href="/compare/" class="whats-next-card">
+            <div class="whats-next-icon">⚖️</div>
+            <div class="whats-next-title">Compare Payment Options</div>
+            <div class="whats-next-desc">Find the cheapest way to pay for a specific purchase.</div>
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderDataStamp() {
+    const mount = document.getElementById('data-stamp-mount');
+    if (!mount) return;
+    // Only set the stamp if not already set by share.js
+    const existing = mount.textContent || mount.innerHTML;
+    if (!existing || existing.trim() === '') {
+      mount.innerHTML = '<span class="data-verified-stamp">Rates verified: 2026-04-28</span>';
+    }
   }
 
   function hideSkeleton(skeleton) {
@@ -1266,36 +1432,46 @@
 
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
 
-    grid.innerHTML = categories.map(cat => `
+    const isAnnual = spendingMode === 'annual';
+    const sliderMax = isAnnual ? 50000 : 5000;
+
+    grid.innerHTML = categories.map(cat => {
+      const displayValue = isAnnual ? currentSpending[cat] * 12 : currentSpending[cat];
+      return `
       <div class="spending-item">
         <label>
           <span><span class="category-icon">${categoryIcons[cat]}</span>${categoryLabels[cat]}</span>
-          <span class="value-display" id="display-${cat}">$${currentSpending[cat]}</span>
+          <span class="value-display" id="display-${cat}">$${displayValue.toLocaleString()}</span>
         </label>
         <input type="range" class="spending-slider" id="slider-${cat}" 
-          min="0" max="2000" step="10" value="${currentSpending[cat]}"
+          min="0" max="${sliderMax}" step="10" value="${displayValue}"
           oninput="updateSpending('${cat}', this.value)">
         <input type="number" class="spending-number-input" id="input-${cat}"
-          value="${currentSpending[cat]}" min="0" step="10"
+          value="${displayValue}" min="0" step="10"
           oninput="updateSpending('${cat}', this.value)">
       </div>
-    `).join('');
+    `;}).join('');
+
+    // Add custom categories
+    renderCustomCategories(grid);
 
     updateSpendingSummary();
   }
 
   function updateSpending(category, value) {
     const num = parseInt(value) || 0;
-    currentSpending[category] = Math.max(0, num);
+    const isAnnual = spendingMode === 'annual';
+    const divisor = isAnnual ? 12 : 1;
+    currentSpending[category] = Math.max(0, Math.round(num / divisor));
 
-    // Sync slider and input
+    const displayValue = isAnnual ? currentSpending[category] * 12 : currentSpending[category];
     const slider = document.getElementById(`slider-${category}`);
     const input = document.getElementById(`input-${category}`);
     const display = document.getElementById(`display-${category}`);
 
-    if (slider) slider.value = currentSpending[category];
-    if (input && document.activeElement !== input) input.value = currentSpending[category];
-    if (display) display.textContent = '$' + currentSpending[category].toLocaleString();
+    if (slider) slider.value = displayValue;
+    if (input && document.activeElement !== input) input.value = displayValue;
+    if (display) display.textContent = '$' + displayValue.toLocaleString();
 
     updateSpendingSummary();
     renderResults();
@@ -1308,11 +1484,20 @@
 
   function updateSpendingSummary() {
     const total = Object.values(currentSpending).reduce((s, v) => s + v, 0);
+    const isAnnual = spendingMode === 'annual';
+
     const monthlyEl = document.getElementById('total-monthly');
     const annualEl = document.getElementById('total-annual');
 
     if (monthlyEl) monthlyEl.textContent = '$' + total.toLocaleString();
     if (annualEl) annualEl.textContent = '$' + (total * 12).toLocaleString();
+
+    // Update mode indicator
+    const modeNote = document.getElementById('spending-mode-note');
+    if (modeNote) {
+      modeNote.textContent = isAnnual ? 'Showing annual amounts' : 'Showing monthly amounts';
+      modeNote.style.color = isAnnual ? '#d97706' : 'var(--text-secondary)';
+    }
   }
 
   // ===================== EVENT HANDLERS =====================
@@ -1521,10 +1706,246 @@
     }
   }
 
+  // ===================== CUSTOM CATEGORIES =====================
+
+  const categoryMapOptions = [
+    { value: '', label: '1% flat (no match)' },
+    { value: 'groceries', label: 'Treat as Groceries' },
+    { value: 'dining', label: 'Treat as Dining' },
+    { value: 'gas', label: 'Treat as Gas/Transport' },
+    { value: 'travel', label: 'Treat as Travel' },
+    { value: 'online', label: 'Treat as Online Shopping' },
+    { value: 'streaming', label: 'Treat as Streaming' },
+    { value: 'utilities', label: 'Treat as Utilities' }
+  ];
+
+  function renderCustomCategories(grid) {
+    // Remove existing custom items
+    grid.querySelectorAll('.custom-category-item').forEach(el => el.remove());
+    // Remove add button if exists
+    const existingBtn = document.getElementById('add-custom-category-btn');
+    if (existingBtn) existingBtn.remove();
+
+    customCategories.forEach((cat, idx) => {
+      const isAnnual = spendingMode === 'annual';
+      const displayAmount = isAnnual ? cat.amount * 12 : cat.amount;
+      const item = document.createElement('div');
+      item.className = 'spending-item custom-category-item';
+      item.dataset.customId = cat.id;
+      item.innerHTML = `
+        <label>
+          <span style="display:flex;align-items:center;gap:6px;">
+            <span class="category-icon">📦</span>
+            <input type="text" class="custom-cat-name" value="${cat.name}" placeholder="Category name" style="width:100px;border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:0.85rem;"
+              oninput="updateCustomCatName('${cat.id}', this.value)">
+          </span>
+          <span class="value-display" id="display-custom-${cat.id}">$${displayAmount.toLocaleString()}</span>
+        </label>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <select class="custom-cat-map" style="flex:1;padding:6px;border:1px solid var(--border);border-radius:4px;font-size:0.8rem;" onchange="updateCustomCatMap('${cat.id}', this.value)">
+            ${categoryMapOptions.map(opt => `<option value="${opt.value}" ${opt.value === cat.mapTo ? 'selected' : ''}>${opt.label}</option>`).join('')}
+          </select>
+          <button class="btn-remove-custom" onclick="removeCustomCategory('${cat.id}')" title="Remove" style="background:none;border:none;cursor:pointer;font-size:1.1rem;color:var(--danger);padding:4px;">✕</button>
+        </div>
+        <input type="range" class="spending-slider" id="slider-custom-${cat.id}" min="0" max="${isAnnual ? 50000 : 5000}" step="10" value="${displayAmount}"
+          oninput="updateCustomCategoryAmount('${cat.id}', this.value)">
+        <input type="number" class="spending-number-input" id="input-custom-${cat.id}" value="${displayAmount}" min="0" step="10"
+          oninput="updateCustomCategoryAmount('${cat.id}', this.value)">
+      `;
+      grid.appendChild(item);
+    });
+
+    // Add button
+    const addBtn = document.createElement('button');
+    addBtn.id = 'add-custom-category-btn';
+    addBtn.className = 'btn-add-category';
+    addBtn.innerHTML = '+ Add a custom category';
+    addBtn.onclick = addCustomCategory;
+    grid.appendChild(addBtn);
+  }
+
+  window.updateCustomCatName = function(id, name) {
+    const cat = customCategories.find(c => c.id === id);
+    if (cat) { cat.name = name; saveCustomCategories(); }
+  };
+
+  window.updateCustomCatMap = function(id, mapTo) {
+    const cat = customCategories.find(c => c.id === id);
+    if (cat) { cat.mapTo = mapTo || null; saveCustomCategories(); renderResults(); }
+  };
+
+  window.updateCustomCategoryAmount = function(id, value) {
+    const num = parseInt(value) || 0;
+    const isAnnual = spendingMode === 'annual';
+    const divisor = isAnnual ? 12 : 1;
+    const cat = customCategories.find(c => c.id === id);
+    if (cat) {
+      cat.amount = Math.max(0, Math.round(num / divisor));
+      const displayValue = isAnnual ? cat.amount * 12 : cat.amount;
+      const slider = document.getElementById(`slider-custom-${id}`);
+      const input = document.getElementById(`input-custom-${id}`);
+      const display = document.getElementById(`display-custom-${id}`);
+      if (slider) slider.value = displayValue;
+      if (input && document.activeElement !== input) input.value = displayValue;
+      if (display) display.textContent = '$' + displayValue.toLocaleString();
+      updateSpendingSummary();
+      renderResults();
+    }
+  };
+
+  window.removeCustomCategory = function(id) {
+    customCategories = customCategories.filter(c => c.id !== id);
+    saveCustomCategories();
+    initSpendingInputs();
+    renderResults();
+  };
+
+  function addCustomCategory() {
+    const id = 'custom-' + nextCustomId++;
+    customCategories.push({ id, name: '', amount: 100, mapTo: null });
+    saveCustomCategories();
+    initSpendingInputs();
+  }
+
+  function syncCustomCategoryDisplay(catKey) {
+    // Sync custom categories that map to this key
+    customCategories.forEach(cat => {
+      if (cat.mapTo === catKey) {
+        const isAnnual = spendingMode === 'annual';
+        const displayValue = isAnnual ? cat.amount * 12 : cat.amount;
+        const display = document.getElementById(`display-custom-${cat.id}`);
+        if (display) display.textContent = '$' + displayValue.toLocaleString();
+      }
+    });
+  }
+
+  function saveCustomCategories() {
+    try {
+      localStorage.setItem('rewards_customCategories', JSON.stringify(customCategories));
+      localStorage.setItem('rewards_customNextId', nextCustomId);
+    } catch (e) {}
+  }
+
+  function loadCustomCategories() {
+    try {
+      const saved = localStorage.getItem('rewards_customCategories');
+      if (saved) customCategories = JSON.parse(saved);
+      const savedId = localStorage.getItem('rewards_customNextId');
+      if (savedId) nextCustomId = parseInt(savedId);
+    } catch (e) {}
+  }
+
+  // ===================== CARDS OWNERSHIP =====================
+
+  function loadCardsOwnership() {
+    try {
+      const saved = localStorage.getItem('cardsOwned');
+      if (saved) cardsOwnership = JSON.parse(saved);
+    } catch (e) {}
+  }
+
+  function saveCardsOwnership() {
+    try {
+      localStorage.setItem('cardsOwned', JSON.stringify(cardsOwnership));
+    } catch (e) {}
+  }
+
+  window.toggleCardsOwnedPanel = function() {
+    const panel = document.getElementById('cards-owned-panel');
+    if (!panel) return;
+    panel.classList.toggle('open');
+  };
+
+  window.setCardOwnership = function(cardId, status) {
+    if (status === 'none') {
+      delete cardsOwnership[cardId];
+    } else {
+      cardsOwnership[cardId] = status;
+    }
+    saveCardsOwnership();
+    // Update count display
+    const countEl = document.getElementById('cards-owned-count');
+    const ownedCount = Object.keys(cardsOwnership).length;
+    if (countEl) countEl.textContent = ownedCount > 0 ? ownedCount : '';
+    renderResults();
+  };
+
+  function renderCardsOwnedPanel() {
+    const container = document.getElementById('cards-owned-list');
+    if (!container) return;
+    container.innerHTML = cardsData.map(card => {
+      const ownership = cardsOwnership[card.id] || 'none';
+      return `
+        <div class="cards-owned-row">
+          <span class="cards-owned-name">${card.name}</span>
+          <div class="cards-owned-options">
+            <label class="cards-owned-radio"><input type="radio" name="own-${card.id}" value="none" ${ownership === 'none' ? 'checked' : ''} onchange="setCardOwnership('${card.id}', 'none')"> Don't have</label>
+            <label class="cards-owned-radio"><input type="radio" name="own-${card.id}" value="have" ${ownership === 'have' ? 'checked' : ''} onchange="setCardOwnership('${card.id}', 'have')"> I have it</label>
+            <label class="cards-owned-radio"><input type="radio" name="own-${card.id}" value="had" ${ownership === 'had' ? 'checked' : ''} onchange="setCardOwnership('${card.id}', 'had')"> Had it before</label>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // ===================== ANNUAL/MONTHLY TOGGLE =====================
+
+  window.setSpendingMode = function(mode) {
+    spendingMode = mode;
+    try { localStorage.setItem('rewards_spendingMode', mode); } catch (e) {}
+    // Update toggle UI
+    document.querySelectorAll('.spending-mode-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.mode === mode);
+    });
+    // Re-render spending inputs with new mode
+    initSpendingInputs();
+    renderResults();
+  };
+
+  // ===================== FILTER: NO ANNUAL FEE =====================
+
+  window.toggleNoAnnualFee = function(checkbox) {
+    noAnnualFee = checkbox.checked;
+    try { localStorage.setItem('rewards_noAnnualFee', noAnnualFee ? '1' : '0'); } catch (e) {}
+    renderResults();
+  };
+
   // ===================== INIT =====================
 
   function init() {
     loadUSBSelections();
+    loadCardsOwnership();
+    loadCustomCategories();
+
+    // Load saved filters
+    try {
+      const savedMode = localStorage.getItem('rewards_spendingMode');
+      if (savedMode) spendingMode = savedMode;
+      const savedNoAF = localStorage.getItem('rewards_noAnnualFee');
+      if (savedNoAF === '1') noAnnualFee = true;
+    } catch (e) {}
+
+    // Update UI to reflect loaded state
+    const modeNote = document.getElementById('spending-mode-note');
+    if (modeNote) {
+      modeNote.textContent = spendingMode === 'annual' ? 'Showing annual amounts' : 'Showing monthly amounts';
+      modeNote.style.color = spendingMode === 'annual' ? '#d97706' : 'var(--text-secondary)';
+    }
+
+    const noAFCheckbox = document.getElementById('no-annual-fee-toggle');
+    if (noAFCheckbox) noAFCheckbox.checked = noAnnualFee;
+
+    // Update spending mode buttons
+    document.querySelectorAll('.spending-mode-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.mode === spendingMode);
+    });
+
+    // Render cards owned panel
+    renderCardsOwnedPanel();
+    const ownedCount = Object.keys(cardsOwnership).length;
+    const countEl = document.getElementById('cards-owned-count');
+    if (countEl) countEl.textContent = ownedCount > 0 ? ownedCount : '';
+
     initSpendingInputs();
     renderResults();
 
