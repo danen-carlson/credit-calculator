@@ -16,6 +16,16 @@
   <link rel="apple-touch-icon" href="/icon.svg">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="CreditStud">
+  <meta property="og:title" content="Credit Comparison Calculator | CreditStud.io">
+  <meta property="og:description" content="Compare credit cards, BNPL services, and payment plans side by side. Find the cheapest way to finance any purchase.">
+  <meta property="og:url" content="https://creditstud.io/compare/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta property="og:image" content="https://creditstud.io/og-images/compare.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Credit Comparison Calculator | CreditStud.io">
+  <meta name="twitter:description" content="Compare credit cards, BNPL services, and payment plans side by side. Find the cheapest way to finance any purchase.">
+  <meta name="twitter:image" content="https://creditstud.io/og-images/compare.png">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440"
    crossorigin="anonymous"></script>
 <!-- GA4 -->
@@ -80,25 +90,17 @@
               <input type="number" id="purchase-amount" placeholder="500" min="1" step="0.01" inputmode="decimal">
             </div>
           </div>
-          <div class="input-group">
-            <label for="payoff-months">Pay Off In <span id="payoff-months-display" class="months-display">6 months</span></label>
-            <input type="range" id="payoff-months" min="1" max="36" value="6" step="1" class="slider months-slider">
-            <div class="slider-labels months-labels">
-              <span>1mo</span>
-              <span>6mo</span>
-              <span>12mo</span>
-              <span>18mo</span>
-              <span>24mo</span>
-              <span>36mo</span>
-            </div>
-          </div>
         </div>
 
         <!-- Quick Estimate -->
         <div id="quick-estimate" class="quick-estimate hidden">
           <div class="estimate-row">
-            <span class="estimate-label">Estimated Monthly Payment:</span>
+            <span class="estimate-label" id="estimate-label-text">Estimated Monthly Payment:</span>
             <span class="estimate-value" id="estimate-payment">—</span>
+          </div>
+          <div class="estimate-row" id="estimate-total-row" style="display:none;">
+            <span class="estimate-label">Total Cost:</span>
+            <span class="estimate-value" id="estimate-total">—</span>
           </div>
         </div>
         <div class="input-group">
@@ -110,6 +112,128 @@
             <option value="poor">Poor (below 580)</option>
             <option value="unknown">Not sure</option>
           </select>
+        </div>
+
+        <!-- Purchase Category -->
+        <div class="input-group">
+          <label for="purchase-category">Purchase Category</label>
+          <select id="purchase-category">
+            <option value="everything" selected>Everything Else</option>
+            <option value="groceries">Groceries</option>
+            <option value="dining">Dining</option>
+            <option value="gas">Gas</option>
+            <option value="travel">Travel</option>
+            <option value="online">Online Shopping</option>
+            <option value="streaming">Streaming</option>
+            <option value="utilities">Utilities</option>
+          </select>
+          <small class="input-hint">Cards earn different rewards by category. This adjusts reward calculations.</small>
+        </div>
+
+        <!-- Sales Tax Toggle -->
+        <div class="input-group sales-tax-group">
+          <label class="toggle-label">
+            <input type="checkbox" id="toggle-sales-tax">
+            <span class="toggle-switch"></span>
+            <span>Include sales tax</span>
+          </label>
+          <div id="sales-tax-details" class="hidden" style="margin-top: 0.5rem;">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <select id="sales-tax-state" style="flex: 1;">
+                <option value="AL">Alabama (4.00%)</option>
+                <option value="AK">Alaska (1.76%)</option>
+                <option value="AZ">Arizona (6.10%)</option>
+                <option value="AR">Arkansas (6.30%)</option>
+                <option value="CA" selected>California (8.68%)</option>
+                <option value="CO">Colorado (5.97%)</option>
+                <option value="CT">Connecticut (6.35%)</option>
+                <option value="DE">Delaware (0.00%)</option>
+                <option value="FL">Florida (6.80%)</option>
+                <option value="GA">Georgia (6.97%)</option>
+                <option value="HI">Hawaii (4.44%)</option>
+                <option value="ID">Idaho (6.04%)</option>
+                <option value="IL">Illinois (8.18%)</option>
+                <option value="IN">Indiana (6.97%)</option>
+                <option value="IA">Iowa (6.80%)</option>
+                <option value="KS">Kansas (7.48%)</option>
+                <option value="KY">Kentucky (6.00%)</option>
+                <option value="LA">Louisiana (8.91%)</option>
+                <option value="ME">Maine (5.50%)</option>
+                <option value="MD">Maryland (6.00%)</option>
+                <option value="MA">Massachusetts (6.25%)</option>
+                <option value="MI">Michigan (6.00%)</option>
+                <option value="MN">Minnesota (7.49%)</option>
+                <option value="MS">Mississippi (7.08%)</option>
+                <option value="MO">Missouri (7.71%)</option>
+                <option value="MT">Montana (0.00%)</option>
+                <option value="NE">Nebraska (6.84%)</option>
+                <option value="NV">Nevada (6.85%)</option>
+                <option value="NH">New Hampshire (0.00%)</option>
+                <option value="NJ">New Jersey (6.60%)</option>
+                <option value="NM">New Mexico (6.86%)</option>
+                <option value="NY">New York (7.83%)</option>
+                <option value="NC">North Carolina (6.71%)</option>
+                <option value="ND">North Dakota (6.72%)</option>
+                <option value="OH">Ohio (6.74%)</option>
+                <option value="OK">Oklahoma (7.46%)</option>
+                <option value="OR">Oregon (0.00%)</option>
+                <option value="PA">Pennsylvania (6.00%)</option>
+                <option value="RI">Rhode Island (7.00%)</option>
+                <option value="SC">South Carolina (6.60%)</option>
+                <option value="SD">South Dakota (6.11%)</option>
+                <option value="TN">Tennessee (8.48%)</option>
+                <option value="TX">Texas (7.29%)</option>
+                <option value="UT">Utah (6.91%)</option>
+                <option value="VT">Vermont (6.18%)</option>
+                <option value="VA">Virginia (5.30%)</option>
+                <option value="WA">Washington (7.33%)</option>
+                <option value="WV">West Virginia (6.39%)</option>
+                <option value="WI">Wisconsin (5.44%)</option>
+                <option value="WY">Wyoming (5.36%)</option>
+              </select>
+              <small id="sales-tax-amount" style="white-space: nowrap;"></small>
+            </div>
+            <small class="input-hint">Average combined (state + local) rates per Tax Foundation 2025.</small>
+          </div>
+        </div>
+
+        <!-- Payoff Mode Toggle -->
+        <div class="input-group payoff-mode-group">
+          <label>Payoff Mode</label>
+          <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+            <label class="toggle-label" style="flex-direction: row; gap: 0.35rem;">
+              <input type="radio" name="payoff-mode" id="payoff-mode-months" value="months" checked>
+              <span>Months to pay off</span>
+            </label>
+            <label class="toggle-label" style="flex-direction: row; gap: 0.35rem;">
+              <input type="radio" name="payoff-mode" id="payoff-mode-payment" value="payment">
+              <span>Monthly payment</span>
+            </label>
+          </div>
+
+          <!-- Months slider (shown in months mode) -->
+          <div id="payoff-months-group">
+            <label for="payoff-months">Pay Off In <span id="payoff-months-display" class="months-display">6 months</span></label>
+            <input type="range" id="payoff-months" min="1" max="36" value="6" step="1" class="slider months-slider">
+            <div class="slider-labels months-labels">
+              <span>1mo</span>
+              <span>6mo</span>
+              <span>12mo</span>
+              <span>18mo</span>
+              <span>24mo</span>
+              <span>36mo</span>
+            </div>
+          </div>
+
+          <!-- Monthly payment input (shown in payment mode) -->
+          <div id="payoff-payment-group" class="hidden">
+            <label for="payoff-monthly-payment">Monthly Payment</label>
+            <div class="input-with-prefix">
+              <span class="prefix">$</span>
+              <input type="number" id="payoff-monthly-payment" placeholder="150" min="1" step="0.01" inputmode="decimal">
+            </div>
+            <small class="input-hint">Enter what you can afford each month. We’ll calculate how long it takes.</small>
+          </div>
         </div>
       </div>
     </section>
@@ -192,6 +316,10 @@
                 <div class="input-group">
                   <label for="custom-intro-months">Intro Period (months)</label>
                   <input type="number" id="custom-intro-months" placeholder="15" min="0" max="60">
+                </div>
+                <div class="input-group">
+                  <label for="custom-annual-fee">Annual Fee ($)</label>
+                  <input type="number" id="custom-annual-fee" placeholder="0" min="0" step="1">
                 </div>
               </div>
               <div class="custom-form-actions">
@@ -279,10 +407,28 @@
           <h3 class="comparison-title">Payoff Comparison</h3>
           <div id="payoff-table-wrapper"></div>
         </div>
+        <!-- What's Next? CTA -->
+        <div id="whats-next-cta" class="whats-next-cta hidden">
+          <h3 class="tier-heading">What's next?</h3>
+          <div class="cta-cards">
+            <a id="cta-debt-planner" href="/debt-planner/" class="cta-card">
+              <div class="cta-card-icon">📉</div>
+              <div class="cta-card-text">
+                <strong>Already carrying debt?</strong>
+                <span>Plan your payoff with the Debt Planner →</span>
+              </div>
+            </a>
+            <a id="cta-rewards" href="/rewards/" class="cta-card">
+              <div class="cta-card-icon">🏆</div>
+              <div class="cta-card-text">
+                <strong>Want max rewards on this purchase?</strong>
+                <span>See the best card for this category →</span>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- FAQ Section -->
     <section class="step">
       <div class="container">
         <div class="seo-content">
@@ -313,6 +459,7 @@
 <footer class="footer">
   <div class="container">
     <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+    <p style="margin-top: 4px; font-size: 0.8rem; color: var(--text-secondary);">Rates verified: 2026-04-28</p>
     <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
   </div>
 </footer>
@@ -323,6 +470,109 @@
 
   <script src="data.js"></script>
   <script src="calc.js"></script>
+  <style>
+    /* Net Cost tooltip */
+    .net-cost-tooltip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      cursor: help;
+    }
+    .net-cost-tooltip .net-cost-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--border, #cbd5e1);
+      color: var(--text-secondary, #64748b);
+      font-size: 11px;
+      font-weight: 700;
+      margin-left: 4px;
+    }
+    .net-cost-tooltip:hover .net-cost-tip,
+    .net-cost-tooltip:focus .net-cost-tip {
+      display: block;
+    }
+    .net-cost-tooltip .net-cost-tip {
+      display: none;
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--text, #1e293b);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 400;
+      white-space: nowrap;
+      z-index: 20;
+      box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    }
+    .net-cost-tooltip .net-cost-tip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--text, #1e293b);
+    }
+    /* Best Match connector badge */
+    .best-match-connector {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #1e293b;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-bottom: 4px;
+    }
+    /* What's next CTA */
+    .whats-next-cta { margin-top: 2rem; }
+    .whats-next-cta.hidden { display: none; }
+    .cta-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .cta-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border: 1.5px solid var(--border, #e2e8f0);
+      border-radius: var(--radius, 12px);
+      background: var(--surface, #f8fafc);
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .cta-card:hover {
+      border-color: var(--primary, #2563eb);
+      box-shadow: 0 2px 12px rgba(37,99,235,.12);
+    }
+    .cta-card-icon { font-size: 1.5rem; }
+    .cta-card-text strong { display: block; margin-bottom: 2px; }
+    .cta-card-text span { font-size: 0.85rem; color: var(--text-secondary, #64748b); }
+    @media (max-width: 600px) {
+      .cta-cards { grid-template-columns: 1fr; }
+    }
+    /* Payoff mode toggle */
+    .payoff-mode-group label.toggle-label {
+      flex-direction: row !important;
+      gap: 0.35rem;
+    }
+    /* Sales tax */
+    .sales-tax-group .toggle-label { display: flex; align-items: center; gap: 0.5rem; }
+    .input-hint { display: block; margin-top: 4px; font-size: 0.8rem; color: var(--text-secondary, #64748b); }
+  </style>
   <link rel="stylesheet" href="shared/email-capture.css">
 <script src="shared/email-capture.js"></script>
   <script src="app.js"></script>
@@ -342,7 +592,8 @@
           'toggle-show-cards'
         ],
         shareButtonMount: '#share-mount',
-        stampMount: '#data-stamp-mount'
+        stampMount: '#data-stamp-mount',
+        extraParams: ['purchase-category', 'toggle-sales-tax', 'sales-tax-state', 'payoff-mode']
       });
     });
   </script>

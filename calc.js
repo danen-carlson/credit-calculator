@@ -12,6 +12,16 @@ function monthlyPayment(principal, annualRate, months) {
   return principal * (r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1);
 }
 
+/** Calculate months needed to pay off a loan at a given monthly payment (reverse calc) */
+function monthsFromPayment(principal, annualRate, monthlyPmt) {
+  if (monthlyPmt <= 0) return Infinity;
+  if (annualRate === 0) return Math.ceil(principal / monthlyPmt);
+  const r = annualRate / 100 / 12;
+  if (monthlyPmt <= principal * r) return Infinity; // Payment doesn't cover interest
+  const n = -Math.log(1 - (principal * r / monthlyPmt)) / Math.log(1 + r);
+  return Math.ceil(n);
+}
+
 /** Total interest over term */
 function totalInterest(principal, annualRate, months) {
   if (annualRate === 0 || months === 0) return 0;
@@ -502,7 +512,7 @@ function evaluateCustom(method, amount, creditScore, targetMonths) {
 
 // ── Main entry point ───────────────────────────────────────────────────────
 
-function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, isWorstCase = false }) {
+function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, isWorstCase = false, purchaseCategory = 'everything', monthlyPaymentMode = false, monthlyPmtValue = null }) {
   const results = [];
   const newCardOptions = [];
 
@@ -511,13 +521,16 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, 
       let result;
       let newCardResult = null;
 
+      // Apply category-aware rewards for credit cards
+      let rewardsRate = null;
+      if (method.rewardTiers && method.rewardTiers.length > 0) {
+        rewardsRate = getCategoryRewardsRate(method, purchaseCategory);
+      }
+
       if (method.id && method.id.startsWith('custom-')) {
         result = evaluateCustom(method, amount, creditScore, targetMonths);
       } else if (method.type === 'bnpl-4') {
-        // Pay-in-4 is always the cheapest option (0% interest) when amount is within range.
-        // Show it regardless of targetMonths — finishing early is a good thing.
         result = evaluateBnpl(method, amount, isWorstCase, creditScore, targetMonths);
-        // Mark that it finishes well ahead of the user's target when targetMonths > 3
         if (result && targetMonths > 3) {
           result.finishesEarly = true;
           result.actualTermLabel = '~6 weeks';
@@ -527,14 +540,22 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, 
       } else if (method.type === 'bnpl-monthly') {
         result = evaluateBnplMonthly(method, amount, creditScore, targetMonths, isWorstCase);
       } else {
-        // Calculate WITHOUT intro APR for fair comparison
-        result = evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths);
-        // Also calculate WITH intro APR for "new card" option
+        result = evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths, rewardsRate);
         if (method.hasIntroApr && method.introAprMonths > 0) {
-          newCardResult = evaluateCreditCardWithIntro(method, amount, creditScore, targetMonths);
+          newCardResult = evaluateCreditCardWithIntro(method, amount, creditScore, targetMonths, rewardsRate);
           if (newCardResult) newCardOptions.push(newCardResult);
         }
       }
+
+      // For monthly payment mode, calculate implied months
+      if (result && monthlyPaymentMode && monthlyPmtValue && result.effectiveApr !== undefined) {
+        const impliedMonths = monthsFromPayment(amount, result.effectiveApr, monthlyPmtValue);
+        if (impliedMonths !== Infinity && impliedMonths > 0) {
+          result.impliedMonths = impliedMonths;
+          result.payoffDisplay = `${fmt(monthlyPmtValue)}/mo for ~${impliedMonths} month${impliedMonths === 1 ? '' : 's'}`;
+        }
+      }
+
       if (result) results.push(result);
     } catch (e) {
       console.error('Calc error for', method.name, e);
@@ -558,10 +579,13 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, 
 }
 
 // Calculate credit card WITHOUT intro APR benefits (fair comparison)
-function evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths) {
+function evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths, categoryRewardsRate) {
   const effectiveApr = getScoreAdjustedApr(method.interestRate, creditScore);
   const fees = method.annualFee || 0;
-  const rewardsEarned = (amount * (method.pointsRate || 0) / 100) * (method.pointValue || 1);
+  // Use category-aware rewards if available, otherwise fall back to pointsRate
+  const rewardsEarned = categoryRewardsRate !== null && categoryRewardsRate !== undefined
+    ? amount * categoryRewardsRate
+    : (amount * (method.pointsRate || 0) / 100) * (method.pointValue || 1);
 
   // Standard amortization: level monthly payment over targetMonths at effectiveApr
   const pmt = monthlyPayment(amount, effectiveApr, targetMonths);
@@ -591,13 +615,15 @@ function evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths) {
 }
 
 // Calculate credit card WITH intro APR (new card option)
-function evaluateCreditCardWithIntro(method, amount, creditScore, targetMonths) {
+function evaluateCreditCardWithIntro(method, amount, creditScore, targetMonths, categoryRewardsRate) {
   const effectiveApr = getScoreAdjustedApr(method.interestRate, creditScore);
   const introMonths = method.introAprMonths || 0;
   const withinIntro = targetMonths <= introMonths;
 
   const fees = method.annualFee || 0;
-  const rewardsEarned = (amount * (method.pointsRate || 0) / 100) * (method.pointValue || 1);
+  const rewardsEarned = categoryRewardsRate !== null && categoryRewardsRate !== undefined
+    ? amount * categoryRewardsRate
+    : (amount * (method.pointsRate || 0) / 100) * (method.pointValue || 1);
 
   let monthlyPmt;
   let interestPaid;
@@ -740,3 +766,48 @@ function formatMonths(months) {
 function fmt(n) {
   return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+/** Get the effective rewards rate for a method given a purchase category */
+function getCategoryRewardsRate(method, category) {
+  if (!method.rewardTiers || method.rewardTiers.length === 0) {
+    return (method.pointsRate || 0) * (method.pointValue || 1) / 100;
+  }
+  // Category mapping for reward tier matching
+  const categoryMap = {
+    groceries: ['groceries'],
+    dining: ['dining'],
+    gas: ['gas'],
+    travel: ['travel', 'hotels_rentals'],
+    online: ['online', 'amazon'],
+    streaming: ['streaming'],
+    utilities: ['utilities'],
+    everything: ['everything']
+  };
+  const categories = categoryMap[category] || ['everything'];
+
+  // Try to find a matching tier
+  for (const cat of categories) {
+    const tier = method.rewardTiers.find(t => t.category === cat);
+    if (tier) {
+      return (tier.rate || 0) * (method.blendedPointValue || method.pointValue || 1) / 100;
+    }
+  }
+  // Fall back to 'everything' tier
+  const everythingTier = method.rewardTiers.find(t => t.category === 'everything');
+  if (everythingTier) {
+    return (everythingTier.rate || 0) * (method.blendedPointValue || method.pointValue || 1) / 100;
+  }
+  // Last resort: pointsRate
+  return (method.pointsRate || 0) * (method.pointValue || 1) / 100;
+}
+
+/** Sales tax rates by state (Tax Foundation 2025 average combined rates) */
+const STATE_SALES_TAX = {
+  AL: 4.00, AK: 1.76, AZ: 6.10, AR: 6.30, CA: 8.68, CO: 5.97, CT: 6.35, DE: 0.00,
+  FL: 6.80, GA: 6.97, HI: 4.44, ID: 6.04, IL: 8.18, IN: 6.97, IA: 6.80, KS: 7.48,
+  KY: 6.00, LA: 8.91, ME: 5.50, MD: 6.00, MA: 6.25, MI: 6.00, MN: 7.49, MS: 7.08,
+  MO: 7.71, MT: 0.00, NE: 6.84, NV: 6.85, NH: 0.00, NJ: 6.60, NM: 6.86, NY: 7.83,
+  NC: 6.71, ND: 6.72, OH: 6.74, OK: 7.46, OR: 0.00, PA: 6.00, RI: 7.00, SC: 6.60,
+  SD: 6.11, TN: 8.48, TX: 7.29, UT: 6.91, VT: 6.18, VA: 5.30, WA: 7.33, WV: 6.39,
+  WI: 5.44, WY: 5.36
+};
