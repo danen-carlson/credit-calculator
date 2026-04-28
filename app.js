@@ -20,7 +20,12 @@ const state = {
   hideAnnualFee: false,
   showBnpl: true,
   showCards: true,
-  isWorstCase: false // Toggle for normal vs worst-case scenario
+  isWorstCase: false, // Toggle for normal vs worst-case scenario
+  purchaseCategory: 'everything',
+  salesTaxEnabled: false,
+  salesTaxState: 'CA',
+  payoffMode: 'months', // 'months' or 'payment'
+  monthlyPayment: null
 };
 
 // ── Render method selection cards ──────────────────────────────────────────
@@ -108,20 +113,21 @@ getCachedElement('save-custom-btn').addEventListener('click', () => {
   const rewards = parseFloat(getCachedElement('custom-rewards').value) || 0;
   const introApr = parseFloat(getCachedElement('custom-intro-apr').value) || 0;
   const introMonths = parseInt(getCachedElement('custom-intro-months').value) || 0;
+  const annualFee = parseFloat(getCachedElement('custom-annual-fee').value) || 0;
 
   if (!name) { alert('Please enter a name for your card or service.'); return; }
 
   const id = 'custom-' + Date.now();
   const method = {
     id, name, type,
-    detail: `${rewards > 0 ? rewards + '% rewards · ' : ''}${introMonths > 0 ? introMonths + ' mo ' + introApr + '% intro · ' : ''}${apr}% APR`,
+    detail: `${rewards > 0 ? rewards + '% rewards · ' : ''}${introMonths > 0 ? introMonths + ' mo ' + introApr + '% intro · ' : ''}${annualFee > 0 ? '$' + annualFee + '/yr fee · ' : ''}${apr}% APR`,
     interestRate: apr,
     hasIntroApr: introMonths > 0,
     introAprRate: introApr,
     introAprMonths: introMonths,
     pointsRate: rewards,
     pointValue: 1.0,
-    annualFee: 0,
+    annualFee: annualFee,
     lateFee: 0,
     minPurchase: 0,
     maxPurchase: null
@@ -136,7 +142,7 @@ getCachedElement('save-custom-btn').addEventListener('click', () => {
 });
 
 function clearCustomForm() {
-  ['custom-name', 'custom-apr', 'custom-rewards', 'custom-intro-apr', 'custom-intro-months']
+  ['custom-name', 'custom-apr', 'custom-rewards', 'custom-intro-apr', 'custom-intro-months', 'custom-annual-fee']
     .forEach(id => { getCachedElement(id).value = ''; });
   getCachedElement('custom-type').value = 'credit-card';
 }
@@ -214,7 +220,112 @@ const monthsDisplay = document.getElementById('payoff-months-display');
 const quickEstimate = document.getElementById('quick-estimate');
 const estimatePayment = document.getElementById('estimate-payment');
 const estimateTotal = document.getElementById('estimate-total');
+const estimateTotalRow = document.getElementById('estimate-total-row');
 const purchaseInput = document.getElementById('purchase-amount');
+
+// ── Payoff Mode Toggle ──────────────────────────────────────────
+const payoffModeMonths = document.getElementById('payoff-mode-months');
+const payoffModePayment = document.getElementById('payoff-mode-payment');
+const payoffMonthsGroup = document.getElementById('payoff-months-group');
+const payoffPaymentGroup = document.getElementById('payoff-payment-group');
+const payoffMonthlyPayment = document.getElementById('payoff-monthly-payment');
+
+function setPayoffMode(mode) {
+  state.payoffMode = mode;
+  if (mode === 'months') {
+    payoffMonthsGroup.classList.remove('hidden');
+    payoffPaymentGroup.classList.add('hidden');
+  } else {
+    payoffMonthsGroup.classList.add('hidden');
+    payoffPaymentGroup.classList.remove('hidden');
+  }
+  localStorage.setItem('compare_payoffMode', mode);
+  updateLiveEstimate();
+}
+
+if (payoffModeMonths) payoffModeMonths.addEventListener('change', () => setPayoffMode('months'));
+if (payoffModePayment) payoffModePayment.addEventListener('change', () => setPayoffMode('payment'));
+if (payoffMonthlyPayment) payoffMonthlyPayment.addEventListener('input', updateLiveEstimate);
+
+// Restore from localStorage
+(function restorePayoffMode() {
+  const saved = localStorage.getItem('compare_payoffMode');
+  if (saved === 'payment') {
+    if (payoffModePayment) payoffModePayment.checked = true;
+    if (payoffModeMonths) payoffModeMonths.checked = false;
+    setPayoffMode('payment');
+  }
+})();
+
+// ── Sales Tax Toggle ──────────────────────────────────────────
+const salesTaxToggle = document.getElementById('toggle-sales-tax');
+const salesTaxDetails = document.getElementById('sales-tax-details');
+const salesTaxStateSelect = document.getElementById('sales-tax-state');
+const salesTaxAmount = document.getElementById('sales-tax-amount');
+
+function updateSalesTaxDisplay() {
+  const amount = parseFloat(purchaseInput?.value) || 0;
+  if (amount > 0 && state.salesTaxEnabled) {
+    const rate = STATE_SALES_TAX[state.salesTaxState] || 0;
+    const tax = amount * rate / 100;
+    if (salesTaxAmount) salesTaxAmount.textContent = `(+${fmt(tax)} tax)`;
+  } else {
+    if (salesTaxAmount) salesTaxAmount.textContent = '';
+  }
+}
+
+if (salesTaxToggle) {
+  salesTaxToggle.addEventListener('change', (e) => {
+    state.salesTaxEnabled = e.target.checked;
+    salesTaxDetails.classList.toggle('hidden', !e.target.checked);
+    localStorage.setItem('compare_salesTax', e.target.checked ? '1' : '0');
+    updateSalesTaxDisplay();
+    updateLiveEstimate();
+  });
+  const savedSalesTax = localStorage.getItem('compare_salesTax');
+  if (savedSalesTax === '1') {
+    salesTaxToggle.checked = true;
+    state.salesTaxEnabled = true;
+    salesTaxDetails.classList.remove('hidden');
+  }
+}
+if (salesTaxStateSelect) {
+  salesTaxStateSelect.addEventListener('change', (e) => {
+    state.salesTaxState = e.target.value;
+    localStorage.setItem('compare_salesTaxState', e.target.value);
+    updateSalesTaxDisplay();
+    updateLiveEstimate();
+  });
+  const savedState = localStorage.getItem('compare_salesTaxState');
+  if (savedState) {
+    state.salesTaxState = savedState;
+    salesTaxStateSelect.value = savedState;
+  }
+}
+
+// ── Purchase Category ──────────────────────────────────────────
+const purchaseCategorySelect = document.getElementById('purchase-category');
+if (purchaseCategorySelect) {
+  purchaseCategorySelect.addEventListener('change', (e) => {
+    state.purchaseCategory = e.target.value;
+    localStorage.setItem('compare_category', e.target.value);
+    updateLiveEstimate();
+  });
+  const savedCat = localStorage.getItem('compare_category');
+  if (savedCat) {
+    state.purchaseCategory = savedCat;
+    purchaseCategorySelect.value = savedCat;
+  }
+}
+
+function getEffectiveAmount(rawAmount) {
+  if (!rawAmount || rawAmount <= 0) return rawAmount;
+  if (state.salesTaxEnabled) {
+    const rate = STATE_SALES_TAX[state.salesTaxState] || 0;
+    return rawAmount * (1 + rate / 100);
+  }
+  return rawAmount;
+}
 
 function updateMonthsDisplay(val) {
   const months = parseInt(val);
@@ -225,12 +336,13 @@ function updateMonthsDisplay(val) {
 }
 
 function updateLiveEstimate() {
-  const amount = parseFloat(purchaseInput?.value);
+  const rawAmount = parseFloat(purchaseInput?.value);
+  const amount = getEffectiveAmount(rawAmount);
   const months = parseInt(monthsSlider?.value) || 6;
   const creditScoreEl = document.getElementById('credit-score');
   const creditScore = creditScoreEl ? creditScoreEl.value : 'good';
 
-  if (!amount || amount <= 0) {
+  if (!rawAmount || rawAmount <= 0) {
     if (quickEstimate) quickEstimate.classList.add('hidden');
     return;
   }
@@ -238,50 +350,68 @@ function updateLiveEstimate() {
   // Show estimate section
   if (quickEstimate) quickEstimate.classList.remove('hidden');
 
-  // Base monthly payment (principal only)
-  const baseMonthly = amount / months;
-
   // Estimated interest: APR adjusted by credit score
-  // Score adjustments: excellent -3%, good baseline, fair +3%, poor +8%
   const aprByScore = {
-    excellent: 0.17,  // ~17% avg for excellent credit
-    good: 0.20,        // ~20% avg for good credit
-    fair: 0.23,        // ~23% avg for fair credit
-    poor: 0.28          // ~28% avg for poor credit
+    excellent: 0.17,
+    good: 0.20,
+    fair: 0.23,
+    poor: 0.28
   };
   const avgApr = aprByScore[creditScore] || aprByScore['good'];
-  const monthlyRate = avgApr;  // annual rate
-  const graceMonths = 2;  // most cards give ~2 month grace before interest kicks in
+  const r = avgApr / 12;
 
-  // Simple amortization with grace period
-  let totalInterest = 0;
-  let balance = amount;
-  const r = avgApr / 12;  // monthly rate
-
-  for (let i = 0; i < months; i++) {
-    if (i >= graceMonths && balance > 0) {
-      const interest = balance * r;
-      totalInterest += interest;
-      balance += interest;
+  if (state.payoffMode === 'payment' && payoffMonthlyPayment) {
+    // Monthly payment mode - show estimated payoff time
+    const monthlyPmt = parseFloat(payoffMonthlyPayment?.value) || 0;
+    if (monthlyPmt > 0) {
+      const impliedMonths = monthsFromPayment(amount, avgApr * 100, monthlyPmt);
+      if (impliedMonths !== Infinity && impliedMonths > 0 && impliedMonths < 600) {
+        if (estimatePayment) estimatePayment.textContent = `${fmt(monthlyPmt)}/mo for ~${impliedMonths} months`;
+        const totalCost = monthlyPmt * impliedMonths;
+        if (estimateTotal) estimateTotal.textContent = fmt(totalCost) + ' total';
+        if (estimateTotalRow) estimateTotalRow.style.display = 'flex';
+      } else {
+        if (estimatePayment) estimatePayment.textContent = 'Payment too low';
+        if (estimateTotal) estimateTotal.textContent = '';
+        if (estimateTotalRow) estimateTotalRow.style.display = 'none';
+      }
+    } else {
+      if (quickEstimate) quickEstimate.classList.add('hidden');
+      return;
     }
-    balance -= baseMonthly;
+  } else {
+    // Months mode
+    const monthsElapsed = months;
+    const baseMonthly = amount / monthsElapsed;
+    let totalInterest = 0;
+    let balance = amount;
+    const graceMonths = 2;
+    for (let i = 0; i < monthsElapsed; i++) {
+      if (i >= graceMonths && balance > 0) {
+        const interest = balance * r;
+        totalInterest += interest;
+        balance += interest;
+      }
+      balance -= baseMonthly;
+    }
+    const totalCost = amount + totalInterest;
+    const effectiveMonthly = totalCost / monthsElapsed;
+    if (estimatePayment) estimatePayment.textContent = fmt(effectiveMonthly) + '/mo';
+    if (estimateTotal) estimateTotal.textContent = fmt(totalCost) + ' total';
+    if (estimateTotalRow) estimateTotalRow.style.display = 'flex';
   }
 
-  const totalCost = amount + totalInterest;
-  const effectiveMonthly = totalCost / months;
-
-  if (estimatePayment) {
-    estimatePayment.textContent = fmt(effectiveMonthly) + '/mo';
-  }
-  if (estimateTotal) {
-    estimateTotal.textContent = fmt(totalCost) + ' total';
-  }
-  // Show estimated APR in the estimate label
+  // Show estimated APR and tax info in the estimate label
   const estimateLabel = document.querySelector('.estimate-label');
   if (estimateLabel) {
     const scoreLabels = { excellent: 'Excellent', good: 'Good', fair: 'Fair', poor: 'Poor' };
     const aprPct = (avgApr * 100).toFixed(0);
-    estimateLabel.textContent = `Estimated Monthly Payment (${scoreLabels[creditScore] || 'Good'} credit · ~${aprPct}% APR):`;
+    let labelText = `Estimated Monthly Payment (${scoreLabels[creditScore] || 'Good'} credit · ~${aprPct}% APR)`;
+    if (state.salesTaxEnabled) {
+      const rate = STATE_SALES_TAX[state.salesTaxState] || 0;
+      labelText += ` · incl. ${state.salesTaxState} ${rate.toFixed(1)}% tax`;
+    }
+    estimateLabel.textContent = labelText;
   }
 }
 
@@ -290,7 +420,10 @@ if (monthsSlider) {
 }
 
 if (purchaseInput) {
-  purchaseInput.addEventListener('input', updateLiveEstimate);
+  purchaseInput.addEventListener('input', () => {
+    updateLiveEstimate();
+    updateSalesTaxDisplay();
+  });
 }
 
 // Credit score also updates the live estimate
@@ -319,10 +452,29 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
   // Use setTimeout to allow UI to update before heavy computation
   setTimeout(() => {
     try {
-      const amount = parseFloat(document.getElementById('purchase-amount').value);
-      const targetMonths = parseInt(document.getElementById('payoff-months').value) || 6;
+      const rawAmount = parseFloat(document.getElementById('purchase-amount').value);
+      const amount = getEffectiveAmount(rawAmount);
 
-      if (!amount || amount <= 0) {
+      let targetMonths;
+      let monthlyPaymentMode = false;
+      let monthlyPmtValue = null;
+
+      if (state.payoffMode === 'payment') {
+        monthlyPaymentMode = true;
+        monthlyPmtValue = parseFloat(document.getElementById('payoff-monthly-payment').value);
+        if (!monthlyPmtValue || monthlyPmtValue <= 0) {
+          resetButton(button, originalText);
+          hideSkeleton(skeleton);
+          alert('Please enter a monthly payment amount.');
+          document.getElementById('payoff-monthly-payment').focus();
+          return;
+        }
+        targetMonths = state.payoffMonths; // fallback, will be per-method
+      } else {
+        targetMonths = parseInt(document.getElementById('payoff-months').value) || 6;
+      }
+
+      if (!rawAmount || rawAmount <= 0) {
         resetButton(button, originalText);
         hideSkeleton(skeleton);
         alert('Please enter a purchase amount.');
@@ -342,16 +494,29 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
       const allMethods = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
       const selectedMethods = allMethods.filter(m => state.selectedMethods.has(m.id));
 
+      // Apply category-aware rewards
+      selectedMethods.forEach(m => {
+        if (m.rewardTiers && m.rewardTiers.length > 0) {
+          const rate = getCategoryRewardsRate(m, state.purchaseCategory);
+          m._categoryRate = rate;
+          m._categoryRatePct = rate * 100;
+        }
+      });
+
       const { all, newCardOptions, alternatives } = calculateOptions({
         amount,
         creditScore,
         selectedMethods,
-        targetMonths
+        targetMonths,
+        purchaseCategory: state.purchaseCategory,
+        monthlyPaymentMode,
+        monthlyPmtValue,
+        isWorstCase: state.isWorstCase
       });
 
       state.results = all;
       const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
-      renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore);
+      renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount);
       document.getElementById('results-section').classList.remove('hidden');
       // Show email capture after first results
       if (!bnplEmailCaptureShown && typeof EmailCapture !== 'undefined') {
@@ -483,29 +648,44 @@ function addScenarioToggle() {
 }
 
 function recalculateResults() {
-  const amount = parseFloat(document.getElementById('purchase-amount').value);
+  const rawAmount = parseFloat(document.getElementById('purchase-amount').value);
+  const amount = getEffectiveAmount(rawAmount);
   const targetMonths = state.payoffMonths;
   const creditScore = document.getElementById('credit-score').value;
   
-  if (!amount || amount <= 0) return;
+  if (!rawAmount || rawAmount <= 0) return;
   
   const allMethods = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
   const selectedMethods = allMethods.filter(m => state.selectedMethods.has(m.id));
+
+  // Apply category-aware rewards
+  selectedMethods.forEach(m => {
+    if (m.rewardTiers && m.rewardTiers.length > 0) {
+      m._categoryRate = getCategoryRewardsRate(m, state.purchaseCategory);
+      m._categoryRatePct = m._categoryRate * 100;
+    }
+  });
 
   const { all, newCardOptions, alternatives } = calculateOptions({
     amount,
     creditScore,
     selectedMethods,
     targetMonths,
+    purchaseCategory: state.purchaseCategory,
+    monthlyPaymentMode: state.payoffMode === 'payment',
+    monthlyPmtValue: state.payoffMode === 'payment' ? parseFloat(document.getElementById('payoff-monthly-payment')?.value) || null : null,
     isWorstCase: state.isWorstCase
   });
 
   state.results = all;
   const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
-  renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore);
+  renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount);
 }
 
-function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore) {
+function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount) {
+
+// Net Cost tooltip HTML
+const netCostTooltip = '<span class="net-cost-tooltip"><span class="net-cost-icon">?</span><span class="net-cost-tip">Net Cost = purchase + interest + fees − rewards earned. Lower is better.</span></span>';
   const container = document.getElementById('results-cards');
   container.innerHTML = '';
 
@@ -530,7 +710,17 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths, 
   }
 
   const subtitle = document.getElementById('results-subtitle');
-  subtitle.textContent = `Best options for your ${fmt(amount)} purchase paid off in ${targetMonths} months.`;
+  let subtitleText = `Best options for your ${fmt(amount)} purchase`;
+  if (rawAmount && rawAmount !== amount) {
+    const rate = STATE_SALES_TAX[state.salesTaxState] || 0;
+    subtitleText += ` (incl. ${state.salesTaxState} ${rate.toFixed(1)}% tax)`;
+  }
+  if (state.payoffMode === 'payment' && state.monthlyPayment) {
+    subtitleText += ` at ${fmt(state.monthlyPayment)}/mo`;
+  } else {
+    subtitleText += ` paid off in ${targetMonths} months`;
+  }
+  subtitle.textContent = subtitleText + '.';
 
   // Add scenario toggle
   addScenarioToggle();
@@ -592,6 +782,38 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths, 
 
   // Other Time Periods Section
   renderOtherPeriods(methodsList, amount, creditScore, targetMonths);
+
+  // Best-match connector: mark the best match in the ranked list
+  if (all.length > 0) {
+    const bestId = all[0].id;
+    // Add connector badge after first standard result card
+    const firstCard = container.querySelector('.result-card');
+    if (firstCard) {
+      const isBest = firstCard.querySelector('.best-match-connector');
+      if (!isBest) {
+        const badge = document.createElement('div');
+        badge.className = 'best-match-connector';
+        badge.innerHTML = '🏆 Best Match — also #1 below';
+        firstCard.insertBefore(badge, firstCard.firstChild);
+      }
+    }
+  }
+
+  // Render all results into results-cards
+  all.forEach((r, i) => {
+    container.appendChild(createStandardResultCard(r, i + 1, all[0]));
+  });
+
+  // What's Next CTA
+  const ctaSection = document.getElementById('whats-next-cta');
+  if (ctaSection) {
+    ctaSection.classList.remove('hidden');
+    const ctaDebt = document.getElementById('cta-debt-planner');
+    const ctaRewards = document.getElementById('cta-rewards');
+    const rawAmt = rawAmount || amount;
+    if (ctaDebt) ctaDebt.href = `/debt-planner/?balance=${encodeURIComponent(rawAmt)}`;
+    if (ctaRewards) ctaRewards.href = `/rewards/?purchase=${encodeURIComponent(rawAmt)}&category=${encodeURIComponent(state.purchaseCategory)}`;
+  }
 
   // Keep the payoff table at bottom
   renderPayoffTable(all);
@@ -683,7 +905,7 @@ function createBestMatchCard(r) {
         <div class="result-type">${r.type}</div>
       </div>
       <div class="result-cost">
-        <div class="result-total">${fmt(r.netCost)}</div>
+        <div class="result-total">${fmt(r.netCost)} ${netCostTooltip}</div>
         ${r.rewardsEarned > 0 ? `<div class="result-savings">Incl. ${fmt(r.rewardsEarned)} rewards</div>` : ''}
       </div>
     </div>
@@ -1004,15 +1226,15 @@ function createStandardResultCard(r, rank, best) {
         ${availBadge}
       </div>
       <div class="result-cost">
-        <div class="result-total">${fmt(r.netCost)}</div>
+        <div class="result-total">${fmt(r.netCost)} ${rank === 1 ? netCostTooltip : ''}</div>
         ${savings !== null ? `<div class="result-savings">+${fmt(savings)} more</div>` : ''}
         ${isBest && r.rewardsEarned > 0 ? `<div class="result-savings">Incl. ${fmt(r.rewardsEarned)} rewards</div>` : ''}
       </div>
     </div>
     <div class="result-details">
       <div class="detail-item">
-        <span class="detail-label">${r.paymentLabel ? 'Schedule' : 'Monthly Payment'}</span>
-        <span class="detail-value">${r.paymentLabel || fmt(r.monthlyPayment)}</span>
+        <span class="detail-label">${r.paymentLabel ? 'Schedule' : (r.payoffDisplay ? 'Monthly Payment' : 'Monthly Payment')}</span>
+        <span class="detail-value">${r.payoffDisplay || r.paymentLabel || fmt(r.monthlyPayment)}</span>
       </div>
       <div class="detail-item">
         <span class="detail-label">Interest / Fees</span>
@@ -1154,7 +1376,7 @@ function renderPayoffTable(results) {
         <th>Purchase</th>
         <th>Interest + Fees</th>
         <th>Rewards</th>
-        <th>Net Total</th>
+        <th>Net Total <span class=\"net-cost-tooltip\"><span class=\"net-cost-icon\">?</span><span class=\"net-cost-tip\">Net Cost = purchase + interest + fees − rewards earned. Lower is better.</span></span></th>
         <th>Where</th>
       </tr>
     </thead>
