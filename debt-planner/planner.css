@@ -1326,6 +1326,67 @@
   }
 }
 
+/* APR Comparison Table (Credit Score Simulator) */
+.apr-comparison {
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--card-bg, #f8fafc);
+  border-radius: 10px;
+  border: 1px solid var(--border, #e2e8f0);
+}
+
+.apr-comparison h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  color: var(--text-primary, #1e293b);
+}
+
+.apr-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.apr-comparison-table th {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--border, #e2e8f0);
+  color: var(--text-secondary, #64748b);
+  font-weight: 600;
+}
+
+.apr-comparison-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border, #e2e8f0);
+}
+
+.apr-comparison-table tr.apr-improved td { background: rgba(16, 185, 129, 0.08); }
+.apr-comparison-table tr.apr-worsened td { background: rgba(239, 68, 68, 0.08); }
+.apr-comparison-table tr.apr-unchanged td { background: transparent; }
+
+.simulator-disclaimer {
+  margin: 10px 0 0 0;
+  font-size: 0.78rem;
+  color: var(--text-secondary, #64748b);
+  font-style: italic;
+}
+
+.btn-reset-simulator {
+  margin-top: 10px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  background: var(--primary, #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-reset-simulator:hover {
+  background: var(--primary-dark, #4f46e5);
+}
+
 /* Print Styles */
 @media print {
   .header, .planner-header, .footer, .btn-add, .btn-remove,

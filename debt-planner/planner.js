@@ -129,6 +129,8 @@ function addDebt(name, balance, apr, minPayment) {
     originalApr: parseFloat(apr) || 0, // Store original APR for credit score adjustments
     minPayment: parseFloat(minPayment) || 0
   });
+  // Rebuild simulator projections if active
+  if (simulatorState.score !== null) buildSimulatorProjections(simulatorState.score);
   renderDebtCards();
   updateSummary();
   updateConsolidationOptions();
@@ -138,6 +140,8 @@ function addDebt(name, balance, apr, minPayment) {
 
 function removeDebt(id) {
   debts = debts.filter(d => d.id !== id);
+  // Rebuild simulator projections if active
+  if (simulatorState.score !== null) buildSimulatorProjections(simulatorState.score);
   renderDebtCards();
   updateSummary();
   updateConsolidationOptions();
@@ -160,6 +164,8 @@ function updateDebt(id, field, value) {
   } else {
     debt[field] = parseFloat(value) || 0;
   }
+  // Rebuild simulator projections if active (APR change affects projections)
+  if (simulatorState.score !== null) buildSimulatorProjections(simulatorState.score);
   
   updateSummary();
   updateConsolidationOptions();
@@ -1362,6 +1368,37 @@ function renderCreditScoreSimulator() {
     `;
   }
   
+  // Build APR comparison rows if simulator projections exist
+  let aprComparisonHTML = '';
+  if (simulatorState.projectedDebts && simulatorState.projectedDebts.length > 0) {
+    const rows = simulatorState.projectedDebts.map(d => {
+      const actualApr = d.originalApr;
+      const projectedApr = d.projectedApr;
+      const monthlySavings = d.interestSavedPerMonth || 0;
+      const diffClass = projectedApr < actualApr ? 'apr-improved' : projectedApr > actualApr ? 'apr-worsened' : 'apr-unchanged';
+      return `<tr class="${diffClass}">
+        <td>${escapeHtml(d.name)}</td>
+        <td>${actualApr.toFixed(2)}%</td>
+        <td>${projectedApr.toFixed(2)}%</td>
+        <td>${monthlySavings > 0 ? 'Saves $' + monthlySavings.toFixed(2) + '/mo' : monthlySavings < 0 ? 'Costs $' + Math.abs(monthlySavings).toFixed(2) + '/mo' : 'No change'}</td>
+      </tr>`;
+    }).join('');
+    
+    aprComparisonHTML = `
+      <div class="apr-comparison">
+        <h4>💳 What if my credit score were ${simulatorState.score}?</h4>
+        <table class="apr-comparison-table">
+          <thead>
+            <tr><th>Debt</th><th>Actual APR</th><th>Projected APR</th><th>Impact</th></tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <p class="simulator-disclaimer">Score-to-APR projections are illustrative only. Actual APRs depend on issuer underwriting, income, and other factors beyond credit score.</p>
+        <button class="btn-reset-simulator" onclick="resetSimulator(); document.getElementById('credit-score-slider').value=700; document.getElementById('credit-score-input').value=700; updateCreditScore(700);">Reset to my actual score</button>
+      </div>
+    `;
+  }
+  
   simulatorSection.innerHTML = `
     <div class="credit-score-simulator-content">
       <h3>📈 Credit Score Impact Simulator</h3>
@@ -1414,6 +1451,8 @@ function renderCreditScoreSimulator() {
           <div class="projected-impact">Projected Impact: <span class="impact-value" style="color:${currentImpact.color}">${currentImpact.impact > 0 ? '+' : ''}${currentImpact.impact} points</span></div>
         </div>
       </div>
+      
+      ${aprComparisonHTML}
       
       ${utilizationExplanation}
       
@@ -1640,3 +1679,4 @@ window.exportAmortizationCSV = exportAmortizationCSV;
 window.updateCreditScore = updateCreditScore;
 window.updateCreditLimits = updateCreditLimits;
 window.updateBalances = updateBalances;
+window.resetSimulator = resetSimulator;
