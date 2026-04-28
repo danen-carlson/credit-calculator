@@ -32,9 +32,9 @@
     var banner = document.createElement('div');
     banner.id = 'pwa-install-banner';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Install CreditStudio as an app');
+    banner.setAttribute('aria-label', 'Install CreditStud.io as an app');
     banner.innerHTML =
-      '<span class="pwa-install-text">Install CreditStudio for quick access</span>' +
+      '<span class="pwa-install-text">Install CreditStud.io for quick access</span>' +
       '<button type="button" id="pwa-install-accept" class="pwa-install-btn pwa-install-accept">Install</button>' +
       '<button type="button" id="pwa-install-dismiss" class="pwa-install-btn pwa-install-dismiss" aria-label="Dismiss install prompt">Not now</button>';
     document.body.appendChild(banner);
