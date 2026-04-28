@@ -1,1 +1,451 @@
-{'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'How long does it take to pay off $10,000 in credit card debt?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'With minimum payments only, it could take 20+ years and cost over $15,000 in interest. With an extra $300-500 monthly payment, you can be debt-free in 2-3 years. Our debt planner shows your exact timeline.'}}, {'@type': 'Question', 'name': "What's the minimum payment on a $10,000 credit card?", 'acceptedAnswer': {'@type': 'Answer', 'text': 'Most credit cards require 2-3% of the balance as minimum payment, meaning $200-300 monthly for a $10,000 balance. However, this approach extends payoff time dramatically and costs thousands in interest.'}}, {'@type': 'Question', 'name': 'Is it better to pay off my smallest or highest interest credit card first?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Mathematically, the debt avalanche (highest interest first) saves more money. Psychologically, the debt snowball (smallest balance first) builds momentum. Choose based on what keeps you motivated long-term.'}}, {'@type': 'Question', 'name': 'How much can I save with a balance transfer for $10,000 debt?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Transferring a $10,000 balance from a 22.99% APR card to a 0% APR card for 18 months can save $2,000+ in interest. Just watch out for 3-5% transfer fees ($300-500) and ensure you pay off the balance before the promo ends.'}}, {'@type': 'Question', 'name': 'Should I consolidate $10,000 credit card debt with a personal loan?', 'acceptedAnswer': {'@type': 'Answer', 'text': "If you qualify for a personal loan with a lower interest rate than your credit cards, consolidation can simplify payments and reduce interest costs. However, you'll lose the flexibility of credit cards and face fixed monthly payments."}}, {'@type': 'Question', 'name': 'What are the fastest ways to pay off $10,000 in credit card debt?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'The fastest approaches include: 1) The debt avalanche method (pay minimums on all cards, extra toward highest interest), 2) Balance transfer to a 0% APR card, 3) Personal loan consolidation, 4) Increasing monthly payments by $300-500, 5) Cutting expenses to free up more payment money, 6) Taking on side income specifically for debt payoff.'}}, {'@type': 'Question', 'name': 'How can I calculate how long it will take to pay off $10,000 in credit card debt?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Our debt payoff calculator factors in your current balance, interest rate, and monthly payment to show your exact payoff timeline. It compares different strategies side-by-side so you can see which approach gets you debt-free fastest.'}}]}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fastest Way to Pay Off $10,000 in Credit Card Debt — CreditStud.io</title>
+  <meta name="description" content="Discover the fastest strategies to eliminate $10,000 in credit card debt. Compare avalanche, snowball, balance transfers, and consolidation — with real numbers and an interactive payoff calculator.">
+  <link rel="canonical" href="https://creditstud.io/learn/pay-off-10k-debt.html">
+  <meta property="og:title" content="Fastest Way to Pay Off $10,000 in Credit Card Debt">
+  <meta property="og:description" content="Compare avalanche, snowball, balance transfers, and consolidation — with real numbers and an interactive payoff calculator.">
+  <meta property="og:url" content="https://creditstud.io/learn/pay-off-10k-debt.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Fastest Way to Pay Off $10,000 in Credit Card Debt">
+  <meta name="twitter:description" content="Compare avalanche, snowball, balance transfers, and consolidation — with real numbers and an interactive payoff calculator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shared/components.css">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to pay off $10,000 in credit card debt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "With minimum payments only, it could take 20+ years and cost over $15,000 in interest. With an extra $300-500 monthly payment, you can be debt-free in 2-3 years. Our debt planner shows your exact timeline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the minimum payment on a $10,000 credit card?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most credit cards require 2-3% of the balance as minimum payment, meaning $200-300 monthly for a $10,000 balance. However, this approach extends payoff time dramatically and costs thousands in interest."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it better to pay off my smallest or highest interest credit card first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mathematically, the debt avalanche (highest interest first) saves more money. Psychologically, the debt snowball (smallest balance first) builds momentum. Choose based on what keeps you motivated long-term."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I save with a balance transfer for $10,000 debt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Transferring a $10,000 balance from a 22.99% APR card to a 0% APR card for 18 months can save $2,000+ in interest. Just watch out for 3-5% transfer fees ($300-500) and ensure you pay off the balance before the promo ends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I consolidate $10,000 credit card debt with a personal loan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you qualify for a personal loan with a lower interest rate than your credit cards, consolidation can simplify payments and reduce interest costs. However, you'll lose the flexibility of credit cards and face fixed monthly payments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the fastest ways to pay off $10,000 in credit card debt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The fastest approaches include: 1) The debt avalanche method (pay minimums on all cards, extra toward highest interest), 2) Balance transfer to a 0% APR card, 3) Personal loan consolidation, 4) Increasing monthly payments by $300-500, 5) Cutting expenses to free up more payment money, 6) Taking on side income specifically for debt payoff."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I calculate how long it will take to pay off $10,000 in credit card debt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our debt payoff calculator factors in your current balance, interest rate, and monthly payment to show your exact payoff timeline. It compares different strategies side-by-side so you can see which approach gets you debt-free fastest."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Fastest Way to Pay Off $10,000 in Credit Card Debt",
+    "description": "Discover the fastest strategies to eliminate $10,000 in credit card debt. Compare avalanche, snowball, balance transfers, and consolidation — with real numbers and an interactive payoff calculator.",
+    "author": {
+      "@type": "Organization",
+      "name": "CreditStud.io"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CreditStud.io",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://creditstud.io/icon.svg"
+      }
+    },
+    "datePublished": "2026-04-15",
+    "dateModified": "2026-04-28",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://creditstud.io/learn/pay-off-10k-debt.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+
+  <!-- DISCLOSURE -->
+<div class="site-disclosure-banner">
+  <div class="site-disclosure-container">
+    CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations. 
+    <a href="/disclosure.html">Learn more</a>
+  </div>
+</div>
+<!-- /DISCLOSURE -->
+
+  <!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <nav class="top-nav">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/compare/" class="nav-link">Compare</a>
+      <a href="/debt-planner/" class="nav-link">Debt Planner</a>
+      <a href="/rewards/" class="nav-link">Rewards</a>
+      <a href="/learn/" class="nav-link">Learn</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+    </nav>
+    <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+    <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
+  </div>
+</header>
+<!-- /HEADER -->
+
+  <main>
+    <div class="container" id="main">
+      <nav class="breadcrumbs">
+        <a href="/">Home</a><span class="sep">›</span><a href="/learn/">Learn</a><span class="sep">›</span>Pay Off $10K Debt
+      </nav>
+
+      <article class="seo-content">
+        <h1>Fastest Way to Pay Off $10,000 in Credit Card Debt</h1>
+        <p class="article-meta">
+          <span>📅 Last updated April 28, 2026</span> · <span>By CreditStud.io Editorial Team</span>
+        </p>
+
+        <p><small><em>Affiliate disclosure: CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our recommendations.</em></small></p>
+
+        <p class="lead">If you're carrying $10,000 in credit card debt at a typical 22% APR and making only minimum payments, you'll pay over <strong>$15,000 in interest</strong> and stay in debt for <strong>more than 20 years</strong>. That's the hard truth. The good news? With the right strategy — and an extra $300–$500/month — you can be completely debt-free in under 3 years and save thousands.</p>
+
+        <p>This guide breaks down every realistic payoff method, shows you the math with real numbers, and helps you pick the fastest path based on your situation.</p>
+
+        <div class="cta-box">
+          <h3>💳 Plan Your $10K Payoff</h3>
+          <p>See your exact payoff timeline, total interest, and how much you save with each strategy. Plug in your real numbers and get a personalized plan.</p>
+          <a href="/debt-planner/?balance=10000" class="cta-button">Plan Your $10K Payoff →</a>
+        </div>
+
+        <h2>The Minimum Payment Trap: Why $10K Takes 20+ Years</h2>
+
+        <p>Most credit cards calculate minimum payments as 2–3% of the outstanding balance, or a flat $25–$35, whichever is higher. On a $10,000 balance at 22% APR, a 2% minimum payment starts at <strong>$200/month</strong> — and only about $17 of that goes toward principal in the first month. The rest is interest.</p>
+
+        <p>Here's what minimum-only payments look like:</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Monthly Payment</th>
+                <th>Time to Pay Off</th>
+                <th>Total Interest Paid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td><strong>Minimum only (2%)</strong></td>
+                <td>$200 (declining)</td>
+                <td>~25 years</td>
+                <td>$15,400+</td>
+              </tr>
+              <tr>
+                <td>Fixed $300/month</td>
+                <td>$300</td>
+                <td>4.5 years</td>
+                <td>$5,980</td>
+              </tr>
+              <tr>
+                <td>Fixed $500/month</td>
+                <td>$500</td>
+                <td>2.3 years</td>
+                <td>$3,345</td>
+              </tr>
+              <tr>
+                <td>Fixed $800/month</td>
+                <td>$800</td>
+                <td>1.3 years</td>
+                <td>$1,568</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Going from the minimum to $500/month cuts your interest from $15,400 to $3,345 — a savings of <strong>$12,055</strong>. The math is dramatic.</p>
+
+        <h2>Strategy 1: The Debt Avalanche (Highest Interest First)</h2>
+
+        <p>The <strong>debt avalanche</strong> targets your highest-interest debt first. You pay the minimum on every account and put all extra money toward the card with the highest APR. Once that card is paid off, you redirect its payment to the next-highest-rate card.</p>
+
+        <h3>Example: Three cards totaling $10,000</h3>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Card</th>
+                <th>Balance</th>
+                <th>APR</th>
+                <th>Min Payment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td><strong>Card A (target first)</strong></td>
+                <td>$3,000</td>
+                <td><strong>26.99%</strong></td>
+                <td>$90</td>
+              </tr>
+              <tr>
+                <td>Card B</td>
+                <td>$4,000</td>
+                <td>22.99%</td>
+                <td>$120</td>
+              </tr>
+              <tr>
+                <td>Card C</td>
+                <td>$3,000</td>
+                <td>18.99%</td>
+                <td>$90</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>With an extra $300/month on top of minimums, the avalanche method eliminates Card A first (highest rate), then rolls that payment into Card B, then Card C. Over the life of the debt, avalanche saves <strong>$1,000–$2,000 more in interest</strong> than other methods because you're always attacking the most expensive debt.</p>
+
+        <h2>Strategy 2: The Debt Snowball (Smallest Balance First)</h2>
+
+        <p>The <strong>debt snowball</strong> flips the approach: you target the smallest balance first regardless of interest rate. The idea is that quick wins — watching a $3,000 balance drop to zero — build momentum and keep you motivated.</p>
+
+        <p>Using the same three cards above, snowball would attack Card A first (not because of its rate, but because it's tied for the smallest balance and you'll eliminate it fast). The psychological boost of wiping out a card entirely can be powerful. Research from the <em>Journal of Consumer Research</em> found people using snowball were more likely to persist with their debt payoff plan.</p>
+
+        <p><strong>The trade-off:</strong> Snowball costs more in interest — typically $500–$2,000 more than avalanche on $10,000 of debt, depending on your rate spread. But if it keeps you going when avalanche would make you quit, it's the cheaper option.</p>
+
+        <h2>Strategy 3: Balance Transfer to 0% APR</h2>
+
+        <p>A 0% APR balance transfer stops interest from accumulating, which means every dollar you pay goes directly toward principal. This is the single fastest math-based strategy if you qualify.</p>
+
+        <h3>The math on a $10,000 transfer</h3>
+
+        <p>Current card at 22% APR → transfer to 0% APR for 18 months:</p>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Factor</th>
+                <th>Without Transfer</th>
+                <th>With 0% Transfer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Transfer fee (3%)</td>
+                <td>$0</td>
+                <td>$300</td>
+              </tr>
+              <tr>
+                <td>Interest over 18 months</td>
+                <td>$3,120</td>
+                <td>$0</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Net savings</strong></td>
+                <td>—</td>
+                <td><strong>$2,820</strong></td>
+              </tr>
+              <tr>
+                <td>Monthly payment to clear in 18 months</td>
+                <td>$728</td>
+                <td>$572</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Even after the 3% transfer fee ($300), you save <strong>$2,820</strong> in interest — and your monthly payment to be debt-free within the promo period drops by $156/month. That's a game-changer.</p>
+
+        <p><strong>Watch out for:</strong> Transfer fees (3–5%), the regular APR that kicks in after the promo, and the temptation to rack up new charges on the old card. Read our full <a href="/learn/balance-transfer-calculator.html">balance transfer guide</a> for the details.</p>
+
+        <h2>Strategy 4: Personal Loan Consolidation</h2>
+
+        <p>A personal loan at a lower rate replaces your high-APR credit card debt with a fixed-rate, fixed-term loan. Current personal loan rates for good credit (670+ score) range from 8–18% — well below typical credit card APRs.</p>
+
+        <h3>$10,000 personal loan at 12% for 36 months</h3>
+        <ul>
+          <li>Monthly payment: <strong>$332</strong></li>
+          <li>Total interest: <strong>$1,957</strong></li>
+          <li>Total cost: <strong>$11,957</strong></li>
+        </ul>
+        <p>Compare that to $10,000 at 22% on a credit card with $300/month payments:</p>
+        <ul>
+          <li>Total interest: <strong>$5,980</strong></li>
+          <li>Time to pay off: <strong>4.5 years</strong></li>
+        </ul>
+        <p>The loan saves you <strong>$4,023 in interest</strong> and gets you debt-free 1.5 years faster, with a lower monthly payment. The catch: you need good enough credit to qualify, and some loans carry origination fees of 1–8%.</p>
+
+        <h2>Which Strategy Should You Choose?</h2>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Strategy</th>
+                <th>Best For</th>
+                <th>Interest Saved ($10K @ 22%)</th>
+                <th>Speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td><strong>Balance transfer (0% APR)</strong></td>
+                <td>Good credit, can pay off in 18–21 months</td>
+                <td>$2,800+</td>
+                <td>Fastest</td>
+              </tr>
+              <tr>
+                <td>Personal loan consolidation</td>
+                <td>Good credit, want fixed payments</td>
+                <td>$2,000–$4,000</td>
+                <td>Fast</td>
+              </tr>
+              <tr>
+                <td>Debt avalanche</td>
+                <td>Multiple cards, disciplined</td>
+                <td>$1,000–$2,000 vs. snowball</td>
+                <td>Same timeline, cheapest</td>
+              </tr>
+              <tr>
+                <td>Debt snowball</td>
+                <td>Need motivation, smaller debts mixed in</td>
+                <td>Less than avalanche, but worth it if it keeps you going</td>
+                <td>Same timeline</td>
+              </tr>
+              <tr>
+                <td>Minimum payments only</td>
+                <td>Nobody — avoid this</td>
+                <td>$0 (you pay the most)</td>
+                <td>25+ years 🐌</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="info-box success">
+          <strong>✅ The winning combo:</strong> If your credit is good enough, do a balance transfer to 0% APR <em>and</em> use the avalanche method for any remaining debt. This gives you the interest savings of the transfer plus the mathematical advantage of targeting highest-rate debt — and our <a href="/debt-planner/?balance=10000">debt planner</a> shows you exactly how this plays out with your numbers.
+        </div>
+
+        <h2>Quick Tactics That Accelerate Any Strategy</h2>
+
+        <h3>Cut expenses aggressively</h3>
+        <p>The average household can find $300–$500/month by cutting subscriptions, dining out less, and negotiating bills. That money directed at $10,000 in debt at 22% saves <strong>$8,000–$12,000 in interest</strong> over the life of the debt.</p>
+
+        <h3>Add a side income stream</h3>
+        <p>An extra $500/month from a side gig (delivery, tutoring, freelancing) cuts a 25-year payoff to under 2 years. Even $200/month extra shaves years off.</p>
+
+        <h3>Negotiate a lower APR</h3>
+        <p>Call your card issuer and ask for a lower rate. A 2024 LendingTree survey found that <strong>76% of people who asked for a lower APR got one</strong>, with an average reduction of 6 percentage points. On $10,000, dropping from 22% to 16% saves <strong>$600/year in interest</strong>.</p>
+
+        <h3>Automate your payments</h3>
+        <p>Set up automatic payments for the minimum on every card, plus an automatic extra payment to your target card. Autopay eliminates missed payments (and their 29.99% penalty APRs) and removes the temptation to spend the money elsewhere.</p>
+
+        <h2>FAQ</h2>
+
+        <h3>How long does it take to pay off $10,000 in credit card debt?</h3>
+        <p>With minimum payments only, it could take 20+ years and cost over $15,000 in interest. With an extra $300–$500 monthly payment, you can be debt-free in 2–3 years. Our <a href="/debt-planner/?balance=10000">debt planner</a> shows your exact timeline.</p>
+
+        <h3>What's the minimum payment on a $10,000 credit card?</h3>
+        <p>Most credit cards require 2–3% of the balance as minimum payment, meaning $200–300 monthly for a $10,000 balance. However, this approach extends payoff time dramatically and costs thousands in interest.</p>
+
+        <h3>Is it better to pay off my smallest or highest interest credit card first?</h3>
+        <p>Mathematically, the debt avalanche (highest interest first) saves more money. Psychologically, the debt snowball (smallest balance first) builds momentum. Choose based on what keeps you motivated long-term.</p>
+
+        <h3>How much can I save with a balance transfer for $10,000 debt?</h3>
+        <p>Transferring a $10,000 balance from a 22.99% APR card to a 0% APR card for 18 months can save $2,000+ in interest. Just watch out for 3–5% transfer fees ($300–$500) and ensure you pay off the balance before the promo ends.</p>
+
+        <h3>Should I consolidate $10,000 credit card debt with a personal loan?</h3>
+        <p>If you qualify for a personal loan with a lower interest rate than your credit cards, consolidation can simplify payments and reduce interest costs. However, you'll lose the flexibility of credit cards and face fixed monthly payments.</p>
+
+        <h3>What are the fastest ways to pay off $10,000 in credit card debt?</h3>
+        <p>The fastest approaches include: 1) The debt avalanche method (pay minimums on all cards, extra toward highest interest), 2) Balance transfer to a 0% APR card, 3) Personal loan consolidation, 4) Increasing monthly payments by $300–500, 5) Cutting expenses to free up more payment money, 6) Taking on side income specifically for debt payoff.</p>
+
+        <h3>How can I calculate how long it will take to pay off $10,000 in credit card debt?</h3>
+        <p>Our debt payoff calculator factors in your current balance, interest rate, and monthly payment to show your exact payoff timeline. It compares different strategies side-by-side so you can see which approach gets you debt-free fastest.</p>
+
+        <div class="related-articles">
+          <h3>📚 Related Resources</h3>
+          <div class="related-grid">
+            <a href="/learn/snowball-vs-avalanche.html" class="related-card">
+              <div class="related-card-icon">⚖️</div>
+              <h4>Snowball vs Avalanche: Which Is Better?</h4>
+              <p>Detailed comparison of the two most popular debt payoff methods.</p>
+            </a>
+            <a href="/learn/balance-transfer-calculator.html" class="related-card">
+              <div class="related-card-icon">🔄</div>
+              <h4>0% APR Balance Transfer Calculator</h4>
+              <p>Calculate your savings from transferring high-interest debt to a 0% card.</p>
+            </a>
+            <a href="/blog/credit-card-benefits-youre-not-using.html" class="related-card">
+              <div class="related-card-icon">💳</div>
+              <h4>Credit Card Benefits You're Not Using</h4>
+              <p>12 overlooked perks worth $1,000+/year on cards you already have.</p>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+    <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
+  </div>
+</footer>
+<!-- /FOOTER -->
+
+  <script defer src="/shared/pwa.js"></script>
+</body>
+</html>
