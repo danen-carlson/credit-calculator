@@ -21,7 +21,8 @@ const cardsData = [
       everything: { rate: 2 }
     },
     pointValue: 1.0,
-    perks: ['2% on everything — no categories to track', 'No annual fee', 'No foreign transaction fees', '0% intro APR for 18 months on balance transfers'],
+    // Balance transfer fee: 3% intro ($5 min) first 4 months, then 5% ($5 min) — Verified 2026-04-28
+    perks: ['2% on everything — no categories to track', 'No annual fee', 'No foreign transaction fees', '0% intro APR for 18 months on balance transfers', '3% intro BT fee (first 4 months), then 5%'],
     bestFor: 'Simplicity Seekers',
     affiliateLink: '',
     affiliateNetwork: '',
@@ -159,19 +160,20 @@ const cardsData = [
     rewards: {
       groceries: { rate: 1 },
       dining: { rate: 1 },
-      gas: { rate: 5, note: 'Gas stations' },
+      gas: { rate: 1 },
       travel: { rate: 1 },
       online: { rate: 1 },
-      streaming: { rate: 2 },
-      utilities: { rate: 5 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
       everything: { rate: 1 }
     },
     pointValue: 1.0,
-    perks: ['5% on 2 chosen categories (up to $3,000/quarter combined)', '2% on 1 everyday category', 'Utilities & gas at 5% are top picks', 'No annual fee'],
-    bestFor: 'Utility & Gas Spenders',
+    perks: ['5% on 2 chosen categories (up to $2,000/quarter combined)', '2% on 1 everyday category', 'You pick the categories that match YOUR spending', 'No annual fee'],
+    bestFor: 'Custom Category Pickers',
     affiliateLink: '',
     affiliateNetwork: '',
-    isCrypto: false
+    isCrypto: false,
+    customizableCategories: true
   },
   {
     id: 'citi-custom-cash',

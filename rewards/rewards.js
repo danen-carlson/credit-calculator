@@ -268,15 +268,56 @@
     let totalAnnual = 0;
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
 
+    // User-chosen 5% categories (spendKey level) and 2% category
+    const fivePctSpendKeys = usbFivePctSelections;
+    const twoPctSpendKey = usbTwoPctSelection;
+
+    // Track combined 5% spending for the quarterly cap
+    let combined5PctAnnualSpend = 0;
+
     for (const cat of categories) {
       const monthlySpend = spending[cat] || 0;
-      const reward = cardDataForUSB.rewards[cat];
-      const rate = reward.rate;
-      // Cashback card: rate is already the percentage
-      const annualValue = monthlySpend * (rate / 100) * 12;
+      let rate = 1; // default 1% on everything
 
-      breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue };
-      totalAnnual += annualValue;
+      if (fivePctSpendKeys.includes(cat)) {
+        rate = 5;
+      } else if (cat === twoPctSpendKey) {
+        rate = 2;
+      }
+
+      if (rate === 5) {
+        combined5PctAnnualSpend += monthlySpend * 12;
+        breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue: 0, note: '5% (user chosen)' };
+        // annualValue calculated after the loop once we know total 5% spending
+      } else {
+        const annualValue = monthlySpend * (rate / 100) * 12;
+        breakdown[cat] = { monthlySpend, rate, annualPoints: 0, annualValue };
+        totalAnnual += annualValue;
+      }
+    }
+
+    // Apply combined 5% quarterly cap: $2,000/quarter = $8,000/year at 5%, then drops to 1%
+    if (combined5PctAnnualSpend > 0) {
+      const cappedSpend = Math.min(combined5PctAnnualSpend, USB_ANNUAL_5PCT_CAP);
+      const overCapSpend = Math.max(0, combined5PctAnnualSpend - USB_ANNUAL_5PCT_CAP);
+
+      for (const cat of categories) {
+        if (fivePctSpendKeys.includes(cat)) {
+          const monthlySpend = spending[cat] || 0;
+          const catAnnualSpend = monthlySpend * 12;
+          const proportion = combined5PctAnnualSpend > 0 ? catAnnualSpend / combined5PctAnnualSpend : 1;
+
+          const catCappedSpend = cappedSpend * proportion;
+          const catOverCapSpend = overCapSpend * proportion;
+
+          const annualValue = catCappedSpend * 0.05 + catOverCapSpend * 0.01;
+          totalAnnual += annualValue;
+          breakdown[cat].annualValue = annualValue;
+          if (overCapSpend > 0) {
+            breakdown[cat].note = `5% up to $${USB_QUARTERLY_CAP.toLocaleString()}/qtr combined, then 1%`;
+          }
+        }
+      }
     }
 
     // Calculate net annual value
@@ -285,7 +326,7 @@
     let signupBonusValue = 0;
     let bonusNote = '';
     let annualCreditsNote = '';
-    
+
     // Handle signup bonus for first year view
     const card = cardsData.find(c => c.id === 'us-bank-cash-plus');
     if (yearView === 'first' && card && card.signupBonus && card.signupBonus.value > 0) {
@@ -304,6 +345,11 @@
       }
     }
 
+    // Build choice note
+    const fiveLabels = usbFivePctOptionLabels.join(' + ');
+    const twoLabel = usbTwoPctOptionLabel;
+    const choiceNote = `Your picks: 5% on ${fiveLabels}, 2% on ${twoLabel}`;
+
     return {
       grossAnnual,
       annualFee: 0,
@@ -311,23 +357,80 @@
       signupBonusValue,
       annualCreditsNote,
       bonusNote,
-      breakdown
+      breakdown,
+      note: choiceNote,
+      usbChosenCategories: true
     };
   }
 
-  // Inline USB card data for calculation
-  const cardDataForUSB = {
-    rewards: {
-      groceries: { rate: 1 },
-      dining: { rate: 1 },
-      gas: { rate: 5 },
-      travel: { rate: 1 },
-      online: { rate: 1 },
-      streaming: { rate: 2 },
-      utilities: { rate: 5 },
-      everything: { rate: 1 }
+  // ===================== US BANK CASH+ CATEGORY PICKER =====================
+
+  // Eligible 5% categories for US Bank Cash+
+  // Each option maps to one of our 8 spending categories and has a human-readable label
+  const usbFivePercentOptions = [
+    { spendKey: 'utilities', label: 'Home Utilities', description: 'Electric, gas, water, internet' },
+    { spendKey: 'streaming', label: 'TV, Internet & Streaming', description: 'Netflix, Hulu, Spotify, internet bill' },
+    { spendKey: 'dining', label: 'Fast Food', description: 'Fast food restaurants' },
+    { spendKey: 'gas', label: 'Ground Transportation', description: 'Gas stations, rideshare, transit, parking' },
+    { spendKey: 'online', label: 'Department Stores', description: "Macy's, Kohl's, JCPenney, etc." },
+    { spendKey: 'online', label: 'Electronics Stores', description: 'Best Buy, Apple Store, etc.' },
+    { spendKey: 'online', label: 'Select Clothing Stores', description: 'Qualifying clothing retailers' },
+    { spendKey: 'online', label: 'Cell Phone Providers', description: 'Wireless carriers & plans' },
+    { spendKey: 'dining', label: 'Movie Theaters', description: 'Cinema purchases' },
+    { spendKey: 'online', label: 'Gyms/Fitness Centers', description: 'Gym memberships & fitness' },
+    { spendKey: 'online', label: 'Sporting Goods Stores', description: 'Sporting goods purchases' },
+    { spendKey: 'online', label: 'Furniture Stores', description: 'Furniture & home furnishing stores' }
+  ];
+
+  const usbTwoPercentOptions = [
+    { spendKey: 'groceries', label: 'Grocery Stores', description: 'Supermarkets & grocery' },
+    { spendKey: 'dining', label: 'Restaurants', description: 'Full-service dining' },
+    { spendKey: 'gas', label: 'Gas Stations & EV Charging', description: 'Gas & electric vehicle charging' }
+  ];
+
+  // Default selections: high-value picks for most users
+  let usbFivePctSelections = ['utilities', 'streaming']; // Two 5% spend-category keys
+  let usbFivePctOptionLabels = ['Home Utilities', 'TV, Internet & Streaming'];
+  let usbTwoPctSelection = 'dining'; // One 2% spend-category key
+  let usbTwoPctOptionLabel = 'Restaurants';
+
+  // Quarterly combined cap for 5% categories
+  const USB_QUARTERLY_CAP = 2000;  // $2,000/quarter combined spending cap at 5%
+  const USB_ANNUAL_5PCT_CAP = USB_QUARTERLY_CAP * 4; // $8,000/year
+
+  // Load saved selections from localStorage
+  function loadUSBSelections() {
+    try {
+      const saved = localStorage.getItem('usb_cash_plus_selections');
+      if (saved) {
+        const data = JSON.parse(saved);
+        if (data.fivePct && data.fivePct.length === 2) {
+          usbFivePctSelections = data.fivePct;
+          usbFivePctOptionLabels = data.fivePctLabels || usbFivePctOptionLabels;
+        }
+        if (data.twoPct) {
+          usbTwoPctSelection = data.twoPct;
+          usbTwoPctOptionLabel = data.twoPctLabel || usbTwoPctOptionLabel;
+        }
+      }
+    } catch (e) {
+      // Ignore parse errors, use defaults
     }
-  };
+  }
+
+  // Save selections to localStorage
+  function saveUSBSelections() {
+    try {
+      localStorage.setItem('usb_cash_plus_selections', JSON.stringify({
+        fivePct: usbFivePctSelections,
+        fivePctLabels: usbFivePctOptionLabels,
+        twoPct: usbTwoPctSelection,
+        twoPctLabel: usbTwoPctOptionLabel
+      }));
+    } catch (e) {
+      // Ignore storage errors
+    }
+  }
 
   function calculateChaseFreedomFlex(spending, pointValue, yearView = 'ongoing') {
     const breakdown = {};
@@ -729,6 +832,8 @@
               ${card.bonusNote ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">⚠️ ${card.bonusNote}</div>` : ''}
               ${card.note ? `<div style="font-size:0.8rem;color:var(--warning);background:var(--warning-light);padding:6px 10px;border-radius:6px;margin-bottom:12px;">${card.note}</div>` : ''}
 
+              ${card.id === 'us-bank-cash-plus' ? renderUSBCategoryPicker() : ''}
+
               <div class="rewards-breakdown">
                 <div class="rewards-breakdown-title">Rewards Breakdown</div>
                 ${breakdownHTML}
@@ -780,6 +885,9 @@
 
         // Store current rankings for next comparison
         previousRankings = currentRankings;
+
+        // Sync USB category picker after re-render
+        syncUSBPickerToState();
 
         // Render comparison if 2+ selected
         renderComparison(results);
@@ -1294,9 +1402,129 @@
     }
   };
 
+  // ===================== US BANK CASH+ CATEGORY PICKER UI =====================
+
+  function renderUSBCategoryPicker() {
+    const fivePctOpts = usbFivePercentOptions.map(opt =>
+      `<option value="${opt.spendKey}" data-label="${opt.label}">${opt.label} — ${opt.description}</option>`
+    ).join('');
+
+    const twoPctOpts = usbTwoPercentOptions.map(opt =>
+      `<option value="${opt.spendKey}" data-label="${opt.label}">${opt.label} — ${opt.description}</option>`
+    ).join('');
+
+    return `
+      <div class="usb-picker" id="usb-picker">
+        <div class="usb-picker-header" onclick="toggleUSBPicker()" role="button" tabindex="0" aria-expanded="false" aria-controls="usb-picker-body">
+          <span class="usb-picker-title">⚙️ Customize Your Categories</span>
+          <span class="usb-picker-toggle" id="usb-picker-chevron">▼</span>
+        </div>
+        <div class="usb-picker-body" id="usb-picker-body" style="display:none;">
+          <p class="usb-picker-explainer">US Bank Cash+ lets you <strong>pick your own 5% categories</strong> — that's what makes it powerful. Choose the two categories where you spend the most to maximize your rewards.</p>
+          <div class="usb-picker-row">
+            <label class="usb-picker-label">5% Category 1</label>
+            <select class="usb-picker-select" id="usb-five-1" onchange="updateUSBPicks()">
+              ${fivePctOpts}
+            </select>
+          </div>
+          <div class="usb-picker-row">
+            <label class="usb-picker-label">5% Category 2</label>
+            <select class="usb-picker-select" id="usb-five-2" onchange="updateUSBPicks()">
+              ${fivePctOpts}
+            </select>
+          </div>
+          <div class="usb-picker-row">
+            <label class="usb-picker-label">2% Category</label>
+            <select class="usb-picker-select" id="usb-two" onchange="updateUSBPicks()">
+              ${twoPctOpts}
+            </select>
+          </div>
+          <div class="usb-picker-note">5% rewards capped at $2,000 combined spend per quarter ($8,000/year), then drops to 1%. 2% has no cap.</div>
+        </div>
+      </div>
+    `;
+  }
+
+  window.toggleUSBPicker = function() {
+    const body = document.getElementById('usb-picker-body');
+    const chevron = document.getElementById('usb-picker-chevron');
+    const header = document.querySelector('.usb-picker-header');
+    if (!body) return;
+    if (body.style.display === 'none') {
+      body.style.display = 'block';
+      chevron.textContent = '▲';
+      header.setAttribute('aria-expanded', 'true');
+    } else {
+      body.style.display = 'none';
+      chevron.textContent = '▼';
+      header.setAttribute('aria-expanded', 'false');
+    }
+  };
+
+  window.updateUSBPicks = function() {
+    const sel5_1 = document.getElementById('usb-five-1');
+    const sel5_2 = document.getElementById('usb-five-2');
+    const sel2 = document.getElementById('usb-two');
+    if (!sel5_1 || !sel5_2 || !sel2) return;
+
+    let val5_1 = sel5_1.value;
+    let val5_2 = sel5_2.value;
+    const opt5_1 = sel5_1.options[sel5_1.selectedIndex];
+    const opt5_2 = sel5_2.options[sel5_2.selectedIndex];
+    const opt2 = sel2.options[sel2.selectedIndex];
+
+    let label5_1 = opt5_1.getAttribute('data-label');
+    let label5_2 = opt5_2.getAttribute('data-label');
+    const label2 = opt2.getAttribute('data-label');
+
+    // Validation: can't pick the exact same option twice
+    if (val5_1 === val5_2 && label5_1 === label5_2) {
+      // Different labels mapping to the same spendKey is OK
+      // But same label means same real category — not allowed
+      sel5_2.selectedIndex = sel5_1.selectedIndex === 0 ? 1 : 0;
+      val5_2 = sel5_2.value;
+      label5_2 = sel5_2.options[sel5_2.selectedIndex].getAttribute('data-label');
+    }
+
+    usbFivePctSelections = [val5_1, val5_2];
+    usbFivePctOptionLabels = [label5_1, label5_2];
+    usbTwoPctSelection = sel2.value;
+    usbTwoPctOptionLabel = label2;
+
+    saveUSBSelections();
+    renderResults();
+  };
+
+  function syncUSBPickerToState() {
+    const sel5_1 = document.getElementById('usb-five-1');
+    const sel5_2 = document.getElementById('usb-five-2');
+    const sel2 = document.getElementById('usb-two');
+    if (!sel5_1 || !sel5_2 || !sel2) return;
+
+    for (let i = 0; i < sel5_1.options.length; i++) {
+      if (sel5_1.options[i].value === usbFivePctSelections[0] && sel5_1.options[i].getAttribute('data-label') === usbFivePctOptionLabels[0]) {
+        sel5_1.selectedIndex = i;
+        break;
+      }
+    }
+    for (let i = 0; i < sel5_2.options.length; i++) {
+      if (sel5_2.options[i].value === usbFivePctSelections[1] && sel5_2.options[i].getAttribute('data-label') === usbFivePctOptionLabels[1]) {
+        sel5_2.selectedIndex = i;
+        break;
+      }
+    }
+    for (let i = 0; i < sel2.options.length; i++) {
+      if (sel2.options[i].value === usbTwoPctSelection && sel2.options[i].getAttribute('data-label') === usbTwoPctOptionLabel) {
+        sel2.selectedIndex = i;
+        break;
+      }
+    }
+  }
+
   // ===================== INIT =====================
 
   function init() {
+    loadUSBSelections();
     initSpendingInputs();
     renderResults();
 
