@@ -1,6 +1,6 @@
 // CreditStud.io Service Worker
 // Strategy: cache-first for static assets, network-first for HTML navigations.
-const CACHE_VERSION = 'creditstudio-v1';
+const CACHE_VERSION = 'creditstud-v2-2026-04-28';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -20,7 +20,18 @@ const STATIC_ASSETS = [
   '/debt-planner/planner.css',
   '/debt-planner/charts.js',
   '/manifest.webmanifest',
-  '/icon.svg'
+  '/icon.svg',
+  '/shared/share.js',
+  '/shared/share.css',
+  '/shared/email-capture.js',
+  '/shared/email-capture.css',
+  '/shared/apply-button.js',
+  '/shared/components.css',
+  '/shared/pwa.js',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/offline.html',
+  '/og-images/home.png'
 ];
 
 // Install: pre-cache core assets.
@@ -63,7 +74,7 @@ self.addEventListener('fetch', (event) => {
   // Skip URL-state shared links (they're dynamic by design).
   if (url.searchParams.has('share')) return;
 
-  // HTML navigations: network-first, fall back to cached page, then home.
+  // HTML navigations: network-first, fall back to cached page, then offline.html.
   if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
     event.respondWith(
       fetch(req)
@@ -74,7 +85,7 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() =>
-          caches.match(req).then((cached) => cached || caches.match('/'))
+          caches.match(req).then((cached) => cached || caches.match('/offline.html'))
         )
     );
     return;
