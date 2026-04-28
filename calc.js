@@ -514,10 +514,15 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, 
       if (method.id && method.id.startsWith('custom-')) {
         result = evaluateCustom(method, amount, creditScore, targetMonths);
       } else if (method.type === 'bnpl-4') {
-        // Only show Pay in 4 if target is <= 3 months (6 weeks = ~1.5 months)
-        // Otherwise it's not a viable option for the user's timeline
-        if (targetMonths <= 3) {
-          result = evaluateBnpl(method, amount, isWorstCase, creditScore, targetMonths);
+        // Pay-in-4 is always the cheapest option (0% interest) when amount is within range.
+        // Show it regardless of targetMonths — finishing early is a good thing.
+        result = evaluateBnpl(method, amount, isWorstCase, creditScore, targetMonths);
+        // Mark that it finishes well ahead of the user's target when targetMonths > 3
+        if (result && targetMonths > 3) {
+          result.finishesEarly = true;
+          result.actualTermLabel = '~6 weeks';
+          result.notes = result.notes || [];
+          result.notes.push(`Pays off in ~6 weeks (ahead of your ${targetMonths}-month goal)`);
         }
       } else if (method.type === 'bnpl-monthly') {
         result = evaluateBnplMonthly(method, amount, creditScore, targetMonths, isWorstCase);
@@ -558,18 +563,9 @@ function evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths) {
   const fees = method.annualFee || 0;
   const rewardsEarned = (amount * (method.pointsRate || 0) / 100) * (method.pointValue || 1);
 
-  // Calculate interest for target months at regular APR
-  const r = effectiveApr / 100 / 12;
-  const monthlyPmt = amount / targetMonths;
-  let balance = amount;
-  let totalInt = 0;
-
-  for (let i = 0; i < targetMonths; i++) {
-    const monthInterest = balance * r;
-    totalInt += monthInterest;
-    balance = balance - monthlyPmt + monthInterest;
-    if (balance <= 0) break;
-  }
+  // Standard amortization: level monthly payment over targetMonths at effectiveApr
+  const pmt = monthlyPayment(amount, effectiveApr, targetMonths);
+  const totalInt = totalInterest(amount, effectiveApr, targetMonths);
 
   const netCost = amount + totalInt + fees - rewardsEarned;
 
@@ -584,7 +580,7 @@ function evaluateCreditCardNoIntro(method, amount, creditScore, targetMonths) {
     rewardsEarned: rewardsEarned,
     totalCost: amount + totalInt + fees,
     netCost: netCost,
-    monthlyPayment: monthlyPmt,
+    monthlyPayment: pmt,
     termMonths: targetMonths,
     termDisplay: `${targetMonths} months`,
     availability: 'anywhere',
@@ -602,36 +598,37 @@ function evaluateCreditCardWithIntro(method, amount, creditScore, targetMonths) 
 
   const fees = method.annualFee || 0;
   const rewardsEarned = (amount * (method.pointsRate || 0) / 100) * (method.pointValue || 1);
-  const monthlyPmt = amount / targetMonths;
 
-  // Calculate interest if paying over target months with intro period
-  let interestPaid = 0;
-  if (!withinIntro && effectiveApr > 0) {
+  let monthlyPmt;
+  let interestPaid;
+
+  if (withinIntro || effectiveApr === 0) {
+    // Entire payoff falls within the 0% intro period, or APR is 0
+    monthlyPmt = amount / targetMonths;
+    interestPaid = 0;
+  } else {
+    // Two-phase amortization:
+    //   Phase 1 (intro): 0% interest, balance reduces by pmt each month
+    //   Phase 2 (post-intro): remaining balance amortized at regular APR over remaining months
+    //
+    //   A level monthly payment pmt must satisfy:
+    //     remaining = amount - pmt * introMonths
+    //     pmt = remaining * r / (1 - (1+r)^(-(targetMonths - introMonths)))
+    //   Solving:
+    //     pmt = amount * A / (1 + introMonths * A)
+    //     where A = r / (1 - (1+r)^(-(targetMonths - introMonths)))
     const r = effectiveApr / 100 / 12;
-    let balance = amount;
-    for (let i = 0; i < targetMonths; i++) {
-      if (i >= introMonths) {
-        const monthInterest = balance * r;
-        interestPaid += monthInterest;
-        balance += monthInterest;
-      }
-      balance -= monthlyPmt;
-      if (balance <= 0) break;
-    }
+    const postIntroN = targetMonths - introMonths;
+    const A = r / (1 - Math.pow(1 + r, -postIntroN));
+    monthlyPmt = (amount * A) / (1 + introMonths * A);
+    const totalPaid = monthlyPmt * targetMonths;
+    interestPaid = totalPaid - amount;
   }
 
   const netCost = amount + interestPaid + fees - rewardsEarned;
 
-  // Calculate what this same card would cost WITHOUT intro (existing card)
-  const r = effectiveApr / 100 / 12;
-  let balanceExisting = amount;
-  let interestExisting = 0;
-  for (let i = 0; i < targetMonths; i++) {
-    const monthInterest = balanceExisting * r;
-    interestExisting += monthInterest;
-    balanceExisting = balanceExisting - monthlyPmt + monthInterest;
-    if (balanceExisting <= 0) break;
-  }
+  // Calculate what this same card would cost WITHOUT intro (existing card) using standard amortization
+  const interestExisting = totalInterest(amount, effectiveApr, targetMonths);
   const netCostExisting = amount + interestExisting + fees - rewardsEarned;
 
   return {
