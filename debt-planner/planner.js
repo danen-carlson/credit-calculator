@@ -13,6 +13,12 @@ let consolidationResults = null;
 let creditScore = 700; // Default credit score
 let totalCreditLimits = 15000; // Default total credit limits
 let currentBalances = 5000; // Default current balances
+// Simulator what-if state — NEVER mutates debts[] directly
+let simulatorState = {
+  score: null,           // simulated score (null = no simulation active)
+  projectedDebts: null, // deep copy of debts with simulated APRs
+  projectedScoreDelta: 0
+};
 // `strategyComparisonChart` lives in charts.js to keep chart state co-located
 
 // Emit a debts-changed event so the share URL module can re-serialize.
@@ -37,20 +43,52 @@ window.setDebts = function (next) {
 window.debts = debts;
 
 // DEBT_COLORS is defined in charts.js — that's the only place it's used
+// Balance transfer card data — verified against issuer pages 2026-04-28.
+// Many issuers offer a lower intro fee for transfers in the first ~60 days/4 months,
+// then jump to a higher standard fee. We model both.
 const BALANCE_TRANSFER_CARDS = [
   {
     id: 'citi-double-cash',
     name: 'Citi Double Cash',
     introAprMonths: 18,
-    transferFeePct: 0,
-    postPromoApr: 18.24,
+    // CORRECTED 2026-04-28: was 0 (silently making this look free). Real: 3% intro
+    // (first 4 months, $5 min), then 5% standard. Source: citi.com / wallethub.com
+    transferFeePct: 3,
+    transferFeeStandardPct: 5,
+    transferFeeMinDollars: 5,
+    postPromoApr: 19.24,
     creditLimit: 8000
+  },
+  {
+    id: 'wells-fargo-reflect',
+    name: 'Wells Fargo Reflect',
+    introAprMonths: 21,
+    // 3% intro (first 120 days, $5 min) then 5%. Source: wellsfargo.com
+    transferFeePct: 3,
+    transferFeeStandardPct: 5,
+    transferFeeMinDollars: 5,
+    postPromoApr: 19.24,
+    creditLimit: 7000
+  },
+  {
+    id: 'citi-simplicity',
+    name: 'Citi Simplicity',
+    introAprMonths: 21,
+    // 3% intro (first 4 months, $5 min) then 5%. Source: citi.com
+    transferFeePct: 3,
+    transferFeeStandardPct: 5,
+    transferFeeMinDollars: 5,
+    postPromoApr: 19.24,
+    creditLimit: 6000
   },
   {
     id: 'chase-freedom-flex',
     name: 'Chase Freedom Flex',
     introAprMonths: 15,
+    // 3% intro (first 60 days, $5 min) then 5%. Source: chase.com
     transferFeePct: 3,
+    transferFeeStandardPct: 5,
+    transferFeeMinDollars: 5,
     postPromoApr: 20.24,
     creditLimit: 6000
   },
@@ -58,15 +96,21 @@ const BALANCE_TRANSFER_CARDS = [
     id: 'discover-it',
     name: 'Discover it',
     introAprMonths: 15,
+    // 3% intro then 5% standard. Source: discover.com
     transferFeePct: 3,
+    transferFeeStandardPct: 5,
+    transferFeeMinDollars: 5,
     postPromoApr: 19.24,
     creditLimit: 7000
   },
   {
     id: 'amex-blue-cash',
-    name: 'Amex Blue Cash',
+    name: 'Amex Blue Cash Everyday',
     introAprMonths: 15,
+    // 3% flat ($5 min). Amex generally doesn't tier the BT fee. Source: americanexpress.com
     transferFeePct: 3,
+    transferFeeStandardPct: 3,
+    transferFeeMinDollars: 5,
     postPromoApr: 21.24,
     creditLimit: 7500
   }
@@ -1095,44 +1139,50 @@ function updateCreditScore(value) {
   document.getElementById('credit-score-slider').value = creditScore;
   document.getElementById('credit-score-input').value = creditScore;
   
-  // Update debt APRs based on credit score change
+  // Build a projected what-if snapshot — NEVER touch debts[]
   if (oldCreditScore !== creditScore) {
-    updateDebtAPRsBasedOnCreditScore(oldCreditScore, creditScore);
+    buildSimulatorProjections(creditScore);
   }
   
   renderCreditScoreSimulator();
 }
 
-// Update debt APRs when credit score changes
-function updateDebtAPRsBasedOnCreditScore(oldScore, newScore) {
-  // Only update if there are debts
-  if (debts.length === 0) return;
+// Build simulated debt projections based on a hypothetical credit score.
+// This writes ONLY to simulatorState.projectedDebts — never to debts[].
+function buildSimulatorProjections(newScore) {
+  if (debts.length === 0) {
+    simulatorState.projectedDebts = null;
+    simulatorState.score = null;
+    simulatorState.projectedScoreDelta = 0;
+    return;
+  }
   
-  // Calculate the change in credit score
-  const scoreChange = newScore - oldScore;
+  const scoreChange = newScore - 700; // delta from baseline 700
+  simulatorState.score = newScore;
+  simulatorState.projectedScoreDelta = scoreChange;
   
-  // Update each debt's APR based on credit score change
-  debts.forEach(debt => {
-    // Store original APR if not already stored
-    if (debt.originalApr === undefined) {
-      debt.originalApr = debt.apr;
-    }
-    
-    // Adjust APR based on credit score change
-    // Higher credit score = lower APR (improved terms)
-    // Lower credit score = higher APR (worse terms)
-    // Using a simplified model where APR changes by 0.1% per 10 credit score points
-    const aprAdjustment = -scoreChange * 0.01; // Negative because higher score means lower APR
-    debt.apr = Math.max(0, debt.originalApr + aprAdjustment);
+  // Deep copy debts with projected APRs
+  simulatorState.projectedDebts = debts.map(d => {
+    // Start from the user's actual originalApr
+    const baseApr = d.originalApr !== undefined ? d.originalApr : d.apr;
+    const aprAdjustment = -scoreChange * 0.01;
+    const projectedApr = Math.max(0, baseApr + aprAdjustment);
+    const interestSaved = d.balance * ((baseApr - projectedApr) / 100) / 12; // monthly
+    return {
+      ...d,
+      originalApr: baseApr,
+      projectedApr,
+      interestSavedPerMonth: interestSaved
+    };
   });
-  
-  // Re-render debt cards to show updated APRs
-  renderDebtCards();
-  
-  // Update summary and recalculate payoff plans
-  updateSummary();
-  recalculate();
-  notifyDebtsChanged();
+}
+
+// Reset simulator to no projection (clear what-if)
+function resetSimulator() {
+  simulatorState = { score: null, projectedDebts: null, projectedScoreDelta: 0 };
+  // Restore creditScore to reflect the user's actual score
+  // We don't know the "actual" score, so just clear the simulation overlay
+  renderCreditScoreSimulator();
 }
 
 function updateCreditLimits(value) {

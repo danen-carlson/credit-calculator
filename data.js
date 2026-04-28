@@ -28,6 +28,8 @@ const AFFILIATE_LINKS = {
   'chase-sapphire-preferred':'', // via CJ / Impact
   'amex-blue-cash-everyday': '', // up to $200/approval via CJ
   'capital-one-venture':     '', // via Impact
+  'chase-freedom-flex':      '', // via CJ / Impact
+  'wells-fargo-reflect':     '', // via CJ
 };
 
 // Supplementary affiliate links (credit score tools, etc.)
@@ -443,7 +445,20 @@ const CREDIT_CARDS = [
     affiliateNetwork: '',
     rewardTiers: [], // no rewards at all
     blendedRate: 0,
-    notes: 'No late fees ever. Good for large purchases you\'ll pay off within 12 months.'
+    // Balance transfer terms — Verified 2026-04-28
+    // Source: https://wallethub.com/d/citi-simplicity-567c
+    // 0% intro APR for 21 months on BT (one of the longest BT offers available)
+    balanceTransfer: {
+      introApr: 0,           // 0% intro APR on balance transfers
+      introAprMonths: 21,    // 21 months 0% APR on BT (longer than purchase intro!)
+      postPromoApr: 22.87,   // matches card's regular APR range
+      transferFeeIntroPct: 3,  // 3% intro BT fee (first 4 months)
+      transferFeeIntroMinDollars: 5, // $5 minimum
+      transferFeeIntroWindowMonths: 4,  // intro fee window = first 4 months
+      transferFeeStandardPct: 5,  // 5% standard BT fee after intro window
+      transferFeeStandardMinDollars: 5, // $5 minimum
+    },
+    notes: 'No late fees ever. 0% intro APR for 21 months on balance transfers. Good for large purchases you\'ll pay off within 12 months.'
   },
   {
     id: 'chase-freedom-unlimited',
@@ -465,6 +480,19 @@ const CREDIT_CARDS = [
       { category: 'everything', rate: 1.5 }
     ],
     blendedRate: 1.8, // weighted avg across typical spend
+    // Balance transfer terms — Verified 2026-04-28
+    // Source: https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited
+    // Also: https://www.cnbc.com/select/chase-freedom-unlimited-freedom-flex-zero-percent-apr-balance-transfer/
+    balanceTransfer: {
+      introApr: 0,
+      introAprMonths: 15,
+      postPromoApr: 24.24,   // matches card regular APR
+      transferFeeIntroPct: 3,   // 3% intro BT fee (first 60 days)
+      transferFeeIntroMinDollars: 5,
+      transferFeeIntroWindowMonths: 2, // 60 days = ~2 months
+      transferFeeStandardPct: 5,
+      transferFeeStandardMinDollars: 5,
+    },
     notes: '3% dining & drugstores, 5% travel (Chase portal), 1.5% everything else.'
   },
   {
@@ -486,7 +514,20 @@ const CREDIT_CARDS = [
     ],
     blendedRate: 1.5, // ~1.5% effective, doubled to ~3% in year 1 with match
     blendedRateYear1: 3.0,
-    notes: '5% rotating categories ($1,500/qtr). Cashback Match doubles ALL rewards in year 1 (~3% effective).'
+    // Balance transfer terms — Verified 2026-04-28
+    // Source: https://www.discover.com/credit-cards/cash-back/it-card.html
+    // Also: https://wallethub.com/answers/cc/discover-balance-transfer-promotion-2140658744/
+    balanceTransfer: {
+      introApr: 0,
+      introAprMonths: 15,
+      postPromoApr: 22.74,   // matches card regular APR
+      transferFeeIntroPct: 3,   // 3% intro BT fee
+      transferFeeIntroMinDollars: null, // Discover doesn't specify a $ min for intro
+      transferFeeIntroWindowMonths: null, // intro fee window not specified (3% for initial BT offer)
+      transferFeeStandardPct: 5,
+      transferFeeStandardMinDollars: null, // future transfers at 5%
+    },
+    notes: '5% rotating categories ($1,500/qtr). Cashback Match doubles ALL rewards in year 1 (~3% effective). 3% intro BT fee, 5% after.'
   },
   {
     id: 'citi-double-cash',
@@ -494,9 +535,9 @@ const CREDIT_CARDS = [
     type: 'credit-card',
     detail: '2% cash back on everything · No annual fee',
     interestRate: 23.24,
-    hasIntroApr: false,
-    introAprRate: null,
-    introAprMonths: 0,
+    hasIntroApr: true,       // CORRECTED: has 0% intro APR on BT (was false)
+    introAprRate: 0,
+    introAprMonths: 18,       // 0% for 18 months on balance transfers
     pointsRate: 2.0,
     pointValue: 1.0,
     annualFee: 0,
@@ -505,7 +546,24 @@ const CREDIT_CARDS = [
       { category: 'everything', rate: 2.0 }
     ],
     blendedRate: 2.0,
-    notes: '1% when you buy + 1% when you pay. Flat 2% on everything — no categories to track.'
+    // Balance transfer terms — CORRECTED 2026-04-28 (was transferFeePct: 0 in planner.js — WRONG)
+    // Source: https://wallethub.com/d/citi-double-cash-card-121c
+    // Also: https://money.usnews.com/credit-cards/citi/citi-double-cash-card
+    // Intro BT fee: 3% of each transfer ($5 min) for transfers within first 4 months
+    // Standard BT fee: 5% of each transfer ($5 min) after 4 months
+    // Intro APR: 0% for 18 months on balance transfers
+    // Post-promo APR: 17.49%–27.49% variable
+    balanceTransfer: {
+      introApr: 0,
+      introAprMonths: 18,
+      postPromoApr: 22.49,   // midpoint of 17.49%–27.49% range
+      transferFeeIntroPct: 3,    // 3% intro BT fee (first 4 months)
+      transferFeeIntroMinDollars: 5,
+      transferFeeIntroWindowMonths: 4,  // intro fee window = first 4 months
+      transferFeeStandardPct: 5,  // 5% standard BT fee after 4 months
+      transferFeeStandardMinDollars: 5,
+    },
+    notes: '1% when you buy + 1% when you pay. Flat 2% on everything — no categories to track. 0% intro APR on BT for 18 months; 3% intro BT fee (then 5%).'
   },
   {
     id: 'chase-sapphire-preferred',
@@ -551,7 +609,20 @@ const CREDIT_CARDS = [
       { category: 'everything', rate: 1.0 }
     ],
     blendedRate: 2.0,
-    notes: '3% groceries ($6K/yr cap), 3% gas, 3% online shopping, 1% everything else. No annual fee.'
+    // Balance transfer terms — Verified 2026-04-28
+    // Source: https://wallethub.com/answers/cc/blue-cash-everyday-balance-transfer-1000399-2140706248/
+    // 0% intro APR for 15 months on BT; 3% BT fee ($5 min); regular APR 19.49%–28.49% (V)
+    balanceTransfer: {
+      introApr: 0,
+      introAprMonths: 15,
+      postPromoApr: 24.49,   // matches card regular APR
+      transferFeeIntroPct: 3,   // 3% BT fee
+      transferFeeIntroMinDollars: 5,
+      transferFeeIntroWindowMonths: null, // not tiered — flat 3% fee
+      transferFeeStandardPct: 3,  // Amex BCE charges 3% flat (no 5% tier)
+      transferFeeStandardMinDollars: 5,
+    },
+    notes: '3% groceries ($6K/yr cap), 3% gas, 3% online shopping, 1% everything else. No annual fee. 3% BT fee.'
   },
   {
     id: 'capital-one-venture',
@@ -597,6 +668,82 @@ const CREDIT_CARDS = [
     ],
     blendedRate: 2.3, // weighted avg for typical household
     notes: '5% Amazon.com & Whole Foods (Prime members), 2% restaurants/gas/drugstores, 1% everything else. $0 annual fee but requires Prime ($139/yr). $150 Amazon gift card upon approval.'
+  },
+  // Added 2026-04-28: Referenced by debt-planner/planner.js as 'chase-freedom-flex'
+  {
+    id: 'chase-freedom-flex',
+    name: 'Chase Freedom Flex',
+    type: 'credit-card',
+    detail: '15 mo 0% APR · 3% dining/drugstores · 5% rotating · $200 bonus',
+    interestRate: 23.74, // variable 18.24%–27.74%
+    hasIntroApr: true,
+    introAprRate: 0,
+    introAprMonths: 15,
+    pointsRate: 3.0, // dining/drugstores base
+    pointValue: 2.05, // Chase UR points value with transfer partners
+    annualFee: 0,
+    lateFee: 40,
+    rewardTiers: [
+      { category: 'rotating', rate: 5.0, cap: 1500, note: 'Quarterly rotating categories, $1,500/qtr cap' },
+      { category: 'dining', rate: 3.0 },
+      { category: 'drugstores', rate: 3.0 },
+      { category: 'everything', rate: 1.0 }
+    ],
+    blendedRate: 1.8,
+    // Balance transfer terms — Verified 2026-04-28
+    // Source: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+    // Also: https://www.cnbc.com/select/chase-freedom-unlimited-freedom-flex-zero-percent-apr-balance-transfer/
+    // Intro BT fee: 3% ($5 min) for transfers within first 60 days
+    // Standard BT fee: 5% ($5 min) after 60 days
+    // 0% intro APR for 15 months on purchases and BT
+    balanceTransfer: {
+      introApr: 0,
+      introAprMonths: 15,
+      postPromoApr: 23.74,   // midpoint of 18.24%–27.74%
+      transferFeeIntroPct: 3,   // 3% intro BT fee (first 60 days)
+      transferFeeIntroMinDollars: 5,
+      transferFeeIntroWindowMonths: 2, // 60 days ≈ 2 months
+      transferFeeStandardPct: 5,
+      transferFeeStandardMinDollars: 5,
+    },
+    affiliateLink: '',
+    affiliateNetwork: '',
+    notes: '5% rotating categories ($1,500/qtr), 3% dining/drugstores, 1% everything. 3% intro BT fee (first 60 days), then 5%.'
+  },
+  // Added 2026-04-28: Top balance transfer card — longest 0% intro period (21 months)
+  {
+    id: 'wells-fargo-reflect',
+    name: 'Wells Fargo Reflect',
+    type: 'credit-card',
+    detail: '21 mo 0% APR · No annual fee · Cell phone protection',
+    interestRate: 23.49, // variable 17.49%, 23.99%, or 28.24%
+    hasIntroApr: true,
+    introAprRate: 0,
+    introAprMonths: 21, // 0% for 21 months on purchases and BT (longest in market)
+    pointsRate: 0,
+    pointValue: 0,
+    annualFee: 0,
+    lateFee: 40,
+    rewardTiers: [],
+    blendedRate: 0,
+    // Balance transfer terms — Verified 2026-04-28
+    // Source: https://www.cnbc.com/select/wells-fargo-announces-reflect-card/
+    // Also: https://money.usnews.com/credit-cards/wells-fargo/wells-fargo-reflect-card
+    // 3% intro BT fee for first 60 days, then 5% standard — same as other WF cards
+    // 0% intro APR for 21 months on purchases and qualifying BT
+    balanceTransfer: {
+      introApr: 0,
+      introAprMonths: 21,       // longest 0% BT offer on the market
+      postPromoApr: 23.49,      // midpoint of 17.49%–28.24%
+      transferFeeIntroPct: 3,   // 3% intro BT fee (first 60 days)
+      transferFeeIntroMinDollars: 5,
+      transferFeeIntroWindowMonths: 2, // 60 days ≈ 2 months
+      transferFeeStandardPct: 5,
+      transferFeeStandardMinDollars: 5,
+    },
+    affiliateLink: '',
+    affiliateNetwork: '',
+    notes: 'Longest 0% intro APR (21 months). No rewards. 3% intro BT fee (first 60 days), then 5%.'
   }
 ];
 
