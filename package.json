@@ -1,11 +1,11 @@
 {
   "name": "credit-calculator",
   "version": "1.0.0",
-  "description": "CreditStudio calculators",
+  "description": "CreditStud.io calculators",
   "scripts": {
     "build": "node build.js",
     "test": "node -c app.js && node -c rewards/rewards.js && node -c debt-planner/planner.js && node -c build.js"
   },
-  "author": "CreditStudio",
+  "author": "CreditStud.io",
   "license": "MIT"
 }
