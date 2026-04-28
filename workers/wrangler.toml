@@ -1,0 +1,21 @@
+name = "creditstud-email-capture"
+main = "email-capture.js"
+compatibility_date = "2026-04-28"
+
+# ── Secrets (set via `wrangler secret put`) ──────────────────
+# BEEHIIV_API_KEY         — Beehiiv API key (Bearer token)
+# BEEHIIV_PUBLICATION_ID  — Beehiiv publication ID (pub_xxx)
+
+# ── KV Namespace for rate limiting (uncomment after `wrangler kv:namespace create`) ──
+# [[kv_namespaces]]
+# binding = "EMAIL_RATE_LIMITS"
+# id = "<your-kv-namespace-id>"
+
+# ── Routes (uncomment and set your domain) ──────────────────
+# [[routes]]
+# pattern = "creditstud.io/api/subscribe*"
+# zone_name = "creditstud.io"
+#
+# [[routes]]
+# pattern = "www.creditstud.io/api/subscribe*"
+# zone_name = "creditstud.io"

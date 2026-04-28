@@ -135,3 +135,97 @@
     width: 100%;
   }
 }
+
+/* ── Inline Email Capture ─────────────────────────── */
+
+.email-capture-inline {
+  max-width: 420px;
+  margin: 16px auto;
+  text-align: center;
+}
+
+.email-capture-inline-tagline {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 8px;
+}
+
+.email-capture-inline-form {
+  display: flex;
+  gap: 8px;
+}
+
+.email-capture-inline-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.email-capture-inline-input:focus {
+  border-color: #2563eb;
+}
+
+.email-capture-inline-input.email-capture-error {
+  border-color: #ef4444;
+}
+
+.email-capture-inline-submit {
+  padding: 8px 16px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.email-capture-inline-submit:hover {
+  background: #1d4ed8;
+}
+
+.email-capture-inline-submit.email-capture-success {
+  background: #16a34a;
+  pointer-events: none;
+}
+
+.email-capture-inline-privacy {
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin: 6px 0 0;
+}
+
+.email-capture-inline-error {
+  font-size: 0.8rem;
+  color: #ef4444;
+  margin: 4px 0 0;
+}
+
+.email-capture-inline-pdf {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.email-capture-inline-pdf:hover {
+  background: #f3f4f6;
+}
+
+/* Success state for modal submit button */
+.email-capture-submit.email-capture-success {
+  background: #16a34a;
+}
