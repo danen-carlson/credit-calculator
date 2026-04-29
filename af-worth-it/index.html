@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annual Fee Worth It Calculator — CreditStud.io</title>
+  <meta name="description" content="Is that credit card annual fee worth it? Calculate the real value of rewards, credits, and perks vs. the fee. Free calculator with 20+ premium cards analyzed.">
+  <link rel="canonical" href="https://creditstud.io/af-worth-it/">
+  <meta property="og:title" content="Annual Fee Worth It Calculator — CreditStud.io">
+  <meta property="og:description" content="Is that credit card annual fee worth it? Calculate the real value of rewards, credits, and perks vs. the fee.">
+  <meta property="og:url" content="https://creditstud.io/af-worth-it/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta property="og:image" content="https://creditstud.io/og-images/af-worth-it.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Annual Fee Worth It Calculator — CreditStud.io">
+  <meta name="twitter:description" content="Is that credit card annual fee worth it? Calculate the real value of rewards, credits, and perks vs. the fee.">
+  <meta name="twitter:image" content="https://creditstud.io/og-images/af-worth-it.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shared/components.css">
+  <link rel="stylesheet" href="calc.css">
+  <link rel="stylesheet" href="../shared/share.css">
+  <link rel="stylesheet" href="../shared/email-capture.css">
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a credit card annual fee worth it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your spending and whether you use the card's perks. A $95 annual fee card like Chase Sapphire Preferred earns its fee back if you spend $7,600+ on travel and dining. Premium cards like Amex Platinum ($695) require using $695+ in annual credits. Use our calculator to see exactly how much value you'd get."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate if my annual fee is worth it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add up: (1) cash value of rewards you'd actually earn based on your spending, (2) dollar value of perks and credits you'd actually use, then subtract the annual fee. If the result is positive, the card is worth it. Our calculator does this automatically for 20+ popular cards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I don't use the card's perks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unused perks have zero value. A $300 travel credit is only worth $300 if you'd spend $300 on travel anyway. Our calculator lets you toggle which perks you'd actually use to see the realistic net value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I downgrade to a no-annual-fee version?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your calculated net value is negative, yes. Most premium cards have a no-fee sibling (e.g., Sapphire Preferred → Freedom Unlimited, Amex Platinum → Amex Green). You keep the account history and avoid a new hard inquiry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the signup bonus count toward annual fee value?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Signup bonuses are first-year value only. Our calculator shows both first-year (with bonus) and ongoing (without bonus) value. A card might be worth it in year one but not in year two."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CreditStud.io",
+    "url": "https://creditstud.io",
+    "logo": "https://creditstud.io/icon.svg"
+  }
+  </script>
+</head>
+<body>
+  <!-- DISCLOSURE -->
+  <div class="site-disclosure-banner">
+    <div class="site-disclosure-container">
+      CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations.
+      <a href="/disclosure.html">Learn more</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <nav class="top-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/compare/" class="nav-link">Compare</a>
+        <a href="/debt-planner/" class="nav-link">Debt Planner</a>
+        <a href="/rewards/" class="nav-link">Rewards</a>
+        <a href="/min-payment/" class="nav-link">Min Payment</a>
+        <a href="/score-simulator/" class="nav-link">Score Simulator</a>
+        <a href="/af-worth-it/" class="nav-link active">AF Worth It?</a>
+        <a href="/loan-vs-bt/" class="nav-link">Loan vs BT</a>
+      </nav>
+      <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+      <p class="header-subtitle">Is that annual fee worth it? Find out with real math.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Step 1: Pick a Card -->
+    <section class="calc-section">
+      <div class="step-header">
+        <span class="step-number">1</span>
+        <h2>Pick a card to evaluate</h2>
+      </div>
+      <div class="card-search-wrapper">
+        <input type="text" id="cardSearch" placeholder="Search cards (e.g., Sapphire, Amex, Venture)...">
+        <div class="card-list" id="cardList"></div>
+      </div>
+      <div class="selected-card" id="selectedCard" style="display:none;">
+        <div class="selected-card-info">
+          <h3 id="selectedCardName"></h3>
+          <div class="selected-card-meta">
+            <span id="selectedCardIssuer"></span> • <span id="selectedCardAF"></span> annual fee
+          </div>
+        </div>
+        <button class="btn-small" id="changeCard">Change card</button>
+      </div>
+    </section>
+
+    <!-- Step 2: Spending & Perks -->
+    <section class="calc-section" id="step2" style="display:none;">
+      <div class="step-header">
+        <span class="step-number">2</span>
+        <h2>Your spending & perks</h2>
+      </div>
+
+      <h3 class="subheading">Monthly spending by category</h3>
+      <div class="spending-grid" id="spendingGrid"></div>
+
+      <div class="perk-toggle-header">
+        <h3 class="subheading">Perks & credits you'll actually use</h3>
+        <label class="would-spend-toggle">
+          <input type="checkbox" id="wouldSpendAnyway" checked>
+          <span>I would spend this anyway (not card-specific)</span>
+        </label>
+      </div>
+      <div class="perks-grid" id="perksGrid"></div>
+    </section>
+
+    <!-- Results -->
+    <section class="results-section" id="results" style="display:none;">
+      <div class="step-header">
+        <span class="step-number">3</span>
+        <h2>The verdict</h2>
+      </div>
+
+      <div class="verdict-card" id="verdictCard">
+        <div class="verdict-amount" id="verdictAmount"></div>
+        <div class="verdict-label" id="verdictLabel"></div>
+        <div class="verdict-badge" id="verdictBadge"></div>
+      </div>
+
+      <div class="breakdown-table" id="breakdownTable"></div>
+
+      <div class="verdict-explanation" id="verdictExplanation"></div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <a href="/rewards/" class="btn-primary cta-btn">🏆 Compare all cards →</a>
+        <a href="/rewards/?filter=no-annual-fee" class="btn-ghost cta-btn">⟩ See no-annual-fee cards →</a>
+        <a href="/score-simulator/" class="btn-ghost cta-btn">📈 Check your credit score →</a>
+      </div>
+
+      <div class="share-bar" id="shareBar"></div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item">
+        <summary>Is a credit card annual fee worth it?</summary>
+        <p>It depends on your spending and whether you use the card's perks. A $95 annual fee card like Chase Sapphire Preferred earns its fee back if you spend $7,600+ on travel and dining. Premium cards like Amex Platinum ($695) require using $695+ in annual credits. Use our calculator to see exactly how much value you'd get.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if I don't use all the perks?</summary>
+        <p>Unused perks have zero value. A $300 travel credit is only worth $300 if you'd spend $300 on travel anyway. Our calculator lets you toggle which perks you'd actually use to see the realistic net value.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Should I downgrade to a no-annual-fee version?</summary>
+        <p>If your calculated net value is negative, yes. Most premium cards have a no-fee sibling (e.g., Sapphire Preferred → Freedom Unlimited, Amex Platinum → Amex Green). You keep the account history and avoid a new hard inquiry.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does the signup bonus count?</summary>
+        <p>Signup bonuses are first-year value only. Our calculator shows ongoing value (without bonus). A card might be worth it in year one due to a signup bonus but not in subsequent years.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
+    </div>
+  </footer>
+
+  <script src="../data.js"></script>
+  <script src="fee-cards.js"></script>
+  <script src="../shared/pwa.js"></script>
+  <script src="../shared/email-capture.js"></script>
+  <script src="../shared/share.js"></script>
+  <script src="../shared/apply-button.js"></script>
+  <script src="calc.js"></script>
+</body>
+</html>
