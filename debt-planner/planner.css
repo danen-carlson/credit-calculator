@@ -28,7 +28,7 @@
   border-radius: var(--radius);
   padding: 16px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr auto auto;
   gap: 12px;
   align-items: end;
   animation: slideIn 0.3s ease-out;
@@ -81,6 +81,10 @@
   
   .debt-card .btn-remove {
     justify-self: end; /* Align to end on mobile */
+  }
+  .debt-card-controls {
+    flex-direction: row;
+    justify-content: center;
   }
 }
 
@@ -1385,6 +1389,237 @@
 
 .btn-reset-simulator:hover {
   background: var(--primary-dark, #4f46e5);
+}
+
+/* Debt-Free Hero Callout (P1 #16) */
+.debt-free-hero-card {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%);
+  border: 2px solid var(--success, #10b981);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: slideIn 0.4s ease-out;
+}
+.debt-free-hero-emoji {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+.debt-free-hero-stat {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 6px;
+}
+.debt-free-hero-stat strong {
+  color: var(--success, #10b981);
+}
+.debt-free-hero-subtitle {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Strategy Explanation (P2 #43) */
+.strategy-explanation {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.strategy-explanation strong { color: var(--text); }
+
+/* Reorder Controls (P2 #44) */
+.debt-card-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-self: end;
+  margin-bottom: 4px;
+}
+.btn-reorder {
+  width: 30px;
+  height: 22px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.btn-reorder:hover:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.btn-reorder:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Windfall Section (P1 #20) */
+.windfall-section {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 16px;
+}
+.windfall-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.windfall-inputs {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.windfall-inputs .input-group {
+  margin-bottom: 0;
+  min-width: 140px;
+}
+.windfall-inputs .input-group label {
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 4px;
+}
+.windfall-inputs .btn-consolidate {
+  align-self: end;
+  margin-bottom: 0;
+}
+.windfall-before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+}
+.windfall-before, .windfall-after {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+}
+.windfall-after {
+  border-color: var(--success);
+  background: #f0fdf4;
+}
+.windfall-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Strategy Comparison Panel (P2 #42) */
+.strategy-comparison-panel {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 16px;
+}
+.strategy-comparison-panel h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.comparison-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.comparison-col {
+  background: #f8fafc;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.comparison-col.best {
+  border-color: var(--success, #10b981);
+  background: #f0fdf4;
+}
+.comparison-col-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+.comparison-stat {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+.comparison-stat span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.comparison-stat strong {
+  font-size: 1rem;
+}
+@media (max-width: 700px) {
+  .comparison-columns { grid-template-columns: 1fr; }
+}
+
+/* Cross-Tool CTA (P1 #8) */
+.cross-tool-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+.cta-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1.5px solid var(--primary);
+  border-radius: 8px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s;
+}
+.cta-card:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+.cta-emoji { font-size: 1.5rem; }
+.cta-text { font-size: 0.85rem; line-height: 1.4; }
+.cta-text strong { color: var(--primary); }
+@media (max-width: 600px) {
+  .cross-tool-cta { grid-template-columns: 1fr; }
+}
+
+/* BT Gotcha Warnings (P1 #19) */
+.bt-gotcha-warnings {
+  background: #fffbeb;
+  border: 1.5px solid #f59e0b;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 0.82rem;
+}
+.bt-gotcha-title {
+  font-weight: 700;
+  color: #b45309;
+  margin-bottom: 6px;
+}
+.bt-gotcha-item {
+  color: #92400e;
+  margin-bottom: 4px;
+  line-height: 1.4;
 }
 
 /* Print Styles */

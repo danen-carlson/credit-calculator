@@ -1031,6 +1031,9 @@
 
         // Render data stamp
         renderDataStamp();
+
+        // Notify PWA install prompt that results are ready
+        try { window.dispatchEvent(new Event('creditstud:results-ready')); } catch (_) { /* ignore */ }
       } finally {
         // Hide skeleton after rendering
         hideSkeleton(skeleton);
@@ -1307,22 +1310,6 @@
     const section = document.getElementById('wallet-section');
     if (!section) return;
 
-    // Calculate wallet totals
-    let walletTotal = 0;
-    let bestSingleCardValue = 0;
-    
-    if (walletCards.length > 0) {
-      // Calculate combined wallet value
-      walletTotal = walletCards.reduce((total, card) => {
-        const calc = calculateCardRewards(card, currentSpending, yearView);
-        return total + calc.netAnnual;
-      }, 0);
-      
-      // Find best single card value from results
-      // We need to get the results from the current context
-      // For now, we'll leave this as 0 and calculate it properly later
-    }
-
     if (walletCards.length === 0) {
       section.innerHTML = `
         <div class="wallet-header">
@@ -1336,44 +1323,28 @@
       return;
     }
 
-    // Build wallet card tiles
+    // ── Use the optimizer to avoid double-counting ──
+    const walletIds = walletCards.map(c => c.id);
+    const effectiveSpending = getEffectiveSpending();
+    const optimization = window.optimizeWallet(walletIds, cardsData, effectiveSpending, {
+      yearView: yearView,
+      includeAnnualCredits: includeAnnualCredits
+    });
+
+    // Build per-card tiles using optimizer data
     const walletCardsHTML = walletCards.map(card => {
-      const calc = calculateCardRewards(card, currentSpending, yearView);
       const cardType = typeConfig[card.type] || typeConfig.cashback;
-      
-      // Find best categories for this card
-      const bestCategories = [];
-      const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
-      
-      categories.forEach(cat => {
-        let bestCard = null;
-        let bestValue = -1;
-        
-        walletCards.forEach(walletCard => {
-          const walletCalc = calculateCardRewards(walletCard, currentSpending, yearView);
-          const value = walletCalc.breakdown[cat] ? walletCalc.breakdown[cat].annualValue : 0;
-          if (value > bestValue) {
-            bestValue = value;
-            bestCard = walletCard;
-          }
-        });
-        
-        if (bestCard && bestCard.id === card.id && bestValue > 0) {
-          bestCategories.push({
-            category: cat,
-            label: categoryLabels[cat],
-            icon: categoryIcons[cat],
-            value: bestValue
-          });
-        }
-      });
-      
-      const bestCategoriesHTML = bestCategories.map(cat => `
-        <span class="category-badge" title="${cat.label}: ${formatCurrency(cat.value)}">
-          ${cat.icon} ${cat.label.split(' ')[0]}
-        </span>
-      `).join('');
-      
+      const pc = optimization.perCard[card.id];
+      const assignedCats = pc ? pc.categories : [];
+      const netVal = pc ? pc.netValue : 0;
+
+      const assignedHTML = assignedCats.map(cat => {
+        const a = optimization.assignments[cat];
+        return `<span class="category-badge" title="${categoryLabels[cat]}: ${formatCurrency(a ? a.earnings : 0)}">
+          ${categoryIcons[cat]} ${categoryLabels[cat]}
+        </span>`;
+      }).join('');
+
       return `
         <div class="wallet-card-tile">
           <div class="wallet-card-header">
@@ -1387,19 +1358,68 @@
             <span class="result-card-type-badge" style="background:${cardType.bg};color:${cardType.color};font-size:0.7rem;padding:2px 6px;">${cardType.icon} ${cardType.label}</span>
           </div>
           <div class="wallet-card-value">
-            <div class="wallet-card-net-value">${formatCurrency(calc.netAnnual)}</div>
-            <div class="wallet-card-value-label">net annual value</div>
+            <div class="wallet-card-net-value">${formatCurrency(netVal)}</div>
+            <div class="wallet-card-value-label">wallet contribution</div>
           </div>
-          ${bestCategories.length > 0 ? `
+          ${assignedCats.length > 0 ? `
           <div class="wallet-card-categories">
-            <div class="wallet-card-categories-title">Best for:</div>
+            <div class="wallet-card-categories-title">Use for:</div>
             <div class="category-badges">
-              ${bestCategoriesHTML}
+              ${assignedHTML}
             </div>
-          </div>` : ''}
+          </div>` : '<div class="wallet-card-categories"><div class="wallet-card-categories-title" style="color:var(--text-secondary);font-size:0.8rem;">No categories assigned — consider removing</div></div>'}
         </div>
       `;
     }).join('');
+
+    // Build "How to use your wallet" section from optimizer assignments
+    const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
+    const assignmentRows = categories.filter(cat => optimization.assignments[cat] && (effectiveSpending[cat] || 0) > 0).map(cat => {
+      const a = optimization.assignments[cat];
+      const monthly = effectiveSpending[cat] || 0;
+      return `<div class="wallet-assignment-row">
+        <span class="wallet-assignment-cat">${categoryIcons[cat]} ${categoryLabels[cat]}</span>
+        <span class="wallet-assignment-arrow">→</span>
+        <span class="wallet-assignment-card">${a.cardName}</span>
+        <span class="wallet-assignment-earnings">${formatCurrency(a.earnings)}/yr</span>
+      </div>`;
+    }).join('');
+
+    // Build recommendations
+    const recsHTML = optimization.recommendations.length > 0
+      ? optimization.recommendations.map(rec => {
+          const cardType = typeConfig[rec.card.type] || typeConfig.cashback;
+          const catsHTML = rec.bestCategories.slice(0, 3).map(bc =>
+            `<span class="category-badge">${categoryIcons[bc.category]} ${categoryLabels[bc.category]} (${bc.rate}%×)</span>`
+          ).join(' ');
+          // Build "Why recommended" sentence from bestCategories
+          let whySentence = '';
+          if (rec.bestCategories.length === 1) {
+            const bc = rec.bestCategories[0];
+            whySentence = `Add this card to earn ${bc.rate}%× on ${categoryLabels[bc.category]} — your biggest gap.`;
+          } else if (rec.bestCategories.length === 2) {
+            const bc0 = rec.bestCategories[0];
+            const bc1 = rec.bestCategories[1];
+            whySentence = `This card's ${bc0.rate}%× on ${categoryLabels[bc0.category]} and ${bc1.rate}%× on ${categoryLabels[bc1.category]} fill your weakest categories.`;
+          } else if (rec.bestCategories.length >= 3) {
+            const bc0 = rec.bestCategories[0];
+            const catNames = rec.bestCategories.slice(0, 3).map(bc => categoryLabels[bc.category]).join(', ');
+            whySentence = `Covers your gaps in ${catNames} — led by ${bc0.rate}%× on ${categoryLabels[bc0.category]}.`;
+          }
+
+          return `<div class="wallet-rec-card">
+            <div class="wallet-rec-name">${rec.card.name} <span class="result-card-type-badge" style="background:${cardType.bg};color:${cardType.color};font-size:0.65rem;padding:1px 5px;">${cardType.icon} ${cardType.label}</span></div>
+            <div class="wallet-rec-improvement">+${formatCurrency(rec.totalImprovement)}/yr net improvement</div>
+            ${whySentence ? `<div class="wallet-rec-why">💡 ${whySentence}</div>` : ''}
+            <div class="wallet-rec-cats">${catsHTML}</div>
+          </div>`;
+        }).join('')
+      : '';
+
+    // Savings warning
+    const savingsHTML = optimization.savings > 0
+      ? `<div class="wallet-savings-badge">⚡ No double-counting: $${formatCurrency(optimization.savings)} was overlap between cards</div>`
+      : '';
 
     section.innerHTML = `
       <div class="wallet-header">
@@ -1407,19 +1427,39 @@
         <button id="wallet-toggle" class="btn-ghost btn-small" onclick="toggleWallet()">${walletOpen ? 'Hide Wallet ▲' : 'Show Wallet ▼'}</button>
       </div>
       <div class="wallet-content ${walletOpen ? 'open' : ''}">
+        ${savingsHTML}
         <div class="wallet-stats">
           <div class="wallet-stat">
             <div class="wallet-stat-label">Cards in Wallet</div>
             <div class="wallet-stat-value">${walletCards.length}</div>
           </div>
-          <div class="wallet-stat">
-            <div class="wallet-stat-label">Combined Annual Value</div>
-            <div class="wallet-stat-value">${formatCurrency(walletTotal)}</div>
+          <div class="wallet-stat wallet-stat-highlight">
+            <div class="wallet-stat-label">True Combined Value</div>
+            <div class="wallet-stat-value">${formatCurrency(optimization.totalNet)}</div>
           </div>
+          ${optimization.totalSignupBonus > 0 ? `
+          <div class="wallet-stat">
+            <div class="wallet-stat-label">Signup Bonuses</div>
+            <div class="wallet-stat-value" style="color:var(--success);">+${formatCurrency(optimizations.totalSignupBonus)}</div>
+          </div>` : ''}
         </div>
+
+        ${assignmentRows ? `
+        <div class="wallet-assignments">
+          <div class="wallet-assignments-title">📋 How to Use Your Wallet</div>
+          ${assignmentRows}
+        </div>` : ''}
+
         <div class="wallet-cards-grid">
           ${walletCardsHTML}
         </div>
+
+        ${recsHTML ? `
+        <div class="wallet-recommendations">
+          <div class="wallet-rec-title">💡 What's Missing</div>
+          ${recsHTML}
+          ${optimization.explanations && optimization.explanations.length > 0 ? `<div class="wallet-explanations">${optimization.explanations.map(e => `<p>${e}</p>`).join('')}</div>` : ''}
+        </div>` : ''}
       </div>
     `;
   }

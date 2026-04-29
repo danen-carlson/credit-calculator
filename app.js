@@ -527,6 +527,9 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
       
       // Hide skeleton after rendering
       hideSkeleton(skeleton);
+
+      // Notify PWA install prompt that results are ready
+      try { window.dispatchEvent(new Event('creditstud:results-ready')); } catch (_) { /* ignore */ }
     } catch(err) { 
       console.error('Compare My Options error:', err); 
       resetButton(button, originalText);
