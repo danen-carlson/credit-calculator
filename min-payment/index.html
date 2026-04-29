@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimum Payment Trap Calculator — CreditStud.io</title>
+  <meta name="description" content="See the shocking true cost of making only minimum payments on your credit card. Free calculator shows total interest, time to payoff, and how much you could save.">
+  <link rel="canonical" href="https://creditstud.io/min-payment/">
+  <meta property="og:title" content="Minimum Payment Trap Calculator — CreditStud.io">
+  <meta property="og:description" content="See the shocking true cost of making only minimum payments on your credit card. Free calculator shows total interest, time to payoff, and how much you could save.">
+  <meta property="og:url" content="https://creditstud.io/min-payment/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta property="og:image" content="https://creditstud.io/og-images/min-payment.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Minimum Payment Trap Calculator — CreditStud.io">
+  <meta name="twitter:description" content="See the shocking true cost of making only minimum payments on your credit card. Free calculator shows total interest, time to payoff, and how much you could save.">
+  <meta name="twitter:image" content="https://creditstud.io/og-images/min-payment.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shared/components.css">
+  <link rel="stylesheet" href="calc.css">
+  <link rel="stylesheet" href="../shared/share.css">
+  <link rel="stylesheet" href="../shared/email-capture.css">
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to pay off a credit card making only minimum payments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your balance and APR, but it can take decades. For example, a $5,000 balance at 24.99% APR with a 2% minimum payment would take over 32 years to pay off and cost more than $11,000 in interest — you'd pay over 3x your original balance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are minimum payments calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most issuers calculate minimum payments as a percentage of your balance (typically 1-3%), plus interest and fees, with a floor of $25-35. Some use a flat percentage; others use a tiered approach. Check your card agreement for the exact formula."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I only pay the minimum on my credit card?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You'll stay in debt much longer and pay far more in interest. Minimum payments are designed to keep you paying — not to get you out of debt. Your credit utilization also stays high, which can hurt your credit score."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much money can I save by paying more than the minimum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Even small increases make a huge difference. Adding just $25/month to a $5,000 balance at 25% APR can shave years off your payoff time and save thousands in interest. Adding $100/month can cut decades down to a few years."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I get a balance transfer card to escape the minimum payment trap?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A 0% balance transfer card can be a powerful tool if you can pay off the balance during the intro period (typically 12-21 months). The 3-5% transfer fee is usually much less than the interest you'd pay on your current card. Just be sure to avoid running up new debt."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CreditStud.io",
+    "url": "https://creditstud.io",
+    "logo": "https://creditstud.io/icon.svg",
+    "description": "Free credit card comparison and calculator tools"
+  }
+  </script>
+</head>
+<body>
+  <!-- DISCLOSURE -->
+  <div class="site-disclosure-banner">
+    <div class="site-disclosure-container">
+      CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations.
+      <a href="/disclosure.html">Learn more</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <nav class="top-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/compare/" class="nav-link">Compare</a>
+        <a href="/debt-planner/" class="nav-link">Debt Planner</a>
+        <a href="/rewards/" class="nav-link">Rewards</a>
+        <a href="/min-payment/" class="nav-link active">Min Payment</a>
+        <a href="/score-simulator/" class="nav-link">Score Simulator</a>
+        <a href="/af-worth-it/" class="nav-link">AF Worth It?</a>
+        <a href="/loan-vs-bt/" class="nav-link">Loan vs BT</a>
+      </nav>
+      <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+      <p class="header-subtitle">See the true cost of making only minimum payments</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Input Section -->
+    <section class="calc-section">
+      <div class="step-header">
+        <span class="step-number">1</span>
+        <h2>Enter your credit card details</h2>
+      </div>
+
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="balance">Current Balance ($)</label>
+          <input type="number" id="balance" value="5000" min="100" max="100000" step="100">
+          <span class="input-hint">Your total credit card balance</span>
+        </div>
+        <div class="input-group">
+          <label for="apr">APR (%)</label>
+          <input type="number" id="apr" value="24.99" min="0" max="39.99" step="0.01">
+          <span class="input-hint">Average credit card APR is ~24.99%</span>
+        </div>
+        <div class="input-group">
+          <label for="minPayPercent">Minimum Payment (% of balance)</label>
+          <input type="number" id="minPayPercent" value="2" min="1" max="5" step="0.25">
+          <span class="input-hint">Most issuers: 1–3%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="results">
+      <div class="step-header">
+        <span class="step-number">2</span>
+        <h2>The shocking reality of minimum payments</h2>
+      </div>
+
+      <!-- Hero Numbers -->
+      <div class="hero-stats">
+        <div class="hero-stat hero-stat-danger">
+          <div class="hero-stat-label">Time to Payoff</div>
+          <div class="hero-stat-value" id="payoffTime">—</div>
+          <div class="hero-stat-sub">making only minimum payments</div>
+        </div>
+        <div class="hero-stat hero-stat-danger">
+          <div class="hero-stat-label">Total Interest</div>
+          <div class="hero-stat-value" id="totalInterest">$0</div>
+          <div class="hero-stat-sub">money paid to the bank</div>
+        </div>
+        <div class="hero-stat hero-stat-warning">
+          <div class="hero-stat-label">Total Paid</div>
+          <div class="hero-stat-value" id="totalPaid">$0</div>
+          <div class="hero-stat-sub" id="totalPaidSub">to clear your balance</div>
+        </div>
+      </div>
+
+      <!-- Stacked Bar Visual -->
+      <div class="stacked-bar-container">
+        <h3>Your Money Breakdown</h3>
+        <div class="stacked-bar">
+          <div class="stacked-bar-segment bar-principal" id="barPrincipal" style="width: 0%">
+            <span id="barPrincipalLabel">Principal</span>
+          </div>
+          <div class="stacked-bar-segment bar-interest" id="barInterest" style="width: 0%">
+            <span id="barInterestLabel">Interest</span>
+          </div>
+        </div>
+        <div class="stacked-bar-legend">
+          <span class="legend-item"><span class="legend-color legend-principal"></span> Principal: <strong id="legendPrincipal">$0</strong></span>
+          <span class="legend-item"><span class="legend-color legend-interest"></span> Interest: <strong id="legendInterest">$0</strong></span>
+        </div>
+      </div>
+
+      <!-- Savings Comparison -->
+      <div class="comparison-section">
+        <h3>💡 Pay just a little more each month</h3>
+        <p class="comparison-subtitle">See how much you save by adding to your minimum payment:</p>
+        <div class="comparison-card" id="comparison25">
+          <div class="comparison-header">
+            <span class="comparison-add">+$25/month</span>
+            <span class="comparison-save" id="save25"></span>
+          </div>
+          <div class="comparison-details">
+            <div>Payoff: <strong id="time25">—</strong></div>
+            <div>Interest saved: <strong id="intSave25">—</strong></div>
+          </div>
+        </div>
+        <div class="comparison-card" id="comparison50">
+          <div class="comparison-header">
+            <span class="comparison-add">+$50/month</span>
+            <span class="comparison-save" id="save50"></span>
+          </div>
+          <div class="comparison-details">
+            <div>Payoff: <strong id="time50">—</strong></div>
+            <div>Interest saved: <strong id="intSave50">—</strong></div>
+          </div>
+        </div>
+        <div class="comparison-card" id="comparison100">
+          <div class="comparison-header">
+            <span class="comparison-add">+$100/month</span>
+            <span class="comparison-save" id="save100"></span>
+          </div>
+          <div class="comparison-details">
+            <div>Payoff: <strong id="time100">—</strong></div>
+            <div>Interest saved: <strong id="intSave100">—</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta-section">
+        <a href="/debt-planner/" class="btn-primary cta-btn" id="ctaPlanner">📊 Make a debt payoff plan →</a>
+        <a href="/rewards/?filter=balance-transfer" class="btn-ghost cta-btn">⟩ Find a 0% balance transfer card →</a>
+        <a href="/score-simulator/" class="btn-ghost cta-btn">📈 Check your credit score impact →</a>
+      </div>
+
+      <!-- Share -->
+      <div class="share-bar" id="shareBar"></div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="content-section">
+      <h2>Why Minimum Payments Are a Trap</h2>
+      <p>Credit card minimum payments are designed to keep you in debt. Issuers set them low — typically 1–3% of your balance — because the longer you take to pay, the more interest they collect. It's perfectly legal, but it means you could end up paying <strong>2–3 times your original balance</strong> in interest alone.</p>
+      <h3>How it works against you</h3>
+      <ul>
+        <li><strong>Compound interest compounds.</strong> Each month, interest is added to your balance, and next month you pay interest on that interest. This snowball effect is what makes minimum payments so costly.</li>
+        <li><strong>Your minimum payment shrinks.</strong> As your balance slowly decreases, your minimum payment decreases too — extending the payoff timeline even further.</li>
+        <li><strong>It can take decades.</strong> A $5,000 balance at 25% APR could take over 30 years to pay off with minimum payments alone.</li>
+      </ul>
+      <h3>Strategies to escape the trap</h3>
+      <ol>
+        <li><strong>Pay a fixed amount each month</strong> instead of the minimum. Even if it's just $25 more, it dramatically cuts your timeline.</li>
+        <li><strong>Transfer to a 0% APR card.</strong> Balance transfer cards give you 12–21 months of interest-free payments. The 3–5% fee is almost always less than the interest you'd pay.</li>
+        <li><strong>Use the avalanche method.</strong> Pay minimums on everything, put every extra dollar toward the highest-rate card. Our <a href="/debt-planner/">Debt Payoff Planner</a> calculates this for you.</li>
+        <li><strong>Consider a personal loan.</strong> If you have good credit, a personal loan at 8–15% APR can save thousands vs. credit card interest at 25%+. <a href="/loan-vs-bt/">Compare loans vs. balance transfers →</a></li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item">
+        <summary>How are minimum payments calculated?</summary>
+        <p>Most credit card issuers calculate your minimum payment as a percentage of your outstanding balance (typically 1–3%), plus any interest and fees owed, with a floor of $25–35. Some issuers use a flat percentage; others use a tiered approach. Always check your cardmember agreement for the exact formula.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if I only pay the minimum?</summary>
+        <p>You'll stay in debt far longer and pay significantly more in interest. Minimum payments are designed to keep you paying — not to get you out of debt. Additionally, high utilization (your balance relative to your credit limit) can hurt your credit score.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much can I save by paying more than the minimum?</summary>
+        <p>Even small increases make a huge difference. Adding just $25/month can shave years off your payoff time and save thousands in interest. Use the calculator above to see exactly how much you'd save based on your actual balance and APR.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Should I get a balance transfer card?</summary>
+        <p>A 0% balance transfer card can be an excellent strategy if you can pay off the transferred balance during the intro period (typically 12–21 months). The 3–5% transfer fee is usually much less than the interest you'd otherwise pay. Compare your options with our <a href="/loan-vs-bt/">Loan vs Balance Transfer calculator</a>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Will paying only the minimum hurt my credit score?</summary>
+        <p>It can, indirectly. Paying the minimum keeps your account in good standing, but if your balance stays high, your credit utilization ratio stays high — which is a major factor in your credit score. Ideally, keep utilization below 30%, and below 10% is even better. <a href="/score-simulator/">See how your utilization affects your score →</a></p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
+    </div>
+  </footer>
+
+  <script src="../data.js"></script>
+  <script src="../shared/pwa.js"></script>
+  <script src="../shared/email-capture.js"></script>
+  <script src="../shared/share.js"></script>
+  <script src="calc.js"></script>
+</body>
+</html>

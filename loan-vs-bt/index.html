@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Loan vs Balance Transfer — Which Saves More? | CreditStud.io</title>
+  <meta name="description" content="Should you get a personal loan or a balance transfer card? Compare total costs, monthly payments, and payoff timelines with our free calculator.">
+  <link rel="canonical" href="https://creditstud.io/loan-vs-bt/">
+  <meta property="og:title" content="Personal Loan vs Balance Transfer — Which Saves More? | CreditStud.io">
+  <meta property="og:description" content="Should you get a personal loan or a balance transfer card? Compare total costs, monthly payments, and payoff timelines.">
+  <meta property="og:url" content="https://creditstud.io/loan-vs-bt/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta property="og:image" content="https://creditstud.io/og-images/loan-vs-bt.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Personal Loan vs Balance Transfer — CreditStud.io">
+  <meta name="twitter:description" content="Should you get a personal loan or a balance transfer card? Compare total costs and find the cheaper option.">
+  <meta name="twitter:image" content="https://creditstud.io/og-images/loan-vs-bt.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shared/components.css">
+  <link rel="stylesheet" href="calc.css">
+  <link rel="stylesheet" href="../shared/share.css">
+  <link rel="stylesheet" href="../shared/email-capture.css">
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a personal loan or balance transfer better for paying off credit card debt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your debt amount, payoff timeline, and credit score. Balance transfers are best for smaller debts ($10-15k) you can pay off during the 0% intro period. Personal loans work better for larger debts, longer timelines, or if you prefer fixed monthly payments. Use our calculator to compare your actual costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the risks of a balance transfer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main risk is not paying off the balance during the intro period. After 0% APR expires (typically 12-21 months), the regular APR kicks in — often 18-29%. Balance transfer fees (3-5%) also add to the cost. Missing a payment can void the 0% offer entirely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are origination fees on personal loans?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Origination fees are one-time charges (1-8% of the loan amount) deducted from your loan proceeds. For example, a $10,000 loan with a 5% origination fee means you receive $9,500 but repay $10,000 plus interest. Not all lenders charge them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a balance transfer with fair credit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most 0% balance transfer cards require good to excellent credit (670+). With fair credit (580-669), your options are limited. Capital One Quicksilver and some Discover cards may approve fair-credit applicants. Personal loans may be easier to qualify for with fair credit, though at higher rates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I transfer to a balance transfer card?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can transfer up to the credit limit you're approved for, minus any fees. Most people get limits of $5,000-$15,000. If your debt exceeds the limit, you'll need to keep the remainder on your old card or use a personal loan for the full amount."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Organization JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CreditStud.io",
+    "url": "https://creditstud.io",
+    "logo": "https://creditstud.io/icon.svg"
+  }
+  </script>
+</head>
+<body>
+  <!-- DISCLOSURE -->
+  <div class="site-disclosure-banner">
+    <div class="site-disclosure-container">
+      CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations.
+      <a href="/disclosure.html">Learn more</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <nav class="top-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/compare/" class="nav-link">Compare</a>
+        <a href="/debt-planner/" class="nav-link">Debt Planner</a>
+        <a href="/rewards/" class="nav-link">Rewards</a>
+        <a href="/min-payment/" class="nav-link">Min Payment</a>
+        <a href="/score-simulator/" class="nav-link">Score Simulator</a>
+        <a href="/af-worth-it/" class="nav-link">AF Worth It?</a>
+        <a href="/loan-vs-bt/" class="nav-link active">Loan vs BT</a>
+      </nav>
+      <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+      <p class="header-subtitle">Personal loan vs. balance transfer — which saves you more?</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Inputs -->
+    <section class="calc-section">
+      <div class="step-header">
+        <span class="step-number">1</span>
+        <h2>Your debt details</h2>
+      </div>
+
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="debtAmount">Total Debt ($)</label>
+          <input type="number" id="debtAmount" value="10000" min="500" max="100000" step="500">
+          <span class="input-hint">Total credit card debt to pay off</span>
+        </div>
+        <div class="input-group">
+          <label for="currentAPR">Current Average APR (%)</label>
+          <input type="number" id="currentAPR" value="24.99" min="0" max="39.99" step="0.01">
+          <span class="input-hint">Average APR on your existing cards</span>
+        </div>
+        <div class="input-group">
+          <label for="creditTier">Credit Score Range</label>
+          <select id="creditTier">
+            <option value="excellent">Excellent (720+)</option>
+            <option value="good" selected>Good (670-719)</option>
+            <option value="fair">Fair (580-669)</option>
+            <option value="poor">Poor (< 580)</option>
+          </select>
+          <span class="input-hint">Affects loan rates and card approval odds</span>
+        </div>
+        <div class="input-group">
+          <label for="payoffMonths">Months to Pay Off</label>
+          <input type="range" id="payoffMonths" min="12" max="84" value="36" step="6">
+          <div class="slider-row">
+            <span class="slider-value" id="payoffMonthsVal">36 months</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="comparison-section" id="comparison">
+      <div class="step-header">
+        <span class="step-number">2</span>
+        <h2>Side-by-side comparison</h2>
+      </div>
+
+      <div class="verdict-bar" id="verdictBar">
+        <div class="verdict-text" id="verdictText"></div>
+      </div>
+
+      <div class="compare-grid">
+        <!-- BT Card -->
+        <div class="compare-card compare-bt">
+          <div class="compare-card-header">
+            <span class="compare-card-icon">💳</span>
+            <h3>Balance Transfer</h3>
+          </div>
+          <div class="compare-card-name" id="btCardName">Best available card</div>
+          <div class="compare-details">
+            <div class="compare-row">
+              <span class="compare-label">Intro APR</span>
+              <span class="compare-value" id="btIntroAPR">0% for 21 months</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">BT Fee</span>
+              <span class="compare-value" id="btFee">3% ($300)</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Monthly Payment</span>
+              <span class="compare-value" id="btMonthly">$0</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Total Interest (if paid on schedule)</span>
+              <span class="compare-value" id="btTotalInterest">$0</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Total Cost</span>
+              <span class="compare-value compare-total" id="btTotalCost">$0</span>
+            </div>
+          </div>
+          <div class="compare-callout compare-callout-warning" id="btCallout">
+            <span class="callout-icon">⚠️</span>
+            <span id="btCalloutText">APR jumps to X% after intro period</span>
+          </div>
+          <div class="compare-highlights" id="btHighlights"></div>
+          <a href="/rewards/?filter=balance-transfer" class="btn-primary compare-cta">See BT cards →</a>
+        </div>
+
+        <!-- Personal Loan -->
+        <div class="compare-card compare-loan">
+          <div class="compare-card-header">
+            <span class="compare-card-icon">🏦</span>
+            <h3>Personal Loan</h3>
+          </div>
+          <div class="compare-card-name" id="loanCardName">Estimated rates for your tier</div>
+          <div class="compare-details">
+            <div class="compare-row">
+              <span class="compare-label">APR Range</span>
+              <span class="compare-value" id="loanAPR">5.99% - 12.49%</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Origination Fee</span>
+              <span class="compare-value" id="loanOrigination">0-3%</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Monthly Payment</span>
+              <span class="compare-value" id="loanMonthly">$0</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Total Interest</span>
+              <span class="compare-value" id="loanTotalInterest">$0</span>
+            </div>
+            <div class="compare-row">
+              <span class="compare-label">Total Cost</span>
+              <span class="compare-value compare-total" id="loanTotalCost">$0</span>
+            </div>
+          </div>
+          <div class="compare-callout compare-callout-info">
+            <span class="callout-icon">ℹ️</span>
+            <span id="loanCalloutText">Fixed monthly payment — no surprises</span>
+          </div>
+          <div class="compare-highlights" id="loanHighlights"></div>
+          <a href="#" class="btn-ghost compare-cta" onclick="event.preventDefault();">See your rate → <small>(Marketplace coming soon)</small></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- When BT Wins / When Loan Wins -->
+    <section class="content-section">
+      <h2>When does each option win?</h2>
+
+      <div class="when-grid">
+        <div class="when-card when-bt">
+          <h3>💳 Balance transfer wins when:</h3>
+          <ul>
+            <li>Your debt fits within the BT limit (typically ≤$10-15k)</li>
+            <li>You can pay it off during the 0% intro period</li>
+            <li>Total BT fee (3-5%) is less than loan origination + interest</li>
+            <li>You have good+ credit for the best offers</li>
+            <li>You're disciplined about not running up new debt</li>
+          </ul>
+        </div>
+        <div class="when-card when-loan">
+          <h3>🏦 Personal loan wins when:</h3>
+          <ul>
+            <li>Debt exceeds typical BT limits ($15k+)</li>
+            <li>You need 3-5 years to repay (beyond 0% intro period)</li>
+            <li>You prefer a fixed monthly payment for budgeting</li>
+            <li>Your credit score is fair or good but not excellent</li>
+            <li>You want a structured payoff plan — no temptation to keep spending</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <a href="/debt-planner/" class="btn-primary cta-btn">📊 Make a debt payoff plan →</a>
+      <a href="/min-payment/" class="btn-ghost cta-btn">⚠️ See the minimum payment trap →</a>
+      <a href="/score-simulator/" class="btn-ghost cta-btn">📈 Check your credit score →</a>
+    </div>
+
+    <!-- Share -->
+    <div class="share-bar" id="shareBar"></div>
+
+    <!-- FAQ -->
+    <section class="content-section faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <details class="faq-item">
+        <summary>Is a personal loan or balance transfer better?</summary>
+        <p>It depends on your debt amount, payoff timeline, and credit. Balance transfers are best for smaller debts you can pay off during a 0% intro period. Personal loans work better for larger debts or longer timelines. Use the calculator above to see your specific savings.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What are the risks of a balance transfer?</summary>
+        <p>The biggest risk is not paying off the balance during the 0% intro period. After that, the regular APR kicks in (often 18-29%). Also, balance transfer fees (3-5%) add upfront cost, and missing a payment can void the 0% offer. Don't run up new debt on the old card.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What are origination fees?</summary>
+        <p>Origination fees are one-time charges (1-8% of the loan) deducted from the loan proceeds. A $10,000 loan with a 5% origination fee means you receive $9,500 but repay $10,000 plus interest. Not all lenders charge origination fees.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I get a balance transfer with fair credit?</summary>
+        <p>Most 0% BT cards require good to excellent credit. With fair credit (580-669), options are limited but exist — Capital One Quicksilver and Discover cards may approve fair-credit applicants. Personal loans are often easier to get with fair credit, though at higher rates.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a></p>
+    </div>
+  </footer>
+
+  <script src="../data.js"></script>
+  <script src="rates.js"></script>
+  <script src="../shared/pwa.js"></script>
+  <script src="../shared/email-capture.js"></script>
+  <script src="../shared/share.js"></script>
+  <script src="calc.js"></script>
+</body>
+</html>
