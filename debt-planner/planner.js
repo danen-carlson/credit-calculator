@@ -42,6 +42,26 @@ window.setDebts = function (next) {
 };
 window.debts = debts;
 
+// Common card name → APR suggestions for autosuggest (P1 #18)
+const CARD_APR_SUGGEST = {
+  'Chase Sapphire': 24.49,
+  'Amex Blue Cash Preferred': 21.24,
+  'Capital One Quicksilver': 26.49,
+  'Discover It': 22.49,
+  'Citi Double Cash': 23.24,
+  'Chase Freedom': 21.24,
+  'Amex Gold': 21.24,
+  'Capital One Venture': 24.49,
+  'Wells Fargo Active Cash': 22.49,
+  'Citi Simplicity': 25.99,
+  'Wells Fargo Reflect': 25.24,
+  'Bank of America Cash Rewards': 23.24
+};
+
+// Windfall / one-time extra payment state (P1 #20)
+let windfallAmount = 0;
+let windfallMonth = 6;
+
 // DEBT_COLORS is defined in charts.js — that's the only place it's used
 // Balance transfer card data — verified against issuer pages 2026-04-28.
 // Many issuers offer a lower intro fee for transfers in the first ~60 days/4 months,
@@ -180,11 +200,18 @@ function renderDebtCards() {
   debts.forEach((debt, i) => {
     const card = document.createElement('div');
     card.className = 'debt-card';
+    card.dataset.debtId = debt.id;
     card.innerHTML = `
+      <div class="debt-card-controls">
+        <button class="btn-reorder" onclick="reorderDebt(${debt.id}, -1)" title="Move up" ${i === 0 ? 'disabled' : ''}>↑</button>
+        <button class="btn-reorder" onclick="reorderDebt(${debt.id}, 1)" title="Move down" ${i === debts.length - 1 ? 'disabled' : ''}>↓</button>
+      </div>
       <div class="input-group">
         <label>Name</label>
         <input type="text" value="${escapeHtml(debt.name)}" 
-               onchange="updateDebt(${debt.id}, 'name', this.value)" placeholder="e.g. Chase Visa">
+               onchange="updateDebt(${debt.id}, 'name', this.value)" 
+               oninput="applyAprSuggest(this, ${debt.id})"
+               list="aprSuggestList" placeholder="e.g. Chase Visa">
       </div>
       <div class="input-group">
         <label>Balance</label>
@@ -197,7 +224,7 @@ function renderDebtCards() {
       <div class="input-group">
         <label>APR %</label>
         <input type="number" value="${debt.apr}" min="0" max="99" step="0.01" inputmode="decimal"
-               onchange="updateDebt(${debt.id}, 'apr', this.value)">
+               onchange="updateDebt(${debt.id}, 'apr', this.value)" id="apr-${debt.id}">
       </div>
       <div class="input-group">
         <label>Min Payment</label>
@@ -559,6 +586,8 @@ function renderResults() {
 
   if (!results.minimum) {
     container.innerHTML = '<p style="text-align:center;color:var(--text-secondary);padding:40px 0;">Add debts above to see your payoff plan.</p>';
+    const heroEl = document.getElementById('debt-free-hero');
+    if (heroEl) heroEl.innerHTML = '';
     return;
   }
 
@@ -572,6 +601,34 @@ function renderResults() {
   if (snow.totalInterest === av.totalInterest) winner = 'tie';
 
   const interestDiff = Math.abs(snow.totalInterest - av.totalInterest);
+
+  // ── P1 #16: Debt-Free Hero at top of results ──
+  const heroEl = document.getElementById('debt-free-hero');
+  if (heroEl) {
+    const bestResult = (av.totalInterest <= snow.totalInterest) ? av : snow;
+    const debtFreeDateStr = bestResult.debtFreeMonths >= 360 ? '30+ years' : formatDate(bestResult.debtFreeDate);
+    const bestWithWindfall = simulateWithWindfall(bestResult);
+    let heroSubtitle = `Total interest paid: ${formatCurrency(bestResult.totalInterest)}`;
+    let heroDateStr = debtFreeDateStr;
+    if (windfallAmount > 0 && bestWithWindfall) {
+      heroDateStr = bestWithWindfall.debtFreeMonths >= 360 ? '30+ years' : formatDate(bestWithWindfall.debtFreeDate);
+      heroSubtitle = `Total interest: ${formatCurrency(bestResult.totalInterest)} → ${formatCurrency(bestWithWindfall.totalInterest)} with windfall`;
+    }
+    heroEl.innerHTML = `
+      <div class="debt-free-hero-card">
+        <div class="debt-free-hero-emoji">🎉</div>
+        <div class="debt-free-hero-stat">You'll be debt-free by <strong>${heroDateStr}</strong></div>
+        <div class="debt-free-hero-subtitle">${heroSubtitle}</div>
+      </div>
+    `;
+  }
+
+  // ── P2 #43: Strategy explanation above cards ──
+  let explanationHtml = `
+    <div class="strategy-explanation">
+      <p><strong>Snowball</strong> pays smallest balances first — quick wins keep you motivated. <strong>Avalanche</strong> pays highest-interest debts first — mathematically saves the most money. Pick the one you'll stick with.</p>
+    </div>
+  `;
 
   let html = '';
 
@@ -597,7 +654,7 @@ function renderResults() {
   // Strategy cards
   html += '<div class="strategy-grid">';
 
-  // Minimum card
+  // Strategy explanation already rendered above
   html += renderStrategyCard('minimum', 'Minimum Payments', 'The baseline — no extra payments', min, null, min);
 
   // Snowball card
@@ -629,7 +686,51 @@ function renderResults() {
     `;
   }
 
-  container.innerHTML = html;
+  // ── P1 #20: Populate windfall results if windfall is active ──
+  if (windfallAmount > 0) {
+    const windfallEl = document.getElementById('windfall-results');
+    if (windfallEl && bestWithWindfall) {
+      const baseUrl = bestResult;
+      const bf = bestWithWindfall;
+      windfallEl.innerHTML = `
+        <div class="windfall-before-after">
+          <div class="windfall-before">
+            <div class="windfall-label">Before (no windfall)</div>
+            <div>Debt-free: <strong>${baseUrl.debtFreeMonths >= 360 ? '30+ years' : formatDate(baseUrl.debtFreeDate)}</strong></div>
+            <div>Interest: <strong>${formatCurrency(baseUrl.totalInterest)}</strong></div>
+          </div>
+          <div class="windfall-after">
+            <div class="windfall-label">After $${windfallAmount.toLocaleString()} at month ${windfallMonth}</div>
+            <div>Debt-free: <strong>${bf.debtFreeMonths >= 360 ? '30+ years' : formatDate(bf.debtFreeDate)}</strong></div>
+            <div>Interest: <strong>${formatCurrency(bf.totalInterest)}</strong></div>
+            <div>Saved: <strong style="color:var(--success)">${formatCurrency(baseUrl.totalInterest - bf.totalInterest)}</strong></div>
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // ── P2 #42: Strategy comparison side-by-side ──
+  html += renderStrategyComparisonPanel(min, snow, av);
+
+  // ── P1 #20: Windfall before/after ──
+  html += renderWindfallPanel(snow, av, bestResult);
+
+  // ── P1 #8: Cross-tool CTA ──
+  html += `
+    <div class="cross-tool-cta">
+      <a href="/rewards/" class="cta-card">
+        <span class="cta-emoji">🎁</span>
+        <div class="cta-text"><strong>Considering a new card?</strong> Find the best rewards →</div>
+      </a>
+      <a href="/compare/" class="cta-card">
+        <span class="cta-emoji">⚖️</span>
+        <div class="cta-text"><strong>Comparing a purchase?</strong> See cheapest payment →</div>
+      </a>
+    </div>
+  `;
+
+  container.innerHTML = explanationHtml + html;
 }
 
 function renderStrategyCard(id, name, subtitle, result, savings, minResult, isWinner) {
@@ -1032,6 +1133,14 @@ function renderConsolidationResults(resultsData) {
 
       ${warningsHtml}
 
+      <!-- P1 #19: Balance transfer gotcha warnings -->
+      <div class="bt-gotcha-warnings">
+        <div class="bt-gotcha-title">⚠️ Before you transfer, know the risks:</div>
+        <div class="bt-gotcha-item">⚠️ If you don't pay off the balance before the promo ends, the remaining balance accrues interest at the post-promo APR</div>
+        <div class="bt-gotcha-item">⚠️ Some store cards charge retroactive interest. Read the terms</div>
+        <div class="bt-gotcha-item">⚠️ Missing a payment can void the intro APR</div>
+      </div>
+
       <div class="consolidation-comparison">
         <div class="comparison-card">
           <div class="comparison-title">Original best plan</div>
@@ -1132,6 +1241,238 @@ function escapeHtml(str) {
   const div = document.createElement('div');
   div.textContent = str;
   return div.innerHTML;
+}
+
+// ========================
+// P1 #18: APR AUTOSUGGEST
+// ========================
+function applyAprSuggest(inputEl, debtId) {
+  const val = inputEl.value.trim();
+  // Direct match
+  if (CARD_APR_SUGGEST[val] !== undefined) {
+    const aprInput = document.getElementById('apr-' + debtId);
+    if (aprInput && (!aprInput.value || parseFloat(aprInput.value) === 0)) {
+      aprInput.value = CARD_APR_SUGGEST[val];
+      updateDebt(debtId, 'apr', aprInput.value);
+    }
+    return;
+  }
+  // Partial / case-insensitive match
+  const lower = val.toLowerCase();
+  for (const [name, apr] of Object.entries(CARD_APR_SUGGEST)) {
+    if (name.toLowerCase().includes(lower) || lower.includes(name.toLowerCase())) {
+      const aprInput = document.getElementById('apr-' + debtId);
+      if (aprInput && (!aprInput.value || parseFloat(aprInput.value) === 0)) {
+        aprInput.value = apr;
+        updateDebt(debtId, 'apr', aprInput.value);
+      }
+      return;
+    }
+  }
+}
+
+// ========================
+// P2 #44: REORDER DEBTS
+// ========================
+function reorderDebt(id, direction) {
+  const idx = debts.findIndex(d => d.id === id);
+  if (idx < 0) return;
+  const newIdx = idx + direction;
+  if (newIdx < 0 || newIdx >= debts.length) return;
+  // Swap
+  [debts[idx], debts[newIdx]] = [debts[newIdx], debts[idx]];
+  renderDebtCards();
+  recalculate();
+  notifyDebtsChanged();
+}
+
+// ========================
+// P1 #20: WINDFALL MODELING
+// ========================
+function simulateWithWindfall(baseResult) {
+  if (!baseResult || windfallAmount <= 0) return null;
+  // Re-run the same strategy with a one-time payment applied at windfallMonth
+  const sortFn = currentChartStrategy === 'avalanche'
+    ? (a, b) => b.apr - a.apr
+    : (a, b) => a.balance - b.balance;
+  return simulateStrategyWithWindfall(debts, extraPayment, sortFn, windfallAmount, windfallMonth);
+}
+
+function simulateStrategyWithWindfall(debtsList, extra, sortFn, lumpSum, lumpMonth) {
+  const sim = debtsList.map(d => ({
+    name: d.name,
+    balance: d.balance,
+    apr: d.apr,
+    minPayment: d.minPayment,
+    monthlyRate: d.apr / 100 / 12,
+    promoApr: d.promoApr,
+    promoMonths: d.promoMonths || 0
+  }));
+
+  const months = [];
+  let totalInterest = 0;
+  let totalPaid = 0;
+
+  for (let m = 0; m < 360; m++) {
+    const monthData = { month: m + 1, payments: [], balances: [], targetId: null };
+    const active = sim.filter(d => d.balance > 0);
+    if (active.length === 0) break;
+
+    const sorted = [...active].sort(sortFn);
+    const target = sorted[0];
+    monthData.targetId = target.name;
+
+    const interests = {};
+    sim.forEach(d => {
+      if (d.balance > 0) {
+        const rate = m < (d.promoMonths || 0) ? ((d.promoApr || 0) / 100 / 12) : d.monthlyRate;
+        interests[d.name] = d.balance * rate;
+      }
+    });
+
+    let remainingExtra = extra;
+    // Apply windfall in the designated month
+    if (m + 1 === lumpMonth && lumpSum > 0) {
+      remainingExtra += lumpSum;
+    }
+
+    sim.forEach(d => {
+      if (d.balance <= 0) {
+        monthData.payments.push({ name: d.name, payment: 0, interest: 0, principal: 0, balance: 0, isTarget: false });
+        monthData.balances.push({ name: d.name, balance: 0 });
+        return;
+      }
+      const interest = interests[d.name];
+      let payment = Math.min(d.minPayment, d.balance + interest);
+      const principal = payment - interest;
+      d.balance = Math.max(0, d.balance - principal);
+      totalInterest += interest;
+      totalPaid += payment;
+      const isTarget = (d.name === target.name);
+      monthData.payments.push({ name: d.name, payment, interest, principal, balance: d.balance, isTarget });
+      monthData.balances.push({ name: d.name, balance: d.balance });
+    });
+
+    while (remainingExtra > 0.005) {
+      const stillActive = sim.filter(d => d.balance > 0.005);
+      if (stillActive.length === 0) break;
+      const nextTarget = [...stillActive].sort(sortFn)[0];
+      const ep = Math.min(remainingExtra, nextTarget.balance);
+      nextTarget.balance = Math.max(0, nextTarget.balance - ep);
+      totalPaid += ep;
+      remainingExtra -= ep;
+      const rec = monthData.payments.find(p => p.name === nextTarget.name);
+      if (rec) { rec.payment += ep; rec.principal += ep; rec.balance = nextTarget.balance; }
+      const bRec = monthData.balances.find(b => b.name === nextTarget.name);
+      if (bRec) bRec.balance = nextTarget.balance;
+    }
+
+    months.push(monthData);
+  }
+
+  const debtFreeMonths = months.length;
+  const now = new Date();
+  const debtFreeDate = new Date(now.getFullYear(), now.getMonth() + debtFreeMonths, 1);
+  return { months, totalInterest, totalPaid, debtFreeMonths, debtFreeDate, warnings: [] };
+}
+
+function renderWindfallPanel(snow, av, bestResult) {
+  if (!snow || !av) return '';
+  const bf = simulateWithWindfall(bestResult || av);
+  let resultsHtml = '';
+  if (windfallAmount > 0 && bf && bestResult) {
+    resultsHtml = `
+      <div class="windfall-before-after">
+        <div class="windfall-before">
+          <div class="windfall-label">Before (no windfall)</div>
+          <div>Debt-free: <strong>${bestResult.debtFreeMonths >= 360 ? '30+ years' : formatDate(bestResult.debtFreeDate)}</strong></div>
+          <div>Interest: <strong>${formatCurrency(bestResult.totalInterest)}</strong></div>
+        </div>
+        <div class="windfall-after">
+          <div class="windfall-label">After $${windfallAmount.toLocaleString()} at month ${windfallMonth}</div>
+          <div>Debt-free: <strong>${bf.debtFreeMonths >= 360 ? '30+ years' : formatDate(bf.debtFreeDate)}</strong></div>
+          <div>Interest: <strong>${formatCurrency(bf.totalInterest)}</strong></div>
+          <div>Saved: <strong style="color:var(--success)">${formatCurrency(bestResult.totalInterest - bf.totalInterest)}</strong></div>
+        </div>
+      </div>
+    `;
+  }
+  return `
+    <div class="windfall-section">
+      <h3>💰 What if you make a one-time payment?</h3>
+      <div class="windfall-inputs">
+        <div class="input-group">
+          <label>One-time amount</label>
+          <div class="input-with-prefix">
+            <span class="prefix">$</span>
+            <input type="number" id="windfall-amount" value="${windfallAmount}" min="0" step="100" inputmode="decimal" style="padding-left:38px;">
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Apply at month</label>
+          <input type="number" id="windfall-month" value="${windfallMonth}" min="1" max="360" step="1" inputmode="numeric">
+        </div>
+        <button class="btn-consolidate" onclick="updateWindfall()">Apply</button>
+      </div>
+      <div class="windfall-results">${resultsHtml}</div>
+    </div>
+  `;
+}
+
+function updateWindfall() {
+  windfallAmount = parseFloat(document.getElementById('windfall-amount')?.value) || 0;
+  windfallMonth = parseInt(document.getElementById('windfall-month')?.value) || 6;
+  windfallMonth = Math.max(1, Math.min(360, windfallMonth));
+  recalculate();
+}
+
+// ========================
+// P2 #42: STRATEGY COMPARISON PANEL
+// ========================
+function renderStrategyComparisonPanel(min, snow, av) {
+  if (!min || !snow || !av) return '';
+
+  const best = av.totalInterest <= snow.totalInterest ? av : snow;
+  const bestName = av.totalInterest <= snow.totalInterest ? 'Avalanche' : 'Snowball';
+
+  const now = new Date();
+  function fmtDate(months) {
+    const d = new Date(now.getFullYear(), now.getMonth() + months, 1);
+    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  }
+
+  return `
+    <div class="strategy-comparison-panel">
+      <h3>📊 Strategy Comparison</h3>
+      <div class="comparison-columns">
+        <div class="comparison-col">
+          <div class="comparison-col-title">🔵 Snowball</div>
+          <div class="comparison-stat"><span>Payoff date</span><strong>${snow.debtFreeMonths >= 360 ? '30+ years' : fmtDate(snow.debtFreeMonths)}</strong></div>
+          <div class="comparison-stat"><span>Total interest</span><strong>${formatCurrency(snow.totalInterest)}</strong></div>
+          <div class="comparison-stat"><span>Monthly payment</span><strong>${formatCurrency(debts.reduce((s,d)=>s+d.minPayment,0) + extraPayment)}</strong></div>
+        </div>
+        <div class="comparison-col best">
+          <div class="comparison-col-title">🟣 Avalanche ★</div>
+          <div class="comparison-stat"><span>Payoff date</span><strong>${av.debtFreeMonths >= 360 ? '30+ years' : fmtDate(av.debtFreeMonths)}</strong></div>
+          <div class="comparison-stat"><span>Total interest</span><strong>${formatCurrency(av.totalInterest)}</strong></div>
+          <div class="comparison-stat"><span>Monthly payment</span><strong>${formatCurrency(debts.reduce((s,d)=>s+d.minPayment,0) + extraPayment)}</strong></div>
+        </div>
+        <div class="comparison-col">
+          <div class="comparison-col-title">Minimum Only</div>
+          <div class="comparison-stat"><span>Payoff date</span><strong>${min.debtFreeMonths >= 360 ? '30+ years' : fmtDate(min.debtFreeMonths)}</strong></div>
+          <div class="comparison-stat"><span>Total interest</span><strong>${formatCurrency(min.totalInterest)}</strong></div>
+          <div class="comparison-stat"><span>Monthly payment</span><strong>${formatCurrency(debts.reduce((s,d)=>s+d.minPayment,0))}</strong></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ========================
+// P2 #34: DATE-OF-DATA STAMP
+// ========================
+function getDateLabel() {
+  return '2026-04-28';
 }
 
 // ========================
@@ -1562,6 +1903,10 @@ function init() {
 
   updateConsolidationOptions();
 
+  // P2 #34: Inject date-of-data stamp into footer
+  const stampMount = document.getElementById('dateLabel');
+  if (stampMount) stampMount.textContent = 'Rates current as of: ' + getDateLabel();
+
   // Initial calculation
   console.log('Starting initial calculation');
   updateExtraPayment(200);
@@ -1569,6 +1914,9 @@ function init() {
   
   // Initialize export button state
   hideSkeleton();
+
+  // Notify PWA install prompt that results are ready
+  try { window.dispatchEvent(new Event('creditstud:results-ready')); } catch (_) { /* ignore */ }
 }
 
 // Run on DOM ready

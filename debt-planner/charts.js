@@ -12,6 +12,14 @@ const STRATEGY_COLORS = {
   minimum: '#64748b'    // gray
 };
 
+// P1 #17: Date-label helper — converts month number to "Mon YYYY" label
+function monthToDateLabel(monthNum, zeroBased) {
+  const m = zeroBased ? monthNum : monthNum - 1;
+  const now = new Date();
+  const d = new Date(now.getFullYear(), now.getMonth() + m, 1);
+  return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+
 function renderCharts(retryCount = 0) {
   console.log('renderCharts called', { retryCount, chartJsLoaded: typeof Chart !== 'undefined' });
   
@@ -97,10 +105,10 @@ function renderDebtOverTimeChart() {
     };
   });
 
-  // Labels
-  const labels = result.months.map(m => {
+  // P1 #17: Date-labeled x-axis instead of "Month N"
+  const labels = result.months.map((m, idx) => {
     if (m.month % 6 === 0 || m.month === 1 || m.month === maxMonths) {
-      return `Month ${m.month}`;
+      return monthToDateLabel(m.month, false);
     }
     return '';
   });
@@ -134,7 +142,7 @@ function renderDebtOverTimeChart() {
           padding: 12,
           cornerRadius: 8,
           callbacks: {
-            title: (items) => `Month ${items[0].dataIndex + 1}`,
+            title: (items) => monthToDateLabel(items[0].dataIndex + 1, false),
             label: (item) => `${item.dataset.label}: $${Math.round(item.raw).toLocaleString()}`,
           }
         }
@@ -268,11 +276,11 @@ function renderStrategyComparisonChart() {
     results.minimum.months.length
   );
 
-  // Create labels for all months
+  // P1 #17: Date-labeled x-axis instead of "Month N"
   const labels = [];
   for (let i = 1; i <= maxMonths; i++) {
     if (i % 6 === 0 || i === 1 || i === maxMonths) {
-      labels.push(`Month ${i}`);
+      labels.push(monthToDateLabel(i, false));
     } else {
       labels.push('');
     }
@@ -361,7 +369,7 @@ function renderStrategyComparisonChart() {
           padding: 12,
           cornerRadius: 8,
           callbacks: {
-            title: (items) => `Month ${items[0].dataIndex + 1}`,
+            title: (items) => monthToDateLabel(items[0].dataIndex + 1, false),
             label: (item) => `${item.dataset.label}: $${Math.round(item.raw).toLocaleString()}`
           }
         }
@@ -573,10 +581,10 @@ function renderCreditScoreChart() {
     }
   }
   
-  // Prepare chart data
+  // P1 #17: Date-labeled x-axis
   const labels = dataPoints.map(point => 
     point.month % 6 === 0 || point.month === 1 || point.month === dataPoints[dataPoints.length - 1].month
-      ? `Month ${point.month}`
+      ? monthToDateLabel(point.month, false)
       : ''
   );
   
@@ -639,7 +647,7 @@ function renderCreditScoreChart() {
           padding: 12,
           cornerRadius: 8,
           callbacks: {
-            title: (items) => `Month ${items[0].dataIndex + 1}`,
+            title: (items) => monthToDateLabel(dataPoints[items[0].dataIndex]?.month || items[0].dataIndex + 1, false),
             label: function(context) {
               if (context.datasetIndex === 0) {
                 return `${context.dataset.label}: $${Math.round(context.parsed.y).toLocaleString()}`;

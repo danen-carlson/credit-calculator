@@ -249,8 +249,24 @@
       </div>
     </section>
 
-    <!-- Step 2: Extra Payment -->
-    <section class="step" id="step-extra">
+        <!-- P1 #18: APR autosuggest datalist -->
+        <datalist id="aprSuggestList">
+          <option value="Chase Sapphire">
+          <option value="Amex Blue Cash Preferred">
+          <option value="Capital One Quicksilver">
+          <option value="Discover It">
+          <option value="Citi Double Cash">
+          <option value="Chase Freedom">
+          <option value="Amex Gold">
+          <option value="Capital One Venture">
+          <option value="Wells Fargo Active Cash">
+          <option value="Citi Simplicity">
+          <option value="Wells Fargo Reflect">
+          <option value="Bank of America Cash Rewards">
+        </datalist>
+
+        <!-- Step 2: Extra Payment -->
+        <section class="step" id="step-extra">
       <div class="container">
         <div class="step-header">
           <span class="step-number">2</span>
@@ -294,6 +310,9 @@
           <h2>Your Payoff Plan</h2>
         </div>
         <p class="step-desc">Three strategies compared side by side. The winner is highlighted.</p>
+
+        <!-- P1 #16: Debt-Free Hero Callout -->
+        <div id="debt-free-hero"></div>
 
         <!-- Status announcement for screen readers -->
         <div id="debt-calc-status" class="sr-only" aria-live="polite"></div>
@@ -468,6 +487,9 @@
         </div>
       </div>
     </section>
+
+    <!-- P2 #34: Date-of-data stamp -->
+    <div style="text-align:center;margin-top:8px;font-size:0.75rem;color:var(--text-secondary);" id="dateLabel"></div>
 
     <!-- FOOTER -->
 <footer class="footer">
