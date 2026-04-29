@@ -266,7 +266,7 @@
         // Add annual credits if toggle is on
         if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
           signupBonusValue += card.annualCredits;
-          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted, #9ca3af);">incl. $${card.annualCredits} annual credits</span>`;
         }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
@@ -337,7 +337,7 @@
         // Add annual credits if toggle is on
         if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
           signupBonusValue += card.annualCredits;
-          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted, #9ca3af);">incl. $${card.annualCredits} annual credits</span>`;
         }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
@@ -431,7 +431,7 @@
         // Add annual credits if toggle is on
         if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
           signupBonusValue += card.annualCredits;
-          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted, #9ca3af);">incl. $${card.annualCredits} annual credits</span>`;
         }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
@@ -566,7 +566,7 @@
         // Add annual credits if toggle is on
         if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
           signupBonusValue += card.annualCredits;
-          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted, #9ca3af);">incl. $${card.annualCredits} annual credits</span>`;
         }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
@@ -679,7 +679,7 @@
         // Add annual credits if toggle is on
         if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
           signupBonusValue += card.annualCredits;
-          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted, #9ca3af);">incl. $${card.annualCredits} annual credits</span>`;
         }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
@@ -744,7 +744,7 @@
         // Add annual credits if toggle is on
         if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
           signupBonusValue += card.annualCredits;
-          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted, #9ca3af);">incl. $${card.annualCredits} annual credits</span>`;
         }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
@@ -807,7 +807,7 @@
         // Add annual credits if toggle is on
         if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0) {
           signupBonusValue += card.annualCredits;
-          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted);">incl. $${card.annualCredits} annual credits</span>`;
+          annualCreditsNote = ` <span style="font-size:0.75rem;color:var(--text-muted, #9ca3af);">incl. $${card.annualCredits} annual credits</span>`;
         }
         netAnnual += signupBonusValue;
         grossAnnual += signupBonusValue;
