@@ -232,6 +232,9 @@
 
         <button class="btn-add" id="add-debt-btn" style="margin-top:12px;" aria-label="Add another debt">+ Add Another Debt</button>
 
+        <!-- Extra Payment / Windfall trigger -->
+        <button class="btn-extra-payment" id="extra-payment-btn" aria-label="Add a one-time extra payment">💰 + Extra Payment</button>
+
         <!-- Share / data stamp row -->
         <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
           <div id="share-mount"></div>
@@ -401,6 +404,17 @@
           <button class="chart-toggle-btn" data-strategy="avalanche" data-action="set-chart-strategy" aria-label="Show avalanche strategy chart">🟣 Avalanche</button>
         </div>
 
+        <div class="strategy-toggle-explanation" id="strategy-explanations">
+          <div class="explanation-item">
+            <strong>🔵 Snowball</strong>
+            Pay smallest balance first. Best for motivation — you see debts disappear faster.
+          </div>
+          <div class="explanation-item">
+            <strong>🟣 Avalanche</strong>
+            Pay highest interest rate first. Best mathematically — saves the most money.
+          </div>
+        </div>
+
         <!-- Chart 1: Debt Over Time -->
         <div class="chart-section">
           <h3>📉 Your Debt Over Time</h3>
@@ -461,10 +475,13 @@
         </div>
 
         <div style="text-align:center;margin-top:16px;">
+          <button class="btn-save-pdf" data-action="save-pdf" aria-label="Save your payoff plan as PDF">📄 Save as PDF</button>
           <button class="print-btn" data-action="print">🖨️ Print Your Plan</button>
           <button id="export-csv-btn" class="btn-ghost" style="margin-left: 10px;" data-action="export-csv" aria-label="Export amortization schedule as CSV">📊 Export Schedule (CSV)</button>
           <div id="export-status" aria-live="polite" style="margin-top: 8px; font-size: 0.85rem; color: var(--success);"></div>
         </div>
+        <!-- Print-only branding footer -->
+        <div class="print-branding">💳 CreditStud.io — Free Debt Payoff Planner | creditstud.io/debt-planner</div>
       </div>
     </section>
 

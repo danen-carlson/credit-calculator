@@ -953,6 +953,11 @@
 
               <div class="result-badges-row">${ftxBadge}${hadBadge}</div>
 
+              ${card.id === 'discover-it-cash-back' ? (yearView === 'first'
+                ? '<div class="discover-year2-callout year1">💰 Cashback Match doubles all earnings — effective 10% on rotating categories!</div>'
+                : '<div class="discover-year2-callout year2plus">⚠️ Year 2+: Earned rates drop to 5% rotating / 1% everything (no match)</div>')
+                : ''}
+
               ${card.bestFor ? `<div class="result-best-for">🏷️ Best for: ${card.bestFor}</div>` : ''}
 
               ${reasoningHTML}

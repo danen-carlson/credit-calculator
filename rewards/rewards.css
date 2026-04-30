@@ -1706,3 +1706,24 @@
     min-width: unset;
   }
 }
+
+/* Discover Cashback Match Year-2 callout */
+.discover-year2-callout {
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.discover-year2-callout.year1 {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.discover-year2-callout.year2plus {
+  background: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}

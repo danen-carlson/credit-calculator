@@ -1905,6 +1905,26 @@ function init() {
     addDebt('', 0, 0, 0);
   });
 
+  // Bind extra payment button to scroll to windfall section in results
+  const extraPaymentBtn = document.getElementById('extra-payment-btn');
+  if (extraPaymentBtn) {
+    extraPaymentBtn.addEventListener('click', () => {
+      // If windfall hasn't been set yet, scroll to results and focus windfall form
+      const windfallSection = document.querySelector('.windfall-section');
+      if (windfallSection) {
+        windfallSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const windfallInput = document.getElementById('windfall-amount');
+        if (windfallInput) windfallInput.focus();
+      } else {
+        // Scroll to results section, windfall will render there
+        const resultsSection = document.getElementById('step-results');
+        if (resultsSection) {
+          resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  }
+
   // Set up slider
   const slider = document.getElementById('extra-slider');
   const input = document.getElementById('extra-input');
@@ -2045,6 +2065,10 @@ document.addEventListener('click', function(event) {
       toggleSchedule();
       break;
     case 'print':
+      window.print();
+      break;
+    case 'save-pdf':
+      // Enhance the print experience - generate a clean print layout
       window.print();
       break;
     case 'export-csv':
