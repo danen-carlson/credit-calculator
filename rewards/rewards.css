@@ -457,6 +457,23 @@
   box-shadow: var(--shadow);
   /* Ensure minimum height for scroll indication */
   min-height: 150px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scroll hint for compare tables with 4+ cards */
+.comparison-table-wrapper::after {
+  content: '';
+  display: none;
+}
+@media (max-width: 768px) {
+  .comparison-table-wrapper::after {
+    content: '← Scroll to see more cards →';
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-secondary, #6b7280);
+    padding: 4px 0;
+  }
 }
 
 .comparison-table {

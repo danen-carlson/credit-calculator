@@ -43,20 +43,28 @@ window.setDebts = function (next) {
 window.debts = debts;
 
 // Common card name → APR suggestions for autosuggest (P1 #18)
-const CARD_APR_SUGGEST = {
-  'Chase Sapphire': 24.49,
-  'Amex Blue Cash Preferred': 21.24,
-  'Capital One Quicksilver': 26.49,
-  'Discover It': 22.49,
-  'Citi Double Cash': 23.24,
-  'Chase Freedom': 21.24,
-  'Amex Gold': 21.24,
-  'Capital One Venture': 24.49,
-  'Wells Fargo Active Cash': 22.49,
-  'Citi Simplicity': 25.99,
-  'Wells Fargo Reflect': 25.24,
-  'Bank of America Cash Rewards': 23.24
-};
+const CARD_APR_SUGGEST = [
+  { name: 'Chase Sapphire Preferred', apr: 24.49 },
+  { name: 'Chase Sapphire Reserve', apr: 23.99 },
+  { name: 'Amex Blue Cash Preferred', apr: 21.24 },
+  { name: 'Amex Blue Cash Everyday', apr: 21.24 },
+  { name: 'Amex Gold', apr: 21.24 },
+  { name: 'Amex Platinum', apr: 22.49 },
+  { name: 'Capital One Quicksilver', apr: 26.49 },
+  { name: 'Capital One Venture', apr: 24.49 },
+  { name: 'Capital One Venture X', apr: 22.49 },
+  { name: 'Discover It Cash Back', apr: 22.49 },
+  { name: 'Discover It Chrome', apr: 22.49 },
+  { name: 'Citi Double Cash', apr: 23.24 },
+  { name: 'Citi Simplicity', apr: 25.99 },
+  { name: 'Chase Freedom Unlimited', apr: 21.99 },
+  { name: 'Chase Freedom Flex', apr: 22.49 },
+  { name: 'Wells Fargo Active Cash', apr: 22.49 },
+  { name: 'Wells Fargo Reflect', apr: 25.24 },
+  { name: 'Bank of America Cash Rewards', apr: 23.24 },
+  { name: 'US Bank Altitude Go', apr: 21.49 },
+  { name: 'Amazon Prime Visa', apr: 21.24 }
+];
 
 // Windfall / one-time extra payment state (P1 #20)
 let windfallAmount = 0;
@@ -614,10 +622,25 @@ function renderResults() {
       heroDateStr = bestWithWindfall.debtFreeMonths >= 360 ? '30+ years' : formatDate(bestWithWindfall.debtFreeDate);
       heroSubtitle = `Total interest: ${formatCurrency(bestResult.totalInterest)} → ${formatCurrency(bestWithWindfall.totalInterest)} with windfall`;
     }
+    // Calculate countdown
+    const now = new Date();
+    const monthsRemaining = bestResult.debtFreeMonths;
+    const yearsRemaining = Math.floor(monthsRemaining / 12);
+    const remMonths = monthsRemaining % 12;
+    let countdownStr = '';
+    if (monthsRemaining >= 360) {
+      countdownStr = '30+ years to go';
+    } else if (yearsRemaining >= 1) {
+      countdownStr = `${yearsRemaining} year${yearsRemaining !== 1 ? 's' : ''}, ${remMonths} month${remMonths !== 1 ? 's' : ''} to go`;
+    } else {
+      countdownStr = `${monthsRemaining} month${monthsRemaining !== 1 ? 's' : ''} to go`;
+    }
+
     heroEl.innerHTML = `
       <div class="debt-free-hero-card">
         <div class="debt-free-hero-emoji">🎉</div>
-        <div class="debt-free-hero-stat">You'll be debt-free by <strong>${heroDateStr}</strong></div>
+        <div class="debt-free-hero-stat">Debt-free by <strong>${heroDateStr}</strong></div>
+        <div class="debt-free-hero-countdown">${countdownStr}</div>
         <div class="debt-free-hero-subtitle">${heroSubtitle}</div>
       </div>
     `;
@@ -1136,7 +1159,10 @@ function renderConsolidationResults(resultsData) {
       <!-- P1 #19: Balance transfer gotcha warnings -->
       <div class="bt-gotcha-warnings">
         <div class="bt-gotcha-title">⚠️ Before you transfer, know the risks:</div>
-        <div class="bt-gotcha-item">⚠️ If you don't pay off the balance before the promo ends, the remaining balance accrues interest at the post-promo APR</div>
+        ${resultsData.consolidatedBest.debtFreeMonths > resultsData.newCardTerms.introAprMonths ? `
+        <div class="bt-gotcha-item bt-gotcha-critical">⚠️ Post-promo APR cliff: After the ${resultsData.newCardTerms.introAprMonths}-month intro period, your rate jumps to <strong>${resultsData.newCardTerms.postPromoApr.toFixed(2)}% APR</strong>. Your payoff takes ${resultsData.consolidatedBest.debtFreeMonths} months — that's ${resultsData.consolidatedBest.debtFreeMonths - resultsData.newCardTerms.introAprMonths} months beyond the intro period.</div>
+        ` : ''}
+        <div class="bt-gotcha-item bt-gotcha-critical">⚠️ Deferred interest: If you don't pay the full balance before the intro period ends, you could owe retroactive interest on the entire original amount.</div>
         <div class="bt-gotcha-item">⚠️ Some store cards charge retroactive interest. Read the terms</div>
         <div class="bt-gotcha-item">⚠️ Missing a payment can void the intro APR</div>
       </div>
@@ -1248,27 +1274,78 @@ function escapeHtml(str) {
 // ========================
 function applyAprSuggest(inputEl, debtId) {
   const val = inputEl.value.trim();
-  // Direct match
-  if (CARD_APR_SUGGEST[val] !== undefined) {
+  // Direct match (card name entered exactly)
+  const exactMatch = CARD_APR_SUGGEST.find(c => c.name === val);
+  if (exactMatch) {
     const aprInput = document.getElementById('apr-' + debtId);
     if (aprInput && (!aprInput.value || parseFloat(aprInput.value) === 0)) {
-      aprInput.value = CARD_APR_SUGGEST[val];
+      aprInput.value = exactMatch.apr;
       updateDebt(debtId, 'apr', aprInput.value);
     }
+    closeAprDropdown();
     return;
   }
-  // Partial / case-insensitive match
-  const lower = val.toLowerCase();
-  for (const [name, apr] of Object.entries(CARD_APR_SUGGEST)) {
-    if (name.toLowerCase().includes(lower) || lower.includes(name.toLowerCase())) {
-      const aprInput = document.getElementById('apr-' + debtId);
-      if (aprInput && (!aprInput.value || parseFloat(aprInput.value) === 0)) {
-        aprInput.value = apr;
-        updateDebt(debtId, 'apr', aprInput.value);
-      }
-      return;
-    }
+  // Show dropdown for partial matches
+  if (val.length >= 2) {
+    showAprDropdown(inputEl, debtId, val);
+  } else {
+    closeAprDropdown();
   }
+}
+
+function showAprDropdown(inputEl, debtId, query) {
+  closeAprDropdown();
+  const lower = query.toLowerCase();
+  const matches = CARD_APR_SUGGEST.filter(c =>
+    c.name.toLowerCase().includes(lower)
+  ).slice(0, 8);
+  if (matches.length === 0) return;
+
+  const dropdown = document.createElement('div');
+  dropdown.id = 'apr-dropdown';
+  dropdown.className = 'apr-suggest-dropdown';
+  dropdown.style.cssText = 'position:absolute;z-index:100;background:#fff;border:1px solid #cbd5e1;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,0.15);max-height:280px;overflow-y:auto;width:' + inputEl.offsetWidth + 'px;';
+
+  // Position under the input
+  const rect = inputEl.getBoundingClientRect();
+  dropdown.style.left = rect.left + 'px';
+  dropdown.style.top = (rect.bottom + window.scrollY + 4) + 'px';
+
+  matches.forEach(card => {
+    const item = document.createElement('div');
+    item.className = 'apr-suggest-item';
+    item.style.cssText = 'padding:8px 12px;cursor:pointer;font-size:0.88rem;display:flex;justify-content:space-between;align-items:center;';
+    item.innerHTML = `<span>${card.name}</span><span style="color:#6b7280;font-size:0.82rem;">${card.apr}% APR</span>`;
+    item.addEventListener('mouseenter', () => item.style.background = '#eff6ff');
+    item.addEventListener('mouseleave', () => item.style.background = '');
+    item.addEventListener('click', () => {
+      inputEl.value = card.name;
+      const aprInput = document.getElementById('apr-' + debtId);
+      if (aprInput) {
+        aprInput.value = card.apr;
+        updateDebt(debtId, 'name', card.name);
+        updateDebt(debtId, 'apr', card.apr.toString());
+      }
+      closeAprDropdown();
+    });
+    dropdown.appendChild(item);
+  });
+
+  document.body.appendChild(dropdown);
+}
+
+function closeAprDropdown() {
+  const existing = document.getElementById('apr-dropdown');
+  if (existing) existing.remove();
+}
+
+// Close dropdown on outside click
+if (typeof document !== 'undefined') {
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.apr-suggest-dropdown') && !e.target.matches('input[list="aprSuggestList"]')) {
+      closeAprDropdown();
+    }
+  });
 }
 
 // ========================
@@ -1434,6 +1511,8 @@ function renderStrategyComparisonPanel(min, snow, av) {
 
   const best = av.totalInterest <= snow.totalInterest ? av : snow;
   const bestName = av.totalInterest <= snow.totalInterest ? 'Avalanche' : 'Snowball';
+  const interestDiff = Math.abs(snow.totalInterest - av.totalInterest);
+  const timeDiff = Math.abs(snow.debtFreeMonths - av.debtFreeMonths);
 
   const now = new Date();
   function fmtDate(months) {
@@ -1441,26 +1520,39 @@ function renderStrategyComparisonPanel(min, snow, av) {
     return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
   }
 
+  const savingsCallout = interestDiff > 0
+    ? `<div class="comparison-savings-callout">
+        ${av.totalInterest < snow.totalInterest
+          ? `🟣 Avalanche saves <strong>${formatCurrency(interestDiff)}</strong> more than Snowball${timeDiff > 0 ? ` and finishes <strong>${timeDiff} month${timeDiff > 1 ? 's' : ''} sooner</strong>` : ''}`
+          : `🔵 Snowball saves <strong>${formatCurrency(interestDiff)}</strong> more than Avalanche${timeDiff > 0 ? ` and finishes <strong>${timeDiff} month${timeDiff > 1 ? 's' : ''} sooner</strong>` : ''}`
+        }
+      </div>`
+    : `<div class="comparison-savings-callout">Both strategies cost the same — pick whichever motivates you!</div>`;
+
   return `
     <div class="strategy-comparison-panel">
       <h3>📊 Strategy Comparison</h3>
+      ${savingsCallout}
       <div class="comparison-columns">
         <div class="comparison-col">
           <div class="comparison-col-title">🔵 Snowball</div>
           <div class="comparison-stat"><span>Payoff date</span><strong>${snow.debtFreeMonths >= 360 ? '30+ years' : fmtDate(snow.debtFreeMonths)}</strong></div>
           <div class="comparison-stat"><span>Total interest</span><strong>${formatCurrency(snow.totalInterest)}</strong></div>
+          <div class="comparison-stat"><span>Months to freedom</span><strong>${snow.debtFreeMonths >= 360 ? '360+' : snow.debtFreeMonths}</strong></div>
           <div class="comparison-stat"><span>Monthly payment</span><strong>${formatCurrency(debts.reduce((s,d)=>s+d.minPayment,0) + extraPayment)}</strong></div>
         </div>
-        <div class="comparison-col best">
-          <div class="comparison-col-title">🟣 Avalanche ★</div>
+        <div class="comparison-col ${av.totalInterest <= snow.totalInterest ? 'best' : ''}">
+          <div class="comparison-col-title">🟣 Avalanche ${av.totalInterest <= snow.totalInterest ? '★' : ''}</div>
           <div class="comparison-stat"><span>Payoff date</span><strong>${av.debtFreeMonths >= 360 ? '30+ years' : fmtDate(av.debtFreeMonths)}</strong></div>
           <div class="comparison-stat"><span>Total interest</span><strong>${formatCurrency(av.totalInterest)}</strong></div>
+          <div class="comparison-stat"><span>Months to freedom</span><strong>${av.debtFreeMonths >= 360 ? '360+' : av.debtFreeMonths}</strong></div>
           <div class="comparison-stat"><span>Monthly payment</span><strong>${formatCurrency(debts.reduce((s,d)=>s+d.minPayment,0) + extraPayment)}</strong></div>
         </div>
         <div class="comparison-col">
           <div class="comparison-col-title">Minimum Only</div>
           <div class="comparison-stat"><span>Payoff date</span><strong>${min.debtFreeMonths >= 360 ? '30+ years' : fmtDate(min.debtFreeMonths)}</strong></div>
           <div class="comparison-stat"><span>Total interest</span><strong>${formatCurrency(min.totalInterest)}</strong></div>
+          <div class="comparison-stat"><span>Months to freedom</span><strong>${min.debtFreeMonths >= 360 ? '360+' : min.debtFreeMonths}</strong></div>
           <div class="comparison-stat"><span>Monthly payment</span><strong>${formatCurrency(debts.reduce((s,d)=>s+d.minPayment,0))}</strong></div>
         </div>
       </div>
@@ -1472,7 +1564,7 @@ function renderStrategyComparisonPanel(min, snow, av) {
 // P2 #34: DATE-OF-DATA STAMP
 // ========================
 function getDateLabel() {
-  return '2026-04-28';
+  return '2026-04-30';
 }
 
 // ========================

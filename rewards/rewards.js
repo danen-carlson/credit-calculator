@@ -1144,7 +1144,7 @@
       return;
     }
 
-    if (selected.length > 3) {
+    if (selected.length > 5) {
       // Remove the last selected
       const lastId = Array.from(compareSelected).pop();
       compareSelected.delete(lastId);
@@ -1473,7 +1473,7 @@
     const categories = ['groceries', 'dining', 'gas', 'travel', 'online', 'streaming', 'utilities', 'everything'];
 
     const isAnnual = spendingMode === 'annual';
-    const sliderMax = isAnnual ? 50000 : 5000;
+    const sliderMax = isAnnual ? 100000 : 10000;
 
     grid.innerHTML = categories.map(cat => {
       const displayValue = isAnnual ? currentSpending[cat] * 12 : currentSpending[cat];
@@ -1547,9 +1547,9 @@
   window.toggleCompare = function(checkbox) {
     const cardId = checkbox.dataset.cardId;
     if (checkbox.checked) {
-      if (compareSelected.size >= 3) {
+      if (compareSelected.size >= 5) {
         checkbox.checked = false;
-        alert('You can compare up to 3 cards at a time.');
+        alert('You can compare up to 5 cards at a time.');
         return;
       }
       compareSelected.add(cardId);
@@ -1787,7 +1787,7 @@
           </select>
           <button class="btn-remove-custom" onclick="removeCustomCategory('${cat.id}')" title="Remove" style="background:none;border:none;cursor:pointer;font-size:1.1rem;color:var(--danger);padding:4px;">✕</button>
         </div>
-        <input type="range" class="spending-slider" id="slider-custom-${cat.id}" min="0" max="${isAnnual ? 50000 : 5000}" step="10" value="${displayAmount}"
+        <input type="range" class="spending-slider" id="slider-custom-${cat.id}" min="0" max="${isAnnual ? 100000 : 10000}" step="10" value="${displayAmount}"
           oninput="updateCustomCategoryAmount('${cat.id}', this.value)">
         <input type="number" class="spending-number-input" id="input-custom-${cat.id}" value="${displayAmount}" min="0" step="10"
           oninput="updateCustomCategoryAmount('${cat.id}', this.value)">

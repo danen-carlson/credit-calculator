@@ -232,7 +232,7 @@ function renderMilestoneChart() {
         <div class="milestone-bar-container">
           <div class="milestone-bar" style="width:${pct}%;background:${m.color}"></div>
         </div>
-        <div class="milestone-month">Month ${m.payoffMonth}</div>
+        <div class="milestone-month">${monthToDateLabel(m.payoffMonth, false)}</div>
         <div class="milestone-star">⭐</div>
       </div>
     `;

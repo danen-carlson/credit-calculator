@@ -1418,6 +1418,16 @@
   font-size: 0.9rem;
   color: #374151;
 }
+.debt-free-hero-countdown {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #065f46;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 6px 16px;
+  margin: 8px auto 4px;
+  display: inline-block;
+}
 
 /* Strategy Explanation (P2 #43) */
 .strategy-explanation {
@@ -1533,6 +1543,19 @@
   font-weight: 600;
   margin-bottom: 14px;
 }
+.comparison-savings-callout {
+  background: linear-gradient(135deg, #eff4ff 0%, #f5f3ff 100%);
+  border: 1.5px solid var(--primary, #2563eb);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  text-align: center;
+  color: var(--text);
+}
+.comparison-savings-callout strong {
+  color: var(--primary, #2563eb);
+}
 .comparison-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1620,6 +1643,15 @@
   color: #92400e;
   margin-bottom: 4px;
   line-height: 1.4;
+}
+.bt-gotcha-item.bt-gotcha-critical {
+  color: #991b1b;
+  font-weight: 600;
+  background: #fef2f2;
+  border-left: 3px solid #dc2626;
+  padding: 6px 10px;
+  margin: 6px 0;
+  border-radius: 4px;
 }
 
 /* Print Styles */
