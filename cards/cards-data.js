@@ -977,12 +977,12 @@ const CARD_REVIEWS = [
   },
   {
     slug: 'capital-one-savor',
-    name: 'Capital One Savor® Dining and Entertainment Card',
+    name: 'Capital One Savor Cash Rewards Credit Card',
     issuer: 'Capital One',
-    annualFee: 95,
-    introAPR: 'No intro APR offer',
+    annualFee: 0,
+    introAPR: '0% intro APR for 15 months on purchases',
     regularAPR: '19.99% – 29.99% Variable',
-    signupBonus: '$300 cash back after $3,000 spend in 3 months',
+    signupBonus: '$200 cash back after $500 spend in first 3 months',
     rewards: [
       { category: 'Dining', rate: '4%', type: 'cash back' },
       { category: 'Entertainment', rate: '4%', type: 'cash back' },
@@ -1030,7 +1030,7 @@ const CARD_REVIEWS = [
     annualFee: 149,
     introAPR: 'No intro APR offer on purchases',
     regularAPR: '21.49% – 28.99% Variable',
-    signupBonus: '50,000 points after $2,000 spend in 3 months (worth ~$750 in Southwest travel)',
+    signupBonus: '60,000 points after $2,000 spend in 3 months (worth ~$900 in Southwest travel)',
     rewards: [
       { category: 'Southwest purchases', rate: '3x', type: 'points' },
       { category: 'Dining', rate: '2x', type: 'points' },
@@ -1071,7 +1071,7 @@ const CARD_REVIEWS = [
       { q: 'What is the Southwest Companion Pass?', a: 'The holy grail of airline perks: a named companion flies free with you every time you fly Southwest, for the rest of the calendar year plus the following year. You need 135,000 qualifying points, and the Priority card gives you 10,000 toward that each year. If you\'re close, the card can push you over the edge.' },
       { q: 'How does the Priority compare to the Southwest Plus and Premier?', a: 'Priority ($149 AF) gives 7,500 anniversary points + $75 travel credit. Premier ($99 AF, discontinued) gave 6,000 points. Plus ($69 AF) gives 3,000 points + $50 travel credit. Priority is the best value for frequent flyers - the anniversary bonus alone covers most of the fee.' },
       { q: 'Can I use the Companion Pass with any ticket?', a: 'Yes — even award tickets. Book a flight with points, add your companion for free. This essentially doubles the value of every Southwest point you earn. Families love it: one ticket per trip, one free companion seat every time.' },
-      { q: 'How much are Southwest Rapid Rewards points worth?', a: '~1.5¢ each for Wanna Get Away fares. That means the 50,000 signup bonus is worth ~$750 in travel. Points don\'t expire as long as you have earning activity within 24 months, and there are no blackout dates or capacity controls on award flights.' },
+      { q: 'How much are Southwest Rapid Rewards points worth?', a: '~1.5¢ each for Wanna Get Away fares. That means the 60,000 signup bonus is worth ~$900 in travel. Points don\'t expire as long as you have earning activity within 24 months, and there are no blackout dates or capacity controls on award flights.' },
       { q: 'Should I get the Priority or Chase Sapphire Preferred?', a: 'Get both if you can. Priority for Southwest earning and Companion Pass progress. Sapphire Preferred for everything else (5x on travel portal, 3x dining). Plus, holding both lets you earn more flexible Chase UR points that you can transfer to Southwest (among other partners).' }
     ],
     alternatives: ['chase-sapphire-preferred', 'capital-one-venture-x', 'citi-strata-premier'],
