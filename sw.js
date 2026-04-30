@@ -1,6 +1,6 @@
 // CreditStud.io Service Worker
 // Strategy: cache-first for static assets, network-first for HTML navigations.
-const CACHE_VERSION = 'creditstud-v8-2026-04-30';
+const CACHE_VERSION = 'creditstud-v9-2026-04-30';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -54,6 +54,17 @@ const STATIC_ASSETS = [
   '/cards/capital-one-savor/',
   '/cards/southwest-priority-card/',
   '/cards/ihg-one-rewards-premier/',
+  '/cards/barclays-uber-pro/',
+  '/cards/amazon-prime-visa-signature/',
+  '/cards/apple-card/',
+  '/cards/citi-premier/',
+  '/cards/chase-ink-business-preferred/',
+  '/merchant/uber-lyft.html',
+  '/merchant/insurance.html',
+  '/merchant/subscription.html',
+  '/merchant/rent.html',
+  '/blog/best-credit-cards-for-travel.html',
+  '/blog/how-to-build-credit-from-scratch.html',
   '/cards/amex-blue-cash-preferred/',
   '/cards/chase-freedom-flex/',
   '/cards/amex-blue-cash-everyday/',

@@ -1129,6 +1129,248 @@ const CARD_REVIEWS = [
     alternatives: ['chase-sapphire-preferred', 'amex-platinum', 'citi-strata-premier'],
     affiliateLink: '#',
     reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'barclays-uber-pro',
+    name: 'Barclays Uber Pro Credit Card',
+    issuer: 'Barclays',
+    annualFee: 0,
+    introAPR: 'No intro APR offer',
+    regularAPR: '22.99% – 29.99% Variable',
+    signupBonus: '$100 Uber Cash after $500 spend in 3 months',
+    rewards: [
+      { category: 'Uber & Uber Eats', rate: '7%', type: 'cash back' },
+      { category: 'Uber rides', rate: '5%', type: 'cash back' },
+      { category: 'Bars & restaurants', rate: '3%', type: 'cash back' },
+      { category: 'Grocery stores', rate: '2%', type: 'cash back' },
+      { category: 'All other purchases', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      'Uber Cash back rewards post automatically to your Uber account',
+      'No foreign transaction fees',
+      'Uber One membership statement credit ($9.99/month)',
+      '3% cash back on restaurants worldwide',
+      'No annual fee',
+      'UberVIP status in select cities'
+    ],
+    annualCredits: [
+      { label: 'Uber One membership credit (~$120/yr)', value: 120, notes: '$9.99/mo statement credit for Uber One membership' }
+    ],
+    ratings: { rewards: 4, perks: 3, afValue: 5, approval: 3, overall: 3.8 },
+    bestFor: [
+      'Frequent Uber and Uber Eats users',
+      'Rideshare drivers who use Uber',
+      'People who order delivery 3+ times per month'
+    ],
+    skipIf: 'You barely use Uber or food delivery apps — the 7% only matters if you actually spend on the platform. If you\'re a Lyft loyalist, this card does nothing for you.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: 'Barclays is sensitive to recent inquiries and new accounts. They prefer applicants with fewer than 6 inquiries in the past 6 months.',
+    faqs: [
+      { q: 'Is the Barclays Uber Pro Card worth getting?', a: 'If you spend $200+/month on Uber rides and Uber Eats, absolutely. The 7% back on Uber is the highest rideshare reward rate available. The Uber One credit alone ($120/yr) makes this a no-brainer for regular users. Even occasional users benefit since there\'s no annual fee.' },
+      { q: 'How does the 7% cash back on Uber work?', a: 'You earn 7% cash back on Uber rides and Uber Eats purchases, credited as Uber Cash to your Uber account. The 5% rate applies to Uber rides specifically — so if you use both Uber Eats and rides, you\'re earning 7% on the food delivery and 5% on the rides.' },
+      { q: 'What is UberVIP status?', a: 'UberVIP gives you priority matching with top-rated drivers in select cities. It\'s not available everywhere, and the benefit is modest compared to the cash-back rewards. Don\'t get the card just for UberVIP.' },
+      { q: 'Can I use Uber Cash for anything besides rides and food?', a: 'Yes — Uber Cash can be used for rides, Uber Eats orders, and Uber package delivery. It cannot be withdrawn as cash or applied to your credit card balance.' },
+      { q: 'How does this compare to the Amex Gold for food delivery?', a: 'Amex Gold gives 4x points on dining worldwide (including Uber Eats), but the Uber Pro gives a flat 7% on Uber Eats specifically. If you eat out at restaurants more than you order delivery, the Gold is better. If Uber Eats is your primary delivery, the Uber Pro is better.' },
+      { q: 'Does the Uber One credit apply automatically?', a: 'Yes — if you\'re an Uber One member, you\'ll receive a $9.99 monthly statement credit for your membership fee. If you\'re not a member, you can sign up and the credit covers the cost entirely.' }
+    ],
+    alternatives: ['amex-gold', 'capital-one-savorone', 'chase-sapphire-preferred'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'amazon-prime-visa-signature',
+    name: 'Amazon Prime Visa Signature Card',
+    issuer: 'Chase',
+    annualFee: 0,
+    introAPR: 'No intro APR offer on purchases',
+    regularAPR: '20.49% – 28.49% Variable',
+    signupBonus: '$150 Amazon gift card upon approval (for Prime members)',
+    rewards: [
+      { category: 'Amazon & Whole Foods', rate: '5%', type: 'cash back' },
+      { category: 'Restaurants & bars', rate: '2%', type: 'cash back' },
+      { category: 'Gas stations', rate: '2%', type: 'cash back' },
+      { category: 'Drugstores', rate: '2%', type: 'cash back' },
+      { category: 'All other purchases', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '5% back at Amazon and Whole Foods for Prime members',
+      'No foreign transaction fees',
+      '2% back at restaurants, gas stations, and drugstores',
+      'Purchase protection and extended warranty',
+      'No annual fee (separate from Prime membership)',
+      'Visa Signature benefits (concierge, travel accident insurance)'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 4.5, perks: 2.5, afValue: 4, approval: 4, overall: 3.8 },
+    bestFor: [
+      'Amazon Prime members who shop Amazon regularly',
+      'Whole Foods shoppers who are already Prime subscribers',
+      'People who want a no-AF card that maximizes Amazon spend'
+    ],
+    skipIf: 'You\'re not an Amazon Prime member — without Prime, the Amazon rate drops to 3%. If you don\'t shop Amazon or Whole Foods much, the 2% on dining/gas doesn\'t beat dedicated category cards.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: '5/24 rule applies. Chase typically denies if you\'ve opened 5+ cards (any issuer) in 24 months. Must have an active Amazon Prime membership for 5% rate.',
+    faqs: [
+      { q: 'Is the Amazon Prime Visa worth it if I already pay for Prime?', a: 'Yes — there\'s no additional annual fee beyond your Prime membership ($139/yr). The 5% back on Amazon purchases effectively reduces the cost of everything you buy. If you spend $200+/month on Amazon, you\'re earning $10+/month = $120+/yr, which nearly covers Prime itself.' },
+      { q: 'What happens if I cancel my Prime membership?', a: 'The card reverts to the Amazon Visa with 3% back on Amazon instead of 5%. You keep all other earning rates. You won\'t lose the card, just the Prime bonus rate.' },
+      { q: 'Does the 5% back at Whole Foods include everything?', a: 'Yes — almost everything at Whole Foods qualifies for 5% back. This includes groceries, prepared foods, and supplements. Gift cards and alcohol may be excluded depending on local laws.' },
+      { q: 'How does this compare to the Citi Custom Cash for Amazon?', a: 'Citi Custom Cash gives 5% on your top spending category (up to $500/month). If Amazon is your top category, you get 5% with no Prime requirement. But Custom Cash has a $500/month cap, while the Amazon Prime Visa gives 5% on unlimited Amazon spend. Heavy Amazon shoppers should get both.' },
+      { q: 'Can I use rewards for anything besides Amazon?', a: 'Yes — you can redeem for statement credits, gift cards, travel through Chase, or transfer to airline/hotel partners if you also have a Chase Sapphire card. Amazon checkout redemption is the easiest, but Chase Ultimate Rewards transfer can be more valuable (1.25–1.5¢/point).' },
+      { q: 'What about Prime Day — does the card offer extra rewards?', a: 'Sometimes Amazon runs bonus offers for Prime Visa cardholders during Prime Day (e.g., extra 2% back or statement credits). These vary by year and aren\'t guaranteed, but Prime Day is generally the best time to max out your 5% rate.' }
+    ],
+    alternatives: ['citi-custom-cash', 'chase-sapphire-preferred', 'capital-one-savorone'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'apple-card',
+    name: 'Apple Card',
+    issuer: 'Goldman Sachs',
+    annualFee: 0,
+    introAPR: 'No intro APR offer',
+    regularAPR: '16.49% – 27.24% Variable (APR determined at application)',
+    signupBonus: '3% Daily Cash on all Apple purchases in the first 3 months',
+    rewards: [
+      { category: 'Apple (Apple Pay, Apple Store, Apple services)', rate: '3%', type: 'cash back' },
+      { category: 'All other Apple Pay purchases', rate: '2%', type: 'cash back' },
+      { category: 'Physical card purchases (non-Apple Pay)', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      'Daily Cash deposited daily to Apple Cash',
+      'No fees — no annual, late, over-limit, or foreign transaction fees',
+      'Real-time transaction notifications and categorization',
+      'Enhanced security — card number generated per transaction in Wallet',
+      'Apple Music, Apple TV+, Apple Arcade, and iCloud+ get 3% back',
+      'Installment payments via Apple Pay Later for Apple purchases',
+      'Physical titanium card (no number printed on card)',
+      'Spending estimates and interest projections before purchases'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 2.5, perks: 3.5, afValue: 5, approval: 4.5, overall: 3.3 },
+    bestFor: [
+      'iPhone users who pay with Apple Pay everywhere',
+      'People who want the simplest credit card experience possible',
+      'Apple ecosystem users (Apple Music, TV+, iCloud subscriptions)',
+      'People rebuilding credit who want a no-fee, no-penalty card'
+    ],
+    skipIf: 'You don\'t use Apple Pay regularly — the 1% physical-card rate is terrible. Android users need not apply. If you want maximum rewards on specific categories, dedicated cards like Citi Custom Cash or Blue Cash Preferred earn more.',
+    creditScoreNeeded: 'Fair to Excellent (640+)',
+    issuerRules: 'No restrictions on number of applications, but Goldman Sachs uses a soft pull for pre-approval. Must have an iPhone to apply and manage the card.',
+    faqs: [
+      { q: 'Is the Apple Card a good credit card?', a: 'It\'s the best no-fee card if you pay with Apple Pay at most places. The 2% on all Apple Pay purchases beats most flat-rate cards, and Daily Cash hitting your Apple Cash immediately is unmatched. But if you frequently use the physical card, you\'re earning just 1% — worse than basic 2% cards. It\'s a great companion card, not a primary card for non-Apple Pay users.' },
+      { q: 'What is Daily Cash and how does it work?', a: 'Daily Cash is Apple\'s term for cash back. It\'s deposited to your Apple Cash card every day — not monthly, not as a statement credit, but literally daily. You can spend it immediately via Apple Pay, send it to people, transfer it to your bank, or apply it to your Apple Card balance.' },
+      { q: 'Does the Apple Card help build credit?', a: 'Yes — it reports to all three credit bureaus (Equifax, Experian, TransUnion). The lack of late fees means a missed payment hurts your credit but doesn\'t add penalty charges. Goldman Sachs also offers a "path to Apple Card" program that helps you improve your credit to qualify.' },
+      { q: 'What\'s the catch with no fees?', a: 'No catch — there are truly no fees. No annual fee, no late fee, no over-limit fee, no foreign transaction fee. Goldman Sachs makes money from interest on carried balances and from Apple\'s partnership. This makes it one of the most consumer-friendly cards available, even if the rewards aren\'t category-leading.' },
+      { q: 'Can I use the Apple Card without an iPhone?', a: 'No. The Apple Card requires an iPhone running iOS 12.4 or later. You apply through the Wallet app, manage it in Wallet, and use Apple Pay for the 2–3% rates. Without an iPhone, you can\'t apply, manage, or maximize the card.' },
+      { q: 'How does the Apple Card compare to the Citi Double Cash?', a: 'Citi Double Cash gives 2% on everything (1% when you buy + 1% when you pay) regardless of payment method. Apple Card gives 2% only with Apple Pay and 1% with the physical card. If you Apple Pay everywhere, they\'re equivalent. If you ever use the physical card, Double Cash is better. Apple Card wins on UX and daily deposits; Double Cash wins on consistency.' }
+    ],
+    alternatives: ['citi-double-cash', 'capital-one-quicksilver', 'wells-fargo-active-cash'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'citi-premier',
+    name: 'Citi Premier® Card',
+    issuer: 'Citi',
+    annualFee: 95,
+    introAPR: '0% for 12 months on purchases',
+    regularAPR: '20.49% – 28.49% Variable',
+    signupBonus: '60,000 ThankYou® Points (worth $600 in travel) after $4,000 spend in 3 months',
+    rewards: [
+      { category: 'Air travel & hotels', rate: '3x', type: 'points' },
+      { category: 'Gas stations', rate: '3x', type: 'points' },
+      { category: 'Restaurants', rate: '3x', type: 'points' },
+      { category: 'Grocery stores', rate: '3x', type: 'points' },
+      { category: 'EV charging', rate: '3x', type: 'points' },
+      { category: 'Everything else', rate: '1x', type: 'points' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '0% intro APR on purchases for 12 months',
+      'No foreign transaction fees',
+      'Travel accident insurance (up to $500,000)',
+      'Trip cancellation and interruption protection',
+      'Concierge service',
+      'Citi Entertainment access to presale tickets and events',
+      'Shop with Points at Amazon and Best Buy'
+    ],
+    annualCredits: [
+      { label: '$100 annual hotel credit (1 night stay)', value: 100, notes: 'Single hotel stay $50+ earns $100 credit, once per year' }
+    ],
+    ratings: { rewards: 4.5, perks: 3, afValue: 4, approval: 3.5, overall: 4 },
+    bestFor: [
+      'People who want 3x on four everyday categories without paying $300+',
+      'Travelers who don\'t want to commit to a premium annual fee',
+      'Citi ThankYou Points ecosystem users (pairs well with Citi Double Cash)',
+      'Anyone who values a 0% intro APR alongside travel rewards'
+    ],
+    skipIf: 'You already have the Chase Sapphire Preferred — 3x on four categories is great, but you likely don\'t need two mid-tier travel cards. Also skip if you rarely travel or spend on gas/groceries/dining.',
+    creditScoreNeeded: 'Good to Excellent (680+)',
+    issuerRules: 'Citi typically allows only 1 personal card application every 8 days, max 2 per 65 days, max 1 per 6 months per card family. Existing Citi cards may limit eligibility.',
+    faqs: [
+      { q: 'Is the Citi Premier worth the $95 annual fee?', a: 'Easily — if you use the 3x categories. Spend $1,000/month across gas, groceries, and dining and you\'re earning 36,000 ThankYou Points per year ($360+ in travel value). The $100 annual hotel credit covers most of the fee, leaving just net $5/yr. The signup bonus alone ($600 in travel) covers the fee for 6+ years.' },
+      { q: 'How does the Citi Premier differ from the Citi Strata Premier?', a: 'The Citi Strata Premier ($400/yr) is the premium version — it adds airport lounge access (Priority Pass), a $250 annual travel credit, and a higher signup bonus. The regular Citi Premier ($95/yr) is the better value for most people. Only upgrade to Strata if you use airport lounges regularly.' },
+      { q: 'What are Citi ThankYou Points worth?', a: '1¢ each for cash back, gift cards, or statement credits. 1.25¢ each when redeemed for travel through Citi Travel. Transfers to airline partners (JetBlue, Singapore Airlines, Virgin Atlantic, etc.) can yield 1.5–2¢+ per point. The Premier is the key to unlocking transfer partners — without it, ThankYou Points from the Double Cash are worth only 1¢ each.' },
+      { q: 'Can I combine Citi Premier points with Citi Double Cash?', a: 'Yes! This is the power move. The Citi Double Cash earns 2x ThankYou Points on everything. With the Premier, those points become transferable to airline/hotel partners at 1¢+ each instead of being locked to 1¢ cash back. The combo is called "CitiDoublePremier" and it\'s one of the best point-earning setups available.' },
+      { q: 'How does gas station 3x work with EV charging?', a: 'The 3x rate applies to both traditional gas stations and EV charging stations. This is rare — most cards only bonus gas, not EV charging. If you drive an EV and charge at public stations, the Premier is one of the best cards for that spend category.' },
+      { q: 'What happens to my points if I downgrade?', a: 'If you downgrade the Citi Premier to the Citi Custom Cash or Double Cash, you keep all accumulated ThankYou Points. However, you lose the ability to transfer points to travel partners — they revert to 1¢ cash value only. Transfer your points to partners before downgrading.' }
+    ],
+    alternatives: ['chase-sapphire-preferred', 'amex-gold', 'citi-strata-premier', 'citi-double-cash'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'chase-ink-business-preferred',
+    name: 'Chase Ink Business Preferred® Credit Card',
+    issuer: 'Chase',
+    annualFee: 95,
+    introAPR: '0% for 12 months on purchases',
+    regularAPR: '20.49% – 27.49% Variable',
+    signupBonus: '100,000 points (worth $1,250 in travel) after $8,000 spend in 3 months',
+    rewards: [
+      { category: 'Travel', rate: '3x', type: 'points' },
+      { category: 'Shipping', rate: '3x', type: 'points' },
+      { category: 'Internet, cable & phone services', rate: '3x', type: 'points' },
+      { category: 'Advertising (social media & search)', rate: '3x', type: 'points' },
+      { category: 'Everything else', rate: '1x', type: 'points' }
+    ],
+    pointsValue: 0.0125,
+    perks: [
+      '0% intro APR on purchases for 12 months',
+      'Cell phone protection (up to $1,000/claim, $3,000/year)',
+      'Primary auto rental collision damage waiver',
+      'Trip cancellation/interruption insurance (up to $5,000)',
+      'Purchase protection (120 days, up to $10,000/claim)',
+      'Extended warranty (1 additional year)',
+      'No foreign transaction fees',
+      'Employee cards at no additional cost',
+      'DoorDash DashPass membership (3 months free, then 50% off)'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 5, perks: 4, afValue: 4.5, approval: 3.5, overall: 4.5 },
+    bestFor: [
+      'Small business owners with shipping or advertising expenses',
+      'Freelancers and solopreneurs with internet/phone bills',
+      'Businesses that spend on travel',
+      'Anyone who wants to earn Chase Ultimate Rewards transferable points'
+    ],
+    skipIf: 'You don\'t have legitimate business expenses to put on the card. The 3x categories only reward business-type spending. If you\'re a pure salaried employee with no side income, a personal card like Chase Sapphire Preferred is a better fit.',
+    creditScoreNeeded: 'Good to Excellent (680+)',
+    issuerRules: '5/24 rule typically applies to business cards from Chase. You can get the Ink Business Preferred even with a personal Chase card, but Chase limits total credit across all personal and business cards.',
+    faqs: [
+      { q: 'Do I need an LLC or corporation to get this card?', a: 'No. Chase considers any legitimate business activity — including sole proprietorships, freelancing, gig work, and side hustles. You can apply with your Social Security number as a sole prop. Just report your business income honestly. Having a registered business (LLC) may increase your approval odds and credit limit.' },
+      { q: 'Is the Ink Business Preferred worth it for a sole proprietor?', a: 'Absolutely, if you have legitimate business expenses. Even a freelance writer or rideshare driver likely spends on internet/phone (3x), shipping (3x for any packages), or advertising (3x for social media ads). The $8K/3mo signup spend is steep, but if you can put business expenses on it, the 100K points ($1,250+ in travel) is the best business card bonus available.' },
+      { q: 'How does the 3x on advertising work?', a: 'The 3x rate applies to social media advertising (Facebook, Instagram, Google Ads, etc.) and search engine advertising. This is huge for small businesses running online ads. If you spend $500/month on Facebook and Google Ads, that\'s 18,000 points/year ($225+ in travel value).' },
+      { q: 'Can I combine Ink points with Chase Sapphire points?', a: 'Yes — this is the real power. Ink Business Preferred earns Chase Ultimate Rewards points, the same currency as Chase Sapphire Preferred/Reserve. Combined with a Sapphire card, you can transfer points to 14 airline and hotel partners (Hyatt, United, Southwest, etc.) at full value. Without a Sapphire card, points are worth 1¢ each for cash back.' },
+      { q: 'What counts as "shipping" for the 3x category?', a: 'USPS, UPS, FedEx, DHL, and other shipping services qualify. This includes shipping supplies purchased from shipping providers. It does not include general office supplies or packaging materials bought from Amazon or office supply stores (those earn 1x).' },
+      { q: 'How does the Ink Business Preferred compare to the Amex Blue Business Plus?', a: 'Ink Preferred gives 3x on specific business categories (travel, shipping, internet/phone, advertising) and 1x on everything else. Amex Blue Business Plus gives 2x on everything (up to $50K/yr). Ink is better if you spend heavily in the 3x categories. Blue Business Plus is simpler if your spending is diverse and doesn\'t concentrate in those categories.' }
+    ],
+    alternatives: ['chase-sapphire-preferred', 'capital-one-venture-x', 'amex-gold'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
   }
 ];
 
