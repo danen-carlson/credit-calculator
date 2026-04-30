@@ -361,3 +361,117 @@
   margin-top: 16px;
   text-align: center;
 }
+
+/* ============================================ */
+/* Skeleton Loading Screens                     */
+/* ============================================ */
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  animation: shimmer 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 800px 100%;
+  border-radius: 8px;
+  color: transparent !important;
+  min-height: 1em;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Skeleton fade-in/out transitions */
+.skeleton-container {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.skeleton-container.skeleton-fading {
+  opacity: 0;
+}
+
+.results-ready {
+  opacity: 0;
+  animation: fadeInResults 0.4s ease forwards;
+}
+
+@keyframes fadeInResults {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Compare: 3 placeholder rows */
+.skeleton-compare-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--surface, #fff);
+  border: 1.5px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.skeleton-compare-row .skeleton-line {
+  height: 16px;
+  border-radius: 6px;
+}
+
+.skeleton-compare-row .skeleton-line.wide { width: 80%; }
+.skeleton-compare-row .skeleton-line.medium { width: 55%; }
+.skeleton-compare-row .skeleton-line.narrow { width: 35%; }
+.skeleton-compare-row .skeleton-line.stat { width: 120px; height: 40px; border-radius: 8px; }
+
+/* Rewards: card result placeholders */
+.skeleton-result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: var(--surface, #fff);
+  border: 1.5px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.skeleton-result-card .skeleton-line {
+  height: 14px;
+  border-radius: 4px;
+}
+
+.skeleton-result-card .skeleton-line.title { width: 60%; height: 20px; }
+.skeleton-result-card .skeleton-line.subtitle { width: 40%; }
+.skeleton-result-card .skeleton-line.stat-row { display: flex; gap: 12px; }
+.skeleton-result-card .skeleton-line.stat {
+  width: 80px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Debt Planner: chart placeholder */
+.skeleton-chart {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  margin: 16px 0;
+}
+
+.skeleton-debt-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: var(--surface, #fff);
+  border: 1.5px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.skeleton-debt-row .skeleton-line {
+  height: 14px;
+  border-radius: 4px;
+}

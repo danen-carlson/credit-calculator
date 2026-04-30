@@ -446,6 +446,7 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
   const skeleton = document.getElementById('results-skeleton');
   if (skeleton) {
     skeleton.classList.add('active');
+    skeleton.dataset.shownAt = Date.now().toString();
     document.getElementById('results-section').setAttribute('aria-busy', 'true');
   }
   
@@ -550,8 +551,15 @@ function resetButton(button, originalText) {
 
 function hideSkeleton(skeleton) {
   if (skeleton) {
-    skeleton.classList.remove('active');
-    document.getElementById('results-section').removeAttribute('aria-busy');
+    const minDisplay = 300;
+    const shownAt = parseInt(skeleton.dataset.shownAt || '0', 10);
+    const elapsed = Date.now() - shownAt;
+    const delay = Math.max(0, minDisplay - elapsed);
+
+    setTimeout(() => {
+      skeleton.classList.remove('active');
+      document.getElementById('results-section').removeAttribute('aria-busy');
+    }, delay);
   }
 }
 

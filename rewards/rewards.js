@@ -877,6 +877,7 @@
     const skeleton = document.getElementById('rewards-skeleton');
     if (skeleton) {
       skeleton.classList.add('active');
+      skeleton.dataset.shownAt = Date.now().toString();
       container.setAttribute('aria-busy', 'true');
     }
 
@@ -1115,11 +1116,20 @@
 
   function hideSkeleton(skeleton) {
     if (skeleton) {
-      skeleton.classList.remove('active');
-      const container = document.getElementById('results-container');
-      if (container) {
-        container.removeAttribute('aria-busy');
-      }
+      // Ensure skeleton shows for at least 300ms to avoid flash
+      const minDisplay = 300;
+      const shownAt = parseInt(skeleton.dataset.shownAt || '0', 10);
+      const elapsed = Date.now() - shownAt;
+      const delay = Math.max(0, minDisplay - elapsed);
+
+      setTimeout(() => {
+        skeleton.classList.remove('active');
+        const container = document.getElementById('results-container');
+        if (container) {
+          container.removeAttribute('aria-busy');
+          container.classList.add('results-ready');
+        }
+      }, delay);
     }
   }
 

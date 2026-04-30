@@ -403,7 +403,252 @@ const CARD_REVIEWS = [
       { q: 'How does the Double Cash compare to the Wells Fargo Active Cash?', a: 'Active Cash gives a $200 signup bonus and the same flat 2% — it\'s generally better for new cardholders. Double Cash has the edge for balance transfers (18 months vs 12 months intro) and the Citi ecosystem pairing with Premier/Prestige.' },
       { q: 'Should I get the Double Cash if I already have a Chase Sapphire Preferred?', a: 'Yes, as a complement. Use Sapphire Preferred for travel (5x) and dining (3x), and Double Cash for everything else (groceries, Amazon, utilities, etc.) at 2%. This two-card strategy covers 95% of spending at 2%+ rates.' }
     ],
-    alternatives: ['chase-sapphire-preferred', 'capital-one-savorone'],
+    alternatives: ['chase-sapphire-preferred', 'capital-one-savorone', 'wells-fargo-active-cash'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  // ============================================================
+  // Sprint 12 cards (2026-04-30)
+  // ============================================================
+  {
+    slug: 'amex-blue-cash-preferred',
+    name: 'Blue Cash Preferred® Card from American Express',
+    issuer: 'American Express',
+    annualFee: 95,
+    introAPR: '0% for 12 months on purchases, then variable',
+    regularAPR: '20.49% – 29.49% Variable',
+    signupBonus: '$250 statement credit after $3,000 spend in 6 months',
+    rewards: [
+      { category: 'U.S. supermarkets (up to $6K/yr)', rate: '6%', type: 'cash back' },
+      { category: 'U.S. streaming subscriptions', rate: '6%', type: 'cash back' },
+      { category: 'U.S. gas stations (up to $6K/yr)', rate: '3%', type: 'cash back' },
+      { category: 'U.S. transit', rate: '3%', type: 'cash back' },
+      { category: 'Non-U.S. supermarkets', rate: '1%', type: 'cash back' },
+      { category: 'Everything else', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '6% cash back at U.S. supermarkets (up to $6,000/year, then 1%)',
+      '6% cash back on U.S. streaming subscriptions',
+      '3% cash back on U.S. gas stations (up to $6,000/year gas + transit combined)',
+      '3% cash back on U.S. transit (tolls, rideshare, parking, buses, trains)',
+      'No foreign transaction fees',
+      'Amex Offers: targeted deals at popular retailers',
+      'Return protection (90 days, up to $300/item)',
+      'Purchase protection (90 days, up to $10K/occurrence)'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 4.5, perks: 3, afValue: 4.5, approval: 3.5, overall: 4.3 },
+    bestFor: [
+      'Families spending $400+/month at U.S. supermarkets',
+      'People with significant streaming subscription costs',
+      'Commuters who spend on gas and transit'
+    ],
+    skipIf: 'You spend less than $150/month at supermarkets. The $95 annual fee means you need decent grocery volume to come out ahead. Also skip if you mostly shop at Walmart, Target, or Costco — they don\'t code as supermarkets.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: 'Welcome bonus once per lifetime. Amex 1/5 rule: max 1 new Amex credit card per 5 rolling days.',
+    faqs: [
+      { q: 'Is the Amex Blue Cash Preferred worth the $95 annual fee?', a: 'If you spend $400+/month at U.S. supermarkets, yes. At $400/mo, you earn $288/year in grocery cash back alone (6% on $4,800). Subtract the $95 AF and you\'re netting $193. Add gas/transit/streaming rewards and you\'re well into positive territory. Below $150/mo in groceries, the math flips — consider the no-AF Blue Cash Everyday instead.' },
+      { q: 'What counts as a "U.S. supermarket" for the 6%?', a: 'Standalone grocery stores like Kroger, Safeway, Publix, Whole Foods, and Trader Joe\'s. Superstores like Walmart, Target, Costco, and Sam\'s Club do NOT count. The $6,000 annual cap applies to the grocery category; after that, groceries earn 1%.' },
+      { q: 'How does the streaming 6% cash back work?', a: 'You earn 6% on eligible U.S. streaming subscriptions: Netflix, Hulu, Spotify, Disney+, Amazon Prime, Apple TV+, and more. There\'s no annual cap on streaming. This alone can net $50–$100/year if you have 3–5 subscriptions.' },
+      { q: 'Is the Blue Cash Preferred better than the Amex Gold for groceries?', a: 'BCP gives straight 6% cash back on up to $6K/yr. Gold gives 4x points on up to $25K/yr. If you value Amex points at 1.5¢ each, Gold gives an effective 6% but only if you transfer points to partners. For pure cash back in your pocket? BCP wins. For travel rewards? Gold wins.' },
+      { q: 'What happens after the $6,000 grocery cap?', a: 'Grocery spend above $6,000/year drops from 6% to 1%. If you spend more than $500/month on groceries, track your spend — beyond $6K, consider switching to a card like the Citi Custom Cash for the overage.' },
+      { q: 'Does the Blue Cash Preferred have foreign transaction fees?', a: 'No — Amex removed the foreign transaction fee on BCP. You can use it abroad for groceries and earn 1% (international supermarkets won\'t code as U.S. supermarkets for the 6% rate).' }
+    ],
+    alternatives: ['amex-blue-cash-everyday', 'amex-gold', 'citi-custom-cash'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'chase-freedom-flex',
+    name: 'Chase Freedom Flex℠ Credit Card',
+    issuer: 'Chase',
+    annualFee: 0,
+    introAPR: '0% for 15 months on purchases and balance transfers',
+    regularAPR: '20.49% – 29.24% Variable',
+    signupBonus: '$200 cash back after $500 spend in 3 months, plus 5% on up to $1,500 in combined purchases each quarter (activation required)',
+    rewards: [
+      { category: 'Rotating categories (quarterly)', rate: '5%', type: 'cash back', note: 'Up to $1,500/quarter combined' },
+      { category: 'Dining', rate: '3%', type: 'cash back' },
+      { category: 'Drugstores', rate: '3%', type: 'cash back' },
+      { category: 'Everything else', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '5% on rotating quarterly categories (up to $1,500/quarter) — no activation reminders, just activate',
+      '3% on dining and drugstores, always',
+      'No annual fee, ever',
+      '0% intro APR for 15 months on purchases and balance transfers',
+      'Purchase protection (120 days, up to $500/claim)',
+      'Extended warranty protection',
+      'Cell phone protection (up to $800/claim, $50 deductible)',
+      'No foreign transaction fees',
+      'DoorDash DashPass (3 months free, then 50% off)'
+    ],
+    annualCredits: [
+      { label: 'DashPass discount (3 months free)', value: 30, notes: 'Value varies by use' }
+    ],
+    ratings: { rewards: 4.5, perks: 4, afValue: 5, approval: 3.5, overall: 4.4 },
+    bestFor: [
+      'People who will activate quarterly 5% categories and maximize $1,500/quarter',
+      'Diners and drugstore regulars who benefit from ongoing 3%',
+      'Chase Ultimate Rewards ecosystem members pairing with Sapphire Preferred/Reserve'
+    ],
+    skipIf: 'You won\'t remember to activate the 5% categories each quarter (unactivated = 1% only). Also skip if you spend more than $500/month on dining and want 4x points (Amex Gold or Altitude Go are better for heavy dining).',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: '5/24 rule applies: Chase typically denies if you\'ve opened 5+ cards (any issuer) in the past 24 months. This is one of the strictest application rules in the industry.',
+    faqs: [
+      { q: 'How do the Chase Freedom Flex rotating categories work?', a: 'Each quarter, Chase announces new 5% categories (e.g., Q1: groceries and fitness; Q2: gas and Lyft; Q3: dining and PayPal; Q4: Amazon and Target). You must activate online or in the app each quarter. You earn 5% on up to $1,500 in combined purchases across the quarter\'s categories — that\'s up to $75 cash back per quarter, $300/year.' },
+      { q: 'Is the Chase Freedom Flex better than the old Chase Freedom?', a: 'Yes. The Flex added 3% on dining and drugstores (ongoing, not rotating), cell phone protection, and no foreign transaction fees. The old Freedom only had 1% on non-rotating purchases. If you still have the old Freedom, call Chase and ask to product-change to the Flex — same account, better rewards.' },
+      { q: 'Can I combine Freedom Flex with Chase Sapphire Preferred or Reserve?', a: 'Absolutely — and you should. Freedom Flex cash back converts to Chase Ultimate Rewards points (at 1¢ each) when you also hold a Sapphire card. This means your 5% and 3% earnings become 5x and 3x UR points, which you can transfer to Hyatt, United, Southwest, and 12+ other partners at 1.25–1.5¢ per point.' },
+      { q: 'What are the 2026 rotating categories for Freedom Flex?', a: 'Chase typically announces categories each quarter. Recent patterns: Q1 (Jan–Mar) = groceries/drugstores; Q2 (Apr–Jun) = gas/Lyft; Q3 (Jul–Sep) = dining/streaming; Q4 (Oct–Dec) = Amazon/Target/PayPal. Always verify on Chase\'s website and activate on day one of each quarter.' },
+      { q: 'Is the Freedom Flex worth it without activating categories?', a: 'Less so. Without 5% categories, you\'re getting 3% on dining and drugstores 1% on everything else. That\'s still decent for a no-AF card, but you\'re leaving $300/year on the table. Set a calendar reminder for quarterly activation.' },
+      { q: 'How does the Freedom Flex compare to the Discover it Cash Back?', a: 'Both offer 5% rotating categories. Key differences: Flex has 3% ongoing on dining/drugstores (Discover has 1%), no foreign transaction fees (Discover is accepted in fewer places abroad), and pairs with Chase UR ecosystem. Discover has the Cashback Match (doubles all first-year earnings) making it better in year one. Flex is better long-term.' }
+    ],
+    alternatives: ['discover-it-cash-back', 'chase-sapphire-preferred', 'citi-custom-cash'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'amex-blue-cash-everyday',
+    name: 'Blue Cash Everyday® Card from American Express',
+    issuer: 'American Express',
+    annualFee: 0,
+    introAPR: '0% for 15 months on purchases',
+    regularAPR: '20.49% – 29.49% Variable',
+    signupBonus: '$200 statement credit after $2,000 spend in 6 months',
+    rewards: [
+      { category: 'U.S. supermarkets (up to $6K/yr)', rate: '3%', type: 'cash back' },
+      { category: 'U.S. gas stations (up to $6K/yr)', rate: '3%', type: 'cash back' },
+      { category: 'U.S. online retail (up to $6K/yr)', rate: '3%', type: 'cash back' },
+      { category: 'Everything else', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '3% at U.S. supermarkets, gas stations, and online retail (each up to $6K/yr)',
+      'No annual fee, ever',
+      '0% intro APR for 15 months on purchases',
+      '$200 statement credit after $2,000 spend in 6 months',
+      'Amex Offers: personalized deals at popular retailers',
+      'No foreign transaction fees',
+      'Purchase protection (90 days, up to $1,000/occurrence)',
+      'Return protection (90 days, up to $300/item)'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 4, perks: 3, afValue: 5, approval: 4, overall: 4 },
+    bestFor: [
+      'Grocery shoppers spending $200–$500/month at U.S. supermarkets',
+      'People who want simple cash back with no annual fee',
+      'Online shoppers who want 3% back on Amazon and other retail'
+    ],
+    skipIf: 'You spend $500+/month at U.S. supermarkets — step up to the Blue Cash Preferred for 6%. Also skip if you want travel transfer partners (BCE is cash-back only).',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: 'Welcome bonus once per lifetime. Amex 1/5 rule: max 1 new Amex credit card per 5 rolling days.',
+    faqs: [
+      { q: 'Is the Amex Blue Cash Everyday worth it?', a: 'If you spend $200–$500/month at U.S. supermarkets, yes. At $300/month, you\'d earn $108/year in grocery cash back alone. Add gas and online retail and you\'re looking at $200–$300+/year in total cash back with zero annual fee. It\'s the best no-AF grocery card if you don\'t want to track rotating categories.' },
+      { q: 'What counts as "U.S. online retail" for the 3%?', a: 'Online purchases from U.S. retailers not classified as supermarkets, gas stations, or travel. This includes Amazon, Target.com, Walmart.com, and most online stores. The $6,000/year cap means you earn 3% on up to $500/month of online shopping.' },
+      { q: 'Blue Cash Everyday vs Blue Cash Preferred — which is right?', a: 'BCP gives 6% on groceries for $95/year. BCE gives 3% on groceries for $0/year. Break-even: if you spend more than ~$160/month at U.S. supermarkets, BCP earns more after the fee. BCP also adds 6% streaming and 3% transit. If you\'re a light grocery spender or hate annual fees, BCE is the move.' },
+      { q: 'Can I upgrade from Blue Cash Everyday to Blue Cash Preferred?', a: 'Yes. After having the BCE for 12+ months, you can request a product change to the BCP. You\'ll start earning 6% on groceries, but you\'ll also incur the $95 annual fee. Amex sometimes offers upgrade bonuses (e.g., $150 statement credit) — watch for those.' },
+      { q: 'Does the $6,000 annual cap apply to each category separately?', a: 'Yes. The $6,000 cap is per category. You get $6K at supermarkets, $6K at gas stations, and $6K at online retail — each earning 3%. After each $6K cap, that category drops to 1%. For most people, the caps won\'t matter on gas and online retail, but heavy grocery spenders ($500+/mo) should track the supermarket cap.' },
+      { q: 'How does the Blue Cash Everyday compare to the Citi Custom Cash?', a: 'BCE gives 3% on groceries capped at $6K/yr. Custom Cash gives 5% on your top category capped at $500/mo spending. Custom Cash earns more on groceries up to $500/mo ($25/mo vs $15/mo), but BCE gives 3% on gas AND online retail too. If groceries are your only big category, Custom Cash wins. If you want broader 3% coverage, BCE wins.' }
+    ],
+    alternatives: ['amex-blue-cash-preferred', 'citi-custom-cash', 'capital-one-savorone'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'citi-strata-premier',
+    name: 'Citi Strata Premier℠ Card',
+    issuer: 'Citibank',
+    annualFee: 95,
+    introAPR: 'No intro APR offer',
+    regularAPR: '21.49% – 29.49% Variable',
+    signupBonus: '60,000 ThankYou Points (worth ~$600 in travel) after $4,000 spend in 3 months',
+    rewards: [
+      { category: 'Air travel', rate: '3x', type: 'points' },
+      { category: 'Hotels', rate: '3x', type: 'points' },
+      { category: 'Restaurants', rate: '3x', type: 'points' },
+      { category: 'Gas stations', rate: '3x', type: 'points' },
+      { category: 'Groceries', rate: '3x', type: 'points', note: 'First 6 months only, then 1x' },
+      { category: 'Ev charging', rate: '3x', type: 'points' },
+      { category: 'Everything else', rate: '1x', type: 'points' }
+    ],
+    pointsValue: 0.0150,
+    perks: [
+      '3x on air travel, hotels, restaurants, gas, EV charging — no caps',
+      '60,000 bonus points (worth ~$600 travel) after $4K spend',
+      '$100 annual hotel credit (bookings through Citi Travel)',
+      'No foreign transaction fees',
+      'Priority Pass Select membership (1 free visit/year, $32/visit after)',
+      'Trip cancellation/interruption protection (up to $5,000)',
+      'Baggage delay protection ($100/day for 3+ days)',
+      'Transfer partners: 15+ airlines and hotels including JetBlue, Virgin Atlantic, and Wyndham'
+    ],
+    annualCredits: [
+      { label: '$100 annual hotel credit', value: 100, notes: 'Citi Travel bookings only' }
+    ],
+    ratings: { rewards: 4, perks: 3.5, afValue: 4, approval: 3, overall: 4 },
+    bestFor: [
+      'Mid-tier travelers who want 3x on travel and dining for $95/year',
+      'People who don\'t qualify for or want to avoid the $395+ premium cards',
+      'Citi ecosystem users pairing with Double Cash for a 2-card strategy'
+    ],
+    skipIf: 'You travel less than 2–3 times per year — the $95 AF won\'t pay off. Also skip if Chase 5/24 blocks you and you don\'t have existing Citi relationship. The Chase Sapphire Preferred offers better insurance at the same price.',
+    creditScoreNeeded: 'Good to Excellent (680+)',
+    issuerRules: 'Citi limits applications to 1 card per 8 days, 2 per 65 days. The Strata Premier specifically may deny applicants with recent Citi card openings.',
+    faqs: [
+      { q: 'Is the Citi Strata Premier worth the $95 annual fee?', a: 'If you spend $1,000+/month across travel, dining, and gas, yes. The 3x rate on those categories earns roughly $540/year in rewards on $1,500/mo spend. Subtract the $95 AF and net the $100 hotel credit, and you\'re at $545 net value. Without the hotel credit use, it\'s still $445 net — solid for a $95 card.' },
+      { q: 'What are Citi ThankYou Points worth?', a: '1¢ each for cash back or statement credit. 1.5¢ each when redeemed for travel through Citi Travel. 1.5–2.5¢ each when transferred to partners like JetBlue, Virgin Atlantic, or Wyndham. The transfer partners aren\'t as strong as Chase or Amex, but they\'re workable for flexible travelers.' },
+      { q: 'How does the Strata Premier compare to Chase Sapphire Preferred?', a: 'Both cost $95/year. CSP gives 5x on Chase Travel, 3x on dining/streaming/online groceries, and stronger travel insurance (primary rental car coverage, trip delay). Strata gives 3x on a broader set of categories (air, hotels, gas, restaurants, EV charging) but weaker insurance and transfer partners. CSP wins on ecosystem and insurance; Strata wins on breadth of 3x categories.' },
+      { q: 'What is the $100 annual hotel credit?', a: 'Each card anniversary year, you get a $100 statement credit for hotel bookings through Citi Travel (partnered with Booking.com). Book a $100+ hotel stay and the credit covers it. If you stay in hotels at least once a year, this effectively reduces the annual fee to $0 or less.' },
+      { q: 'Is the Priority Pass membership useful?', a: 'Marginally. You get 1 free lounge visit per year (cardholder only), then $32 per visit. Compared to the Venture X\'s unlimited visits with 2 guests, this is a teaser. Don\'t factor it heavily into your decision.' },
+      { q: 'Can I combine Strata Premier with the Citi Double Cash?', a: 'Yes — and it\'s a great pairing. Use Strata for travel/dining/gas (3x) and Double Cash for everything else (2%). Plus, having both cards lets you convert Double Cash earnings into ThankYou Points for travel transfers, unlocking 1.5–2+¢ per point redemption.' }
+    ],
+    alternatives: ['chase-sapphire-preferred', 'capital-one-venture-x', 'citi-double-cash'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'wells-fargo-active-cash',
+    name: 'Wells Fargo Active Cash® Card',
+    issuer: 'Wells Fargo',
+    annualFee: 0,
+    introAPR: '0% for 15 months on purchases and balance transfers',
+    regularAPR: '20.49% – 28.99% Variable',
+    signupBonus: '$200 cash rewards after $1,000 spend in 3 months',
+    rewards: [
+      { category: 'All purchases', rate: '2%', type: 'cash back' }
+    ],
+    pointsValue: 0.02,
+    perks: [
+      '2% cash rewards on every purchase — no categories, no caps, no tracking',
+      '$200 signup bonus after $1,000 spend in 3 months',
+      'No annual fee',
+      '0% intro APR for 15 months on purchases and balance transfers (3% BT fee)',
+      'Cell phone protection (up to $600/claim, $25 deductible)',
+      'No foreign transaction fees',
+      'Visa Signature benefits (concierge, lost luggage, travel accident insurance)',
+      'Up to $600 in cell phone protection when you pay your bill with the card'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 3.5, perks: 3, afValue: 5, approval: 4, overall: 3.9 },
+    bestFor: [
+      'People who want 2% cash back everywhere with zero effort',
+      'Balance transfer seekers wanting 15 months at 0%',
+      'Anyone who hates rotating categories and annual fees'
+    ],
+    skipIf: 'You want maximum rewards on specific categories — a 5% grocery or 4% dining card will out-earn this on those purchases. Also skip if you have the Citi Double Cash (nearly identical card) and don\'t need another.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: 'Wells Fargo may deny applicants who have recently opened another Wells Fargo card. They tend to be more flexible than Chase but less flexible than Capital One.',
+    faqs: [
+      { q: 'Is the Wells Fargo Active Cash better than the Citi Double Cash?', a: 'Nearly identical for rewards — both give 2% on everything. Active Cash has a $200 signup bonus (Double Cash has none) and 15 months 0% on purchases AND balance transfers (Double Cash is 18 months on BTs only, no purchase intro). Active Cash also includes cell phone protection. Long-term, they\'re equivalent. Short-term, Active Cash wins with the bonus.' },
+      { q: 'How does the 2% cash back work?', a: 'Simple: every purchase earns 2% back as cash rewards. No categories, no caps, no activation needed. You can redeem as a statement credit, direct deposit to a Wells Fargo account, or check. No minimum redemption threshold for statement credit.' },
+      { q: 'Should I get the Active Cash or the Wells Fargo Autograph?', a: 'Both are no-AF cards from Wells Fargo. Active Cash gives flat 2% everywhere. Autograph gives 3x on dining, gas, transit, streaming, phone plans, and travel — but 1x on everything else. If you spend disproportionately on those 5 categories, Autograph wins. If your spend is spread out, Active Cash is simpler and often better.' },
+      { q: 'Is the cell phone protection good?', a: 'It covers damage and theft up to $600/claim with a $25 deductible (max $1,200/year). You must pay your cell phone bill with the card. At typical carrier insurance rates of $10–$15/month, this saves you $120–$180/year. Just make sure you set your phone bill to autopay on the Active Cash.' },
+      { q: 'Can I upgrade to the Wells Fargo Autograph later?', a: 'Yes, after 12+ months of good payment history, you can product-change to the Autograph or other Wells Fargo cards. You won\'t get the Autograph\'s signup bonus on a product change, though — that\'s only for new applications.' },
+      { q: 'Is the Wells Fargo Active Cash hard to get approved for?', a: 'Moderate. Wells Fargo usually wants a 670+ FICO score. They look at income and recent inquiries. The pre-qualification tool on their website uses a soft pull, so check there first. Approval is generally easier than Chase but slightly harder than Capital One.' }
+    ],
+    alternatives: ['citi-double-cash', 'wells-fargo-autograph', 'capital-one-quicksilver'],
     affiliateLink: '#',
     reviewDate: '2026-04-30'
   },

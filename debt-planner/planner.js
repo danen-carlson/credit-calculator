@@ -504,6 +504,7 @@ function recalculate() {
   const skeleton = document.getElementById('debt-skeleton');
   if (skeleton) {
     skeleton.classList.add('active');
+    skeleton.dataset.shownAt = Date.now().toString();
     const container = document.getElementById('results-container');
     if (container) {
       container.setAttribute('aria-busy', 'true');
@@ -571,11 +572,19 @@ function recalculate() {
 
 function hideSkeleton(skeleton) {
   if (skeleton) {
-    skeleton.classList.remove('active');
-    const container = document.getElementById('results-container');
-    if (container) {
-      container.removeAttribute('aria-busy');
-    }
+    const minDisplay = 300;
+    const shownAt = parseInt(skeleton.dataset.shownAt || '0', 10);
+    const elapsed = Date.now() - shownAt;
+    const delay = Math.max(0, minDisplay - elapsed);
+
+    setTimeout(() => {
+      skeleton.classList.remove('active');
+      const container = document.getElementById('results-container');
+      if (container) {
+        container.removeAttribute('aria-busy');
+        container.classList.add('results-ready');
+      }
+    }, delay);
   }
   
   // Show/hide export button based on whether results are available

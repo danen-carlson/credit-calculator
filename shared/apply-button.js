@@ -4,32 +4,34 @@
 function renderApplyButton(card, context = 'results') {
   if (!card) return '';
 
-  const hasAffiliateLink = card.affiliateLink && card.affiliateLink.trim() !== '';
+  const hasRealAffiliateLink = card.affiliateLink && card.affiliateLink.trim() !== '' && card.affiliateLink.trim() !== '#';
+  const network = card.affiliateNetwork || '';
   const buttonClass = context === 'wallet' ? 'btn-apply btn-apply-sm' : 'btn-apply';
 
-  if (hasAffiliateLink) {
-    // Track click and redirect
+  if (hasRealAffiliateLink) {
+    // Real affiliate link — show "Apply Now" with FTC disclosure
     return `
       <a href="${card.affiliateLink}" 
          target="_blank" 
          rel="nofollow sponsored noopener"
          class="${buttonClass}"
-         data-card-id="${card.id}"
-         data-network="${card.affiliateNetwork || ''}"
-         onclick="trackAffiliateClick('${card.id}', '${card.affiliateNetwork}')">
+         data-card-id="${card.id || card.slug}"
+         data-affiliate-network="${network}"
+         onclick="trackAffiliateClick('${card.id || card.slug}', '${network}')">
         Apply Now →
       </a>
       <div class="ftc-disclosure">
-        We may earn a commission when you apply. <a href="/disclosure.html">See our disclosure</a>.
+        CreditStud.io may earn commissions from credit card applications. This does not affect our rankings.
       </div>
     `;
   }
 
-  // No affiliate link — show Learn More that scrolls to card details
+  // No affiliate link — show "Learn More" linking to the card review page
+  const reviewUrl = `/cards/${card.slug}/`;
   return `
-    <a href="#card-${card.id}" 
+    <a href="${reviewUrl}" 
        class="${buttonClass} btn-learn-more"
-       data-card-id="${card.id}">
+       data-card-id="${card.id || card.slug}">
       Learn More
     </a>
   `;
