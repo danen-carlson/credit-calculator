@@ -67,6 +67,7 @@ async function handleRequest(request, event) {
   var email = (body.email || '').trim();
   var source = body.source || '';
   var context = body.context || {};
+  var calculatorType = body.calculator_type || context.intent || context.calculator_type || 'general';
   var capturedAt = body.captured_at || new Date().toISOString();
 
   // Validate email
@@ -98,7 +99,8 @@ async function handleRequest(request, event) {
     custom_fields: [
       { name: 'context', value: JSON.stringify(context) },
       { name: 'captured_at', value: capturedAt },
-      { name: 'source_url', value: source }
+      { name: 'source_url', value: source },
+      { name: 'calculator_type', value: calculatorType }
     ]
   };
 

@@ -406,6 +406,234 @@ const CARD_REVIEWS = [
     alternatives: ['chase-sapphire-preferred', 'capital-one-savorone'],
     affiliateLink: '#',
     reviewDate: '2026-04-30'
+  },
+  // ============================================================
+  // Sprint 11 cards (2026-04-30)
+  // ============================================================
+  {
+    slug: 'wells-fargo-autograph',
+    name: 'Wells Fargo Autograph℠ Card',
+    issuer: 'Wells Fargo',
+    annualFee: 0,
+    introAPR: '0% for 12 months on purchases',
+    regularAPR: '20.49% – 28.49% Variable',
+    signupBonus: '20,000 points (worth ~$330 in travel) after $1,000 spend in 3 months',
+    rewards: [
+      { category: 'Dining', rate: '3x', type: 'points' },
+      { category: 'Gas & transit', rate: '3x', type: 'points' },
+      { category: 'Travel', rate: '3x', type: 'points' },
+      { category: 'Streaming', rate: '3x', type: 'points' },
+      { category: 'Phone plans', rate: '3x', type: 'points' },
+      { category: 'Everything else', rate: '1x', type: 'points' }
+    ],
+    pointsValue: 0.0165,
+    perks: [
+      '3x points on 5 popular categories: dining, gas/transit, travel, streaming, phone plans',
+      'No annual fee',
+      'No foreign transaction fees',
+      'Cell phone protection (up to $600/claim, $1,200/yr)',
+      '20,000 bonus points after $1,000 spend (worth ~$330 in travel)',
+      'Transfer partners: 11 airlines & hotels (including Avianca, Icelandair, Choice)'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 4, perks: 3, afValue: 5, approval: 3.5, overall: 4 },
+    bestFor: [
+      'People who want 3x on 5 categories with no annual fee',
+      'Commuters who spend on gas and transit',
+      'Cardholders who value cell phone protection'
+    ],
+    skipIf: 'You want maximum grocery rewards (no grocery bonus) or you prefer pure cash back over points transfers.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: 'Wells Fargo tends to be more flexible than Chase on applications. They may deny if you have a recent Wells Fargo card opening within the last 6 months.',
+    faqs: [
+      { q: 'Is the Wells Fargo Autograph worth it?', a: 'Yes — if you spend on dining, gas, transit, streaming, or phone plans. The 3x rate across 5 categories with no annual fee is one of the best no-fee setups available. The signup bonus ($330 value) is solid for a $0 AF card.' },
+      { q: 'What are Wells Fargo points worth?', a: 'Wells Fargo Go Far Rewards points are worth ~1.65¢ each when redeemed for travel through their portal, or 1¢ for cash back. With 11 transfer partners, you can potentially get 1.5–2¢+ per point on airline transfers, though the partner list isn\'t as deep as Chase or Amex.' },
+      { q: 'How does the Autograph compare to the Chase Freedom Flex?', a: 'Autograph gives consistent 3x on 5 categories with no activation needed. Freedom Flex gives 5% on rotating categories (up to $1,500/quarter) which can be more lucrative if you track the calendar, plus 3% on dining and drugstores. Autograph is set-and-forget; Freedom Flex is for people who like to optimize.' },
+      { q: 'Does the Autograph count gas and transit separately?', a: 'No — gas stations and transit (rideshare, buses, trains, parking, tolls) are combined into one "gas & transit" category. That means your Uber rides and gas fill-ups both earn 3x.' },
+      { q: 'Is the cell phone protection good?', a: 'It covers damage and theft up to $600 per claim ($1,200/year max, $25 deductible). You need to pay your monthly phone bill with the card to be eligible. This alone can save you $10-15/mo if you\'re paying for phone insurance through your carrier.' },
+      { q: 'Can I downgrade or upgrade later?', a: 'You can product-change to other Wells Fargo cards (like the Active Cash for a flat 2% setup). There\'s no penalty for upgrading/downgrading, but the Autograph is one of the best no-AF cards they offer.' }
+    ],
+    alternatives: ['chase-sapphire-preferred', 'capital-one-savorone', 'citi-double-cash'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'us-bank-altitude-go',
+    name: 'US Bank Altitude® Go Visa Signature Card',
+    issuer: 'US Bank',
+    annualFee: 0,
+    introAPR: '0% for 12 billing cycles on purchases and balance transfers',
+    regularAPR: '19.49% – 28.49% Variable',
+    signupBonus: '20,000 bonus points (worth ~$200) after $1,000 spend in 90 days',
+    rewards: [
+      { category: 'Dining', rate: '4x', type: 'points' },
+      { category: 'Groceries', rate: '2x', type: 'points' },
+      { category: 'Gas & EV charging', rate: '2x', type: 'points' },
+      { category: 'Streaming', rate: '2x', type: 'points' },
+      { category: 'Travel', rate: '2x', type: 'points' },
+      { category: 'Everything else', rate: '1x', type: 'points' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '4x points on dining — the highest no-annual-fee dining rate available',
+      '2x on groceries, gas, streaming, and travel',
+      'No annual fee',
+      '0% intro APR for 12 billing cycles on purchases and balance transfers',
+      '$30 annual streaming credit (reimbursed for 6+ streaming services)',
+      'No foreign transaction fees'
+    ],
+    annualCredits: [
+      { label: '$30 annual streaming credit', value: 30, notes: 'For qualified streaming subscriptions' }
+    ],
+    ratings: { rewards: 4.5, perks: 3.5, afValue: 5, approval: 3, overall: 4.2 },
+    bestFor: [
+      'Heavy diners who want the best no-AF dining rate',
+      'People who value a 0% intro APR alongside rewards',
+      'Streaming subscribers who\'ll use the $30 annual credit'
+    ],
+    skipIf: 'You want transfer partners for maximum point value (Altitude Go points are cash-back only). If you have the Amex Gold and actually use its credits, the Go is a step down.',
+    creditScoreNeeded: 'Good to Excellent (680+)',
+    issuerRules: 'US Bank is known for being inquiry-sensitive. They may deny applicants with 3+ recent hard inquiries. Pre-qualification is recommended before applying.',
+    faqs: [
+      { q: 'Is the US Bank Altitude Go worth it?', a: 'If you spend $400+/month on dining, yes. The 4x rate on dining is the best no-annual-fee rate available, and the 2x on groceries/gas/streaming/travel rounds out a solid everyday card. The $30 streaming credit and 0% intro APR are cherries on top.' },
+      { q: 'What are Altitude Go points worth?', a: '1¢ each for cash back (statement credit, direct deposit). Unlike the Altitude Reserve, Go points cannot be transferred to travel partners. This makes the Go a pure cash-back card dressed up as a points card.' },
+      { q: 'How does the Altitude Go compare to the Capital One SavorOne?', a: 'SavorOne offers 3% on dining and 3% on groceries (vs 4% and 2%). SavorOne wins on groceries, Go wins on dining. SavorOne has 8% on Capital One Entertainment. Go has the $30 streaming credit. Both are no-AF — pick based on whether you spend more on dining (Go) or groceries (SavorOne).' },
+      { q: 'What is the $30 streaming credit?', a: 'US Bank gives you a $30 annual credit for streaming subscriptions (Netflix, Hulu, Spotify, etc.) charged to the card. It\'s reimbursed as a statement credit. If you subscribe to any 2-3 streaming services, you\'ll easily max this out.' },
+      { q: 'Is the US Bank Altitude Go hard to get approved for?', a: 'US Bank is pickier than Capital One but less strict than Chase. They look at recent inquiries and may deny you if you\'ve opened 3+ cards in the past 6 months. Pre-qualify on their website first for a soft-pull check.' },
+      { q: 'Can I upgrade to the Altitude Reserve later?', a: 'You can product-change from Go to Reserve (subject to approval). The Reserve has a $400 annual fee but gives 4.5x on travel and mobile wallet purchases plus Priority Pass. Only worth it if you travel heavily.' }
+    ],
+    alternatives: ['capital-one-savorone', 'amex-gold', 'wells-fargo-autograph'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'citi-custom-cash',
+    name: 'Citi Custom Cash® Card',
+    issuer: 'Citibank',
+    annualFee: 0,
+    introAPR: '0% for 15 months on purchases',
+    regularAPR: '19.49% – 29.49% Variable',
+    signupBonus: '$200 cash back after $1,500 spend in 12 months',
+    rewards: [
+      { category: 'Top spending category', rate: '5%', type: 'cash back', note: 'Automatic — up to $500/month' },
+      { category: 'Everything else', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '5% cash back on your top eligible spend category each month (up to $500, then 1%)',
+      'Auto-detects your top category — no activation or tracking required',
+      'No annual fee',
+      '0% intro APR for 15 months on purchases',
+      '$200 cash back after spending $1,500 in the first year',
+      'No foreign transaction fees'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 5, perks: 2.5, afValue: 5, approval: 3.5, overall: 4.3 },
+    bestFor: [
+      'People with one dominant spending category that changes month to month',
+      'Diners in months you eat out a lot, then grocery spenders when you\'re stocking up',
+      'Anyone who hates rotating category tracking but wants 5% back'
+    ],
+    skipIf: 'Your spending is spread evenly across 3+ categories — you\'ll only get 5% on one, and 1% on the rest. Also skip if you want a card with strong perks beyond rewards.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: 'Citi limits applications to 1 card per 8 days, 2 per 65 days. The Custom Cash specifically has no lifetime language on the bonus, but Citi will deny you if you\'ve opened too many cards recently.',
+    faqs: [
+      { q: 'How does the Citi Custom Cash 5% category work?', a: 'Each billing cycle, Citi automatically identifies your top eligible spending category and gives you 5% back on up to $500 in that category. No activation, no sign-ups. If you spend $600 on dining in a month, you earn 5% on $500 ($25) and 1% on the remaining $100 ($1).' },
+      { q: 'What categories qualify for the 5%?', a: 'Qualifying categories include: restaurants, supermarkets, gas stations, drugstores, fitness clubs, home improvement stores, online purchases, travel, and more. The card automatically picks whichever category you spent the most in each billing cycle.' },
+      { q: 'Is the Custom Cash better than the Freedom Flex?', a: 'Depends. Custom Cash gives a guaranteed 5% on your top category every month with no effort. Freedom Flex gives 5% on rotating categories (which you have to activate) plus 3% on dining and drugstores. If you like set-it-and-forget-it, go Custom Cash. If you track rotating categories and want 3% ongoing on dining, go Freedom Flex.' },
+      { q: 'Can I have both Citi Custom Cash and Citi Double Cash?', a: 'Yes, and it\'s a great combo. Use Custom Cash for your top monthly category (5%) and Double Cash for everything else (2%). Together, they cover your spending at 2-5% with no annual fees on either card.' },
+      { q: 'What happens if I spend less than $500 in my top category?', a: 'You simply earn 5% on whatever you spend, up to $500. There\'s no minimum spend requirement for the 5% category. If your top category is $200, you earn 5% on $200 and 1% on everything else.' },
+      { q: 'Is the $200 signup bonus easy to get?', a: 'Relatively easy — $1,500 spend over 12 months works out to just $125/month. That\'s achievable with normal everyday spending. The 0% intro APR for 15 months also helps if you need to float a large purchase.' }
+    ],
+    alternatives: ['chase-freedom-flex', 'citi-double-cash', 'amex-blue-cash-everyday'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'capital-one-quicksilver',
+    name: 'Capital One Quicksilver Cash Rewards Credit Card',
+    issuer: 'Capital One',
+    annualFee: 0,
+    introAPR: '0% for 15 months on purchases and balance transfers',
+    regularAPR: '19.99% – 29.99% Variable',
+    signupBonus: '$200 cash back after $500 spend in 3 months',
+    rewards: [
+      { category: 'All purchases', rate: '1.5%', type: 'cash back' }
+    ],
+    pointsValue: 0.015,
+    perks: [
+      '1.5% cash back on every purchase — no categories, no limits',
+      '$200 signup bonus after $500 spend in 3 months',
+      'No annual fee',
+      '0% intro APR for 15 months on purchases and balance transfers',
+      'No foreign transaction fees',
+      'Uber Cash 10% back on Uber rides and Uber Eats through 11/14/2026'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 3.5, perks: 3, afValue: 5, approval: 4.5, overall: 3.8 },
+    bestFor: [
+      'People who want zero-hassle cash back with no annual fee',
+      'Balance transfer seekers who want 15 months at 0%',
+      'Anyone rebuilding credit — Capital One is more forgiving on approvals'
+    ],
+    skipIf: 'You want category bonuses. If you spend heavily on dining, groceries, or travel, a category card like the SavorOne or Custom Cash will earn you significantly more.',
+    creditScoreNeeded: 'Fair to Excellent (580+)',
+    issuerRules: 'Capital One is one of the most approval-friendly issuers. They pre-qualify with a soft pull and can approve people with fair credit. They typically allow 1-2 personal cards at a time.',
+    faqs: [
+      { q: 'Is the Capital One Quicksilver worth it?', a: 'As a flat-rate cash-back card, yes. The 1.5% on everything with no annual fee and no category tracking is as simple as it gets. The $200 signup bonus and 0% intro APR seal the deal. But if you spend $500+/mo on groceries or dining, get a category card instead.' },
+      { q: 'How does Quicksilver compare to Citi Double Cash?', a: 'Both earn 2% effective (Double Cash: 1% + 1% when you pay; Quicksilver: 1.5% flat). Quicksilver gives a $200 signup bonus, 0% intro APR, and easier approval. Double Cash has the edge for pure ongoing rewards (2% vs 1.5%) and the ability to convert to ThankYou Points with a Citi Premier. For first-year value, Quicksilver wins. For long-term ceiling, Double Cash wins.' },
+      { q: 'What credit score do I need for Quicksilver?', a: 'Capital One is one of the most forgiving issuers. The Quicksilver has been approved for people with 630+ scores, and even lower with good income. Pre-qualify on their website for a soft-pull check before applying.' },
+      { q: 'Is the 1.5% really enough?', a: 'On $2,000/mo spending, that\'s $30/month or $360/year. A category card earning 3-5% on your top categories would earn more, but only if you bother to use the right card for each purchase. Quicksilver is the "never think about it" card.' },
+      { q: 'Can I upgrade from QuicksilverOne to Quicksilver?', a: 'Yes. Capital One regularly upgrades QuicksilverOne (which has a $39 annual fee) to Quicksilver (no annual fee) after 6-12 months of good payment history. If you have QuicksilverOne, call and ask for a product change.' },
+      { q: 'Is the balance transfer offer good?', a: 'The 0% for 15 months on purchases and balance transfers is competitive. The 3% balance transfer fee ($5 minimum) is standard. If you\'re carrying high-interest debt, the 15 months of 0% can save you hundreds in interest.' }
+    ],
+    alternatives: ['citi-double-cash', 'wells-fargo-active-cash', 'capital-one-savorone'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'discover-it-cash-back',
+    name: 'Discover it® Cash Back',
+    issuer: 'Discover',
+    annualFee: 0,
+    introAPR: '0% for 15 months on purchases, then 17.49% – 27.49% Variable',
+    regularAPR: '17.49% – 27.49% Variable',
+    signupBonus: 'Cashback Match — Discover matches ALL cash back earned in your first year (unlimited)',
+    rewards: [
+      { category: 'Rotating categories', rate: '5%', type: 'cash back', note: 'Up to $1,500/quarter, activation required' },
+      { category: 'Everything else', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '5% cash back on rotating categories each quarter (up to $1,500, activation required)',
+      'Cashback Match: Discover DOUBLES all cash back earned in your first year',
+      'No annual fee, ever',
+      '0% intro APR for 15 months on purchases',
+      'Free FICO credit score',
+      'No foreign transaction fees',
+      'U.S.-based customer service 24/7'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 4.5, perks: 3, afValue: 5, approval: 4, overall: 4.2 },
+    bestFor: [
+      'First-year cardholders who max out the Cashback Match (effectively 10% in rotating categories year one)',
+      'People who like rotating 5% categories and will activate each quarter',
+      'Anyone new to credit who wants no annual fee and a generous first year'
+    ],
+    skipIf: 'You won\'t activate the quarterly categories or won\'t max out the $1,500/quarter cap. Also skip if you want consistent category rewards — the Discover only gives 1% on non-bonus spending.',
+    creditScoreNeeded: 'Fair to Good (640+)',
+    issuerRules: 'Discover typically approves 1 card per 12-month period. They\'re lenient on credit score but may deny if you have a recent late payment or high utilization. Pre-qualification is available online.',
+    faqs: [
+      { q: 'How does the Discover it Cashback Match work?', a: 'In your first 12 billing cycles, Discover matches ALL the cash back you\'ve earned — dollar for dollar. If you earn $300 in cash back, they give you another $300 at the end of the year. That makes the rotating 5% categories effectively 10% in year one. After year one, you earn the regular rates only.' },
+      { q: 'What are the 2026 rotating categories?', a: 'Discover typically announces categories quarterly. Recent categories include: Q1 grocery stores, Q2 gas stations & Uber, Q3 restaurants, Q4 Amazon & Target. You must activate each quarter at Discover.com or in the app — if you forget, you only earn 1%.' },
+      { q: 'Is Discover it Cash Back better than Chase Freedom Flex?', a: 'Year one: Yes, Discover is better because of the Cashback Match (effectively doubles everything). Year two and beyond: Freedom Flex is better because it has 3% ongoing on dining and drugstores, while Discover drops to 1% on non-rotating categories. If you\'re choosing one, get both — use Discover in year one, then switch to Freedom Flex.' },
+      { q: 'Can I have both the Discover it Cash Back and Discover it Miles?', a: 'No. Discover typically only allows one card per person. If you have the Miles card, you\'d need to close it before applying for Cash Back, or product-change (which is a Discover-internal process — call them).' },
+      { q: 'Where is Discover not accepted?', a: 'Discover has closed the acceptance gap significantly and is now accepted at 99% of US merchants that take credit cards. The main holdouts are some small businesses and international merchants in certain countries. Costco accepts Discover but not Amex in most locations.' },
+      { q: 'Is the first-year match really unlimited?', a: 'Yes — there\'s no cap on the Cashback Match. If you somehow earn $1,000 in cash back in your first year, Discover gives you another $1,000. The only cap is on the rotating 5% categories ($1,500/quarter max at 5%), but the match applies to ALL earnings including 1% on everyday spending.' }
+    ],
+    alternatives: ['chase-freedom-flex', 'citi-custom-cash', 'capital-one-quicksilver'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
   }
 ];
 

@@ -400,7 +400,8 @@
   <script src="cards-data.js"></script>
   <script src="../shared/apply-button.js"></script>
   <link rel="stylesheet" href="../shared/email-capture.css">
-<script src="../shared/email-capture.js"></script>
+  <script>window.CREDITSTUD_EMAIL_ENDPOINT = 'https://api.creditstud.io/subscribe';</script>
+  <script src="../shared/email-capture.js"></script>
   <script src="wallet-optimizer.js"></script>
   <script src="rewards.js"></script>
   <script src="../shared/share.js"></script>
@@ -422,6 +423,28 @@
           'crypto-toggle',
           'first-year',
           'ongoing'
+        ],
+        customFields: [
+          {
+            name: 'custom_cats',
+            json: true,
+            get: function() {
+              // Access the global customCategories state from rewards.js IIFE
+              // It's stored in localStorage, so we read from there
+              try {
+                return JSON.parse(localStorage.getItem('rewards_customCategories') || '[]');
+              } catch(e) { return []; }
+            },
+            set: function(val) {
+              try {
+                if (Array.isArray(val) && val.length > 0) {
+                  localStorage.setItem('rewards_customCategories', JSON.stringify(val));
+                  // Trigger a re-init of the spending inputs by dispatching a custom event
+                  document.dispatchEvent(new CustomEvent('creditstud:hydrate-custom-cats', { detail: val }));
+                }
+              } catch(e) { console.warn('Failed to restore custom categories from URL', e); }
+            }
+          }
         ],
         shareButtonMount: '#share-mount',
         stampMount: '#data-stamp-mount'

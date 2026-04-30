@@ -1,6 +1,6 @@
 // CreditStud.io Service Worker
 // Strategy: cache-first for static assets, network-first for HTML navigations.
-const CACHE_VERSION = 'creditstud-v5-2026-04-30';
+const CACHE_VERSION = 'creditstud-v6-2026-04-30';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -44,6 +44,12 @@ const STATIC_ASSETS = [
   '/cards/bilt-mastercard/',
   '/cards/capital-one-savorone/',
   '/cards/citi-double-cash/',
+  '/cards/wells-fargo-autograph/',
+  '/cards/us-bank-altitude-go/',
+  '/cards/citi-custom-cash/',
+  '/cards/capital-one-quicksilver/',
+  '/cards/discover-it-cash-back/',
+  '/blog/best-credit-cards-for-groceries.html',
   '/merchant/',
   '/merchant/index.html',
   '/merchant/amazon.html',

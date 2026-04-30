@@ -144,16 +144,51 @@
   // Get effective spending, incorporating annual toggle and custom categories
   function getEffectiveSpending() {
     const spending = { ...currentSpending };
-    // Add custom categories mapped to standard ones
+    // Add custom categories mapped to standard ones (or to special custom categories like drugstore/rent)
     customCategories.forEach(cat => {
-      if (cat.mapTo && spending.hasOwnProperty(cat.mapTo)) {
-        spending[cat.mapTo] += cat.amount;
+      const mapTo = cat.mapTo || '';
+      if (mapTo && spending.hasOwnProperty(mapTo)) {
+        // Standard category mapping
+        spending[mapTo] += cat.amount;
+      } else if (mapTo === 'drugstore') {
+        // Drugstore maps to online for most cards but gets special 3% rates from some
+        spending.online += cat.amount; // fallback for cards without drugstore bonus
+      } else if (mapTo === 'rent') {
+        // Rent goes to everything (except Bilt which handles it specially)
+        spending.everything += cat.amount;
+      } else if (mapTo === 'fitness' || mapTo === 'childcare') {
+        // These don't map to any bonus category — goes to everything
+        spending.everything += cat.amount;
       } else {
         // Unmapped custom categories go into "everything"
         spending.everything += cat.amount;
       }
     });
     return spending;
+  }
+
+  // Get the reward rate for a card on a custom category
+  // Returns the rate multiplier (e.g., 3 for 3%, 3 for 3x points)
+  function getCustomCategoryRate(card, customCatKey) {
+    if (!customCategoryMappings || !customCategoryMappings[customCatKey]) return null;
+    const mapping = customCategoryMappings[customCatKey];
+    if (mapping.cards && mapping.cards[card.id] !== undefined) {
+      return mapping.cards[card.id];
+    }
+    // Default: the card's "everything" rate or 1
+    if (card.rewards && card.rewards.everything) {
+      return card.rewards.everything.rate;
+    }
+    return 1;
+  }
+
+  // Get custom category label with (custom) suffix
+  function getCustomCategoryLabel(cat) {
+    const name = cat.name || 'Custom';
+    const mapTo = cat.mapTo || '';
+    const mapLabel = categoryMapOptions.find(o => o.value === mapTo);
+    const mapSuffix = mapLabel ? ' (' + mapLabel.label.replace(/^Treat as /, '') + ')' : '';
+    return name + ' (custom)' + mapSuffix;
   }
 
   // Generate "Why this card?" reasoning
@@ -1189,6 +1224,35 @@
       </tr>`;
     }
 
+    // Custom category rows
+    customCategories.forEach(customCat => {
+      if (!customCat.amount || customCat.amount <= 0) return;
+      const catLabel = getCustomCategoryLabel(customCat);
+      const values = selected.map(cardData => {
+        if (customCat.mapTo && customCategoryMappings[customCat.mapTo]) {
+          const rate = getCustomCategoryRate(cardData, customCat.mapTo);
+          if (rate) {
+            const pointValue = (cardData.pointsPerDollar || 1);
+            const effectiveRate = cardData.type === 'cashback' ? rate : rate * pointValue;
+            return customCat.amount * 12 * (effectiveRate / 100);
+          }
+        }
+        // Default: map to 'everything' rate or 1%
+        const everyRate = cardData.rewards?.everything?.rate || 1;
+        const pointValue = (cardData.type === 'cashback' ? 1 : (cardData.pointsPerDollar || 1));
+        const effectiveRate = cardData.type === 'cashback' ? everyRate : everyRate * pointValue;
+        return customCat.amount * 12 * (effectiveRate / 100);
+      });
+      const maxVal = Math.max(...values);
+      html += `<tr class="category-row" style="background:var(--bg-secondary, #f9fafb);">
+        <td>${catLabel}</td>
+        ${values.map(v => {
+          const isWinner = v === maxVal && maxVal > 0;
+          return `<td class="${isWinner ? 'winner-cell' : ''}">${formatCurrency(v)}</td>`;
+        }).join('')}
+      </tr>`;
+    });
+
     // Annual fee row
     html += `<tr>
       <td><strong>Annual Fee</strong></td>
@@ -1528,7 +1592,9 @@
   }
 
   function updateSpendingSummary() {
-    const total = Object.values(currentSpending).reduce((s, v) => s + v, 0);
+    const baseTotal = Object.values(currentSpending).reduce((s, v) => s + v, 0);
+    const customTotal = customCategories.reduce((s, c) => s + c.amount, 0);
+    const total = baseTotal + customTotal;
     const isAnnual = spendingMode === 'annual';
 
     const monthlyEl = document.getElementById('total-monthly');
@@ -1761,7 +1827,11 @@
     { value: 'travel', label: 'Treat as Travel' },
     { value: 'online', label: 'Treat as Online Shopping' },
     { value: 'streaming', label: 'Treat as Streaming' },
-    { value: 'utilities', label: 'Treat as Utilities' }
+    { value: 'utilities', label: 'Treat as Utilities' },
+    { value: 'drugstore', label: '💊 Drugstore / Pharmacy (3% Chase Flex)' },
+    { value: 'rent', label: '🏠 Rent (1% Bilt)' },
+    { value: 'fitness', label: '🏋️ Fitness / Gym' },
+    { value: 'childcare', label: '👶 Childcare / Daycare' }
   ];
 
   function renderCustomCategories(grid) {
@@ -1879,6 +1949,21 @@
       if (savedId) nextCustomId = parseInt(savedId);
     } catch (e) {}
   }
+
+  // ===================== URL SHARE STATE =====================
+
+  // Listen for custom category hydration from share.js URL params
+  document.addEventListener('creditstud:hydrate-custom-cats', function(e) {
+    if (e.detail && Array.isArray(e.detail)) {
+      customCategories = e.detail;
+      nextCustomId = Math.max(...e.detail.map(c => parseInt(c.id.replace('custom-', '')) || 0), 0) + 1;
+      saveCustomCategories();
+      if (document.querySelector('#spending-grid')) {
+        initSpendingInputs();
+        renderResults();
+      }
+    }
+  });
 
   // ===================== CARDS OWNERSHIP =====================
 

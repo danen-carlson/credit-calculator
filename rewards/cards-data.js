@@ -508,6 +508,62 @@ const cardsData = [
     customizableCategories: false
   },
   // ============================================================
+  // Sprint 11 additions (2026-04-30)
+  // ============================================================
+  {
+    id: 'us-bank-altitude-go',
+    name: 'US Bank Altitude Go',
+    issuer: 'US Bank',
+    type: 'cashback',
+    annualFee: 0,
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$1,000 spend in 90 days' },
+    rewards: {
+      groceries: { rate: 2 },
+      dining: { rate: 4 },
+      gas: { rate: 2 },
+      travel: { rate: 2 },
+      online: { rate: 2 },
+      streaming: { rate: 2 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['4x on dining — best no-AF dining rate', '2x on groceries, gas, streaming, and travel', 'No annual fee', '$30 annual streaming credit', '0% intro APR for 12 billing cycles'],
+    bestFor: 'Diners',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false,
+    annualCredits: 30
+  },
+  {
+    id: 'capital-one-quicksilver',
+    name: 'Capital One Quicksilver',
+    issuer: 'Capital One',
+    type: 'cashback',
+    annualFee: 0,
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$500 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 1.5 },
+      dining: { rate: 1.5 },
+      gas: { rate: 1.5 },
+      travel: { rate: 1.5 },
+      online: { rate: 1.5 },
+      streaming: { rate: 1.5 },
+      utilities: { rate: 1.5 },
+      everything: { rate: 1.5 }
+    },
+    pointValue: 1.0,
+    perks: ['1.5% cash back on everything — no categories', '$200 signup bonus after $500 spend', 'No annual fee', '0% intro APR for 15 months', 'No foreign transaction fees'],
+    bestFor: 'Simplicity Seekers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  // ============================================================
   // Flagship cards added 2026-04-28 (Sprint 3, P1 #24)
   // ============================================================
   {
@@ -704,6 +760,39 @@ const cardsData = [
     customizableCategories: false
   }
 ];
+
+// Custom category reward rate mappings
+// These map custom spending categories to specific card earn rates.
+// Cards not listed here default to their 'everything' rate for custom categories.
+const customCategoryMappings = {
+  drugstore: {
+    label: 'Drugstore / Pharmacy',
+    aliases: ['drugstore', 'pharmacy', 'pharmacies'],
+    cards: {
+      'chase-freedom-flex': 3,   // 3% on drugstores
+      'discover-it-cash-back': 3, // Rotating: sometimes includes drugstores, estimate ~3%
+      'amazon-prime-visa': 2,    // 2% at drugstores
+      'wells-fargo-autograph': 3, // 3% on phone plans, but drugstores not specifically bonus'd; falls to 1x
+    }
+  },
+  fitness: {
+    label: 'Fitness / Gym',
+    aliases: ['fitness', 'gym', 'gym memberships', 'workout'],
+    cards: {} // No cards have gym/fitness bonuses — all default to 1x/1%
+  },
+  rent: {
+    label: 'Rent',
+    aliases: ['rent', 'rent payment', 'apartment rent'],
+    cards: {
+      'bilt-blue': 1  // 1x on rent (no surcharge) — key differentiator
+    }
+  },
+  childcare: {
+    label: 'Childcare',
+    aliases: ['childcare', 'daycare', 'babysitting', 'child care'],
+    cards: {} // No cards have childcare bonuses — all default to 1x/1%
+  }
+};
 
 // Point valuations reference (TPG April 2026)
 const pointValuations = {
