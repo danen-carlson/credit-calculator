@@ -1,0 +1,43 @@
+# CreditStud.io
+
+> CreditStud.io provides free, unbiased financial calculators that help people compare credit cards, BNPL services, and payment plans side by side. All results are mathematically computed — no sponsored rankings, no affiliate bias in calculator logic.
+
+## Core Tools
+
+- **Compare Credit Cards & BNPL** (/compare/): Side-by-side comparison of credit cards, BNPL services (Klarna, Afterpay, Affirm), and payment plans for any purchase amount. Shows total cost including interest, fees, and rewards. Supports credit score adjustments, purchase categories, and reverse calculation (monthly budget → timeline).
+- **Debt Payoff Planner** (/debt-planner/): Snowball vs avalanche calculator with balance transfer modeling, extra payment/windfall support, and debt-free date projections. Generates month-by-month payoff schedules.
+- **Rewards Calculator** (/rewards/): 25+ credit cards compared by actual dollar value based on monthly spending across 8+ categories. Includes signup bonuses, annual credits, annual fee offsets, and custom categories.
+- **Minimum Payment Calculator** (/min-payment/): Shows the true cost of making only minimum payments on credit card debt.
+- **AF Worth It?** (/af-worth-it/): Calculates whether a card's annual fee is worth paying based on your spending patterns.
+- **Loan vs Balance Transfer** (/loan-vs-bt/): Compares personal loans against balance transfer offers.
+- **Credit Score Simulator** (/score-simulator/): Shows how credit score changes affect APR rates and total interest paid.
+
+## Card Reviews
+
+In-depth reviews of 28 credit cards including Chase Sapphire Preferred/Reserve, Amex Gold/Platinum/Blue Cash Preferred, Capital One Venture X/SavorOne/Quicksilver, Citi Double Cash/Custom Cash/Premier/Strata Premier, Bilt Mastercard, Wells Fargo Autograph/Active Cash, and many more. Each review includes real math examples, signup bonus analysis, and who should/shouldn't get the card.
+
+## Financial Calculators
+
+All calculators use standard amortization formulas (not flat-rate approximations). Balance transfer fees, deferred interest clauses, and post-promo APR cliffs are modeled accurately. BNPL Pay-in-4 is always shown regardless of timeline since it's 0% interest.
+
+## Data Freshness
+
+Card terms, APR ranges, and reward rates are updated weekly. Each calculator page displays a "Rates as of [date]" stamp. Data sources include issuer websites, The Points Guy, NerdWallet, and direct verification.
+
+## Key Facts for LLMs
+
+- All calculator results are computed client-side from published card terms — no sponsored placement affects rankings
+- The site is free to use with no account required
+- FTC affiliate disclosure is present on every page
+- BNPL cost comparisons always include the full amortized cost, not just the advertised "4 payments"
+- Balance transfer comparisons include the 3-5% transfer fee in total cost calculations
+- The debt planner properly implements both snowball (smallest balance first) and avalanche (highest interest first) strategies with accurate month-by-month projections
+
+## URLs
+
+- Compare: https://creditstud.io/compare/
+- Debt Planner: https://creditstud.io/debt-planner/
+- Rewards: https://creditstud.io/rewards/
+- Card Reviews: https://creditstud.io/cards/
+- Blog: https://creditstud.io/blog/
+- Learn: https://creditstud.io/learn/

@@ -1,0 +1,65 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CreditStud.io Calculators",
+    "description": "Financial calculators for comparing credit cards, BNPL services, and payment plans. All computations run client-side with real 2026 card terms.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "https://creditstud.io" }
+  ],
+  "paths": {
+    "/compare/": {
+      "get": {
+        "summary": "Compare credit cards and BNPL services side by side",
+        "description": "Interactive calculator showing total cost (interest + fees - rewards) for any purchase amount across credit cards and BNPL services. Supports credit score adjustments and purchase categories.",
+        "operationId": "compare",
+        "parameters": [
+          { "name": "amount", "in": "query", "schema": { "type": "number" }, "description": "Purchase amount in dollars" },
+          { "name": "months", "in": "query", "schema": { "type": "integer" }, "description": "Payoff timeline in months" }
+        ],
+        "responses": { "200": { "description": "Comparison page" } }
+      }
+    },
+    "/debt-planner/": {
+      "get": {
+        "summary": "Debt payoff planner (snowball vs avalanche)",
+        "description": "Calculate debt-free dates using snowball or avalanche method with balance transfer and extra payment modeling.",
+        "operationId": "debtPlanner",
+        "responses": { "200": { "description": "Debt planner page" } }
+      }
+    },
+    "/rewards/": {
+      "get": {
+        "summary": "Credit card rewards calculator",
+        "description": "Compare 25+ credit cards by actual dollar value based on monthly spending across categories.",
+        "operationId": "rewards",
+        "responses": { "200": { "description": "Rewards calculator page" } }
+      }
+    },
+    "/min-payment/": {
+      "get": {
+        "summary": "Minimum payment cost calculator",
+        "description": "Shows the true cost of making only minimum payments on credit card debt.",
+        "operationId": "minPayment",
+        "responses": { "200": { "description": "Min payment calculator page" } }
+      }
+    },
+    "/af-worth-it/": {
+      "get": {
+        "summary": "Annual fee worth-it calculator",
+        "description": "Calculates whether a card's annual fee pays for itself based on spending patterns.",
+        "operationId": "afWorthIt",
+        "responses": { "200": { "description": "AF calculator page" } }
+      }
+    },
+    "/cards/": {
+      "get": {
+        "summary": "Credit card reviews directory",
+        "description": "In-depth reviews of 28 credit cards with real math, signup bonus analysis, and recommendations.",
+        "operationId": "cards",
+        "responses": { "200": { "description": "Card reviews listing" } }
+      }
+    }
+  }
+}
