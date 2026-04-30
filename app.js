@@ -4,6 +4,7 @@
 
 // Cached DOM element references
 const domCache = {};
+let bnplEmailCaptureShown = false;
 
 function getCachedElement(id) {
   if (!domCache[id]) {
