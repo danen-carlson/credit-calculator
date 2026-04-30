@@ -1,6 +1,6 @@
 // CreditStud.io Service Worker
 // Strategy: cache-first for static assets, network-first for HTML navigations.
-const CACHE_VERSION = 'creditstud-v9-2026-04-30';
+const CACHE_VERSION = 'creditstud-v10-2026-04-30';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
