@@ -61,29 +61,61 @@
 
     // --- debt-planner ---
     if (path.includes('debt') || document.getElementById('debt-list')) {
-      const balance = params.get('balance');
-      if (balance !== null) {
-        // Try common debt-planner input fields
-        const amountInput = document.getElementById('debt-amount') ||
-                            document.getElementById('debt-balance') ||
-                            document.getElementById('starting-balance');
-        if (amountInput) {
-          amountInput.value = balance;
-          amountInput.dispatchEvent(new Event('input', { bubbles: true }));
-          amountInput.dispatchEvent(new Event('change', { bubbles: true }));
+      // debt or balance → pre-fill first debt balance
+      const debtValue = params.get('debt') || params.get('balance');
+      if (debtValue !== null) {
+        // Set the first debt card's balance
+        if (typeof window.setDebts === 'function' && typeof window.debts !== 'undefined' && window.debts.length > 0) {
+          window.debts[0].balance = parseFloat(debtValue);
+          if (typeof window.renderDebtCards === 'function') window.renderDebtCards();
+          if (typeof window.recalculate === 'function') window.recalculate();
+        } else {
+          // Try common debt-planner input fields
+          const amountInput = document.getElementById('debt-amount') ||
+                              document.getElementById('debt-balance') ||
+                              document.getElementById('starting-balance');
+          if (amountInput) {
+            amountInput.value = debtValue;
+            amountInput.dispatchEvent(new Event('input', { bubbles: true }));
+            amountInput.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+          const starterField = document.getElementById('starter-debt-balance');
+          if (starterField) {
+            starterField.value = debtValue;
+            starterField.dispatchEvent(new Event('input', { bubbles: true }));
+            starterField.dispatchEvent(new Event('change', { bubbles: true }));
+          }
         }
-        // Also try setting a starter debt via a named field if it exists
-        const starterField = document.getElementById('starter-debt-balance');
-        if (starterField) {
-          starterField.value = balance;
-          starterField.dispatchEvent(new Event('input', { bubbles: true }));
-          starterField.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      // rate=24.99 → set first debt's interest rate
+      const rate = params.get('rate');
+      if (rate !== null && typeof window.debts !== 'undefined' && window.debts.length > 0) {
+        window.debts[0].rate = parseFloat(rate);
+        if (typeof window.renderDebtCards === 'function') window.renderDebtCards();
+        if (typeof window.recalculate === 'function') window.recalculate();
+      }
+
+      // payment=200 → set monthly extra payment
+      const payment = params.get('payment');
+      if (payment !== null) {
+        const extraInput = document.getElementById('extra-input');
+        const extraSlider = document.getElementById('extra-slider');
+        if (extraInput) {
+          extraInput.value = payment;
+          extraInput.dispatchEvent(new Event('input', { bubbles: true }));
+          extraInput.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        if (extraSlider) {
+          extraSlider.value = payment;
+          extraSlider.dispatchEvent(new Event('input', { bubbles: true }));
         }
       }
     }
 
     // --- compare ---
     if (path.includes('compare') || document.getElementById('compare-results')) {
+      // amount=2000 → pre-fill purchase amount
       const amount = params.get('amount');
       if (amount !== null) {
         const amountInput = document.getElementById('purchase-amount') ||
@@ -93,6 +125,61 @@
           amountInput.value = amount;
           amountInput.dispatchEvent(new Event('input', { bubbles: true }));
           amountInput.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+
+      // months=12 → pre-fill payoff timeline
+      const months = params.get('months');
+      if (months !== null) {
+        const monthsSlider = document.getElementById('payoff-months');
+        const monthsDisplay = document.getElementById('payoff-months-display');
+        if (monthsSlider) {
+          monthsSlider.value = months;
+          monthsSlider.dispatchEvent(new Event('input', { bubbles: true }));
+          monthsSlider.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+
+      // score=720 → pre-fill credit score
+      const score = params.get('score');
+      if (score !== null) {
+        const scoreInput = document.getElementById('credit-score');
+        if (scoreInput) {
+          scoreInput.value = score;
+          scoreInput.dispatchEvent(new Event('input', { bubbles: true }));
+          scoreInput.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+
+      // category=restaurants → pre-fill purchase category
+      const category = params.get('category');
+      if (category !== null) {
+        const catSelect = document.getElementById('purchase-category');
+        if (catSelect) {
+          const option = Array.from(catSelect.options).find(
+            o => o.value.toLowerCase() === category.toLowerCase() ||
+                 o.textContent.toLowerCase() === category.toLowerCase()
+          );
+          if (option) {
+            catSelect.value = option.value;
+            catSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+      }
+
+      // payment=200 → pre-fill monthly payment (switches to payment mode)
+      const payment = params.get('payment');
+      if (payment !== null) {
+        const paymentInput = document.getElementById('payoff-monthly-payment');
+        const paymentModeRadio = document.getElementById('payoff-mode-payment');
+        if (paymentModeRadio) {
+          paymentModeRadio.checked = true;
+          paymentModeRadio.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+        if (paymentInput) {
+          paymentInput.value = payment;
+          paymentInput.dispatchEvent(new Event('input', { bubbles: true }));
+          paymentInput.dispatchEvent(new Event('change', { bubbles: true }));
         }
       }
 
@@ -126,26 +213,48 @@
 
     // --- rewards ---
     if (path.includes('reward') || document.getElementById('rewards-calculator')) {
-      const purchase = params.get('purchase');
-      if (purchase !== null) {
+      // monthly or purchase → pre-fill monthly spend across all spending categories
+      const spendValue = params.get('monthly') || params.get('purchase');
+      if (spendValue !== null) {
+        // Try named input first, then distribute across category inputs
         const spendInput = document.getElementById('monthly-spend') ||
                            document.getElementById('annual-spend') ||
                            document.getElementById('purchase-amount') ||
                            document.getElementById('spending');
         if (spendInput) {
-          spendInput.value = purchase;
+          spendInput.value = spendValue;
           spendInput.dispatchEvent(new Event('input', { bubbles: true }));
           spendInput.dispatchEvent(new Event('change', { bubbles: true }));
+        } else {
+          // Distribute across spending grid inputs
+          const gridInputs = document.querySelectorAll('#spending-grid input[type="number"]');
+          if (gridInputs.length > 0) {
+            const perCategory = Math.round(parseFloat(spendValue) / gridInputs.length);
+            gridInputs.forEach(input => {
+              input.value = perCategory;
+              input.dispatchEvent(new Event('input', { bubbles: true }));
+              input.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+          }
         }
       }
 
       const category = params.get('category');
       if (category !== null) {
+        // Try matching a spending input by category name
+        const catInput = document.getElementById('input-' + category.toLowerCase()) ||
+                         document.getElementById('input-' + category.toLowerCase().replace(/s$/, ''));
+        if (catInput) {
+          // Highlight this category by focusing it
+          catInput.focus();
+          catInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Also try select elements
         const catSelect = document.getElementById('spending-category') ||
                           document.getElementById('category') ||
                           document.getElementById('reward-category');
         if (catSelect) {
-          // Try matching the option value or text
           const option = Array.from(catSelect.options).find(
             o => o.value.toLowerCase() === category.toLowerCase() ||
                  o.textContent.toLowerCase() === category.toLowerCase()
@@ -236,10 +345,19 @@
     const params = new URLSearchParams(window.location.search);
     if (!params.toString()) return;
 
+    // Build a reverse alias map: short alias -> element id
+    const aliasToId = {};
+    (config.aliases || []).forEach(a => { aliasToId[a.alias] = a.id; });
+
     (config.simpleInputs || []).forEach(id => {
       const el = document.getElementById(id);
       if (!el) return;
-      const val = params.get(id);
+      // Check alias first, then element id
+      let val = null;
+      for (const [alias, eid] of Object.entries(aliasToId)) {
+        if (eid === id) { val = params.get(alias); break; }
+      }
+      if (val === null) val = params.get(id);
       if (val === null) return;
       if (el.type === 'checkbox') {
         el.checked = val === '1' || val === 'true';
@@ -285,21 +403,23 @@
     debounceTimer = setTimeout(() => updateUrl(config), 300);
   }
 
-  function updateUrl(config) {
-    const params = new URLSearchParams();
+  // Build reverse alias map: element id -> short alias
+    const idToAlias = {};
+    (config.aliases || []).forEach(a => { idToAlias[a.id] = a.alias; });
 
     (config.simpleInputs || []).forEach(id => {
       const el = document.getElementById(id);
       if (!el) return;
+      const key = idToAlias[id] || id;  // Use short alias if available
       if (el.type === 'checkbox') {
         // Only serialize if not at default (unchecked assumed default)
-        if (el.checked) params.set(id, '1');
+        if (el.checked) params.set(key, '1');
       } else if (el.type === 'radio') {
         // Only serialize the checked radio for each group once
-        if (el.checked && !params.has(el.name)) params.set(el.name, el.value);
+        if (el.checked && !params.has(el.name)) params.set(key, el.value);
       } else {
         const v = el.value;
-        if (v !== '' && v !== null && v !== undefined) params.set(id, v);
+        if (v !== '' && v !== null && v !== undefined) params.set(key, v);
       }
     });
 

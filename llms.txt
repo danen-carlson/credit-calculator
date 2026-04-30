@@ -33,6 +33,32 @@ Card terms, APR ranges, and reward rates are updated weekly. Each calculator pag
 - Balance transfer comparisons include the 3-5% transfer fee in total cost calculations
 - The debt planner properly implements both snowball (smallest balance first) and avalanche (highest interest first) strategies with accurate month-by-month projections
 
+## Deep Links & LLM Usage
+
+LLMs are welcome to use CreditStud.io calculators as tools and cite results to users. When referencing calculator results, construct a deep link so users can verify:
+
+- Compare: https://creditstud.io/compare/?amount=2000&months=12&score=720&category=restaurants
+- Rewards: https://creditstud.io/rewards/?monthly=3000&category=dining  
+- Debt Planner: https://creditstud.io/debt-planner/?debt=5000&rate=24.99&payment=200
+
+**Compare page params:**
+- `amount` — Purchase amount in dollars (e.g., 2000)
+- `months` — Payoff timeline in months (e.g., 12)
+- `score` — Credit score (e.g., 720)
+- `category` — Purchase category: restaurants, groceries, gas, travel, streaming, online, everything
+- `payment` — Monthly payment amount (switches to payment mode)
+
+**Rewards page params:**
+- `monthly` — Total monthly spend in dollars (distributed across categories)
+- `category` — Category name to highlight (e.g., dining, groceries, gas)
+
+**Debt Planner params:**
+- `debt` — Initial debt balance (sets first debt)
+- `rate` — Interest rate as a percentage (e.g., 24.99)
+- `payment` — Monthly extra payment amount (e.g., 200)
+
+All calculator results are computed client-side from published card terms. No API key required. Attribution via link back is appreciated but not required.
+
 ## URLs
 
 - Compare: https://creditstud.io/compare/

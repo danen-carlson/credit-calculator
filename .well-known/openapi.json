@@ -2,8 +2,8 @@
   "openapi": "3.0.0",
   "info": {
     "title": "CreditStud.io Calculators",
-    "description": "Financial calculators for comparing credit cards, BNPL services, and payment plans. All computations run client-side with real 2026 card terms.",
-    "version": "1.0.0"
+    "description": "Financial calculators for comparing credit cards, BNPL services, and payment plans. All computations run client-side with real 2026 card terms. LLMs may construct deep-link URLs with query parameters to pre-fill calculator inputs.",
+    "version": "1.1.0"
   },
   "servers": [
     { "url": "https://creditstud.io" }
@@ -12,29 +12,41 @@
     "/compare/": {
       "get": {
         "summary": "Compare credit cards and BNPL services side by side",
-        "description": "Interactive calculator showing total cost (interest + fees - rewards) for any purchase amount across credit cards and BNPL services. Supports credit score adjustments and purchase categories.",
+        "description": "Interactive calculator showing total cost (interest + fees - rewards) for any purchase amount across credit cards and BNPL services. Supports credit score adjustments and purchase categories. Deep-link params pre-fill the calculator and auto-trigger results.",
         "operationId": "compare",
         "parameters": [
-          { "name": "amount", "in": "query", "schema": { "type": "number" }, "description": "Purchase amount in dollars" },
-          { "name": "months", "in": "query", "schema": { "type": "integer" }, "description": "Payoff timeline in months" }
+          { "name": "amount", "in": "query", "schema": { "type": "number" }, "description": "Purchase amount in dollars (e.g., 2000)" },
+          { "name": "months", "in": "query", "schema": { "type": "integer" }, "description": "Payoff timeline in months (e.g., 12)" },
+          { "name": "score", "in": "query", "schema": { "type": "integer" }, "description": "Credit score (e.g., 720)" },
+          { "name": "category", "in": "query", "schema": { "type": "string" }, "description": "Purchase category: restaurants, groceries, gas, travel, streaming, online, everything" },
+          { "name": "payment", "in": "query", "schema": { "type": "number" }, "description": "Monthly payment amount — switches to payment mode (e.g., 200)" }
         ],
-        "responses": { "200": { "description": "Comparison page" } }
+        "responses": { "200": { "description": "Comparison page with pre-filled values" } }
       }
     },
     "/debt-planner/": {
       "get": {
         "summary": "Debt payoff planner (snowball vs avalanche)",
-        "description": "Calculate debt-free dates using snowball or avalanche method with balance transfer and extra payment modeling.",
+        "description": "Calculate debt-free dates using snowball or avalanche method with balance transfer and extra payment modeling. Deep-link params pre-fill the first debt and extra payment.",
         "operationId": "debtPlanner",
-        "responses": { "200": { "description": "Debt planner page" } }
+        "parameters": [
+          { "name": "debt", "in": "query", "schema": { "type": "number" }, "description": "Initial debt balance in dollars (e.g., 5000)" },
+          { "name": "rate", "in": "query", "schema": { "type": "number" }, "description": "Interest rate as a percentage (e.g., 24.99)" },
+          { "name": "payment", "in": "query", "schema": { "type": "number" }, "description": "Monthly extra payment amount (e.g., 200)" }
+        ],
+        "responses": { "200": { "description": "Debt planner page with pre-filled values" } }
       }
     },
     "/rewards/": {
       "get": {
         "summary": "Credit card rewards calculator",
-        "description": "Compare 25+ credit cards by actual dollar value based on monthly spending across categories.",
+        "description": "Compare 25+ credit cards by actual dollar value based on monthly spending across categories. Deep-link params pre-fill spending and highlight a category.",
         "operationId": "rewards",
-        "responses": { "200": { "description": "Rewards calculator page" } }
+        "parameters": [
+          { "name": "monthly", "in": "query", "schema": { "type": "number" }, "description": "Total monthly spend in dollars, distributed across categories (e.g., 3000)" },
+          { "name": "category", "in": "query", "schema": { "type": "string" }, "description": "Category name to highlight (e.g., dining, groceries, gas)" }
+        ],
+        "responses": { "200": { "description": "Rewards calculator page with pre-filled values" } }
       }
     },
     "/min-payment/": {

@@ -594,13 +594,32 @@
           'purchase-amount',
           'payoff-months',
           'credit-score',
+          'purchase-category',
+          'payoff-mode',
+          'payoff-monthly-payment',
           'toggle-hide-annual-fee',
           'toggle-show-bnpl',
-          'toggle-show-cards'
+          'toggle-show-cards',
+          'toggle-sales-tax',
+          'sales-tax-state'
+        ],
+        aliases: [
+          { alias: 'amount', id: 'purchase-amount' },
+          { alias: 'months', id: 'payoff-months' },
+          { alias: 'score', id: 'credit-score' },
+          { alias: 'category', id: 'purchase-category' },
+          { alias: 'payment', id: 'payoff-monthly-payment' }
         ],
         shareButtonMount: '#share-mount',
         stampMount: '#data-stamp-mount',
-        extraParams: ['purchase-category', 'toggle-sales-tax', 'sales-tax-state', 'payoff-mode']
+        onHydrate: () => {
+          // Auto-submit results when deep-linked
+          const params = new URLSearchParams(window.location.search);
+          if (params.toString()) {
+            const btn = document.getElementById('calculate-btn');
+            if (btn) setTimeout(() => btn.click(), 300);
+          }
+        }
       });
     });
   </script>
