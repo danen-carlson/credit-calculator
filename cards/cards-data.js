@@ -879,6 +879,256 @@ const CARD_REVIEWS = [
     alternatives: ['chase-freedom-flex', 'citi-custom-cash', 'capital-one-quicksilver'],
     affiliateLink: '#',
     reviewDate: '2026-04-30'
+  },
+  // ============================================================
+  // Sprint 13 cards (2026-04-30)
+  // ============================================================
+  {
+    slug: 'bofa-customized-cash-rewards',
+    name: 'Bank of America® Customized Cash Rewards Credit Card',
+    issuer: 'Bank of America',
+    annualFee: 0,
+    introAPR: '0% for 15 months on purchases',
+    regularAPR: '19.24% – 29.24% Variable',
+    signupBonus: '$200 online cash rewards bonus after $1,000 spend in 90 days',
+    rewards: [
+      { category: 'Choice category (3%)', rate: '3%', type: 'cash back', note: 'Gas, online shopping, dining, travel, drugstores, or home improvement — pick one' },
+      { category: 'Groceries', rate: '2%', type: 'cash back' },
+      { category: 'Wholesale clubs', rate: '2%', type: 'cash back' },
+      { category: 'Everything else', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '3% on your choice category — change it any time (gas, online shopping, dining, travel, drugstores, or home improvement)',
+      '2% on groceries and wholesale clubs (no caps on 3% and 2%)',
+      '1% on everything else',
+      'No annual fee',
+      '0% intro APR for 15 months on purchases',
+      'Preferred Rewards boost: BofA checking customers get 10-75% bonus on rewards (up to 5.25% / 3.5% / 1.75%)',
+      'No foreign transaction fees',
+      'Free FICO score from TransUnion'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 4, perks: 3.5, afValue: 5, approval: 3.5, overall: 4.1 },
+    bestFor: [
+      'BofA checking/savings customers who qualify for Preferred Rewards boosts',
+      'People who want flexibility to change their 3% category month to month',
+      'Grocery shoppers who also want a wholesale club bonus'
+    ],
+    skipIf: 'You don\'t bank with BofA (you miss the Preferred Rewards boost, which is the whole point). Also skip if you want a fixed 3% dining card — the choice category can be confusing.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: 'No strict velocity rules like 5/24. BofA evaluates income, existing relationship, and debt-to-income. Having a BofA checking account significantly helps approval odds.',
+    faqs: [
+      { q: 'How does the BofA Customized Cash Rewards choice category work?', a: 'You pick one of six categories for 3%: gas, online shopping, dining, travel, drugstores, or home improvement. You can change it once per calendar month online or in the app. If you never change it, it stays on your previous selection. The 2% on groceries and wholesale clubs is always active.' },
+      { q: 'What is the BofA Preferred Rewards boost?', a: 'If you have $20K+ in a BofA checking/savings/investment account, you get a 25% rewards bonus (Gold tier). $50K+ = 50% bonus (Platinum). $100K+ = 75% bonus (Platinum Honors). This turns the 3% into 3.75%, 4.5%, or 5.25%. With Platinum Honors, you\'re earning 5.25% on your choice category — rivaling dedicated 5% cards with no annual fee.' },
+      { q: 'Is the Customized Cash Rewards better than the Citi Custom Cash?', a: 'For BofA banking customers with $100K+ in assets: absolutely. The 5.25% (3% × 1.75x) on your choice category beats Custom Cash\'s 5% — and there\'s no $500/month cap. For everyone else, Custom Cash gives a cleaner 5% on your top category with no asset requirements. If you don\'t BofA bank, skip this card.' },
+      { q: 'Can I really change the 3% category every month?', a: 'Yes, once per calendar month. Some people switch monthly — online shopping for holiday months, gas for summer road trips, dining for summer dining out. It\'s flexibility that most category cards don\'t offer.' },
+      { q: 'Does the 2% on groceries include Walmart and Target?', a: 'No. Like most cards, standalone supermarkets code as groceries. Walmart, Target, and warehouse clubs like Costco code differently. However, the 2% on wholesale clubs does cover Costco and Sam\'s Club — making this one of the few cards that earns bonus at warehouse clubs.' },
+      { q: 'Is the signup bonus worth it?', a: 'The $200 bonus after $1,000 spend in 90 days is decent for a no-annual-fee card. That\'s effectively 20% back on your first $1,000. After the bonus, ongoing value depends on your spending and whether you qualify for the Preferred Rewards boost.' }
+    ],
+    alternatives: ['citi-custom-cash', 'amex-blue-cash-everyday', 'chase-freedom-flex'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'us-bank-cash-plus',
+    name: 'U.S. Bank Cash+® Visa Signature® Card',
+    issuer: 'US Bank',
+    annualFee: 0,
+    introAPR: '0% for 12 billing cycles on purchases and balance transfers',
+    regularAPR: '19.49% – 28.49% Variable',
+    signupBonus: '$200 cash back after $1,000 spend in 90 days',
+    rewards: [
+      { category: 'First 5% category (choose 2)', rate: '5%', type: 'cash back', note: 'Choose from: fast food, TV/internet/streaming, cell phone providers, grocery stores, department stores, home utilities, ground transportation, or EV charging' },
+      { category: 'Second 5% category (choose 2)', rate: '2%', type: 'cash back', note: 'Choose from same list or gas stations, drugstores, gym memberships' },
+      { category: 'Everything else', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '5% cash back on two categories you choose each quarter',
+      '2% cash back on one everyday category you choose each quarter',
+      '1% on everything else',
+      'No annual fee',
+      '0% intro APR for 12 billing cycles on purchases and balance transfers',
+      'Cell phone protection (up to $600/claim, $25 deductible)',
+      'Covers up to 3 phones on the plan when you pay the bill with the card'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 4.5, perks: 3.5, afValue: 5, approval: 3, overall: 4.2 },
+    bestFor: [
+      'People who want maximum control over their bonus categories',
+      'Families who spend heavily on groceries, streaming, and fast food',
+      'EV owners who want 5% back on charging'
+    ],
+    skipIf: 'You won\'t remember to choose categories each quarter. If you set it and forget it, you\'ll earn just 1% on everything — defeating the purpose. Also skip if you dislike US Bank\'s smaller ecosystem.',
+    creditScoreNeeded: 'Good to Excellent (680+)',
+    issuerRules: 'US Bank is inquiry-sensitive and may deny applicants with 3+ recent hard pulls. They also prefer applicants with an existing US Bank relationship. Pre-qualification is available with a soft pull.',
+    faqs: [
+      { q: 'How does the Cash+ category selection work?', a: 'Each quarter, you choose two categories for 5% and one for 2%. Options include fast food, TV/internet/streaming, cell phone providers, grocery stores, department stores, home utilities, ground transportation, EV charging, gas stations, drugstores, and gym memberships. The categories reset each quarter, and you must actively select them online or in the app.' },
+      { q: 'Is 5% on two categories really worth it?', a: 'If you target your top spending categories, yes. 5% on groceries and fast food, for example, can earn $25/month on $500 spend in each category, or $300/year. That\'s excellent for a no-annual-fee card. The key is choosing categories that match your actual spending.' },
+      { q: 'How does Cash+ compare to Chase Freedom Flex?', a: 'Both require category activation, but Cash+ lets you choose from a list while Freedom Flex gives you predetermined rotating categories. Cash+ is for planners who know their spending; Freedom Flex is for people who happen to spend on whatever Chase picks that quarter. Cash+ is more flexible but requires more effort.' },
+      { q: 'What about the cell phone protection?', a: 'It covers damage and theft up to $600 per claim ($25 deductible, max $1,200/year) when you pay your cell phone bill with the card. This covers up to 3 lines. Most carrier insurance costs $10-15/month per line — so this benefit alone can save you $120-540/year.' },
+      { q: 'Can I keep the same categories every quarter?', a: 'Yes, you can re-select the same categories each quarter. If groceries and streaming are always your top two, just re-choose them every quarter. Set a calendar reminder for day one of each quarter.' },
+      { q: 'Is US Bank hard to get approved for?', a: 'They\'re inquiry-sensitive and prefer applicants with an existing US Bank relationship. Having a checking or savings account with them helps. They typically want 680+ FICO. Pre-qualify on their website first for a soft-pull check.' }
+    ],
+    alternatives: ['chase-freedom-flex', 'discover-it-cash-back', 'citi-custom-cash'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'capital-one-savor',
+    name: 'Capital One Savor® Dining and Entertainment Card',
+    issuer: 'Capital One',
+    annualFee: 95,
+    introAPR: 'No intro APR offer',
+    regularAPR: '19.99% – 29.99% Variable',
+    signupBonus: '$300 cash back after $3,000 spend in 3 months',
+    rewards: [
+      { category: 'Dining', rate: '4%', type: 'cash back' },
+      { category: 'Entertainment', rate: '4%', type: 'cash back' },
+      { category: 'Groceries', rate: '3%', type: 'cash back' },
+      { category: 'Streaming services', rate: '3%', type: 'cash back' },
+      { category: 'Everything else', rate: '1%', type: 'cash back' }
+    ],
+    pointsValue: 0.01,
+    perks: [
+      '4% cash back on dining — top-tier rate for a standalone card',
+      '4% on entertainment (concerts, sporting events, movies, theme parks)',
+      '3% on groceries',
+      '3% on streaming services',
+      '$300 signup bonus after $3,000 spend in 3 months',
+      'No foreign transaction fees',
+      'Capital One Entertainment access (presales, VIP packages)',
+      '24-hour travel assistance and roadside dispatch'
+    ],
+    annualCredits: [],
+    ratings: { rewards: 4.5, perks: 3.5, afValue: 3.5, approval: 3.5, overall: 4 },
+    bestFor: [
+      'Heavy diners who eat out 4+ times per month',
+      'Entertainment enthusiasts — concerts, sports, movies',
+      'People who want the best dedicated dining card without points complexity'
+    ],
+    skipIf: 'You spend less than $250/month on dining and entertainment — the $95 AF won\'t pay off. Also skip if you want travel transfer partners (Savor is cash back only, unlike Venture X). Consider SavorOne (no AF) if you\'re on the fence about the annual fee.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: 'Capital One typically limits personal cards to 2 per customer. Pre-qualification available with a soft pull. Savor specifically requires good-excellent credit.',
+    faqs: [
+      { q: 'Is the Savor worth the $95 annual fee?', a: 'If you spend $300+/month on dining and entertainment, yes. At $300/month dining, you earn $144/year in dining cash back alone, and $108/year on $300/month groceries (3%). Total: $252/year. After the $95 AF, you net $157 — and that\'s before the signup bonus. If you spend less than $200/month combined on dining/entertainment, the SavorOne (no AF, 3% dining) is the better deal.' },
+      { q: 'How does the Savor compare to the SavorOne?', a: 'Savor costs $95/year and gives 4% dining/entertainment, 3% groceries/streaming. SavorOne is free and gives 3% dining/groceries/streaming, 8% on Capital One Entertainment. Savor wins for heavy diners ($300+/month). SavorOne wins for moderate diners. The math: Savor earns 1% more on dining — if you spend $9,500+/year dining, the extra 1% ($95) covers the annual fee.' },
+      { q: 'What counts as "entertainment" for the 4%?', a: 'Concerts, sporting events, movie theaters, amusement parks, tourist attractions, and entertainment venues. Bars and nightclubs also typically code as dining. It does NOT include streaming services (those earn 3%) or video games.' },
+      { q: 'Can I combine Savor with Venture X?', a: 'No — Capital One typically limits personal cards to 2. If you already have SavorOne + Venture X, you\'d need to product-change one before adding Savor.' },
+      { q: 'Is the Savor better than the Amex Gold for dining?', a: 'Savor gives 4% cash back on dining ($95 AF). Amex Gold gives 4x points on dining ($325 AF). In pure cash value, Savor wins: 4% straight cash vs Gold\'s 4x points × 1¢ = 4% (cash back) or 4x × 1.5¢ = 6% (travel transfers). If you transfer Amex points to partners, Gold is better. If you want simple cash back, Savor wins by $230 in annual fees.' },
+      { q: 'Does the Savor count delivery apps as dining?', a: 'Yes — Uber Eats, DoorDash, Grubhub, and other delivery platforms code as dining for most merchants. Some exceptions: if you order from a grocery store via a delivery app, it may code as groceries instead of dining.' }
+    ],
+    alternatives: ['capital-one-savorone', 'amex-gold', 'us-bank-altitude-go'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'southwest-priority-card',
+    name: 'Southwest Rapid Rewards® Priority Credit Card',
+    issuer: 'Chase',
+    annualFee: 149,
+    introAPR: 'No intro APR offer on purchases',
+    regularAPR: '21.49% – 28.99% Variable',
+    signupBonus: '50,000 points after $2,000 spend in 3 months (worth ~$750 in Southwest travel)',
+    rewards: [
+      { category: 'Southwest purchases', rate: '3x', type: 'points' },
+      { category: 'Dining', rate: '2x', type: 'points' },
+      { category: 'Rapid Rewards hotel & car rental partners', rate: '2x', type: 'points' },
+      { category: 'Local transit & rideshare', rate: '2x', type: 'points' },
+      { category: 'Internet, cable & phone services', rate: '2x', type: 'points' },
+      { category: 'Everything else', rate: '1x', type: 'points' }
+    ],
+    pointsValue: 0.015,
+    perks: [
+      '7,500 anniversary bonus points each year (worth ~$112 in Southwest travel)',
+      '$75 annual Southwest travel credit',
+      '4 upgraded boardings per year (when available)',
+      'In-flight WiFi credits (ongoing)',
+      '20% back on inflight drinks',
+      'No foreign transaction fees',
+      'Companion Pass qualifying points: 10,000 per year toward the 135,000 needed',
+      'TSA PreCheck credit ($100 every 4 years)',
+      'Trip cancellation/interruption insurance',
+      'Baggage delay insurance',
+      'Lost luggage insurance'
+    ],
+    annualCredits: [
+      { label: '7,500 anniversary points (~$112 value)', value: 112 },
+      { label: '$75 Southwest travel credit', value: 75 }
+    ],
+    ratings: { rewards: 3.5, perks: 4, afValue: 4, approval: 3, overall: 3.8 },
+    bestFor: [
+      'Frequent Southwest flyers with 4+ flights per year',
+      'People working toward the Southwest Companion Pass',
+      'Anyone who values upgraded boarding and WiFi on Southwest flights'
+    ],
+    skipIf: 'You rarely fly Southwest — the rewards are Southwest-specific and can\'t be transferred to other airlines. Also skip if you don\'t fly 3+ times per year, as the $149 AF is hard to justify without regular Southwest travel.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: '5/24 rule applies. Chase will typically deny if you\'ve opened 5+ cards (any issuer) in 24 months. This includes all Chase personal and business cards.',
+    faqs: [
+      { q: 'Is the Southwest Priority Card worth the $149 annual fee?', a: 'Yes, if you fly Southwest 4+ times per year. The 7,500 anniversary points (~$112) and $75 travel credit together cover $187 of the $149 AF — you\'re already $38 ahead before earning a single point on spending. Add upgraded boarding (worth $30-60/flight) and WiFi, and this card pays for itself easily for loyal Southwest flyers.' },
+      { q: 'What is the Southwest Companion Pass?', a: 'The holy grail of airline perks: a named companion flies free with you every time you fly Southwest, for the rest of the calendar year plus the following year. You need 135,000 qualifying points, and the Priority card gives you 10,000 toward that each year. If you\'re close, the card can push you over the edge.' },
+      { q: 'How does the Priority compare to the Southwest Plus and Premier?', a: 'Priority ($149 AF) gives 7,500 anniversary points + $75 travel credit. Premier ($99 AF, discontinued) gave 6,000 points. Plus ($69 AF) gives 3,000 points + $50 travel credit. Priority is the best value for frequent flyers - the anniversary bonus alone covers most of the fee.' },
+      { q: 'Can I use the Companion Pass with any ticket?', a: 'Yes — even award tickets. Book a flight with points, add your companion for free. This essentially doubles the value of every Southwest point you earn. Families love it: one ticket per trip, one free companion seat every time.' },
+      { q: 'How much are Southwest Rapid Rewards points worth?', a: '~1.5¢ each for Wanna Get Away fares. That means the 50,000 signup bonus is worth ~$750 in travel. Points don\'t expire as long as you have earning activity within 24 months, and there are no blackout dates or capacity controls on award flights.' },
+      { q: 'Should I get the Priority or Chase Sapphire Preferred?', a: 'Get both if you can. Priority for Southwest earning and Companion Pass progress. Sapphire Preferred for everything else (5x on travel portal, 3x dining). Plus, holding both lets you earn more flexible Chase UR points that you can transfer to Southwest (among other partners).' }
+    ],
+    alternatives: ['chase-sapphire-preferred', 'capital-one-venture-x', 'citi-strata-premier'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
+  },
+  {
+    slug: 'ihg-one-rewards-premier',
+    name: 'IHG One Rewards® Premier Credit Card',
+    issuer: 'Chase',
+    annualFee: 99,
+    introAPR: 'No intro APR offer on purchases',
+    regularAPR: '21.49% – 28.49% Variable',
+    signupBonus: '175,000 IHG points after $3,000 spend in 3 months (worth ~$875 in hotels)',
+    rewards: [
+      { category: 'IHG hotels & resorts', rate: '26x', type: 'points' },
+      { category: 'Dining', rate: '3x', type: 'points' },
+      { category: 'Gas stations', rate: '3x', type: 'points' },
+      { category: 'Flights on IHG partner airlines', rate: '3x', type: 'points' },
+      { category: 'Transit', rate: '3x', type: 'points' },
+      { category: 'Everything else', rate: '1x', type: 'points' }
+    ],
+    pointsValue: 0.005,
+    perks: [
+      '4th night free on award stays (every 4th night is free on stays of 4+ nights)',
+      'Free night award each card anniversary (hotels up to 40,000 points)',
+      'Platinum Elite status (late checkout, 50% points bonus on stays)',
+      'IHG statement credit: $100 off a $200+ IHG stay each year',
+      'No foreign transaction fees',
+      'TSA PreCheck / Global Entry credit ($100 every 4 years)',
+      'Trip cancellation/interruption insurance',
+      'Auto rental collision damage waiver'
+    ],
+    annualCredits: [
+      { label: 'Free night award (up to 40K points)', value: 200, notes: 'Typical value of a 40K-point night' },
+      { label: '$100 IHG statement credit', value: 100, notes: 'On purchases of $200+' }
+    ],
+    ratings: { rewards: 3, perks: 4, afValue: 4.5, approval: 3, overall: 3.8 },
+    bestFor: [
+      'People who stay at IHG hotels 5+ nights per year (Holiday Inn, Crowne Plaza, InterContinental, Kimpton)',
+      'Families who book 4+ night stays (the 4th night free is huge)',
+      'Anyone who values a free annual night more than a $99 fee'
+    ],
+    skipIf: 'You don\'t stay at IHG properties. The earning rates outside IHG hotels are mediocre (3x dining/gas is common on no-AF cards), and IHG points are worth only ~0.5¢ each. This card is only worth it if you actually book IHG hotels.',
+    creditScoreNeeded: 'Good to Excellent (670+)',
+    issuerRules: '5/24 rule applies. Chase will typically deny if you\'ve opened 5+ cards (any issuer) in 24 months. IHG card specifically may also be denied if you have an existing IHG card.',
+    faqs: [
+      { q: 'Is the IHG Premier worth the $99 annual fee?', a: 'Yes, easily — if you stay at IHG hotels even once a year. The free night award (worth ~$150-200) and $100 statement credit together are worth $250-300, dwarfing the $99 fee. You\'re netting $150-200/year minimum just from the annual benefits.' },
+      { q: 'How does the 4th night free on award stays work?', a: 'When you book an award stay of 4 or more nights at an IHG property using points, every 4th night is free (0 points required for that night). On a 4-night stay, you pay for 3 nights. On an 8-night stay, you pay for 6. This can save 25% on longer stays.' },
+      { q: 'How much are IHG points worth?', a: '~0.5¢ each, making the 26x rate on IHG stays equivalent to 13% back. That sounds great until you realize 175,000 points ≈ $875 in free nights. The points are most valuable at lower-tier properties like Holiday Inn Express where a night can cost 15,000-25,000 points.' },
+      { q: 'Is the free night award really worth $200?', a: 'You can redeem it for any IHG hotel that costs up to 40,000 points per night. Many Holiday Inn Express and even some Crowne Plaza properties fall in this range. If you use it at a $200/night property (common in major cities), the value is $200. If you apply it to a $150 Holiday Inn, the value is $150.' },
+      { q: 'How does this compare to the Hyatt card for hotel stays?', a: 'Hyatt points are worth ~1.5¢ each vs IHG\'s ~0.5¢ each, making Hyatt\'s earning more valuable per point. However, IHG has far more properties (6,000+ vs 1,300+), so availability is better. If you can find Hyatt properties where you travel, the Chase Hyatt card is better. If you need broad coverage, IHG wins.' },
+      { q: 'Can I combine the free night with the 4th night free?', a: 'Yes! Book a 4-night award stay, and the 4th night is free. Then use your annual free night certificate for one of the paid nights. This combination can make a 4-night stay cost just 2 nights worth of points plus one certificate — incredibly efficient.' }
+    ],
+    alternatives: ['chase-sapphire-preferred', 'amex-platinum', 'citi-strata-premier'],
+    affiliateLink: '#',
+    reviewDate: '2026-04-30'
   }
 ];
 

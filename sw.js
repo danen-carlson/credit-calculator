@@ -1,6 +1,6 @@
 // CreditStud.io Service Worker
 // Strategy: cache-first for static assets, network-first for HTML navigations.
-const CACHE_VERSION = 'creditstud-v7-2026-04-30';
+const CACHE_VERSION = 'creditstud-v8-2026-04-30';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -49,12 +49,19 @@ const STATIC_ASSETS = [
   '/cards/citi-custom-cash/',
   '/cards/capital-one-quicksilver/',
   '/cards/discover-it-cash-back/',
+  '/cards/bofa-customized-cash-rewards/',
+  '/cards/us-bank-cash-plus/',
+  '/cards/capital-one-savor/',
+  '/cards/southwest-priority-card/',
+  '/cards/ihg-one-rewards-premier/',
   '/cards/amex-blue-cash-preferred/',
   '/cards/chase-freedom-flex/',
   '/cards/amex-blue-cash-everyday/',
   '/cards/citi-strata-premier/',
   '/cards/wells-fargo-active-cash/',
   '/blog/best-credit-cards-for-groceries.html',
+  '/blog/best-balance-transfer-credit-cards.html',
+  '/blog/minimum-payment-trap.html',
   '/blog/amex-gold-worth-it.html',
   '/blog/snowball-vs-avalanche.html',
   '/shared/skeleton.js',
@@ -74,6 +81,11 @@ const STATIC_ASSETS = [
   '/merchant/warehouse-clubs.html',
   '/merchant/online-shopping.html',
   '/merchant/utilities.html',
+  '/merchant/fitness.html',
+  '/merchant/travel-hotels.html',
+  '/merchant/dining.html',
+  '/merchant/ev-charging.html',
+  '/merchant/student.html',
   '/style.css',
   '/app.js',
   '/calc.js',
