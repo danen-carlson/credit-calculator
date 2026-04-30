@@ -513,7 +513,7 @@ const CARD_REVIEWS = [
     annualFee: 0,
     introAPR: '0% for 15 months on purchases',
     regularAPR: '19.49% – 29.49% Variable',
-    signupBonus: '$200 cash back after $1,500 spend in 12 months',
+    signupBonus: '$200 cash back after $1,500 spend in 6 months',
     rewards: [
       { category: 'Top spending category', rate: '5%', type: 'cash back', note: 'Automatic — up to $500/month' },
       { category: 'Everything else', rate: '1%', type: 'cash back' }
@@ -543,7 +543,7 @@ const CARD_REVIEWS = [
       { q: 'Is the Custom Cash better than the Freedom Flex?', a: 'Depends. Custom Cash gives a guaranteed 5% on your top category every month with no effort. Freedom Flex gives 5% on rotating categories (which you have to activate) plus 3% on dining and drugstores. If you like set-it-and-forget-it, go Custom Cash. If you track rotating categories and want 3% ongoing on dining, go Freedom Flex.' },
       { q: 'Can I have both Citi Custom Cash and Citi Double Cash?', a: 'Yes, and it\'s a great combo. Use Custom Cash for your top monthly category (5%) and Double Cash for everything else (2%). Together, they cover your spending at 2-5% with no annual fees on either card.' },
       { q: 'What happens if I spend less than $500 in my top category?', a: 'You simply earn 5% on whatever you spend, up to $500. There\'s no minimum spend requirement for the 5% category. If your top category is $200, you earn 5% on $200 and 1% on everything else.' },
-      { q: 'Is the $200 signup bonus easy to get?', a: 'Relatively easy — $1,500 spend over 12 months works out to just $125/month. That\'s achievable with normal everyday spending. The 0% intro APR for 15 months also helps if you need to float a large purchase.' }
+      { q: 'Is the $200 signup bonus easy to get?', a: 'Relatively easy — $1,500 spend over 6 months works out to just $125/month. That\'s achievable with normal everyday spending. The 0% intro APR for 15 months also helps if you need to float a large purchase.' }
     ],
     alternatives: ['chase-freedom-flex', 'citi-double-cash', 'amex-blue-cash-everyday'],
     affiliateLink: '#',
