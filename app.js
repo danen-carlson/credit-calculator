@@ -693,10 +693,10 @@ function recalculateResults() {
   renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount);
 }
 
-function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount) {
-
-// Net Cost tooltip HTML
+// Net Cost tooltip HTML (shared across render functions)
 const netCostTooltip = '<span class="net-cost-tooltip"><span class="net-cost-icon">?</span><span class="net-cost-tip">Net Cost = purchase + interest + fees − rewards earned. Lower is better.</span></span>';
+
+function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount) {
   const container = document.getElementById('results-cards');
   container.innerHTML = '';
 
