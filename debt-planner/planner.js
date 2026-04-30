@@ -2038,6 +2038,12 @@ if (document.readyState === 'loading') {
   init();
 }
 
+// Populate print date header
+(function() {
+  const printDate = document.getElementById('print-date');
+  if (printDate) printDate.textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+})();
+
 // Event delegation for data-action attributes
 document.addEventListener('click', function(event) {
   const action = event.target.closest('[data-action]')?.getAttribute('data-action');

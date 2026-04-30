@@ -789,16 +789,19 @@ const netCostTooltip = '<span class="net-cost-tooltip"><span class="net-cost-ico
   // Best-match connector: mark the best match in the ranked list
   if (all.length > 0) {
     const bestId = all[0].id;
-    // Add connector badge after first standard result card
+    // Add connector badge and highlight to the matching result card
     const firstCard = container.querySelector('.result-card');
     if (firstCard) {
       const isBest = firstCard.querySelector('.best-match-connector');
       if (!isBest) {
         const badge = document.createElement('div');
         badge.className = 'best-match-connector';
-        badge.innerHTML = '🏆 Best Match — also #1 below';
+        badge.innerHTML = '⭐ Best Match — also #1 below';
         firstCard.insertBefore(badge, firstCard.firstChild);
       }
+      // Add subtle background highlight
+      firstCard.style.background = 'linear-gradient(135deg, #fef9c3 0%, #fef3c7 100%)';
+      firstCard.style.borderColor = '#f59e0b';
     }
   }
 

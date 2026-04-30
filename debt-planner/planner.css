@@ -1721,6 +1721,53 @@
   }
 
   /* Print branding footer */
+  /* Print header */
+  .print-header {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .print-header h2 {
+    color: black !important;
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  .print-header p {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0;
+  }
+
+  /* Strategy comparison table in print */
+  .strategy-comparison-panel {
+    break-inside: avoid;
+    border: 1.5px solid #333;
+    background: white !important;
+  }
+  .strategy-comparison-panel * {
+    color: black !important;
+  }
+  .comparison-savings-callout {
+    border: 1px solid #999 !important;
+    background: #f5f5f5 !important;
+  }
+  .comparison-col {
+    border: 1px solid #ccc;
+  }
+  .comparison-col.best {
+    border-color: #333;
+    background: #f0f0f0 !important;
+  }
+
+  /* Charts in print */
+  .chart-section canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .chart-section {
+    page-break-inside: avoid;
+  }
+
   .print-branding {
     display: block !important;
     text-align: center;

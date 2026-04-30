@@ -25,6 +25,11 @@ const targetFiles = [
   'cards/chase-sapphire-preferred/index.html',
   'cards/amex-gold/index.html',
   'cards/capital-one-venture-x/index.html',
+  'cards/chase-sapphire-reserve/index.html',
+  'cards/amex-platinum/index.html',
+  'cards/bilt-mastercard/index.html',
+  'cards/capital-one-savorone/index.html',
+  'cards/citi-double-cash/index.html',
   'blog/index.html',
   'disclosure.html',
   'learn/index.html',
@@ -43,7 +48,11 @@ const targetFiles = [
   'merchant/gas-stations.html',
   'merchant/restaurants.html',
   'merchant/streaming.html',
-  'merchant/travel.html'
+  'merchant/travel.html',
+  'merchant/pharmacy.html',
+  'merchant/warehouse-clubs.html',
+  'merchant/online-shopping.html',
+  'merchant/utilities.html'
 ];
 
 for (const relPath of targetFiles) {

@@ -338,6 +338,7 @@
     </section>
   </main>
 
+  <div class="data-updated" id="data-updated" style="text-align:center;padding:8px 0;font-size:0.75rem;color:var(--text-secondary);font-style:italic;"></div>
   <footer class="footer">
     <div class="container">
       <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
@@ -350,5 +351,8 @@
   <script src="../shared/email-capture.js"></script>
   <script src="../shared/share.js"></script>
   <script src="sim.js"></script>
+  <script>
+  (function(){fetch("/data-version.json").then(r=>r.json()).then(d=>{const el=document.getElementById("data-updated");if(el&&d.displayDate)el.textContent="Rates as of "+d.displayDate;}).catch(()=>{});})();
+  </script>
 </body>
 </html>

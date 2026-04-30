@@ -682,5 +682,8 @@
   }
   </script>
   <script defer src="/shared/pwa.js"></script>
+  <script>
+  (function(){fetch('/data-version.json').then(r=>r.json()).then(d=>{const el=document.getElementById('data-updated');if(el&&d.displayDate)el.textContent='Rates as of '+d.displayDate;}).catch(()=>{});})();
+  </script>
 </body>
 </html>
