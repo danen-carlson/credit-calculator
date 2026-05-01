@@ -1,0 +1,17 @@
+name = "creditstud-api"
+main = "src/index.js"
+compatibility_date = "2026-05-01"
+
+# Custom domain for the API
+# creditstud.io/api/* is handled via Cloudflare custom domain
+# Everything else goes to GitHub Pages
+
+# Workers paid plan ($5/mo) for custom domains
+# Free plan: 100,000 requests/day
+# This Worker is well within those limits.
+
+[build]
+command = "npm run build"
+
+# No secrets or environment variables needed
+# All calculator logic is stateless and runs from the source code

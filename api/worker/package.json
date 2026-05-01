@@ -1,0 +1,15 @@
+{
+  "name": "creditstud-api",
+  "version": "1.0.0",
+  "description": "CreditStud.io JSON API — Cloudflare Worker",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "esbuild src/index.js --bundle --outfile=dist/index.js --format=esm --platform=browser --external:cloudflare:*"
+  },
+  "devDependencies": {
+    "wrangler": "^4",
+    "esbuild": "^0.25"
+  }
+}
