@@ -180,6 +180,38 @@
   <link rel="alternate" type="application/rss+xml" title="CreditStud.io Blog RSS Feed" href="/blog/feed.xml">
   <link rel="alternate" type="application/atom+xml" title="CreditStud.io Blog Atom Feed" href="/blog/atom.xml">
   <link rel="alternate" type="application/feed+json" title="CreditStud.io Blog JSON Feed" href="/blog/feed.json">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "Debt Payoff Strategy Comparison Data",
+    "description": "Snowball vs avalanche method comparison data for credit card debt payoff, including month-by-month schedules and balance transfer modeling.",
+    "url": "https://creditstud.io/debt-planner/",
+    "creator": {
+      "@type": "Organization",
+      "name": "CreditStud.io",
+      "url": "https://creditstud.io"
+    },
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "distribution": [
+      {
+        "@type": "DataDownload",
+        "name": "JSON API",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://creditstud.io/api/"
+      },
+      {
+        "@type": "DataDownload",
+        "name": "Card Terms Database",
+        "encodingFormat": "application/json",
+        "contentUrl": "https://creditstud.io/data/cards.json"
+      }
+    ],
+    "temporalCoverage": "2026-04/2026-05",
+    "spatialCoverage": "United States"
+  }
+  </script>
 </head>
 <body>
   <div id="app">
