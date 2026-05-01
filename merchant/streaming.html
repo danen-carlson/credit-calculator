@@ -300,45 +300,51 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container">
-        <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary. <a href="/disclosure.html">Affiliate Disclosure</a></p>
-      </div>
-    </footer>
+<footer class="footer">
+  <div class="container">
+    <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+    <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/disclosure.html">Affiliate Disclosure</a>
+    </p>
   </div>
-
-  <script>
-    function calculateStreamingRewards() {
-      const spend = parseFloat(document.getElementById('streaming-spend').value) || 0;
-      const annual = spend * 12;
-      const results = document.getElementById('streaming-results');
-      
-      const cards = [
-        {name: 'Amex Blue Cash Preferred', rate: 0.06, fee: 95, bonus: 250},
-        {name: 'Citi Custom Cash', rate: 0.05, fee: 0, bonus: 200},
-        {name: 'Citi Double Cash', rate: 0.02, fee: 0, bonus: 0}
-      ];
-      
-      let html = '';
-      cards.forEach((card) => {
-        const rewards = annual * card.rate;
-        const net = rewards - card.fee + card.bonus;
-        html += `<div><strong>${card.name}:</strong> $${net.toLocaleString('en-US', {minimumFractionDigits: 0})}/yr (${(card.rate*100).toFixed(0)}% on streaming)</div>`;
+</footer>
+<script>
+// Mobile nav dropdown toggle
+if (document.querySelector('.nav-dropdown-toggle')) {
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    var dropdown = this.closest('.nav-dropdown');
+    var isOpen = dropdown.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
       });
-      results.innerHTML = html;
     }
-    calculateStreamingRewards(); // Run on load
-  </script>
-  <script src="../shared/share.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      window.CreditStudShare?.init({
-        pageKey: 'merchant-streaming',
-        simpleInputs: ['streaming-spend'],
-        shareButtonMount: '#share-mount',
-        stampMount: '#data-stamp-mount'
-      });
+  });
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.querySelector('.top-nav').classList.remove('open');
+      document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
     });
-  </script>
-</body>
+  });
+}
+// Highlight active nav item
+(function() {
+  var path = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+    if (linkPath === path) {
+      link.classList.add('active');
+    }
+  });
+})();
+</script>
+<!-- /FOOTER --></body>
 </html>
