@@ -129,25 +129,46 @@
     </div>
     
     <!-- HEADER -->
-    <header class="header">
-      <div class="container">
-        <nav class="top-nav">
-          <a href="/" class="nav-link">Home</a>
-          <a href="/debt-planner/" class="nav-link">Debt Planner</a>
-          <a href="/rewards/" class="nav-link">Rewards</a>
-          <a href="/min-payment/" class="nav-link">Min Payment</a>
-          <a href="/score-simulator/" class="nav-link">Score Sim</a>
-          <a href="/af-worth-it/" class="nav-link">AF Worth It?</a>
-          <a href="/loan-vs-bt/" class="nav-link">Loan vs BT</a>
-          <a href="/cards/" class="nav-link">Card Reviews</a>
-          <a href="/blog/" class="nav-link">Blog</a>
-        </nav>
-        <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
-        <p class="header-subtitle">Maximize rewards on everyday spending</p>
+<header class="header">
+  <div class="container">
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="top-nav">
+      <a href="/" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Calculators ▾
+        </button>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Card Comparison</span>
+            <a href="/compare/" class="nav-dropdown-link">Compare Credit Cards & BNPL</a>
+            <a href="/rewards/" class="nav-dropdown-link">Rewards Calculator</a>
+            <a href="/cards/" class="nav-dropdown-link">Card Reviews</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Debt & Payoff</span>
+            <a href="/debt-planner/" class="nav-dropdown-link">Debt Payoff Planner</a>
+            <a href="/min-payment/" class="nav-dropdown-link">Minimum Payment Calculator</a>
+            <a href="/loan-vs-bt/" class="nav-dropdown-link">Loan vs Balance Transfer</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Card Finder</span>
+            <a href="/af-worth-it/" class="nav-dropdown-link">Annual Fee Calculator</a>
+            <a href="/score-simulator/" class="nav-dropdown-link">Credit Score Simulator</a>
+          </div>
+        </div>
       </div>
-    </header>
-
-    <main id="main" class="container" style="max-width: 720px; padding: 2rem 1rem;">
+      <a href="/learn/" class="nav-link">Learn</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+    </nav>
+    <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+    <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
+  </div>
+</header>
+<!-- /HEADER -->
+<main id="main" class="container" style="max-width: 720px; padding: 2rem 1rem;">
       <h1>Best Credit Card for Streaming Services</h1>
       
       <div class="merchant-intro">
