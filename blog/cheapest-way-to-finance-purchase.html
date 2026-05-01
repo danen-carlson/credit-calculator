@@ -108,6 +108,14 @@
   <link rel="alternate" type="application/rss+xml" title="CreditStud.io Blog RSS Feed" href="/blog/feed.xml">
   <link rel="alternate" type="application/atom+xml" title="CreditStud.io Blog Atom Feed" href="/blog/atom.xml">
   <link rel="alternate" type="application/feed+json" title="CreditStud.io Blog JSON Feed" href="/blog/feed.json">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99CP2NLCD9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-99CP2NLCD9');
+</script>
 </head>
 <body>
   <!-- HEADER -->
@@ -145,7 +153,7 @@
       <a href="/learn/" class="nav-link">Learn</a>
       <a href="/blog/" class="nav-link">Blog</a>
     </nav>
-    <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+    <a href="/" class="logo">💳 Credit<span>Stud.io</span></a>
     <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
   </div>
 </header>
@@ -385,5 +393,41 @@
       <p style="margin-top: 8px;"><a href="/compare/?methods=intro-apr">Find Your Cheapest Option</a> · <a href="/blog/">Blog</a></p>
     </div>
   </footer>
+
+<script>
+if (document.querySelector('.nav-dropdown-toggle')) {
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    var dropdown = this.closest('.nav-dropdown');
+    var isOpen = dropdown.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var nav = document.querySelector('.top-nav');
+      var burger = document.querySelector('.nav-hamburger');
+      if (nav) nav.classList.remove('open');
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+(function() {
+  var path = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+    if (linkPath === path) link.classList.add('active');
+  });
+})();
+</script>
 </body>
 </html>

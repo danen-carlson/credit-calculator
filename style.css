@@ -273,6 +273,9 @@ body {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 4px;
+  text-decoration: none;
+  color: white;
+  display: block;
 }
 
 .logo span {
@@ -1986,4 +1989,12 @@ input:focus, select:focus {
 /* Responsive */
 @media (max-width: 600px) {
   .learn-grid { grid-template-columns: 1fr; }
+}
+
+/* Page title in header */
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 8px 0 4px;
 }
