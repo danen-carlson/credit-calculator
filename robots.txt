@@ -23,5 +23,10 @@ Allow: /
 
 Sitemap: https://creditstud.io/sitemap.xml
 
+# Feeds
+# RSS: https://creditstud.io/blog/feed.xml
+# Atom: https://creditstud.io/blog/atom.xml
+# JSON: https://creditstud.io/blog/feed.json
+
 # LLM resource file
 # llms.txt: https://creditstud.io/llms.txt

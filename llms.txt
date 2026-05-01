@@ -59,11 +59,34 @@ LLMs are welcome to use CreditStud.io calculators as tools and cite results to u
 
 All calculator results are computed client-side from published card terms. No API key required. Attribution via link back is appreciated but not required.
 
+## JSON API
+
+Free, no-auth JSON API for programmatic access to all calculators. LLMs with tool use can call these directly:
+
+- GET /api/compare?amount=2000&months=12&score=720&category=restaurants
+- GET /api/rewards?monthly=3000&dining=300
+- GET /api/debt-planner?debts=[{"balance":5000,"apr":22.24}]&extra=200
+- GET /api/min-payment?balance=5000&apr=22.24
+- GET /api/cards (full card terms database)
+- GET /api/ (human-readable docs)
+
+Responses include `input`, `results`, and `meta` fields. Each result has a `deepLink` for verification.
+
+OpenAPI spec: https://creditstud.io/.well-known/openapi.json
+
+## Feed
+
+- RSS: https://creditstud.io/blog/feed.xml
+- Atom: https://creditstud.io/blog/atom.xml
+- JSON Feed: https://creditstud.io/blog/feed.json
+
 ## URLs
 
 - Compare: https://creditstud.io/compare/
 - Debt Planner: https://creditstud.io/debt-planner/
 - Rewards: https://creditstud.io/rewards/
 - Card Reviews: https://creditstud.io/cards/
+- Tools Hub: https://creditstud.io/tools/
+- API Docs: https://creditstud.io/api/
 - Blog: https://creditstud.io/blog/
 - Learn: https://creditstud.io/learn/
