@@ -119,17 +119,46 @@
   <meta name="apple-mobile-web-app-title" content="CreditStud">
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <nav class="top-nav">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/debt-planner/" class="nav-link">Debt Planner</a>
-        <a href="/rewards/" class="nav-link">Rewards</a>
-        <a href="/blog/" class="nav-link">Blog</a>
-      </nav>
-      <h1 class="logo">💳 Credit<span>Studio</span></h1>
-    </div>
-  </header>
+  <!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="top-nav">
+      <a href="/" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Calculators ▾
+        </button>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Card Comparison</span>
+            <a href="/compare/" class="nav-dropdown-link">Compare Credit Cards & BNPL</a>
+            <a href="/rewards/" class="nav-dropdown-link">Rewards Calculator</a>
+            <a href="/cards/" class="nav-dropdown-link">Card Reviews</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Debt & Payoff</span>
+            <a href="/debt-planner/" class="nav-dropdown-link">Debt Payoff Planner</a>
+            <a href="/min-payment/" class="nav-dropdown-link">Minimum Payment Calculator</a>
+            <a href="/loan-vs-bt/" class="nav-dropdown-link">Loan vs Balance Transfer</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Card Finder</span>
+            <a href="/af-worth-it/" class="nav-dropdown-link">Annual Fee Calculator</a>
+            <a href="/score-simulator/" class="nav-dropdown-link">Credit Score Simulator</a>
+          </div>
+        </div>
+      </div>
+      <a href="/learn/" class="nav-link">Learn</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+    </nav>
+    <h1 class="logo">💳 Credit<span>Stud.io</span></h1>
+    <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
+  </div>
+</header>
+<!-- /HEADER -->
 
   <main>
     <div class="container">
