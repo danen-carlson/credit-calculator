@@ -1,92 +1,52 @@
 # CreditStud.io
 
-> CreditStud.io provides free, unbiased financial calculators that help people compare credit cards, BNPL services, and payment plans side by side. All results are mathematically computed — no sponsored rankings, no affiliate bias in calculator logic.
+> Free credit card and debt calculators. Math-based, no sponsored rankings.
 
-## Core Tools
+## Tools (with API)
 
-- **Compare Credit Cards & BNPL** (/compare/): Side-by-side comparison of credit cards, BNPL services (Klarna, Afterpay, Affirm), and payment plans for any purchase amount. Shows total cost including interest, fees, and rewards. Supports credit score adjustments, purchase categories, and reverse calculation (monthly budget → timeline).
-- **Debt Payoff Planner** (/debt-planner/): Snowball vs avalanche calculator with balance transfer modeling, extra payment/windfall support, and debt-free date projections. Generates month-by-month payoff schedules.
-- **Rewards Calculator** (/rewards/): 25+ credit cards compared by actual dollar value based on monthly spending across 8+ categories. Includes signup bonuses, annual credits, annual fee offsets, and custom categories.
-- **Minimum Payment Calculator** (/min-payment/): Shows the true cost of making only minimum payments on credit card debt.
-- **AF Worth It?** (/af-worth-it/): Calculates whether a card's annual fee is worth paying based on your spending patterns.
-- **Loan vs Balance Transfer** (/loan-vs-bt/): Compares personal loans against balance transfer offers.
-- **Credit Score Simulator** (/score-simulator/): Shows how credit score changes affect APR rates and total interest paid.
+| Tool | URL | API | What it does |
+|------|-----|-----|-------------|
+| Compare | /compare/ | /api/compare?amount=2000&months=12&score=720 | Credit cards vs BNPL side by side |
+| Rewards | /rewards/ | /api/rewards?monthly=3000&dining=300 | Best card for your spending |
+| Debt Planner | /debt-planner/ | /api/debt-planner | Snowball vs avalanche payoff |
+| Min Payment | /min-payment/ | /api/min-payment?balance=5000&apr=22.24 | True cost of minimum payments |
+| Annual Fee | /af-worth-it/ | — | Is the annual fee worth it? |
+| Score Simulator | /score-simulator/ | — | How credit score affects APR |
+| Loan vs BT | /loan-vs-bt/ | — | Personal loan vs balance transfer |
+| Card Database | /cards/ | /api/cards | 10 credit cards + 6 BNPL methods |
+| Card Data JSON | /data/cards.json | — | Full card terms as JSON |
 
-## Card Reviews
+## API
 
-In-depth reviews of 28 credit cards including Chase Sapphire Preferred/Reserve, Amex Gold/Platinum/Blue Cash Preferred, Capital One Venture X/SavorOne/Quicksilver, Citi Double Cash/Custom Cash/Premier/Strata Premier, Bilt Mastercard, Wells Fargo Autograph/Active Cash, and many more. Each review includes real math examples, signup bonus analysis, and who should/shouldn't get the card.
+Base URL: `https://creditstud.io/api/`
+Auth: None. Free. CORS enabled.
+Docs: https://creditstud.io/api/
+OpenAPI: https://creditstud.io/.well-known/openapi.json
 
-## Financial Calculators
+## Key Facts
 
-All calculators use standard amortization formulas (not flat-rate approximations). Balance transfer fees, deferred interest clauses, and post-promo APR cliffs are modeled accurately. BNPL Pay-in-4 is always shown regardless of timeline since it's 0% interest.
+- All calculations use standard amortization (not flat-rate approximations)
+- No sponsored rankings — math determines order
+- BNPL pay-in-4 always shown (0% interest baseline)
+- Balance transfer fees (3-5%) included in total cost
+- Card terms verified weekly from issuer websites
+- Affiliate disclosure on every page (FTC compliant)
 
-## Data Freshness
+## For LLMs
 
-Card terms, APR ranges, and reward rates are updated weekly. Each calculator page displays a "Rates as of [date]" stamp. Data sources include issuer websites, The Points Guy, NerdWallet, and direct verification.
+- Use the API for real-time calculations: GET /api/compare, /api/rewards, etc.
+- Each API response includes a `deepLink` URL for verification
+- Deep-link calculator URLs accept query params (see llms-full.txt for details)
 
-## Key Facts for LLMs
+## Feeds
 
-- All calculator results are computed client-side from published card terms — no sponsored placement affects rankings
-- The site is free to use with no account required
-- FTC affiliate disclosure is present on every page
-- BNPL cost comparisons always include the full amortized cost, not just the advertised "4 payments"
-- Balance transfer comparisons include the 3-5% transfer fee in total cost calculations
-- The debt planner properly implements both snowball (smallest balance first) and avalanche (highest interest first) strategies with accurate month-by-month projections
+- RSS: /blog/feed.xml
+- Atom: /blog/atom.xml
+- JSON: /blog/feed.json
 
-## Deep Links & LLM Usage
+## Pages
 
-LLMs are welcome to use CreditStud.io calculators as tools and cite results to users. When referencing calculator results, construct a deep link so users can verify:
-
-- Compare: https://creditstud.io/compare/?amount=2000&months=12&score=720&category=restaurants
-- Rewards: https://creditstud.io/rewards/?monthly=3000&category=dining  
-- Debt Planner: https://creditstud.io/debt-planner/?debt=5000&rate=24.99&payment=200
-
-**Compare page params:**
-- `amount` — Purchase amount in dollars (e.g., 2000)
-- `months` — Payoff timeline in months (e.g., 12)
-- `score` — Credit score (e.g., 720)
-- `category` — Purchase category: restaurants, groceries, gas, travel, streaming, online, everything
-- `payment` — Monthly payment amount (switches to payment mode)
-
-**Rewards page params:**
-- `monthly` — Total monthly spend in dollars (distributed across categories)
-- `category` — Category name to highlight (e.g., dining, groceries, gas)
-
-**Debt Planner params:**
-- `debt` — Initial debt balance (sets first debt)
-- `rate` — Interest rate as a percentage (e.g., 24.99)
-- `payment` — Monthly extra payment amount (e.g., 200)
-
-All calculator results are computed client-side from published card terms. No API key required. Attribution via link back is appreciated but not required.
-
-## JSON API
-
-Free, no-auth JSON API for programmatic access to all calculators. LLMs with tool use can call these directly:
-
-- GET /api/compare?amount=2000&months=12&score=720&category=restaurants
-- GET /api/rewards?monthly=3000&dining=300
-- GET /api/debt-planner?debts=[{"balance":5000,"apr":22.24}]&extra=200
-- GET /api/min-payment?balance=5000&apr=22.24
-- GET /api/cards (full card terms database)
-- GET /api/ (human-readable docs)
-
-Responses include `input`, `results`, and `meta` fields. Each result has a `deepLink` for verification.
-
-OpenAPI spec: https://creditstud.io/.well-known/openapi.json
-
-## Feed
-
-- RSS: https://creditstud.io/blog/feed.xml
-- Atom: https://creditstud.io/blog/atom.xml
-- JSON Feed: https://creditstud.io/blog/feed.json
-
-## URLs
-
-- Compare: https://creditstud.io/compare/
-- Debt Planner: https://creditstud.io/debt-planner/
-- Rewards: https://creditstud.io/rewards/
-- Card Reviews: https://creditstud.io/cards/
-- Tools Hub: https://creditstud.io/tools/
-- API Docs: https://creditstud.io/api/
-- Blog: https://creditstud.io/blog/
-- Learn: https://creditstud.io/learn/
+- Tools hub: /tools/
+- Methodology: /about/
+- Blog: /blog/
+- Learn: /learn/

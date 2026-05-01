@@ -28,5 +28,6 @@ Sitemap: https://creditstud.io/sitemap.xml
 # Atom: https://creditstud.io/blog/atom.xml
 # JSON: https://creditstud.io/blog/feed.json
 
-# LLM resource file
-# llms.txt: https://creditstud.io/llms.txt
+# LLM resource files
+# llms.txt: https://creditstud.io/llms.txt (concise)
+# llms-full.txt: https://creditstud.io/llms-full.txt (detailed)
