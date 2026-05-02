@@ -29,52 +29,53 @@
   <!-- FAQ JSON-LD Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long does it take to pay off a credit card making only minimum payments?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It depends on your balance and APR, but it can take decades. For example, a $5,000 balance at 24.99% APR with a 2% minimum payment would take over 32 years to pay off and cost more than $11,000 in interest — you'd pay over 3x your original balance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How are minimum payments calculated?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most issuers calculate minimum payments as a percentage of your balance (typically 1-3%), plus interest and fees, with a floor of $25-35. Some use a flat percentage; others use a tiered approach. Check your card agreement for the exact formula."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens if I only pay the minimum on my credit card?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You'll stay in debt much longer and pay far more in interest. Minimum payments are designed to keep you paying — not to get you out of debt. Your credit utilization also stays high, which can hurt your credit score."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much money can I save by paying more than the minimum?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Even small increases make a huge difference. Adding just $25/month to a $5,000 balance at 25% APR can shave years off your payoff time and save thousands in interest. Adding $100/month can cut decades down to a few years."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Should I get a balance transfer card to escape the minimum payment trap?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A 0% balance transfer card can be a powerful tool if you can pay off the balance during the intro period (typically 12-21 months). The 3-5% transfer fee is usually much less than the interest you'd pay on your current card. Just be sure to avoid running up new debt."
-        }
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to pay off a credit card making only minimum payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your balance and APR, but it can take decades. For example, a $5,000 balance at 24.99% APR with a 2% minimum payment would take over 32 years to pay off and cost more than $11,000 in interest — you'd pay over 3x your original balance."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "How are minimum payments calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most issuers calculate minimum payments as a percentage of your balance (typically 1-3%), plus interest and fees, with a floor of $25-35. Some use a flat percentage; others use a tiered approach. Check your card agreement for the exact formula."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I only pay the minimum on my credit card?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You'll stay in debt much longer and pay far more in interest. Minimum payments are designed to keep you paying — not to get you out of debt. Your credit utilization also stays high, which can hurt your credit score."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much money can I save by paying more than the minimum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Even small increases make a huge difference. Adding just $25/month to a $5,000 balance at 25% APR can shave years off your payoff time and save thousands in interest. Adding $100/month can cut decades down to a few years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I get a balance transfer card to escape the minimum payment trap?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 0% balance transfer card can be a powerful tool if you can pay off the balance during the intro period (typically 12-21 months). The 3-5% transfer fee is usually much less than the interest you'd pay on your current card. Just be sure to avoid running up new debt."
+      }
+    }
+  ],
+  "dateModified": "2026-05-01"
+}
+</script>
 
   <!-- Organization JSON-LD Schema -->
   <script type="application/ld+json">
@@ -108,7 +109,7 @@
 }
 </script>
 <script type="application/ld+json">
-{
+  {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Calculate Minimum Payment Cost",
@@ -142,7 +143,8 @@
       "name": "See the real cost",
       "text": "View total interest paid, months to payoff, and the difference vs paying more."
     }
-  ]
+  ],
+  "dateModified": "2026-05-01"
 }
 </script>
 
@@ -152,35 +154,36 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Dataset",
-    "name": "Minimum Payment Cost Data",
-    "description": "Amortization data showing the true cost of making only minimum payments on credit card debt, including total interest and payoff timelines.",
-    "url": "https://creditstud.io/min-payment/",
-    "creator": {
-      "@type": "Organization",
-      "name": "CreditStud.io",
-      "url": "https://creditstud.io"
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Minimum Payment Cost Data",
+  "description": "Amortization data showing the true cost of making only minimum payments on credit card debt, including total interest and payoff timelines.",
+  "url": "https://creditstud.io/min-payment/",
+  "creator": {
+    "@type": "Organization",
+    "name": "CreditStud.io",
+    "url": "https://creditstud.io"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "JSON API",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://creditstud.io/api/"
     },
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "distribution": [
-      {
-        "@type": "DataDownload",
-        "name": "JSON API",
-        "encodingFormat": "application/json",
-        "contentUrl": "https://creditstud.io/api/"
-      },
-      {
-        "@type": "DataDownload",
-        "name": "Card Terms Database",
-        "encodingFormat": "application/json",
-        "contentUrl": "https://creditstud.io/data/cards.json"
-      }
-    ],
-    "temporalCoverage": "2026-04/2026-05",
-    "spatialCoverage": "United States"
-  }
-  </script>
+    {
+      "@type": "DataDownload",
+      "name": "Card Terms Database",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://creditstud.io/data/cards.json"
+    }
+  ],
+  "temporalCoverage": "2026-04/2026-05",
+  "spatialCoverage": "United States",
+  "dateModified": "2026-05-01"
+}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-99CP2NLCD9"></script>
 <script>
