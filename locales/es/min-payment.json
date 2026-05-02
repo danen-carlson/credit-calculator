@@ -1,0 +1,21 @@
+{
+  "payoffTime": "Tiempo para Liquidar",
+  "totalInterest": "Interés Total",
+  "totalPaid": "Total Pagado",
+  "totalPaidSub.toClear": "para saldar {amount}",
+  "totalPaidSub.interestExceedsPayment": "el interés supera el pago mínimo",
+  "neverPaidOff": "Nunca se liquidará",
+  "principal": "Capital",
+  "interest": "Interés",
+  "interestExceedsPayments": "El interés supera los pagos",
+  "months.format.singular": "{count} mes",
+  "months.format.plural": "{count} meses",
+  "months.format.years": "{years} año{{s}}, {months} mes{{es}}",
+  "months.neverExceeds": "Nunca (el interés supera los pagos)",
+  "balance": "Saldo",
+  "apr": "APR",
+  "minPaymentPercent": "% de Pago Mínimo",
+  "calculate": "Calcular",
+  "resultSummary": "Si solo pagas el mínimo, tardarás {time} en liquidar {balance} en deuda, pagando {totalInterest} en intereses para un total de {totalPaid}.",
+  "tryExtraPayment": "Intenta agregar solo ${extra}/mes para liquidar {monthsEarlier} meses antes y ahorra ${interestSaved} en intereses."
+}

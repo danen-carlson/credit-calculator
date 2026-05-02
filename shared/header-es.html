@@ -1,0 +1,53 @@
+<header class="header">
+  <div class="container">
+    <button class="nav-hamburger" aria-label="Menú" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="top-nav">
+      <a href="/es/" class="nav-link">Inicio</a>
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Calculadoras ▾
+        </button>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Comparación de Tarjetas</span>
+            <a href="/es/compare/" class="nav-dropdown-link">Compara Tarjetas de Crédito y BNPL</a>
+            <a href="/es/rewards/" class="nav-dropdown-link">Calculadora de Recompensas</a>
+            <a href="/es/cards/" class="nav-dropdown-link">Reseñas de Tarjetas</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Deudas y Pagos</span>
+            <a href="/es/debt-planner/" class="nav-dropdown-link">Planificador de Pago de Deudas</a>
+            <a href="/es/min-payment/" class="nav-dropdown-link">Calculadora de Pago Mínimo</a>
+            <a href="/es/loan-vs-bt/" class="nav-dropdown-link">Préstamo vs Transferencia de Saldo</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Buscador de Tarjetas</span>
+            <a href="/es/af-worth-it/" class="nav-dropdown-link">Calculadora de Cuota Anual</a>
+            <a href="/es/score-simulator/" class="nav-dropdown-link">Simulador de Puntaje de Crédito</a>
+          </div>
+        </div>
+      </div>
+      <a href="/es/learn/" class="nav-link">Aprende</a>
+      <a href="/es/blog/" class="nav-link">Blog</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="language-switcher">
+        <button class="lang-toggle" aria-label="Seleccionar idioma" aria-expanded="false">
+          🌐 <span class="current-lang">ES</span>
+        </button>
+        <div class="lang-dropdown">
+          <a href="/" hreflang="en" lang="en">English</a>
+          <a href="/es/" hreflang="es" lang="es">Español</a>
+          <a href="/zh/" hreflang="zh" lang="zh">简体中文</a>
+          <a href="/tl/" hreflang="tl" lang="tl">Tagalog</a>
+          <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+          <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+        </div>
+      </div>
+      <a href="/es/" class="logo">💳 Credit<span>Stud.io</span></a>
+    </div>
+    <p class="header-subtitle">Compara tarjetas de crédito, BNPL y planes de pago lado a lado</p>
+  </div>
+</header>
