@@ -1,0 +1,150 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "CreditStud.io Blog",
+  "home_page_url": "https://creditstud.io/blog/",
+  "feed_url": "https://creditstud.io/blog/feed.json",
+  "language": "en-US",
+  "authors": [
+    {
+      "name": "CreditStud.io"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://creditstud.io/blog/amex-gold-worth-it",
+      "url": "https://creditstud.io/blog/amex-gold-worth-it",
+      "title": "Is the Amex Gold Card Worth It? Honest $325 Annual Fee Breakdown",
+      "content_html": "The Amex Gold charges $325/year. We break down every credit, every reward rate, and every catch so you can decide if it's worth keeping. Real math, no fluff.",
+      "date_published": "2026-04-30T00:00:00Z",
+      "date_modified": "2026-04-30T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/best-balance-transfer-credit-cards",
+      "url": "https://creditstud.io/blog/best-balance-transfer-credit-cards",
+      "title": "Best Balance Transfer Credit Cards 2026",
+      "content_html": "The best balance transfer credit cards of 2026. Compare 0% intro APR periods, BT fees, and post-intro rates. Learn when a 3-5% fee is worth it and how to avoid pitfalls.",
+      "date_published": "2026-04-30T00:00:00Z",
+      "date_modified": "2026-04-30T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/best-credit-cards-for-groceries",
+      "url": "https://creditstud.io/blog/best-credit-cards-for-groceries",
+      "title": "Best Credit Cards for Groceries 2026 \u2014 Maximize Your Supermarket Rewards",
+      "content_html": "Compare the best grocery credit cards for 2026. From 6% cash back at supermarkets to 4x points on food \u2014 find the card that matches your grocery budget.",
+      "date_published": "2026-04-30T00:00:00Z",
+      "date_modified": "2026-04-30T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/best-credit-cards-for-travel",
+      "url": "https://creditstud.io/blog/best-credit-cards-for-travel",
+      "title": "Best Credit Cards for Travel in 2026 \u2014 Maximize Points, Miles &amp; Perks",
+      "content_html": "Compare the best travel credit cards for 2026. From no-annual-fee options to premium cards with lounge access \u2014 find the right card for flights, hotels, and international travel.",
+      "date_published": "2026-04-30T00:00:00Z",
+      "date_modified": "2026-04-30T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/how-to-build-credit-from-scratch",
+      "url": "https://creditstud.io/blog/how-to-build-credit-from-scratch",
+      "title": "How to Build Credit from Scratch \u2014 A Step-by-Step Guide (2026)",
+      "content_html": "No credit history? This step-by-step guide shows you how to build credit from scratch using secured cards, authorized user\u7b56\u7565, and smart habits. Includes a month-by-month timeline.",
+      "date_published": "2026-04-30T00:00:00Z",
+      "date_modified": "2026-04-30T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/minimum-payment-trap",
+      "url": "https://creditstud.io/blog/minimum-payment-trap",
+      "title": "Minimum Payment Trap: How Much It Really Costs",
+      "content_html": "Paying the minimum on a $5,000 balance at 24% APR costs $13,000+ and takes 22 years. Learn how minimum payments are designed to keep you in debt \u2014 and 3 strategies to escape.",
+      "date_published": "2026-04-30T00:00:00Z",
+      "date_modified": "2026-04-30T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/sneaky-credit-card-pitfalls",
+      "url": "https://creditstud.io/blog/sneaky-credit-card-pitfalls",
+      "title": "7 Sneaky Credit Card Pitfalls That Cost You Money",
+      "content_html": "From deferred interest traps to post-promo APR cliffs, these credit card pitfalls can quietly cost you hundreds. Learn how to spot and avoid every one.",
+      "date_published": "2026-04-30T00:00:00Z",
+      "date_modified": "2026-04-30T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/snowball-vs-avalanche",
+      "url": "https://creditstud.io/blog/snowball-vs-avalanche",
+      "title": "Debt Snowball vs Avalanche: Which Should You Choose?",
+      "content_html": "Debt snowball vs debt avalanche \u2014 which pays off debt faster? We break down both methods with real math examples so you can choose the strategy that actually works.",
+      "date_published": "2026-04-30T00:00:00Z",
+      "date_modified": "2026-04-30T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/credit-card-benefits-youre-not-using",
+      "url": "https://creditstud.io/blog/credit-card-benefits-youre-not-using",
+      "title": "12 Credit Card Benefits You're Probably Not Using (Worth $1,000+/Year)",
+      "content_html": "Most credit cardholders leave hundreds or thousands of dollars in benefits on the table. Discover the overlooked perks \u2014 from cell phone insurance to trip delay coverage \u2014 and how to actually use them.",
+      "date_published": "2026-04-21T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/credit-card-points-offset-interest",
+      "url": "https://creditstud.io/blog/credit-card-points-offset-interest",
+      "title": "Can Credit Card Points Actually Offset Interest? The Math Will Surprise You",
+      "content_html": "Do credit card rewards really offset the interest you pay? We ran the numbers on carrying balances vs. earning cash back. The math reveals when points help \u2014 and when they're an illusion.",
+      "date_published": "2026-04-21T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/affirm-interest-rates-explained",
+      "url": "https://creditstud.io/blog/affirm-interest-rates-explained",
+      "title": "Affirm Interest Rates Explained: What You'll Actually Pay",
+      "content_html": "Understand Affirm's interest rates, from 0% deals to 36% APR. See exactly what you'll pay on a real purchase with our breakdown and examples.",
+      "date_published": "2026-04-15T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/best-0-apr-credit-cards",
+      "url": "https://creditstud.io/blog/best-0-apr-credit-cards",
+      "title": "Best 0% APR Credit Cards for Large Purchases (2026)",
+      "content_html": "The best 0% intro APR credit cards for financing large purchases in 2026. Compare interest-free periods, fees, and rewards to find your best option.",
+      "date_published": "2026-04-15T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/bnpl-hidden-fees",
+      "url": "https://creditstud.io/blog/bnpl-hidden-fees",
+      "title": "The Hidden Fees of Buy Now Pay Later: What They Don't Tell You",
+      "content_html": "BNPL services aren't always free. Discover the hidden fees Klarna, Afterpay, and Affirm charge \u2014 late fees, service charges, and costs most people miss.",
+      "date_published": "2026-04-15T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/bnpl-vs-credit-card",
+      "url": "https://creditstud.io/blog/bnpl-vs-credit-card",
+      "title": "Does Buy Now Pay Later Cost More Than a Credit Card?",
+      "content_html": "Find out whether buy now pay later services or credit cards cost more for your purchase. Real cost breakdowns, examples, and when each option wins.",
+      "date_published": "2026-04-15T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/cheapest-way-to-finance-purchase",
+      "url": "https://creditstud.io/blog/cheapest-way-to-finance-purchase",
+      "title": "The Smartest Way to Finance a $1,000 Purchase in 2026",
+      "content_html": "Comparing every option to finance a $1,000 purchase: BNPL, credit cards, personal loans, and more. Find the cheapest way to pay over time.",
+      "date_published": "2026-04-15T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/does-klarna-affect-credit-score",
+      "url": "https://creditstud.io/blog/does-klarna-affect-credit-score",
+      "title": "Does Klarna Affect Your Credit Score? Here's the Truth",
+      "content_html": "Find out exactly how Klarna affects your credit score. Soft checks, hard pulls, missed payments \u2014 everything you need to know before using Klarna.",
+      "date_published": "2026-04-15T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    },
+    {
+      "id": "https://creditstud.io/blog/klarna-vs-afterpay-vs-affirm",
+      "url": "https://creditstud.io/blog/klarna-vs-afterpay-vs-affirm",
+      "title": "Klarna vs Afterpay vs Affirm: Real Cost Comparison (2026)",
+      "content_html": "Compare Klarna, Afterpay, and Affirm side by side. See the real costs, fees, interest rates, and which BNPL service saves you the most money in 2026.",
+      "date_published": "2026-04-15T00:00:00Z",
+      "date_modified": "2026-04-28T00:00:00Z"
+    }
+  ]
+}

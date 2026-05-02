@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "CreditStud.io",
+  "name_for_model": "creditstud",
+  "description_for_human": "Free financial calculators for comparing credit cards, BNPL services, and payment plans with real math.",
+  "description_for_model": "Compute and compare the true cost of credit cards, BNPL services (Klarna, Afterpay, Affirm), and payment plans. Shows total interest, fees, and net cost for any purchase amount and payoff timeline. Also includes debt payoff planner (snowball vs avalanche), rewards calculator, credit score simulator, and annual fee worth-it calculator. All calculations use amortization formulas with real 2026 card terms.",
+  "url": "https://creditstud.io",
+  "api": {
+    "type": "openapi",
+    "url": "https://creditstud.io/.well-known/openapi.json"
+  },
+  "auth": {
+    "type": "none"
+  },
+  "contact_email": "hello@creditstud.io"
+}

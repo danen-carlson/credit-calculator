@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io</title>
+  <meta name="description" content="Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards.">
+  <link rel="canonical" href="https://creditstud.io/tl/rewards/">
+  <meta property="og:title" content="Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io">
+  <meta property="og:description" content="Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards.">
+  <meta property="og:url" content="https://creditstud.io/rewards/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta property="og:image" content="https://creditstud.io/og-images/rewards.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io">
+  <meta name="twitter:description" content="Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards.">
+  <meta name="twitter:image" content="https://creditstud.io/og-images/rewards.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shared/components.css">
+  <link rel="stylesheet" href="rewards.css">
+  <link rel="stylesheet" href="../shared/share.css">
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the credit card rewards calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter your monthly spending in each category (groceries, dining, gas, travel, etc.). The calculator multiplies your spending by each card's earn rate, converts points to dollar value using current valuations, subtracts annual fees, and ranks cards by net annual rewards value. Results update instantly as you adjust your spending."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are credit card rewards points worth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Point values vary by program. As of April 2026, Chase Ultimate Rewards points are worth ~2.05 cents each, Amex Membership Rewards ~2.0 cents, Capital One Miles ~1.85 cents, and cashback is always 1 cent per point. Travel redemptions and transfer partners can increase value significantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are crypto credit card rewards better than cashback?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Crypto rewards have higher upside potential but come with volatility risk. A card earning 4% in Bitcoin could be worth much more if crypto prices rise, or less if they fall. Cashback is stable and predictable. The Coinbase Card (debit) offers up to 4% crypto back with no annual fee, while the Coinbase One Credit Card offers 4% Bitcoin back with a $30/month subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I get a card with an annual fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your spending. A card with a $95 annual fee that earns $400 more in rewards than a no-fee card is still $305 ahead. Our calculator factors in annual fees automatically — just look at the net annual value. Premium travel cards like the Capital One Venture X have high fees ($395) but come with credits ($300 travel credit) that offset much of the cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best credit card for everyday spending?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most people, the best everyday card depends on their spending patterns. Heavy grocery spenders benefit from the Amex Blue Cash Preferred (6% at supermarkets). Those who want simplicity do well with the Citi Double Cash or Wells Fargo Active Cash (2% on everything). Travelers maximize value with the Chase Sapphire Preferred. Use our calculator to find your personal best card based on your actual spending."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between First Year and Ongoing value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First Year value includes signup bonuses which can significantly boost a card's value but are only available in the first year. Ongoing value excludes signup bonuses and represents the card's long-term earning potential. Some cards like the Discover it Cash Back offer special first-year benefits (like Cashback Match) that double your earnings. Use the toggle to compare cards based on your priorities: short-term gain (First Year) or long-term value (Ongoing)."
+      }
+    }
+  ],
+  "dateModified": "2026-05-01"
+}
+</script>
+
+  <!-- HowTo JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Maximize Credit Card Rewards",
+  "description": "Steps to find the credit card that earns you the most rewards based on your spending habits.",
+  "totalTime": "PT5M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "CreditStud.io Rewards Calculator"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Enter Your Monthly Spending",
+      "text": "Adjust the sliders or type amounts in each spending category. Results update instantly. Defaults are based on average US household spending.",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Select Calculation Period",
+      "text": "Toggle between First Year value (includes signup bonuses) and Ongoing value (excludes signup bonuses) based on whether you prioritize short-term gains or long-term value.",
+      "position": 2
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Filter by Card Type",
+      "text": "Use the filter buttons to narrow results by card type: cashback, travel, tiered rewards, grocery rewards, or crypto rewards.",
+      "position": 3
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Review Ranked Results",
+      "text": "Cards are ranked by net annual rewards value (earnings minus annual fee). The top cards offer the most value for your specific spending patterns.",
+      "position": 4
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Consider Crypto Rewards",
+      "text": "If interested in crypto rewards, toggle the crypto option to see cards that offer cryptocurrency back on purchases.",
+      "position": 5
+    }
+  ],
+  "dateModified": "2026-05-01"
+}
+</script>
+
+  <!-- BreadcrumbList JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://creditstud.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rewards",
+        "item": "https://creditstud.io/rewards/"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="manifest" href="/tl/manifest.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="/tl/icon.svg">
+  <link rel="apple-touch-icon" href="/tl/icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CreditStud">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440" crossorigin="anonymous"></script>
+<!-- GA4 -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99CP2NLCD9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-99CP2NLCD9');
+</script>
+<!-- /GA4 -->
+
+  <link rel="alternate" type="application/rss+xml" title="CreditStud.io Blog RSS Feed" href="/tl/blog/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="CreditStud.io Blog Atom Feed" href="/tl/blog/atom.xml">
+  <link rel="alternate" type="application/feed+json" title="CreditStud.io Blog JSON Feed" href="/tl/blog/feed.json">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Credit Card Rewards Value Data",
+  "description": "Reward values and signup bonus analysis for 25+ credit cards across dining, groceries, gas, travel, and streaming categories.",
+  "url": "https://creditstud.io/rewards/",
+  "creator": {
+    "@type": "Organization",
+    "name": "CreditStud.io",
+    "url": "https://creditstud.io"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "JSON API",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://creditstud.io/api/"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Card Terms Database",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://creditstud.io/data/cards.json"
+    }
+  ],
+  "temporalCoverage": "2026-04/2026-05",
+  "spatialCoverage": "United States",
+  "dateModified": "2026-05-01"
+}
+</script>
+  <link rel="stylesheet" href="/tl/shared/language-switcher.css">
+<script>window.__lang = 'tl';</script>
+<script src="/locales/tl.js"></script>
+<script src="/locales/tl/rewards.json" type="application/json" data-locale="tl" data-tool="rewards"></script>
+<link rel="alternate" hreflang="en" href="https://creditstud.io/rewards/">
+<link rel="alternate" hreflang="es" href="https://creditstud.io/es/rewards/">
+<link rel="alternate" hreflang="zh" href="https://creditstud.io/zh/rewards/">
+<link rel="alternate" hreflang="tl" href="https://creditstud.io/tl/rewards/">
+<link rel="alternate" hreflang="ko" href="https://creditstud.io/ko/rewards/">
+<link rel="alternate" hreflang="hi" href="https://creditstud.io/hi/rewards/">
+<link rel="alternate" hreflang="x-default" href="https://creditstud.io/rewards/">
+</head>
+<body>
+  <div id="app">
+    <!-- Skip to content link -->
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+    
+    <!-- DISCLOSURE -->
+<div class="site-disclosure-banner">
+  <div class="site-disclosure-container">
+    CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations. 
+    <a href="/tl/disclosure.html">Learn more</a>
+  </div>
+</div>
+<!-- /DISCLOSURE -->
+<!-- /DISCLOSURE -->
+<!-- /DISCLOSURE -->
+    
+    <!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="top-nav">
+      <a href="/tl/" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Calculators ▾
+        </button>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Card Comparison</span>
+            <a href="/tl/compare/" class="nav-dropdown-link">Compare Credit Cards & BNPL</a>
+            <a href="/tl/rewards/" class="nav-dropdown-link">Rewards Calculator</a>
+            <a href="/tl/cards/" class="nav-dropdown-link">Card Reviews</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Debt & Payoff</span>
+            <a href="/tl/debt-planner/" class="nav-dropdown-link">Debt Payoff Planner</a>
+            <a href="/tl/min-payment/" class="nav-dropdown-link">Minimum Payment Calculator</a>
+            <a href="/tl/loan-vs-bt/" class="nav-dropdown-link">Loan vs Balance Transfer</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Card Finder</span>
+            <a href="/tl/af-worth-it/" class="nav-dropdown-link">Annual Fee Calculator</a>
+            <a href="/tl/score-simulator/" class="nav-dropdown-link">Credit Score Simulator</a>
+          </div>
+        </div>
+      </div>
+      <a href="/tl/learn/" class="nav-link">Learn</a>
+      <a href="/tl/blog/" class="nav-link">Blog</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="language-switcher">
+        <button class="lang-toggle" aria-label="Select language" aria-expanded="false">
+          🌐 <span class="current-lang">EN</span>
+        </button>
+        <div class="lang-dropdown">
+          <a href="/" hreflang="en" lang="en">English</a>
+          <a href="/es/" hreflang="es" lang="es">Español</a>
+          <a href="/zh/" hreflang="zh" lang="zh">简体中文</a>
+          <a href="/tl/" hreflang="tl" lang="tl">Tagalog</a>
+          <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+          <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+        </div>
+      </div>
+      <a href="/tl/" class="logo">💳 Credit<span>Stud.io</span></a>
+    </div>
+    <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
+  </div>
+</header>
+<!-- /HEADER -->
+<!-- /HEADER -->
+<!-- /HEADER -->
+
+    <!-- Step 1: Your Monthly Spending -->
+    <section class="step" id="step-spending">
+      <div class="container" id="main">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h2>Your Monthly Spending</h2>
+        </div>
+        <p class="step-desc">Adjust the sliders or type amounts. Results update instantly. Defaults are based on average US household spending.</p>
+
+        <!-- Annual / Monthly Toggle -->
+        <div class="spending-mode-toggle">
+          <button class="spending-mode-btn active" data-mode="monthly" onclick="setSpendingMode('monthly')">Monthly</button>
+          <button class="spending-mode-btn" data-mode="annual" onclick="setSpendingMode('annual')">Annual</button>
+          <span class="spending-mode-note" id="spending-mode-note">Showing monthly amounts</span>
+        </div>
+
+        <div id="spending-grid" class="spending-grid">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="spending-summary">
+          <div class="spending-summary-item">
+            <div class="spending-summary-label">Monthly Total</div>
+            <div class="spending-summary-value" id="total-monthly">$0</div>
+          </div>
+          <div class="spending-summary-item">
+            <div class="spending-summary-label">Annual Total</div>
+            <div class="spending-summary-value" id="total-annual">$0</div>
+          </div>
+        </div>
+
+        <!-- Crypto Toggle -->
+        <div class="crypto-toggle-section">
+          <label class="toggle-label" style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.9rem;padding:14px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);">
+            <input type="checkbox" id="crypto-toggle" data-action="toggle-crypto" style="display:none;">
+            <span class="toggle-switch"></span>
+            <span>🪙 I'm interested in earning crypto rewards</span>
+          </label>
+        </div>
+
+        <!-- Cards I Already Have -->
+        <div class="cards-owned-section">
+          <button class="cards-owned-toggle" onclick="toggleCardsOwnedPanel()">
+            🃏 Cards I Already Have
+            <span class="cards-owned-count" id="cards-owned-count"></span>
+            <span class="cards-owned-chevron">▼</span>
+          </button>
+          <div class="cards-owned-panel" id="cards-owned-panel">
+            <div class="cards-owned-panel-inner">
+              <p class="cards-owned-hint">Select cards you currently own (they'll be hidden from results) or previously had (signup bonus may apply again).</p>
+              <div id="cards-owned-list" class="cards-owned-list">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 2: Results -->
+    <section class="step" id="step-results">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h2>Your Best Cards</h2>
+        </div>
+        <p class="step-desc">Ranked by net annual rewards value (earnings minus annual fee).</p>
+
+        <!-- Year Toggle -->
+        <div class="year-toggle-container">
+          <fieldset class="year-toggle-fieldset" role="radiogroup" aria-label="Toggle between first year and ongoing value">
+            <legend class="year-toggle-legend">Calculation Period</legend>
+            <div class="year-toggle-group">
+              <input type="radio" id="first-year" name="year-toggle" value="first" checked data-action="set-year-view">
+              <label for="first-year" class="year-toggle-label">First Year</label>
+              
+              <input type="radio" id="ongoing" name="year-toggle" value="ongoing" data-action="set-year-view">
+              <label for="ongoing" class="year-toggle-label">Ongoing</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- Annual Credits Toggle -->
+        <div class="annual-credits-toggle-container">
+          <label class="toggle-label" style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.9rem;padding:14px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);">
+            <input type="checkbox" id="include-annual-credits" data-action="toggle-annual-credits" style="display:none;">
+            <span class="toggle-switch"></span>
+            <span>Include annual credits in first-year value</span>
+          </label>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all" data-action="set-filter" aria-label="Show all credit cards">All Cards</button>
+          <button class="filter-btn" data-filter="cashback" data-action="set-filter" aria-label="Show cashback credit cards">💵 Cashback</button>
+          <button class="filter-btn" data-filter="travel" data-action="set-filter" aria-label="Show travel credit cards">✈️ Travel</button>
+          <button class="filter-btn" data-filter="tiered" data-action="set-filter" aria-label="Show tiered reward credit cards">🔄 Tiered</button>
+          <button class="filter-btn" data-filter="grocery" data-action="set-filter" aria-label="Show grocery reward credit cards">🛒 Grocery</button>
+          <button class="filter-btn" data-filter="crypto" data-action="set-filter" aria-label="Show crypto reward credit cards">₿ Crypto</button>
+          <label class="filter-toggle-label" style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:0.8rem;padding:6px 12px;border:1.5px solid var(--border);border-radius:20px;background:var(--surface);white-space:nowrap;">
+            <input type="checkbox" id="no-annual-fee-toggle" onchange="toggleNoAnnualFee(this)" style="width:16px;height:16px;accent-color:var(--primary);">
+            No annual fee
+          </label>
+        </div>
+
+        <div id="affiliate-disclosure" class="disclosure">
+          Advertiser Disclosure: Some of the offers on this page are from companies that compensate us. This may influence which products we feature, but it does not affect our rankings — those are based purely on math.
+        </div>
+
+        <div id="results-container" class="results-container" aria-live="polite">
+          <div id="rewards-skeleton" class="skeleton">
+            <div class="skeleton-bar" style="width: 60%;"></div>
+            <div class="skeleton-bar" style="width: 100%;"></div>
+            <div class="skeleton-bar" style="width: 80%;"></div>
+            <div class="skeleton-bar" style="width: 90%;"></div>
+            <div class="skeleton-bar" style="width: 70%;"></div>
+          </div>
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Share / data stamp row -->
+        <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
+          <div id="share-mount"></div>
+          <div id="data-stamp-mount"><span class="data-verified-stamp">Rates verified: 2026-04-28</span></div>
+        </div>
+
+        <!-- Comparison Section -->
+        <div id="comparison-section" class="comparison-section hidden" aria-live="polite">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Crypto Corner -->
+        <div id="crypto-corner" class="crypto-corner hidden">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Wallet Section -->
+        <div id="wallet-section" class="wallet-section">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- What's Next CTA -->
+        <div id="whats-next-section">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="step">
+      <div class="container">
+        <div class="seo-content">
+          <h2>How the Credit Card Rewards Calculator Works</h2>
+          <p>Our calculator takes your actual monthly spending across eight categories — groceries, dining, gas, travel, online shopping, streaming, utilities, and everything else — and runs it against a database of 16 popular credit cards. For each card, we multiply your spending by the card's earn rate in each category, convert points to dollar value using current valuations from The Points Guy, subtract the annual fee, and rank the results by net annual value. It's pure math — no opinions, no bias.</p>
+
+          <h2>What Are Rewards Points Worth?</h2>
+          <p>Not all points are created equal. Cashback is always worth 1 cent per point. Travel points vary: Chase Ultimate Rewards points are valued at 2.05 cents each, Amex Membership Rewards at 2.0 cents, and Capital One Miles at 1.85 cents. These valuations reflect typical redemption value through each program's travel portal. Transferring points to airline or hotel partners can sometimes yield even higher value — 3-5 cents per point or more — but requires more effort and flexibility.</p>
+
+          <h2>Credit Card Rewards vs. Crypto Rewards</h2>
+          <p>Crypto rewards cards like the Coinbase Card offer a different proposition: instead of fixed cashback or points, you earn cryptocurrency (Bitcoin, Ethereum, etc.) on every purchase. The upside is that your rewards could appreciate significantly over time. The downside is volatility — your rewards could also lose value. The Coinbase Card is a debit card (not credit), meaning you spend from your existing crypto balance. The Coinbase One Credit Card offers 4% Bitcoin back but requires a $30/month subscription. Use our calculator's Crypto Corner to see how crypto rewards compare to traditional cards at your spending level.</p>
+
+          <p>Want to learn more? Check out our <a href="/tl/blog/best-0-apr-credit-cards.html">guide to the best 0% APR credit cards</a> for financing large purchases, or read our <a href="/tl/blog/bnpl-vs-credit-card.html">comparison of BNPL vs. credit cards</a> to understand the full cost of different payment methods.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+    <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/tl/disclosure.html">Affiliate Disclosure</a>
+    </p>
+  </div>
+</footer>
+<script>
+// Mobile nav dropdown toggle
+if (document.querySelector('.nav-dropdown-toggle')) {
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    var dropdown = this.closest('.nav-dropdown');
+    var isOpen = dropdown.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.querySelector('.top-nav').classList.remove('open');
+      document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+// Highlight active nav item
+(function() {
+  var path = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+    if (linkPath === path) {
+      link.classList.add('active');
+    }
+  });
+})();
+</script>
+<!-- /FOOTER -->
+<!-- /FOOTER -->
+<!-- /FOOTER -->
+  </div>
+
+  <script src="cards-data.js"></script>
+  <script src="../shared/apply-button.js"></script>
+  <link rel="stylesheet" href="../shared/email-capture.css">
+  <script>window.CREDITSTUD_EMAIL_ENDPOINT = 'https://api.creditstud.io/subscribe';</script>
+  <script src="../shared/email-capture.js"></script>
+  <script src="wallet-optimizer.js"></script>
+  <script src="rewards.js"></script>
+  <script src="../shared/share.js"></script>
+  <script>
+    // Wire share.js to the rewards calculator.
+    // Spending inputs are tracked dynamically by gathering all number inputs inside #spending-grid.
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.CreditStudShare) return;
+
+      // Collect all spending input ids inside the spending grid for automatic tracking
+      const spendingIds = Array.from(document.querySelectorAll('#spending-grid input[type="number"]'))
+        .map(el => el.id)
+        .filter(Boolean);
+
+      window.CreditStudShare.init({
+        pageKey: 'rewards',
+        simpleInputs: [
+          ...spendingIds,
+          'crypto-toggle',
+          'first-year',
+          'ongoing'
+        ],
+        customFields: [
+          {
+            name: 'custom_cats',
+            json: true,
+            get: function() {
+              // Access the global customCategories state from rewards.js IIFE
+              // It's stored in localStorage, so we read from there
+              try {
+                return JSON.parse(localStorage.getItem('rewards_customCategories') || '[]');
+              } catch(e) { return []; }
+            },
+            set: function(val) {
+              try {
+                if (Array.isArray(val) && val.length > 0) {
+                  localStorage.setItem('rewards_customCategories', JSON.stringify(val));
+                  // Trigger a re-init of the spending inputs by dispatching a custom event
+                  document.dispatchEvent(new CustomEvent('creditstud:hydrate-custom-cats', { detail: val }));
+                }
+              } catch(e) { console.warn('Failed to restore custom categories from URL', e); }
+            }
+          }
+        ],
+        shareButtonMount: '#share-mount',
+        stampMount: '#data-stamp-mount'
+      });
+    });
+  </script>
+  <script defer src="/shared/pwa.js"></script>
+  <script>
+  (function(){fetch("/data-version.json").then(r=>r.json()).then(d=>{const el=document.getElementById("data-updated");if(el&&d.displayDate)el.textContent="Rates as of "+d.displayDate;}).catch(()=>{});})();
+  </script>
+  <script src="/shared/i18n.js"></script>
+<script src="/shared/language-switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,816 @@
+// Card Database — CreditStud.io Rewards Calculator
+// Data sourced from REWARDS-RESEARCH.md (April 2026)
+// Point valuations from The Points Guy (TPG), April 2026
+
+const cardsData = [
+  {
+    id: 'citi-double-cash',
+    name: 'Citi Double Cash',
+    issuer: 'Citi',
+    type: 'cashback',
+    annualFee: 0,
+    signupBonus: { amount: 0, unit: 'cash', value: 0, requirement: '' },
+    rewards: {
+      groceries: { rate: 2 },
+      dining: { rate: 2 },
+      gas: { rate: 2 },
+      travel: { rate: 2 },
+      online: { rate: 2 },
+      streaming: { rate: 2 },
+      utilities: { rate: 2 },
+      everything: { rate: 2 }
+    },
+    pointValue: 1.0,
+    // Balance transfer fee: 3% intro ($5 min) first 4 months, then 5% ($5 min) — Verified 2026-04-28
+    perks: ['2% on everything — no categories to track', 'No annual fee', 'No foreign transaction fees', '0% intro APR for 18 months on balance transfers', '3% intro BT fee (first 4 months), then 5%'],
+    bestFor: 'Simplicity Seekers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  {
+    id: 'wells-fargo-active-cash',
+    name: 'Wells Fargo Active Cash',
+    issuer: 'Wells Fargo',
+    type: 'cashback',
+    annualFee: 0,
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$500 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 2 },
+      dining: { rate: 2 },
+      gas: { rate: 2 },
+      travel: { rate: 2 },
+      online: { rate: 2 },
+      streaming: { rate: 2 },
+      utilities: { rate: 2 },
+      everything: { rate: 2 }
+    },
+    pointValue: 1.0,
+    perks: ['2% cash rewards on all purchases', '$200 cash rewards bonus', 'No annual fee', 'Cell phone protection'],
+    bestFor: 'Flat-Rate Earners',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  {
+    id: 'fidelity-rewards-visa',
+    name: 'Fidelity Rewards Visa',
+    issuer: 'Fidelity / Bank of America',
+    type: 'cashback',
+    annualFee: 0,
+    signupBonus: { amount: 0, unit: 'cash', value: 0, requirement: '' },
+    rewards: {
+      groceries: { rate: 2 },
+      dining: { rate: 2 },
+      gas: { rate: 2 },
+      travel: { rate: 2 },
+      online: { rate: 2 },
+      streaming: { rate: 2 },
+      utilities: { rate: 2 },
+      everything: { rate: 2 }
+    },
+    pointValue: 1.0,
+    perks: ['2% unlimited cashback into Fidelity account', 'No annual fee', 'No foreign transaction fees', 'Great for investors — auto-deposits to brokerage'],
+    bestFor: 'Investors',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 1,
+    customizableCategories: false
+  },
+  {
+    id: 'paypal-cashback-mastercard',
+    name: 'PayPal Cashback Mastercard',
+    issuer: 'Synchrony',
+    type: 'cashback',
+    annualFee: 0,
+    signupBonus: { amount: 0, unit: 'cash', value: 0, requirement: '' },
+    rewards: {
+      groceries: { rate: 2 },
+      dining: { rate: 2 },
+      gas: { rate: 2 },
+      travel: { rate: 2 },
+      online: { rate: 2 },
+      streaming: { rate: 2 },
+      utilities: { rate: 2 },
+      everything: { rate: 2 }
+    },
+    pointValue: 1.0,
+    perks: ['2% on all purchases (3% on PayPal)', 'No annual fee', 'Redeem to PayPal or bank account', 'No foreign transaction fees'],
+    bestFor: 'PayPal Users',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  {
+    id: 'chase-freedom-flex',
+    name: 'Chase Freedom Flex',
+    issuer: 'Chase',
+    type: 'tiered',
+    annualFee: 0,
+    signupBonus: { amount: 500, unit: 'cash', value: 500, requirement: '$500 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 1 },
+      dining: { rate: 3 },
+      gas: { rate: 1 },
+      travel: { rate: 1 },
+      online: { rate: 1 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 },
+      rotating: { rate: 5, note: 'Quarterly categories, activation required, avg ~2% effective' }
+    },
+    pointValue: 2.05,
+    perks: ['5% rotating quarterly categories (up to $1,500)', '3% on dining and drugstores', 'Earns Chase Ultimate Rewards points', 'No annual fee'],
+    bestFor: 'Category Optimizers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  {
+    id: 'discover-it-cash-back',
+    name: 'Discover it Cash Back',
+    issuer: 'Discover',
+    type: 'tiered',
+    annualFee: 0,
+    signupBonus: { amount: 0, unit: 'cash', value: 0, requirement: 'First-year Cashback Match (unlimited)' },
+    rewards: {
+      groceries: { rate: 1 },
+      dining: { rate: 1 },
+      gas: { rate: 1 },
+      travel: { rate: 1 },
+      online: { rate: 1 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 },
+      rotating: { rate: 5, note: 'Quarterly categories, avg ~2% effective (4% first year with match)' }
+    },
+    pointValue: 1.0,
+    perks: ['5% rotating quarterly categories (up to $1,500)', 'First-year cashback match — doubles ALL earnings', 'No annual fee, ever', 'Free FICO credit score',
+      '⚠️ Year 1 ONLY: rewards doubled at year-end. Year 2+: standard rates only'],
+    bestFor: 'First-Year Value',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'us-bank-cash-plus',
+    name: 'US Bank Cash+',
+    foreignTransactionFee: 3,
+    issuer: 'US Bank',
+    type: 'tiered',
+    annualFee: 0,
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$1,000 spend in 120 days' },
+    rewards: {
+      groceries: { rate: 1 },
+      dining: { rate: 1 },
+      gas: { rate: 1 },
+      travel: { rate: 1 },
+      online: { rate: 1 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['5% on 2 chosen categories (up to $2,000/quarter combined)', '2% on 1 everyday category', 'You pick the categories that match YOUR spending', 'No annual fee'],
+    bestFor: 'Custom Category Pickers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    customizableCategories: true
+  },
+  {
+    id: 'citi-custom-cash',
+    name: 'Citi Custom Cash',
+    issuer: 'Citi',
+    type: 'tiered',
+    annualFee: 0,
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$1,500 spend in 12 months' },
+    rewards: {
+      groceries: { rate: 5, note: 'Top eligible category, up to $500/mo' },
+      dining: { rate: 5, note: 'Top eligible category, up to $500/mo' },
+      gas: { rate: 5, note: 'Top eligible category, up to $500/mo' },
+      travel: { rate: 5, note: 'Top eligible category, up to $500/mo' },
+      online: { rate: 5, note: 'Top eligible category, up to $500/mo' },
+      streaming: { rate: 5, note: 'Top eligible category, up to $500/mo' },
+      utilities: { rate: 5, note: 'Top eligible category, up to $500/mo' },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['5% on your top spend category each month (up to $500)', 'Auto-detects — no activation needed', 'No annual fee', '0% intro APR for 15 months'],
+    bestFor: 'Top-Category Spenders',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 3,
+    customizableCategories: true
+  },
+  {
+    id: 'chase-sapphire-preferred',
+    name: 'Chase Sapphire Preferred',
+    issuer: 'Chase',
+    type: 'travel',
+    annualFee: 95,
+    signupBonus: { amount: 75000, unit: 'points', value: 1538, requirement: '$5,000 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 3, note: 'Online grocery purchases' },
+      dining: { rate: 3 },
+      gas: { rate: 1 },
+      travel: { rate: 5, note: 'Via Chase portal' },
+      online: { rate: 1 },
+      streaming: { rate: 3 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 2.05,
+    perks: ['25% more value when redeeming through Chase Travel', '$50 annual hotel credit', 'Trip cancellation/interruption insurance', 'No foreign transaction fees'],
+    annualCredits: 50,
+    bestFor: 'Travelers & Diners',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'amex-gold',
+    name: 'Amex Gold Card',
+    issuer: 'American Express',
+    type: 'travel',
+    annualFee: 250,
+    signupBonus: { amount: 60000, unit: 'points', value: 1200, requirement: '$6,000 spend in 6 months' },
+    rewards: {
+      groceries: { rate: 4, note: 'US supermarkets, up to $25,000/yr then 1x' },
+      dining: { rate: 4 },
+      gas: { rate: 1 },
+      travel: { rate: 3, note: 'Flights booked directly or on amextravel.com' },
+      online: { rate: 1 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 2.0,
+    perks: ['$120 annual Uber Cash ($10/mo)', '$120 annual dining credit ($10/mo at select restaurants)', '4x at restaurants & US supermarkets', 'No foreign transaction fees'],
+    annualCredits: 240,
+    bestFor: 'Foodies',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'capital-one-venture-x',
+    name: 'Capital One Venture X',
+    issuer: 'Capital One',
+    type: 'travel',
+    annualFee: 395,
+    signupBonus: { amount: 75000, unit: 'miles', value: 1388, requirement: '$4,000 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 2 },
+      dining: { rate: 2 },
+      gas: { rate: 2 },
+      travel: { rate: 5, note: 'Flights via Capital One Travel' },
+      online: { rate: 2 },
+      streaming: { rate: 2 },
+      utilities: { rate: 2 },
+      everything: { rate: 2 }
+    },
+    pointValue: 1.85,
+    perks: ['$300 annual travel credit (effective fee: $95)', '10,000 anniversary bonus miles ($185 value)', 'Priority Pass & Capital One lounge access', 'TSA PreCheck/Global Entry credit'],
+    annualCredits: 325,
+    bestFor: 'Premium Travelers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'capital-one-venture',
+    name: 'Capital One Venture',
+    issuer: 'Capital One',
+    type: 'travel',
+    annualFee: 95,
+    signupBonus: { amount: 75000, unit: 'miles', value: 1388, requirement: '$4,000 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 2 },
+      dining: { rate: 2 },
+      gas: { rate: 2 },
+      travel: { rate: 5, note: 'Hotels & rental cars via Capital One Travel' },
+      online: { rate: 2 },
+      streaming: { rate: 2 },
+      utilities: { rate: 2 },
+      everything: { rate: 2 }
+    },
+    pointValue: 1.85,
+    perks: ['2x miles on every purchase', '5x on hotels & rental cars via Capital One Travel', 'Transfer partners for outsized redemptions', 'No foreign transaction fees'],
+    bestFor: 'Everyday Travel Earners',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'amex-blue-cash-preferred',
+    name: 'Amex Blue Cash Preferred',
+    issuer: 'American Express',
+    type: 'grocery',
+    annualFee: 95,
+    signupBonus: { amount: 250, unit: 'cash', value: 250, requirement: '$3,000 spend in 6 months' },
+    rewards: {
+      groceries: { rate: 6, note: 'US supermarkets, up to $6,000/yr then 1x' },
+      dining: { rate: 1 },
+      gas: { rate: 3, note: 'Transit including gas, taxis, rideshare, parking, tolls, trains, buses' },
+      travel: { rate: 1 },
+      online: { rate: 1 },
+      streaming: { rate: 6 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['6% cashback at US supermarkets (up to $6k/yr)', '6% on select streaming subscriptions', '3% on transit and gas stations', 'Return protection & purchase security'],
+    annualCredits: 108,
+    bestFor: 'Grocery Shoppers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 2.7,
+    customizableCategories: false
+  },
+  {
+    id: 'amex-blue-cash-everyday',
+    name: 'Amex Blue Cash Everyday',
+    issuer: 'American Express',
+    type: 'grocery',
+    annualFee: 0,
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$2,000 spend in 6 months' },
+    rewards: {
+      groceries: { rate: 3, note: 'US supermarkets, up to $6,000/yr then 1x' },
+      dining: { rate: 1 },
+      gas: { rate: 3 },
+      travel: { rate: 1 },
+      online: { rate: 3 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['3% at US supermarkets (up to $6k/yr)', '3% on gas stations', '3% on online retail purchases', 'No annual fee'],
+    bestFor: 'No-Fee Grocery Earners',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 2.7,
+    customizableCategories: false
+  },
+  {
+    id: 'amazon-prime-visa',
+    name: 'Amazon Prime Rewards Visa Signature',
+    issuer: 'Chase',
+    type: 'cashback',
+    annualFee: 139,
+    annualFeeNote: 'Requires Amazon Prime membership ($139/yr) — counted as effective annual fee',
+    signupBonus: { amount: 150, unit: 'cash', value: 150, requirement: 'Amazon gift card upon approval + 5% back on purchases' },
+    rewards: {
+      groceries: { rate: 2, note: 'Whole Foods Market' },
+      dining: { rate: 2 },
+      gas: { rate: 2 },
+      travel: { rate: 1 },
+      online: { rate: 5, note: 'Amazon.com & Whole Foods' },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 },
+      amazon: { rate: 5, note: 'Amazon.com & Whole Foods Market' }
+    },
+    pointValue: 1.0,
+    perks: ['5% back at Amazon.com & Whole Foods (Prime members)', '$150 Amazon gift card upon approval', '2% back at restaurants, gas stations & drugstores', '1% back on everything else', 'No card annual fee, but requires Amazon Prime ($139/yr)', 'No foreign transaction fees', 'Purchase protection & extended warranty'],
+    bestFor: 'Amazon Shoppers',
+    affiliateLink: '',
+    affiliateNetwork: 'cj',
+    isCrypto: false,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  {
+    id: 'coinbase-card',
+    name: 'Coinbase Card',
+    issuer: 'Coinbase / Pathward',
+    type: 'crypto',
+    annualFee: 0,
+    signupBonus: { amount: 0, unit: 'crypto', value: 0, requirement: '' },
+    rewards: {
+      groceries: { rate: 1, note: '1% default, 4% if you stake USDC, 2% holding stablecoins' },
+      dining: { rate: 1, note: '1% default, 4% if you stake USDC, 2% holding stablecoins' },
+      gas: { rate: 1, note: '1% default, 4% if you stake USDC, 2% holding stablecoins' },
+      travel: { rate: 1, note: '1% default, 4% if you stake USDC, 2% holding stablecoins' },
+      online: { rate: 1, note: '1% default, 4% if you stake USDC, 2% holding stablecoins' },
+      streaming: { rate: 1, note: '1% default, 4% if you stake USDC, 2% holding stablecoins' },
+      utilities: { rate: 1, note: '1% default, 4% if you stake USDC, 2% holding stablecoins' },
+      everything: { rate: 1, note: '1% default, 4% if you stake USDC, 2% holding stablecoins' }
+    },
+    pointValue: 1.0,
+    perks: ['1–4% crypto back on purchases (1% default, 2% with stablecoin balance, 4% with USDC staking)', 'Choose your reward crypto (BTC, ETH, DOGE, etc.)', 'No annual fee, no credit check', 'Visa debit — spend from your crypto balance'],
+    bestFor: 'Crypto Earners',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: true,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  {
+    id: 'coinbase-one-credit',
+    name: 'Coinbase One Credit Card',
+    issuer: 'Coinbase',
+    type: 'crypto',
+    annualFee: 360,
+    signupBonus: { amount: 0, unit: 'crypto', value: 0, requirement: '' },
+    rewards: {
+      groceries: { rate: 4 },
+      dining: { rate: 4 },
+      gas: { rate: 4 },
+      travel: { rate: 4 },
+      online: { rate: 4 },
+      streaming: { rate: 4 },
+      utilities: { rate: 4 },
+      everything: { rate: 4 }
+    },
+    pointValue: 1.0,
+    perks: ['4% Bitcoin back on all purchases', 'Requires Coinbase One subscription (~$30/mo)', 'Credit card — builds credit history', 'Zero trading fees on Coinbase'],
+    bestFor: 'Crypto Maximalists',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: true,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  {
+    id: 'gemini-credit',
+    name: 'Gemini Credit Card',
+    issuer: 'Gemini / WebBank',
+    type: 'crypto',
+    annualFee: 0,
+    signupBonus: { amount: 100, unit: 'crypto', value: 100, requirement: '$500 spend in 90 days' },
+    rewards: {
+      groceries: { rate: 3 },
+      dining: { rate: 3 },
+      gas: { rate: 3 },
+      travel: { rate: 3 },
+      online: { rate: 3 },
+      streaming: { rate: 3 },
+      utilities: { rate: 3 },
+      everything: { rate: 3 }
+    },
+    pointValue: 1.0,
+    perks: ['3% crypto back on all purchases', 'Instant crypto rewards deposited weekly', 'No annual fee', 'Mobile app with real-time spending insights'],
+    bestFor: 'Gemini Users',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: true,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  {
+    id: 'square-cash-card',
+    name: 'Cash App Card',
+    issuer: 'Square / Lincoln Savings Bank',
+    type: 'crypto',
+    annualFee: 0,
+    signupBonus: { amount: 0, unit: 'crypto', value: 0, requirement: '' },
+    rewards: {
+      groceries: { rate: 2, note: 'With Boosts' },
+      dining: { rate: 2, note: 'With Boosts' },
+      gas: { rate: 2, note: 'With Boosts' },
+      travel: { rate: 2, note: 'With Boosts' },
+      online: { rate: 2, note: 'With Boosts' },
+      streaming: { rate: 2, note: 'With Boosts' },
+      utilities: { rate: 2, note: 'With Boosts' },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['Bitcoin rewards with automatic deposits', 'No annual fee', 'Cash App integration', 'Boosts for extra rewards in select categories'],
+    bestFor: 'Cash App Users',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: true,
+    foreignTransactionFee: 3,
+    customizableCategories: false
+  },
+  // ============================================================
+  // Sprint 11 additions (2026-04-30)
+  // ============================================================
+  {
+    id: 'us-bank-altitude-go',
+    name: 'US Bank Altitude Go',
+    issuer: 'US Bank',
+    type: 'cashback',
+    annualFee: 0,
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$1,000 spend in 90 days' },
+    rewards: {
+      groceries: { rate: 2 },
+      dining: { rate: 4 },
+      gas: { rate: 2 },
+      travel: { rate: 2 },
+      online: { rate: 2 },
+      streaming: { rate: 2 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['4x on dining — best no-AF dining rate', '2x on groceries, gas, streaming, and travel', 'No annual fee', '$30 annual streaming credit', '0% intro APR for 12 billing cycles'],
+    bestFor: 'Diners',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false,
+    annualCredits: 30
+  },
+  {
+    id: 'capital-one-quicksilver',
+    name: 'Capital One Quicksilver',
+    issuer: 'Capital One',
+    type: 'cashback',
+    annualFee: 0,
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$500 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 1.5 },
+      dining: { rate: 1.5 },
+      gas: { rate: 1.5 },
+      travel: { rate: 1.5 },
+      online: { rate: 1.5 },
+      streaming: { rate: 1.5 },
+      utilities: { rate: 1.5 },
+      everything: { rate: 1.5 }
+    },
+    pointValue: 1.0,
+    perks: ['1.5% cash back on everything — no categories', '$200 signup bonus after $500 spend', 'No annual fee', '0% intro APR for 15 months', 'No foreign transaction fees'],
+    bestFor: 'Simplicity Seekers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  // ============================================================
+  // Flagship cards added 2026-04-28 (Sprint 3, P1 #24)
+  // ============================================================
+  {
+    id: 'chase-sapphire-reserve',
+    name: 'Chase Sapphire Reserve',
+    issuer: 'Chase',
+    type: 'travel',
+    annualFee: 795, // Raised June 2025
+    signupBonus: { amount: 100000, unit: 'points', value: 2050, requirement: '$5,000 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 1 },
+      dining: { rate: 5 },
+      gas: { rate: 1 },
+      travel: { rate: 8, note: '8x via Chase Travel; 4x flights via Chase Travel; 3x other travel direct' },
+      online: { rate: 1 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 2.05,
+    perks: ['8x travel via Chase Travel', '5x dining', '$300 annual travel credit', 'Priority Pass + Chase Sapphire Lounges', 'Global Entry/TSA PreCheck credit', 'Trip protection, primary rental car insurance'],
+    annualCredits: 300,
+    annualCreditNote: '$300 annual travel credit',
+    bestFor: 'Frequent Travelers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'amex-platinum',
+    name: 'Amex Platinum',
+    issuer: 'American Express',
+    type: 'travel',
+    annualFee: 895, // Raised from $695 in Jan 2026
+    signupBonus: { amount: 80000, unit: 'points', value: 1600, requirement: '$8,000 spend in 6 months' },
+    rewards: {
+      groceries: { rate: 1 },
+      dining: { rate: 1 },
+      gas: { rate: 1 },
+      travel: { rate: 5, note: '5x flights & prepaid hotels via Amex Travel' },
+      online: { rate: 1 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 2.0,
+    perks: ['5x flights & hotels via Amex Travel', '$200 airline incidental credit', '$200 hotel credit (FHR/THC)', '$200 Uber credit', '$240 digital entertainment credit', '$300 Equinox credit', '$199 CLEAR Plus credit', '$155 Walmart+ credit', '$100 Saks credit', 'Centurion Lounge access', 'Marriott Gold + Hilton Gold status'],
+    annualCredits: 1394, // Conservative net of all credits
+    annualCreditNote: 'Up to $2,400+ in credits if fully used',
+    bestFor: 'Premium Travel Stackers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'bilt-blue',
+    name: 'Bilt Blue',
+    issuer: 'Wells Fargo',
+    type: 'travel',
+    annualFee: 0,
+    signupBonus: { amount: 0, unit: 'points', value: 0, requirement: '' },
+    rewards: {
+      groceries: { rate: 1 },
+      dining: { rate: 3 },
+      gas: { rate: 1 },
+      travel: { rate: 2 },
+      online: { rate: 1 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      rent: { rate: 1, note: '1x on rent (up to 100k pts/yr) — NO surcharge fee' },
+      everything: { rate: 1 }
+    },
+    pointValue: 2.2, // TPG: Bilt points highly valued via transfer partners
+    perks: ['1x on rent — no transaction fee (KEY differentiator)', '3x dining', '2x travel', 'Transfer to airlines & hotels (Hyatt, AA, etc.)', 'Rent Day 2x bonus on the 1st of each month', 'No annual fee'],
+    bestFor: 'Renters & Foodies',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false,
+    notes: 'As of Jan 2026 the original Bilt Mastercard was replaced by 3 tiers: Bilt Blue ($0), Bilt Obsidian ($95), Bilt Palladium ($495). This entry is the entry-level Blue.'
+  },
+  {
+    id: 'citi-strata-premier',
+    name: 'Citi Strata Premier',
+    issuer: 'Citi',
+    type: 'travel',
+    annualFee: 95,
+    signupBonus: { amount: 60000, unit: 'points', value: 1140, requirement: '$4,000 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 3 },
+      dining: { rate: 3 },
+      gas: { rate: 3 },
+      travel: { rate: 3, note: '3x air travel + hotels' },
+      online: { rate: 1 },
+      streaming: { rate: 1 },
+      utilities: { rate: 1 },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.9,
+    perks: ['3x on dining, groceries, gas, air, hotels', '$100 hotel credit ($500+ booking via Citi Travel)', 'Trip protection', 'No foreign transaction fees', 'Renamed from Citi Premier in 2025'],
+    annualCredits: 100,
+    annualCreditNote: '$100 hotel credit',
+    bestFor: 'Mid-tier Travelers',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'wells-fargo-autograph',
+    name: 'Wells Fargo Autograph',
+    issuer: 'Wells Fargo',
+    type: 'tiered',
+    annualFee: 0,
+    signupBonus: { amount: 20000, unit: 'points', value: 330, requirement: '$1,000 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 1 },
+      dining: { rate: 3 },
+      gas: { rate: 3 },
+      travel: { rate: 3 },
+      online: { rate: 1 },
+      streaming: { rate: 3 },
+      utilities: { rate: 3, note: 'Phone plans included' },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.65,
+    perks: ['3x on dining, travel, gas, transit, streaming, phone plans', 'No annual fee', 'No foreign transaction fees', 'Cell phone protection'],
+    bestFor: 'No-AF 3x Hunters',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'capital-one-savor',
+    name: 'Capital One Savor',
+    issuer: 'Capital One',
+    type: 'cashback',
+    annualFee: 0, // Now $0 AF (the $95 version was discontinued)
+    signupBonus: { amount: 200, unit: 'cash', value: 200, requirement: '$500 spend in 3 months' },
+    rewards: {
+      groceries: { rate: 3 },
+      dining: { rate: 3 },
+      gas: { rate: 1 },
+      travel: { rate: 1 },
+      online: { rate: 1 },
+      streaming: { rate: 3 },
+      utilities: { rate: 1 },
+      entertainment: { rate: 3, note: 'Concerts, sports, movies' },
+      everything: { rate: 1 }
+    },
+    pointValue: 1.0,
+    perks: ['3% on dining, groceries, entertainment, streaming', '1% on everything else', 'No annual fee (AF version discontinued)', 'No foreign transaction fees'],
+    bestFor: 'Family Spenders',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  },
+  {
+    id: 'bofa-premium-rewards-elite',
+    name: 'BofA Premium Rewards Elite',
+    issuer: 'Bank of America',
+    type: 'travel',
+    annualFee: 550,
+    signupBonus: { amount: 75000, unit: 'points', value: 750, requirement: '$5,000 spend in 90 days' },
+    rewards: {
+      groceries: { rate: 1.5 },
+      dining: { rate: 2 },
+      gas: { rate: 1.5 },
+      travel: { rate: 2 },
+      online: { rate: 1.5 },
+      streaming: { rate: 1.5 },
+      utilities: { rate: 1.5 },
+      everything: { rate: 1.5 }
+    },
+    pointValue: 1.0,
+    perks: ['2x travel & dining', 'Up to 5.25% effective with Preferred Rewards (Diamond Honors)', '$300 annual travel credit', '$150 lifestyle credit', 'Priority Pass', 'Trip protection'],
+    annualCredits: 450,
+    annualCreditNote: '$300 travel + $150 lifestyle credits',
+    bestFor: 'BofA Preferred Rewards Members',
+    affiliateLink: '',
+    affiliateNetwork: '',
+    isCrypto: false,
+    foreignTransactionFee: 0,
+    customizableCategories: false
+  }
+];
+
+// Custom category reward rate mappings
+// These map custom spending categories to specific card earn rates.
+// Cards not listed here default to their 'everything' rate for custom categories.
+const customCategoryMappings = {
+  drugstore: {
+    label: 'Drugstore / Pharmacy',
+    aliases: ['drugstore', 'pharmacy', 'pharmacies'],
+    cards: {
+      'chase-freedom-flex': 3,   // 3% on drugstores
+      'discover-it-cash-back': 3, // Rotating: sometimes includes drugstores, estimate ~3%
+      'amazon-prime-visa': 2,    // 2% at drugstores
+      'wells-fargo-autograph': 3, // 3% on phone plans, but drugstores not specifically bonus'd; falls to 1x
+    }
+  },
+  fitness: {
+    label: 'Fitness / Gym',
+    aliases: ['fitness', 'gym', 'gym memberships', 'workout'],
+    cards: {} // No cards have gym/fitness bonuses — all default to 1x/1%
+  },
+  rent: {
+    label: 'Rent',
+    aliases: ['rent', 'rent payment', 'apartment rent'],
+    cards: {
+      'bilt-blue': 1  // 1x on rent (no surcharge) — key differentiator
+    }
+  },
+  childcare: {
+    label: 'Childcare',
+    aliases: ['childcare', 'daycare', 'babysitting', 'child care'],
+    cards: {} // No cards have childcare bonuses — all default to 1x/1%
+  }
+};
+
+// Point valuations reference (TPG April 2026)
+const pointValuations = {
+  'Chase Ultimate Rewards': 2.05,
+  'Amex Membership Rewards': 2.0,
+  'Citi ThankYou Rewards': 1.9,
+  'Capital One Miles': 1.85,
+  'Bilt Points': 2.2,
+  'Wells Fargo Rewards': 1.65,
+  'Cash Back': 1.0,
+  'Coinbase Crypto': 1.0
+};
+
+// Type display config
+const typeConfig = {
+  cashback: { label: 'Cashback', color: '#059669', bg: '#ecfdf5', icon: '💵' },
+  travel: { label: 'Travel', color: '#2563eb', bg: '#eff4ff', icon: '✈️' },
+  tiered: { label: 'Tiered / Rotating', color: '#7c3aed', bg: '#f5f3ff', icon: '🔄' },
+  grocery: { label: 'Grocery & Gas', color: '#ea580c', bg: '#fff7ed', icon: '🛒' },
+  crypto: { label: 'Crypto', color: '#d97706', bg: '#fffbeb', icon: '₿' }
+};

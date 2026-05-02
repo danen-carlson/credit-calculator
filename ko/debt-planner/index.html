@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt Payoff Planner — Snowball vs Avalanche Calculator | CreditStud.io</title>
+  <meta name="description" content="Free debt payoff planner. Compare snowball vs avalanche strategies, see your debt-free date, and visualize your path to zero debt.">
+  <link rel="canonical" href="https://creditstud.io/ko/debt-planner/">
+  <meta property="og:title" content="Debt Payoff Planner — Snowball vs Avalanche Calculator | CreditStud.io">
+  <meta property="og:description" content="Free debt payoff planner. Compare snowball vs avalanche strategies, see your debt-free date, and visualize your path to zero debt.">
+  <meta property="og:url" content="https://creditstud.io/debt-planner/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CreditStud.io">
+  <meta property="og:image" content="https://creditstud.io/og-images/debt-planner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Debt Payoff Planner — Snowball vs Avalanche Calculator | CreditStud.io">
+  <meta name="twitter:description" content="Free debt payoff planner. Compare snowball vs avalanche strategies, see your debt-free date, and visualize your path to zero debt.">
+  <meta name="twitter:image" content="https://creditstud.io/og-images/debt-planner.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../shared/components.css">
+  <link rel="stylesheet" href="planner.css">
+  <link rel="stylesheet" href="../shared/share.css">
+
+  <!-- FAQ JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the debt snowball method?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The debt snowball method, popularized by Dave Ramsey, involves paying minimum payments on all debts while putting any extra money toward your smallest balance first. Once that debt is paid off, you roll its payment amount into the next smallest balance, creating a 'snowball' effect. This method is psychologically motivating because you see quick wins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the debt avalanche method?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The debt avalanche method (also called debt stacking) involves paying minimums on all debts while directing extra payments to the debt with the highest interest rate first. Once that's paid off, you move to the next highest rate. This is mathematically optimal and saves the most money on interest over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which is better: debt snowball or debt avalanche?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The avalanche method saves more money on interest, while the snowball method provides quicker psychological wins. Research shows the best method is the one you'll actually stick with. If you need motivation, try snowball. If you're disciplined and want to minimize cost, try avalanche."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my debt-free date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To calculate your debt-free date, list all debts with their balances, interest rates, and minimum payments. Then simulate paying them off month by month, applying extra payments according to your chosen strategy (snowball or avalanche). Our free Debt Payoff Planner does this calculation instantly and shows you exactly when you'll be debt-free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I pay off debt or invest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your debt interest rate is above 7-8%, paying it off first usually makes more sense than investing. High-interest credit card debt (15-25% APR) is essentially a guaranteed return when you pay it down. For lower-rate debt like mortgages, investing may yield better returns. Use our planner to see exactly how much interest you'll save with extra payments."
+      }
+    }
+  ],
+  "dateModified": "2026-05-01"
+}
+</script>
+
+  <!-- HowTo JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Pay Off Debt Faster Using Snowball vs Avalanche",
+  "description": "Steps to use the debt payoff planner to compare snowball and avalanche strategies and find your fastest path to becoming debt-free.",
+  "totalTime": "PT10M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "CreditStud.io Debt Payoff Planner"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Add Your Debts",
+      "text": "Enter each debt including the balance, interest rate, and minimum payment. We've pre-filled some examples to get you started.",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Set Your Extra Monthly Payment",
+      "text": "Determine how much extra you can put toward debt each month. Move the slider or enter a specific amount to see how it affects your debt-free date.",
+      "position": 2
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Compare Strategies",
+      "text": "Review the three payoff strategies side by side: snowball (smallest balance first), avalanche (highest interest rate first), and custom (your own approach). The winner is highlighted.",
+      "position": 3
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Explore Balance Transfer Options",
+      "text": "See how much you could save by transferring a high-interest debt to a 0% APR balance transfer card using the consolidation simulator.",
+      "position": 4
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Visualize Your Progress",
+      "text": "View interactive charts showing your debt decreasing over time, strategy comparisons, and payoff milestones to stay motivated.",
+      "position": 5
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Print Your Plan",
+      "text": "Generate a printable monthly payment schedule to follow as you work toward becoming debt-free.",
+      "position": 6
+    }
+  ],
+  "dateModified": "2026-05-01"
+}
+</script>
+
+  <!-- BreadcrumbList JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://creditstud.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Debt Planner",
+        "item": "https://creditstud.io/debt-planner/"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="manifest" href="/ko/manifest.webmanifest">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/svg+xml" href="/ko/icon.svg">
+  <link rel="apple-touch-icon" href="/ko/icon.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CreditStud">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440" crossorigin="anonymous"></script>
+<!-- GA4 -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-99CP2NLCD9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-99CP2NLCD9');
+</script>
+<!-- /GA4 -->
+
+  <link rel="alternate" type="application/rss+xml" title="CreditStud.io Blog RSS Feed" href="/ko/blog/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="CreditStud.io Blog Atom Feed" href="/ko/blog/atom.xml">
+  <link rel="alternate" type="application/feed+json" title="CreditStud.io Blog JSON Feed" href="/ko/blog/feed.json">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Debt Payoff Strategy Comparison Data",
+  "description": "Snowball vs avalanche method comparison data for credit card debt payoff, including month-by-month schedules and balance transfer modeling.",
+  "url": "https://creditstud.io/debt-planner/",
+  "creator": {
+    "@type": "Organization",
+    "name": "CreditStud.io",
+    "url": "https://creditstud.io"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "JSON API",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://creditstud.io/api/"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Card Terms Database",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://creditstud.io/data/cards.json"
+    }
+  ],
+  "temporalCoverage": "2026-04/2026-05",
+  "spatialCoverage": "United States",
+  "dateModified": "2026-05-01"
+}
+</script>
+  <link rel="stylesheet" href="/ko/shared/language-switcher.css">
+<script>window.__lang = 'ko';</script>
+<script src="/locales/ko.js"></script>
+<script src="/locales/ko/debt-planner.json" type="application/json" data-locale="ko" data-tool="debt-planner"></script>
+<link rel="alternate" hreflang="en" href="https://creditstud.io/debt-planner/">
+<link rel="alternate" hreflang="es" href="https://creditstud.io/es/debt-planner/">
+<link rel="alternate" hreflang="zh" href="https://creditstud.io/zh/debt-planner/">
+<link rel="alternate" hreflang="tl" href="https://creditstud.io/tl/debt-planner/">
+<link rel="alternate" hreflang="ko" href="https://creditstud.io/ko/debt-planner/">
+<link rel="alternate" hreflang="hi" href="https://creditstud.io/hi/debt-planner/">
+<link rel="alternate" hreflang="x-default" href="https://creditstud.io/debt-planner/">
+</head>
+<body>
+  <div id="app">
+    <!-- Skip to content link -->
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+    
+    <!-- DISCLOSURE -->
+<div class="site-disclosure-banner">
+  <div class="site-disclosure-container">
+    CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations. 
+    <a href="/ko/disclosure.html">Learn more</a>
+  </div>
+</div>
+<!-- /DISCLOSURE -->
+<!-- /DISCLOSURE -->
+<!-- /DISCLOSURE -->
+    
+    <!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="top-nav">
+      <a href="/ko/" class="nav-link">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+          Calculators ▾
+        </button>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Card Comparison</span>
+            <a href="/ko/compare/" class="nav-dropdown-link">Compare Credit Cards & BNPL</a>
+            <a href="/ko/rewards/" class="nav-dropdown-link">Rewards Calculator</a>
+            <a href="/ko/cards/" class="nav-dropdown-link">Card Reviews</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Debt & Payoff</span>
+            <a href="/ko/debt-planner/" class="nav-dropdown-link">Debt Payoff Planner</a>
+            <a href="/ko/min-payment/" class="nav-dropdown-link">Minimum Payment Calculator</a>
+            <a href="/ko/loan-vs-bt/" class="nav-dropdown-link">Loan vs Balance Transfer</a>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-heading">Card Finder</span>
+            <a href="/ko/af-worth-it/" class="nav-dropdown-link">Annual Fee Calculator</a>
+            <a href="/ko/score-simulator/" class="nav-dropdown-link">Credit Score Simulator</a>
+          </div>
+        </div>
+      </div>
+      <a href="/ko/learn/" class="nav-link">Learn</a>
+      <a href="/ko/blog/" class="nav-link">Blog</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="language-switcher">
+        <button class="lang-toggle" aria-label="Select language" aria-expanded="false">
+          🌐 <span class="current-lang">EN</span>
+        </button>
+        <div class="lang-dropdown">
+          <a href="/" hreflang="en" lang="en">English</a>
+          <a href="/es/" hreflang="es" lang="es">Español</a>
+          <a href="/zh/" hreflang="zh" lang="zh">简体中文</a>
+          <a href="/tl/" hreflang="tl" lang="tl">Tagalog</a>
+          <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+          <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+        </div>
+      </div>
+      <a href="/ko/" class="logo">💳 Credit<span>Stud.io</span></a>
+    </div>
+    <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
+  </div>
+</header>
+<!-- /HEADER -->
+<!-- /HEADER -->
+<!-- /HEADER -->
+
+    <!-- Step 1: Add Your Debts -->
+    <section class="step" id="step-debts">
+      <div class="container" id="main">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h2>Add Your Debts</h2>
+        </div>
+        <p class="step-desc">Enter each debt below. We've pre-filled some examples — edit or remove them.</p>
+
+        <div id="debt-list" class="debt-list">
+          <!-- Debt cards rendered by JS -->
+        </div>
+
+        <button class="btn-add" id="add-debt-btn" style="margin-top:12px;" aria-label="Add another debt">+ Add Another Debt</button>
+
+        <!-- Extra Payment / Windfall trigger -->
+        <button class="btn-extra-payment" id="extra-payment-btn" aria-label="Add a one-time extra payment">💰 + Extra Payment</button>
+
+        <!-- Share / data stamp row -->
+        <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
+          <div id="share-mount"></div>
+          <div id="data-stamp-mount"></div>
+        </div>
+
+        <!-- Total Debt Summary -->
+        <div class="debt-summary" id="debt-summary">
+          <div class="debt-summary-item">
+            <div class="debt-summary-label">Total Balance</div>
+            <div class="debt-summary-value" id="total-balance">$0</div>
+          </div>
+          <div class="debt-summary-item">
+            <div class="debt-summary-label">Total Min Payments</div>
+            <div class="debt-summary-value" id="total-min">$0</div>
+          </div>
+          <div class="debt-summary-item">
+            <div class="debt-summary-label">Weighted Avg APR</div>
+            <div class="debt-summary-value" id="weighted-apr">0%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- P1 #18: APR autosuggest – dropdown is rendered by JS, datalist is fallback -->
+        <datalist id="aprSuggestList">
+          <option value="Chase Sapphire Preferred (24.49% APR)">
+          <option value="Chase Sapphire Reserve (23.99% APR)">
+          <option value="Amex Blue Cash Preferred (21.24% APR)">
+          <option value="Amex Blue Cash Everyday (21.24% APR)">
+          <option value="Amex Gold (21.24% APR)">
+          <option value="Amex Platinum (22.49% APR)">
+          <option value="Capital One Quicksilver (26.49% APR)">
+          <option value="Capital One Venture (24.49% APR)">
+          <option value="Capital One Venture X (22.49% APR)">
+          <option value="Discover It Cash Back (22.49% APR)">
+          <option value="Discover It Chrome (22.49% APR)">
+          <option value="Citi Double Cash (23.24% APR)">
+          <option value="Citi Simplicity (25.99% APR)">
+          <option value="Chase Freedom Unlimited (21.99% APR)">
+          <option value="Chase Freedom Flex (22.49% APR)">
+          <option value="Wells Fargo Active Cash (22.49% APR)">
+          <option value="Wells Fargo Reflect (25.24% APR)">
+          <option value="Bank of America Cash Rewards (23.24% APR)">
+          <option value="US Bank Altitude Go (21.49% APR)">
+          <option value="Amazon Prime Visa (21.24% APR)">
+        </datalist>
+
+        <!-- Step 2: Extra Payment -->
+        <section class="step" id="step-extra">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h2>Extra Monthly Payment</h2>
+        </div>
+        <p class="step-desc">How much extra can you put toward debt each month? Move the slider and watch your debt-free date change.</p>
+
+        <div class="extra-payment-section">
+          <div class="extra-payment-display">
+            <div>
+              <div class="extra-payment-amount" id="extra-amount">$200</div>
+              <div class="extra-payment-total">Total monthly: <strong id="extra-total">$0</strong></div>
+            </div>
+          </div>
+          <input type="range" id="extra-slider" class="slider" min="0" max="2000" value="200" step="25">
+          <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px;">
+            <div class="input-with-prefix" style="width:140px;">
+              <span class="prefix">$</span>
+              <input type="number" id="extra-input" value="200" min="0" step="25" inputmode="numeric" style="padding-left:38px;">
+            </div>
+            <span style="font-size:0.85rem;color:var(--text-secondary);">per month extra</span>
+          </div>
+          <div class="slider-presets">
+            <button class="preset-btn" data-value="0" data-action="set-preset" aria-label="Set extra payment to $0">$0</button>
+            <button class="preset-btn" data-value="50" data-action="set-preset" aria-label="Set extra payment to $50">$50</button>
+            <button class="preset-btn" data-value="100" data-action="set-preset" aria-label="Set extra payment to $100">$100</button>
+            <button class="preset-btn active" data-value="200" data-action="set-preset" aria-label="Set extra payment to $200">$200</button>
+            <button class="preset-btn" data-value="300" data-action="set-preset" aria-label="Set extra payment to $300">$300</button>
+            <button class="preset-btn" data-value="500" data-action="set-preset" aria-label="Set extra payment to $500">$500</button>
+            <button class="preset-btn" data-value="750" data-action="set-preset" aria-label="Set extra payment to $750">$750</button>
+            <button class="preset-btn" data-value="1000" data-action="set-preset" aria-label="Set extra payment to $1,000">$1,000</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step" id="step-results">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <h2>Your Payoff Plan</h2>
+        </div>
+        <p class="step-desc">Three strategies compared side by side. The winner is highlighted.</p>
+
+        <!-- P1 #16: Debt-Free Hero Callout -->
+        <div id="debt-free-hero"></div>
+
+        <!-- Status announcement for screen readers -->
+        <div id="debt-calc-status" class="sr-only" aria-live="polite"></div>
+
+        <div id="results-container" aria-live="polite">
+          <div id="debt-skeleton" class="skeleton">
+            <div class="skeleton-bar" style="width: 60%;"></div>
+            <div class="skeleton-bar" style="width: 100%;"></div>
+            <div class="skeleton-bar" style="width: 80%;"></div>
+            <div class="skeleton-bar" style="width: 90%;"></div>
+            <div class="skeleton-bar" style="width: 70%;"></div>
+          </div>
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3.5: Balance Transfer Consolidation -->
+    <section class="step" id="step-consolidation">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">💸</span>
+          <h2>Balance Transfer Consolidation</h2>
+        </div>
+        <p class="step-desc">See how much you could save by transferring a debt to a 0% APR balance transfer card. This is a "what-if" simulation — it won't change your main plan.</p>
+
+        <div class="consolidation-card">
+          <div class="consolidation-inputs">
+            <div class="input-group">
+              <label>Select Debts to Transfer</label>
+              <div id="consolidation-debt-checkboxes">
+                <!-- Checkboxes will be populated by JavaScript -->
+              </div>
+            </div>
+            <div class="input-group">
+              <label>Balance Transfer Card</label>
+              <select id="consolidation-card-select">
+                <option value="">— Choose a card —</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Transfer Amount</label>
+              <div class="input-with-prefix">
+                <span class="prefix">$</span>
+                <input type="number" id="consolidation-amount" value="0" min="0" step="100" inputmode="numeric" style="padding-left:38px;">
+              </div>
+              <small id="consolidation-limit-info" style="color:var(--text-secondary);font-size:0.75rem;margin-top:4px;display:block;"></small>
+            </div>
+          </div>
+          <button class="btn-consolidate" id="consolidate-btn" data-action="run-consolidation" aria-label="Simulate debt consolidation">🔍 Simulate Consolidation</button>
+          <button class="btn-ghost btn-reset-consolidation" id="reset-consolidation-btn" data-action="reset-consolidation" style="display:none;" aria-label="Reset debt consolidation simulation">↩ Reset Simulation</button>
+        </div>
+
+        <div id="consolidation-results" style="display:none;">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 4: Visual Timeline -->
+    <section class="step" id="step-charts">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">4</span>
+          <h2>Visualize Your Progress</h2>
+        </div>
+        <p class="step-desc">Watch your debts shrink over time. Switch between strategies to compare.</p>
+
+        <div class="chart-toggle">
+          <button class="chart-toggle-btn active" data-strategy="snowball" data-action="set-chart-strategy" aria-label="Show snowball strategy chart">🔵 Snowball</button>
+          <button class="chart-toggle-btn" data-strategy="avalanche" data-action="set-chart-strategy" aria-label="Show avalanche strategy chart">🟣 Avalanche</button>
+        </div>
+
+        <div class="strategy-toggle-explanation" id="strategy-explanations">
+          <div class="explanation-item">
+            <strong>🔵 Snowball</strong>
+            Pay smallest balance first. Best for motivation — you see debts disappear faster.
+          </div>
+          <div class="explanation-item">
+            <strong>🟣 Avalanche</strong>
+            Pay highest interest rate first. Best mathematically — saves the most money.
+          </div>
+        </div>
+
+        <!-- Chart 1: Debt Over Time -->
+        <div class="chart-section">
+          <h3>📉 Your Debt Over Time</h3>
+          <div class="chart-container">
+            <canvas id="debt-over-time-chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Strategy Comparison -->
+        <div class="chart-section">
+          <h3>⚖️ Strategy Comparison</h3>
+          <div class="chart-container">
+            <canvas id="strategy-comparison-chart" aria-label="Comparison of debt balance over time for snowball, avalanche, and custom strategies"></canvas>
+          </div>
+          <div id="strategy-comparison-table-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Chart 3: Payoff Milestones -->
+        <div class="chart-section">
+          <h3>🏁 Payoff Milestones</h3>
+          <div id="milestone-timeline">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div id="chart-error" style="display:none;text-align:center;padding:20px;background:var(--warning-light);border-radius:var(--radius);margin-top:16px;">
+          <div style="color:var(--warning);font-weight:500;margin-bottom:8px;">📉 Charts failed to load</div>
+          <button class="btn-ghost" data-action="retry-charts" style="padding:8px 16px;font-size:0.9rem;">🔄 Retry Charts</button>
+          <div style="font-size:0.8rem;color:var(--text-secondary);margin-top:8px;">Chart.js might be blocked or loading slowly</div>
+        </div>
+
+        <!-- Credit Score Simulator -->
+        <div class="chart-section">
+          <h3>📈 Credit Score Impact</h3>
+          <div class="chart-container">
+            <canvas id="credit-score-chart" aria-label="Credit score projection over time"></canvas>
+          </div>
+          <div id="credit-score-simulator">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 5: Monthly Schedule -->
+    <section class="step" id="step-schedule">
+      <div class="container">
+        <div class="schedule-section">
+          <div class="schedule-header" data-action="toggle-schedule">
+            <h3>📅 Monthly Payment Schedule</h3>
+            <span class="schedule-toggle-icon" id="schedule-icon">▼</span>
+          </div>
+          <div class="schedule-body" id="schedule-body">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:16px;">
+          <button class="btn-save-pdf" data-action="save-pdf" aria-label="Save your payoff plan as PDF">📄 Save as PDF</button>
+          <button class="print-btn" data-action="print">🖨️ Print Your Plan</button>
+          <button id="export-csv-btn" class="btn-ghost" style="margin-left: 10px;" data-action="export-csv" aria-label="Export amortization schedule as CSV">📊 Export Schedule (CSV)</button>
+          <div id="export-status" aria-live="polite" style="margin-top: 8px; font-size: 0.85rem; color: var(--success);"></div>
+        </div>
+        <!-- Print-only branding footer -->
+        <div class="print-header print-only">
+          <h2>Debt Payoff Plan — <span id="print-date"></span></h2>
+          <p>Generated by CreditStud.io</p>
+        </div>
+        <div class="print-branding">💳 CreditStud.io — Free Debt Payoff Planner | creditstud.io/debt-planner</div>
+      </div>
+    </section>
+
+    <!-- Step 6: Smart Recommendations -->
+    <section class="step" id="step-recommendations">
+      <div class="container">
+        <div class="step-header">
+          <span class="step-number">💡</span>
+          <h2>Smart Recommendations</h2>
+        </div>
+        <p class="step-desc">Personalized tips based on your debt profile.</p>
+
+        <div id="recommendations" class="recommendations">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content -->
+    <section class="step">
+      <div class="container">
+        <div class="seo-content">
+          <h2>What Is the Debt Snowball Method?</h2>
+          <p>The debt snowball method is a debt repayment strategy popularized by financial expert Dave Ramsey. Here's how it works: you make minimum payments on all your debts, then put any extra money toward the debt with the <strong>smallest balance</strong>. Once that smallest debt is paid off, you take the money you were putting toward it (minimum + extra) and apply it to the next smallest balance. This creates a "snowball" effect — as each debt is eliminated, the amount you can put toward the next one grows larger and larger.</p>
+          <p>The snowball method is <strong>psychologically powerful</strong>. Getting quick wins by eliminating small debts early builds momentum and motivation, which helps you stay committed to your payoff plan. Studies have shown that people using the snowball method are more likely to stick with their debt repayment plan because they see tangible progress faster.</p>
+
+          <h2>What Is the Debt Avalanche Method?</h2>
+          <p>The debt avalanche method (also called debt stacking) takes a more mathematical approach. Instead of targeting the smallest balance, you direct all extra payments to the debt with the <strong>highest interest rate</strong>. Once that's paid off, you move to the next highest rate. This strategy is <strong>mathematically optimal</strong> — it minimizes the total interest you'll pay over the life of your debts.</p>
+          <p>The avalanche method can save you hundreds or even thousands of dollars compared to the snowball method, especially when you have high-interest credit card debt. The tradeoff is that it may take longer to see your first debt fully paid off, which can feel discouraging for some people.</p>
+
+          <h2>Which Method Is Better?</h2>
+          <p>The honest answer: <strong>the best method is the one you'll actually stick with.</strong> If you need quick wins to stay motivated, the snowball method might be your best bet. If you're disciplined and want to minimize total cost, the avalanche method is the clear winner. Use our free Debt Payoff Planner above to compare both strategies with your actual numbers — seeing the difference in black and white often makes the decision easy.</p>
+          <p>Many financial advisors recommend a hybrid approach: use the snowball method for smaller debts to build momentum, then switch to avalanche for larger balances. Or simply pick one and commit. The most important thing is to <strong>start paying more than the minimum</strong> — even an extra $50/month can shave months or years off your debt-free date.</p>
+          <p>Want to learn more? Read our guide on <a href="/ko/blog/bnpl-vs-credit-card.html">BNPL vs credit card costs</a> to understand how different payment methods affect your overall debt, or check out <a href="/ko/blog/best-0-apr-credit-cards.html">the best 0% APR credit cards</a> for balance transfer opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- P2 #34: Date-of-data stamp -->
+    <div style="text-align:center;margin-top:8px;font-size:0.75rem;color:var(--text-secondary);" id="dateLabel"></div>
+
+    <!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
+    <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/ko/disclosure.html">Affiliate Disclosure</a>
+    </p>
+  </div>
+</footer>
+<script>
+// Mobile nav dropdown toggle
+if (document.querySelector('.nav-dropdown-toggle')) {
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    var dropdown = this.closest('.nav-dropdown');
+    var isOpen = dropdown.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.querySelector('.top-nav').classList.remove('open');
+      document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+// Highlight active nav item
+(function() {
+  var path = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+    if (linkPath === path) {
+      link.classList.add('active');
+    }
+  });
+})();
+</script>
+<!-- /FOOTER -->
+<!-- /FOOTER -->
+<!-- /FOOTER -->
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="../shared/email-capture.css">
+<script>window.CREDITSTUD_EMAIL_ENDPOINT = 'https://api.creditstud.io/subscribe';</script>
+  <script src="../shared/email-capture.js"></script>
+  <script src="planner.js"></script>
+  <script src="charts.js"></script>
+  <script src="../shared/share.js"></script>
+  <script>
+    // Wire share.js to the debt planner.
+    // The debt list is dynamic so we serialize it as JSON via a customField.
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.CreditStudShare) return;
+
+      const config = {
+        pageKey: 'debt',
+        simpleInputs: ['extra-input', 'extra-slider'],
+        aliases: [
+          { alias: 'payment', id: 'extra-input' }
+        ],
+        customFields: [
+          {
+            name: 'debts',
+            json: true,
+            get: () => (typeof window.debts !== 'undefined' ? window.debts : []),
+            set: (val) => {
+              if (!Array.isArray(val)) return;
+              if (typeof window.setDebts === 'function') {
+                window.setDebts(val);
+              } else if (typeof window.debts !== 'undefined') {
+                window.debts.length = 0;
+                val.forEach(d => window.debts.push(d));
+              }
+              if (typeof window.renderDebtCards === 'function') window.renderDebtCards();
+              if (typeof window.updateSummary === 'function') window.updateSummary();
+              if (typeof window.recalculate === 'function') window.recalculate();
+            }
+          }
+        ],
+        shareButtonMount: '#share-mount',
+        stampMount: '#data-stamp-mount',
+        onHydrate: () => {
+          if (typeof window.recalculate === 'function') window.recalculate();
+        }
+      };
+
+      window.CreditStudShare.init(config);
+
+      // Ask the planner to notify us when the dynamic debt list changes
+      window.__shareConfig = config;
+      document.addEventListener('debts-changed', () => {
+        window.CreditStudShare.notifyChange(config);
+      });
+    });
+  </script>
+  <script defer src="/shared/pwa.js"></script>
+  <script>
+  (function(){fetch("/data-version.json").then(r=>r.json()).then(d=>{const el=document.getElementById("data-updated");if(el&&d.displayDate)el.textContent="Rates as of "+d.displayDate;}).catch(()=>{});})();
+  </script>
+  <script src="/shared/i18n.js"></script>
+<script src="/shared/language-switcher.js"></script>
+</body>
+</html>

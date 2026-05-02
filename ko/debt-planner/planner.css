@@ -1,0 +1,1893 @@
+/* Debt Planner - Page-specific styles */
+
+/* Planner Header */
+.planner-header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+  color: white;
+  padding: 40px 0 32px;
+  text-align: center;
+}
+
+.planner-header .header-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* Debt Cards */
+.debt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.debt-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr auto auto;
+  gap: 12px;
+  align-items: end;
+  animation: slideIn 0.3s ease-out;
+}
+
+.debt-card .input-group {
+  margin-bottom: 0;
+}
+
+.debt-card .input-group label {
+  font-size: 0.75rem;
+  margin-bottom: 4px;
+}
+
+.debt-card .input-group input {
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
+}
+
+.debt-card .btn-remove {
+  width: 44px; /* Increased for better tap target */
+  height: 44px; /* Increased for better tap target */
+  border: none;
+  background: var(--danger-light);
+  color: var(--danger);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  align-self: end;
+}
+
+.debt-card .btn-remove:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* Mobile enhancements for debt cards */
+@media (max-width: 600px) {
+  .debt-card {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 10px;
+  }
+  
+  .debt-card .btn-remove {
+    justify-self: end; /* Align to end on mobile */
+  }
+  .debt-card-controls {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Total Debt Summary */
+.debt-summary {
+  background: var(--primary-light);
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.debt-summary-item {
+  text-align: center;
+}
+
+.debt-summary-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.debt-summary-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Extra Payment Section */
+.extra-payment-section {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.extra-payment-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.extra-payment-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.extra-payment-total {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.extra-payment-total strong {
+  color: var(--text);
+}
+
+.slider-presets {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.preset-btn {
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preset-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.preset-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Strategy Cards */
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Results Container Skeleton */
+#results-container {
+  position: relative;
+}
+
+#debt-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  display: none;
+}
+
+#debt-skeleton.active {
+  display: block;
+}
+
+.strategy-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.strategy-card.winner {
+  border-color: var(--success);
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.15);
+}
+
+.strategy-card.winner::before {
+  content: '🏆 Best Value';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--success);
+  color: white;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.strategy-card .strategy-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.strategy-card .strategy-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.strategy-card .strategy-subtitle {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.strategy-card .strategy-metric {
+  margin-bottom: 10px;
+}
+
+.strategy-card .strategy-metric-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.strategy-card .strategy-metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.strategy-card .strategy-metric-value.success {
+  color: var(--success);
+}
+
+.strategy-card .strategy-metric-value.danger {
+  color: var(--danger);
+}
+
+.strategy-card .strategy-metric-value.warning {
+  color: var(--warning);
+}
+
+/* Add icons for colorblind accessibility */
+.strategy-card .strategy-metric-value.success::before { content: "✓ "; }
+.strategy-card .strategy-metric-value.danger::before { content: "❌ "; }
+.strategy-card .strategy-metric-value.warning::before { content: "⚠️ "; }
+
+.strategy-savings {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+
+.strategy-savings .savings-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.savings-label {
+  color: var(--text-secondary);
+}
+
+.savings-value {
+  font-weight: 600;
+}
+
+.savings-value.positive {
+  color: var(--success);
+}
+
+.savings-value.negative {
+  color: var(--danger);
+}
+
+/* Add icons for colorblind accessibility */
+.savings-value.positive::before { content: "✓ "; }
+.savings-value.negative::before { content: "❌ "; }
+
+/* Savings Comparison Banner */
+.savings-banner {
+  background: linear-gradient(135deg, #ecfdf5 0%, #eff4ff 100%);
+  border: 1.5px solid var(--success);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.savings-banner .banner-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.savings-banner .banner-detail {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.savings-banner .banner-detail strong {
+  color: var(--success);
+}
+
+/* Warning Banner */
+.warning-banner {
+  background: var(--warning-light);
+  border: 1.5px solid var(--warning);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: var(--warning);
+}
+
+.warning-banner strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Consolidation Simulation */
+.consolidation-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.consolidation-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.btn-consolidate {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-consolidate:hover {
+  background: var(--primary-hover);
+}
+
+/* Loading States */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.btn-reset-consolidation {
+  margin-left: 10px;
+}
+
+/* Skeleton Styles (inherited from main CSS) */
+.skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--surface);
+  border-radius: var(--radius);
+  z-index: 10;
+  display: none;
+}
+
+.skeleton.active {
+  display: block;
+}
+
+.skeleton-bar {
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  animation: shimmer 1.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-bar {
+    animation: none;
+    background: #f0f0f0;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.consolidation-results-card {
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.consolidation-results-card.positive {
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+  border-color: var(--success);
+}
+
+.consolidation-results-card.negative {
+  background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+  border-color: var(--danger);
+}
+
+.consolidation-results-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.consolidation-results-header h3 {
+  margin: 4px 0 0;
+  font-size: 1.1rem;
+}
+
+.consolidation-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.consolidation-net {
+  font-size: 1.6rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.consolidation-net.positive {
+  color: var(--success);
+}
+
+.consolidation-net.negative {
+  color: var(--danger);
+}
+
+/* Add icons for colorblind accessibility */
+.consolidation-net.positive::before { content: "✓ "; }
+.consolidation-net.negative::before { content: "❌ "; }
+
+.consolidation-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.consolidation-stat {
+  background: rgba(255,255,255,0.75);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.consolidation-stat span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.consolidation-stat strong {
+  font-size: 1rem;
+}
+
+.consolidation-detail-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 18px;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+.consolidation-warnings {
+  background: var(--warning-light);
+  border: 1.5px solid var(--warning);
+  color: var(--warning);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+}
+
+.consolidation-warnings div + div {
+  margin-top: 4px;
+}
+
+.consolidation-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.comparison-card {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.comparison-card.recommended {
+  border-color: var(--primary);
+}
+
+.comparison-title {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.consolidation-recommendation {
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-weight: 600;
+}
+
+.consolidation-recommendation.positive {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.consolidation-recommendation.negative {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+/* Chart Section */
+.chart-section {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.chart-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.chart-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.chart-toggle-btn {
+  padding: 6px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chart-toggle-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+}
+
+/* Strategy Comparison Table */
+.strategy-comparison-table-wrapper {
+  margin-top: 20px;
+  overflow-x: auto;
+  /* Ensure minimum height for scroll indication */
+  min-height: 150px;
+}
+
+.strategy-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 500px; /* Increased for better mobile experience */
+}
+
+.strategy-comparison-table thead {
+  background: #f1f3f7;
+}
+
+.strategy-comparison-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap; /* Prevent header text from wrapping */
+}
+
+.strategy-comparison-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f3f7;
+  white-space: nowrap; /* Prevent cell content from wrapping */
+}
+
+.strategy-comparison-table tr.optimal-row {
+  background: var(--success-light);
+}
+
+.strategy-comparison-table tr.optimal-row td {
+  font-weight: 600;
+}
+
+.strategy-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strategy-color-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.optimal-badge {
+  background: var(--success);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+/* Mobile enhancements for strategy comparison table */
+@media (max-width: 600px) {
+  .strategy-comparison-table {
+    font-size: 0.8rem; /* Slightly smaller on mobile */
+    min-width: 400px; /* Adjusted for mobile */
+  }
+  
+  .strategy-comparison-table th,
+  .strategy-comparison-table td {
+    padding: 8px 10px; /* Reduce padding on mobile */
+  }
+  
+  .strategy-name-cell {
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+  }
+  
+  .optimal-badge {
+    margin-left: 0;
+    margin-top: 4px; /* Move to new line on small screens */
+  }
+}
+
+/* Milestone Timeline */
+.milestone-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.milestone-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.milestone-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.milestone-bar-container {
+  flex: 1;
+  height: 20px;
+  background: #f1f3f7;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.milestone-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.milestone-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.milestone-month {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  min-width: 80px;
+  text-align: right;
+}
+
+.milestone-star {
+  font-size: 1rem;
+}
+
+/* Schedule Table */
+.schedule-section {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
+}
+
+.schedule-header:hover {
+  background: #f8f9fb;
+}
+
+.schedule-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.schedule-toggle-icon {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: transform 0.2s;
+}
+
+.schedule-toggle-icon.open {
+  transform: rotate(180deg);
+}
+
+.schedule-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.schedule-body.open {
+  max-height: 20000px;
+}
+
+.schedule-table-wrapper {
+  overflow-x: auto;
+  padding: 0 20px 16px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  min-width: 600px; /* Increased for better mobile experience */
+}
+
+.schedule-table thead {
+  background: #f1f3f7;
+  position: sticky;
+  top: 0;
+}
+
+.schedule-table th {
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.schedule-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #f1f3f7;
+  white-space: nowrap;
+}
+
+.schedule-table tr.celebration td {
+  background: var(--success-light);
+  font-weight: 600;
+}
+
+.schedule-table tr.celebration td::after {
+  content: ' 🎉';
+}
+
+.schedule-table .target-marker {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Mobile enhancements for schedule table */
+@media (max-width: 600px) {
+  .schedule-table {
+    font-size: 0.75rem; /* Slightly smaller on mobile */
+    min-width: 500px; /* Adjusted for mobile */
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    padding: 6px 8px; /* Reduce padding on mobile */
+  }
+  
+  .schedule-header {
+    padding: 12px 16px; /* Reduce padding on mobile */
+  }
+  
+  .schedule-header h3 {
+    font-size: 1.1rem; /* Slightly larger on mobile */
+  }
+}
+
+/* Recommendations */
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.recommendation-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  transition: all 0.2s;
+}
+
+.recommendation-card:hover {
+  border-color: var(--primary);
+}
+
+.recommendation-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.recommendation-content {
+  flex: 1;
+}
+
+.recommendation-content strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.recommendation-content p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.recommendation-content a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.recommendation-content a:hover {
+  text-decoration: underline;
+}
+
+/* Add Debt Button */
+#add-debt-btn {
+  width: 100%; /* Full width on mobile */
+  padding: 12px 16px; /* Ensure minimum tap target size */
+  font-size: 1rem; /* Larger font on mobile */
+  min-height: 44px; /* Minimum tap target size */
+}
+
+/* Print Button */
+.print-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  /* Ensure minimum tap target size */
+  min-height: 44px;
+}
+
+.print-btn:hover {
+  border-color: var(--text-secondary);
+  color: var(--text);
+}
+
+/* Mobile enhancements for buttons */
+@media (max-width: 600px) {
+  #add-debt-btn {
+    font-size: 1.1rem; /* Larger font on mobile */
+    padding: 14px 16px; /* More padding on mobile */
+  }
+}
+
+/* SEO Content */
+.seo-content {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.seo-content h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 20px 0 8px;
+}
+
+.seo-content h2:first-child {
+  margin-top: 0;
+}
+
+.seo-content p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.seo-content a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.seo-content a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .strategy-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .debt-card {
+    grid-template-columns: 1fr 1fr;
+  }
+  .consolidation-inputs,
+  .consolidation-summary-grid,
+  .consolidation-detail-row,
+  .consolidation-comparison {
+    grid-template-columns: 1fr;
+  }
+  .debt-card .btn-remove {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+  .debt-summary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .milestone-item {
+    flex-wrap: wrap;
+  }
+  .milestone-label {
+    min-width: auto;
+  }
+  .milestone-month {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .planner-header {
+    padding: 28px 0 24px;
+  }
+  .consolidation-results-header {
+    flex-direction: column;
+  }
+  .consolidation-net {
+    font-size: 1.3rem;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+  .debt-card {
+    grid-template-columns: 1fr;
+  }
+  .extra-payment-amount {
+    font-size: 1.2rem;
+  }
+  .chart-section {
+    padding: 14px;
+  }
+  .strategy-comparison-table-wrapper {
+    font-size: 0.8rem;
+  }
+  .strategy-comparison-table th,
+  .strategy-comparison-table td {
+    padding: 8px 10px;
+  }
+  .strategy-name-cell {
+    flex-wrap: wrap;
+  }
+  .optimal-badge {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
+/* Credit Score Simulator */
+.credit-score-simulator-content {
+  margin-top: 16px;
+}
+
+.credit-score-simulator-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.credit-score-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.credit-score-inputs .input-group {
+  margin-bottom: 0;
+}
+
+.credit-score-inputs .input-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.slider-container .slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.slider-container .slider-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: right;
+}
+
+.number-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.credit-score-info {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.score-display {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.current-score, .utilization-display, .projected-impact {
+  text-align: center;
+}
+
+.score-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.utilization-value, .impact-value {
+  font-weight: 600;
+}
+
+.utilization-explanation {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.utilization-explanation h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.utilization-tier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.utilization-tier:last-child {
+  border-bottom: none;
+}
+
+.utilization-tier.excellent .tier-label {
+  color: #10b981;
+}
+
+.utilization-tier.good .tier-label {
+  color: #10b981;
+}
+
+.utilization-tier.fair .tier-label {
+  color: #f59e0b;
+}
+
+.utilization-tier.poor .tier-label {
+  color: #ef4444;
+}
+
+.tier-label {
+  font-weight: 500;
+}
+
+.tier-impact {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.projections-table-wrapper {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+.projections-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 500px;
+}
+
+.projections-table thead {
+  background: #f1f3f7;
+}
+
+.projections-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.projections-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f1f3f7;
+  white-space: nowrap;
+}
+
+/* Mobile enhancements for credit score simulator */
+@media (max-width: 700px) {
+  .credit-score-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .score-display {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* APR Comparison Table (Credit Score Simulator) */
+.apr-comparison {
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--card-bg, #f8fafc);
+  border-radius: 10px;
+  border: 1px solid var(--border, #e2e8f0);
+}
+
+.apr-comparison h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  color: var(--text-primary, #1e293b);
+}
+
+.apr-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.apr-comparison-table th {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--border, #e2e8f0);
+  color: var(--text-secondary, #64748b);
+  font-weight: 600;
+}
+
+.apr-comparison-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border, #e2e8f0);
+}
+
+.apr-comparison-table tr.apr-improved td { background: rgba(16, 185, 129, 0.08); }
+.apr-comparison-table tr.apr-worsened td { background: rgba(239, 68, 68, 0.08); }
+.apr-comparison-table tr.apr-unchanged td { background: transparent; }
+
+.simulator-disclaimer {
+  margin: 10px 0 0 0;
+  font-size: 0.78rem;
+  color: var(--text-secondary, #64748b);
+  font-style: italic;
+}
+
+.btn-reset-simulator {
+  margin-top: 10px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  background: var(--primary, #6366f1);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-reset-simulator:hover {
+  background: var(--primary-dark, #4f46e5);
+}
+
+/* Debt-Free Hero Callout (P1 #16) */
+.debt-free-hero-card {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%);
+  border: 2px solid var(--success, #10b981);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: slideIn 0.4s ease-out;
+}
+.debt-free-hero-emoji {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+.debt-free-hero-stat {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 6px;
+}
+.debt-free-hero-stat strong {
+  color: var(--success, #10b981);
+}
+.debt-free-hero-subtitle {
+  font-size: 0.9rem;
+  color: #374151;
+}
+.debt-free-hero-countdown {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #065f46;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 6px 16px;
+  margin: 8px auto 4px;
+  display: inline-block;
+}
+
+/* Strategy Explanation (P2 #43) */
+.strategy-explanation {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.strategy-explanation strong { color: var(--text); }
+
+/* Reorder Controls (P2 #44) */
+.debt-card-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-self: end;
+  margin-bottom: 4px;
+}
+.btn-reorder {
+  width: 30px;
+  height: 22px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.btn-reorder:hover:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.btn-reorder:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Windfall Section (P1 #20) */
+.windfall-section {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 16px;
+}
+.windfall-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.windfall-inputs {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.windfall-inputs .input-group {
+  margin-bottom: 0;
+  min-width: 140px;
+}
+.windfall-inputs .input-group label {
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 4px;
+}
+.windfall-inputs .btn-consolidate {
+  align-self: end;
+  margin-bottom: 0;
+}
+.windfall-before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+}
+.windfall-before, .windfall-after {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+}
+.windfall-after {
+  border-color: var(--success);
+  background: #f0fdf4;
+}
+.windfall-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Strategy Comparison Panel (P2 #42) */
+.strategy-comparison-panel {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 16px;
+}
+.strategy-comparison-panel h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.comparison-savings-callout {
+  background: linear-gradient(135deg, #eff4ff 0%, #f5f3ff 100%);
+  border: 1.5px solid var(--primary, #2563eb);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  text-align: center;
+  color: var(--text);
+}
+.comparison-savings-callout strong {
+  color: var(--primary, #2563eb);
+}
+.comparison-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.comparison-col {
+  background: #f8fafc;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.comparison-col.best {
+  border-color: var(--success, #10b981);
+  background: #f0fdf4;
+}
+.comparison-col-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+.comparison-stat {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+.comparison-stat span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.comparison-stat strong {
+  font-size: 1rem;
+}
+@media (max-width: 700px) {
+  .comparison-columns { grid-template-columns: 1fr; }
+}
+
+/* Cross-Tool CTA (P1 #8) */
+.cross-tool-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+.cta-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1.5px solid var(--primary);
+  border-radius: 8px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.2s;
+}
+.cta-card:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+.cta-emoji { font-size: 1.5rem; }
+.cta-text { font-size: 0.85rem; line-height: 1.4; }
+.cta-text strong { color: var(--primary); }
+@media (max-width: 600px) {
+  .cross-tool-cta { grid-template-columns: 1fr; }
+}
+
+/* BT Gotcha Warnings (P1 #19) */
+.bt-gotcha-warnings {
+  background: #fffbeb;
+  border: 1.5px solid #f59e0b;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  font-size: 0.82rem;
+}
+.bt-gotcha-title {
+  font-weight: 700;
+  color: #b45309;
+  margin-bottom: 6px;
+}
+.bt-gotcha-item {
+  color: #92400e;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.bt-gotcha-item.bt-gotcha-critical {
+  color: #991b1b;
+  font-weight: 600;
+  background: #fef2f2;
+  border-left: 3px solid #dc2626;
+  padding: 6px 10px;
+  margin: 6px 0;
+  border-radius: 4px;
+}
+
+/* Print Styles */
+@media print {
+  /* Hide all interactive / non-essential elements */
+  .header, .planner-header, .footer, .btn-add, .btn-remove,
+  .slider, .slider-presets, .chart-toggle, .print-btn,
+  .schedule-header, .seo-content, .recommendations,
+  .savings-banner, .warning-banner, .site-disclosure-banner,
+  .step-number, .step-desc, .debt-card-controls,
+  .debt-card .btn-remove, .btn-reorder,
+  .btn-consolidate, .consolidation-inputs, .btn-reset-consolidation,
+  .cross-tool-cta, .windfall-inputs,
+  #credit-score-simulator, .credit-score-simulator-content,
+  .share-row, #share-mount, #data-stamp-mount,
+  .btn-save-pdf, .btn-ghost,
+  .extra-payment-section input[type=range],
+  .windfall-section .windfall-inputs,
+  .strategy-explanation,
+  .debt-card input, .consolidation-card input,
+  .consolidation-card select,
+  #pwa-install-banner,
+  nav, button, .btn-add,
+  #add-debt-btn { display: none !important; }
+
+  body { background: white; color: black; }
+
+  .strategy-card {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .schedule-body {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .chart-section {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+  }
+
+  /* Print-only elements */
+  .print-only { display: block !important; }
+  .screen-only { display: none !important; }
+
+  /* Show debt summary values (not inputs) in print */
+  .debt-summary {
+    break-inside: avoid;
+  }
+
+  /* Clean strategy card layout for print */
+  .strategy-card {
+    color: black !important;
+    background: white !important;
+  }
+
+  .debt-free-hero-card {
+    break-inside: avoid;
+    color: black !important;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
+  }
+
+  .debt-free-hero-stat strong {
+    color: #059669 !important;
+  }
+
+  /* Print branding footer */
+  /* Print header */
+  .print-header {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .print-header h2 {
+    color: black !important;
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  .print-header p {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0.25rem 0 0;
+  }
+
+  /* Strategy comparison table in print */
+  .strategy-comparison-panel {
+    break-inside: avoid;
+    border: 1.5px solid #333;
+    background: white !important;
+  }
+  .strategy-comparison-panel * {
+    color: black !important;
+  }
+  .comparison-savings-callout {
+    border: 1px solid #999 !important;
+    background: #f5f5f5 !important;
+  }
+  .comparison-col {
+    border: 1px solid #ccc;
+  }
+  .comparison-col.best {
+    border-color: #333;
+    background: #f0f0f0 !important;
+  }
+
+  /* Charts in print */
+  .chart-section canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .chart-section {
+    page-break-inside: avoid;
+  }
+
+  .print-branding {
+    display: block !important;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #ccc;
+  }
+
+  @page {
+    margin: 0.75in;
+  }
+}
+
+/* Save as PDF button */
+.btn-save-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+  margin-top: 16px;
+}
+
+.btn-save-pdf:hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+/* Print branding hidden on screen, visible in print */
+.print-branding {
+  display: none;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.print-only { display: none; }
+.screen-only { display: initial; }
+
+/* Extra payment button below debt list */
+.btn-extra-payment {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+  margin-top: 8px;
+}
+
+.btn-extra-payment:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Discover Cashback Match Year-2 callout */
+.discover-year2-callout {
+  font-size: 0.82rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.discover-year2-callout.year1 {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.discover-year2-callout.year2plus {
+  background: #fffbeb;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+/* Strategy explanation badges under chart toggles */
+.strategy-toggle-explanation {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.strategy-toggle-explanation .explanation-item {
+  flex: 1;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.strategy-toggle-explanation .explanation-item strong {
+  color: var(--text);
+  display: block;
+  margin-bottom: 2px;
+}
