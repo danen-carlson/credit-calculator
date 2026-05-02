@@ -1,0 +1,105 @@
+/* Language Switcher — CreditStud.io */
+.language-switcher {
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.lang-toggle {
+  background: none;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-primary, #111827);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: border-color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.lang-toggle:hover,
+.lang-toggle:focus {
+  border-color: var(--accent, #2563eb);
+  background: var(--surface-hover, #f3f4f6);
+}
+
+.lang-toggle[aria-expanded="true"] {
+  border-color: var(--accent, #2563eb);
+  background: var(--surface-hover, #f3f4f6);
+}
+
+.current-lang {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  padding: 6px 0;
+  z-index: 1000;
+  display: none;
+}
+
+.lang-dropdown.open {
+  display: block;
+  animation: langFadeIn 0.15s ease-out;
+}
+
+@keyframes langFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.lang-dropdown a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--text-primary, #111827);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.15s;
+}
+
+.lang-dropdown a:hover {
+  background: var(--surface-hover, #f3f4f6);
+}
+
+.lang-dropdown a[lang] {
+  font-weight: 500;
+}
+
+.lang-dropdown a.active-lang {
+  font-weight: 700;
+  color: var(--accent, #2563eb);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .lang-toggle {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 12px;
+  }
+
+  .lang-dropdown {
+    position: static;
+    border-radius: 0;
+    box-shadow: none;
+    border-left: none;
+    border-right: none;
+  }
+}

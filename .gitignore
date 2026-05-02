@@ -3,3 +3,5 @@ node_modules/
 api/worker/node_modules/
 api/worker/node_modules/
 api/worker/dist/
+review/
+.translation-state.json

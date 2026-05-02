@@ -1,0 +1,21 @@
+{
+  "payoffTime": "Time to Payoff",
+  "totalInterest": "Total Interest",
+  "totalPaid": "Total Paid",
+  "totalPaidSub.toClear": "to clear {amount}",
+  "totalPaidSub.interestExceedsPayment": "interest exceeds minimum payment",
+  "neverPaidOff": "Never paid off",
+  "principal": "Principal",
+  "interest": "Interest",
+  "interestExceedsPayments": "Interest exceeds payments",
+  "months.format.singular": "{count} month",
+  "months.format.plural": "{count} months",
+  "months.format.years": "{years} year{{s}}, {months} month{{s}}",
+  "months.neverExceeds": "Never (interest exceeds payments)",
+  "balance": "Balance",
+  "apr": "APR",
+  "minPaymentPercent": "Minimum Payment %",
+  "calculate": "Calculate",
+  "resultSummary": "If you only pay the minimum, it will take {time} to pay off {balance} in debt, costing {totalInterest} in interest for a total of {totalPaid}.",
+  "tryExtraPayment": "Try adding just ${extra}/mo to pay off {monthsEarlier} months sooner and save ${interestSaved} in interest."
+}

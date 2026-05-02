@@ -153,6 +153,14 @@
   gtag('js', new Date());
   gtag('config', 'G-99CP2NLCD9');
 </script>
+  <link rel="stylesheet" href="/shared/language-switcher.css">
+<link rel="alternate" hreflang="en" href="https://creditstud.io/learn/bnpl-interest-calculator.html">
+<link rel="alternate" hreflang="es" href="https://creditstud.io/es/learn/bnpl-interest-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://creditstud.io/zh/learn/bnpl-interest-calculator.html">
+<link rel="alternate" hreflang="tl" href="https://creditstud.io/tl/learn/bnpl-interest-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://creditstud.io/ko/learn/bnpl-interest-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://creditstud.io/hi/learn/bnpl-interest-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://creditstud.io/learn/bnpl-interest-calculator.html">
 </head>
 <body>
   <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -201,8 +209,23 @@
       <a href="/learn/" class="nav-link">Learn</a>
       <a href="/blog/" class="nav-link">Blog</a>
     </nav>
-    <a href="/" class="logo">💳 Credit<span>Stud.io</span></a>
-    <p class="header-subtitle">BNPL interest calculator: see what buy-now-pay-later actually costs</p>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="language-switcher">
+        <button class="lang-toggle" aria-label="Select language" aria-expanded="false">
+          🌐 <span class="current-lang">EN</span>
+        </button>
+        <div class="lang-dropdown">
+          <a href="/" hreflang="en" lang="en">English</a>
+          <a href="/es/" hreflang="es" lang="es">Español</a>
+          <a href="/zh/" hreflang="zh" lang="zh">简体中文</a>
+          <a href="/tl/" hreflang="tl" lang="tl">Tagalog</a>
+          <a href="/ko/" hreflang="ko" lang="ko">한국어</a>
+          <a href="/hi/" hreflang="hi" lang="hi">हिन्दी</a>
+        </div>
+      </div>
+      <a href="/" class="logo">💳 Credit<span>Stud.io</span></a>
+    </div>
+    <p class="header-subtitle">Compare credit cards, BNPL, and payment plans side by side</p>
   </div>
 </header>
 <!-- /HEADER -->
@@ -579,5 +602,7 @@ if (document.querySelector('.nav-dropdown-toggle')) {
 </script>
 <!-- /FOOTER -->
 <script defer src="/shared/pwa.js"></script>
+  <script src="/shared/i18n.js"></script>
+<script src="/shared/language-switcher.js"></script>
 </body>
 </html>
