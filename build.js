@@ -116,6 +116,151 @@ function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+// ── SEO meta translation cache ──
+const seoCache = {};
+
+function getSeoTranslations(lang) {
+  if (seoCache[lang]) return seoCache[lang];
+  const seoPath = path.join(repoDir, 'locales', `${lang}-seo.json`);
+  if (fs.existsSync(seoPath)) {
+    seoCache[lang] = JSON.parse(fs.readFileSync(seoPath, 'utf8'));
+  } else {
+    seoCache[lang] = {};
+  }
+  return seoCache[lang];
+}
+
+function htmlEncode(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function translateMetaTags(content, lang, relPath) {
+  const seo = getSeoTranslations(lang);
+  const pageKey = relPath.replace(/\\/g, '/');
+  const trans = seo[pageKey];
+  if (!trans) return content;
+
+  // Replace <title>
+  if (trans.title) {
+    content = content.replace(/<title>[^<]*<\/title>/i, `<title>${htmlEncode(trans.title)}</title>`);
+  }
+
+  // Replace <meta name="description">
+  if (trans.description) {
+    content = content.replace(
+      /<meta\s+name="description"\s+content="[^"]*">/gi,
+      `<meta name="description" content="${htmlEncode(trans.description)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+name="description">/gi,
+      `<meta content="${htmlEncode(trans.description)}" name="description">`
+    );
+  }
+
+  // Replace og:title
+  if (trans.og_title) {
+    content = content.replace(
+      /<meta\s+property="og:title"\s+content="[^"]*">/gi,
+      `<meta property="og:title" content="${htmlEncode(trans.og_title)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+property="og:title">/gi,
+      `<meta content="${htmlEncode(trans.og_title)}" property="og:title">`
+    );
+  }
+
+  // Replace og:description
+  if (trans.og_description) {
+    content = content.replace(
+      /<meta\s+property="og:description"\s+content="[^"]*">/gi,
+      `<meta property="og:description" content="${htmlEncode(trans.og_description)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+property="og:description">/gi,
+      `<meta content="${htmlEncode(trans.og_description)}" property="og:description">`
+    );
+  }
+
+  // Replace twitter:title
+  if (trans.twitter_title) {
+    content = content.replace(
+      /<meta\s+name="twitter:title"\s+content="[^"]*">/gi,
+      `<meta name="twitter:title" content="${htmlEncode(trans.twitter_title)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+name="twitter:title">/gi,
+      `<meta content="${htmlEncode(trans.twitter_title)}" name="twitter:title">`
+    );
+  }
+
+  // Replace twitter:description
+  if (trans.twitter_description) {
+    content = content.replace(
+      /<meta\s+name="twitter:description"\s+content="[^"]*">/gi,
+      `<meta name="twitter:description" content="${htmlEncode(trans.twitter_description)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+name="twitter:description">/gi,
+      `<meta content="${htmlEncode(trans.twitter_description)}" name="twitter:description">`
+    );
+  }
+
+  // Replace JSON-LD Article/FAQPage headline and description
+  if (trans.ld_headline || trans.ld_description || trans.ld_breadcrumb_last) {
+    content = content.replace(
+      /<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi,
+      function(match, jsonBlock) {
+        let fixed = jsonBlock;
+        try {
+          const data = JSON.parse(jsonBlock);
+          if (data['@type'] === 'Article' || data['@type'] === 'FAQPage') {
+            if (trans.ld_headline && data.headline) {
+              data.headline = trans.ld_headline;
+            }
+            if (trans.ld_description && data.description) {
+              data.description = trans.ld_description;
+            }
+          }
+          if (data['@type'] === 'BreadcrumbList' && data.itemListElement && trans.ld_breadcrumb_last) {
+            const last = data.itemListElement[data.itemListElement.length - 1];
+            if (last && last.name) {
+              last.name = trans.ld_breadcrumb_last;
+            }
+          }
+          fixed = JSON.stringify(data, null, 2);
+        } catch (e) {
+          // If JSON parsing fails, fall back to string replacement
+          if (trans.ld_headline) {
+            fixed = fixed.replace(/"headline"\s*:\s*"[^"]*"/g, `"headline": "${trans.ld_headline}"`);
+          }
+          if (trans.ld_description) {
+            fixed = fixed.replace(/"description"\s*:\s*"[^"]*"/g, `"description": "${trans.ld_description}"`);
+          }
+          if (trans.ld_breadcrumb_last) {
+            const items = fixed.match(/"itemListElement"\s*:\s*\[([\s\S]*?)\]/);
+            if (items) {
+              const lastItemMatch = items[1].match(/\{[\s\S]*?"name"\s*:\s*"([^"]*)"[\s\S]*?\}(?!.*\{)/);
+              if (lastItemMatch) {
+                fixed = fixed.replace(
+                  new RegExp(`"name"\\s*:\\s*"${escapeRegex(lastItemMatch[1])}"(?!.*"name"\\s*:\\s*"${escapeRegex(lastItemMatch[1])}")`),
+                  `"name": "${trans.ld_breadcrumb_last}"`
+                );
+              }
+            }
+          }
+        }
+        return match.replace(jsonBlock, fixed);
+      }
+    );
+  }
+
+  return content;
+}
+
 // ── Build English files (in-place update of source) ──
 function buildEnglish() {
   console.log('\n=== Building English (in-place) ===\n');
@@ -276,6 +421,9 @@ function buildLang(lang) {
 
     // Fix canonical URL to point to language-specific version
     content = fixCanonicalUrl(content, lang);
+
+    // Translate SEO meta tags for this page
+    content = translateMetaTags(content, lang, relPath);
 
     // Fix relative URLs: add /{lang}/ prefix to internal links
     // This handles href="/" → href="/{lang}/" etc.

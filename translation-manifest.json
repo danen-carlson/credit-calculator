@@ -187,7 +187,8 @@
           "reviewPass": "gemini-3.1-pro",
           "spotCheckPass": null,
           "issues": [
-            "untranslated_p: 5 paragraph(s) may be untranslated"
+            "untranslated_p: 1 paragraph(s) may be untranslated",
+            "dollars: Dollar amounts missing in ES: $4,000"
           ]
         },
         "blog/best-credit-cards-for-groceries.html": {
@@ -253,7 +254,13 @@
           "reviewPass": "gemini-3.1-pro",
           "spotCheckPass": null,
           "issues": [
-            "untranslated_p: 36 paragraph(s) may be untranslated"
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/credit-card-benefits-youre-not-using.html",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/credit-card-benefits-youre-not-using.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\"",
+            "dollars: Dollar amounts missing in ES: $5,000"
           ]
         },
         "blog/credit-card-points-offset-interest.html": {
@@ -264,7 +271,12 @@
           "reviewPass": "gemini-3.1-pro",
           "spotCheckPass": null,
           "issues": [
-            "untranslated_p: 16 paragraph(s) may be untranslated"
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/credit-card-points-offset-interest.html",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/credit-card-points-offset-interest.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
           ]
         },
         "blog/does-klarna-affect-credit-score.html": {
@@ -319,7 +331,7 @@
           "reviewPass": "gemini-3.1-pro",
           "spotCheckPass": null,
           "issues": [
-            "untranslated_p: 13 paragraph(s) may be untranslated"
+            "untranslated_p: 1 paragraph(s) may be untranslated"
           ]
         },
         "blog/sneaky-credit-card-pitfalls.html": {
@@ -341,7 +353,7 @@
           "reviewPass": "gemini-3.1-pro",
           "spotCheckPass": null,
           "issues": [
-            "untranslated_p: 18 paragraph(s) may be untranslated"
+            "untranslated_p: 1 paragraph(s) may be untranslated"
           ]
         },
         "cards/amazon-prime-visa-signature/index.html": {

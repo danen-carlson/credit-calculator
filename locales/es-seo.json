@@ -1,0 +1,863 @@
+{
+  "about/index.html": {
+    "title": "Acerca de CreditStud.io — Metodología, Fuentes de Datos y Transparencia",
+    "description": "Cómo CreditStud.io recopila datos, calcula resultados y mantiene independencia. Nuestra metodología para comparaciones de tarjetas de crédito, planificadores de deudas y valoraciones de recompensas.",
+    "og_title": "Acerca de CreditStud.io — Metodología y Fuentes de Datos",
+    "og_description": "Cómo recopilamos datos, calculamos resultados y mantenemos independencia. Transparencia total sobre nuestra metodología.",
+    "twitter_title": "Acerca de CreditStud.io — Metodología y Fuentes de Datos",
+    "twitter_description": "Cómo recopilamos datos, calculamos resultados y mantenemos independencia.",
+    "ld_breadcrumb_last": "Acerca de",
+    "ld_headline": "Acerca de CreditStud.io — Metodología y Fuentes de Datos",
+    "ld_description": "Cómo recopilamos datos, calculamos resultados y mantenemos independencia."
+  },
+  "af-worth-it/index.html": {
+    "title": "Calculadora de Cuota Anual — ¿Tu Tarjeta Vale la Pena? | CreditStud.io",
+    "description": "¿Vale la pena la cuota anual de esa tarjeta de crédito? Calcula el valor real de recompensas, créditos y beneficios vs. la cuota. Calculadora gratuita con 20+ tarjetas premium analizadas.",
+    "og_title": "Calculadora ¿Vale la Pena la Cuota Anual? — CreditStud.io",
+    "og_description": "¿Vale la pena la cuota anual de esa tarjeta de crédito? Calcula el valor real de recompensas, créditos y beneficios vs. la cuota.",
+    "twitter_title": "Calculadora ¿Vale la Pena la Cuota Anual? — CreditStud.io",
+    "twitter_description": "¿Vale la pena la cuota anual de esa tarjeta de crédito? Calcula el valor real de recompensas, créditos y beneficios vs. la cuota.",
+    "ld_breadcrumb_last": "Calculadora de Cuota Anual"
+  },
+  "blog/affirm-interest-rates-explained.html": {
+    "title": "Tasas de Interés de Affirm Explicadas: Lo Que Realmente Pagarás — CreditStud.io",
+    "description": "Entiende las tasas de interés de Affirm, desde ofertas del 0% hasta 36% APR. Ve exactamente lo que pagarás en una compra real con nuestro desglose y ejemplos.",
+    "og_title": "Tasas de Interés de Affirm Explicadas: Lo Que Realmente Pagarás",
+    "og_description": "Entiende las tasas de interés de Affirm, desde ofertas del 0% hasta 36% APR. Ve exactamente lo que pagarás en una compra real con nuestro desglose y ejemplos.",
+    "twitter_title": "Tasas de Interés de Affirm Explicadas: Lo Que Realmente Pagarás",
+    "twitter_description": "Entiende las tasas de interés de Affirm, desde ofertas del 0% hasta 36% APR. Ve exactamente lo que pagarás en una compra real con nuestro desglose y ejemplos.",
+    "ld_headline": "Tasas de Interés de Affirm Explicadas: Lo Que Realmente Pagarás",
+    "ld_description": "Entiende las tasas de interés de Affirm, desde ofertas del 0% hasta 36% APR. Ve exactamente lo que pagarás en una compra real con nuestro desglose y ejemplos.",
+    "ld_breadcrumb_last": "Tasas de Interés de Affirm Explicadas"
+  },
+  "blog/amex-gold-worth-it.html": {
+    "title": "¿Vale la Pena la Amex Gold Card? Desglose Honesto de la Cuota Anual de $325 | CreditStud.io",
+    "description": "La Amex Gold cobra $325/año. Desglosamos cada crédito, cada tasa de recompensa y cada truco para que puedas decidir si vale la pena mantenerla. Matemáticas reales, sin relleno.",
+    "og_title": "¿Vale la Pena la Amex Gold Card? Desglose Honesto de la Cuota Anual de $325",
+    "og_description": "La Amex Gold cobra $325/año. Desglosamos cada crédito, cada tasa de recompensa y cada truco — matemáticas reales, sin relleno.",
+    "twitter_title": "¿Vale la Pena la Amex Gold Card? Desglose Honesto de la Cuota Anual de $325",
+    "twitter_description": "La Amex Gold cobra $325/año. Desglosamos cada crédito, tasa de recompensa y truco — matemáticas reales, sin relleno.",
+    "ld_headline": "¿Vale la Pena la Amex Gold Card? Desglose Honesto de la Cuota Anual de $325",
+    "ld_description": "La Amex Gold cobra $325/año. Desglosamos cada crédito, cada tasa de recompensa y cada truco para que puedas decidir si vale la pena mantenerla.",
+    "ld_breadcrumb_last": "¿Vale la Pena la Amex Gold Card?"
+  },
+  "blog/best-0-apr-credit-cards.html": {
+    "title": "Mejores Tarjetas de Crédito con 0% APR para Compras Grandes (2026) — CreditStud.io",
+    "description": "Las mejores tarjetas de crédito con 0% intro APR para financiar compras grandes en 2026. Compara períodos sin interés, tarifas y recompensas para encontrar tu mejor opción.",
+    "og_title": "Mejores Tarjetas de Crédito con 0% APR para Compras Grandes (2026)",
+    "og_description": "Las mejores tarjetas de crédito con 0% intro APR para financiar compras grandes en 2026. Compara períodos sin interés, tarifas y recompensas para encontrar tu mejor opción.",
+    "twitter_title": "Mejores Tarjetas de Crédito con 0% APR para Compras Grandes (2026)",
+    "twitter_description": "Las mejores tarjetas de crédito con 0% intro APR para financiar compras grandes en 2026. Compara períodos sin interés, tarifas y recompensas para encontrar tu mejor opción.",
+    "ld_breadcrumb_last": "Mejores Tarjetas de Crédito con 0% APR para Compras Grandes (2026)",
+    "ld_headline": "Mejores Tarjetas de Crédito con 0% APR para Compras Grandes (2026)",
+    "ld_description": "Las mejores tarjetas de crédito con 0% intro APR para financiar compras grandes en 2026. Compara períodos sin interés, tarifas y recompensas para encontrar tu mejor opción."
+  },
+  "blog/best-balance-transfer-credit-cards.html": {
+    "title": "Mejores Tarjetas de Transferencia de Saldo 2026 | CreditStud.io",
+    "description": "Las mejores tarjetas de transferencia de saldo de 2026. Compara períodos de 0% intro APR, tarifas de transferencia y tasas post-intro. Aprende cuándo una tarifa del 3-5% vale la pena y cómo evitar trampas.",
+    "og_title": "Mejores Tarjetas de Transferencia de Saldo 2026",
+    "og_description": "Compara las mejores tarjetas de transferencia de saldo de 2026. Matemáticas reales sobre cuándo una tarifa de transferencia vale la pena, trampas comunes y una guía paso a paso para hacer una transferencia de saldo correctamente.",
+    "twitter_title": "Mejores Tarjetas de Transferencia de Saldo 2026",
+    "twitter_description": "Compara las mejores tarjetas de transferencia de saldo de 2026. Matemáticas reales sobre tarifas de transferencia, trampas a evitar y cómo hacer una transferencia de saldo correctamente.",
+    "ld_headline": "Mejores Tarjetas de Transferencia de Saldo 2026",
+    "ld_description": "Las mejores tarjetas de transferencia de saldo de 2026. Compara períodos de 0% intro APR, tarifa de transferencia y tasas post-intro. Aprende cuándo una tarifa del 3-5% vale la pena y cómo evitar trampas.",
+    "ld_breadcrumb_last": "Mejores Tarjetas de Transferencia de Saldo"
+  },
+  "blog/best-credit-cards-for-groceries.html": {
+    "title": "Mejores Tarjetas de Crédito para Supermercado 2026 — Maximiza Tus Recompensas | CreditStud.io",
+    "description": "Compara las mejores tarjetas de crédito para supermercado en 2026. Desde 6% cash back en supermercados hasta 4x puntos en comida — encuentra la tarjeta que coincide con tu presupuesto de supermercado.",
+    "og_title": "Mejores Tarjetas de Crédito para Supermercado 2026 — Maximiza Tus Recompensas",
+    "og_description": "Compara las mejores tarjetas de crédito para supermercado en 2026. Desde 6% cash back en supermercados hasta 4x puntos en comida — encuentra la tarjeta que coincide con tu presupuesto de supermercado.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Supermercado 2026 — Maximiza Tus Recompensas",
+    "twitter_description": "Compara las mejores tarjetas de crédito para supermercado en 2026. Desde 6% cash back hasta 4x puntos — encuentra la tarjeta que coincide con tu presupuesto de supermercado.",
+    "ld_headline": "Mejores Tarjetas de Crédito para Supermercado 2026",
+    "ld_description": "Compara las mejores tarjetas de crédito para supermercado en 2026. Desde 6% cash back en supermercados hasta 4x puntos en comida — encuentra la tarjeta que coincide con tu presupuesto de supermercado.",
+    "ld_breadcrumb_last": "Mejores Tarjetas de Crédito para Supermercado 2026"
+  },
+  "blog/best-credit-cards-for-travel.html": {
+    "title": "Mejores Tarjetas de Crédito para Viajes en 2026 — Maximiza Puntos, Millas y Beneficios | CreditStud.io",
+    "description": "Compara las mejores tarjetas de crédito para viajes en 2026. Desde opciones sin cuota anual hasta tarjetas premium con acceso a salones — encuentra la tarjeta adecuada para vuelos, hoteles y viajes internacionales.",
+    "og_title": "Mejores Tarjetas de Crédito para Viajes en 2026 — Maximiza Puntos, Millas y Beneficios",
+    "og_description": "Compara las mejores tarjetas de crédito para viajes en 2026. Desde opciones sin cuota anual hasta tarjetas premium con acceso a salones.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Viajes en 2026 — Maximiza Puntos, Millas y Beneficios",
+    "twitter_description": "Compara las mejores tarjetas de crédito para viajes en 2026. Desde opciones sin cuota anual hasta tarjetas premium con acceso a salones.",
+    "ld_headline": "Mejores Tarjetas de Crédito para Viajes en 2026",
+    "ld_description": "Compara las mejores tarjetas de crédito para viajes en 2026. Desde opciones sin cuota anual hasta tarjetas premium con acceso a salones — encuentra la tarjeta adecuada para vuelos, hoteles y viajes internacionales.",
+    "ld_breadcrumb_last": "Mejores Tarjetas de Crédito para Viajes 2026"
+  },
+  "blog/bnpl-hidden-fees.html": {
+    "title": "Las Tarifas Ocultas de Compra Ahora Paga Después: Lo Que No Te Cuentan — CreditStud.io",
+    "description": "Los servicios BNPL no siempre son gratuitos. Descubre las tarifas ocultas que cobran Klarna, Afterpay y Affirm — tarifas por atraso, cargos por servicio y costos que la mayoría de personas pasan por alto.",
+    "og_title": "Las Tarifas Ocultas de Compra Ahora Paga Después: Lo Que No Te Cuentan",
+    "og_description": "Los servicios BNPL no siempre son gratuitos. Descubre las tarifas ocultas que cobran Klarna, Afterpay y Affirm — tarifas por atraso, cargos por servicio y costos que la mayoría de personas pasan por alto.",
+    "twitter_title": "Las Tarifas Ocultas de Compra Ahora Paga Después: Lo Que No Te Cuentan",
+    "twitter_description": "Los servicios BNPL no siempre son gratuitos. Descubre las tarifas ocultas que cobran Klarna, Afterpay y Affirm — tarifas por atraso, cargos por servicio y costos que la mayoría de personas pasan por alto.",
+    "ld_headline": "Las Tarifas Ocultas de Compra Ahora Paga Después: Lo Que No Te Cuentan",
+    "ld_description": "Los servicios BNPL no siempre son gratuitos. Descubre las tarifas ocultas que cobran Klarna, Afterpay y Affirm — tarifas por atraso, cargos por servicio y costos que la mayoría de personas pasan por alto.",
+    "ld_breadcrumb_last": "Tarifas Ocultas de BNPL Que Quizás No Conozcas"
+  },
+  "blog/bnpl-vs-credit-card.html": {
+    "title": "¿Compra Ahora Paga Después Cuesta Más Que una Tarjeta de Crédito? — CreditStud.io",
+    "description": "Descubre si los servicios de compra ahora paga después o las tarjetas de crédito cuestan más para tu compra. Desglose de costos reales, ejemplos y cuándo gana cada opción.",
+    "og_title": "¿Compra Ahora Paga Después Cuesta Más Que una Tarjeta de Crédito?",
+    "og_description": "Descubre si los servicios de compra ahora paga después o las tarjetas de crédito cuestan más para tu compra. Desglose de costos reales, ejemplos y cuándo gana cada opción.",
+    "twitter_title": "¿Compra Ahora Paga Después Cuesta Más Que una Tarjeta de Crédito?",
+    "twitter_description": "Descubre si los servicios de compra ahora paga después o las tarjetas de crédito cuestan más para tu compra. Desglose de costos reales, ejemplos y cuándo gana cada opción.",
+    "ld_headline": "¿Compra Ahora Paga Después Cuesta Más Que una Tarjeta de Crédito?",
+    "ld_description": "Descubre si los servicios de compra ahora paga después o las tarjetas de crédito cuestan más para tu compra. Desglose de costos reales, ejemplos y cuándo gana cada opción.",
+    "ld_breadcrumb_last": "¿Compra Ahora Paga Después Cuesta Más Que una Tarjeta de Crédito?"
+  },
+  "blog/cheapest-way-to-finance-purchase.html": {
+    "title": "La Forma Más Inteligente de Financiar una Compra de $1,000 en 2026 — CreditStud.io",
+    "description": "Comparando cada opción para financiar una compra de $1,000: BNPL, tarjetas de crédito, préstamos personales y más. Encuentra la forma más barata de pagar a plazos.",
+    "og_title": "La Forma Más Inteligente de Financiar una Compra de $1,000 en 2026",
+    "og_description": "Comparando cada opción para financiar una compra de $1,000: BNPL, tarjetas de crédito, préstamos personales y más. Encuentra la forma más barata de pagar a plazos.",
+    "twitter_title": "La Forma Más Inteligente de Financiar una Compra de $1,000 en 2026",
+    "twitter_description": "Comparando cada opción para financiar una compra de $1,000: BNPL, tarjetas de crédito, préstamos personales y más. Encuentra la forma más barata de pagar a plazos.",
+    "ld_headline": "La Forma Más Inteligente de Financiar una Compra de $1,000 en 2026",
+    "ld_description": "Comparando cada opción para financiar una compra de $1,000: BNPL, tarjetas de crédito, préstamos personales y más. Encuentra la forma más barata de pagar a plazos.",
+    "ld_breadcrumb_last": "Forma Más Barata de Financiar una Compra"
+  },
+  "blog/credit-card-benefits-youre-not-using.html": {
+    "title": "12 Beneficios de Tarjetas de Crédito Que Probablemente No Usas (Valen $1,000+/Año) — CreditStud.io",
+    "description": "La mayoría de titulares de tarjetas de crédito dejan cientos o miles de dólares en beneficios sobre la mesa. Descubre los beneficios pasados por alto — desde seguro de celular hasta cobertura por retraso de vuelo — y cómo usarlos realmente.",
+    "og_title": "12 Beneficios de Tarjetas de Crédito Que Probablemente No Usas (Valen $1,000+/Año)",
+    "og_description": "La mayoría de titulares de tarjetas de crédito dejan cientos o miles de dólares en beneficios sobre la mesa. Descubre los beneficios pasados por alto y cómo usarlos realmente.",
+    "twitter_title": "12 Beneficios de Tarjetas de Crédito Que Probablemente No Usas (Valen $1,000+/Año)",
+    "twitter_description": "La mayoría de titulares de tarjetas de crédito dejan cientos o miles de dólares en beneficios sobre la mesa. Descubre los beneficios pasados por alto y cómo usarlos realmente.",
+    "ld_headline": "12 Beneficios de Tarjetas de Crédito Que Probablemente No Usas (Valen $1,000+/Año)",
+    "ld_description": "La mayoría de titulares de tarjetas de crédito dejan cientos o miles de dólares en beneficios sobre la mesa. Descubre los beneficios pasados por alto — desde seguro de celular hasta cobertura por retraso de vuelo — y cómo usarlos realmente.",
+    "ld_breadcrumb_last": "Beneficios de Tarjetas de Crédito Que No Usas"
+  },
+  "blog/credit-card-points-offset-interest.html": {
+    "title": "¿Los Puntos de Tarjetas de Crédito Realmente Compensan los Intereses? Los Números Te Sorprenderán — CreditStud.io",
+    "description": "¿Las recompensas de tarjetas de crédito realmente compensan los intereses que pagas? Hicimos los cálculos sobre mantener saldos vs. ganar cash back. Las matemáticas revelan cuándo los puntos ayudan — y cuándo son una ilusión.",
+    "og_title": "¿Los Puntos de Tarjetas de Crédito Realmente Compensan los Intereses? Los Números Te Sorprenderán",
+    "og_description": "¿Las recompensas de tarjetas de crédito realmente compensan los intereses que pagas? Hicimos los cálculos sobre mantener saldos vs. ganar cash back.",
+    "twitter_title": "¿Los Puntos de Tarjetas de Crédito Realmente Compensan los Intereses? Los Números Te Sorprenderán",
+    "twitter_description": "¿Las recompensas de tarjetas de crédito realmente compensan los intereses que pagas? Hicimos los cálculos sobre mantener saldos vs. ganar cash back.",
+    "ld_headline": "¿Los Puntos de Tarjetas de Crédito Realmente Compensan los Intereses? Los Números Te Sorprenderán",
+    "ld_description": "¿Las recompensas de tarjetas de crédito realmente compensan los intereses que pagas? Hicimos los cálculos sobre mantener saldos vs. ganar cash back.",
+    "ld_breadcrumb_last": "¿Pueden las Recompensas de Tarjetas de Crédito Compensar los Intereses?"
+  },
+  "blog/does-klarna-affect-credit-score.html": {
+    "title": "¿Klarna Afecta Tu Puntaje de Crédito? Aquí Está la Verdad — CreditStud.io",
+    "description": "Descubre exactamente cómo Klarna afecta tu puntaje de crédito. Verificaciones suaves, consultas hard pull, pagos atrasados — todo lo que necesitas saber antes de usar Klarna.",
+    "og_title": "¿Klarna Afecta Tu Puntaje de Crédito? Aquí Está la Verdad",
+    "og_description": "Descubre exactamente cómo Klarna afecta tu puntaje de crédito. Verificaciones suaves, consultas hard pull, pagos atrasados — todo lo que necesitas saber antes de usar Klarna.",
+    "twitter_title": "¿Klarna Afecta Tu Puntaje de Crédito? Aquí Está la Verdad",
+    "twitter_description": "Descubre exactamente cómo Klarna afecta tu puntaje de crédito. Verificaciones suaves, consultas hard pull, pagos atrasados — todo lo que necesitas saber antes de usar Klarna.",
+    "ld_headline": "¿Klarna Afecta Tu Puntaje de Crédito? Aquí Está la Verdad",
+    "ld_description": "Descubre exactamente cómo Klarna afecta tu puntaje de crédito. Verificaciones suaves, consultas hard pull, pagos atrasados — todo lo que necesitas saber antes de usar Klarna.",
+    "ld_breadcrumb_last": "¿Klarna Afecta Tu Puntaje de Crédito?"
+  },
+  "blog/how-to-build-credit-from-scratch.html": {
+    "title": "Cómo Construir Crédito desde Cero — Guía Paso a Paso (2026) | CreditStud.io",
+    "description": "¿Sin historial de crédito? Esta guía paso a paso te muestra cómo construir crédito desde cero usando tarjetas secured, estrategia de usuario autorizado y hábitos inteligentes. Incluye un cronograma mes a mes.",
+    "og_title": "Cómo Construir Crédito desde Cero — Guía Paso a Paso (2026)",
+    "og_description": "¿Sin historial de crédito? Aprende cómo construir crédito desde cero usando tarjetas secured, estrategia de usuario autorizado y hábitos inteligentes. Incluye un cronograma mes a mes.",
+    "twitter_title": "Cómo Construir Crédito desde Cero — Guía Paso a Paso (2026)",
+    "twitter_description": "¿Sin historial de crédito? Aprende cómo construir crédito desde cero usando tarjetas secured, estrategia de usuario autorizado y hábitos inteligentes.",
+    "ld_headline": "Cómo Construir Crédito desde Cero — Guía Paso a Paso (2026)",
+    "ld_description": "¿Sin historial de crédito? Esta guía paso a paso te muestra cómo construir crédito desde cero usando tarjetas secured, estrategia de usuario autorizado y hábitos inteligentes. Incluye un cronograma mes a mes.",
+    "ld_breadcrumb_last": "Cómo Construir Crédito desde Cero"
+  },
+  "blog/index.html": {
+    "title": "Blog — CreditStud.io | Guías y Comparaciones de Pagos de Crédito",
+    "description": "Guías expertas sobre servicios BNPL, tarjetas de crédito y estrategias de pago. Compara Klarna, Afterpay, Affirm y más para ahorrar dinero.",
+    "og_title": "Blog — CreditStud.io",
+    "og_description": "Guías expertas sobre servicios BNPL, tarjetas de crédito y estrategias de pago. Compara opciones y ahorra dinero.",
+    "twitter_title": "Consejos y Guías de Tarjetas de Crédito — Blog CreditStud.io",
+    "twitter_description": "Guías gratuitas sobre tarjetas de crédito, pago de deudas, BNPL y finanzas personales. Actualizado semanalmente con análisis basado en datos.",
+    "ld_breadcrumb_last": "Blog"
+  },
+  "blog/klarna-vs-afterpay-vs-affirm.html": {
+    "title": "Klarna vs Afterpay vs Affirm: Comparación de Costos Real (2026) — CreditStud.io",
+    "description": "Compara Klarna, Afterpay y Affirm lado a lado. Ve los costos reales, tarifas, tasas de interés y qué servicio BNPL te ahorra más dinero en 2026.",
+    "og_title": "Klarna vs Afterpay vs Affirm: Comparación de Costos Real (2026)",
+    "og_description": "Compara Klarna, Afterpay y Affirm lado a lado. Ve los costos reales, tarifas, tasas de interés y qué servicio BNPL te ahorra más dinero en 2026.",
+    "twitter_title": "Klarna vs Afterpay vs Affirm: Comparación de Costos Real (2026)",
+    "twitter_description": "Compara Klarna, Afterpay y Affirm lado a lado. Ve los costos reales, tarifas, tasas de interés y qué servicio BNPL te ahorra más dinero en 2026.",
+    "ld_headline": "Klarna vs Afterpay vs Affirm: Comparación de Costos Real (2026)",
+    "ld_description": "Compara Klarna, Afterpay y Affirm lado a lado. Ve los costos reales, tarifas, tasas de interés y qué servicio BNPL te ahorra más dinero en 2026.",
+    "ld_breadcrumb_last": "Klarna vs Afterpay vs Affirm"
+  },
+  "blog/minimum-payment-trap.html": {
+    "title": "La Trampa del Pago Mínimo: Cuánto Cuesta Realmente | CreditStud.io",
+    "description": "Pagar el mínimo en un saldo de $5,000 al 24% APR cuesta $13,000+ y toma 22 años. Aprende cómo los pagos mínimos están diseñados para mantenerte endeudado — y 3 estrategias para escapar.",
+    "og_title": "La Trampa del Pago Mínimo: Cuánto Cuesta Realmente",
+    "og_description": "Pagar el mínimo en $5K al 24% APR = 22 años y $13K+ en intereses. Cómo funcionan los pagos mínimos, por qué están diseñados para atraparte y 3 estrategias para escapar.",
+    "twitter_title": "La Trampa del Pago Mínimo: Cuánto Cuesta Realmente",
+    "twitter_description": "Pagar el mínimo en $5K al 24% APR = 22 años y $13K+ en intereses. Aprende por qué y cómo escapar.",
+    "ld_headline": "La Trampa del Pago Mínimo: Cuánto Cuesta Realmente",
+    "ld_description": "Pagar el mínimo en $5,000 al 24% APR toma 22 años y cuesta $13,000+ en intereses. Aprende cómo los pagos mínimos están diseñados para atraparte en deuda — y 3 estrategias para escapar.",
+    "ld_breadcrumb_last": "La Trampa del Pago Mínimo"
+  },
+  "blog/sneaky-credit-card-pitfalls.html": {
+    "title": "7 Trampas Ocultas de Tarjetas de Crédito Que Te Cuestan Dinero — CreditStud.io",
+    "description": "Desde trampas de interés diferido hasta acantilados de APR post-promoción, estas trampas de tarjetas de crédito te cuestan silenciosamente cientos. Aprende cómo detectar y evitar cada una.",
+    "og_title": "7 Trampas Ocultas de Tarjetas de Crédito Que Te Cuestan Dinero",
+    "og_description": "Desde trampas de interés diferido hasta acantilados de APR post-promoción, estas trampas de tarjetas de crédito te cuestan silenciosamente cientos. Aprende cómo detectar y evitar cada una.",
+    "twitter_title": "7 Trampas Ocultas de Tarjetas de Crédito Que Te Cuestan Dinero",
+    "twitter_description": "Desde trampas de interés diferido hasta acantilados de APR post-promoción, estas trampas de tarjetas de crédito te cuestan silenciosamente cientos. Aprende cómo detectar y evitar cada una.",
+    "ld_headline": "7 Trampas Ocultas de Tarjetas de Crédito Que Te Cuestan Dinero",
+    "ld_description": "Desde trampas de interés diferido hasta acantilados de APR post-promoción, estas trampas de tarjetas de crédito te cuestan silenciosamente cientos. Aprende cómo detectar y evitar cada una.",
+    "ld_breadcrumb_last": "Trampas Ocultas de Tarjetas de Crédito"
+  },
+  "blog/snowball-vs-avalanche.html": {
+    "title": "Deuda Snowball vs Avalanche: ¿Cuál Deberías Elegir? | CreditStud.io",
+    "description": "Deuda snowball vs deuda avalanche — ¿cuál paga la deuda más rápido? Desglosamos ambos métodos con ejemplos de matemáticas reales para que puedas elegir la estrategia que realmente funciona.",
+    "og_title": "Deuda Snowball vs Avalanche: ¿Cuál Deberías Elegir?",
+    "og_description": "Deuda snowball vs deuda avalanche — ¿cuál paga la deuda más rápido? Matemáticas reales, ejemplos reales y una estrategia híbrida que obtiene lo mejor de ambas.",
+    "twitter_title": "Deuda Snowball vs Avalanche: ¿Cuál Deberías Elegir?",
+    "twitter_description": "Deuda snowball vs deuda avalanche — ¿cuál paga la deuda más rápido? Ejemplos de matemáticas reales y una estrategia híbrida.",
+    "ld_headline": "Deuda Snowball vs Avalanche: ¿Cuál Deberías Elegir?",
+    "ld_description": "Deuda snowball vs deuda avalanche — ¿cuál paga la deuda más rápido? Desglosamos ambos métodos con ejemplos de matemáticas reales para que puedas elegir la estrategia que realmente funciona.",
+    "ld_breadcrumb_last": "Deuda Snowball vs Avalanche"
+  },
+  "cards/amazon-prime-visa-signature/index.html": {
+    "title": "Reseña de Amazon Prime Visa Signature Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Amazon Prime Visa Signature Card. Pros, contras, matemáticas reales y quién debería omitirla. Tarjeta de regalo de $150 de Amazon al aprobarse (para miembros Prime).",
+    "og_title": "Reseña de Amazon Prime Visa Signature Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Amazon Prime Visa Signature Card. Pros, contras, matemáticas reales y quién debería omitirla. Tarjeta de regalo de $150 de Amazon al aprobarse (para miembros Prime).",
+    "twitter_title": "Reseña de Amazon Prime Visa Signature Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Amazon Prime Visa Signature Card. Pros, contras, matemáticas reales y quién debería omitirla. Tarjeta de regalo de $150 de Amazon al aprobarse (para miembros Prime).",
+    "ld_breadcrumb_last": "Amazon Prime Visa Signature"
+  },
+  "cards/amex-blue-cash-everyday/index.html": {
+    "title": "Reseña de Blue Cash Everyday® Card from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Blue Cash Everyday® Card from American Express. Pros, contras, matemáticas reales y quién debería omitirla. $200 de crédito en estado de cuenta después de $2,000 en gastos en 6 meses.",
+    "og_title": "Reseña de Blue Cash Everyday® Card from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Blue Cash Everyday® Card from American Express. Pros, contras, matemáticas reales y quién debería omitirla. $200 de crédito en estado de cuenta después de $2,000 en gastos en 6 meses.",
+    "twitter_title": "Reseña de Blue Cash Everyday® Card from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Blue Cash Everyday® Card from American Express. Pros, contras, matemáticas reales y quién debería omitirla. $200 de crédito en estado de cuenta después de $2,000 en gastos en 6 meses.",
+    "ld_breadcrumb_last": "Blue Cash Everyday from American Express"
+  },
+  "cards/amex-blue-cash-preferred/index.html": {
+    "title": "Reseña de Blue Cash Preferred® Card from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Blue Cash Preferred® Card from American Express. Pros, contras, matemáticas reales y quién debería omitirla. $250 de crédito en estado de cuenta después de $3,000 en gastos en 6 meses.",
+    "og_title": "Reseña de Blue Cash Preferred® Card from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Blue Cash Preferred® Card from American Express. Pros, contras, matemáticas reales y quién debería omitirla. $250 de crédito en estado de cuenta después de $3,000 en gastos en 6 meses.",
+    "twitter_title": "Reseña de Blue Cash Preferred® Card from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Blue Cash Preferred® Card from American Express. Pros, contras, matemáticas reales y quién debería omitirla. $250 de crédito en estado de cuenta después de $3,000 en gastos en 6 meses.",
+    "ld_breadcrumb_last": "Blue Cash Preferred from American Express"
+  },
+  "cards/amex-gold/index.html": {
+    "title": "Reseña de American Express® Gold Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de American Express® Gold Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos Membership Rewards después de $6,000 en gastos en 6 meses.",
+    "og_title": "Reseña de American Express® Gold Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de American Express® Gold Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos Membership Rewards después de $6,000 en gastos en 6 meses.",
+    "twitter_title": "Reseña de American Express® Gold Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de American Express® Gold Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos Membership Rewards después de $6,000 en gastos en 6 meses.",
+    "ld_breadcrumb_last": "American Express® Gold Card"
+  },
+  "cards/amex-platinum/index.html": {
+    "title": "Reseña de The Platinum Card® from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de The Platinum Card® from American Express. Pros, contras, matemáticas reales y quién debería omitirla. 80,000 puntos Membership Rewards después de $8,000 en gastos en 6 meses.",
+    "og_title": "Reseña de The Platinum Card® from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de The Platinum Card® from American Express. Pros, contras, matemáticas reales y quién debería omitirla. 80,000 puntos Membership Rewards después de $8,000 en gastos en 6 meses.",
+    "twitter_title": "Reseña de The Platinum Card® from American Express — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de The Platinum Card® from American Express. Pros, contras, matemáticas reales y quién debería omitirla. 80,000 puntos Membership Rewards después de $8,000 en gastos en 6 meses.",
+    "ld_breadcrumb_last": "American Express Platinum"
+  },
+  "cards/apple-card/index.html": {
+    "title": "Reseña de Apple Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Apple Card. Pros, contras, matemáticas reales y quién debería omitirla. 3% Daily Cash en todas las compras de Apple durante los primeros 3 meses.",
+    "og_title": "Reseña de Apple Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Apple Card. Pros, contras, matemáticas reales y quién debería omitirla. 3% Daily Cash en todas las compras de Apple durante los primeros 3 meses.",
+    "twitter_title": "Reseña de Apple Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Apple Card. Pros, contras, matemáticas reales y quién debería omitirla. 3% Daily Cash en todas las compras de Apple durante los primeros 3 meses.",
+    "ld_breadcrumb_last": "Apple Card"
+  },
+  "cards/barclays-uber-pro/index.html": {
+    "title": "Reseña de Barclays Uber Pro Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Barclays Uber Pro Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $100 Uber Cash después de $500 en gastos en 3 meses.",
+    "og_title": "Reseña de Barclays Uber Pro Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Barclays Uber Pro Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $100 Uber Cash después de $500 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Barclays Uber Pro Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Barclays Uber Pro Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $100 Uber Cash después de $500 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Barclays Uber Pro Card"
+  },
+  "cards/bilt-mastercard/index.html": {
+    "title": "Reseña de Bilt Mastercard® — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Bilt Mastercard®. Pros, contras, matemáticas reales y quién debería omitirla. Gana 2x puntos en pagos de renta durante los primeros 12 meses (sin límite).",
+    "og_title": "Reseña de Bilt Mastercard® — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Bilt Mastercard®. Pros, contras, matemáticas reales y quién debería omitirla. Gana 2x puntos en pagos de renta durante los primeros 12 meses (sin límite).",
+    "twitter_title": "Reseña de Bilt Mastercard® — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Bilt Mastercard®. Pros, contras, matemáticas reales y quién debería omitirla. Gana 2x puntos en pagos de renta durante los primeros 12 meses (sin límite).",
+    "ld_breadcrumb_last": "Bilt Mastercard"
+  },
+  "cards/bofa-customized-cash-rewards/index.html": {
+    "title": "Reseña de Bank of America® Customized Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Bank of America® Customized Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 en recompensas en efectivo en línea después de $1,000 en gastos en 90 días.",
+    "og_title": "Reseña de Bank of America® Customized Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Bank of America® Customized Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 en recompensas en efectivo en línea después de $1,000 en gastos en 90 días.",
+    "twitter_title": "Reseña de Bank of America® Customized Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Bank of America® Customized Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 en recompensas en efectivo en línea después de $1,000 en gastos en 90 días.",
+    "ld_breadcrumb_last": "Bank of America Customized Cash Rewards"
+  },
+  "cards/capital-one-quicksilver/index.html": {
+    "title": "Reseña de Capital One Quicksilver Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Capital One Quicksilver Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses.",
+    "og_title": "Reseña de Capital One Quicksilver Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Capital One Quicksilver Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Capital One Quicksilver Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Capital One Quicksilver Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Capital One Quicksilver"
+  },
+  "cards/capital-one-savor/index.html": {
+    "title": "Reseña de Capital One Savor Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Capital One Savor Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en los primeros 3 meses.",
+    "og_title": "Reseña de Capital One Savor Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Capital One Savor Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en los primeros 3 meses.",
+    "twitter_title": "Reseña de Capital One Savor Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Capital One Savor Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en los primeros 3 meses.",
+    "ld_breadcrumb_last": "Capital One Savor"
+  },
+  "cards/capital-one-savorone/index.html": {
+    "title": "Reseña de Capital One SavorOne Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Capital One SavorOne Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses.",
+    "og_title": "Reseña de Capital One SavorOne Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Capital One SavorOne Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Capital One SavorOne Cash Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Capital One SavorOne Cash Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Capital One SavorOne"
+  },
+  "cards/capital-one-venture-x/index.html": {
+    "title": "Reseña de Capital One Venture X Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Capital One Venture X Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 75,000 millas después de $4,000 en gastos en 3 meses.",
+    "og_title": "Reseña de Capital One Venture X Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Capital One Venture X Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 75,000 millas después de $4,000 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Capital One Venture X Rewards Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Capital One Venture X Rewards Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 75,000 millas después de $4,000 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Capital One Venture X"
+  },
+  "cards/chase-freedom-flex/index.html": {
+    "title": "Reseña de Chase Freedom Flex℠ Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Chase Freedom Flex℠ Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses, más 5% en hasta $1,500 en compras combinadas cada trimestre (se requiere activación).",
+    "og_title": "Reseña de Chase Freedom Flex℠ Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Chase Freedom Flex℠ Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses, más 5% en hasta $1,500 en compras combinadas cada trimestre (se requiere activación).",
+    "twitter_title": "Reseña de Chase Freedom Flex℠ Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Chase Freedom Flex℠ Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $500 en gastos en 3 meses, más 5% en hasta $1,500 en compras combinadas cada trimestre (se requiere activación).",
+    "ld_breadcrumb_last": "Chase Freedom Flex"
+  },
+  "cards/chase-ink-business-preferred/index.html": {
+    "title": "Reseña de Chase Ink Business Preferred® Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Chase Ink Business Preferred® Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 100,000 puntos (valor de $1,250 en viajes) después de $8,000 en gastos en 3 meses.",
+    "og_title": "Reseña de Chase Ink Business Preferred® Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Chase Ink Business Preferred® Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 100,000 puntos (valor de $1,250 en viajes) después de $8,000 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Chase Ink Business Preferred® Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Chase Ink Business Preferred® Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 100,000 puntos (valor de $1,250 en viajes) después de $8,000 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Chase Ink Business Preferred"
+  },
+  "cards/chase-sapphire-preferred/index.html": {
+    "title": "Reseña de Chase Sapphire Preferred® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Chase Sapphire Preferred® Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos (valor de $750 en viajes) después de $4,000 en gastos en 3 meses.",
+    "og_title": "Reseña de Chase Sapphire Preferred® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Chase Sapphire Preferred® Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos (valor de $750 en viajes) después de $4,000 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Chase Sapphire Preferred® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Chase Sapphire Preferred® Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos (valor de $750 en viajes) después de $4,000 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Chase Sapphire Preferred"
+  },
+  "cards/chase-sapphire-reserve/index.html": {
+    "title": "Reseña de Chase Sapphire Reserve® — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Chase Sapphire Reserve®. Pros, contras, matemáticas reales y quién debería omitirla. 75,000 puntos (valor de $1,125 en viajes) después de $5,000 en gastos en 3 meses.",
+    "og_title": "Reseña de Chase Sapphire Reserve® — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Chase Sapphire Reserve®. Pros, contras, matemáticas reales y quién debería omitirla. 75,000 puntos (valor de $1,125 en viajes) después de $5,000 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Chase Sapphire Reserve® — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Chase Sapphire Reserve®. Pros, contras, matemáticas reales y quién debería omitirla. 75,000 puntos (valor de $1,125 en viajes) después de $5,000 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Chase Sapphire Reserve"
+  },
+  "cards/citi-custom-cash/index.html": {
+    "title": "Reseña de Citi Custom Cash® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Citi Custom Cash® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $1,500 en gastos en 6 meses.",
+    "og_title": "Reseña de Citi Custom Cash® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Citi Custom Cash® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $1,500 en gastos en 6 meses.",
+    "twitter_title": "Reseña de Citi Custom Cash® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Citi Custom Cash® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $1,500 en gastos en 6 meses.",
+    "ld_breadcrumb_last": "Citi Custom Cash"
+  },
+  "cards/citi-double-cash/index.html": {
+    "title": "Reseña de Citi® Double Cash Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Citi® Double Cash Card. Pros, contras, matemáticas reales y quién debería omitirla. Sin bono de bienvenida — gana 2% en todo desde el día uno.",
+    "og_title": "Reseña de Citi® Double Cash Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Citi® Double Cash Card. Pros, contras, matemáticas reales y quién debería omitirla. Sin bono de bienvenida — gana 2% en todo desde el día uno.",
+    "twitter_title": "Reseña de Citi® Double Cash Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Citi® Double Cash Card. Pros, contras, matemáticas reales y quién debería omitirla. Sin bono de bienvenida — gana 2% en todo desde el día uno.",
+    "ld_breadcrumb_last": "Citi Double Cash"
+  },
+  "cards/citi-premier/index.html": {
+    "title": "Reseña de Citi Premier® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Citi Premier® Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos ThankYou (valor de $600 en viajes) después de $4,000 en gastos en 3 meses.",
+    "og_title": "Reseña de Citi Premier® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Citi Premier® Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos ThankYou (valor de $600 en viajes) después de $4,000 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Citi Premier® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Citi Premier® Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos ThankYou (valor de $600 en viajes) después de $4,000 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Citi Premier"
+  },
+  "cards/citi-strata-premier/index.html": {
+    "title": "Reseña de Citi Strata Premier℠ Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Citi Strata Premier℠ Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos ThankYou (valor de ~$600 en viajes) después de $4,000 en gastos en 3 meses.",
+    "og_title": "Reseña de Citi Strata Premier℠ Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Citi Strata Premier℠ Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos ThankYou (valor de ~$600 en viajes) después de $4,000 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Citi Strata Premier℠ Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Citi Strata Premier℠ Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos ThankYou (valor de ~$600 en viajes) después de $4,000 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Citi Strata Premier"
+  },
+  "cards/discover-it-cash-back/index.html": {
+    "title": "Reseña de Discover it® Cash Back — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Discover it® Cash Back. Pros, contras, matemáticas reales y quién debería omitirla. Cashback Match — Discover duplica TODO el cash back ganado en tu primer año (sin límite).",
+    "og_title": "Reseña de Discover it® Cash Back — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Discover it® Cash Back. Pros, contras, matemáticas reales y quién debería omitirla. Cashback Match — Discover duplica TODO el cash back ganado en tu primer año (sin límite).",
+    "twitter_title": "Reseña de Discover it® Cash Back — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Discover it® Cash Back. Pros, contras, matemáticas reales y quién debería omitirla. Cashback Match — Discover duplica TODO el cash back ganado en tu primer año (sin límite).",
+    "ld_breadcrumb_last": "Discover it Cash Back"
+  },
+  "cards/ihg-one-rewards-premier/index.html": {
+    "title": "Reseña de IHG One Rewards® Premier Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de IHG One Rewards® Premier Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 175,000 puntos IHG después de $3,000 en gastos en 3 meses (valor de ~$875 en hoteles).",
+    "og_title": "Reseña de IHG One Rewards® Premier Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de IHG One Rewards® Premier Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 175,000 puntos IHG después de $3,000 en gastos en 3 meses (valor de ~$875 en hoteles).",
+    "twitter_title": "Reseña de IHG One Rewards® Premier Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de IHG One Rewards® Premier Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 175,000 puntos IHG después de $3,000 en gastos en 3 meses (valor de ~$875 en hoteles).",
+    "ld_breadcrumb_last": "IHG One Rewards Premier"
+  },
+  "cards/index.html": {
+    "title": "Reseñas de Tarjetas de Crédito — Veredictos Honestos | CreditStud.io",
+    "description": "Reseñas honestas de tarjetas de crédito con matemáticas reales, desglose de beneficios y veredictos editoriales. Sin relleno, sin contenido SEO — solo los números.",
+    "og_title": "Reseñas de Tarjetas de Crédito — Veredictos Honestos | CreditStud.io",
+    "og_description": "Reseñas honestas de tarjetas de crédito con matemáticas reales, desglose de beneficios y veredictos editoriales. Sin relleno, sin contenido SEO — solo los números.",
+    "twitter_title": "Mejores Reseñas y Comparaciones de Tarjetas de Crédito — CreditStud.io",
+    "twitter_description": "Compara tarjetas de crédito con matemáticas reales. Reseñas profundas de 28+ tarjetas con bonos de bienvenida, valores de recompensas y veredictos honestos.",
+    "ld_breadcrumb_last": "Tarjetas de Crédito"
+  },
+  "cards/southwest-priority-card/index.html": {
+    "title": "Reseña de Southwest Rapid Rewards® Priority Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Southwest Rapid Rewards® Priority Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos después de $2,000 en gastos en 3 meses (valor de ~$900 en viajes Southwest).",
+    "og_title": "Reseña de Southwest Rapid Rewards® Priority Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Southwest Rapid Rewards® Priority Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos después de $2,000 en gastos en 3 meses (valor de ~$900 en viajes Southwest).",
+    "twitter_title": "Reseña de Southwest Rapid Rewards® Priority Credit Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Southwest Rapid Rewards® Priority Credit Card. Pros, contras, matemáticas reales y quién debería omitirla. 60,000 puntos después de $2,000 en gastos en 3 meses (valor de ~$900 en viajes Southwest).",
+    "ld_breadcrumb_last": "Southwest Priority Card"
+  },
+  "cards/us-bank-altitude-go/index.html": {
+    "title": "Reseña de US Bank Altitude® Go Visa Signature Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de US Bank Altitude® Go Visa Signature Card. Pros, contras, matemáticas reales y quién debería omitirla. 20,000 puntos bono (valor de ~$200) después de $1,000 en gastos en 90 días.",
+    "og_title": "Reseña de US Bank Altitude® Go Visa Signature Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de US Bank Altitude® Go Visa Signature Card. Pros, contras, matemáticas reales y quién debería omitirla. 20,000 puntos bono (valor de ~$200) después de $1,000 en gastos en 90 días.",
+    "twitter_title": "Reseña de US Bank Altitude® Go Visa Signature Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de US Bank Altitude® Go Visa Signature Card. Pros, contras, matemáticas reales y quién debería omitirla. 20,000 puntos bono (valor de ~$200) después de $1,000 en gastos en 90 días.",
+    "ld_breadcrumb_last": "US Bank Altitude Go"
+  },
+  "cards/us-bank-cash-plus/index.html": {
+    "title": "Reseña de U.S. Bank Cash+® Visa Signature® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de U.S. Bank Cash+® Visa Signature® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $1,000 en gastos en 90 días.",
+    "og_title": "Reseña de U.S. Bank Cash+® Visa Signature® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de U.S. Bank Cash+® Visa Signature® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $1,000 en gastos en 90 días.",
+    "twitter_title": "Reseña de U.S. Bank Cash+® Visa Signature® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de U.S. Bank Cash+® Visa Signature® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 cash back después de $1,000 en gastos en 90 días.",
+    "ld_breadcrumb_last": "US Bank Cash+"
+  },
+  "cards/wells-fargo-active-cash/index.html": {
+    "title": "Reseña de Wells Fargo Active Cash® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Wells Fargo Active Cash® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 en recompensas en efectivo después de $1,000 en gastos en 3 meses.",
+    "og_title": "Reseña de Wells Fargo Active Cash® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Wells Fargo Active Cash® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 en recompensas en efectivo después de $1,000 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Wells Fargo Active Cash® Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Wells Fargo Active Cash® Card. Pros, contras, matemáticas reales y quién debería omitirla. $200 en recompensas en efectivo después de $1,000 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Wells Fargo Active Cash"
+  },
+  "cards/wells-fargo-autograph/index.html": {
+    "title": "Reseña de Wells Fargo Autograph℠ Card — Pros, Contras y Veredicto | CreditStud.io",
+    "description": "Reseña honesta de Wells Fargo Autograph℠ Card. Pros, contras, matemáticas reales y quién debería omitirla. 20,000 puntos (valor de ~$330 en viajes) después de $1,000 en gastos en 3 meses.",
+    "og_title": "Reseña de Wells Fargo Autograph℠ Card — Pros, Contras y Veredicto | CreditStud.io",
+    "og_description": "Reseña honesta de Wells Fargo Autograph℠ Card. Pros, contras, matemáticas reales y quién debería omitirla. 20,000 puntos (valor de ~$330 en viajes) después de $1,000 en gastos en 3 meses.",
+    "twitter_title": "Reseña de Wells Fargo Autograph℠ Card — Pros, Contras y Veredicto | CreditStud.io",
+    "twitter_description": "Reseña honesta de Wells Fargo Autograph℠ Card. Pros, contras, matemáticas reales y quién debería omitirla. 20,000 puntos (valor de ~$330 en viajes) después de $1,000 en gastos en 3 meses.",
+    "ld_breadcrumb_last": "Wells Fargo Autograph"
+  },
+  "compare/index.html": {
+    "title": "Calculadora de Comparación de Crédito | CreditStud.io",
+    "description": "Compara tarjetas de crédito, servicios BNPL y planes de pago lado a lado. Encuentra la forma más barata de financiar cualquier compra.",
+    "og_title": "Calculadora de Comparación de Crédito | CreditStud.io",
+    "og_description": "Compara tarjetas de crédito, servicios BNPL y planes de pago lado a lado. Encuentra la forma más barata de financiar cualquier compra.",
+    "twitter_title": "Calculadora de Comparación de Crédito | CreditStud.io",
+    "twitter_description": "Compara tarjetas de crédito, servicios BNPL y planes de pago lado a lado. Encuentra la forma más barata de financiar cualquier compra.",
+    "ld_breadcrumb_last": "Comparación de Crédito"
+  },
+  "debt-planner/index.html": {
+    "title": "Planificador de Pago de Deudas — Calculadora Snowball vs Avalanche | CreditStud.io",
+    "description": "Planificador gratuito de pago de deudas. Compara estrategias snowball vs avalanche, ve tu fecha libre de deudas y visualiza tu camino hacia cero deudas.",
+    "og_title": "Planificador de Pago de Deudas — Calculadora Snowball vs Avalanche | CreditStud.io",
+    "og_description": "Planificador gratuito de pago de deudas. Compara estrategias snowball vs avalanche, ve tu fecha libre de deudas y visualiza tu camino hacia cero deudas.",
+    "twitter_title": "Planificador de Pago de Deudas — Calculadora Snowball vs Avalanche | CreditStud.io",
+    "twitter_description": "Planificador gratuito de pago de deudas. Compara estrategias snowball vs avalanche, ve tu fecha libre de deudas y visualiza tu camino hacia cero deudas.",
+    "ld_breadcrumb_last": "Planificador de Deudas"
+  },
+  "disclosure.html": {
+    "title": "Divulgación de Afiliados | CreditStud.io",
+    "description": "Política de divulgación de afiliados de CreditStud.io. Aprende cómo ganamos dinero y mantenemos independencia editorial.",
+    "og_title": "Divulgación de Afiliados | CreditStud.io",
+    "og_description": "Política de divulgación de afiliados de CreditStud.io. Aprende cómo ganamos dinero y mantenemos independencia editorial.",
+    "ld_breadcrumb_last": "Divulgación"
+  },
+  "index.html": {
+    "title": "CreditStud.io — Calculadoras Gratuitas de Tarjetas de Crédito y Deuda",
+    "description": "Compara tarjetas de crédito, planifica el pago de deudas y encuentra las mejores recompensas. Calculadoras gratuitas que hacen los cálculos por ti — sin registro.",
+    "og_title": "CreditStud.io — Calculadoras Gratuitas de Tarjetas de Crédito y Deuda",
+    "og_description": "Compara tarjetas de crédito, planifica el pago de deudas y encuentra las mejores recompensas. Calculadoras gratuitas que hacen los cálculos por ti.",
+    "twitter_title": "CreditStud.io — Calculadoras Gratuitas de Tarjetas de Crédito y Deuda",
+    "twitter_description": "Compara tarjetas de crédito, planifica el pago de deudas y encuentra las mejores recompensas. Calculadoras gratuitas que hacen los cálculos por ti.",
+    "ld_breadcrumb_last": "Inicio"
+  },
+  "learn/balance-transfer-calculator.html": {
+    "title": "Calculadora de Transferencia de Saldo con 0% APR — ¿Deberías Transferir Tu Saldo? — CreditStud.io",
+    "description": "Calcula cuánto puedes ahorrar transfiriendo deuda de tarjetas de crédito a una tarjeta con 0% APR. Considera tarifas de transferencia, períodos promocionales y tasas post-promoción para tomar la decisión correcta.",
+    "og_title": "Calculadora de Transferencia de Saldo con 0% APR — ¿Deberías Transferir Tu Saldo?",
+    "og_description": "Calcula tus ahorros transfiriendo deuda de alto interés a una tarjeta con 0% APR. Considera tarifas de transferencia, períodos promocionales y tasas post-promoción.",
+    "twitter_title": "Calculadora de Transferencia de Saldo con 0% APR — ¿Deberías Transferir Tu Saldo?",
+    "twitter_description": "Calcula tus ahorros transfiriendo deuda de alto interés a una tarjeta con 0% APR.",
+    "ld_headline": "Calculadora de Transferencia de Saldo con 0% APR: ¿Deberías Transferir Tu Saldo?",
+    "ld_description": "Calcula cuánto puedes ahorrar transfiriendo deuda de tarjetas de crédito a una tarjeta con 0% APR. Considera tarifas de transferencia, períodos promocionales y tasas post-promoción para tomar la decisión correcta.",
+    "ld_breadcrumb_last": "Calculadora de Transferencia de Saldo"
+  },
+  "learn/bnpl-interest-calculator.html": {
+    "title": "Calculadora de Tasa de Interés BNPL — Compara Afterpay, Klarna, Affirm y Zip — CreditStud.io",
+    "description": "Entiende el costo real de los servicios de Compra Ahora Paga Después. Compara tasas de interés, tarifas por atraso y costo total entre Afterpay, Klarna, Affirm y Zip con nuestra calculadora de interés BNPL.",
+    "og_title": "Calculadora de Tasa de Interés BNPL — Compara Afterpay, Klarna, Affirm y Zip",
+    "og_description": "Entiende el costo real de los servicios de Compra Ahora Paga Después. Compara tasas de interés, tarifas por atraso y costo total entre Afterpay, Klarna, Affirm y Zip.",
+    "twitter_title": "Calculadora de Tasa de Interés BNPL — Compara Afterpay, Klarna, Affirm y Zip",
+    "twitter_description": "Entiende el costo real de los servicios de Compra Ahora Paga Después. Compara tasas de interés, tarifas por atraso y costo total entre Afterpay, Klarna, Affirm y Zip.",
+    "ld_headline": "Calculadora de Tasa de Interés BNPL — Compara Afterpay, Klarna, Affirm y Zip",
+    "ld_description": "Entiende el costo real de los servicios de Compra Ahora Paga Después. Compara tasas de interés, tarifas por atraso y costo total entre Afterpay, Klarna, Affirm y Zip con nuestra calculadora de interés BNPL.",
+    "ld_breadcrumb_last": "Calculadora de Interés BNPL"
+  },
+  "learn/crypto-credit-card-rewards.html": {
+    "title": "¿Valen la Pena las Recompensas de Tarjetas de Crédito en Cripto? — CreditStud.io",
+    "description": "Compara las recompensas de tarjetas de crédito en cripto contra el cash back tradicional. Entiende los riesgos de volatilidad, implicaciones fiscales y si ganar Bitcoin o Ethereum en tus gastos realmente vale la pena.",
+    "og_title": "¿Valen la Pena las Recompensas de Tarjetas de Crédito en Cripto?",
+    "og_description": "Compara recompensas en cripto contra cash back tradicional. Entiende los riesgos de volatilidad, implicaciones fiscales y el valor real de ganar cripto en tus gastos.",
+    "twitter_title": "¿Valen la Pena las Recompensas de Tarjetas de Crédito en Cripto?",
+    "twitter_description": "Compara recompensas en cripto contra cash back tradicional. Entiende los riesgos de volatilidad, implicaciones fiscales y el valor real de ganar cripto en tus gastos.",
+    "ld_headline": "¿Valen la Pena las Recompensas de Tarjetas de Crédito en Cripto?",
+    "ld_description": "Compara recompensas en cripto contra cash back tradicional. Entiende los riesgos de volatilidad, implicaciones fiscales y el valor real de ganar cripto en tus gastos.",
+    "ld_breadcrumb_last": "Recompensas de Tarjetas de Crédito en Cripto"
+  },
+  "learn/index.html": {
+    "title": "Centro de Educación Financiera | CreditStud.io",
+    "description": "Domina tus finanzas con nuestras guías completas sobre estrategias de pago de deudas de tarjetas de crédito, servicios BNPL, transferencias de saldo, recompensas en cripto y métodos de eliminación de deuda.",
+    "og_title": "Centro de Educación Financiera | CreditStud.io",
+    "og_description": "Domina tus finanzas con guías completas sobre pago de deudas de tarjetas de crédito, servicios BNPL, transferencias de saldo, recompensas en cripto y métodos de eliminación de deuda.",
+    "twitter_title": "Centro de Educación Financiera | CreditStud.io",
+    "twitter_description": "Domina tus finanzas con guías completas sobre pago de deudas de tarjetas de crédito, servicios BNPL, transferencias de saldo, recompensas en cripto y métodos de eliminación de deuda.",
+    "ld_breadcrumb_last": "Aprender"
+  },
+  "learn/pay-off-10k-debt.html": {
+    "title": "Forma Más Rápida de Pagar $10,000 en Deuda de Tarjetas de Crédito — CreditStud.io",
+    "description": "Descubre las estrategias más rápidas para eliminar $10,000 en deuda de tarjetas de crédito. Compara avalanche, snowball, transferencias de saldo y consolidación — con números reales y una calculadora interactiva de pago.",
+    "og_title": "Forma Más Rápida de Pagar $10,000 en Deuda de Tarjetas de Crédito",
+    "og_description": "Compara avalanche, snowball, transferencias de saldo y consolidación — con números reales y una calculadora interactiva de pago.",
+    "twitter_title": "Forma Más Rápida de Pagar $10,000 en Deuda de Tarjetas de Crédito",
+    "twitter_description": "Compara avalanche, snowball, transferencias de saldo y consolidación — con números reales y una calculadora interactiva de pago.",
+    "ld_headline": "Forma Más Rápida de Pagar $10,000 en Deuda de Tarjetas de Crédito",
+    "ld_description": "Descubre las estrategias más rápidas para eliminar $10,000 en deuda de tarjetas de crédito. Compara avalanche, snowball, transferencias de saldo y consolidación — con números reales y una calculadora interactiva de pago.",
+    "ld_breadcrumb_last": "Cómo Pagar $10K en Deuda"
+  },
+  "learn/snowball-vs-avalanche.html": {
+    "title": "Deuda Snowball vs Avalanche: ¿Cuál Es Mejor? — CreditStud.io",
+    "description": "Comparación lado a lado de los métodos de pago de deuda snowball y avalanche. Ve cuál ahorra más dinero, cuál funciona más rápido y cuál se ajusta a tu personalidad — con números reales y una calculadora interactiva.",
+    "og_title": "Deuda Snowball vs Avalanche: ¿Cuál Es Mejor?",
+    "og_description": "Comparación lado a lado de los métodos de pago de deuda snowball y avalanche. Ve cuál ahorra más y cuál se ajusta a tu personalidad.",
+    "twitter_title": "Deuda Snowball vs Avalanche: ¿Cuál Es Mejor?",
+    "twitter_description": "Comparación lado a lado de los métodos de pago de deuda snowball y avalanche. Ve cuál ahorra más y cuál se ajusta a tu personalidad.",
+    "ld_headline": "Deuda Snowball vs Avalanche: ¿Cuál Es Mejor?",
+    "ld_description": "Comparación lado a lado de los métodos de pago de deuda snowball y avalanche. Ve cuál ahorra más, cuál funciona más rápido y cuál se ajusta a tu personalidad — con números reales.",
+    "ld_breadcrumb_last": "Snowball vs Avalanche"
+  },
+  "loan-vs-bt/index.html": {
+    "title": "Préstamo Personal vs Transferencia de Saldo — ¿Cuál Ahorra Más? | CreditStud.io",
+    "description": "¿Deberías obtener un préstamo personal o una tarjeta de transferencia de saldo? Compara costos totales, pagos mensuales y plazos de pago con nuestra calculadora gratuita.",
+    "og_title": "Préstamo Personal vs Transferencia de Saldo — ¿Cuál Ahorra Más? | CreditStud.io",
+    "og_description": "¿Deberías obtener un préstamo personal o una tarjeta de transferencia de saldo? Compara costos totales, pagos mensuales y plazos de pago.",
+    "twitter_title": "Préstamo Personal vs Transferencia de Saldo — CreditStud.io",
+    "twitter_description": "¿Deberías obtener un préstamo personal o una tarjeta de transferencia de saldo? Compara costos totales y encuentra la opción más barata.",
+    "ld_breadcrumb_last": "Préstamo vs Transferencia de Saldo"
+  },
+  "merchant/amazon.html": {
+    "title": "Mejor Tarjeta de Crédito para Compras en Amazon | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para compras en Amazon. Compara tasas de recompensas para compras en línea, ofertas de Prime Day y gastos diarios en Amazon. Maximiza cash back y puntos en tu carrito de Amazon.",
+    "og_title": "Mejor Tarjeta de Crédito para Compras en Amazon | CreditStud.io",
+    "og_description": "Descubre las mejores tarjetas de crédito para compras en Amazon con recompensas bonus en compras en línea.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Compras en Amazon | CreditStud.io",
+    "twitter_description": "Descubre las mejores tarjetas de crédito para compras en Amazon con recompensas bonus en compras en línea.",
+    "ld_breadcrumb_last": "Amazon"
+  },
+  "merchant/costco.html": {
+    "title": "Mejor Tarjeta de Crédito para Costco | CreditStud.io",
+    "description": "Mejores tarjetas de crédito para compras en Costco, gasolina y compras al mayoreo. Maximiza recompensas en clubes de membresía con tarjetas de cash back de tasa plana.",
+    "og_title": "Mejor Tarjeta de Crédito para Costco | CreditStud.io",
+    "og_description": "Mejores tarjetas para compras en Costco incluyendo gasolineras y supermercados.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Costco | CreditStud.io",
+    "twitter_description": "Mejores tarjetas para compras en Costco incluyendo gasolineras y supermercados.",
+    "ld_breadcrumb_last": "Costco"
+  },
+  "merchant/dining.html": {
+    "title": "Mejores Tarjetas de Crédito para Restaurantes y Cena (2026) | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para restaurantes, comida para llevar y entrega de comida. Compara tasas de recompensas para cenar fuera.",
+    "og_title": "Mejores Tarjetas de Crédito para Restaurantes y Cena (2026) | CreditStud.io",
+    "og_description": "Maximiza recompensas en restaurantes, comida para llevar y entrega de comida con las mejores tarjetas de crédito para cenar.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Restaurantes y Cena (2026) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas en restaurantes, comida para llevar y entrega de comida con las mejores tarjetas de crédito para cenar.",
+    "ld_breadcrumb_last": "Restaurantes y Cena"
+  },
+  "merchant/ev-charging.html": {
+    "title": "Mejores Tarjetas de Crédito para Carga de Vehículos Eléctricos (2026) | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para carga de vehículos eléctricos — Tesla Supercharger, ChargePoint, EVgo y más. Compara recompensas para dueños de vehículos eléctricos.",
+    "og_title": "Mejores Tarjetas de Crédito para Carga de Vehículos Eléctricos (2026) | CreditStud.io",
+    "og_description": "Maximiza recompensas en carga de vehículos eléctricos con las mejores tarjetas de crédito para Tesla Supercharger, ChargePoint y carga de vehículos eléctricos.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Carga de Vehículos Eléctricos (2026) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas en carga de vehículos eléctricos con las mejores tarjetas de crédito para Tesla Supercharger, ChargePoint y carga de vehículos eléctricos.",
+    "ld_breadcrumb_last": "Carga de Vehículos Eléctricos"
+  },
+  "merchant/fitness.html": {
+    "title": "Mejores Tarjetas de Crédito para Gimnasio y Fitness (2026) | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para membresías de gimnasio, apps de fitness, Peloton y suscripciones de ejercicio. Compara tasas de recompensas para gastos de fitness.",
+    "og_title": "Mejores Tarjetas de Crédito para Gimnasio y Fitness (2026) | CreditStud.io",
+    "og_description": "Maximiza recompensas en membresías de gimnasio, apps de fitness, Peloton y entrenamiento personal con las mejores tarjetas de crédito para gastos de fitness.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Gimnasio y Fitness (2026) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas en membresías de gimnasio, apps de fitness, Peloton y entrenamiento personal con las mejores tarjetas de crédito para gastos de fitness.",
+    "ld_breadcrumb_last": "Gimnasio y Fitness"
+  },
+  "merchant/gas-stations.html": {
+    "title": "Mejor Tarjeta de Crédito para Gasolineras | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para compras en gasolineras. Compara tasas de recompensas para combustible, carga de vehículos eléctricos y gastos en tiendas de conveniencia.",
+    "og_title": "Mejor Tarjeta de Crédito para Gasolineras | CreditStud.io",
+    "og_description": "Maximiza recompensas de gasolina con la mejor tarjeta de crédito para compras de combustible.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Gasolineras | CreditStud.io",
+    "twitter_description": "Maximiza recompensas de gasolina con la mejor tarjeta de crédito para compras de combustible.",
+    "ld_breadcrumb_last": "Gasolineras"
+  },
+  "merchant/groceries.html": {
+    "title": "Mejor Tarjeta de Crédito para Supermercado (Whole Foods, Trader Joe's) | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para compras de supermercado en Whole Foods, Trader Joe's y más. Compara tasas de recompensas para gastos en supermercados.",
+    "og_title": "Mejor Tarjeta de Crédito para Supermercado (Whole Foods, Trader Joe's) | CreditStud.io",
+    "og_description": "Maximiza recompensas de supermercado con la mejor tarjeta de crédito para Whole Foods y Trader Joe's.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Supermercado (Whole Foods, Trader Joe's) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas de supermercado con la mejor tarjeta de crédito para Whole Foods y Trader Joe's.",
+    "ld_breadcrumb_last": "Supermercado Whole Foods, Trader Joe's"
+  },
+  "merchant/home-improvement.html": {
+    "title": "Mejor Tarjeta de Crédito para Home Depot y Lowe's | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para compras de mejoras del hogar en Home Depot, Lowe's y ferreterías. Compara recompensas para proyectos de bricolaje.",
+    "og_title": "Mejor Tarjeta de Crédito para Home Depot y Lowe's | CreditStud.io",
+    "og_description": "Maximiza cash back en compras de mejoras del hogar en Home Depot y Lowe's.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Home Depot y Lowe's | CreditStud.io",
+    "twitter_description": "Maximiza cash back en compras de mejoras del hogar en Home Depot y Lowe's.",
+    "ld_breadcrumb_last": "Home Depot y Lowe's"
+  },
+  "merchant/index.html": {
+    "title": "Mejores Tarjetas de Crédito para Comercios Populares | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para tus tiendas y categorías favoritas. Amazon, Costco, Walmart, supermercado, gasolina, restaurantes, streaming, viajes.",
+    "og_title": "Mejores Tarjetas de Crédito para Comercios Populares | CreditStud.io",
+    "og_description": "Encuentra la mejor tarjeta de crédito para tus tiendas y categorías favoritas. Amazon, Costco, Walmart, supermercado, gasolina, restaurantes, streaming, viajes.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Comercios Populares | CreditStud.io",
+    "twitter_description": "Encuentra la mejor tarjeta de crédito para tus tiendas y categorías favoritas. Amazon, Costco, Walmart, supermercado, gasolina, restaurantes, streaming, viajes.",
+    "ld_breadcrumb_last": "Guías de Comercios"
+  },
+  "merchant/insurance.html": {
+    "title": "Mejores Tarjetas de Crédito para Pagos de Seguros (2026) | CreditStud.io",
+    "description": "¿Qué tarjetas de crédito ganan más en pagos de seguros? Compara recompensas para primas de auto, hogar, salud y vida.",
+    "og_title": "Mejores Tarjetas de Crédito para Pagos de Seguros (2026) | CreditStud.io",
+    "og_description": "Maximiza recompensas en primas de seguros de auto, hogar, salud y vida con la tarjeta de crédito correcta.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Pagos de Seguros (2026) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas en primas de seguros de auto, hogar, salud y vida.",
+    "ld_breadcrumb_last": "Seguros",
+    "ld_headline": "Mejores Tarjetas de Crédito para Pagos de Seguros (2026)",
+    "ld_description": "¿Qué tarjetas de crédito ganan más en pagos de seguros? Compara recompensas para primas de auto, hogar, salud y vida."
+  },
+  "merchant/online-shopping.html": {
+    "title": "Mejores Tarjetas de Crédito para Compras en Línea (Amazon, Target y Más) 2026 | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para compras en línea en Amazon, Target y más. Compara tasas de recompensas para gastos de comercio electrónico y maximiza tus compras en línea.",
+    "og_title": "Mejores Tarjetas de Crédito para Compras en Línea (Amazon, Target y Más) 2026 | CreditStud.io",
+    "og_description": "Maximiza recompensas de compras en línea — compara las mejores tarjetas para Amazon, Target y comercio electrónico.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Compras en Línea (Amazon, Target y Más) 2026 | CreditStud.io",
+    "twitter_description": "Maximiza recompensas de compras en línea — compara las mejores tarjetas para Amazon, Target y comercio electrónico.",
+    "ld_breadcrumb_last": "Compras en Línea",
+    "ld_headline": "Mejores Tarjetas de Crédito para Compras en Línea (Amazon, Target y Más) 2026",
+    "ld_description": "Encuentra la mejor tarjeta de crédito para compras en línea en Amazon, Target y más."
+  },
+  "merchant/pharmacy.html": {
+    "title": "Mejores Tarjetas de Crédito para Farmacias y Droguerías (CVS, Walgreens) 2026 | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para compras en farmacias y droguerías en CVS, Walgreens, Rite Aid y más. Compara tasas de recompensas para recetas médicas y gastos de salud.",
+    "og_title": "Mejores Tarjetas de Crédito para Farmacias y Droguerías (CVS, Walgreens) 2026 | CreditStud.io",
+    "og_description": "Maximiza tus recompensas de farmacia — compara las mejores tarjetas para CVS, Walgreens y gastos en recetas médicas.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Farmacias y Droguerías (CVS, Walgreens) 2026 | CreditStud.io",
+    "twitter_description": "Maximiza tus recompensas de farmacia — compara las mejores tarjetas para CVS, Walgreens y gastos en recetas médicas.",
+    "ld_breadcrumb_last": "Farmacias y Droguerías",
+    "ld_headline": "Mejores Tarjetas de Crédito para Farmacias y Droguerías (CVS, Walgreens) 2026",
+    "ld_description": "Encuentra la mejor tarjeta de crédito para compras en farmacias y droguerías en CVS, Walgreens, Rite Aid y más."
+  },
+  "merchant/rent.html": {
+    "title": "Mejores Tarjetas de Crédito para Pagos de Renta (2026) | CreditStud.io",
+    "description": "¿Puedes pagar la renta con tarjeta de crédito? Compara las mejores tarjetas para pagos de renta, incluyendo Bilt Mastercard que gana puntos sin tarifas de transacción.",
+    "og_title": "Mejores Tarjetas de Crédito para Pagos de Renta (2026) | CreditStud.io",
+    "og_description": "Paga la renta con tarjeta de crédito y gana recompensas. Compara Bilt Mastercard y otras opciones para pagos de renta.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Pagos de Renta (2026) | CreditStud.io",
+    "twitter_description": "Paga la renta con tarjeta de crédito y gana recompensas. Compara Bilt Mastercard y otras opciones.",
+    "ld_breadcrumb_last": "Pagos de Renta",
+    "ld_headline": "Mejores Tarjetas de Crédito para Pagos de Renta (2026)",
+    "ld_description": "¿Puedes pagar la renta con tarjeta de crédito? Compara las mejores tarjetas para pagos de renta, incluyendo Bilt Mastercard que gana puntos sin tarifas de transacción."
+  },
+  "merchant/restaurants.html": {
+    "title": "Mejor Tarjeta de Crédito para Restaurantes y Cena | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para restaurantes y cenar fuera. Compara tarjetas con 4% de recompensas para comidas, comida para llevar y servicios de entrega.",
+    "og_title": "Mejor Tarjeta de Crédito para Restaurantes y Cena | CreditStud.io",
+    "og_description": "Mejores recompensas para cenar en locales, cadenas y entrega.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Restaurantes y Cena | CreditStud.io",
+    "twitter_description": "Mejores recompensas para cenar en locales, cadenas y entrega.",
+    "ld_breadcrumb_last": "Restaurantes"
+  },
+  "merchant/streaming.html": {
+    "title": "Mejor Tarjeta de Crédito para Servicios de Streaming | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para Netflix, Spotify, Hulu, Disney+. Compara tarjetas con 6% cash back para suscripciones.",
+    "og_title": "Mejor Tarjeta de Crédito para Servicios de Streaming | CreditStud.io",
+    "og_description": "Mejores recompensas para Netflix, Hulu, Spotify, Disney+, YouTube Premium.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Servicios de Streaming | CreditStud.io",
+    "twitter_description": "Mejores recompensas para Netflix, Hulu, Spotify, Disney+, YouTube Premium.",
+    "ld_breadcrumb_last": "Streaming"
+  },
+  "merchant/student.html": {
+    "title": "Mejores Tarjetas de Crédito para Estudiantes Universitarios (2026) | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para estudiantes universitarios — construye crédito, gana recompensas y evita cuotas anuales. Compara tarjetas para estudiantes y opciones para sin historial de crédito.",
+    "og_title": "Mejores Tarjetas de Crédito para Estudiantes Universitarios (2026) | CreditStud.io",
+    "og_description": "Construye crédito y gana recompensas con las mejores tarjetas de crédito para estudiantes. Sin cuota anual, aprobación fácil y recompensas reales para la vida universitaria.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Estudiantes Universitarios (2026) | CreditStud.io",
+    "twitter_description": "Construye crédito y gana recompensas con las mejores tarjetas de crédito para estudiantes. Sin cuota anual, aprobación fácil y recompensas reales para la vida universitaria.",
+    "ld_breadcrumb_last": "Estudiantes Universitarios"
+  },
+  "merchant/subscription.html": {
+    "title": "Mejores Tarjetas de Crédito para Streaming y Suscripciones (2026) | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para Netflix, Spotify, Disney+, Hulu, YouTube Premium y más. Compara 6% cash back en suscripciones de streaming.",
+    "og_title": "Mejores Tarjetas de Crédito para Streaming y Suscripciones (2026) | CreditStud.io",
+    "og_description": "Mejores recompensas para Netflix, Hulu, Spotify, Disney+, YouTube Premium, Amazon Prime y todas tus suscripciones mensuales.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Streaming y Suscripciones (2026) | CreditStud.io",
+    "twitter_description": "Mejores recompensas para Netflix, Hulu, Spotify, Disney+, YouTube Premium y todas las suscripciones.",
+    "ld_breadcrumb_last": "Streaming y Suscripciones",
+    "ld_headline": "Mejores Tarjetas de Crédito para Streaming y Suscripciones (2026)",
+    "ld_description": "Encuentra la mejor tarjeta de crédito para Netflix, Spotify, Disney+, Hulu, YouTube Premium y más. Compara 6% cash back en suscripciones de streaming."
+  },
+  "merchant/target.html": {
+    "title": "Mejor Tarjeta de Crédito para Target | CreditStud.io",
+    "description": "Mejores tarjetas de crédito para compras en Target. Compara Target RedCard vs tarjetas de recompensas generales para compras en tienda y Target.com.",
+    "og_title": "Mejor Tarjeta de Crédito para Target | CreditStud.io",
+    "og_description": "Mejores tarjetas para compras en tienda y en línea en Target.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Target | CreditStud.io",
+    "twitter_description": "Mejores tarjetas para compras en tienda y en línea en Target.",
+    "ld_breadcrumb_last": "Target"
+  },
+  "merchant/travel-hotels.html": {
+    "title": "Mejores Tarjetas de Crédito para Hoteles (2026) | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para estadías en hoteles — Marriott, Hilton, IHG, Hyatt y sitios de reserva. Compara tasas de recompensas y beneficios de noches gratis.",
+    "og_title": "Mejores Tarjetas de Crédito para Hoteles (2026) | CreditStud.io",
+    "og_description": "Maximiza recompensas en estadías en hoteles con las mejores tarjetas de crédito para Marriott, Hilton, IHG, Hyatt y sitios de reserva.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Hoteles (2026) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas en estadías en hoteles con las mejores tarjetas de crédito para Marriott, Hilton, IHG, Hyatt y sitios de reserva.",
+    "ld_breadcrumb_last": "Hoteles"
+  },
+  "merchant/travel.html": {
+    "title": "Mejor Tarjeta de Crédito para Viajes y Aerolíneas | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para aerolíneas, hoteles y viajes. Compara reservas de 5x en portales y tarjetas de millas flexibles.",
+    "og_title": "Mejor Tarjeta de Crédito para Viajes y Aerolíneas | CreditStud.io",
+    "og_description": "Mejores recompensas de viaje para vuelos, hoteles y renta de autos.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Viajes y Aerolíneas | CreditStud.io",
+    "twitter_description": "Mejores recompensas de viaje para vuelos, hoteles y renta de autos.",
+    "ld_breadcrumb_last": "Viajes"
+  },
+  "merchant/uber-lyft.html": {
+    "title": "Mejores Tarjetas de Crédito para Uber y Lyft (2026) | CreditStud.io",
+    "description": "Compara las mejores tarjetas de Crédito para viajes en Uber y Lyft y entrega de Uber Eats. Maximiza cash back en viajes compartidos y gastos en entrega de comida.",
+    "og_title": "Mejores Tarjetas de Crédito para Uber y Lyft (2026) | CreditStud.io",
+    "og_description": "Maximiza recompensas en viajes de Uber, Lyft y Uber Eats con la tarjeta de crédito correcta. Compara las mejores opciones.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Uber y Lyft (2026) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas en viajes de Uber, Lyft y Uber Eats con la tarjeta de crédito correcta.",
+    "ld_breadcrumb_last": "Uber y Lyft",
+    "ld_headline": "Mejores Tarjetas de Crédito para Uber y Lyft (2026)",
+    "ld_description": "Compara las mejores tarjetas de crédito para viajes en Uber y Lyft y entrega de Uber Eats. Maximiza cash back en viajes compartidos y entrega de comida."
+  },
+  "merchant/utilities.html": {
+    "title": "Mejores Tarjetas de Crédito para Servicios y Facturas (Electricidad, Agua, Internet) 2026 | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para pagar servicios y facturas — electricidad, gas, agua, internet y teléfono. Compara tasas de recompensas para gastos mensuales recurrentes.",
+    "og_title": "Mejores Tarjetas de Crédito para Servicios y Facturas (2026) | CreditStud.io",
+    "og_description": "Maximiza recompensas en facturas de servicios — electricidad, agua, internet, teléfono. Compara las mejores tarjetas para gastos mensuales recurrentes.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Servicios y Facturas (2026) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas en facturas de servicios — electricidad, agua, internet, teléfono.",
+    "ld_breadcrumb_last": "Servicios y Facturas",
+    "ld_headline": "Mejores Tarjetas de Crédito para Servicios y Facturas (Electricidad, Agua, Internet) 2026",
+    "ld_description": "Encuentra la mejor tarjeta de crédito para pagar servicios y facturas mensuales recurrentes."
+  },
+  "merchant/walmart.html": {
+    "title": "Mejor Tarjeta de Crédito para Compras en Walmart | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para compras en Walmart. Compara tasas de recompensas para artículos esenciales diarios, supermercado y compras de Walmart+.",
+    "og_title": "Mejor Tarjeta de Crédito para Compras en Walmart | CreditStud.io",
+    "og_description": "Maximiza cash back en compras en Walmart con la tarjeta de crédito correcta.",
+    "twitter_title": "Mejor Tarjeta de Crédito para Compras en Walmart | CreditStud.io",
+    "twitter_description": "Maximiza cash back en compras en Walmart con la tarjeta de crédito correcta.",
+    "ld_breadcrumb_last": "Compras en Walmart"
+  },
+  "merchant/warehouse-clubs.html": {
+    "title": "Mejores Tarjetas de Crédito para Costco y Sam's Club (2026) | CreditStud.io",
+    "description": "Encuentra la mejor tarjeta de crédito para compras en Costco y Sam's Club. Compara tasas de recompensas para gastos en clubes de membresía en supermercado al mayoreo, gasolina y más.",
+    "og_title": "Mejores Tarjetas de Crédito para Costco y Sam's Club (2026) | CreditStud.io",
+    "og_description": "Maximiza recompensas en clubes de membresía — mejores tarjetas para compras al mayoreo en Costco y Sam's Club.",
+    "twitter_title": "Mejores Tarjetas de Crédito para Costco y Sam's Club (2026) | CreditStud.io",
+    "twitter_description": "Maximiza recompensas en clubes de membresía — mejores tarjetas para compras al mayoreo en Costco y Sam's Club.",
+    "ld_breadcrumb_last": "Costco y Sam's Club",
+    "ld_headline": "Mejores Tarjetas de Crédito para Costco y Sam's Club (2026)",
+    "ld_description": "Encuentra la mejor tarjeta de crédito para compras en clubes de membresía Costco y Sam's Club."
+  },
+  "min-payment/index.html": {
+    "title": "Calculadora de la Trampa del Pago Mínimo — CreditStud.io",
+    "description": "Ve el costo real impactante de hacer solo pagos mínimos en tu tarjeta de crédito. Calculadora gratuita que muestra interés total, tiempo para pagar y cuánto podrías ahorrar.",
+    "og_title": "Calculadora de la Trampa del Pago Mínimo — CreditStud.io",
+    "og_description": "Ve el costo real impactante de hacer solo pagos mínimos en tu tarjeta de crédito. Calculadora gratuita que muestra interés total, tiempo para pagar y cuánto podrías ahorrar.",
+    "twitter_title": "Calculadora de la Trampa del Pago Mínimo — CreditStud.io",
+    "twitter_description": "Ve el costo real impactante de hacer solo pagos mínimos en tu tarjeta de crédito. Calculadora gratuita que muestra interés total, tiempo para pagar y cuánto podrías ahorrar.",
+    "ld_breadcrumb_last": "Calculadora de Pago Mínimo"
+  },
+  "rewards/index.html": {
+    "title": "Calculadora de Recompensas de Tarjetas de Crédito — Encuentra Tu Mejor Tarjeta | CreditStud.io",
+    "description": "Ingresa tus hábitos de gasto y encuentra al instante qué tarjeta de crédito te da más recompensas. Compara cash back, puntos de viaje y recompensas en cripto.",
+    "og_title": "Calculadora de Recompensas de Tarjetas de Crédito — Encuentra Tu Mejor Tarjeta | CreditStud.io",
+    "og_description": "Ingresa tus hábitos de gasto y encuentra al instante qué tarjeta de crédito te da más recompensas. Compara cash back, puntos de viaje y recompensas en cripto.",
+    "twitter_title": "Calculadora de Recompensas de Tarjetas de Crédito — Encuentra Tu Mejor Tarjeta | CreditStud.io",
+    "twitter_description": "Ingresa tus hábitos de gasto y encuentra al instante qué tarjeta de crédito te da más recompensas. Compara cash back, puntos de viaje y recompensas en cripto.",
+    "ld_breadcrumb_last": "Recompensas"
+  },
+  "score-simulator/index.html": {
+    "title": "Simulador de Puntaje de Crédito — Cómo los Puntajes Afectan Tu APR | CreditStud.io",
+    "description": "Simula cómo las acciones financieras afectan tu puntaje de crédito. Ve el impacto de pagar deudas, abrir nuevas tarjetas, pagos atrasados y más con nuestro estimador gratuito de puntaje FICO.",
+    "og_title": "Simulador de Puntaje de Crédito — CreditStud.io",
+    "og_description": "Simula cómo las acciones financieras afectan tu puntaje de crédito. Ve el impacto de pagar deudas, abrir nuevas tarjetas, pagos atrasados y más.",
+    "twitter_title": "Simulador de Puntaje de Crédito — CreditStud.io",
+    "twitter_description": "Simula cómo las acciones financieras afectan tu puntaje de crédito. Ve el impacto de pagar deudas, abrir nuevas tarjetas, pagos atrasados y más.",
+    "ld_breadcrumb_last": "Simulador de Puntaje de Crédito"
+  },
+  "tools/api.html": {
+    "title": "Documentación de API de CreditStud.io — API Gratuita de Calculadoras Financieras",
+    "description": "API gratuita sin autenticación para comparaciones de tarjetas de crédito, cálculos de pago de deudas y optimización de recompensas. Respuestas JSON, especificación OpenAPI y endpoints compatibles con LLM.",
+    "og_title": "API de CreditStud.io — Calculadoras Financieras Gratuitas",
+    "og_description": "API JSON gratuita para comparaciones de tarjetas de crédito, pago de deudas y cálculos de recompensas. Sin autenticación requerida.",
+    "twitter_title": "API de CreditStud.io — Calculadoras Financieras Gratuitas",
+    "twitter_description": "API JSON gratuita para comparaciones de tarjetas de crédito, pago de deudas y cálculos de recompensas.",
+    "ld_breadcrumb_last": "API"
+  },
+  "tools/index.html": {
+    "title": "Calculadoras Gratuitas de Tarjetas de Crédito y Deuda — Herramientas CreditStud.io",
+    "description": "Calculadoras en línea gratuitas para comparación de tarjetas de crédito, planificación de pago de deudas, optimización de recompensas y más. Sin registro requerido.",
+    "og_title": "Calculadoras Gratuitas de Tarjetas de Crédito y Deuda — CreditStud.io",
+    "og_description": "Calculadoras en línea gratuitas para comparación de tarjetas de crédito, pago de deudas, recompensas y más. Sin registro requerido.",
+    "twitter_title": "Calculadoras Gratuitas de Tarjetas de Crédito y Deuda — CreditStud.io",
+    "twitter_description": "Calculadoras en línea gratuitas para comparación de tarjetas de crédito, pago de deudas, recompensas y más.",
+    "ld_breadcrumb_last": "Herramientas"
+  }
+}
