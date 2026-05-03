@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Comparación de Crédito | CreditStud.io</title>
-  <meta name="description" content="Compara tarjetas de crédito, servicios BNPL y planes de pago lado a lado. Encuentra la forma más económica de financiar cualquier compra.">
+  <title>Credit Comparison Calculator | CreditStud.io</title>
+  <meta name="description" content="Compare credit cards, BNPL services, and payment plans side by side. Find the cheapest way to finance any purchase.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
@@ -19,14 +19,14 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="CreditStud">
   <meta property="og:title" content="Credit Comparison Calculator | CreditStud.io">
-  <meta property="og:description" content="Compara tarjetas de crédito, servicios BNPL y planes de pago lado a lado. Encuentra la forma más económica de financiar cualquier compra.">
+  <meta property="og:description" content="Compare credit cards, BNPL services, and payment plans side by side. Find the cheapest way to finance any purchase.">
   <meta property="og:url" content="https://creditstud.io/compare/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CreditStud.io">
   <meta property="og:image" content="https://creditstud.io/og-images/compare.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Credit Comparison Calculator | CreditStud.io">
-  <meta name="twitter:description" content="Compara tarjetas de crédito, servicios BNPL y planes de pago lado a lado. Encuentra la forma más económica de financiar cualquier compra.">
+  <meta name="twitter:description" content="Compare credit cards, BNPL services, and payment plans side by side. Find the cheapest way to finance any purchase.">
   <meta name="twitter:image" content="https://creditstud.io/og-images/compare.png">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7919125903594440"
    crossorigin="anonymous"></script>
@@ -44,8 +44,8 @@
   {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Compara Tarjetas de Crédito y BNPL",
-  "description": "Encuentra la forma más económica de financiar cualquier compra comparando tarjetas de crédito y servicios BNPL lado a lado.",
+  "name": "Compare Credit Cards & BNPL",
+  "description": "Find the cheapest way to finance any purchase by comparing credit cards and BNPL services side by side.",
   "totalTime": "PT5M",
   "estimatedCost": {
     "@type": "MonetaryAmount",
@@ -60,26 +60,26 @@
     {
       "@type": "HowToStep",
       "position": 1,
-      "name": "Ingresa el monto de la compra",
-      "text": "Escribe el monto que planeas gastar."
+      "name": "Enter purchase amount",
+      "text": "Type in the amount you plan to spend."
     },
     {
       "@type": "HowToStep",
       "position": 2,
-      "name": "Selecciona tu puntaje de crédito",
-      "text": "Elige tu rango de puntaje de crédito para estimaciones de APR precisas."
+      "name": "Set your credit score",
+      "text": "Select your credit score range for accurate APR estimates."
     },
     {
       "@type": "HowToStep",
       "position": 3,
-      "name": "Elige un plazo de pago",
-      "text": "Establece en cuántos meses quieres pagarlo."
+      "name": "Choose a payoff timeline",
+      "text": "Set how many months you want to pay it off."
     },
     {
       "@type": "HowToStep",
       "position": 4,
-      "name": "Compara resultados",
-      "text": "Revisa el costo total, intereses, cargos y costo neto de cada opción."
+      "name": "Compare results",
+      "text": "Review the total cost, interest, fees, and net cost for each option."
     }
   ],
   "dateModified": "2026-05-01"
@@ -136,7 +136,7 @@
 <body>
   <div id="app">
     <!-- Skip to content link -->
-    <a href="#main" class="sr-only sr-only-focusable">Saltar al contenido principal</a>
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
     
     <!-- DISCLOSURE -->
 <div class="site-disclosure-banner">
@@ -213,11 +213,11 @@
       <div class="container">
         <div class="step-header">
           <span class="step-number">1</span>
-          <h2>¿Qué estás comprando?</h2>
+          <h2>What are you buying?</h2>
         </div>
         <div class="input-row">
           <div class="input-group">
-            <label for="purchase-amount">Monto de la Compra</label>
+            <label for="purchase-amount">Purchase Amount</label>
             <div class="input-with-prefix">
               <span class="prefix">$</span>
               <input type="number" id="purchase-amount" placeholder="500" min="1" step="0.01" inputmode="decimal">
@@ -228,39 +228,39 @@
         <!-- Quick Estimate -->
         <div id="quick-estimate" class="quick-estimate hidden">
           <div class="estimate-row">
-            <span class="estimate-label" id="estimate-label-text">Pago Mensual Estimado:</span>
+            <span class="estimate-label" id="estimate-label-text">Estimated Monthly Payment:</span>
             <span class="estimate-value" id="estimate-payment">—</span>
           </div>
           <div class="estimate-row" id="estimate-total-row" style="display:none;">
-            <span class="estimate-label">Costo Total:</span>
+            <span class="estimate-label">Total Cost:</span>
             <span class="estimate-value" id="estimate-total">—</span>
           </div>
         </div>
         <div class="input-group">
-          <label for="credit-score">Tu Rango de Puntaje de Crédito</label>
+          <label for="credit-score">Your Credit Score Range</label>
           <select id="credit-score">
-            <option value="excellent">Excelente (720+)</option>
-            <option value="good" selected>Bueno (670–719)</option>
-            <option value="fair">Regular (580–669)</option>
-            <option value="poor">Malo (menos de 580)</option>
-            <option value="unknown">No estoy seguro/a</option>
+            <option value="excellent">Excellent (720+)</option>
+            <option value="good" selected>Good (670–719)</option>
+            <option value="fair">Fair (580–669)</option>
+            <option value="poor">Poor (below 580)</option>
+            <option value="unknown">Not sure</option>
           </select>
         </div>
 
         <!-- Purchase Category -->
         <div class="input-group">
-          <label for="purchase-category">Categoría de Compra</label>
+          <label for="purchase-category">Purchase Category</label>
           <select id="purchase-category">
-            <option value="everything" selected>Todo lo demás</option>
-            <option value="groceries">Supermercado</option>
-            <option value="dining">Restaurantes</option>
-            <option value="gas">Gasolina</option>
-            <option value="travel">Viajes</option>
-            <option value="online">Compras en Línea</option>
+            <option value="everything" selected>Everything Else</option>
+            <option value="groceries">Groceries</option>
+            <option value="dining">Dining</option>
+            <option value="gas">Gas</option>
+            <option value="travel">Travel</option>
+            <option value="online">Online Shopping</option>
             <option value="streaming">Streaming</option>
-            <option value="utilities">Servicios Públicos</option>
+            <option value="utilities">Utilities</option>
           </select>
-          <small class="input-hint">Las tarjetas ganan recompensas diferentes por categoría. Esto ajusta los cálculos de recompensas.</small>
+          <small class="input-hint">Cards earn different rewards by category. This adjusts reward calculations.</small>
         </div>
 
         <!-- Sales Tax Toggle -->
@@ -268,7 +268,7 @@
           <label class="toggle-label">
             <input type="checkbox" id="toggle-sales-tax">
             <span class="toggle-switch"></span>
-            <span>Incluir impuesto sobre ventas</span>
+            <span>Include sales tax</span>
           </label>
           <div id="sales-tax-details" class="hidden" style="margin-top: 0.5rem;">
             <div style="display: flex; gap: 0.5rem; align-items: center;">
@@ -326,21 +326,21 @@
               </select>
               <small id="sales-tax-amount" style="white-space: nowrap;"></small>
             </div>
-            <small class="input-hint">Tasas combinadas promedio (estado + local) según Tax Foundation 2025.</small>
+            <small class="input-hint">Average combined (state + local) rates per Tax Foundation 2025.</small>
           </div>
         </div>
 
         <!-- Payoff Mode Toggle -->
         <div class="input-group payoff-mode-group">
-          <label>Modo de Pago</label>
+          <label>Payoff Mode</label>
           <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
             <label class="toggle-label" style="flex-direction: row; gap: 0.35rem;">
               <input type="radio" name="payoff-mode" id="payoff-mode-months" value="months" checked>
-              <span>Meses para pagar</span>
+              <span>Months to pay off</span>
             </label>
             <label class="toggle-label" style="flex-direction: row; gap: 0.35rem;">
               <input type="radio" name="payoff-mode" id="payoff-mode-payment" value="payment">
-              <span>Pago mensual</span>
+              <span>Monthly payment</span>
             </label>
           </div>
 
@@ -376,34 +376,34 @@
       <div class="container">
         <div class="step-header collapsible" id="methods-header">
           <span class="step-number">2</span>
-          <h2>Payment Options <span class="selected-count">(Usando valores predeterminados)</span></h2>
-          <button class="btn-expand" id="expand-methods-btn" aria-label="Expandir opciones de pago">Cambiar ▼</button>
+          <h2>Payment Options <span class="selected-count">(Using defaults)</span></h2>
+          <button class="btn-expand" id="expand-methods-btn" aria-label="Expand payment options">Change ▼</button>
         </div>
         <div id="methods-content" class="methods-content collapsed">
-          <p class="step-desc">Selecciona todas las que apliquen. Las compararemos por ti.</p>
+          <p class="step-desc">Select all that apply. We'll compare them for you.</p>
 
           <!-- Filters -->
           <div class="toggle-bar">
             <label class="toggle-label">
               <input type="checkbox" id="toggle-show-bnpl" checked>
               <span class="toggle-switch"></span>
-              <span>Compra Ahora, Paga Después</span>
+              <span>Buy Now, Pay Later</span>
             </label>
             <label class="toggle-label">
               <input type="checkbox" id="toggle-show-cards" checked>
               <span class="toggle-switch"></span>
-              <span>Tarjetas de Crédito</span>
+              <span>Credit Cards</span>
             </label>
             <label class="toggle-label">
               <input type="checkbox" id="toggle-hide-annual-fee">
               <span class="toggle-switch"></span>
-              <span>Ocultar tarjetas con cuota anual</span>
+              <span>Hide cards with annual fees</span>
             </label>
           </div>
 
           <!-- BNPL Section -->
           <div class="method-section">
-            <h3>Compra Ahora, Paga Después</h3>
+            <h3>Buy Now, Pay Later</h3>
             <div class="method-grid" id="bnpl-grid">
               <!-- Populated by JS -->
             </div>
@@ -411,7 +411,7 @@
 
           <!-- Credit Cards Section -->
           <div class="method-section">
-            <h3>Tarjetas de Crédito</h3>
+            <h3>Credit Cards</h3>
             <div class="method-grid" id="card-grid">
               <!-- Populated by JS -->
             </div>
@@ -419,50 +419,50 @@
 
           <!-- Custom Method -->
           <div class="method-section">
-            <button class="btn-add" id="add-custom-btn" aria-label="Agregar tarjeta o servicio personalizado">+ Agrega Tu Propia Tarjeta o Servicio</button>
+            <button class="btn-add" id="add-custom-btn" aria-label="Add custom card or service">+ Add Your Own Card or Service</button>
             <div id="custom-form" class="custom-form hidden">
               <div class="custom-form-grid">
                 <div class="input-group">
-                  <label for="custom-name">Nombre</label>
+                  <label for="custom-name">Name</label>
                   <input type="text" id="custom-name" placeholder="My Chase Card">
                 </div>
                 <div class="input-group">
-                  <label for="custom-type">Tipo</label>
+                  <label for="custom-type">Type</label>
                   <select id="custom-type">
-                    <option value="credit-card">Tarjeta de Crédito</option>
-                    <option value="bnpl-monthly">BNPL / Plan de Pago</option>
-                    <option value="store-card">Tarjeta de Tienda</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="bnpl-monthly">BNPL / Payment Plan</option>
+                    <option value="store-card">Store Card</option>
                   </select>
                 </div>
                 <div class="input-group">
-                  <label for="custom-apr">APR Regular %</label>
+                  <label for="custom-apr">Regular APR %</label>
                   <input type="number" id="custom-apr" placeholder="22.99" min="0" max="99" step="0.01">
                 </div>
                 <div class="input-group">
-                  <label for="custom-rewards">Cash Back / Recompensas %</label>
+                  <label for="custom-rewards">Cash Back / Rewards %</label>
                   <input type="number" id="custom-rewards" placeholder="2" min="0" max="20" step="0.01">
                 </div>
                 <div class="input-group">
-                  <label for="custom-intro-apr">APR Introductorio % <small>(0 si promo 0%)</small></label>
+                  <label for="custom-intro-apr">Intro APR % <small>(0 if 0% promo)</small></label>
                   <input type="number" id="custom-intro-apr" placeholder="0" min="0" max="99" step="0.01">
                 </div>
                 <div class="input-group">
-                  <label for="custom-intro-months">Período Introductorio (meses)</label>
+                  <label for="custom-intro-months">Intro Period (months)</label>
                   <input type="number" id="custom-intro-months" placeholder="15" min="0" max="60">
                 </div>
                 <div class="input-group">
-                  <label for="custom-annual-fee">Cuota Anual ($)</label>
+                  <label for="custom-annual-fee">Annual Fee ($)</label>
                   <input type="number" id="custom-annual-fee" placeholder="0" min="0" step="1">
                 </div>
               </div>
               <div class="custom-form-actions">
-                <button class="btn-primary btn-small" id="save-custom-btn">Agregar a la Comparación</button>
-                <button class="btn-ghost btn-small" id="cancel-custom-btn" aria-label="Cancelar agregar tarjeta personalizada">Cancel</button>
+                <button class="btn-primary btn-small" id="save-custom-btn">Add to Comparison</button>
+                <button class="btn-ghost btn-small" id="cancel-custom-btn" aria-label="Cancel adding custom card">Cancel</button>
               </div>
             </div>
             <div id="custom-methods-list"></div>
           </div>
-          <button class="btn-ghost btn-small" id="collapse-methods-btn" style="margin-top: 1rem;" aria-label="Colapsar opciones de pago">Listo</button>
+          <button class="btn-ghost btn-small" id="collapse-methods-btn" style="margin-top: 1rem;" aria-label="Collapse payment options">Done</button>
         </div>
       </div>
     </section>
@@ -470,7 +470,7 @@
     <!-- Calculate Button -->
     <section class="step">
       <div class="container">
-        <button class="btn-primary btn-large" id="calculate-btn">Comparar Mis Opciones</button>
+        <button class="btn-primary btn-large" id="calculate-btn">Compare My Options</button>
       </div>
     </section>
 
@@ -486,7 +486,7 @@
         </div>
         <div class="step-header">
           <span class="step-number">✓</span>
-          <h2>Tus Mejores Opciones</h2>
+          <h2>Your Best Options</h2>
         </div>
         <p class="step-desc" id="results-subtitle"></p>
 
@@ -498,64 +498,64 @@
 
         <!-- Best Match Section -->
         <div id="best-match-section" class="best-match-section hidden" aria-live="polite">
-          <h3 class="tier-heading">🎯 Mejor Opción para Tu Plazo</h3>
+          <h3 class="tier-heading">🎯 Best Match for Your Timeline</h3>
           <div id="best-match-card" class="best-match-card"></div>
         </div>
 
         <!-- New Card Option (if better with intro APR) -->
         <div id="new-card-option" class="new-card-option hidden">
-          <h3 class="tier-heading">🎁 Podría ser más barato con una tarjeta nueva</h3>
-          <p class="tier-desc">Estas tarjetas ofrecen 0% APR introductorio. Si te aprueban, no pagas interés durante el período introductorio.</p>
+          <h3 class="tier-heading">🎁 Could be cheaper with a new card</h3>
+          <p class="tier-desc">These cards offer 0% intro APR. If approved, you'd pay no interest for the intro period.</p>
           <div id="new-card-cards"></div>
         </div>
 
         <!-- Alternatives Within ±2 Months -->
         <div id="alternatives-section" class="alternatives-section hidden" aria-live="polite">
-          <h3 class="tier-heading">Otras Opciones (±2 meses de tu objetivo)</h3>
+          <h3 class="tier-heading">Other Options (±2 months from your target)</h3>
           <div id="alternatives-cards"></div>
         </div>
 
         <!-- Other Time Periods Comparison -->
         <div id="other-periods-section" class="other-periods-section">
-          <h3 class="tier-heading">💡 ¿Qué pasaría si pagaras más rápido o más lento?</h3>
-          <p class="tier-desc">Mira cómo cambia tu mejor opción con diferentes plazos de pago.</p>
+          <h3 class="tier-heading">💡 What if you paid it off faster or slower?</h3>
+          <p class="tier-desc">See how your best option changes with different payoff timelines.</p>
           <div id="other-periods-grid" class="other-periods-grid"></div>
         </div>
         <div id="affiliate-disclosure" class="disclosure hidden">
-          Divulgación del Anunciante: Algunas de las ofertas en esta página provienen de empresas que nos compensan. Esto puede influir en qué productos presentamos, pero no afecta nuestras clasificaciones — esas se basan puramente en matemáticas.
+          Advertiser Disclosure: Some of the offers on this page are from companies that compensate us. This may influence which products we feature, but it does not affect our rankings — those are based purely on math.
         </div>
         <div id="results-cards"></div>
 
         <!-- Credit Score CTA -->
         <div id="credit-score-cta" class="hidden">
           <div class="cta-box">
-            <strong>¿No estás seguro de tu puntaje de crédito?</strong>
-            <span>Consúltalo gratis — no afectará tu puntaje.</span>
-            <a href="#" id="credit-karma-link" target="_blank" rel="noopener sponsored" class="btn-primary btn-small">Consultar Gratis en Credit Karma</a>
+            <strong>Not sure about your credit score?</strong>
+            <span>Check it free — it won't affect your score.</span>
+            <a href="#" id="credit-karma-link" target="_blank" rel="noopener sponsored" class="btn-primary btn-small">Check Free on Credit Karma</a>
           </div>
         </div>
 
         <!-- Payoff Comparison Table -->
         <div id="payoff-comparison" class="hidden">
-          <h3 class="comparison-title">Comparación de Pago</h3>
+          <h3 class="comparison-title">Payoff Comparison</h3>
           <div id="payoff-table-wrapper"></div>
         </div>
         <!-- What's Next? CTA -->
         <div id="whats-next-cta" class="whats-next-cta hidden">
-          <h3 class="tier-heading">¿Qué sigue?</h3>
+          <h3 class="tier-heading">What's next?</h3>
           <div class="cta-cards">
             <a id="cta-debt-planner" href="/es/debt-planner/" class="cta-card">
               <div class="cta-card-icon">📉</div>
               <div class="cta-card-text">
-                <strong>¿Ya tienes deudas?</strong>
-                <span>Planifica tu pago con el Planificador de Deudas →</span>
+                <strong>Already carrying debt?</strong>
+                <span>Plan your payoff with the Debt Planner →</span>
               </div>
             </a>
             <a id="cta-rewards" href="/es/rewards/" class="cta-card">
               <div class="cta-card-icon">🏆</div>
               <div class="cta-card-text">
-                <strong>¿Quieres máximas recompensas en esta compra?</strong>
-                <span>Ve la mejor tarjeta para esta categoría →</span>
+                <strong>Want max rewards on this purchase?</strong>
+                <span>See the best card for this category →</span>
               </div>
             </a>
           </div>
@@ -565,25 +565,25 @@
     <section class="step">
       <div class="container">
         <div class="seo-content">
-          <h2>Preguntas Frecuentes</h2>
+          <h2>Frequently Asked Questions</h2>
           
-          <h3>¿Cómo funciona la calculadora de CreditStud.io?</h3>
-          <p>Nuestra calculadora compara el costo total de diferentes opciones de pago para tu compra. Ingresa el monto de la compra y el plazo de pago deseado, y te mostraremos qué tarjetas de crédito, servicios BNPL o planes de pago te costarán menos en intereses y cargos. Consideramos APR regular, períodos de APR introductorio, cuotas anuales y recompensas para darte un panorama completo.</p>
+          <h3>How does the CreditStud.io calculator work?</h3>
+          <p>Our calculator compares the total cost of different payment options for your purchase. Enter the purchase amount and your desired payoff timeline, and we'll show you which credit cards, BNPL services, or payment plans will cost you the least in interest and fees. We factor in regular APR, intro APR periods, annual fees, and rewards to give you a complete picture.</p>
           
-          <h3>¿Qué opciones de pago compara CreditStud.io?</h3>
-          <p>Comparamos tarjetas de crédito (incluidas las con ofertas de 0% APR introductorio), servicios de compra ahora y paga después como Klarna, Afterpay y Affirm, tarjetas de tiendas y préstamos personales. También puedes agregar tus propias tarjetas o servicios para un análisis personalizado.</p>
+          <h3>What payment options does CreditStud.io compare?</h3>
+          <p>We compare credit cards (including those with 0% intro APR offers), buy-now-pay-later services like Klarna, Afterpay, and Affirm, store cards, and personal loans. You can also add your own cards or services to the comparison for a personalized analysis.</p>
           
-          <h3>¿Los resultados están personalizados según mi puntaje de crédito?</h3>
-          <p>Sí, tu puntaje de crédito afecta qué tarjetas y tasas de interés te mostramos. Selecciona tu rango de puntaje al ingresar los detalles de tu compra y ajustaremos los resultados. Un crédito excelente (720+) desbloquea las mejores tasas y ofertas, mientras que un crédito regular o malo mostrará opciones más realistas.</p>
+          <h3>Are the results personalized to my credit score?</h3>
+          <p>Yes, your credit score affects which cards and interest rates we show you. Select your credit score range when entering your purchase details, and we'll tailor the results accordingly. Excellent credit (720+) unlocks the best rates and offers, while fair or poor credit will show more realistic options.</p>
           
-          <h3>¿Usar la calculadora afecta mi puntaje de crédito?</h3>
-          <p>No, usar nuestra calculadora no tiene ningún impacto en tu puntaje de crédito. Solo hacemos matemáticas basadas en información pública sobre ofertas de tarjetas y términos BNPL. Para obtener una tarjeta debes solicitar directamente con el emisor, lo que puede implicar una consulta de crédito formal.</p>
+          <h3>Does using the calculator affect my credit score?</h3>
+          <p>No, using our calculator has no impact on your credit score. We're just doing math based on publicly available information about credit card offers and BNPL terms. To actually get a card, you'll need to apply directly with the issuer, which may involve a hard credit inquiry.</p>
           
-          <h3>¿Con qué frecuencia se actualiza la información?</h3>
-          <p>Actualizamos nuestra base de datos de ofertas de tarjetas, términos BNPL y tasas de interés mensualmente. Los cambios importantes (como nuevas promociones de 0% APR) se agregan en cuanto los conocemos. Toda la información se verifica antes de publicarse.</p>
+          <h3>How often is the data updated?</h3>
+          <p>We update our database of credit card offers, BNPL terms, and interest rates monthly. Major changes (like new 0% APR promotions or policy updates) are added as soon as we become aware of them. All information is verified for accuracy before publication.</p>
           
-          <h3>¿CreditStud.io es gratuito?</h3>
-          <p>Sí, nuestras calculadoras y herramientas son completamente gratuitas. Ganamos dinero a través de comisiones de afiliados cuando solicitas tarjetas a través de nuestro sitio, pero esto no afecta nuestras clasificaciones ni recomendaciones. Todos los resultados se basan puramente en matemáticas.</p>
+          <h3>Is CreditStud.io free to use?</h3>
+          <p>Yes, our calculators and tools are completely free. We make money through affiliate commissions when you apply for cards through our site, but this doesn't affect our rankings or recommendations. All results are based purely on math and cost calculations.</p>
         </div>
       </div>
     </section>
@@ -798,14 +798,14 @@ if (document.querySelector('.nav-dropdown-toggle')) {
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "Inicio",
-          "item": "https://creditstud.io/es/"
+          "name": "Home",
+          "item": "https://creditstud.io/"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Comparación de Crédito",
-          "item": "https://creditstud.io/es/compare/"
+          "name": "Credit Comparison",
+          "item": "https://creditstud.io/compare/"
         }
       ]
     }
