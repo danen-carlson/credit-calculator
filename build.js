@@ -278,17 +278,43 @@ function buildLang(lang) {
 // ── Fix canonical URL for non-English output ──
 function fixCanonicalUrl(content, lang) {
   // Replace canonical URL to point to language-specific version
-  // e.g., <link rel="canonical" href="https://creditstud.io/cards/chase-sapphire-preferred/\">
-  //   → <link rel="canonical" href="https://creditstud.io/es/cards/chase-sapphire-preferred/">
   content = content.replace(
     /<link rel="canonical" href="https:\/\/creditstud\.io(\/[^"]*)">/g,
     `<link rel="canonical" href="https://creditstud.io/${lang}$1">`
   );
-  // Also handle canonical href without full domain (shouldn't exist but just in case)
   content = content.replace(
     /<link rel="canonical" href="\/([^"]*)">/g,
     `<link rel="canonical" href="/${lang}/$1">`
   );
+
+  // Fix og:url to point to language-specific version
+  content = content.replace(
+    /<meta\s+property="og:url"\s+content="https:\/\/creditstud\.io(\/[^"]*)">/g,
+    `<meta property="og:url" content="https://creditstud.io/${lang}$1">`
+  );
+  content = content.replace(
+    /<meta\s+content="https:\/\/creditstud\.io(\/[^"]*)"\s+property="og:url">/g,
+    `<meta content="https://creditstud.io/${lang}$1" property="og:url">`
+  );
+
+  // Fix JSON-LD BreadcrumbList: translate Home → Inicio and fix item URLs
+  content = content.replace(
+    /<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
+    function(match, jsonBlock) {
+      if (!jsonBlock.includes('BreadcrumbList')) return match;
+      let fixed = jsonBlock.replace(/"name":\s*"Home"/g, '"name": "Inicio"');
+      const langPrefix = `/${lang}/`;
+      fixed = fixed.replace(
+        /"item":\s*"https:\/\/creditstud\.io(\/[^"?]*)"/g,
+        function(urlMatch, urlPath) {
+          if (urlPath.startsWith(langPrefix)) return urlMatch;
+          return `"item": "https://creditstud.io/${lang}${urlPath}"`;
+        }
+      );
+      return match.replace(jsonBlock, fixed);
+    }
+  );
+
   return content;
 }
 

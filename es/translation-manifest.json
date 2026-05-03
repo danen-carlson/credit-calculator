@@ -1,0 +1,1421 @@
+{
+  "version": 1,
+  "languages": {
+    "es": {
+      "pages": {
+        "index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.085Z",
+          "sourceHash": "d9663eb671aa8d42",
+          "targetHash": "692ff14fe27934b1",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/",
+            "untranslated_p: 15 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "about/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.086Z",
+          "sourceHash": "8b217c681573246f",
+          "targetHash": "d9042318d039a138",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/about/",
+            "untranslated_p: 12 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/about/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "af-worth-it/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.086Z",
+          "sourceHash": "77b2f1f6be525dad",
+          "targetHash": "058100e232bc83d2",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/af-worth-it/",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/af-worth-it/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "compare/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.086Z",
+          "sourceHash": "24742ebe6fd4495c",
+          "targetHash": "53d83a49e6d541fb",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/compare/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/compare/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "debt-planner/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.086Z",
+          "sourceHash": "8dce5d2dba3b1c28",
+          "targetHash": "520341b61cb34e7b",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/debt-planner/",
+            "untranslated_p: 10 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/debt-planner/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "disclosure.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "b8baca3450a7215d",
+          "targetHash": "bef2a1789688ab91",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/disclosure.html",
+            "untranslated_p: 11 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/disclosure.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "loan-vs-bt/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "5e8ba7975669dbcb",
+          "targetHash": "455dad127513ce46",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/loan-vs-bt/",
+            "untranslated_p: 1 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/loan-vs-bt/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "min-payment/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "5b6e6af376f161e2",
+          "targetHash": "e28c2a040a6313e4",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/min-payment/",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/min-payment/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "offline.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "0d2171e624bab5c6",
+          "targetHash": "e571011aa23d2423",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "untranslated_p: 1 paragraph(s) may be untranslated"
+          ]
+        },
+        "rewards/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "4d3013489c3da051",
+          "targetHash": "585fe2911670a22d",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/rewards/",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/rewards/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "score-simulator/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "e262382678f244f4",
+          "targetHash": "4e85377db3676bbd",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/score-simulator/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/score-simulator/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "tools/api.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "bac9dcc9e7fc6e37",
+          "targetHash": "74d772a6dae90c2f",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/tools/api.html",
+            "untranslated_p: 12 paragraph(s) may be untranslated"
+          ]
+        },
+        "tools/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "db5fa99651af21f0",
+          "targetHash": "29b48dbad91fd770",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/tools/",
+            "untranslated_p: 10 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/tools/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/affirm-interest-rates-explained.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "b69c75f125e0c1fe",
+          "targetHash": "f56433c57bb0ba59",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/affirm-interest-rates-explained.html",
+            "untranslated_p: 8 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/affirm-interest-rates-explained.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/amex-gold-worth-it.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "sourceHash": "d036815fc132da76",
+          "targetHash": "8129ebe6157491e2",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/amex-gold-worth-it.html",
+            "untranslated_p: 12 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/amex-gold-worth-it.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/best-0-apr-credit-cards.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "9e96abe141fce5dc",
+          "targetHash": "25f6dff671d54f15",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/best-0-apr-credit-cards.html",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/best-0-apr-credit-cards.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/best-balance-transfer-credit-cards.html": {
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "2afa5f39c0ebfdd2",
+          "targetHash": "837339414577c447",
+          "reviewPass": "gemini-3.1-pro",
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/best-balance-transfer-credit-cards.html",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/best-balance-transfer-credit-cards.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/best-credit-cards-for-groceries.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "6a520db1c92c6203",
+          "targetHash": "3e9a93f664539558",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/best-credit-cards-for-groceries.html",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/best-credit-cards-for-travel.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "9fd7a61231ecd2f8",
+          "targetHash": "33e4500a1cc58c8c",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/best-credit-cards-for-travel.html",
+            "untranslated_p: 13 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/bnpl-hidden-fees.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "6cc970c9222854bf",
+          "targetHash": "64dc966ebbcc627b",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/bnpl-hidden-fees.html",
+            "untranslated_p: 12 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/bnpl-hidden-fees.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/bnpl-vs-credit-card.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "ce64dcdd795dee43",
+          "targetHash": "2d0a5f699050b2a3",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/bnpl-vs-credit-card.html",
+            "untranslated_p: 12 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/bnpl-vs-credit-card.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/cheapest-way-to-finance-purchase.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "853830aba9eb6824",
+          "targetHash": "27e5784feda4c3ab",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/cheapest-way-to-finance-purchase.html",
+            "untranslated_p: 9 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/cheapest-way-to-finance-purchase.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/credit-card-benefits-youre-not-using.html": {
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "96d5107d2101de27",
+          "targetHash": "7a73a3d0a07871a2",
+          "reviewPass": "gemini-3.1-pro",
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/credit-card-benefits-youre-not-using.html",
+            "untranslated_p: 36 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/credit-card-benefits-youre-not-using.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/credit-card-points-offset-interest.html": {
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "sourceHash": "6cba0baac19bd958",
+          "targetHash": "bd77f5e206d3d90c",
+          "reviewPass": "gemini-3.1-pro",
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/credit-card-points-offset-interest.html",
+            "untranslated_p: 16 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/credit-card-points-offset-interest.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/does-klarna-affect-credit-score.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "sourceHash": "3169bf06fa7bdd84",
+          "targetHash": "df1b9eb2eadb7226",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/does-klarna-affect-credit-score.html",
+            "untranslated_p: 21 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/does-klarna-affect-credit-score.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/how-to-build-credit-from-scratch.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "sourceHash": "4a760079c7af7529",
+          "targetHash": "83eec060253163b3",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/how-to-build-credit-from-scratch.html",
+            "untranslated_p: 15 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "sourceHash": "fac18880522606b2",
+          "targetHash": "6b898e0603e26174",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/",
+            "untranslated_p: 11 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/klarna-vs-afterpay-vs-affirm.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "sourceHash": "71fcc928d0ecae5c",
+          "targetHash": "8b7ef8559776bd67",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/klarna-vs-afterpay-vs-affirm.html",
+            "untranslated_p: 16 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/klarna-vs-afterpay-vs-affirm.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/minimum-payment-trap.html": {
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "sourceHash": "c3d48dd2ec215ed4",
+          "targetHash": "6e55ecff9cfa1019",
+          "reviewPass": "gemini-3.1-pro",
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/minimum-payment-trap.html",
+            "untranslated_p: 13 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/minimum-payment-trap.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/sneaky-credit-card-pitfalls.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "sourceHash": "1a85a49c7e8b7b07",
+          "targetHash": "f8065660b0ee7521",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/sneaky-credit-card-pitfalls.html",
+            "untranslated_p: 12 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/sneaky-credit-card-pitfalls.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "blog/snowball-vs-avalanche.html": {
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "sourceHash": "c8a9ff659a23cb15",
+          "targetHash": "5913e76a87f3c5c4",
+          "reviewPass": "gemini-3.1-pro",
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/blog/snowball-vs-avalanche.html",
+            "untranslated_p: 18 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/blog/snowball-vs-avalanche.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/amazon-prime-visa-signature/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "sourceHash": "3825a895a3705ccd",
+          "targetHash": "f7929959c64f5dcb",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/amazon-prime-visa-signature/",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/amazon-prime-visa-signature/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/amex-blue-cash-everyday/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "9d23e2cf2e52e7f2",
+          "targetHash": "9dcb4a1e58fdc579",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/amex-blue-cash-everyday/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/amex-blue-cash-everyday/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/amex-blue-cash-preferred/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "225f81c2b21f4c1f",
+          "targetHash": "6173364d5e2949d5",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/amex-blue-cash-preferred/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/amex-blue-cash-preferred/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/amex-gold/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "616e9d39fbc44ee0",
+          "targetHash": "a15c5753f765573a",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/amex-gold/",
+            "untranslated_p: 9 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/amex-gold/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/amex-platinum/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "13cf381fb68e7ee6",
+          "targetHash": "2feb1371a1fb83cb",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/amex-platinum/",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/amex-platinum/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/apple-card/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "c5b13385d3a22904",
+          "targetHash": "93e1ba5d4b2aa073",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/apple-card/",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/apple-card/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/barclays-uber-pro/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "92bc3c658c42c133",
+          "targetHash": "74868982bf3f1434",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/barclays-uber-pro/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/barclays-uber-pro/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/bilt-mastercard/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "8974f38accd5303f",
+          "targetHash": "4b6acceed2fbdd58",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/bilt-mastercard/",
+            "untranslated_p: 8 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/bilt-mastercard/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/bofa-customized-cash-rewards/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "ea2a577864173f9b",
+          "targetHash": "a3c00034d80cff23",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/bofa-customized-cash-rewards/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/bofa-customized-cash-rewards/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/capital-one-quicksilver/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "sourceHash": "ad530a6d7e3c8100",
+          "targetHash": "7786b3aa5a8f0c16",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/capital-one-quicksilver/",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/capital-one-quicksilver/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/capital-one-savor/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "sourceHash": "2c19defd352273dc",
+          "targetHash": "5f8259c319ebbe8f",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/capital-one-savor/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/capital-one-savor/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/capital-one-savorone/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "sourceHash": "9744f43f8359dcd6",
+          "targetHash": "622acc57e4935994",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/capital-one-savorone/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/capital-one-savorone/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/capital-one-venture-x/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "sourceHash": "426eccdda63fa4d3",
+          "targetHash": "102d437abd451efe",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/capital-one-venture-x/",
+            "untranslated_p: 8 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/capital-one-venture-x/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/chase-freedom-flex/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "sourceHash": "a5f2340acc3e88da",
+          "targetHash": "e8551ebb43305dd8",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/chase-freedom-flex/",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/chase-freedom-flex/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/chase-ink-business-preferred/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "sourceHash": "c53760b87edfe3d6",
+          "targetHash": "1a9739efe941aaa0",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/chase-ink-business-preferred/",
+            "untranslated_p: 8 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/chase-ink-business-preferred/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/chase-sapphire-preferred/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "sourceHash": "8ca0fc2dc7ecb6e5",
+          "targetHash": "523e542608512398",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/chase-sapphire-preferred/",
+            "untranslated_p: 9 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/chase-sapphire-preferred/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/chase-sapphire-reserve/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "sourceHash": "e7564f44232af6b8",
+          "targetHash": "9a91f27627cf84df",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/chase-sapphire-reserve/",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/chase-sapphire-reserve/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/citi-custom-cash/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "sourceHash": "89d9c96ca621d681",
+          "targetHash": "4138af5307012e07",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/citi-custom-cash/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/citi-custom-cash/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/citi-double-cash/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "sourceHash": "d998e6a15ec7bfe3",
+          "targetHash": "5e6b7f168b61d2aa",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/citi-double-cash/",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/citi-double-cash/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/citi-premier/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "sourceHash": "a9bc7de13ea5a97f",
+          "targetHash": "0b371f2722213f9e",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/citi-premier/",
+            "untranslated_p: 8 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/citi-premier/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/citi-strata-premier/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "sourceHash": "939c00f0cb74e928",
+          "targetHash": "b6ddc5d7c132f3b0",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/citi-strata-premier/",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/citi-strata-premier/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/discover-it-cash-back/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "sourceHash": "1607894596772036",
+          "targetHash": "293544f97b9a8a92",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/discover-it-cash-back/",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/discover-it-cash-back/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/ihg-one-rewards-premier/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "sourceHash": "d056b51a2cbf33a1",
+          "targetHash": "0fa18de3bd4be432",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/ihg-one-rewards-premier/",
+            "untranslated_p: 9 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/ihg-one-rewards-premier/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "sourceHash": "cc39d67cf48b1775",
+          "targetHash": "1108a12919676021",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/",
+            "untranslated_p: 19 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/southwest-priority-card/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "sourceHash": "f6b1211c6c634a56",
+          "targetHash": "e8b504dcce7cb293",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/southwest-priority-card/",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/southwest-priority-card/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/us-bank-altitude-go/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "098c74e8fb215a98",
+          "targetHash": "09e538b40a178b14",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/us-bank-altitude-go/",
+            "untranslated_p: 9 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/us-bank-altitude-go/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/us-bank-cash-plus/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "af52e034a195745c",
+          "targetHash": "7ae00ef749ed4e31",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/us-bank-cash-plus/",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/us-bank-cash-plus/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/wells-fargo-active-cash/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "022a0f652e663811",
+          "targetHash": "52baea16b8318bcb",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/wells-fargo-active-cash/",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/wells-fargo-active-cash/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "cards/wells-fargo-autograph/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "a64be64b13bd7ebf",
+          "targetHash": "6e1bb9daba0ffe23",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/cards/wells-fargo-autograph/",
+            "untranslated_p: 8 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/cards/wells-fargo-autograph/index.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "learn/balance-transfer-calculator.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "3aea4313e11d4eb8",
+          "targetHash": "d1fabe56b2d95102",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/learn/balance-transfer-calculator.html",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/balance-transfer-calculator.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "learn/bnpl-interest-calculator.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "c5292c5c9020917b",
+          "targetHash": "a6b2e599075000a8",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/learn/bnpl-interest-calculator.html",
+            "untranslated_p: 9 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/bnpl-interest-calculator.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "learn/crypto-credit-card-rewards.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "a2e4a707f837282c",
+          "targetHash": "421b156d865ed5b7",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/learn/crypto-credit-card-rewards.html",
+            "untranslated_p: 16 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/crypto-credit-card-rewards.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "learn/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "adcebfa78b420472",
+          "targetHash": "b7869e5299420d88",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/learn/",
+            "untranslated_p: 9 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "learn/pay-off-10k-debt.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "f44c5acf4ea61b22",
+          "targetHash": "0812dfd6f2ee3189",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/learn/pay-off-10k-debt.html",
+            "untranslated_p: 11 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/pay-off-10k-debt.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "learn/snowball-vs-avalanche.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "e6e5da0b699c4617",
+          "targetHash": "bc4b336b742d61c4",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/learn/snowball-vs-avalanche.html",
+            "untranslated_p: 17 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/learn/snowball-vs-avalanche.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/amazon.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "sourceHash": "93a98ab28762703e",
+          "targetHash": "51da04729a794ae5",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/amazon.html",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/amazon.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/costco.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "83115c262f7b22b7",
+          "targetHash": "f0834c6ef479beef",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/costco.html",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/costco.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/dining.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "26c32aaca68d0e2d",
+          "targetHash": "b6003e5b204a0d16",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/dining.html",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/dining.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/ev-charging.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "de18ab9864bc338f",
+          "targetHash": "4e6d8be8eab0b82d",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/ev-charging.html",
+            "untranslated_p: 7 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/ev-charging.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/fitness.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "8ed2e414824e53b2",
+          "targetHash": "9dfdaf6b905037b6",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/fitness.html",
+            "untranslated_p: 8 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/fitness.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/gas-stations.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "3ff13adb9c2cbfce",
+          "targetHash": "da2e080f1d7e992d",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/gas-stations.html",
+            "untranslated_p: 4 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/gas-stations.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/groceries.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "e786e93be5724d93",
+          "targetHash": "dac6b0b006ec7720",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/groceries.html",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/groceries.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/home-improvement.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "b8e1d4974f4ad500",
+          "targetHash": "6b5988d3e7a46c9d",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/home-improvement.html",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/home-improvement.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/index.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "62a377ec6ab2fbce",
+          "targetHash": "4ef255a1482125a0",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/",
+            "untranslated_p: 1 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/insurance.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "606c36a99e6a42be",
+          "targetHash": "b79d3bcc32b53cf2",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/insurance.html",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/insurance.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/online-shopping.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "5650a10c052fbbeb",
+          "targetHash": "0168f5552a7cf012",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/online-shopping.html",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/online-shopping.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/pharmacy.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "sourceHash": "e233cd06221eee5b",
+          "targetHash": "dcc87fe402d28924",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/pharmacy.html",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/pharmacy.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/rent.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "5953a6d0ed361593",
+          "targetHash": "898dd7859b412881",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/rent.html",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/rent.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/restaurants.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "00ef26d0e3c8d7a2",
+          "targetHash": "a8b15ec815077724",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/restaurants.html",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/restaurants.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/streaming.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "6dddbcffdeefddc9",
+          "targetHash": "46edb99cd83bef0b",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/streaming.html",
+            "untranslated_p: 3 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/streaming.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/student.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "d52b0d253261a84c",
+          "targetHash": "ce1ce123afbfac1b",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/student.html",
+            "untranslated_p: 8 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/student.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/subscription.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "4695e2b73d62817e",
+          "targetHash": "570ee015515805ab",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/subscription.html",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/subscription.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/target.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "b20fb56bf80ce699",
+          "targetHash": "55f45403e80bba0e",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/target.html",
+            "untranslated_p: 1 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/target.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/travel-hotels.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "2e671135dda7f8f3",
+          "targetHash": "f23de4362cc93d7c",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/travel-hotels.html",
+            "untranslated_p: 9 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/travel-hotels.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/travel.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "78ddb491e770ae55",
+          "targetHash": "3f94a4ab9f516d9f",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/travel.html",
+            "untranslated_p: 4 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/travel.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/uber-lyft.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "fadbb4528bf59c48",
+          "targetHash": "83c559c415c3ece0",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/uber-lyft.html",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/uber-lyft.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/utilities.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "622247bcc1b2b285",
+          "targetHash": "321fae698db6db30",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/utilities.html",
+            "untranslated_p: 5 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/utilities.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/walmart.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "sourceHash": "7554e5d98f7f8509",
+          "targetHash": "9850353076d3d614",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/walmart.html",
+            "untranslated_p: 4 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/walmart.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        },
+        "merchant/warehouse-clubs.html": {
+          "stage": "translated",
+          "lastTranslated": "2026-05-03T19:57:25.096Z",
+          "sourceHash": "6144835dc1103760",
+          "targetHash": "400ee94f370bf60d",
+          "reviewPass": null,
+          "spotCheckPass": null,
+          "issues": [
+            "og_url: og:url doesn't point to /es/: https://creditstud.io/merchant/warehouse-clubs.html",
+            "untranslated_p: 6 paragraph(s) may be untranslated",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/",
+            "breadcrumb_url: Breadcrumb item URL not /es/: https://creditstud.io/merchant/warehouse-clubs.html",
+            "breadcrumb_name: Breadcrumb name \"Home\" not translated to \"Inicio\""
+          ]
+        }
+      }
+    }
+  }
+}
