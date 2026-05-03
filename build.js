@@ -187,8 +187,26 @@ function buildLang(lang) {
   let generated = 0;
   let copied = 0;
 
+  // Manually-translated pages should not be overwritten by the build.
+  // These files have full Spanish content in the body (not just i18n partials).
+  // List them relative to the repo root (without language prefix).
+  const MANUALLY_TRANSLATED = new Set([
+    'blog/best-balance-transfer-credit-cards.html',
+    'blog/minimum-payment-trap.html',
+    'blog/snowball-vs-avalanche.html',
+    'blog/credit-card-benefits-youre-not-using.html',
+    'blog/credit-card-points-offset-interest.html',
+  ]);
+
   for (const filePath of htmlFiles) {
     const relPath = path.relative(repoDir, filePath);
+
+    // Skip manually-translated pages — they already have full Spanish content
+    if (MANUALLY_TRANSLATED.has(relPath) && fs.existsSync(path.join(repoDir, lang, relPath))) {
+      console.log(`  Skipping ${lang}/${relPath} (manually translated)`);
+      continue;
+    }
+
     let content = fs.readFileSync(filePath, 'utf8');
 
     const langDir = path.join(repoDir, lang);
