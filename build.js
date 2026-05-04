@@ -209,8 +209,8 @@ function translateMetaTags(content, lang, relPath) {
     );
   }
 
-  // Replace JSON-LD Article/FAQPage headline and description
-  if (trans.ld_headline || trans.ld_description || trans.ld_breadcrumb_last) {
+  // Replace JSON-LD Article/FAQPage headline, description, and FAQ questions
+  if (trans.ld_headline || trans.ld_description || trans.ld_breadcrumb_last || trans.faq) {
     content = content.replace(
       /<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi,
       function(match, jsonBlock) {
@@ -225,10 +225,30 @@ function translateMetaTags(content, lang, relPath) {
               data.description = trans.ld_description;
             }
           }
+          // Translate FAQ questions and answers
+          if (data['@type'] === 'FAQPage' && trans.faq && data.mainEntity) {
+            for (let i = 0; i < data.mainEntity.length && i < trans.faq.length; i++) {
+              if (trans.faq[i].name) {
+                data.mainEntity[i].name = trans.faq[i].name;
+              }
+              if (trans.faq[i].acceptedAnswer && data.mainEntity[i].acceptedAnswer) {
+                data.mainEntity[i].acceptedAnswer.text = trans.faq[i].acceptedAnswer;
+              }
+            }
+          }
           if (data['@type'] === 'BreadcrumbList' && data.itemListElement && trans.ld_breadcrumb_last) {
             const last = data.itemListElement[data.itemListElement.length - 1];
             if (last && last.name) {
               last.name = trans.ld_breadcrumb_last;
+            }
+            // Fix breadcrumb URLs to point to /lang/ versions
+            for (const elem of data.itemListElement) {
+              if (elem.item && !elem.item.includes(`/${lang}/`) && elem.item !== 'https://creditstud.io/') {
+                const path = elem.item.replace('https://creditstud.io/', '');
+                elem.item = `https://creditstud.io/${lang}/${path}`;
+              } else if (elem.item === 'https://creditstud.io/') {
+                elem.item = `https://creditstud.io/${lang}/`;
+              }
             }
           }
           fixed = JSON.stringify(data, null, 2);
