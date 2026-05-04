@@ -1,8 +1,8 @@
 # Credit Data Refresh Report
 
-- **Run:** 2026-04-21T23:10:00.126Z
-- **Targets scraped:** 17
-- **Changes detected:** 3
+- **Run:** 2026-05-04T16:45:24.984Z
+- **Targets scraped:** 18
+- **Changes detected:** 6
 - **Errors / blank scrapes:** 4
 
 ## 🔔 Changes Detected
@@ -12,8 +12,14 @@ Source: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
 
 | Field | Current | Scraped |
 |---|---|---|
-| `signupBonus.amount` | `60000` | `75000` |
-| `signupBonus.requirement` | `$4` | `5000` |
+| `signupBonus.requirement` | `$5` | `5000` |
+
+### Chase Freedom Flex (`chase-freedom-flex`)
+Source: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+
+| Field | Current | Scraped |
+|---|---|---|
+| `signupBonus.amount` | `500` | `200` |
 
 ### Capital One Venture (`capital-one-venture`)
 Source: https://www.capitalone.com/credit-cards/venture/
@@ -21,6 +27,20 @@ Source: https://www.capitalone.com/credit-cards/venture/
 | Field | Current | Scraped |
 |---|---|---|
 | `signupBonus.requirement` | `$4` | `4000` |
+
+### U.S. Bank Cash+ (`us-bank-cash-plus`)
+Source: https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html
+
+| Field | Current | Scraped |
+|---|---|---|
+| `signupBonus.amount` | `200` | `250` |
+
+### Amazon Prime Rewards Visa Signature (`amazon-prime-visa`)
+Source: https://creditcards.chase.com/cash-back-credit-cards/amazon-prime-rewards
+
+| Field | Current | Scraped |
+|---|---|---|
+| `annualFee` | `139` | `0` |
 
 ### Zip (Quadpay) (`zip`)
 Source: https://zip.co/us/how-it-works
