@@ -116,6 +116,171 @@ function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+// ── SEO meta translation cache ──
+const seoCache = {};
+
+function getSeoTranslations(lang) {
+  if (seoCache[lang]) return seoCache[lang];
+  const seoPath = path.join(repoDir, 'locales', `${lang}-seo.json`);
+  if (fs.existsSync(seoPath)) {
+    seoCache[lang] = JSON.parse(fs.readFileSync(seoPath, 'utf8'));
+  } else {
+    seoCache[lang] = {};
+  }
+  return seoCache[lang];
+}
+
+function htmlEncode(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function translateMetaTags(content, lang, relPath) {
+  const seo = getSeoTranslations(lang);
+  const pageKey = relPath.replace(/\\/g, '/');
+  const trans = seo[pageKey];
+  if (!trans) return content;
+
+  // Replace <title>
+  if (trans.title) {
+    content = content.replace(/<title>[^<]*<\/title>/i, `<title>${htmlEncode(trans.title)}</title>`);
+  }
+
+  // Replace <meta name="description">
+  if (trans.description) {
+    content = content.replace(
+      /<meta\s+name="description"\s+content="[^"]*">/gi,
+      `<meta name="description" content="${htmlEncode(trans.description)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+name="description">/gi,
+      `<meta content="${htmlEncode(trans.description)}" name="description">`
+    );
+  }
+
+  // Replace og:title
+  if (trans.og_title) {
+    content = content.replace(
+      /<meta\s+property="og:title"\s+content="[^"]*">/gi,
+      `<meta property="og:title" content="${htmlEncode(trans.og_title)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+property="og:title">/gi,
+      `<meta content="${htmlEncode(trans.og_title)}" property="og:title">`
+    );
+  }
+
+  // Replace og:description
+  if (trans.og_description) {
+    content = content.replace(
+      /<meta\s+property="og:description"\s+content="[^"]*">/gi,
+      `<meta property="og:description" content="${htmlEncode(trans.og_description)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+property="og:description">/gi,
+      `<meta content="${htmlEncode(trans.og_description)}" property="og:description">`
+    );
+  }
+
+  // Replace twitter:title
+  if (trans.twitter_title) {
+    content = content.replace(
+      /<meta\s+name="twitter:title"\s+content="[^"]*">/gi,
+      `<meta name="twitter:title" content="${htmlEncode(trans.twitter_title)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+name="twitter:title">/gi,
+      `<meta content="${htmlEncode(trans.twitter_title)}" name="twitter:title">`
+    );
+  }
+
+  // Replace twitter:description
+  if (trans.twitter_description) {
+    content = content.replace(
+      /<meta\s+name="twitter:description"\s+content="[^"]*">/gi,
+      `<meta name="twitter:description" content="${htmlEncode(trans.twitter_description)}">`
+    );
+    content = content.replace(
+      /<meta\s+content="[^"]*"\s+name="twitter:description">/gi,
+      `<meta content="${htmlEncode(trans.twitter_description)}" name="twitter:description">`
+    );
+  }
+
+  // Replace JSON-LD Article/FAQPage headline, description, and FAQ questions
+  if (trans.ld_headline || trans.ld_description || trans.ld_breadcrumb_last || trans.faq) {
+    content = content.replace(
+      /<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi,
+      function(match, jsonBlock) {
+        let fixed = jsonBlock;
+        try {
+          const data = JSON.parse(jsonBlock);
+          if (data['@type'] === 'Article' || data['@type'] === 'FAQPage') {
+            if (trans.ld_headline && data.headline) {
+              data.headline = trans.ld_headline;
+            }
+            if (trans.ld_description && data.description) {
+              data.description = trans.ld_description;
+            }
+          }
+          // Translate FAQ questions and answers
+          if (data['@type'] === 'FAQPage' && trans.faq && data.mainEntity) {
+            for (let i = 0; i < data.mainEntity.length && i < trans.faq.length; i++) {
+              if (trans.faq[i].name) {
+                data.mainEntity[i].name = trans.faq[i].name;
+              }
+              if (trans.faq[i].acceptedAnswer && data.mainEntity[i].acceptedAnswer) {
+                data.mainEntity[i].acceptedAnswer.text = trans.faq[i].acceptedAnswer;
+              }
+            }
+          }
+          if (data['@type'] === 'BreadcrumbList' && data.itemListElement && trans.ld_breadcrumb_last) {
+            const last = data.itemListElement[data.itemListElement.length - 1];
+            if (last && last.name) {
+              last.name = trans.ld_breadcrumb_last;
+            }
+            // Fix breadcrumb URLs to point to /lang/ versions
+            for (const elem of data.itemListElement) {
+              if (elem.item && !elem.item.includes(`/${lang}/`) && elem.item !== 'https://creditstud.io/') {
+                const path = elem.item.replace('https://creditstud.io/', '');
+                elem.item = `https://creditstud.io/${lang}/${path}`;
+              } else if (elem.item === 'https://creditstud.io/') {
+                elem.item = `https://creditstud.io/${lang}/`;
+              }
+            }
+          }
+          fixed = JSON.stringify(data, null, 2);
+        } catch (e) {
+          // If JSON parsing fails, fall back to string replacement
+          if (trans.ld_headline) {
+            fixed = fixed.replace(/"headline"\s*:\s*"[^"]*"/g, `"headline": "${trans.ld_headline}"`);
+          }
+          if (trans.ld_description) {
+            fixed = fixed.replace(/"description"\s*:\s*"[^"]*"/g, `"description": "${trans.ld_description}"`);
+          }
+          if (trans.ld_breadcrumb_last) {
+            const items = fixed.match(/"itemListElement"\s*:\s*\[([\s\S]*?)\]/);
+            if (items) {
+              const lastItemMatch = items[1].match(/\{[\s\S]*?"name"\s*:\s*"([^"]*)"[\s\S]*?\}(?!.*\{)/);
+              if (lastItemMatch) {
+                fixed = fixed.replace(
+                  new RegExp(`"name"\\s*:\\s*"${escapeRegex(lastItemMatch[1])}"(?!.*"name"\\s*:\\s*"${escapeRegex(lastItemMatch[1])}")`),
+                  `"name": "${trans.ld_breadcrumb_last}"`
+                );
+              }
+            }
+          }
+        }
+        return match.replace(jsonBlock, fixed);
+      }
+    );
+  }
+
+  return content;
+}
+
 // ── Build English files (in-place update of source) ──
 function buildEnglish() {
   console.log('\n=== Building English (in-place) ===\n');
@@ -187,8 +352,26 @@ function buildLang(lang) {
   let generated = 0;
   let copied = 0;
 
+  // Manually-translated pages should not be overwritten by the build.
+  // These files have full Spanish content in the body (not just i18n partials).
+  // List them relative to the repo root (without language prefix).
+  const MANUALLY_TRANSLATED = new Set([
+    'blog/best-balance-transfer-credit-cards.html',
+    'blog/minimum-payment-trap.html',
+    'blog/snowball-vs-avalanche.html',
+    'blog/credit-card-benefits-youre-not-using.html',
+    'blog/credit-card-points-offset-interest.html',
+  ]);
+
   for (const filePath of htmlFiles) {
     const relPath = path.relative(repoDir, filePath);
+
+    // Skip manually-translated pages — they already have full Spanish content
+    if (MANUALLY_TRANSLATED.has(relPath) && fs.existsSync(path.join(repoDir, lang, relPath))) {
+      console.log(`  Skipping ${lang}/${relPath} (manually translated)`);
+      continue;
+    }
+
     let content = fs.readFileSync(filePath, 'utf8');
 
     const langDir = path.join(repoDir, lang);
@@ -259,6 +442,9 @@ function buildLang(lang) {
     // Fix canonical URL to point to language-specific version
     content = fixCanonicalUrl(content, lang);
 
+    // Translate SEO meta tags for this page
+    content = translateMetaTags(content, lang, relPath);
+
     // Fix relative URLs: add /{lang}/ prefix to internal links
     // This handles href="/" → href="/{lang}/" etc.
     content = fixRelativeUrls(content, lang);
@@ -278,17 +464,43 @@ function buildLang(lang) {
 // ── Fix canonical URL for non-English output ──
 function fixCanonicalUrl(content, lang) {
   // Replace canonical URL to point to language-specific version
-  // e.g., <link rel="canonical" href="https://creditstud.io/cards/chase-sapphire-preferred/\">
-  //   → <link rel="canonical" href="https://creditstud.io/es/cards/chase-sapphire-preferred/">
   content = content.replace(
     /<link rel="canonical" href="https:\/\/creditstud\.io(\/[^"]*)">/g,
     `<link rel="canonical" href="https://creditstud.io/${lang}$1">`
   );
-  // Also handle canonical href without full domain (shouldn't exist but just in case)
   content = content.replace(
     /<link rel="canonical" href="\/([^"]*)">/g,
     `<link rel="canonical" href="/${lang}/$1">`
   );
+
+  // Fix og:url to point to language-specific version
+  content = content.replace(
+    /<meta\s+property="og:url"\s+content="https:\/\/creditstud\.io(\/[^"]*)">/g,
+    `<meta property="og:url" content="https://creditstud.io/${lang}$1">`
+  );
+  content = content.replace(
+    /<meta\s+content="https:\/\/creditstud\.io(\/[^"]*)"\s+property="og:url">/g,
+    `<meta content="https://creditstud.io/${lang}$1" property="og:url">`
+  );
+
+  // Fix JSON-LD BreadcrumbList: translate Home → Inicio and fix item URLs
+  content = content.replace(
+    /<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
+    function(match, jsonBlock) {
+      if (!jsonBlock.includes('BreadcrumbList')) return match;
+      let fixed = jsonBlock.replace(/"name":\s*"Home"/g, '"name": "Inicio"');
+      const langPrefix = `/${lang}/`;
+      fixed = fixed.replace(
+        /"item":\s*"https:\/\/creditstud\.io(\/[^"?]*)"/g,
+        function(urlMatch, urlPath) {
+          if (urlPath.startsWith(langPrefix)) return urlMatch;
+          return `"item": "https://creditstud.io/${lang}${urlPath}"`;
+        }
+      );
+      return match.replace(jsonBlock, fixed);
+    }
+  );
+
   return content;
 }
 

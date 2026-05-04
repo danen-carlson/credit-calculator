@@ -1,0 +1,21 @@
+{
+  "payoffTime": "还清时间",
+  "totalInterest": "总利息",
+  "totalPaid": "总还款额",
+  "totalPaidSub.toClear": "以还清 {amount}",
+  "totalPaidSub.interestExceedsPayment": "利息超过最低还款额",
+  "neverPaidOff": "永远无法还清",
+  "principal": "本金",
+  "interest": "利息",
+  "interestExceedsPayments": "利息超过还款额",
+  "months.format.singular": "{count} 个月",
+  "months.format.plural": "{count} 个月",
+  "months.format.years": "{years} 年{{s}}，{months} 个月{{s}}",
+  "months.neverExceeds": "永远无法还清（利息超过还款额）",
+  "balance": "余额",
+  "apr": "APR",
+  "minPaymentPercent": "最低还款比例 %",
+  "calculate": "计算",
+  "resultSummary": "如果您只支付最低还款额，还清 {balance} 的债务需要 {time}，共产生 {totalInterest} 的利息，总还款额为 {totalPaid}。",
+  "tryExtraPayment": "尝试每月多还 ${extra}，可提前 {monthsEarlier} 个月还清，并节省 ${interestSaved} 的利息。"
+}

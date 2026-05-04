@@ -1,20 +1,10 @@
 #!/usr/bin/env node
 /**
  * Comprehensive translation review checker for CreditStud.io
- * 
- * Validates all SEO-critical elements in translated pages:
- * - lang attribute
- * - title, meta description
- * - og:title, og:description, og:url
- * - twitter:title, twitter:description
- * - canonical URL
- * - hreflang tags
- * - JSON-LD translations (headline, description, breadcrumb names/URLs, FAQ questions)
- * - Locale/i18n setup (window.__lang, locale script)
- * - Manually-translated pages: body content has Spanish
+ * Supports: es (Spanish), zh (Chinese), tl (Tagalog), ko (Korean), hi (Hindi)
  * 
  * Usage:
- *   node scripts/translation-review-check.mjs [--lang es] [--verbose] [--json]
+ *   node scripts/translation-review-check.mjs [--lang es|zh|tl|ko|hi] [--verbose] [--json]
  */
 
 import fs from 'fs';
@@ -22,15 +12,16 @@ import path from 'path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SUPPORTED_LANGS = ['es', 'zh', 'tl', 'ko', 'hi'];
-const MANUALLY_TRANSLATED = new Set([
-  'blog/best-balance-transfer-credit-cards.html',
-  'blog/minimum-payment-trap.html',
-  'blog/snowball-vs-avalanche.html',
-  'blog/credit-card-benefits-youre-not-using.html',
-  'blog/credit-card-points-offset-interest.html',
-]);
 
-// Pages that are intentionally minimal (no meta description expected)
+// Language-specific detection functions
+const LANG_DETECTORS = {
+  es: (str) => /[áéíóúñ¿¡]/.test(str) || (/(Planificador|Calculadora[cs]?|Mejores|Mejor|recompensas?|efectivo|Gratuita[cs]?|Gratuitamente|Financiera[cs]?|Comparar?|Maximiza|Entendiendo|Ahorros?|Reembolso|transferencia|hipoteca|seguros?|primas?|Anual|Mensual|Inicio|Página|¿Cómo|¿Cuál|¿Debería|¿Puedo|¿Cuánto|¿Vale|¿Es|para|por|sin|con|del|tarjetas?)/i.test(str) && str.split(/\s+/).filter(w => w.length > 2).length >= 3),
+  zh: (str) => /[\u4e00-\u9fff]/.test(str),
+  tl: (str) => /[áéíóúñ¿¡]/.test(str) || /(ng|nang|sa|ngayon|para|kung|ano|paano|kailan|bakit|huwag|maging|gawin|pinaka|mas|mga|ay|na|ang)/i.test(str),
+  ko: (str) => /[\uac00-\ud7af]/.test(str),
+  hi: (str) => /[\u0900-\u097f]/.test(str),
+};
+
 const SKIP_DESC_CHECK = new Set(['offline.html']);
 
 const args = process.argv.slice(2);
@@ -49,18 +40,30 @@ const results = {};
 let totalPass = 0;
 let totalFail = 0;
 
-// Spanish detection: accented chars OR 2+ Spanish content markers
-function isLikelySpanish(str) {
-  if (/[áéíóúñ¿¡]/.test(str)) return true;
-  const markers = str.match(/(Planificador|Calculadora[cs]?|Mejores|Mejor|recompensas?|efectivo|Gratuita[cs]?|Gratuitamente|Financiera[cs]?|Comparar?|Maximiza|Entendiendo|Ahorros?|Reembolso|transferencia|hipoteca|seguros?|primas?|Anual|Mensual|Inicio|Página|¿Cómo|¿Cuál|¿Debería|¿Puedo|¿Cuánto|¿Vale|¿Es|para|por|sin|con|del|tarjetas?)/gi) || [];
-  return markers.length >= 2;
+const manuallyTranslated = {
+  es: new Set([
+    'blog/best-balance-transfer-credit-cards.html',
+    'blog/minimum-payment-trap.html',
+    'blog/snowball-vs-avalanche.html',
+    'blog/credit-card-benefits-youre-not-using.html',
+    'blog/credit-card-points-offset-interest.html',
+  ]),
+  zh: new Set(), // No manually-translated zh pages yet
+  tl: new Set(),
+  ko: new Set(),
+  hi: new Set(),
+};
+
+function isLikelyTranslated(str, lang) {
+  const detector = LANG_DETECTORS[lang];
+  return detector ? detector(str) : false;
 }
 
 function checkPage(filePath, lang, relPath) {
   const issues = [];
   const warnings = [];
   const content = fs.readFileSync(filePath, 'utf8');
-  const isManual = MANUALLY_TRANSLATED.has(relPath);
+  const isManual = manuallyTranslated[lang]?.has(relPath) || false;
   
   const title = content.match(/<title>(.*?)<\/title>/s)?.[1] || '';
   const metaDesc = content.match(/<meta\s+name="description"\s+content="(.*?)"/s)?.[1] 
@@ -86,45 +89,45 @@ function checkPage(filePath, lang, relPath) {
   // 2. Check title is translated
   if (!title) {
     issues.push('Missing <title> tag');
-  } else if (!isLikelySpanish(title) && title !== 'Offline — CreditStud.io') {
+  } else if (!isLikelyTranslated(title, lang) && title !== 'Offline — CreditStud.io') {
     issues.push(`Title may be untranslated: "${title.substring(0, 80)}"`);
   }
   
   // 3. Check meta description is translated
   if (!metaDesc && !SKIP_DESC_CHECK.has(relPath)) {
     issues.push('Missing meta description');
-  } else if (!isLikelySpanish(metaDesc) && metaDesc) {
+  } else if (!isLikelyTranslated(metaDesc, lang) && metaDesc) {
     issues.push(`Meta description may be untranslated: "${metaDesc.substring(0, 80)}"`);
   }
   
   // 4. Check og:title is translated
   if (!ogTitle) {
     warnings.push('Missing og:title');
-  } else if (!isLikelySpanish(ogTitle)) {
+  } else if (!isLikelyTranslated(ogTitle, lang)) {
     issues.push(`og:title may be untranslated: "${ogTitle.substring(0, 80)}"`);
   }
   
   // 5. Check og:description is translated
   if (!ogDesc) {
     warnings.push('Missing og:description');
-  } else if (!isLikelySpanish(ogDesc)) {
+  } else if (!isLikelyTranslated(ogDesc, lang)) {
     issues.push(`og:description may be untranslated: "${ogDesc.substring(0, 80)}"`);
   }
   
-  // 6. Check og:url points to /es/ version
+  // 6. Check og:url points to /lang/ version
   if (ogUrl && !ogUrl.includes(`/${lang}/`)) {
     issues.push(`og:url doesn't point to /${lang}/: ${ogUrl}`);
   }
   
   // 7. Check twitter:title and twitter:description
-  if (twTitle && !isLikelySpanish(twTitle)) {
+  if (twTitle && !isLikelyTranslated(twTitle, lang)) {
     issues.push(`twitter:title may be untranslated: "${twTitle.substring(0, 80)}"`);
   }
-  if (twDesc && !isLikelySpanish(twDesc)) {
+  if (twDesc && !isLikelyTranslated(twDesc, lang)) {
     issues.push(`twitter:description may be untranslated: "${twDesc.substring(0, 80)}"`);
   }
   
-  // 8. Check canonical URL points to /es/ version
+  // 8. Check canonical URL points to /lang/ version
   if (canonical && !canonical.includes(`/${lang}/`)) {
     issues.push(`Canonical URL doesn't point to /${lang}/: ${canonical}`);
   }
@@ -151,8 +154,10 @@ function checkPage(filePath, lang, relPath) {
       for (const item of items) {
         if (item['@type'] === 'BreadcrumbList') {
           for (const elem of item.itemListElement || []) {
+            // Check breadcrumb "Home" is translated
             if (elem.name === 'Home') {
-              issues.push(`Breadcrumb name "Home" not translated to "Inicio"`);
+              const homeTranslations = { es: 'Inicio', zh: '首页', tl: 'Home', ko: '홈', hi: 'होम' };
+              issues.push(`Breadcrumb name "Home" not translated to "${homeTranslations[lang] || lang}"`);
             }
             if (elem.item && !elem.item.includes(`/${lang}/`) && elem.item !== 'https://creditstud.io/') {
               issues.push(`Breadcrumb item URL not /${lang}/: ${elem.item}`);
@@ -160,24 +165,22 @@ function checkPage(filePath, lang, relPath) {
           }
         }
         if (item['@type'] === 'Article' || item['@type'] === 'FAQPage') {
-          if (item.headline && !isLikelySpanish(item.headline)) {
+          if (item.headline && !isLikelyTranslated(item.headline, lang)) {
             issues.push(`JSON-LD headline may be untranslated: "${item.headline.substring(0, 80)}"`);
           }
-          if (item.description && !isLikelySpanish(item.description)) {
+          if (item.description && !isLikelyTranslated(item.description, lang)) {
             issues.push(`JSON-LD description may be untranslated: "${item.description.substring(0, 80)}"`);
           }
         }
         if (item['@type'] === 'FAQPage') {
           for (const q of item.mainEntity || []) {
-            if (q.name && !isLikelySpanish(q.name)) {
+            if (q.name && !isLikelyTranslated(q.name, lang)) {
               issues.push(`FAQ question may be untranslated: "${q.name.substring(0, 80)}"`);
             }
           }
         }
       }
-    } catch (e) {
-      // Skip unparseable JSON-LD
-    }
+    } catch (e) {}
   }
   
   // 11. Check i18n setup
@@ -190,13 +193,13 @@ function checkPage(filePath, lang, relPath) {
     }
   }
   
-  // 12. For manual pages, check body has Spanish content
+  // 12. For manual pages, check body has translated content
   if (isManual) {
     const paragraphs = content.match(/<p[^>]*>([\s\S]*?)<\/p>/g) || [];
     const contentParas = paragraphs.map(p => p.replace(/<[^>]+>/g, '').trim()).filter(p => p.length > 40);
-    const spanishParas = contentParas.filter(p => isLikelySpanish(p));
-    if (spanishParas.length < contentParas.length * 0.8) {
-      issues.push(`Manual page has only ${spanishParas.length}/${contentParas.length} Spanish paragraphs`);
+    const translatedParas = contentParas.filter(p => isLikelyTranslated(p, lang));
+    if (translatedParas.length < contentParas.length * 0.8) {
+      issues.push(`Manual page has only ${translatedParas.length}/${contentParas.length} translated paragraphs`);
     }
   }
   
