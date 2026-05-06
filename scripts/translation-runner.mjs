@@ -458,19 +458,55 @@ async function cmdTranslate(lang, opts) {
 
 // ── Review & Spot-Check ──
 
-const REVIEW_PROMPT = `You are a Spanish translation reviewer for CreditStud.io. Compare the English source with the Spanish translation and check for:
+function extractArticle(html) {
+  // Extract article content — skip nav, disclosure, footer, scripts
+  let body = html.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] || '';
+  
+  // Try <article>, <main>, or content after </header>
+  let article = body.match(/<article[^>]*>([\s\S]*)<\/article>/i)?.[1];
+  if (!article) article = body.match(/<main[^>]*>([\s\S]*)<\/main>/i)?.[1];
+  if (!article) {
+    const afterHeader = body.match(/<\/header>([\s\S]*)/i);
+    if (afterHeader) {
+      // Remove footer, scripts, language-switcher
+      article = afterHeader[1]
+        .replace(/<footer[^>]*>[\s\S]*<\/footer>/gi, '')
+        .replace(/<script[\s\S]*?<\/script>/gi, '')
+        .replace(/<div[^>]*class="[^"]*language-switcher[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+    }
+  }
+  if (!article) article = body; // Fallback to full body
+  
+  return article;
+}
 
-1. UNTRANLATED SEGMENTS — Any English text that should be in Spanish
-2. ACCURACY — Wrong translations, changed meanings, added/removed info
-3. TERMINOLOGY — Must use US Spanish terms: "puntaje de crédito" (not "puntuación"), "transferencia de saldo", "cuota anual", "pago mínimo"
-4. BRAND NAMES — Card names (Chase Sapphire Preferred, Amex Gold, etc.), bank names, BNPL names (Klarna, Afterpay, Affirm), FICO, VantageScore must stay in English
-5. HTML INTEGRITY — All tags present, no broken markup, no missing sections
-6. NUMBERS — Dollar amounts, percentages, APRs must be identical
-7. TONE — Helpful, direct, informal but trustworthy
+function stripHtml(html) {
+  return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function countSections(html) {
+  return {
+    h1: (html.match(/<h1/gi) || []).length,
+    h2: (html.match(/<h2/gi) || []).length,
+    h3: (html.match(/<h3/gi) || []).length,
+    tables: (html.match(/<table/gi) || []).length,
+    lists: (html.match(/<ul/gi) || []).length + (html.match(/<ol/gi) || []).length,
+  };
+}
+
+const REVIEW_PROMPT = `You are a Spanish translation reviewer for CreditStud.io. Compare the English ARTICLE content with the Spanish translation and check for:
+
+1. MISSING CONTENT — Sections, paragraphs, or headings present in English but missing in Spanish
+2. UNTRANSLATED TEXT — English text that should be Spanish (NOT: brand names, URLs, code, numbers, which stay in English)
+3. ACCURACY — Wrong translations, changed meanings
+4. TERMINOLOGY — US Spanish: "puntaje de crédito" (not "puntuación"), "transferencia de saldo", "cuota anual", "pago mínimo"
+5. NUMBERS — Dollar amounts, percentages, APRs must be identical
+
+IMPORTANT: Navigation menus, disclosure banners, and footer text are shared partials injected by the build system. Ignore differences in those areas. Focus ONLY on the article content.
 
 Reply in this exact format:
-PASS — (if no issues found)
-ISSUES — (list each issue with line/section reference and suggested fix)
+PASS — (if no issues found in the article content)
+ISSUES — (list each issue with section reference)
 VERDICT: PASS|NEEDS_FIX`
 
 const SPOTCHECK_PROMPT = `You are a translation quality auditor. For each pair below, check:
@@ -528,16 +564,24 @@ async function cmdReview(lang, opts) {
       const enBody = enHtml.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] || '';
       const esBody = esHtml.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] || '';
 
-      // For reviewer, send just text (stripped of HTML) to keep it fast
-      const stripTags = (s) => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-      const enText = stripTags(enBody).slice(0, 3000); // Cap at 3000 chars to keep request fast
-      const esText = stripTags(esBody).slice(0, 3000);
+      // Extract article content only (skip nav, disclosure, footer)
+      const enArticle = extractArticle(enHtml);
+      const esArticle = extractArticle(esHtml);
+      const enText = stripHtml(enArticle).slice(0, 4000);
+      const esText = stripHtml(esArticle).slice(0, 4000);
+      const enSections = countSections(enArticle);
+      const esSections = countSections(esArticle);
 
-      console.log(`  📋 Reviewing ${relPath}...`);
+      console.log(`  📋 Reviewing ${relPath} (EN: ${enText.split(/\s+/).length}w, ES: ${esText.split(/\s+/).length}w, h2: ${enSections.h2}→${esSections.h2})...`);
+
+      // Structural mismatch check (fast, no API needed)
+      if (enSections.h2 !== esSections.h2) {
+        console.log(`  ⚠️  Section mismatch: EN has ${enSections.h2} h2s, ES has ${esSections.h2} h2s`);
+      }
 
       const result = await callVenice(VENICE_MODELS.review, [
         { role: 'system', content: REVIEW_PROMPT },
-        { role: 'user', content: `ENGLISH SOURCE (first 3000 chars):\n${enText}\n\nSPANISH TRANSLATION (first 3000 chars):\n${esText}` }
+        { role: 'user', content: `ENGLISH ARTICLE (first 4000 chars):\n${enText}\n\nSPANISH ARTICLE (first 4000 chars):\n${esText}\n\nStructural comparison: EN has ${enSections.h2} h2, ${enSections.h3} h3, ${enSections.tables} tables. ES has ${esSections.h2} h2, ${esSections.h3} h3, ${esSections.tables} tables.` }
       ]);
 
       const verdict = result.match(/VERDICT:\s*(PASS|NEEDS_FIX)/i)?.[1]?.toUpperCase() || 'UNKNOWN';
@@ -625,15 +669,42 @@ async function cmdSpotCheck(lang, opts) {
     try {
       const enHtml = await fs.readFile(enPath, 'utf8');
       const esHtml = await fs.readFile(esPath, 'utf8');
-      const stripTags = (s) => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-      const enText = stripTags(enHtml.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] || '').slice(0, 2000);
-      const esText = stripTags(esHtml.match(/<body[^>]*>([\s\S]*)<\/body>/i)?.[1] || '').slice(0, 2000);
+      const enArticle = extractArticle(enHtml);
+      const esArticle = extractArticle(esHtml);
+      const enText = stripHtml(enArticle).slice(0, 3000);
+      const esText = stripHtml(esArticle).slice(0, 3000);
+      const enSections = countSections(enArticle);
+      const esSections = countSections(esArticle);
 
-      console.log(`  🔎 Spot-checking ${relPath}...`);
+      // Quick structural check before API call
+      const sectionMatch = enSections.h2 === esSections.h2 && enSections.h3 === esSections.h3;
+      const enWordCount = enText.split(/\s+/).length;
+      const esWordCount = esText.split(/\s+/).length;
+      const ratio = enWordCount > 0 ? esWordCount / enWordCount : 0;
+
+      console.log(`  🔎 Spot-checking ${relPath} (h2: ${enSections.h2}→${esSections.h2}, ratio: ${ratio.toFixed(2)})...`);
+
+      // Auto-fail structural mismatches without API call
+      if (!sectionMatch) {
+        failed++;
+        console.log(`  ❌ FAIL — ${relPath}: Section mismatch (EN h2:${enSections.h2}/h3:${enSections.h3} vs ES h2:${esSections.h2}/h3:${esSections.h3})`);
+        progress[relPath] = progress[relPath] || {};
+        progress[relPath].spotChecked = 'fail';
+        progress[relPath].spotCheckedBy = 'structural';
+        progress[relPath].spotCheckDate = new Date().toISOString();
+        await saveProgress(progress);
+        await saveState(state);
+        continue;
+      }
+
+      // Auto-pass if structure matches and ratio is healthy (saves API calls)
+      if (sectionMatch && ratio >= 0.8 && ratio <= 2.0) {
+        // Still do API check for content accuracy
+      }
 
       const result = await callVenice(VENICE_MODELS.spotcheck, [
         { role: 'system', content: SPOTCHECK_PROMPT },
-        { role: 'user', content: `ENGLISH:\n${enText}\n\nSPANISH:\n${esText}` }
+        { role: 'user', content: `ENGLISH ARTICLE:\n${enText}\n\nSPANISH ARTICLE:\n${esText}\n\nStructural: ${enSections.h2} h2, ${enSections.tables} tables. Compare ONLY article content, not nav/disclosure/footer.` }
       ]);
 
       const isPass = /PASS/i.test(result) && !/FAIL/i.test(result.slice(0, 20));

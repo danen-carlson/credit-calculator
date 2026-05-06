@@ -55,7 +55,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:14:07.613Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:43:23.555Z"
   },
   "blog/best-credit-cards-for-travel.html": {
     "done": true,
@@ -97,7 +100,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:16:45.434Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:45:01.416Z"
   },
   "blog/cheapest-way-to-finance-purchase.html": {
     "done": true,
@@ -107,7 +113,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:17:12.495Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:46:02.780Z"
   },
   "blog/does-klarna-affect-credit-score.html": {
     "done": true,
@@ -120,7 +129,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:18:29.387Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:52:20.577Z"
   },
   "blog/how-to-build-credit-from-scratch.html": {
     "done": true,
@@ -133,7 +145,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:19:40.643Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:49:03.896Z"
   },
   "blog/index.html": {
     "done": true,
@@ -143,7 +158,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:20:07.491Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:47:57.355Z"
   },
   "blog/klarna-vs-afterpay-vs-affirm.html": {
     "done": true,
@@ -153,7 +171,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:20:30.933Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:50:34.810Z"
   },
   "blog/sneaky-credit-card-pitfalls.html": {
     "done": true,
@@ -211,7 +232,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:24:27.760Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:46:18.926Z"
   },
   "cards/amex-gold/index.html": {
     "done": true,
@@ -224,7 +248,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:25:25.994Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:43:51.378Z"
   },
   "cards/amex-platinum/index.html": {
     "done": true,
@@ -237,7 +264,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:26:37.483Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:54:32.613Z"
   },
   "cards/apple-card/index.html": {
     "done": true,
@@ -250,7 +280,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:28:22.713Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:53:45.531Z"
   },
   "cards/barclays-uber-pro/index.html": {
     "done": true,
@@ -295,7 +328,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:32:42.513Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:50:45.641Z"
   },
   "cards/capital-one-quicksilver/index.html": {
     "done": true,
@@ -324,7 +360,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:35:28.972Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:46:34.287Z"
   },
   "cards/capital-one-savorone/index.html": {
     "done": true,
@@ -337,7 +376,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:37:04.933Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:48:52.370Z"
   },
   "cards/capital-one-venture-x/index.html": {
     "done": true,
@@ -350,7 +392,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:38:44.160Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:53:02.410Z"
   },
   "cards/chase-freedom-flex/index.html": {
     "done": true,
@@ -363,7 +408,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:40:33.239Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:47:06.817Z"
   },
   "cards/chase-ink-business-preferred/index.html": {
     "done": true,
@@ -376,7 +424,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:41:50.430Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:44:09.218Z"
   },
   "cards/chase-sapphire-preferred/index.html": {
     "done": true,
@@ -389,7 +440,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:44:29.335Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:42:28.116Z"
   },
   "cards/chase-sapphire-reserve/index.html": {
     "done": true,
@@ -434,7 +488,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:48:21.026Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:53:36.694Z"
   },
   "cards/citi-premier/index.html": {
     "done": true,
@@ -447,7 +504,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:49:09.731Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:45:11.712Z"
   },
   "cards/citi-strata-premier/index.html": {
     "done": true,
@@ -460,7 +520,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:50:45.484Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:49:44.487Z"
   },
   "cards/discover-it-cash-back/index.html": {
     "done": true,
@@ -489,7 +552,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:53:14.870Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:54:50.863Z"
   },
   "cards/index.html": {
     "done": true,
@@ -518,7 +584,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:55:34.540Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:51:17.595Z"
   },
   "cards/us-bank-altitude-go/index.html": {
     "done": true,
@@ -531,7 +600,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:56:44.148Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:53:24.951Z"
   },
   "cards/us-bank-cash-plus/index.html": {
     "done": true,
@@ -544,7 +616,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T22:58:48.847Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:49:17.073Z"
   },
   "cards/wells-fargo-active-cash/index.html": {
     "done": true,
@@ -573,7 +648,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:01:49.944Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:53:14.812Z"
   },
   "compare/index.html": {
     "done": true,
@@ -583,7 +661,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:03:10.632Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:50:02.017Z"
   },
   "debt-planner/index.html": {
     "done": true,
@@ -593,7 +674,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:04:27.870Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:48:32.176Z"
   },
   "index.html": {
     "done": true,
@@ -603,7 +687,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:05:45.466Z",
     "reviewNotes": "pass",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:52:44.513Z"
   },
   "learn/balance-transfer-calculator.html": {
     "done": true,
@@ -616,7 +703,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:07:08.841Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:43:03.852Z"
   },
   "learn/bnpl-interest-calculator.html": {
     "done": true,
@@ -626,7 +716,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:08:15.551Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:51:57.645Z"
   },
   "learn/crypto-credit-card-rewards.html": {
     "done": true,
@@ -639,7 +732,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:09:06.271Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:44:20.894Z"
   },
   "learn/index.html": {
     "done": true,
@@ -675,7 +771,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:11:46.872Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:49:34.667Z"
   },
   "loan-vs-bt/index.html": {
     "done": true,
@@ -685,7 +784,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:13:09.614Z",
     "reviewNotes": "pass",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:47:18.277Z"
   },
   "merchant/amazon.html": {
     "done": true,
@@ -698,7 +800,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:14:21.837Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:54:07.591Z"
   },
   "merchant/costco.html": {
     "done": true,
@@ -711,7 +816,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:15:22.951Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:53:59.431Z"
   },
   "merchant/dining.html": {
     "done": true,
@@ -740,7 +848,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:17:38.720Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:48:21.832Z"
   },
   "merchant/fitness.html": {
     "done": true,
@@ -753,7 +864,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:18:45.674Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:51:06.850Z"
   },
   "merchant/gas-stations.html": {
     "done": true,
@@ -766,7 +880,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:19:56.638Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:54:41.694Z"
   },
   "merchant/groceries.html": {
     "done": true,
@@ -827,7 +944,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:23:50.883Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:42:37.395Z"
   },
   "merchant/online-shopping.html": {
     "done": true,
@@ -856,7 +976,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:26:03.808Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:46:47.174Z"
   },
   "merchant/rent.html": {
     "done": true,
@@ -901,7 +1024,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:28:19.573Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:54:15.949Z"
   },
   "merchant/student.html": {
     "done": true,
@@ -930,7 +1056,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:30:22.560Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:48:06.469Z"
   },
   "merchant/target.html": {
     "done": true,
@@ -943,7 +1072,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:30:53.782Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:52:08.488Z"
   },
   "merchant/travel-hotels.html": {
     "done": true,
@@ -972,7 +1104,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:32:56.982Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:50:09.147Z"
   },
   "merchant/uber-lyft.html": {
     "done": true,
@@ -985,7 +1120,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:34:22.590Z",
-    "reviewNotes": "pass"
+    "reviewNotes": "pass",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:45:33.549Z"
   },
   "merchant/utilities.html": {
     "done": true,
@@ -998,7 +1136,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:35:02.275Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:43:42.251Z"
   },
   "merchant/walmart.html": {
     "done": true,
@@ -1027,7 +1168,10 @@
     "reviewed": "pass",
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:37:01.927Z",
-    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish"
+    "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:44:53.428Z"
   },
   "min-payment/index.html": {
     "done": true,
@@ -1037,7 +1181,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:38:11.526Z",
     "reviewNotes": "reviewer-flags-disclosure-banner-only; body-content-is-spanish",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:51:44.921Z"
   },
   "rewards/index.html": {
     "done": true,
@@ -1047,7 +1194,10 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:39:08.046Z",
     "reviewNotes": "pass",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:44:39.839Z"
   },
   "score-simulator/index.html": {
     "done": true,
@@ -1070,6 +1220,9 @@
     "reviewedBy": "sonnet-4.6",
     "reviewDate": "2026-05-05T23:40:51.488Z",
     "reviewNotes": "pass",
-    "translator": "gemini-3.1-pro"
+    "translator": "gemini-3.1-pro",
+    "spotChecked": "fail",
+    "spotCheckedBy": "gpt-5.4",
+    "spotCheckDate": "2026-05-06T06:47:40.458Z"
   }
 }
