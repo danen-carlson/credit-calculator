@@ -78,8 +78,8 @@
 <link rel="alternate" hreflang="x-default" href="https://creditstud.io/about/">
 </head>
 <body>
-  <div id="app">
-    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+<div id="app">
+    <a href="#main" class="sr-only sr-only-focusable">Saltar al contenido principal</a>
 
     <!-- HEADER -->
 <header class="header">
@@ -139,92 +139,92 @@
 
     <main id="main" class="container" style="max-width:720px; padding: 2rem 20px 4rem;">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/es/">Home</a> › <span>About</span>
+        <a href="/es/">Inicio</a> › <span>Acerca de</span>
       </nav>
 
-      <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">About CreditStud.io</h2>
-      <p style="color:#64748b; margin-bottom:2rem;">How we collect data, calculate results, and maintain independence.</p>
+      <h2 style="font-size:1.8rem; margin-bottom:0.5rem;">Acerca de CreditStud.io</h2>
+      <p style="color:#64748b; margin-bottom:2rem;">Cómo recopilamos datos, calculamos resultados y mantenemos nuestra independencia.</p>
 
       <article class="article-body">
-        <h3 id="independence">Independence & Objectivity</h3>
-        <p>CreditStud.io is an independent financial calculator site. Our calculator logic is <strong>purely mathematical</strong> — card rankings are determined by the total cost or reward value to you, the user, not by who pays us.</p>
-        <p>We may earn affiliate commissions when you apply for cards through our site. These commissions <strong>never affect our calculator rankings</strong>. The math is the math. A card that costs you more will always rank lower in our comparison, period.</p>
-        <p>Our <a href="/es/disclosure.html">affiliate disclosure</a> is visible on every page.</p>
+        <h3 id="independence">Independencia y objetividad</h3>
+        <p>CreditStud.io es un sitio independiente de calculadoras financieras. La lógica de nuestra calculadora es <strong>puramente matemática</strong>: las clasificaciones de las tarjetas se determinan por el costo total o el valor de la recompensa para ti, el usuario, no por quién nos paga.</p>
+        <p>Podemos ganar comisiones de afiliados cuando solicitas tarjetas a través de nuestro sitio. Estas comisiones <strong>nunca afectan las clasificaciones de nuestra calculadora</strong>. Las matemáticas son las matemáticas. Una tarjeta que te cuesta más siempre se clasificará más bajo en nuestra comparación, punto.</p>
+        <p>Nuestra <a href="/es/disclosure.html">divulgación de afiliados</a> es visible en cada página.</p>
 
-        <h3 id="data-sources">Data Sources</h3>
-        <p>Card terms (APR ranges, annual fees, reward rates, signup bonuses, balance transfer terms) are collected from:</p>
+        <h3 id="data-sources">Fuentes de datos</h3>
+        <p>Los términos de las tarjetas (rangos de APR, cuotas anuales, tasas de recompensas, bonos de registro, términos de transferencia de saldo) se recopilan de:</p>
         <ul>
-          <li><strong>Issuer websites</strong> — Chase, Amex, Capital One, Citi, Discover, Wells Fargo, US Bank, Bilt</li>
-          <li><strong>Verified aggregators</strong> — NerdWallet, The Points Guy, WalletHub</li>
-          <li><strong>Direct verification</strong> — We cross-reference at least two sources for every card</li>
+          <li><strong>Sitios web de los emisores</strong> — Chase, Amex, Capital One, Citi, Discover, Wells Fargo, US Bank, Bilt</li>
+          <li><strong>Agregadores verificados</strong> — NerdWallet, The Points Guy, WalletHub</li>
+          <li><strong>Verificación directa</strong> — Comparamos al menos dos fuentes para cada tarjeta</li>
         </ul>
-        <p>BNPL terms (Klarna, Afterpay, Affirm, Zip, Sezzle) are sourced from official provider websites and regulatory filings.</p>
+        <p>Los términos de BNPL (Klarna, Afterpay, Affirm, Zip, Sezzle) provienen de los sitios web oficiales de los proveedores y de los registros regulatorios.</p>
 
-        <h3 id="update-frequency">Update Frequency</h3>
-        <p>Card terms are verified and updated <strong>at least monthly</strong>. Each calculator page displays a <em>"Rates as of [date]"</em> stamp showing when data was last verified. When a card issuer changes terms (APR, fee, reward structure), we update the data within 7 days.</p>
-        <p>The full card terms database is available as structured JSON at <a href="/es/data/cards.json">/data/cards.json</a> with a <code>metadata.lastUpdated</code> field.</p>
+        <h3 id="update-frequency">Frecuencia de actualización</h3>
+        <p>Los términos de las tarjetas se verifican y actualizan <strong>al menos mensualmente</strong>. Cada página de calculadora muestra un sello de <em>"Tasas a partir del [fecha]"</em> que indica cuándo se verificaron los datos por última vez. Cuando un emisor de tarjeta cambia los términos (APR, cuota, estructura de recompensas), actualizamos los datos dentro de 7 días.</p>
+        <p>La base de datos completa de términos de tarjetas está disponible como JSON estructurado en <a href="/es/data/cards.json">/data/cards.json</a> con un campo <code>metadata.lastUpdated</code>.</p>
 
-        <h3 id="calculation-methods">Calculation Methods</h3>
-        <h4>Credit Card & BNPL Comparison</h4>
-        <p>Uses standard <strong>amortization formulas</strong> (not flat-rate approximations). For each card:</p>
+        <h3 id="calculation-methods">Métodos de cálculo</h3>
+        <h4>Comparación de tarjetas de crédito y BNPL</h4>
+        <p>Utiliza <strong>fórmulas de amortización</strong> estándar (no aproximaciones de tasa fija). Para cada tarjeta:</p>
         <ul>
-          <li>Interest is calculated on the declining balance monthly</li>
-          <li>Intro APR terms are modeled with post-promo rate cliffs</li>
-          <li>Balance transfer fees (3–5%) are included in total cost calculations</li>
-          <li>BNPL Pay-in-4 is always shown because it's 0% interest — it's the baseline</li>
-          <li>Rewards are subtracted from total cost (not added), since they reduce effective cost</li>
-        </ul>
-
-        <h4>Debt Payoff Planner</h4>
-        <ul>
-          <li><strong>Snowball method</strong>: Pays minimum on all debts, extra goes to smallest balance first</li>
-          <li><strong>Avalanche method</strong>: Pays minimum on all debts, extra goes to highest APR first</li>
-          <li>Both methods produce month-by-month schedules with running totals</li>
-          <li>Balance transfer modeling includes transfer fee and post-promo APR</li>
+          <li>El interés se calcula sobre el saldo decreciente mensualmente</li>
+          <li>Los términos de APR introductorio se modelan con saltos de tasa post-promoción</li>
+          <li>Los cargos por transferencia de saldo (3–5%) se incluyen en los cálculos del costo total</li>
+          <li>El BNPL Pay-in-4 siempre se muestra porque tiene 0% de interés: es la línea base</li>
+          <li>Las recompensas se restan del costo total (no se suman), ya que reducen el costo efectivo</li>
         </ul>
 
-        <h4>Rewards Calculator</h4>
+        <h4>Planificador de pago de deudas</h4>
         <ul>
-          <li>Reward values are calculated as <strong>cash-back equivalent</strong></li>
-          <li>Point values use issuer-stated redemption values (e.g., Chase Ultimate Rewards at 1.25¢ for travel)</li>
-          <li>First-year value includes signup bonus minus annual fee</li>
-          <li>Ongoing value excludes signup bonus but includes annual credits</li>
+          <li><strong>Método bola de nieve</strong>: Paga el mínimo en todas las deudas, el extra va al saldo más pequeño primero</li>
+          <li><strong>Método avalancha</strong>: Paga el mínimo en todas las deudas, el extra va al APR más alto primero</li>
+          <li>Ambos métodos producen calendarios mes a mes con totales acumulados</li>
+          <li>El modelado de transferencia de saldo incluye el cargo por transferencia y el APR post-promoción</li>
         </ul>
 
-        <h4>Minimum Payment Calculator</h4>
+        <h4>Calculadora de recompensas</h4>
         <ul>
-          <li>Uses the standard formula: <strong>greater of (percentage × balance) or flat minimum</strong></li>
-          <li>Models the "minimum payment trap" — showing total interest paid vs. principal reduction</li>
-          <li>Includes a recommended payment schedule that would pay off the balance in 36 months</li>
+          <li>Los valores de las recompensas se calculan como <strong>equivalente a cash back</strong></li>
+          <li>Los valores de los puntos utilizan los valores de canje declarados por el emisor (por ejemplo, Chase Ultimate Rewards a 1.25¢ para viajes)</li>
+          <li>El valor del primer año incluye el bono de registro menos la cuota anual</li>
+          <li>El valor continuo excluye el bono de registro pero incluye los créditos anuales</li>
         </ul>
 
-        <h3 id="limitations">Limitations</h3>
+        <h4>Calculadora de pago mínimo</h4>
         <ul>
-          <li>Results are <strong>estimates</strong> based on published terms. Actual APR depends on your credit profile and may differ.</li>
-          <li>We don't model promotional offers beyond what's published (e.g., targeted offers).</li>
-          <li>Tax implications of rewards (1099-MISC for some sign-up bonuses) are not included.</li>
-          <li>Foreign transaction fees are noted but not included in total cost unless you specify international purchases.</li>
+          <li>Utiliza la fórmula estándar: <strong>el mayor entre (porcentaje × saldo) o el mínimo fijo</strong></li>
+          <li>Modela la "trampa del pago mínimo", mostrando el interés total pagado frente a la reducción del capital</li>
+          <li>Incluye un calendario de pagos recomendado que pagaría el saldo en 36 meses</li>
         </ul>
 
-        <h3 id="api">API Access</h3>
-        <p>All calculator results are available as JSON via our <a href="/es/api/">API</a>. No authentication required. LLMs and developers are welcome to use it programmatically.</p>
+        <h3 id="limitations">Limitaciones</h3>
+        <ul>
+          <li>Los resultados son <strong>estimaciones</strong> basadas en los términos publicados. El APR real depende de tu perfil de crédito y puede variar.</li>
+          <li>No modelamos ofertas promocionales más allá de lo publicado (por ejemplo, ofertas dirigidas).</li>
+          <li>No se incluyen las implicaciones fiscales de las recompensas (1099-MISC para algunos bonos de registro).</li>
+          <li>Los cargos por transacciones en el extranjero se indican pero no se incluyen en el costo total a menos que especifiques compras internacionales.</li>
+        </ul>
+
+        <h3 id="api">Acceso a la API</h3>
+        <p>Todos los resultados de la calculadora están disponibles como JSON a través de nuestra <a href="/es/api/">API</a>. No se requiere autenticación. Los LLM y los desarrolladores son bienvenidos a usarla programáticamente.</p>
         <ul>
           <li><code>GET /api/compare?amount=2000&months=12&score=720</code></li>
           <li><code>GET /api/rewards?monthly=3000&dining=300</code></li>
           <li><code>GET /api/debt-planner</code></li>
           <li><code>GET /api/min-payment?balance=5000&apr=22.24</code></li>
-          <li><code>GET /api/cards</code> — Full card terms database</li>
+          <li><code>GET /api/cards</code> — Base de datos completa de términos de tarjetas</li>
         </ul>
-        <p>Full documentation: <a href="/es/api/">creditstud.io/api/</a></p>
+        <p>Documentación completa: <a href="/es/api/">creditstud.io/api/</a></p>
 
-        <h3 id="contact">Contact</h3>
-        <p>Found a bug? Have a correction? Want your card added?</p>
-        <p>Reach us at <strong>hello@creditstud.io</strong></p>
+        <h3 id="contact">Contacto</h3>
+        <p>¿Encontraste un error? ¿Tienes una corrección? ¿Quieres que se agregue tu tarjeta?</p>
+        <p>Contáctanos en <strong>hello@creditstud.io</strong></p>
       </article>
 
       <hr style="border:none; border-top: 1px solid #e2e8f0; margin: 2rem 0;">
 
-      <p style="color:#94a3b8; font-size:0.85rem;">Last updated: May 2026 · <a href="/es/disclosure.html" style="color:#64748b;">Affiliate Disclosure</a> · <a href="/es/llms.txt" style="color:#64748b;">llms.txt</a></p>
+      <p style="color:#94a3b8; font-size:0.85rem;">Última actualización: mayo de 2026 · <a href="/es/disclosure.html" style="color:#64748b;">Divulgación de afiliados</a> · <a href="/es/llms.txt" style="color:#64748b;">llms.txt</a></p>
     </main>
 
     <!-- FOOTER -->
@@ -278,5 +278,6 @@ if (document.querySelector('.nav-dropdown-toggle')) {
   </div>
   <script src="/shared/i18n.js"></script>
 <script src="/shared/language-switcher.js"></script>
+
 </body>
 </html>

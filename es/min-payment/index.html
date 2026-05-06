@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de la Trampa del Pago Mínimo — CreditStud.io</title>
   <meta name="description" content="Ve el costo real impactante de hacer solo pagos mínimos en tu tarjeta de crédito. Calculadora gratuita que muestra interés total, tiempo para pagar y cuánto podrías ahorrar.">
-  <link rel="canonical" href="https://creditstud.io/es/min-payment/">
+  <link rel="canonical" href="https://creditstud.io/es/es/min-payment/">
   <meta property="og:title" content="Calculadora de la Trampa del Pago Mínimo — CreditStud.io">
   <meta property="og:description" content="Ve el costo real impactante de hacer solo pagos mínimos en tu tarjeta de crédito. Calculadora gratuita que muestra interés total, tiempo para pagar y cuánto podrías ahorrar.">
-  <meta property="og:url" content="https://creditstud.io/es/min-payment/">
+  <meta property="og:url" content="https://creditstud.io/es/es/min-payment/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CreditStud.io">
   <meta property="og:image" content="https://creditstud.io/og-images/min-payment.png">
@@ -186,6 +186,9 @@
 <script>window.__lang = 'es';</script>
 <script src="/locales/es.js"></script>
 <script src="/locales/es/min-payment.json" type="application/json" data-locale="es" data-tool="min-payment"></script>
+<script>window.__lang = 'es';</script>
+<script src="/locales/es.js"></script>
+<script src="/locales/es/min-payment.json" type="application/json" data-locale="es" data-tool="min-payment"></script>
 <link rel="alternate" hreflang="en" href="https://creditstud.io/min-payment/">
 <link rel="alternate" hreflang="es" href="https://creditstud.io/es/min-payment/">
 <link rel="alternate" hreflang="zh" href="https://creditstud.io/zh/min-payment/">
@@ -195,11 +198,11 @@
 <link rel="alternate" hreflang="x-default" href="https://creditstud.io/min-payment/">
 </head>
 <body>
-  <!-- DISCLOSURE -->
+<!-- DISCLOSURE -->
   <div class="site-disclosure-banner">
     <div class="site-disclosure-container">
-      CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations.
-      <a href="/es/disclosure.html">Learn more</a>
+      CreditStud.io puede ganar comisiones por solicitudes de tarjetas de crédito a través de enlaces de afiliados. Esto no afecta nuestras clasificaciones o recomendaciones.
+      <a href="/es/disclosure.html">Más información</a>
     </div>
   </div>
 
@@ -263,24 +266,24 @@
     <section class="calc-section">
       <div class="step-header">
         <span class="step-number">1</span>
-        <h2>Enter your credit card details</h2>
+        <h2>Ingresa los detalles de tu tarjeta de crédito</h2>
       </div>
 
       <div class="input-grid">
         <div class="input-group">
-          <label for="balance">Current Balance ($)</label>
+          <label for="balance">Saldo Actual ($)</label>
           <input type="number" id="balance" value="5000" min="100" max="100000" step="100">
-          <span class="input-hint">Your total credit card balance</span>
+          <span class="input-hint">El saldo total de tu tarjeta de crédito</span>
         </div>
         <div class="input-group">
           <label for="apr">APR (%)</label>
           <input type="number" id="apr" value="24.99" min="0" max="39.99" step="0.01">
-          <span class="input-hint">Average credit card APR is ~24.99%</span>
+          <span class="input-hint">El APR promedio de las tarjetas de crédito es ~24.99%</span>
         </div>
         <div class="input-group">
-          <label for="minPayPercent">Minimum Payment (% of balance)</label>
+          <label for="minPayPercent">Pago Mínimo (% del saldo)</label>
           <input type="number" id="minPayPercent" value="2" min="1" max="5" step="0.25">
-          <span class="input-hint">Most issuers: 1–3%</span>
+          <span class="input-hint">La mayoría de los emisores: 1–3%</span>
         </div>
       </div>
     </section>
@@ -289,86 +292,86 @@
     <section class="results-section" id="results">
       <div class="step-header">
         <span class="step-number">2</span>
-        <h2>The shocking reality of minimum payments</h2>
+        <h2>La impactante realidad de los pagos mínimos</h2>
       </div>
 
       <!-- Hero Numbers -->
       <div class="hero-stats">
         <div class="hero-stat hero-stat-danger">
-          <div class="hero-stat-label">Time to Payoff</div>
+          <div class="hero-stat-label">Tiempo para Pagar</div>
           <div class="hero-stat-value" id="payoffTime">—</div>
-          <div class="hero-stat-sub">making only minimum payments</div>
+          <div class="hero-stat-sub">haciendo solo pagos mínimos</div>
         </div>
         <div class="hero-stat hero-stat-danger">
-          <div class="hero-stat-label">Total Interest</div>
+          <div class="hero-stat-label">Interés Total</div>
           <div class="hero-stat-value" id="totalInterest">$0</div>
-          <div class="hero-stat-sub">money paid to the bank</div>
+          <div class="hero-stat-sub">dinero pagado al banco</div>
         </div>
         <div class="hero-stat hero-stat-warning">
-          <div class="hero-stat-label">Total Paid</div>
+          <div class="hero-stat-label">Total Pagado</div>
           <div class="hero-stat-value" id="totalPaid">$0</div>
-          <div class="hero-stat-sub" id="totalPaidSub">to clear your balance</div>
+          <div class="hero-stat-sub" id="totalPaidSub">para liquidar tu saldo</div>
         </div>
       </div>
 
       <!-- Stacked Bar Visual -->
       <div class="stacked-bar-container">
-        <h3>Your Money Breakdown</h3>
+        <h3>Desglose de tu Dinero</h3>
         <div class="stacked-bar">
           <div class="stacked-bar-segment bar-principal" id="barPrincipal" style="width: 0%">
-            <span id="barPrincipalLabel">Principal</span>
+            <span id="barPrincipalLabel">Capital</span>
           </div>
           <div class="stacked-bar-segment bar-interest" id="barInterest" style="width: 0%">
-            <span id="barInterestLabel">Interest</span>
+            <span id="barInterestLabel">Interés</span>
           </div>
         </div>
         <div class="stacked-bar-legend">
-          <span class="legend-item"><span class="legend-color legend-principal"></span> Principal: <strong id="legendPrincipal">$0</strong></span>
-          <span class="legend-item"><span class="legend-color legend-interest"></span> Interest: <strong id="legendInterest">$0</strong></span>
+          <span class="legend-item"><span class="legend-color legend-principal"></span> Capital: <strong id="legendPrincipal">$0</strong></span>
+          <span class="legend-item"><span class="legend-color legend-interest"></span> Interés: <strong id="legendInterest">$0</strong></span>
         </div>
       </div>
 
       <!-- Savings Comparison -->
       <div class="comparison-section">
-        <h3>💡 Pay just a little more each month</h3>
-        <p class="comparison-subtitle">See how much you save by adding to your minimum payment:</p>
+        <h3>💡 Paga solo un poco más cada mes</h3>
+        <p class="comparison-subtitle">Mira cuánto ahorras agregando a tu pago mínimo:</p>
         <div class="comparison-card" id="comparison25">
           <div class="comparison-header">
-            <span class="comparison-add">+$25/month</span>
+            <span class="comparison-add">+$25/mes</span>
             <span class="comparison-save" id="save25"></span>
           </div>
           <div class="comparison-details">
-            <div>Payoff: <strong id="time25">—</strong></div>
-            <div>Interest saved: <strong id="intSave25">—</strong></div>
+            <div>Pago: <strong id="time25">—</strong></div>
+            <div>Interés ahorrado: <strong id="intSave25">—</strong></div>
           </div>
         </div>
         <div class="comparison-card" id="comparison50">
           <div class="comparison-header">
-            <span class="comparison-add">+$50/month</span>
+            <span class="comparison-add">+$50/mes</span>
             <span class="comparison-save" id="save50"></span>
           </div>
           <div class="comparison-details">
-            <div>Payoff: <strong id="time50">—</strong></div>
-            <div>Interest saved: <strong id="intSave50">—</strong></div>
+            <div>Pago: <strong id="time50">—</strong></div>
+            <div>Interés ahorrado: <strong id="intSave50">—</strong></div>
           </div>
         </div>
         <div class="comparison-card" id="comparison100">
           <div class="comparison-header">
-            <span class="comparison-add">+$100/month</span>
+            <span class="comparison-add">+$100/mes</span>
             <span class="comparison-save" id="save100"></span>
           </div>
           <div class="comparison-details">
-            <div>Payoff: <strong id="time100">—</strong></div>
-            <div>Interest saved: <strong id="intSave100">—</strong></div>
+            <div>Pago: <strong id="time100">—</strong></div>
+            <div>Interés ahorrado: <strong id="intSave100">—</strong></div>
           </div>
         </div>
       </div>
 
       <!-- CTA Section -->
       <div class="cta-section">
-        <a href="/es/debt-planner/" class="btn-primary cta-btn" id="ctaPlanner">📊 Make a debt payoff plan →</a>
-        <a href="/es/rewards/?filter=balance-transfer" class="btn-ghost cta-btn">⟩ Find a 0% balance transfer card →</a>
-        <a href="/es/score-simulator/" class="btn-ghost cta-btn">📈 Check your credit score impact →</a>
+        <a href="/es/debt-planner/" class="btn-primary cta-btn" id="ctaPlanner">📊 Haz un plan de pago de deudas →</a>
+        <a href="/es/rewards/?filter=balance-transfer" class="btn-ghost cta-btn">⟩ Encuentra una tarjeta de transferencia de saldo al 0% →</a>
+        <a href="/es/score-simulator/" class="btn-ghost cta-btn">📈 Revisa el impacto en tu puntaje de crédito →</a>
       </div>
 
       <!-- Share -->
@@ -377,54 +380,54 @@
 
     <!-- Educational Content -->
     <section class="content-section">
-      <h2>Why Minimum Payments Are a Trap</h2>
-      <p>Credit card minimum payments are designed to keep you in debt. Issuers set them low — typically 1–3% of your balance — because the longer you take to pay, the more interest they collect. It's perfectly legal, but it means you could end up paying <strong>2–3 times your original balance</strong> in interest alone.</p>
-      <h3>How it works against you</h3>
+      <h2>Por qué los pagos mínimos son una trampa</h2>
+      <p>Los pagos mínimos de las tarjetas de crédito están diseñados para mantenerte endeudado. Los emisores los establecen bajos — típicamente 1–3% de tu saldo — porque cuanto más tardes en pagar, más intereses cobran. Es perfectamente legal, pero significa que podrías terminar pagando <strong>2–3 veces tu saldo original</strong> solo en intereses.</p>
+      <h3>Cómo funciona en tu contra</h3>
       <ul>
-        <li><strong>Compound interest compounds.</strong> Each month, interest is added to your balance, and next month you pay interest on that interest. This snowball effect is what makes minimum payments so costly.</li>
-        <li><strong>Your minimum payment shrinks.</strong> As your balance slowly decreases, your minimum payment decreases too — extending the payoff timeline even further.</li>
-        <li><strong>It can take decades.</strong> A $5,000 balance at 25% APR could take over 30 years to pay off with minimum payments alone.</li>
+        <li><strong>El interés compuesto se acumula.</strong> Cada mes, el interés se suma a tu saldo, y el mes siguiente pagas intereses sobre esos intereses. Este efecto de bola de nieve es lo que hace que los pagos mínimos sean tan costosos.</li>
+        <li><strong>Tu pago mínimo se reduce.</strong> A medida que tu saldo disminuye lentamente, tu pago mínimo también disminuye, extendiendo aún más el tiempo de pago.</li>
+        <li><strong>Puede tomar décadas.</strong> Un saldo de $5,000 al 25% de APR podría tomar más de 30 años en pagarse solo con pagos mínimos.</li>
       </ul>
-      <h3>Strategies to escape the trap</h3>
+      <h3>Estrategias para escapar de la trampa</h3>
       <ol>
-        <li><strong>Pay a fixed amount each month</strong> instead of the minimum. Even if it's just $25 more, it dramatically cuts your timeline.</li>
-        <li><strong>Transfer to a 0% APR card.</strong> Balance transfer cards give you 12–21 months of interest-free payments. The 3–5% fee is almost always less than the interest you'd pay.</li>
-        <li><strong>Use the avalanche method.</strong> Pay minimums on everything, put every extra dollar toward the highest-rate card. Our <a href="/es/debt-planner/">Debt Payoff Planner</a> calculates this for you.</li>
-        <li><strong>Consider a personal loan.</strong> If you have good credit, a personal loan at 8–15% APR can save thousands vs. credit card interest at 25%+. <a href="/es/loan-vs-bt/">Compare loans vs. balance transfers →</a></li>
+        <li><strong>Paga una cantidad fija cada mes</strong> en lugar del mínimo. Incluso si son solo $25 más, reduce drásticamente tu tiempo.</li>
+        <li><strong>Transfiere a una tarjeta con 0% de APR.</strong> Las tarjetas de transferencia de saldo te dan 12–21 meses de pagos sin intereses. La tarifa del 3–5% es casi siempre menor que el interés que pagarías.</li>
+        <li><strong>Usa el método avalancha.</strong> Haz los pagos mínimos en todo, y pon cada dólar extra en la tarjeta con la tasa más alta. Nuestro <a href="/es/debt-planner/">Planificador de Pago de Deudas</a> calcula esto por ti.</li>
+        <li><strong>Considera un préstamo personal.</strong> Si tienes buen crédito, un préstamo personal al 8–15% de APR puede ahorrarte miles en comparación con el interés de la tarjeta de crédito al 25%+. <a href="/es/loan-vs-bt/">Compara préstamos vs. transferencias de saldo →</a></li>
       </ol>
     </section>
 
     <!-- FAQ -->
     <section class="content-section faq-section">
-      <h2>Frequently Asked Questions</h2>
+      <h2>Preguntas Frecuentes</h2>
       <details class="faq-item">
-        <summary>How are minimum payments calculated?</summary>
-        <p>Most credit card issuers calculate your minimum payment as a percentage of your outstanding balance (typically 1–3%), plus any interest and fees owed, with a floor of $25–35. Some issuers use a flat percentage; others use a tiered approach. Always check your cardmember agreement for the exact formula.</p>
+        <summary>¿Cómo se calculan los pagos mínimos?</summary>
+        <p>La mayoría de los emisores de tarjetas de crédito calculan tu pago mínimo como un porcentaje de tu saldo pendiente (típicamente 1–3%), más cualquier interés y cargos adeudados, con un mínimo de $25–35. Algunos emisores usan un porcentaje fijo; otros usan un enfoque escalonado. Siempre revisa tu acuerdo de titular de tarjeta para conocer la fórmula exacta.</p>
       </details>
       <details class="faq-item">
-        <summary>What happens if I only pay the minimum?</summary>
-        <p>You'll stay in debt far longer and pay significantly more in interest. Minimum payments are designed to keep you paying — not to get you out of debt. Additionally, high utilization (your balance relative to your credit limit) can hurt your credit score.</p>
+        <summary>¿Qué pasa si solo pago el mínimo?</summary>
+        <p>Te mantendrás endeudado por mucho más tiempo y pagarás significativamente más en intereses. Los pagos mínimos están diseñados para mantenerte pagando, no para sacarte de deudas. Además, una alta utilización (tu saldo en relación con tu límite de crédito) puede dañar tu puntaje de crédito.</p>
       </details>
       <details class="faq-item">
-        <summary>How much can I save by paying more than the minimum?</summary>
-        <p>Even small increases make a huge difference. Adding just $25/month can shave years off your payoff time and save thousands in interest. Use the calculator above to see exactly how much you'd save based on your actual balance and APR.</p>
+        <summary>¿Cuánto puedo ahorrar pagando más del mínimo?</summary>
+        <p>Incluso los pequeños aumentos hacen una gran diferencia. Agregar solo $25/mes puede reducir años de tu tiempo de pago y ahorrar miles en intereses. Usa la calculadora de arriba para ver exactamente cuánto ahorrarías según tu saldo y APR reales.</p>
       </details>
       <details class="faq-item">
-        <summary>Should I get a balance transfer card?</summary>
-        <p>A 0% balance transfer card can be an excellent strategy if you can pay off the transferred balance during the intro period (typically 12–21 months). The 3–5% transfer fee is usually much less than the interest you'd otherwise pay. Compare your options with our <a href="/es/loan-vs-bt/">Loan vs Balance Transfer calculator</a>.</p>
+        <summary>¿Debería obtener una tarjeta de transferencia de saldo?</summary>
+        <p>Una tarjeta de transferencia de saldo al 0% puede ser una excelente estrategia si puedes liquidar el saldo transferido durante el período introductorio (típicamente 12–21 meses). La tarifa de transferencia del 3–5% suele ser mucho menor que el interés que pagarías de otra manera. Compara tus opciones con nuestra <a href="/es/loan-vs-bt/">calculadora de Préstamo vs Transferencia de Saldo</a>.</p>
       </details>
       <details class="faq-item">
-        <summary>Will paying only the minimum hurt my credit score?</summary>
-        <p>It can, indirectly. Paying the minimum keeps your account in good standing, but if your balance stays high, your credit utilization ratio stays high — which is a major factor in your credit score. Ideally, keep utilization below 30%, and below 10% is even better. <a href="/es/score-simulator/">See how your utilization affects your score →</a></p>
+        <summary>¿Pagar solo el mínimo dañará mi puntaje de crédito?</summary>
+        <p>Puede hacerlo, indirectamente. Pagar el mínimo mantiene tu cuenta al día, pero si tu saldo se mantiene alto, tu índice de utilización de crédito se mantiene alto, lo cual es un factor importante en tu puntaje de crédito. Idealmente, mantén la utilización por debajo del 30%, y por debajo del 10% es aún mejor. <a href="/es/score-simulator/">Mira cómo tu utilización afecta tu puntaje →</a></p>
       </details>
-    </section>
+</section>
   </main>
 
   <div class="data-updated" id="data-updated" style="text-align:center;padding:8px 0;font-size:0.75rem;color:var(--text-secondary);font-style:italic;"></div>
   <footer class="footer">
     <div class="container">
-      <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
-      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/es/disclosure.html">Affiliate Disclosure</a></p>
+      <p>CreditStud.io es solo para fines informativos. Las tasas, términos y elegibilidad reales pueden variar.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/es/disclosure.html">Divulgación de afiliados</a></p>
     </div>
   </footer>
 
@@ -475,5 +478,6 @@ if (document.querySelector('.nav-dropdown-toggle')) {
 </script>
   <script src="/shared/i18n.js"></script>
 <script src="/shared/language-switcher.js"></script>
+
 </body>
 </html>

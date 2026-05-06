@@ -5,75 +5,75 @@
       "pages": {
         "index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.085Z",
+          "lastTranslated": "2026-05-05T23:05:45.585Z",
           "sourceHash": "d9663eb671aa8d42",
-          "targetHash": "b92ccaab972c59c0",
+          "targetHash": "2d09de481eaab94c",
           "issues": [
             "untranslated_p: 15 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "about/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.086Z",
+          "lastTranslated": "2026-05-05T18:17:20.628Z",
           "sourceHash": "8b217c681573246f",
-          "targetHash": "0a2cf3b50e1766d3",
+          "targetHash": "7b89b8ff717bba09",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "af-worth-it/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.086Z",
+          "lastTranslated": "2026-05-05T18:17:43.239Z",
           "sourceHash": "77b2f1f6be525dad",
-          "targetHash": "25609cd5f193160f",
+          "targetHash": "286efaa94a9ee75e",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "compare/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.086Z",
+          "lastTranslated": "2026-05-05T23:03:10.745Z",
           "sourceHash": "24742ebe6fd4495c",
-          "targetHash": "af732786be8c0999",
+          "targetHash": "b842e544356f7c42",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "debt-planner/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.086Z",
+          "lastTranslated": "2026-05-05T23:04:27.987Z",
           "sourceHash": "8dce5d2dba3b1c28",
-          "targetHash": "4a58665c26c6b7e3",
+          "targetHash": "861d6454159eeb90",
           "issues": [
             "untranslated_p: 10 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
@@ -93,31 +93,31 @@
         },
         "loan-vs-bt/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "lastTranslated": "2026-05-05T23:13:09.732Z",
           "sourceHash": "5e8ba7975669dbcb",
-          "targetHash": "8b34bcac6d0095d6",
+          "targetHash": "621c2f0155e1df21",
           "issues": [
             "untranslated_p: 1 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "min-payment/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "lastTranslated": "2026-05-05T23:38:11.644Z",
           "sourceHash": "5b6e6af376f161e2",
-          "targetHash": "291c882cd50028df",
+          "targetHash": "247d0a77c87c4f1b",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
@@ -125,7 +125,7 @@
           "stage": "reviewed",
           "lastTranslated": "2026-05-03T19:57:25.087Z",
           "sourceHash": "0d2171e624bab5c6",
-          "targetHash": "9310defb4796eca6",
+          "targetHash": "8b8708a8ee8f70cf",
           "issues": [],
           "type": "i18n",
           "translatedBy": "build-system",
@@ -135,31 +135,31 @@
         },
         "rewards/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "lastTranslated": "2026-05-05T23:39:08.163Z",
           "sourceHash": "4d3013489c3da051",
-          "targetHash": "18a802f1f8f2800b",
+          "targetHash": "a4c521ce0708d73a",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "score-simulator/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "lastTranslated": "2026-05-05T23:39:56.039Z",
           "sourceHash": "e262382678f244f4",
-          "targetHash": "b4f10abb7b93625f",
+          "targetHash": "c793694ffc45a896",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
@@ -179,60 +179,60 @@
         },
         "tools/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "lastTranslated": "2026-05-05T23:40:51.613Z",
           "sourceHash": "db5fa99651af21f0",
-          "targetHash": "bc6d95360f6e5d59",
+          "targetHash": "fcd93d1c6cb46282",
           "issues": [
             "untranslated_p: 10 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/affirm-interest-rates-explained.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "lastTranslated": "2026-05-05T18:18:14.808Z",
           "sourceHash": "b69c75f125e0c1fe",
-          "targetHash": "6d1e53b75e07b9c9",
+          "targetHash": "3bd8638ac7e12bb9",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/amex-gold-worth-it.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.087Z",
+          "lastTranslated": "2026-05-05T18:18:35.790Z",
           "sourceHash": "d036815fc132da76",
-          "targetHash": "3bdc405edf3849b9",
+          "targetHash": "1d2d5afca2b0b7ef",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/best-0-apr-credit-cards.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "lastTranslated": "2026-05-05T18:18:55.062Z",
           "sourceHash": "9e96abe141fce5dc",
-          "targetHash": "3b4517ccb78a9a7d",
+          "targetHash": "46cd04e7d3b2a8c4",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
@@ -253,76 +253,76 @@
         },
         "blog/best-credit-cards-for-groceries.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "lastTranslated": "2026-05-05T22:14:07.707Z",
           "sourceHash": "6a520db1c92c6203",
-          "targetHash": "10530817ddafe80b",
+          "targetHash": "d72e3dc58a456e99",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/best-credit-cards-for-travel.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "lastTranslated": "2026-05-05T22:14:53.729Z",
           "sourceHash": "9fd7a61231ecd2f8",
-          "targetHash": "56e17273fba3e9e3",
+          "targetHash": "1eb8803793b4cdfb",
           "issues": [
             "untranslated_p: 13 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/bnpl-hidden-fees.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "lastTranslated": "2026-05-05T22:16:20.059Z",
           "sourceHash": "6cc970c9222854bf",
-          "targetHash": "94f7b57ce0c7692d",
+          "targetHash": "f95b283b979591a6",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/bnpl-vs-credit-card.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "lastTranslated": "2026-05-05T22:16:45.549Z",
           "sourceHash": "ce64dcdd795dee43",
-          "targetHash": "86069ea1820c3364",
+          "targetHash": "4b235d676a8f25e6",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/cheapest-way-to-finance-purchase.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.088Z",
+          "lastTranslated": "2026-05-05T22:17:12.616Z",
           "sourceHash": "853830aba9eb6824",
-          "targetHash": "a178f8639f6a5920",
+          "targetHash": "e1aa70b79a70c094",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
@@ -367,60 +367,60 @@
         },
         "blog/does-klarna-affect-credit-score.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "lastTranslated": "2026-05-05T22:18:29.504Z",
           "sourceHash": "3169bf06fa7bdd84",
-          "targetHash": "48b2f04be12b48a6",
+          "targetHash": "b72707a07f5ef1e4",
           "issues": [
             "untranslated_p: 21 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/how-to-build-credit-from-scratch.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "lastTranslated": "2026-05-05T22:19:40.761Z",
           "sourceHash": "4a760079c7af7529",
-          "targetHash": "16d6eb24f6f4a55f",
+          "targetHash": "f614e5edfa9b520f",
           "issues": [
             "untranslated_p: 15 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "lastTranslated": "2026-05-05T22:20:07.610Z",
           "sourceHash": "fac18880522606b2",
-          "targetHash": "34208d3968418cc7",
+          "targetHash": "aa860c679e87f043",
           "issues": [
             "untranslated_p: 11 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "blog/klarna-vs-afterpay-vs-affirm.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "lastTranslated": "2026-05-05T22:20:31.051Z",
           "sourceHash": "71fcc928d0ecae5c",
-          "targetHash": "6bd3872227115da5",
+          "targetHash": "3fad5ebcb12b939a",
           "issues": [
             "untranslated_p: 16 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
@@ -440,15 +440,15 @@
         },
         "blog/sneaky-credit-card-pitfalls.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "lastTranslated": "2026-05-05T22:20:50.652Z",
           "sourceHash": "1a85a49c7e8b7b07",
-          "targetHash": "1f3e52beb8b054f2",
+          "targetHash": "f0632ae7b5191f17",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
@@ -468,884 +468,1968 @@
         },
         "cards/amazon-prime-visa-signature/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.089Z",
+          "lastTranslated": "2026-05-05T22:21:29.894Z",
           "sourceHash": "3825a895a3705ccd",
-          "targetHash": "5b5b13b6a4d4b2e5",
+          "targetHash": "e853a3ff9e99bc9f",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/amex-blue-cash-everyday/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:22:52.377Z",
           "sourceHash": "9d23e2cf2e52e7f2",
-          "targetHash": "b163a5246cdc4cb5",
+          "targetHash": "de9be91c79108042",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/amex-blue-cash-preferred/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:24:27.877Z",
           "sourceHash": "225f81c2b21f4c1f",
-          "targetHash": "950a678fc78815a5",
+          "targetHash": "8d6232ff07d19ff5",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/amex-gold/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:25:26.112Z",
           "sourceHash": "616e9d39fbc44ee0",
-          "targetHash": "97edcf9390d9b24c",
+          "targetHash": "b1a34750fe6133f8",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/amex-platinum/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:26:37.614Z",
           "sourceHash": "13cf381fb68e7ee6",
-          "targetHash": "41fd2dc7766bc83e",
+          "targetHash": "06fa4e4b78ba0a03",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/apple-card/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:28:22.829Z",
           "sourceHash": "c5b13385d3a22904",
-          "targetHash": "8822e64db5a685f4",
+          "targetHash": "57cc787feb4957e7",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/barclays-uber-pro/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:29:32.955Z",
           "sourceHash": "92bc3c658c42c133",
-          "targetHash": "a71a53aee503b226",
+          "targetHash": "f3299258ca2d0c71",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/bilt-mastercard/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:30:29.867Z",
           "sourceHash": "8974f38accd5303f",
-          "targetHash": "a9319bd4803bc9ef",
+          "targetHash": "87f35276be116d0d",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/bofa-customized-cash-rewards/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:32:42.630Z",
           "sourceHash": "ea2a577864173f9b",
-          "targetHash": "48a917f6fc0c7755",
+          "targetHash": "ae442523bc2b2548",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/capital-one-quicksilver/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.090Z",
+          "lastTranslated": "2026-05-05T22:33:55.230Z",
           "sourceHash": "ad530a6d7e3c8100",
-          "targetHash": "9f8dff0a417bd7eb",
+          "targetHash": "92fa8ccff14329b2",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/capital-one-savor/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "lastTranslated": "2026-05-05T22:35:29.095Z",
           "sourceHash": "2c19defd352273dc",
-          "targetHash": "9068f88b03c636ed",
+          "targetHash": "a73f5818353a6adc",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/capital-one-savorone/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "lastTranslated": "2026-05-05T22:37:05.050Z",
           "sourceHash": "9744f43f8359dcd6",
-          "targetHash": "76699e935f6a8711",
+          "targetHash": "1b7a090755ccc479",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/capital-one-venture-x/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "lastTranslated": "2026-05-05T22:38:44.278Z",
           "sourceHash": "426eccdda63fa4d3",
-          "targetHash": "f8ff54ac2ba7d447",
+          "targetHash": "fefa59f243e2e536",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/chase-freedom-flex/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "lastTranslated": "2026-05-05T22:40:33.359Z",
           "sourceHash": "a5f2340acc3e88da",
-          "targetHash": "ab4da2855df44fb1",
+          "targetHash": "7afd25a6e9b9c8cb",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/chase-ink-business-preferred/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "lastTranslated": "2026-05-05T22:41:50.551Z",
           "sourceHash": "c53760b87edfe3d6",
-          "targetHash": "dfe7310d7b06b161",
+          "targetHash": "4d0bad900a92520c",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/chase-sapphire-preferred/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "lastTranslated": "2026-05-05T22:44:29.456Z",
           "sourceHash": "8ca0fc2dc7ecb6e5",
-          "targetHash": "06b3588de23f38b5",
+          "targetHash": "3dc4e4ab05ca5c2c",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/chase-sapphire-reserve/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "lastTranslated": "2026-05-05T22:45:58.206Z",
           "sourceHash": "e7564f44232af6b8",
-          "targetHash": "2e0fd76bf7c64644",
+          "targetHash": "854a3b63da7a423d",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/citi-custom-cash/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.091Z",
+          "lastTranslated": "2026-05-05T22:47:27.732Z",
           "sourceHash": "89d9c96ca621d681",
-          "targetHash": "7c79a91cf3052b90",
+          "targetHash": "d54dbb8362a8eb2c",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/citi-double-cash/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "lastTranslated": "2026-05-05T22:48:21.149Z",
           "sourceHash": "d998e6a15ec7bfe3",
-          "targetHash": "8e7e5344ffc4bf88",
+          "targetHash": "f9ab0e41940b63b9",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/citi-premier/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "lastTranslated": "2026-05-05T22:49:09.851Z",
           "sourceHash": "a9bc7de13ea5a97f",
-          "targetHash": "c7c2c632495b2418",
+          "targetHash": "40522f56d11fa0cf",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/citi-strata-premier/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "lastTranslated": "2026-05-05T22:50:45.582Z",
           "sourceHash": "939c00f0cb74e928",
-          "targetHash": "fa2a381bb6cab438",
+          "targetHash": "0d1d24322cc6cd18",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/discover-it-cash-back/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "lastTranslated": "2026-05-05T22:51:48.860Z",
           "sourceHash": "1607894596772036",
-          "targetHash": "3ea5fc7056c63238",
+          "targetHash": "4a5db255f2b7ff45",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/ihg-one-rewards-premier/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "lastTranslated": "2026-05-05T22:53:14.993Z",
           "sourceHash": "d056b51a2cbf33a1",
-          "targetHash": "3f368d904e0b3a52",
+          "targetHash": "a7fab545da6d7b81",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "lastTranslated": "2026-05-05T22:54:15.830Z",
           "sourceHash": "cc39d67cf48b1775",
-          "targetHash": "2157281f7417ccd2",
+          "targetHash": "3949d6a930099f0d",
           "issues": [
             "untranslated_p: 19 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/southwest-priority-card/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.092Z",
+          "lastTranslated": "2026-05-05T22:55:34.646Z",
           "sourceHash": "f6b1211c6c634a56",
-          "targetHash": "f341b9c2ddb21e5e",
+          "targetHash": "eccbe0831532c67e",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/us-bank-altitude-go/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T22:56:44.265Z",
           "sourceHash": "098c74e8fb215a98",
-          "targetHash": "af603897fcc37267",
+          "targetHash": "8635bc36ff734d19",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/us-bank-cash-plus/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T22:58:48.966Z",
           "sourceHash": "af52e034a195745c",
-          "targetHash": "81fe7b0dc038e936",
+          "targetHash": "3ae7c037537ceed0",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/wells-fargo-active-cash/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:01:07.483Z",
           "sourceHash": "022a0f652e663811",
-          "targetHash": "bb448c7c69462af4",
+          "targetHash": "66593380bbc389bc",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "cards/wells-fargo-autograph/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:01:50.061Z",
           "sourceHash": "a64be64b13bd7ebf",
-          "targetHash": "7e1d8bc5c1832fb6",
+          "targetHash": "26cca4063e3ce7e8",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "learn/balance-transfer-calculator.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:07:08.958Z",
           "sourceHash": "3aea4313e11d4eb8",
-          "targetHash": "ee61ef521168d7ed",
+          "targetHash": "a691acbd5173a3fb",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "learn/bnpl-interest-calculator.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:08:15.673Z",
           "sourceHash": "c5292c5c9020917b",
-          "targetHash": "221e41a820587a10",
+          "targetHash": "359109510846380b",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "learn/crypto-credit-card-rewards.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:09:06.382Z",
           "sourceHash": "a2e4a707f837282c",
-          "targetHash": "683e28a88417853e",
+          "targetHash": "14f5312c5272fdb8",
           "issues": [
             "untranslated_p: 16 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "learn/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:09:47.548Z",
           "sourceHash": "adcebfa78b420472",
-          "targetHash": "4a5274e8cec15933",
+          "targetHash": "3fbfb83188bb2846",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "learn/pay-off-10k-debt.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:10:48.053Z",
           "sourceHash": "f44c5acf4ea61b22",
-          "targetHash": "6627f38bdd764937",
+          "targetHash": "13421835ee0c6b6d",
           "issues": [
             "untranslated_p: 11 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "learn/snowball-vs-avalanche.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:11:46.995Z",
           "sourceHash": "e6e5da0b699c4617",
-          "targetHash": "c537dca19f93c655",
+          "targetHash": "0965a9c2140f8abe",
           "issues": [
             "untranslated_p: 17 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/amazon.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.093Z",
+          "lastTranslated": "2026-05-05T23:14:21.958Z",
           "sourceHash": "93a98ab28762703e",
-          "targetHash": "289856b9373fa0e9",
+          "targetHash": "92a301abdabb2f7a",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/costco.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:15:23.070Z",
           "sourceHash": "83115c262f7b22b7",
-          "targetHash": "0a635591774b4e45",
+          "targetHash": "73171b42f4cc9ed7",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/dining.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:16:46.136Z",
           "sourceHash": "26c32aaca68d0e2d",
-          "targetHash": "ab280fb4571b4c02",
+          "targetHash": "04b72ca3616a4c4c",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/ev-charging.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:17:38.838Z",
           "sourceHash": "de18ab9864bc338f",
-          "targetHash": "ed6b7e6670b36b92",
+          "targetHash": "4ede6f26b56dd303",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/fitness.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:18:45.799Z",
           "sourceHash": "8ed2e414824e53b2",
-          "targetHash": "dc5ade655cf0fe60",
+          "targetHash": "af89164c0f80542b",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/gas-stations.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:19:56.760Z",
           "sourceHash": "3ff13adb9c2cbfce",
-          "targetHash": "f5bacebbbba01501",
+          "targetHash": "ba217f95c5c8c0f6",
           "issues": [
             "untranslated_p: 4 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/groceries.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:21:06.202Z",
           "sourceHash": "e786e93be5724d93",
-          "targetHash": "00c351918978c954",
+          "targetHash": "6236739283e9e78d",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/home-improvement.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:21:46.270Z",
           "sourceHash": "b8e1d4974f4ad500",
-          "targetHash": "61c0c9ea071d16b9",
+          "targetHash": "93c66838e4981718",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:22:30.914Z",
           "sourceHash": "62a377ec6ab2fbce",
-          "targetHash": "cd44c7276c563f18",
+          "targetHash": "f46a1fbecad22159",
           "issues": [
             "untranslated_p: 1 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/insurance.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:23:51.005Z",
           "sourceHash": "606c36a99e6a42be",
-          "targetHash": "f1991aa125c63fd5",
+          "targetHash": "5a7d18f3f4b7c04a",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/online-shopping.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:25:20.353Z",
           "sourceHash": "5650a10c052fbbeb",
-          "targetHash": "cff662c41faedb52",
+          "targetHash": "3f723a90c4a9bf3a",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/pharmacy.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.094Z",
+          "lastTranslated": "2026-05-05T23:26:03.927Z",
           "sourceHash": "e233cd06221eee5b",
-          "targetHash": "720cbf7fce801900",
+          "targetHash": "476cf6ef370308bb",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/rent.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:26:58.215Z",
           "sourceHash": "5953a6d0ed361593",
-          "targetHash": "e11e474ba794e7d5",
+          "targetHash": "8ec99ea22f2ac534",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/restaurants.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:27:38.443Z",
           "sourceHash": "00ef26d0e3c8d7a2",
-          "targetHash": "9adbd92a50ae68b1",
+          "targetHash": "ea00b19e8ac81cfe",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/streaming.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:28:19.692Z",
           "sourceHash": "6dddbcffdeefddc9",
-          "targetHash": "204f13586725d273",
+          "targetHash": "f99d753c7bf8126c",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/student.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:29:34.471Z",
           "sourceHash": "d52b0d253261a84c",
-          "targetHash": "c7f232177db318f2",
+          "targetHash": "7aa1ab08f08fbffa",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/subscription.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:30:22.679Z",
           "sourceHash": "4695e2b73d62817e",
-          "targetHash": "85693faef143f82e",
+          "targetHash": "b49526e525813eb5",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/target.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:30:53.901Z",
           "sourceHash": "b20fb56bf80ce699",
-          "targetHash": "c614bf7090f6a262",
+          "targetHash": "55d88ef33d8c2723",
           "issues": [
             "untranslated_p: 1 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/travel-hotels.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:31:55.030Z",
           "sourceHash": "2e671135dda7f8f3",
-          "targetHash": "bb82b32639585c84",
+          "targetHash": "ab994f84e2cd734b",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/travel.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:32:57.108Z",
           "sourceHash": "78ddb491e770ae55",
-          "targetHash": "76eb0493ec45586e",
+          "targetHash": "7e47d572df8faa23",
           "issues": [
             "untranslated_p: 4 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/uber-lyft.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:34:22.709Z",
           "sourceHash": "fadbb4528bf59c48",
-          "targetHash": "ee1b779b6665d790",
+          "targetHash": "089967cbfda5b93b",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/utilities.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:35:02.405Z",
           "sourceHash": "622247bcc1b2b285",
-          "targetHash": "340070274f9fd388",
+          "targetHash": "5a4e779e79ceb535",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/walmart.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.095Z",
+          "lastTranslated": "2026-05-05T23:36:03.064Z",
           "sourceHash": "7554e5d98f7f8509",
-          "targetHash": "730732e30dbf7845",
+          "targetHash": "41b7cabdf08b66c7",
           "issues": [
             "untranslated_p: 4 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
         },
         "merchant/warehouse-clubs.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-03T19:57:25.096Z",
+          "lastTranslated": "2026-05-05T23:37:02.044Z",
           "sourceHash": "6144835dc1103760",
-          "targetHash": "cbf78061e6823281",
+          "targetHash": "dc2378ba75486030",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
-          "reviewedBy": "gemini-3.1-pro",
+          "reviewedBy": "sonnet-4.6",
           "spotCheckedBy": null,
           "sourceChanged": false
+        }
+      }
+    },
+    "zh": {
+      "pages": {
+        "index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.545Z",
+          "sourceHash": "d9663eb671aa8d42",
+          "targetHash": "740582bbdbd678d3",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "about/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.546Z",
+          "sourceHash": "8b217c681573246f",
+          "targetHash": "7abbb651438c0ded",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "af-worth-it/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.546Z",
+          "sourceHash": "77b2f1f6be525dad",
+          "targetHash": "b515418e9b0d9682",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "compare/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.546Z",
+          "sourceHash": "24742ebe6fd4495c",
+          "targetHash": "aded21d4cfaf9e0a",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "debt-planner/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.546Z",
+          "sourceHash": "8dce5d2dba3b1c28",
+          "targetHash": "b5bc90650af284e7",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "disclosure.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.546Z",
+          "sourceHash": "b8baca3450a7215d",
+          "targetHash": "b286ecfe81958ac2",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "loan-vs-bt/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "5e8ba7975669dbcb",
+          "targetHash": "ad57cb16fd269318",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "min-payment/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "5b6e6af376f161e2",
+          "targetHash": "2c27bc8b6288d3d2",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "offline.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "0d2171e624bab5c6",
+          "targetHash": "b3d4cf477065accc",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "rewards/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "4d3013489c3da051",
+          "targetHash": "93521933e723d8d9",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "score-simulator/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "e262382678f244f4",
+          "targetHash": "94b5ffe1c8a941fa",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "tools/api.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "bac9dcc9e7fc6e37",
+          "targetHash": "e7e72697ada7826b",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "tools/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "db5fa99651af21f0",
+          "targetHash": "03c6239195fbeb2e",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/affirm-interest-rates-explained.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "b69c75f125e0c1fe",
+          "targetHash": "4193f74d5013242f",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/amex-gold-worth-it.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "d036815fc132da76",
+          "targetHash": "4498272d223f8299",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/best-0-apr-credit-cards.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "9e96abe141fce5dc",
+          "targetHash": "2f3f6b3a29fe3960",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/best-balance-transfer-credit-cards.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.547Z",
+          "sourceHash": "2afa5f39c0ebfdd2",
+          "targetHash": "1dc1673b190c34f4",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/best-credit-cards-for-groceries.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.549Z",
+          "sourceHash": "6a520db1c92c6203",
+          "targetHash": "f5dfa51dd8e1989a",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/best-credit-cards-for-travel.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.549Z",
+          "sourceHash": "9fd7a61231ecd2f8",
+          "targetHash": "81e9889308d566bb",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/bnpl-hidden-fees.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.549Z",
+          "sourceHash": "6cc970c9222854bf",
+          "targetHash": "c4a7c4482ab0b232",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/bnpl-vs-credit-card.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.549Z",
+          "sourceHash": "ce64dcdd795dee43",
+          "targetHash": "a78b80e1afb6942f",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/cheapest-way-to-finance-purchase.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.549Z",
+          "sourceHash": "853830aba9eb6824",
+          "targetHash": "be8d5ddac0f9f7c3",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/credit-card-benefits-youre-not-using.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.549Z",
+          "sourceHash": "96d5107d2101de27",
+          "targetHash": "369968c50724dbf8",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/credit-card-points-offset-interest.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.549Z",
+          "sourceHash": "6cba0baac19bd958",
+          "targetHash": "4e61634caea8c492",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/does-klarna-affect-credit-score.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.550Z",
+          "sourceHash": "3169bf06fa7bdd84",
+          "targetHash": "89f7522fb602ab91",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/how-to-build-credit-from-scratch.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.550Z",
+          "sourceHash": "4a760079c7af7529",
+          "targetHash": "9118a56551d688d8",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.550Z",
+          "sourceHash": "fac18880522606b2",
+          "targetHash": "6cc80747f4a47c73",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/klarna-vs-afterpay-vs-affirm.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.550Z",
+          "sourceHash": "71fcc928d0ecae5c",
+          "targetHash": "67bfb70ea673b2c6",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/minimum-payment-trap.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.550Z",
+          "sourceHash": "c3d48dd2ec215ed4",
+          "targetHash": "50f17af5c2fb0976",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/sneaky-credit-card-pitfalls.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.550Z",
+          "sourceHash": "1a85a49c7e8b7b07",
+          "targetHash": "7075d4199e901612",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "blog/snowball-vs-avalanche.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.550Z",
+          "sourceHash": "c8a9ff659a23cb15",
+          "targetHash": "f20eb448865cbbb8",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/amazon-prime-visa-signature/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "3825a895a3705ccd",
+          "targetHash": "c05145cd8a6596c9",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/amex-blue-cash-everyday/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "9d23e2cf2e52e7f2",
+          "targetHash": "c853b0d5494d7829",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/amex-blue-cash-preferred/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "225f81c2b21f4c1f",
+          "targetHash": "1f7294be7ae1e760",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/amex-gold/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "616e9d39fbc44ee0",
+          "targetHash": "52b56632368736b8",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/amex-platinum/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "13cf381fb68e7ee6",
+          "targetHash": "047c020df1e8c60b",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/apple-card/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "c5b13385d3a22904",
+          "targetHash": "16912b98ff409864",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/barclays-uber-pro/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "92bc3c658c42c133",
+          "targetHash": "b706671c2a345d2a",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/bilt-mastercard/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "8974f38accd5303f",
+          "targetHash": "212a332fc0514850",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/bofa-customized-cash-rewards/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.551Z",
+          "sourceHash": "ea2a577864173f9b",
+          "targetHash": "5ef15148f44457d8",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/capital-one-quicksilver/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.552Z",
+          "sourceHash": "ad530a6d7e3c8100",
+          "targetHash": "b4b0fb4850f9c661",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/capital-one-savor/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.552Z",
+          "sourceHash": "2c19defd352273dc",
+          "targetHash": "8b3c9c904a80a180",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/capital-one-savorone/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.552Z",
+          "sourceHash": "9744f43f8359dcd6",
+          "targetHash": "c6eb4f2731b45c07",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/capital-one-venture-x/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.552Z",
+          "sourceHash": "426eccdda63fa4d3",
+          "targetHash": "4caa1d349c937483",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/chase-freedom-flex/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.552Z",
+          "sourceHash": "a5f2340acc3e88da",
+          "targetHash": "0a46204b4fa148f5",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/chase-ink-business-preferred/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.552Z",
+          "sourceHash": "c53760b87edfe3d6",
+          "targetHash": "b94c61c1483428c2",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/chase-sapphire-preferred/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.552Z",
+          "sourceHash": "8ca0fc2dc7ecb6e5",
+          "targetHash": "b316b7e09dafb857",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/chase-sapphire-reserve/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.552Z",
+          "sourceHash": "e7564f44232af6b8",
+          "targetHash": "c4171b56a288bd9f",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/citi-custom-cash/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "89d9c96ca621d681",
+          "targetHash": "9f8f43ac60485d1e",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/citi-double-cash/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "d998e6a15ec7bfe3",
+          "targetHash": "3babd2bd626c8879",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/citi-premier/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "a9bc7de13ea5a97f",
+          "targetHash": "cfaf408d03242973",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/citi-strata-premier/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "939c00f0cb74e928",
+          "targetHash": "908791c848329f26",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/discover-it-cash-back/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "1607894596772036",
+          "targetHash": "609dbbdd75778d6b",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/ihg-one-rewards-premier/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "d056b51a2cbf33a1",
+          "targetHash": "76af4bae55bcb773",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "cc39d67cf48b1775",
+          "targetHash": "ac5a707850b77d21",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/southwest-priority-card/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "f6b1211c6c634a56",
+          "targetHash": "f965c64085122946",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/us-bank-altitude-go/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "098c74e8fb215a98",
+          "targetHash": "351f7bf1aae97f61",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/us-bank-cash-plus/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "af52e034a195745c",
+          "targetHash": "9c6e3b940f4562b5",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/wells-fargo-active-cash/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "022a0f652e663811",
+          "targetHash": "df7b88e8ec8f4d64",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "cards/wells-fargo-autograph/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.553Z",
+          "sourceHash": "a64be64b13bd7ebf",
+          "targetHash": "198c3306f928c590",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "learn/balance-transfer-calculator.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "3aea4313e11d4eb8",
+          "targetHash": "9cee2d4187a76685",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "learn/bnpl-interest-calculator.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "c5292c5c9020917b",
+          "targetHash": "4ef8be77836dfb47",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "learn/crypto-credit-card-rewards.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "a2e4a707f837282c",
+          "targetHash": "7898728960161d2a",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "learn/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "adcebfa78b420472",
+          "targetHash": "daa4f156f3a7fc8c",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "learn/pay-off-10k-debt.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "f44c5acf4ea61b22",
+          "targetHash": "9be741f29ac86864",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "learn/snowball-vs-avalanche.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "e6e5da0b699c4617",
+          "targetHash": "6e1084b069180db8",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/amazon.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "93a98ab28762703e",
+          "targetHash": "a4955a1e0a8202f9",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/costco.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "83115c262f7b22b7",
+          "targetHash": "4b30fa682c7996a8",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/dining.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "26c32aaca68d0e2d",
+          "targetHash": "caf3388d32ae6f7f",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/ev-charging.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "de18ab9864bc338f",
+          "targetHash": "dda0ac5eeec77aa4",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/fitness.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.554Z",
+          "sourceHash": "8ed2e414824e53b2",
+          "targetHash": "8f1eaeca5658e0b6",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/gas-stations.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "3ff13adb9c2cbfce",
+          "targetHash": "c38656489a3360a8",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/groceries.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "e786e93be5724d93",
+          "targetHash": "96d72a7c6f072ba1",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/home-improvement.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "b8e1d4974f4ad500",
+          "targetHash": "02b99a8492c1e64b",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/index.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "62a377ec6ab2fbce",
+          "targetHash": "ac69d7b9379c54c7",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/insurance.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "606c36a99e6a42be",
+          "targetHash": "a90b3eacf91acfae",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/online-shopping.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "5650a10c052fbbeb",
+          "targetHash": "248c196e01955c3f",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/pharmacy.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "e233cd06221eee5b",
+          "targetHash": "ccdbf87f6ae29733",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/rent.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "5953a6d0ed361593",
+          "targetHash": "6fde2ad6afcce7a4",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/restaurants.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "00ef26d0e3c8d7a2",
+          "targetHash": "c56b19d319187484",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/streaming.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "6dddbcffdeefddc9",
+          "targetHash": "f84d6f65019e765b",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/student.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "d52b0d253261a84c",
+          "targetHash": "57d61119d645488c",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/subscription.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.555Z",
+          "sourceHash": "4695e2b73d62817e",
+          "targetHash": "0b213fda0ce0d885",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/target.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.556Z",
+          "sourceHash": "b20fb56bf80ce699",
+          "targetHash": "f98fd1994c5bb0dc",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/travel-hotels.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.556Z",
+          "sourceHash": "2e671135dda7f8f3",
+          "targetHash": "0a94c17617138816",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/travel.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.556Z",
+          "sourceHash": "78ddb491e770ae55",
+          "targetHash": "cbb909eae6f81e0d",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/uber-lyft.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.556Z",
+          "sourceHash": "fadbb4528bf59c48",
+          "targetHash": "6c421f26d0a9d1c9",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/utilities.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.556Z",
+          "sourceHash": "622247bcc1b2b285",
+          "targetHash": "436ba701609be399",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/walmart.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.556Z",
+          "sourceHash": "7554e5d98f7f8509",
+          "targetHash": "06383a9a66b30bdb",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
+        },
+        "merchant/warehouse-clubs.html": {
+          "stage": "translated",
+          "translatedBy": "sonnet-4.6",
+          "reviewedBy": null,
+          "spotCheckedBy": null,
+          "lastTranslated": "2026-05-04T05:56:02.556Z",
+          "sourceHash": "6144835dc1103760",
+          "targetHash": "a58f27a2178f56ea",
+          "sourceChanged": false,
+          "issues": [],
+          "type": "i18n"
         }
       }
     }

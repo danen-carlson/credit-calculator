@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulador de Puntaje de Crédito — Cómo los Puntajes Afectan Tu APR | CreditStud.io</title>
   <meta name="description" content="Simula cómo las acciones financieras afectan tu puntaje de crédito. Ve el impacto de pagar deudas, abrir nuevas tarjetas, pagos atrasados y más con nuestro estimador gratuito de puntaje FICO.">
-  <link rel="canonical" href="https://creditstud.io/es/score-simulator/">
+  <link rel="canonical" href="https://creditstud.io/es/es/score-simulator/">
   <meta property="og:title" content="Simulador de Puntaje de Crédito — CreditStud.io">
   <meta property="og:description" content="Simula cómo las acciones financieras afectan tu puntaje de crédito. Ve el impacto de pagar deudas, abrir nuevas tarjetas, pagos atrasados y más.">
-  <meta property="og:url" content="https://creditstud.io/es/score-simulator/">
+  <meta property="og:url" content="https://creditstud.io/es/es/score-simulator/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CreditStud.io">
   <meta property="og:image" content="https://creditstud.io/og-images/score-simulator.png">
@@ -155,6 +155,9 @@
 <script>window.__lang = 'es';</script>
 <script src="/locales/es.js"></script>
 <script src="/locales/es/score-simulator.json" type="application/json" data-locale="es" data-tool="score-simulator"></script>
+<script>window.__lang = 'es';</script>
+<script src="/locales/es.js"></script>
+<script src="/locales/es/score-simulator.json" type="application/json" data-locale="es" data-tool="score-simulator"></script>
 <link rel="alternate" hreflang="en" href="https://creditstud.io/score-simulator/">
 <link rel="alternate" hreflang="es" href="https://creditstud.io/es/score-simulator/">
 <link rel="alternate" hreflang="zh" href="https://creditstud.io/zh/score-simulator/">
@@ -164,11 +167,11 @@
 <link rel="alternate" hreflang="x-default" href="https://creditstud.io/score-simulator/">
 </head>
 <body>
-  <!-- DISCLOSURE -->
+<!-- DISCLOSURE -->
   <div class="site-disclosure-banner">
     <div class="site-disclosure-container">
-      CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations.
-      <a href="/es/disclosure.html">Learn more</a>
+      CreditStud.io puede ganar comisiones por solicitudes de tarjetas de crédito a través de enlaces de afiliados. Esto no afecta nuestras clasificaciones o recomendaciones.
+      <a href="/es/disclosure.html">Más información</a>
     </div>
   </div>
 
@@ -232,53 +235,53 @@
     <section class="calc-section">
       <div class="step-header">
         <span class="step-number">1</span>
-        <h2>Your credit profile</h2>
+        <h2>Tu perfil de crédito</h2>
       </div>
 
       <div class="input-grid">
         <div class="input-group">
-          <label for="currentScore">Current Credit Score</label>
+          <label for="currentScore">Puntaje de crédito actual</label>
           <div class="slider-row">
             <input type="range" id="currentScore" min="300" max="850" value="650">
             <span class="slider-value" id="currentScoreVal">650</span>
           </div>
-          <span class="input-hint">300–850 range</span>
+          <span class="input-hint">Rango de 300–850</span>
         </div>
         <div class="input-group">
-          <label for="utilization">Credit Utilization (%)</label>
+          <label for="utilization">Utilización de crédito (%)</label>
           <div class="slider-row">
             <input type="range" id="utilization" min="0" max="100" value="45">
             <span class="slider-value" id="utilizationVal">45%</span>
           </div>
-          <span class="input-hint">Balance ÷ Total Credit Limit</span>
+          <span class="input-hint">Saldo ÷ Límite de crédito total</span>
         </div>
         <div class="input-group">
-          <label for="totalLimit">Total Credit Limit ($)</label>
+          <label for="totalLimit">Límite de crédito total ($)</label>
           <input type="number" id="totalLimit" value="20000" min="500" step="500">
-          <span class="input-hint" id="totalBalanceHint">≈ $9,000 balance</span>
+          <span class="input-hint" id="totalBalanceHint">≈ $9,000 de saldo</span>
         </div>
         <div class="input-group">
-          <label for="numAccounts">Number of Accounts</label>
+          <label for="numAccounts">Número de cuentas</label>
           <input type="range" id="numAccounts" min="1" max="30" value="5">
           <span class="slider-value" id="numAccountsVal">5</span>
         </div>
         <div class="input-group">
-          <label for="hardInquiries">Hard Inquiries (last 12 mo)</label>
+          <label for="hardInquiries">Consultas duras (últimos 12 meses)</label>
           <input type="range" id="hardInquiries" min="0" max="10" value="2">
           <span class="slider-value" id="hardInquiriesVal">2</span>
         </div>
         <div class="input-group">
-          <label for="avgAge">Average Account Age (years)</label>
+          <label for="avgAge">Edad promedio de la cuenta (años)</label>
           <input type="range" id="avgAge" min="0" max="30" value="4" step="0.5">
-          <span class="slider-value" id="avgAgeVal">4 yr</span>
+          <span class="slider-value" id="avgAgeVal">4 años</span>
         </div>
         <div class="input-group toggle-group">
-          <label for="latePayments">Any Late Payments?</label>
+          <label for="latePayments">¿Algún pago atrasado?</label>
           <div class="toggle-switch">
             <input type="checkbox" id="latePayments">
             <label for="latePayments" class="toggle-label"></label>
           </div>
-          <span class="toggle-status" id="latePaymentsStatus">No late payments ✓</span>
+          <span class="toggle-status" id="latePaymentsStatus">Sin pagos atrasados ✓</span>
         </div>
       </div>
     </section>
@@ -288,26 +291,26 @@
       <div class="gauge-container">
         <canvas id="scoreGauge" width="360" height="200"></canvas>
         <div class="gauge-score" id="gaugeScore">650</div>
-        <div class="gauge-bracket" id="gaugeBracket">Fair</div>
+        <div class="gauge-bracket" id="gaugeBracket">Regular</div>
       </div>
-      <div class="gauge-label">Your estimated FICO® score</div>
-      <p class="disclaimer-text">Estimates based on FICO scoring factors; actual scores vary by bureau and model.</p>
+      <div class="gauge-label">Tu puntaje FICO® estimado</div>
+      <p class="disclaimer-text">Estimaciones basadas en factores de puntuación FICO; los puntajes reales varían según el buró y el modelo.</p>
     </section>
 
     <!-- What-If Scenarios -->
     <section class="scenarios-section">
       <div class="step-header">
         <span class="step-number">2</span>
-        <h2>What if...?</h2>
+        <h2>¿Qué pasaría si...?</h2>
       </div>
-      <p class="scenarios-intro">Toggle scenarios to see how actions would change your score:</p>
+      <p class="scenarios-intro">Activa los escenarios para ver cómo las acciones cambiarían tu puntaje:</p>
 
       <div class="scenario-grid">
         <label class="scenario-card positive">
           <input type="checkbox" id="scenario-payoff">
           <div class="scenario-content">
             <span class="scenario-icon">💰</span>
-            <span class="scenario-title">Pay off all credit card debt</span>
+            <span class="scenario-title">Pagar toda la deuda de tarjetas de crédito</span>
             <span class="scenario-delta" id="delta-payoff"></span>
           </div>
         </label>
@@ -316,7 +319,7 @@
           <input type="checkbox" id="scenario-util10">
           <div class="scenario-content">
             <span class="scenario-icon">📉</span>
-            <span class="scenario-title">Lower utilization to &lt;10%</span>
+            <span class="scenario-title">Reducir la utilización a &lt;10%</span>
             <span class="scenario-delta" id="delta-util10"></span>
           </div>
         </label>
@@ -325,7 +328,7 @@
           <input type="checkbox" id="scenario-util30">
           <div class="scenario-content">
             <span class="scenario-icon">📊</span>
-            <span class="scenario-title">Lower utilization to &lt;30%</span>
+            <span class="scenario-title">Reducir la utilización a &lt;30%</span>
             <span class="scenario-delta" id="delta-util30"></span>
           </div>
         </label>
@@ -334,7 +337,7 @@
           <input type="checkbox" id="scenario-newcard">
           <div class="scenario-content">
             <span class="scenario-icon">🆕</span>
-            <span class="scenario-title">Open a new card</span>
+            <span class="scenario-title">Abrir una nueva tarjeta</span>
             <span class="scenario-delta" id="delta-newcard"></span>
           </div>
         </label>
@@ -343,7 +346,7 @@
           <input type="checkbox" id="scenario-wait6">
           <div class="scenario-content">
             <span class="scenario-icon">⏰</span>
-            <span class="scenario-title">Wait 6 months (no new negatives)</span>
+            <span class="scenario-title">Esperar 6 meses (sin nuevos negativos)</span>
             <span class="scenario-delta" id="delta-wait6"></span>
           </div>
         </label>
@@ -352,7 +355,7 @@
           <input type="checkbox" id="scenario-wait12">
           <div class="scenario-content">
             <span class="scenario-icon">📅</span>
-            <span class="scenario-title">Wait 12 months</span>
+            <span class="scenario-title">Esperar 12 meses</span>
             <span class="scenario-delta" id="delta-wait12"></span>
           </div>
         </label>
@@ -361,7 +364,7 @@
           <input type="checkbox" id="scenario-latepayment">
           <div class="scenario-content">
             <span class="scenario-icon">❌</span>
-            <span class="scenario-title">A new 30-day late payment</span>
+            <span class="scenario-title">Un nuevo pago atrasado de 30 días</span>
             <span class="scenario-delta" id="delta-latepayment"></span>
           </div>
         </label>
@@ -370,7 +373,7 @@
           <input type="checkbox" id="scenario-close-oldest">
           <div class="scenario-content">
             <span class="scenario-icon">✂️</span>
-            <span class="scenario-title">Close oldest card</span>
+            <span class="scenario-title">Cerrar la tarjeta más antigua</span>
             <span class="scenario-delta" id="delta-close-oldest"></span>
           </div>
         </label>
@@ -379,7 +382,7 @@
           <input type="checkbox" id="scenario-maxout">
           <div class="scenario-content">
             <span class="scenario-icon">🚨</span>
-            <span class="scenario-title">Max out a card (90%+ utilization)</span>
+            <span class="scenario-title">Llegar al límite de una tarjeta (90%+ de utilización)</span>
             <span class="scenario-delta" id="delta-maxout"></span>
           </div>
         </label>
@@ -388,15 +391,15 @@
 
     <!-- Score Unlock Panel -->
     <section class="unlock-section" id="unlockSection">
-      <h3>🔓 What unlocks at this score</h3>
+      <h3>🔓 Qué se desbloquea con este puntaje</h3>
       <div class="unlock-grid" id="unlockGrid"></div>
     </section>
 
     <!-- CTA -->
     <div class="cta-section">
-      <a href="/es/rewards/" class="btn-primary cta-btn" id="ctaCards">🏆 See cards you'd qualify for →</a>
-      <a href="/es/debt-planner/" class="btn-ghost cta-btn">📊 Pay off debt fastest →</a>
-      <a href="/es/min-payment/" class="btn-ghost cta-btn">⚠️ Escape the minimum payment trap →</a>
+      <a href="/es/rewards/" class="btn-primary cta-btn" id="ctaCards">🏆 Ver tarjetas para las que calificarías →</a>
+      <a href="/es/debt-planner/" class="btn-ghost cta-btn">📊 Pagar la deuda más rápido →</a>
+      <a href="/es/min-payment/" class="btn-ghost cta-btn">⚠️ Escapar de la trampa del pago mínimo →</a>
     </div>
 
     <!-- Share -->
@@ -404,52 +407,52 @@
 
     <!-- Educational Content -->
     <section class="content-section">
-      <h2>Understanding Your Credit Score</h2>
-      <p>Your credit score is a three-digit number (300–850) that lenders use to assess risk. It's based on your credit report data and calculated using the FICO model, which weights five factors:</p>
+      <h2>Entendiendo tu puntaje de crédito</h2>
+      <p>Tu puntaje de crédito es un número de tres dígitos (300–850) que los prestamistas usan para evaluar el riesgo. Se basa en los datos de tu informe de crédito y se calcula utilizando el modelo FICO, que pondera cinco factores:</p>
       <ul>
-        <li><strong>Payment History (35%)</strong> — Do you pay on time? This is the most important factor. Even one 30-day late payment can drop your score significantly.</li>
-        <li><strong>Credit Utilization (30%)</strong> — How much of your available credit are you using? Below 30% is okay; below 10% is ideal. This is the easiest factor to improve quickly.</li>
-        <li><strong>Length of Credit History (15%)</strong> — How long have your accounts been open? Older accounts help your score. Think twice before closing your oldest card.</li>
-        <li><strong>Credit Mix (10%)</strong> — Do you have different types of credit (cards, auto loans, mortgage)? A diverse mix can help slightly.</li>
-        <li><strong>New Credit (10%)</strong> — How many recent inquiries are there? Each hard inquiry can ding your score 5–10 points, though shopping around for a loan within 14 days counts as one inquiry.</li>
+        <li><strong>Historial de pagos (35%)</strong> — ¿Pagas a tiempo? Este es el factor más importante. Incluso un pago atrasado de 30 días puede reducir tu puntaje significativamente.</li>
+        <li><strong>Utilización de crédito (30%)</strong> — ¿Cuánto de tu crédito disponible estás usando? Por debajo del 30% está bien; por debajo del 10% es ideal. Este es el factor más fácil de mejorar rápidamente.</li>
+        <li><strong>Duración del historial de crédito (15%)</strong> — ¿Cuánto tiempo han estado abiertas tus cuentas? Las cuentas más antiguas ayudan a tu puntaje. Piénsalo dos veces antes de cerrar tu tarjeta más antigua.</li>
+        <li><strong>Mezcla de crédito (10%)</strong> — ¿Tienes diferentes tipos de crédito (tarjetas, préstamos para automóviles, hipotecas)? Una mezcla diversa puede ayudar un poco.</li>
+        <li><strong>Crédito nuevo (10%)</strong> — ¿Cuántas consultas recientes hay? Cada consulta dura puede reducir tu puntaje entre 5 y 10 puntos, aunque buscar un préstamo dentro de un período de 14 días cuenta como una sola consulta.</li>
       </ul>
-      <h3>Quick wins to improve your score</h3>
+      <h3>Victorias rápidas para mejorar tu puntaje</h3>
       <ol>
-        <li><strong>Pay down credit card balances</strong> — Lowering utilization is the fastest way to boost your score. Getting below 10% can be worth 50+ points.</li>
-        <li><strong>Never miss a payment</strong> — Set up autopay for at least the minimum. Payment history is 35% of your score.</li>
-        <li><strong>Don't close old cards</strong> — Closing cards reduces your total credit limit (hurting utilization) and shortens your average account age.</li>
-        <li><strong>Limit hard inquiries</strong> — Only apply for credit you actually need. Each inquiry is a small hit to your score.</li>
-        <li><strong>Check your reports for errors</strong> — Dispute inaccuracies at annualcreditreport.com. Errors are more common than you might think.</li>
+        <li><strong>Pagar los saldos de las tarjetas de crédito</strong> — Reducir la utilización es la forma más rápida de aumentar tu puntaje. Bajar del 10% puede valer más de 50 puntos.</li>
+        <li><strong>Nunca te saltes un pago</strong> — Configura el pago automático para al menos el pago mínimo. El historial de pagos es el 35% de tu puntaje.</li>
+        <li><strong>No cierres tarjetas antiguas</strong> — Cerrar tarjetas reduce tu límite de crédito total (perjudicando la utilización) y acorta la edad promedio de tus cuentas.</li>
+        <li><strong>Limita las consultas duras</strong> — Solo solicita el crédito que realmente necesitas. Cada consulta es un pequeño golpe a tu puntaje.</li>
+        <li><strong>Revisa tus informes en busca de errores</strong> — Disputa las inexactitudes en annualcreditreport.com. Los errores son más comunes de lo que piensas.</li>
       </ol>
     </section>
 
     <!-- FAQ -->
     <section class="content-section faq-section">
-      <h2>Frequently Asked Questions</h2>
+      <h2>Preguntas frecuentes</h2>
       <details class="faq-item">
-        <summary>How is my credit score calculated?</summary>
-        <p>FICO scores use five factors: payment history (35%), amounts owed/credit utilization (30%), length of credit history (15%), credit mix (10%), and new credit/inquiries (10%). Our simulator models these weights to estimate score changes.</p>
+        <summary>¿Cómo se calcula mi puntaje de crédito?</summary>
+        <p>Los puntajes FICO usan cinco factores: historial de pagos (35%), montos adeudados/utilización de crédito (30%), duración del historial de crédito (15%), mezcla de crédito (10%) y crédito nuevo/consultas (10%). Nuestro simulador modela estas ponderaciones para estimar los cambios en el puntaje.</p>
       </details>
       <details class="faq-item">
-        <summary>How much does paying off credit card debt improve my score?</summary>
-        <p>Paying off all credit card debt can improve your score by 40–100+ points depending on your current utilization. Dropping from high utilization (75%+) to under 10% is one of the biggest single improvements you can make.</p>
+        <summary>¿Cuánto mejora mi puntaje pagar la deuda de la tarjeta de crédito?</summary>
+        <p>Pagar toda la deuda de tarjetas de crédito puede mejorar tu puntaje en 40–100+ puntos dependiendo de tu utilización actual. Bajar de una alta utilización (75%+) a menos del 10% es una de las mayores mejoras individuales que puedes hacer.</p>
       </details>
       <details class="faq-item">
-        <summary>Does opening a new credit card hurt my score?</summary>
-        <p>Opening a new card has mixed effects. You'll typically lose 5–10 points from the hard inquiry and a slight decrease in average account age. However, the new credit limit can lower your utilization, which may offset the initial hit within 1–2 billing cycles.</p>
+        <summary>¿Abrir una nueva tarjeta de crédito perjudica mi puntaje?</summary>
+        <p>Abrir una nueva tarjeta tiene efectos mixtos. Por lo general, perderás entre 5 y 10 puntos por la consulta dura y una ligera disminución en la edad promedio de la cuenta. Sin embargo, el nuevo límite de crédito puede reducir tu utilización, lo que puede compensar el golpe inicial dentro de 1 a 2 ciclos de facturación.</p>
       </details>
       <details class="faq-item">
-        <summary>How accurate is this simulator?</summary>
-        <p>This simulator provides estimates based on general FICO scoring models. Actual score changes vary by credit bureau, scoring model version, and your complete credit profile. Use it as a helpful guide, not a guarantee.</p>
+        <summary>¿Qué tan preciso es este simulador?</summary>
+        <p>Este simulador proporciona estimaciones basadas en modelos generales de puntuación FICO. Los cambios reales en el puntaje varían según el buró de crédito, la versión del modelo de puntuación y tu perfil de crédito completo. Úsalo como una guía útil, no como una garantía.</p>
       </details>
-    </section>
+</section>
   </main>
 
   <div class="data-updated" id="data-updated" style="text-align:center;padding:8px 0;font-size:0.75rem;color:var(--text-secondary);font-style:italic;"></div>
   <footer class="footer">
     <div class="container">
-      <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
-      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/es/disclosure.html">Affiliate Disclosure</a></p>
+      <p>CreditStud.io es solo para fines informativos. Las tasas, términos y elegibilidad reales pueden variar.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/es/disclosure.html">Divulgación de afiliados</a></p>
     </div>
   </footer>
 
@@ -500,5 +503,6 @@ if (document.querySelector('.nav-dropdown-toggle')) {
 </script>
   <script src="/shared/i18n.js"></script>
 <script src="/shared/language-switcher.js"></script>
+
 </body>
 </html>

@@ -36,7 +36,7 @@
       "name": "¿Vale la pena la cuota anual de una tarjeta de crédito?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Depende de tus gastos y de si utilizas los beneficios de la tarjeta. Una tarjeta con cuota anual de $95 como la Chase Sapphire Preferred recupera su cuota si gastas $7,600 o más en viajes y comidas. Tarjetas premium como la Amex Platinum ($695) requieren usar $695 o más en créditos anuales. Usa nuestra calculadora para ver exactamente cuánto valor obtendrías."
+        "text": "Depende de tus gastos y si usas los beneficios de la tarjeta. Una tarjeta con cuota anual de $95 como Chase Sapphire Preferred recupera su cuota si gastas $7,600 o más en viajes y restaurantes. Las tarjetas premium como Amex Platinum ($695) requieren usar $695 o más en créditos anuales. Usa nuestra calculadora para ver exactamente cuánto valor obtendrías."
       }
     },
     {
@@ -44,7 +44,7 @@
       "name": "¿Cómo calculo si mi cuota anual vale la pena?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Suma: (1) el valor en efectivo de las recompensas que realmente ganarías según tus gastos, (2) el valor en dólares de los beneficios y créditos que realmente usarías, luego resta la cuota anual. Si el resultado es positivo, la tarjeta vale la pena. Nuestra calculadora hace esto automáticamente para más de 20 tarjetas populares."
+        "text": "Suma: (1) el valor en efectivo de las recompensas que ganarías según tus gastos, (2) el valor en dólares de los beneficios y créditos que realmente usarías, luego resta la cuota anual. Si el resultado es positivo, la tarjeta vale la pena. Nuestra calculadora hace esto automáticamente para más de 20 tarjetas populares."
       }
     },
     {
@@ -52,7 +52,7 @@
       "name": "¿Qué pasa si no uso los beneficios de la tarjeta?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Los beneficios no utilizados tienen un valor cero. Un crédito de viaje de $300 solo vale $300 si de todos modos gastarías $300 en viajes. Nuestra calculadora te permite activar o desactivar qué beneficios realmente usarías para ver el valor neto realista."
+        "text": "Los beneficios que no usas no tienen ningún valor. Un crédito de viaje de $300 solo vale $300 si de todas formas gastarías $300 en viajes. Nuestra calculadora te permite seleccionar qué beneficios realmente usarías para ver el valor neto realista."
       }
     },
     {
@@ -60,15 +60,15 @@
       "name": "¿Debería bajar a una versión sin cuota anual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Si tu valor neto calculado es negativo, sí. La mayoría de las tarjetas premium tienen una versión hermana sin cuota (por ejemplo, Sapphire Preferred → Freedom Unlimited, Amex Platinum → Amex Green). Mantienes el historial de la cuenta y evitas una nueva consulta dura."
+        "text": "Si tu valor neto calculado es negativo, sí. La mayoría de las tarjetas premium tienen una versión sin cuota (por ejemplo, Sapphire Preferred → Freedom Unlimited, Amex Platinum → Amex Green). Conservas el historial de la cuenta y evitas una nueva consulta de crédito."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuenta el bono de bienvenida para el valor de la cuota anual?",
+      "name": "¿El bono de bienvenida cuenta para el valor de la cuota anual?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Los bonos de bienvenida son valor solo del primer año. Nuestra calculadora muestra tanto el valor del primer año (con bono) como el valor continuo (sin bono). Una tarjeta podría valer la pena en el primer año pero no en el segundo."
+        "text": "Los bonos de bienvenida solo aportan valor en el primer año. Nuestra calculadora muestra el valor del primer año (con bono) y el valor continuo (sin bono). Una tarjeta puede valer la pena en el primer año pero no en el segundo."
       }
     }
   ],
@@ -163,11 +163,11 @@
 <link rel="alternate" hreflang="x-default" href="https://creditstud.io/af-worth-it/">
 </head>
 <body>
-  <!-- DISCLOSURE -->
+<!-- DISCLOSURE -->
   <div class="site-disclosure-banner">
     <div class="site-disclosure-container">
-      CreditStud.io may earn commissions from credit card applications through affiliate links. This does not affect our rankings or recommendations.
-      <a href="/es/disclosure.html">Learn more</a>
+      CreditStud.io puede ganar comisiones por solicitudes de tarjetas de crédito a través de enlaces de afiliados. Esto no afecta nuestras clasificaciones o recomendaciones.
+      <a href="/es/disclosure.html">Más información</a>
     </div>
   </div>
 
@@ -231,20 +231,20 @@
     <section class="calc-section">
       <div class="step-header">
         <span class="step-number">1</span>
-        <h2>Pick a card to evaluate</h2>
+        <h2>Elige una tarjeta para evaluar</h2>
       </div>
       <div class="card-search-wrapper">
-        <input type="text" id="cardSearch" placeholder="Search cards (e.g., Sapphire, Amex, Venture)...">
+        <input type="text" id="cardSearch" placeholder="Buscar tarjetas (ej. Sapphire, Amex, Venture)...">
         <div class="card-list" id="cardList"></div>
       </div>
       <div class="selected-card" id="selectedCard" style="display:none;">
         <div class="selected-card-info">
           <h3 id="selectedCardName"></h3>
           <div class="selected-card-meta">
-            <span id="selectedCardIssuer"></span> • <span id="selectedCardAF"></span> annual fee
+            <span id="selectedCardIssuer"></span> • <span id="selectedCardAF"></span> de cuota anual
           </div>
         </div>
-        <button class="btn-small" id="changeCard">Change card</button>
+        <button class="btn-small" id="changeCard">Cambiar tarjeta</button>
       </div>
     </section>
 
@@ -252,17 +252,17 @@
     <section class="calc-section" id="step2" style="display:none;">
       <div class="step-header">
         <span class="step-number">2</span>
-        <h2>Your spending & perks</h2>
+        <h2>Tus gastos y beneficios</h2>
       </div>
 
-      <h3 class="subheading">Monthly spending by category</h3>
+      <h3 class="subheading">Gastos mensuales por categoría</h3>
       <div class="spending-grid" id="spendingGrid"></div>
 
       <div class="perk-toggle-header">
-        <h3 class="subheading">Perks & credits you'll actually use</h3>
+        <h3 class="subheading">Beneficios y créditos que realmente usarás</h3>
         <label class="would-spend-toggle">
           <input type="checkbox" id="wouldSpendAnyway" checked>
-          <span>I would spend this anyway (not card-specific)</span>
+          <span>Gastaría esto de todos modos (no específico de la tarjeta)</span>
         </label>
       </div>
       <div class="perks-grid" id="perksGrid"></div>
@@ -272,7 +272,7 @@
     <section class="results-section" id="results" style="display:none;">
       <div class="step-header">
         <span class="step-number">3</span>
-        <h2>The verdict</h2>
+        <h2>El veredicto</h2>
       </div>
 
       <div class="verdict-card" id="verdictCard">
@@ -287,9 +287,9 @@
 
       <!-- CTA -->
       <div class="cta-section">
-        <a href="/es/rewards/" class="btn-primary cta-btn">🏆 Compare all cards →</a>
-        <a href="/es/rewards/?filter=no-annual-fee" class="btn-ghost cta-btn">⟩ See no-annual-fee cards →</a>
-        <a href="/es/score-simulator/" class="btn-ghost cta-btn">📈 Check your credit score →</a>
+        <a href="/es/rewards/" class="btn-primary cta-btn">🏆 Comparar todas las tarjetas →</a>
+        <a href="/es/rewards/?filter=no-annual-fee" class="btn-ghost cta-btn">⟩ Ver tarjetas sin cuota anual →</a>
+        <a href="/es/score-simulator/" class="btn-ghost cta-btn">📈 Revisa tu puntaje de crédito →</a>
       </div>
 
       <div class="share-bar" id="shareBar"></div>
@@ -297,22 +297,22 @@
 
     <!-- FAQ -->
     <section class="content-section faq-section">
-      <h2>Frequently Asked Questions</h2>
+      <h2>Preguntas frecuentes</h2>
       <details class="faq-item">
-        <summary>Is a credit card annual fee worth it?</summary>
-        <p>It depends on your spending and whether you use the card's perks. A $95 annual fee card like Chase Sapphire Preferred earns its fee back if you spend $7,600+ on travel and dining. Premium cards like Amex Platinum ($695) require using $695+ in annual credits. Use our calculator to see exactly how much value you'd get.</p>
+        <summary>¿Vale la pena la cuota anual de una tarjeta de crédito?</summary>
+        <p>Depende de tus gastos y de si usas los beneficios de la tarjeta. Una tarjeta con una cuota anual de $95 como Chase Sapphire Preferred recupera su cuota si gastas $7,600+ en viajes y restaurantes. Las tarjetas premium como Amex Platinum ($695) requieren usar $695+ en créditos anuales. Usa nuestra calculadora para ver exactamente cuánto valor obtendrías.</p>
       </details>
       <details class="faq-item">
-        <summary>What if I don't use all the perks?</summary>
-        <p>Unused perks have zero value. A $300 travel credit is only worth $300 if you'd spend $300 on travel anyway. Our calculator lets you toggle which perks you'd actually use to see the realistic net value.</p>
+        <summary>¿Qué pasa si no uso todos los beneficios?</summary>
+        <p>Los beneficios no utilizados tienen un valor de cero. Un crédito de viaje de $300 solo vale $300 si de todos modos gastarías $300 en viajes. Nuestra calculadora te permite seleccionar qué beneficios realmente usarías para ver el valor neto realista.</p>
       </details>
       <details class="faq-item">
-        <summary>Should I downgrade to a no-annual-fee version?</summary>
-        <p>If your calculated net value is negative, yes. Most premium cards have a no-fee sibling (e.g., Sapphire Preferred → Freedom Unlimited, Amex Platinum → Amex Green). You keep the account history and avoid a new hard inquiry.</p>
+        <summary>¿Debería cambiar a una versión sin cuota anual?</summary>
+        <p>Si tu valor neto calculado es negativo, sí. La mayoría de las tarjetas premium tienen una versión hermana sin cuota (ej. Chase Sapphire Preferred → Freedom Unlimited, Amex Platinum → Amex Green). Mantienes el historial de la cuenta y evitas una nueva consulta dura en tu crédito.</p>
       </details>
       <details class="faq-item">
-        <summary>Does the signup bonus count?</summary>
-        <p>Signup bonuses are first-year value only. Our calculator shows ongoing value (without bonus). A card might be worth it in year one due to a signup bonus but not in subsequent years.</p>
+        <summary>¿Cuenta el bono de bienvenida?</summary>
+        <p>Los bonos de bienvenida solo tienen valor el primer año. Nuestra calculadora muestra el valor continuo (sin bono). Una tarjeta podría valer la pena el primer año debido a un bono de bienvenida, pero no en los años siguientes.</p>
       </details>
     </section>
   </main>
@@ -320,8 +320,8 @@
   <div class="data-updated" id="data-updated" style="text-align:center;padding:8px 0;font-size:0.75rem;color:var(--text-secondary);font-style:italic;"></div>
   <footer class="footer">
     <div class="container">
-      <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary.</p>
-      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/es/disclosure.html">Affiliate Disclosure</a></p>
+      <p>CreditStud.io es solo para fines informativos. Las tasas, términos y elegibilidad reales pueden variar.</p>
+      <p style="margin-top: 8px; font-size: 0.85rem;"><a href="/es/disclosure.html">Divulgación de afiliados</a></p>
     </div>
   </footer>
 
@@ -374,5 +374,6 @@ if (document.querySelector('.nav-dropdown-toggle')) {
 </script>
   <script src="/shared/i18n.js"></script>
 <script src="/shared/language-switcher.js"></script>
+
 </body>
 </html>

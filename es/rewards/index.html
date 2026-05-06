@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Recompensas de Tarjetas de Crédito — Encuentra Tu Mejor Tarjeta | CreditStud.io</title>
   <meta name="description" content="Ingresa tus hábitos de gasto y encuentra al instante qué tarjeta de crédito te da más recompensas. Compara cash back, puntos de viaje y recompensas en cripto.">
-  <link rel="canonical" href="https://creditstud.io/es/rewards/">
+  <link rel="canonical" href="https://creditstud.io/es/es/rewards/">
   <meta property="og:title" content="Calculadora de Recompensas de Tarjetas de Crédito — Encuentra Tu Mejor Tarjeta | CreditStud.io">
   <meta property="og:description" content="Ingresa tus hábitos de gasto y encuentra al instante qué tarjeta de crédito te da más recompensas. Compara cash back, puntos de viaje y recompensas en cripto.">
-  <meta property="og:url" content="https://creditstud.io/es/rewards/">
+  <meta property="og:url" content="https://creditstud.io/es/es/rewards/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CreditStud.io">
   <meta property="og:image" content="https://creditstud.io/og-images/rewards.png">
@@ -213,6 +213,9 @@
 <script>window.__lang = 'es';</script>
 <script src="/locales/es.js"></script>
 <script src="/locales/es/rewards.json" type="application/json" data-locale="es" data-tool="rewards"></script>
+<script>window.__lang = 'es';</script>
+<script src="/locales/es.js"></script>
+<script src="/locales/es/rewards.json" type="application/json" data-locale="es" data-tool="rewards"></script>
 <link rel="alternate" hreflang="en" href="https://creditstud.io/rewards/">
 <link rel="alternate" hreflang="es" href="https://creditstud.io/es/rewards/">
 <link rel="alternate" hreflang="zh" href="https://creditstud.io/zh/rewards/">
@@ -222,9 +225,9 @@
 <link rel="alternate" hreflang="x-default" href="https://creditstud.io/rewards/">
 </head>
 <body>
-  <div id="app">
+<div id="app">
     <!-- Skip to content link -->
-    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+    <a href="#main" class="sr-only sr-only-focusable">Saltar al contenido principal</a>
     
     <!-- DISCLOSURE -->
 <div class="site-disclosure-banner">
@@ -300,15 +303,15 @@
       <div class="container" id="main">
         <div class="step-header">
           <span class="step-number">1</span>
-          <h2>Your Monthly Spending</h2>
+          <h2>Tus gastos mensuales</h2>
         </div>
-        <p class="step-desc">Adjust the sliders or type amounts. Results update instantly. Defaults are based on average US household spending.</p>
+        <p class="step-desc">Ajusta los controles deslizantes o escribe las cantidades. Los resultados se actualizan al instante. Los valores predeterminados se basan en el gasto promedio de los hogares en EE. UU.</p>
 
         <!-- Annual / Monthly Toggle -->
         <div class="spending-mode-toggle">
-          <button class="spending-mode-btn active" data-mode="monthly" onclick="setSpendingMode('monthly')">Monthly</button>
-          <button class="spending-mode-btn" data-mode="annual" onclick="setSpendingMode('annual')">Annual</button>
-          <span class="spending-mode-note" id="spending-mode-note">Showing monthly amounts</span>
+          <button class="spending-mode-btn active" data-mode="monthly" onclick="setSpendingMode('monthly')">Mensual</button>
+          <button class="spending-mode-btn" data-mode="annual" onclick="setSpendingMode('annual')">Anual</button>
+          <span class="spending-mode-note" id="spending-mode-note">Mostrando cantidades mensuales</span>
         </div>
 
         <div id="spending-grid" class="spending-grid">
@@ -317,11 +320,11 @@
 
         <div class="spending-summary">
           <div class="spending-summary-item">
-            <div class="spending-summary-label">Monthly Total</div>
+            <div class="spending-summary-label">Total mensual</div>
             <div class="spending-summary-value" id="total-monthly">$0</div>
           </div>
           <div class="spending-summary-item">
-            <div class="spending-summary-label">Annual Total</div>
+            <div class="spending-summary-label">Total anual</div>
             <div class="spending-summary-value" id="total-annual">$0</div>
           </div>
         </div>
@@ -331,20 +334,20 @@
           <label class="toggle-label" style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.9rem;padding:14px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);">
             <input type="checkbox" id="crypto-toggle" data-action="toggle-crypto" style="display:none;">
             <span class="toggle-switch"></span>
-            <span>🪙 I'm interested in earning crypto rewards</span>
+            <span>🪙 Me interesa ganar recompensas en criptomonedas</span>
           </label>
         </div>
 
         <!-- Cards I Already Have -->
         <div class="cards-owned-section">
           <button class="cards-owned-toggle" onclick="toggleCardsOwnedPanel()">
-            🃏 Cards I Already Have
+            🃏 Tarjetas que ya tengo
             <span class="cards-owned-count" id="cards-owned-count"></span>
             <span class="cards-owned-chevron">▼</span>
           </button>
           <div class="cards-owned-panel" id="cards-owned-panel">
             <div class="cards-owned-panel-inner">
-              <p class="cards-owned-hint">Select cards you currently own (they'll be hidden from results) or previously had (signup bonus may apply again).</p>
+              <p class="cards-owned-hint">Selecciona las tarjetas que tienes actualmente (se ocultarán de los resultados) o que tuviste anteriormente (el bono de registro podría aplicarse nuevamente).</p>
               <div id="cards-owned-list" class="cards-owned-list">
                 <!-- Populated by JS -->
               </div>
@@ -359,20 +362,20 @@
       <div class="container">
         <div class="step-header">
           <span class="step-number">2</span>
-          <h2>Your Best Cards</h2>
+          <h2>Tus mejores tarjetas</h2>
         </div>
-        <p class="step-desc">Ranked by net annual rewards value (earnings minus annual fee).</p>
+        <p class="step-desc">Clasificadas por el valor neto anual de las recompensas (ganancias menos la cuota anual).</p>
 
         <!-- Year Toggle -->
         <div class="year-toggle-container">
-          <fieldset class="year-toggle-fieldset" role="radiogroup" aria-label="Toggle between first year and ongoing value">
-            <legend class="year-toggle-legend">Calculation Period</legend>
+          <fieldset class="year-toggle-fieldset" role="radiogroup" aria-label="Alternar entre el primer año y el valor continuo">
+            <legend class="year-toggle-legend">Período de cálculo</legend>
             <div class="year-toggle-group">
               <input type="radio" id="first-year" name="year-toggle" value="first" checked data-action="set-year-view">
-              <label for="first-year" class="year-toggle-label">First Year</label>
+              <label for="first-year" class="year-toggle-label">Primer año</label>
               
               <input type="radio" id="ongoing" name="year-toggle" value="ongoing" data-action="set-year-view">
-              <label for="ongoing" class="year-toggle-label">Ongoing</label>
+              <label for="ongoing" class="year-toggle-label">Continuo</label>
             </div>
           </fieldset>
         </div>
@@ -382,26 +385,26 @@
           <label class="toggle-label" style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.9rem;padding:14px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);">
             <input type="checkbox" id="include-annual-credits" data-action="toggle-annual-credits" style="display:none;">
             <span class="toggle-switch"></span>
-            <span>Include annual credits in first-year value</span>
+            <span>Incluir créditos anuales en el valor del primer año</span>
           </label>
         </div>
 
         <!-- Filter Bar -->
         <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all" data-action="set-filter" aria-label="Show all credit cards">All Cards</button>
-          <button class="filter-btn" data-filter="cashback" data-action="set-filter" aria-label="Show cashback credit cards">💵 Cashback</button>
-          <button class="filter-btn" data-filter="travel" data-action="set-filter" aria-label="Show travel credit cards">✈️ Travel</button>
-          <button class="filter-btn" data-filter="tiered" data-action="set-filter" aria-label="Show tiered reward credit cards">🔄 Tiered</button>
-          <button class="filter-btn" data-filter="grocery" data-action="set-filter" aria-label="Show grocery reward credit cards">🛒 Grocery</button>
-          <button class="filter-btn" data-filter="crypto" data-action="set-filter" aria-label="Show crypto reward credit cards">₿ Crypto</button>
+          <button class="filter-btn active" data-filter="all" data-action="set-filter" aria-label="Mostrar todas las tarjetas de crédito">Todas las tarjetas</button>
+          <button class="filter-btn" data-filter="cashback" data-action="set-filter" aria-label="Mostrar tarjetas de crédito con cash back">💵 Cash back</button>
+          <button class="filter-btn" data-filter="travel" data-action="set-filter" aria-label="Mostrar tarjetas de crédito para viajes">✈️ Viajes</button>
+          <button class="filter-btn" data-filter="tiered" data-action="set-filter" aria-label="Mostrar tarjetas de crédito con recompensas por niveles">🔄 Por niveles</button>
+          <button class="filter-btn" data-filter="grocery" data-action="set-filter" aria-label="Mostrar tarjetas de crédito con recompensas en supermercados">🛒 Supermercados</button>
+          <button class="filter-btn" data-filter="crypto" data-action="set-filter" aria-label="Mostrar tarjetas de crédito con recompensas en criptomonedas">₿ Cripto</button>
           <label class="filter-toggle-label" style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:0.8rem;padding:6px 12px;border:1.5px solid var(--border);border-radius:20px;background:var(--surface);white-space:nowrap;">
             <input type="checkbox" id="no-annual-fee-toggle" onchange="toggleNoAnnualFee(this)" style="width:16px;height:16px;accent-color:var(--primary);">
-            No annual fee
+            Sin cuota anual
           </label>
         </div>
 
         <div id="affiliate-disclosure" class="disclosure">
-          Advertiser Disclosure: Some of the offers on this page are from companies that compensate us. This may influence which products we feature, but it does not affect our rankings — those are based purely on math.
+          Divulgación del anunciante: Algunas de las ofertas en esta página son de empresas que nos compensan. Esto puede influir en qué productos destacamos, pero no afecta nuestras clasificaciones, las cuales se basan puramente en matemáticas.
         </div>
 
         <div id="results-container" class="results-container" aria-live="polite">
@@ -418,7 +421,7 @@
         <!-- Share / data stamp row -->
         <div id="share-row" class="share-row" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center; justify-content:space-between; margin:1rem 0;">
           <div id="share-mount"></div>
-          <div id="data-stamp-mount"><span class="data-verified-stamp">Rates verified: 2026-04-28</span></div>
+          <div id="data-stamp-mount"><span class="data-verified-stamp">Tasas verificadas: 2026-04-28</span></div>
         </div>
 
         <!-- Comparison Section -->
@@ -447,19 +450,19 @@
     <section class="step">
       <div class="container">
         <div class="seo-content">
-          <h2>How the Credit Card Rewards Calculator Works</h2>
-          <p>Our calculator takes your actual monthly spending across eight categories — groceries, dining, gas, travel, online shopping, streaming, utilities, and everything else — and runs it against a database of 16 popular credit cards. For each card, we multiply your spending by the card's earn rate in each category, convert points to dollar value using current valuations from The Points Guy, subtract the annual fee, and rank the results by net annual value. It's pure math — no opinions, no bias.</p>
+          <h2>Cómo funciona la calculadora de recompensas de tarjetas de crédito</h2>
+          <p>Nuestra calculadora toma tus gastos mensuales reales en ocho categorías (supermercados, restaurantes, gasolina, viajes, compras en línea, streaming, servicios públicos y todo lo demás) y los compara con una base de datos de 16 tarjetas de crédito populares. Para cada tarjeta, multiplicamos tus gastos por la tasa de ganancia de la tarjeta en cada categoría, convertimos los puntos a valor en dólares usando las valoraciones actuales de The Points Guy, restamos la cuota anual y clasificamos los resultados por el valor neto anual. Es pura matemática: sin opiniones, sin sesgos.</p>
 
-          <h2>What Are Rewards Points Worth?</h2>
-          <p>Not all points are created equal. Cashback is always worth 1 cent per point. Travel points vary: Chase Ultimate Rewards points are valued at 2.05 cents each, Amex Membership Rewards at 2.0 cents, and Capital One Miles at 1.85 cents. These valuations reflect typical redemption value through each program's travel portal. Transferring points to airline or hotel partners can sometimes yield even higher value — 3-5 cents per point or more — but requires more effort and flexibility.</p>
+          <h2>¿Cuánto valen los puntos de recompensa?</h2>
+          <p>No todos los puntos son iguales. El cash back siempre vale 1 centavo por punto. Los puntos de viaje varían: los puntos Chase Ultimate Rewards están valorados en 2.05 centavos cada uno, los Amex Membership Rewards en 2.0 centavos y las Capital One Miles en 1.85 centavos. Estas valoraciones reflejan el valor de canje típico a través del portal de viajes de cada programa. Transferir puntos a aerolíneas o hoteles asociados a veces puede generar un valor aún mayor (3-5 centavos por punto o más), pero requiere más esfuerzo y flexibilidad.</p>
 
-          <h2>Credit Card Rewards vs. Crypto Rewards</h2>
-          <p>Crypto rewards cards like the Coinbase Card offer a different proposition: instead of fixed cashback or points, you earn cryptocurrency (Bitcoin, Ethereum, etc.) on every purchase. The upside is that your rewards could appreciate significantly over time. The downside is volatility — your rewards could also lose value. The Coinbase Card is a debit card (not credit), meaning you spend from your existing crypto balance. The Coinbase One Credit Card offers 4% Bitcoin back but requires a $30/month subscription. Use our calculator's Crypto Corner to see how crypto rewards compare to traditional cards at your spending level.</p>
+          <h2>Recompensas de tarjetas de crédito vs. recompensas en criptomonedas</h2>
+          <p>Las tarjetas de recompensas en criptomonedas como la Coinbase Card ofrecen una propuesta diferente: en lugar de cash back o puntos fijos, ganas criptomonedas (Bitcoin, Ethereum, etc.) en cada compra. La ventaja es que tus recompensas podrían apreciarse significativamente con el tiempo. La desventaja es la volatilidad: tus recompensas también podrían perder valor. La Coinbase Card es una tarjeta de débito (no de crédito), lo que significa que gastas de tu saldo de criptomonedas existente. La Coinbase One Credit Card ofrece un 4% de Bitcoin de vuelta pero requiere una suscripción de $30/mes. Usa el Rincón Cripto de nuestra calculadora para ver cómo se comparan las recompensas en criptomonedas con las tarjetas tradicionales según tu nivel de gasto.</p>
 
-          <p>Want to learn more? Check out our <a href="/es/blog/best-0-apr-credit-cards.html">guide to the best 0% APR credit cards</a> for financing large purchases, or read our <a href="/es/blog/bnpl-vs-credit-card.html">comparison of BNPL vs. credit cards</a> to understand the full cost of different payment methods.</p>
+          <p>¿Quieres aprender más? Consulta nuestra <a href="/es/blog/best-0-apr-credit-cards.html">guía de las mejores tarjetas de crédito con 0% APR</a> para financiar compras grandes, o lee nuestra <a href="/es/blog/bnpl-vs-credit-card.html">comparación de BNPL vs. tarjetas de crédito</a> para entender el costo total de los diferentes métodos de pago.</p>
         </div>
-      </div>
-    </section>
+      </div></div>
+</section>
 
     <!-- FOOTER -->
 <footer class="footer">
@@ -573,5 +576,6 @@ if (document.querySelector('.nav-dropdown-toggle')) {
   </script>
   <script src="/shared/i18n.js"></script>
 <script src="/shared/language-switcher.js"></script>
+
 </body>
 </html>
