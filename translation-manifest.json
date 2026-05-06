@@ -4,8 +4,8 @@
     "es": {
       "pages": {
         "index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:52:44.632Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:41:52.181Z",
           "sourceHash": "d9663eb671aa8d42",
           "targetHash": "24c657b3c84308d4",
           "issues": [
@@ -20,7 +20,7 @@
         },
         "about/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:17:20.628Z",
+          "lastTranslated": "2026-05-06T08:16:05.649Z",
           "sourceHash": "8b217c681573246f",
           "targetHash": "7de9d5d351f2cb55",
           "issues": [
@@ -34,7 +34,7 @@
         },
         "af-worth-it/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:17:43.239Z",
+          "lastTranslated": "2026-05-06T08:16:11.933Z",
           "sourceHash": "77b2f1f6be525dad",
           "targetHash": "458b32b606ef6b20",
           "issues": [
@@ -48,8 +48,8 @@
           "sourceChanged": false
         },
         "compare/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:50:02.140Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:41:02.830Z",
           "sourceHash": "24742ebe6fd4495c",
           "targetHash": "2f5d7d1cb4743b31",
           "issues": [
@@ -63,8 +63,8 @@
           "sourceChanged": false
         },
         "debt-planner/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:48:32.300Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:41:46.818Z",
           "sourceHash": "8dce5d2dba3b1c28",
           "targetHash": "1ada57ca6a638edb",
           "issues": [
@@ -92,8 +92,8 @@
           "sourceChanged": false
         },
         "loan-vs-bt/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:47:18.403Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:46:28.633Z",
           "sourceHash": "5e8ba7975669dbcb",
           "targetHash": "b62a2e640bd38a83",
           "issues": [
@@ -107,8 +107,8 @@
           "sourceChanged": false
         },
         "min-payment/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:51:45.052Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:56:21.856Z",
           "sourceHash": "5b6e6af376f161e2",
           "targetHash": "ab9721e96e4cc24f",
           "issues": [
@@ -134,8 +134,8 @@
           "sourceChanged": false
         },
         "rewards/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:44:39.964Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:56:28.685Z",
           "sourceHash": "4d3013489c3da051",
           "targetHash": "0395ffe7a96ed065",
           "issues": [
@@ -149,8 +149,8 @@
           "sourceChanged": false
         },
         "score-simulator/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:36:53.335Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:56:36.948Z",
           "sourceHash": "e262382678f244f4",
           "targetHash": "d236ab3d1d0bf4a4",
           "issues": [
@@ -178,8 +178,8 @@
           "sourceChanged": false
         },
         "tools/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:47:40.578Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:56:41.935Z",
           "sourceHash": "db5fa99651af21f0",
           "targetHash": "be29fe5470e00bab",
           "issues": [
@@ -193,7 +193,7 @@
         },
         "blog/affirm-interest-rates-explained.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:18:14.808Z",
+          "lastTranslated": "2026-05-06T08:16:56.743Z",
           "sourceHash": "b69c75f125e0c1fe",
           "targetHash": "b9bda9f744bf4b3f",
           "issues": [
@@ -208,7 +208,7 @@
         },
         "blog/amex-gold-worth-it.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:18:35.790Z",
+          "lastTranslated": "2026-05-06T08:17:38.991Z",
           "sourceHash": "d036815fc132da76",
           "targetHash": "d8eb6d7069097b1e",
           "issues": [
@@ -223,7 +223,7 @@
         },
         "blog/best-0-apr-credit-cards.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:18:55.062Z",
+          "lastTranslated": "2026-05-06T08:18:09.403Z",
           "sourceHash": "9e96abe141fce5dc",
           "targetHash": "feae77dea3356c41",
           "issues": [
@@ -252,8 +252,8 @@
           "sourceChanged": false
         },
         "blog/best-credit-cards-for-groceries.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:43:23.679Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:18:48.790Z",
           "sourceHash": "6a520db1c92c6203",
           "targetHash": "a55cdfa3516c9bee",
           "issues": [
@@ -267,8 +267,8 @@
           "sourceChanged": false
         },
         "blog/best-credit-cards-for-travel.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:38:54.055Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:19:26.928Z",
           "sourceHash": "9fd7a61231ecd2f8",
           "targetHash": "dfb8bd12a4edcb4c",
           "issues": [
@@ -283,7 +283,7 @@
         },
         "blog/bnpl-hidden-fees.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-06T06:53:30.729Z",
+          "lastTranslated": "2026-05-06T08:20:12.643Z",
           "sourceHash": "6cc970c9222854bf",
           "targetHash": "2b5cc6a0d89c2b74",
           "issues": [
@@ -297,8 +297,8 @@
           "sourceChanged": false
         },
         "blog/bnpl-vs-credit-card.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:45:01.545Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:21:00.885Z",
           "sourceHash": "ce64dcdd795dee43",
           "targetHash": "763c2beb33f5ef6e",
           "issues": [
@@ -312,8 +312,8 @@
           "sourceChanged": false
         },
         "blog/cheapest-way-to-finance-purchase.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:46:02.855Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:21:30.072Z",
           "sourceHash": "853830aba9eb6824",
           "targetHash": "36f47851e48fc3c3",
           "issues": [
@@ -366,8 +366,8 @@
           "sourceChanged": false
         },
         "blog/does-klarna-affect-credit-score.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:52:20.701Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:22:12.873Z",
           "sourceHash": "3169bf06fa7bdd84",
           "targetHash": "8cb4098dce8fd82f",
           "issues": [
@@ -381,8 +381,8 @@
           "sourceChanged": false
         },
         "blog/how-to-build-credit-from-scratch.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:49:03.993Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:23:04.132Z",
           "sourceHash": "4a760079c7af7529",
           "targetHash": "0f710ade5b15548b",
           "issues": [
@@ -396,8 +396,8 @@
           "sourceChanged": false
         },
         "blog/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:47:57.479Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:23:42.863Z",
           "sourceHash": "fac18880522606b2",
           "targetHash": "b077b8c9d0456a6c",
           "issues": [
@@ -410,8 +410,8 @@
           "sourceChanged": false
         },
         "blog/klarna-vs-afterpay-vs-affirm.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:50:34.933Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:24:26.633Z",
           "sourceHash": "71fcc928d0ecae5c",
           "targetHash": "30fa9376c306c210",
           "issues": [
@@ -439,8 +439,8 @@
           "sourceChanged": false
         },
         "blog/sneaky-credit-card-pitfalls.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:40:08.235Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:25:07.017Z",
           "sourceHash": "1a85a49c7e8b7b07",
           "targetHash": "308dd0a1d02924a7",
           "issues": [
@@ -467,8 +467,8 @@
           "sourceChanged": false
         },
         "cards/amazon-prime-visa-signature/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:38:43.753Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:25:41.403Z",
           "sourceHash": "3825a895a3705ccd",
           "targetHash": "f640c6e0c56d16a6",
           "issues": [
@@ -482,8 +482,8 @@
           "sourceChanged": false
         },
         "cards/amex-blue-cash-everyday/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:39:02.714Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:26:11.544Z",
           "sourceHash": "9d23e2cf2e52e7f2",
           "targetHash": "5196a530a7158280",
           "issues": [
@@ -497,8 +497,8 @@
           "sourceChanged": false
         },
         "cards/amex-blue-cash-preferred/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:46:19.002Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:26:42.733Z",
           "sourceHash": "225f81c2b21f4c1f",
           "targetHash": "3261dbe83b229290",
           "issues": [
@@ -513,7 +513,7 @@
         },
         "cards/amex-gold/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-06T06:54:07.382Z",
+          "lastTranslated": "2026-05-06T08:27:08.773Z",
           "sourceHash": "616e9d39fbc44ee0",
           "targetHash": "60f5877978343b06",
           "issues": [
@@ -527,8 +527,8 @@
           "sourceChanged": false
         },
         "cards/amex-platinum/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:54:32.735Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:27:48.678Z",
           "sourceHash": "13cf381fb68e7ee6",
           "targetHash": "8c6ad7cbc1179445",
           "issues": [
@@ -542,8 +542,8 @@
           "sourceChanged": false
         },
         "cards/apple-card/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:53:45.656Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:28:28.384Z",
           "sourceHash": "c5b13385d3a22904",
           "targetHash": "e3646c9230501d7d",
           "issues": [
@@ -557,8 +557,8 @@
           "sourceChanged": false
         },
         "cards/barclays-uber-pro/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:38:02.430Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:28:33.534Z",
           "sourceHash": "92bc3c658c42c133",
           "targetHash": "d15367c488e44098",
           "issues": [
@@ -572,8 +572,8 @@
           "sourceChanged": false
         },
         "cards/bilt-mastercard/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:41:26.064Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:28:39.386Z",
           "sourceHash": "8974f38accd5303f",
           "targetHash": "b0c792294252c5cc",
           "issues": [
@@ -587,8 +587,8 @@
           "sourceChanged": false
         },
         "cards/bofa-customized-cash-rewards/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:50:45.764Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:29:22.067Z",
           "sourceHash": "ea2a577864173f9b",
           "targetHash": "d46ea5c0df24a2b4",
           "issues": [
@@ -602,8 +602,8 @@
           "sourceChanged": false
         },
         "cards/capital-one-quicksilver/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:39:21.089Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:29:57.103Z",
           "sourceHash": "ad530a6d7e3c8100",
           "targetHash": "fd4903abe11ad41f",
           "issues": [
@@ -617,8 +617,8 @@
           "sourceChanged": false
         },
         "cards/capital-one-savor/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:46:34.362Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:30:29.274Z",
           "sourceHash": "2c19defd352273dc",
           "targetHash": "26427894e61339dc",
           "issues": [
@@ -632,8 +632,8 @@
           "sourceChanged": false
         },
         "cards/capital-one-savorone/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:48:52.492Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:31:07.269Z",
           "sourceHash": "9744f43f8359dcd6",
           "targetHash": "3a838f4b90366b38",
           "issues": [
@@ -647,8 +647,8 @@
           "sourceChanged": false
         },
         "cards/capital-one-venture-x/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:53:02.537Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:31:41.346Z",
           "sourceHash": "426eccdda63fa4d3",
           "targetHash": "6d0be3cb2982b7a4",
           "issues": [
@@ -662,8 +662,8 @@
           "sourceChanged": false
         },
         "cards/chase-freedom-flex/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:47:06.890Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:32:07.753Z",
           "sourceHash": "a5f2340acc3e88da",
           "targetHash": "91306cd802d0eed2",
           "issues": [
@@ -677,8 +677,8 @@
           "sourceChanged": false
         },
         "cards/chase-ink-business-preferred/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:44:09.339Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:32:12.906Z",
           "sourceHash": "c53760b87edfe3d6",
           "targetHash": "cb2ac8557fc572e5",
           "issues": [
@@ -692,8 +692,8 @@
           "sourceChanged": false
         },
         "cards/chase-sapphire-preferred/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:42:28.240Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:33:01.637Z",
           "sourceHash": "8ca0fc2dc7ecb6e5",
           "targetHash": "dc6bcde68eb79aee",
           "issues": [
@@ -707,8 +707,8 @@
           "sourceChanged": false
         },
         "cards/chase-sapphire-reserve/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:40:40.741Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:33:36.672Z",
           "sourceHash": "e7564f44232af6b8",
           "targetHash": "a3e537346b0c23a8",
           "issues": [
@@ -722,8 +722,8 @@
           "sourceChanged": false
         },
         "cards/citi-custom-cash/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:41:05.382Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:33:59.482Z",
           "sourceHash": "89d9c96ca621d681",
           "targetHash": "c84a58d9ef07fc6e",
           "issues": [
@@ -737,8 +737,8 @@
           "sourceChanged": false
         },
         "cards/citi-double-cash/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:53:36.817Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:34:36.674Z",
           "sourceHash": "d998e6a15ec7bfe3",
           "targetHash": "0fb39a3b6c79423b",
           "issues": [
@@ -752,8 +752,8 @@
           "sourceChanged": false
         },
         "cards/citi-premier/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:45:11.818Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:35:10.908Z",
           "sourceHash": "a9bc7de13ea5a97f",
           "targetHash": "778f0d07a6e826c2",
           "issues": [
@@ -767,8 +767,8 @@
           "sourceChanged": false
         },
         "cards/citi-strata-premier/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:49:44.565Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:35:57.455Z",
           "sourceHash": "939c00f0cb74e928",
           "targetHash": "8b66674221d295a2",
           "issues": [
@@ -782,8 +782,8 @@
           "sourceChanged": false
         },
         "cards/discover-it-cash-back/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:39:50.062Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:36:33.048Z",
           "sourceHash": "1607894596772036",
           "targetHash": "19b1b6f63b6fc2a1",
           "issues": [
@@ -797,8 +797,8 @@
           "sourceChanged": false
         },
         "cards/ihg-one-rewards-premier/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:54:50.988Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:36:58.250Z",
           "sourceHash": "d056b51a2cbf33a1",
           "targetHash": "1c89b490b55fbdab",
           "issues": [
@@ -812,8 +812,8 @@
           "sourceChanged": false
         },
         "cards/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:38:29.938Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:37:14.560Z",
           "sourceHash": "cc39d67cf48b1775",
           "targetHash": "160e0f2d891cd659",
           "issues": [
@@ -826,8 +826,8 @@
           "sourceChanged": false
         },
         "cards/southwest-priority-card/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:51:17.719Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:37:40.073Z",
           "sourceHash": "f6b1211c6c634a56",
           "targetHash": "ea7075bc10ea050f",
           "issues": [
@@ -841,8 +841,8 @@
           "sourceChanged": false
         },
         "cards/us-bank-altitude-go/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:53:25.073Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:38:05.955Z",
           "sourceHash": "098c74e8fb215a98",
           "targetHash": "ff19bdd3c9d8eb2a",
           "issues": [
@@ -856,8 +856,8 @@
           "sourceChanged": false
         },
         "cards/us-bank-cash-plus/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:49:17.196Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:38:48.686Z",
           "sourceHash": "af52e034a195745c",
           "targetHash": "884ba698f321b2b3",
           "issues": [
@@ -871,8 +871,8 @@
           "sourceChanged": false
         },
         "cards/wells-fargo-active-cash/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:42:08.180Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:39:36.716Z",
           "sourceHash": "022a0f652e663811",
           "targetHash": "ddec2b76a3e164c8",
           "issues": [
@@ -886,8 +886,8 @@
           "sourceChanged": false
         },
         "cards/wells-fargo-autograph/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:53:14.942Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:40:10.137Z",
           "sourceHash": "a64be64b13bd7ebf",
           "targetHash": "eaafa99b97885b17",
           "issues": [
@@ -901,8 +901,8 @@
           "sourceChanged": false
         },
         "learn/balance-transfer-calculator.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:43:03.979Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:42:29.839Z",
           "sourceHash": "3aea4313e11d4eb8",
           "targetHash": "54cc9cdef9ff35f8",
           "issues": [
@@ -916,8 +916,8 @@
           "sourceChanged": false
         },
         "learn/bnpl-interest-calculator.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:51:57.764Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:43:42.977Z",
           "sourceHash": "c5292c5c9020917b",
           "targetHash": "084a3c4d6f273bf8",
           "issues": [
@@ -931,8 +931,8 @@
           "sourceChanged": false
         },
         "learn/crypto-credit-card-rewards.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:44:21.005Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:44:22.884Z",
           "sourceHash": "a2e4a707f837282c",
           "targetHash": "672e9305661d2975",
           "issues": [
@@ -946,8 +946,8 @@
           "sourceChanged": false
         },
         "learn/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:41:38.581Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:44:29.049Z",
           "sourceHash": "adcebfa78b420472",
           "targetHash": "46d6725fd66d7f39",
           "issues": [
@@ -960,8 +960,8 @@
           "sourceChanged": false
         },
         "learn/pay-off-10k-debt.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:39:39.311Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:45:38.245Z",
           "sourceHash": "f44c5acf4ea61b22",
           "targetHash": "f7acad2971a57e0c",
           "issues": [
@@ -975,8 +975,8 @@
           "sourceChanged": false
         },
         "learn/snowball-vs-avalanche.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:49:34.797Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:46:23.413Z",
           "sourceHash": "e6e5da0b699c4617",
           "targetHash": "72825803c43f9e78",
           "issues": [
@@ -990,8 +990,8 @@
           "sourceChanged": false
         },
         "merchant/amazon.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:54:07.714Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:46:34.048Z",
           "sourceHash": "93a98ab28762703e",
           "targetHash": "b1646a54b2b2e011",
           "issues": [
@@ -1005,8 +1005,8 @@
           "sourceChanged": false
         },
         "merchant/costco.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:53:59.559Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:46:42.222Z",
           "sourceHash": "83115c262f7b22b7",
           "targetHash": "d0b4118110ffb507",
           "issues": [
@@ -1021,7 +1021,7 @@
         },
         "merchant/dining.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-06T06:54:11.956Z",
+          "lastTranslated": "2026-05-06T08:46:50.501Z",
           "sourceHash": "26c32aaca68d0e2d",
           "targetHash": "86da31c2b385662e",
           "issues": [
@@ -1035,8 +1035,8 @@
           "sourceChanged": false
         },
         "merchant/ev-charging.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:48:21.952Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:47:53.178Z",
           "sourceHash": "de18ab9864bc338f",
           "targetHash": "03afef9d6fcbbfc1",
           "issues": [
@@ -1050,8 +1050,8 @@
           "sourceChanged": false
         },
         "merchant/fitness.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:51:06.922Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:48:40.887Z",
           "sourceHash": "8ed2e414824e53b2",
           "targetHash": "0f2b72708626449d",
           "issues": [
@@ -1065,8 +1065,8 @@
           "sourceChanged": false
         },
         "merchant/gas-stations.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:54:41.817Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:48:46.804Z",
           "sourceHash": "3ff13adb9c2cbfce",
           "targetHash": "abbf2bec565d0c6a",
           "issues": [
@@ -1080,8 +1080,8 @@
           "sourceChanged": false
         },
         "merchant/groceries.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:41:55.403Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:49:16.918Z",
           "sourceHash": "e786e93be5724d93",
           "targetHash": "f974e80a3ac875b7",
           "issues": [
@@ -1095,8 +1095,8 @@
           "sourceChanged": false
         },
         "merchant/home-improvement.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:54:48.335Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:49:22.359Z",
           "sourceHash": "b8e1d4974f4ad500",
           "targetHash": "5c0d53e477bad3b6",
           "issues": [
@@ -1110,8 +1110,8 @@
           "sourceChanged": false
         },
         "merchant/index.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:39:59.074Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:49:27.062Z",
           "sourceHash": "62a377ec6ab2fbce",
           "targetHash": "ce5ee75ea8840818",
           "issues": [
@@ -1124,8 +1124,8 @@
           "sourceChanged": false
         },
         "merchant/insurance.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:42:37.468Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:50:18.636Z",
           "sourceHash": "606c36a99e6a42be",
           "targetHash": "5af3f37cdc26872d",
           "issues": [
@@ -1139,8 +1139,8 @@
           "sourceChanged": false
         },
         "merchant/online-shopping.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:37:45.750Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:50:28.558Z",
           "sourceHash": "5650a10c052fbbeb",
           "targetHash": "efc0399ae052bb7f",
           "issues": [
@@ -1154,8 +1154,8 @@
           "sourceChanged": false
         },
         "merchant/pharmacy.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:46:47.251Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:51:11.345Z",
           "sourceHash": "e233cd06221eee5b",
           "targetHash": "c3f30df58015a8be",
           "issues": [
@@ -1169,8 +1169,8 @@
           "sourceChanged": false
         },
         "merchant/rent.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:42:17.295Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:52:00.526Z",
           "sourceHash": "5953a6d0ed361593",
           "targetHash": "4390e0e16404edaf",
           "issues": [
@@ -1184,8 +1184,8 @@
           "sourceChanged": false
         },
         "merchant/restaurants.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:40:22.143Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:52:06.069Z",
           "sourceHash": "00ef26d0e3c8d7a2",
           "targetHash": "825c20165344b3c3",
           "issues": [
@@ -1199,8 +1199,8 @@
           "sourceChanged": false
         },
         "merchant/streaming.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:54:16.044Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:52:13.342Z",
           "sourceHash": "6dddbcffdeefddc9",
           "targetHash": "7ac0ee6b84671b30",
           "issues": [
@@ -1214,8 +1214,8 @@
           "sourceChanged": false
         },
         "merchant/student.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:37:06.888Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:53:03.366Z",
           "sourceHash": "d52b0d253261a84c",
           "targetHash": "57cdb68eb9d169a8",
           "issues": [
@@ -1229,8 +1229,8 @@
           "sourceChanged": false
         },
         "merchant/subscription.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:48:06.597Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:53:42.751Z",
           "sourceHash": "4695e2b73d62817e",
           "targetHash": "d5979d3df919634a",
           "issues": [
@@ -1244,8 +1244,8 @@
           "sourceChanged": false
         },
         "merchant/target.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:52:08.611Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:53:48.369Z",
           "sourceHash": "b20fb56bf80ce699",
           "targetHash": "54cea1c78bb716af",
           "issues": [
@@ -1258,8 +1258,8 @@
           "sourceChanged": false
         },
         "merchant/travel-hotels.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:36:30.551Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:54:30.149Z",
           "sourceHash": "2e671135dda7f8f3",
           "targetHash": "6c29b0189f8d2661",
           "issues": [
@@ -1273,8 +1273,8 @@
           "sourceChanged": false
         },
         "merchant/travel.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:50:09.269Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:54:36.381Z",
           "sourceHash": "78ddb491e770ae55",
           "targetHash": "913c9fd7bde5b3d1",
           "issues": [
@@ -1288,8 +1288,8 @@
           "sourceChanged": false
         },
         "merchant/uber-lyft.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:45:33.674Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:54:42.489Z",
           "sourceHash": "fadbb4528bf59c48",
           "targetHash": "6332862e59d08841",
           "issues": [
@@ -1303,8 +1303,8 @@
           "sourceChanged": false
         },
         "merchant/utilities.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:43:42.378Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:55:35.312Z",
           "sourceHash": "622247bcc1b2b285",
           "targetHash": "24d6598302ad6fc1",
           "issues": [
@@ -1318,8 +1318,8 @@
           "sourceChanged": false
         },
         "merchant/walmart.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:41:14.729Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:55:41.747Z",
           "sourceHash": "7554e5d98f7f8509",
           "targetHash": "18b65b959d6c1588",
           "issues": [
@@ -1333,8 +1333,8 @@
           "sourceChanged": false
         },
         "merchant/warehouse-clubs.html": {
-          "stage": "spot-checked",
-          "lastTranslated": "2026-05-06T06:44:53.527Z",
+          "stage": "reviewed",
+          "lastTranslated": "2026-05-06T08:56:15.574Z",
           "sourceHash": "6144835dc1103760",
           "targetHash": "53571e166453fe59",
           "issues": [

@@ -14,11 +14,14 @@ These roles are **locked in** and must not be changed without Dane's explicit ap
 | Role | Model | Venice ID | Notes |
 |------|-------|-----------|-------|
 | **Primary Translator** | Gemini 3.1 Pro | `venice/gemini-3-1-pro-preview` | Fast (~50s/page), good quality translations |
-| **Reviewer** | Sonnet 4.6 | `venice/claude-sonnet-4-6` | Reviews ALL translated pages — lightweight checks, ~15s/page |
+| **Reviewer** | GPT-5.4 | `venice/openai-gpt-54` | Reviews ALL translated pages — thorough checks, ~30s/page, no rate-limit issues |
+| **Reviewer (backup)** | Sonnet 4.6 | `venice/claude-sonnet-4-6` | Alternative reviewer, but heavily rate-limited on Venice (unusable for batches) |
 | **Spot-Checker** | GPT-5.4 | `venice/openai-gpt-54` | Spot-checks ~5 pages per batch for quality assurance |
 | **Tier 1 Auto-approve** | GPT-5.4 Mini | `venice/openai-gpt-54-mini` | Fast, cheap check for navigation labels, UI strings, button text |
 
-**Why Gemini for translation?** Sonnet 4.6 takes 90+ seconds per page on Venice (too slow for 77 pages). Gemini 3.1 Pro does it in ~50s with comparable quality. Sonnet 4.6 is better used as reviewer where it only needs to read and check (~15s/page). Swapped 2026-05-05 per Dane's direction.
+**Why Gemini for translation?** Sonnet 4.6 takes 90+ seconds per page on Venice (too slow for 77 pages). Gemini 3.1 Pro does it in ~50s with comparable quality. Swapped 2026-05-05 per Dane's direction.
+
+**Why GPT-5.4 for review?** Sonnet 4.6 is heavily rate-limited on Venice (429s every 2nd-3rd call, even with 8s delays). GPT-5.4 has no rate-limit issues, is a different model family from Gemini (better for catching errors), and does thorough reviews. Swapped 2026-05-06.
 
 ## What NOT to Use for Translations
 
@@ -32,14 +35,11 @@ These roles are **locked in** and must not be changed without Dane's explicit ap
 
 ## Pipeline
 
-1. **Translate** with `translation-runner.mjs translate es` (Gemini 3.1 Pro)
-2. **Review** with Sonnet 4.6 (`translation-runner.mjs review es`)
-3. **Spot-check** 5 pages/batch with GPT-5.4 (`translation-runner.mjs spot-check es`)
+1. **Translate** with Gemini 3.1 Pro (`translation-runner.mjs translate es`)
+2. **Review** with GPT-5.4 (`review-faq-es.mjs` for FAQs, `translation-runner.mjs review es` for body) — catches real issues well, no rate limits
+3. **Spot-check** with Sonnet 4.6 or GPT-5.4 — 5 pages per batch
 4. Run `node build.js --lang es` after each stage
-5. `node scripts/translation-status.mjs dashboard` for live status (`venice/claude-sonnet-4-6`)
-2. **Review** with Gemini 3.1 Pro (`venice/gemini-3-1-pro-preview`) — must pass review before proceeding
-3. **Spot-check** with GPT-5.4 (`venice/gpt-54`) — 5 pages per batch
-4. **Tier 1 strings** → GPT-5.4 Mini auto-approves nav/buttons/UI
+5. `node scripts/translation-status.mjs dashboard` for live status
 
 ## Rationale
 
