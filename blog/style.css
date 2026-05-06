@@ -74,9 +74,25 @@ body {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 2px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
 }
 
 .logo span {

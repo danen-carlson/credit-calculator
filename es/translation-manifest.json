@@ -5,9 +5,9 @@
       "pages": {
         "index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:05:45.585Z",
+          "lastTranslated": "2026-05-06T08:41:52.181Z",
           "sourceHash": "d9663eb671aa8d42",
-          "targetHash": "2d09de481eaab94c",
+          "targetHash": "24c657b3c84308d4",
           "issues": [
             "untranslated_p: 15 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -15,14 +15,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "about/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:17:20.628Z",
+          "lastTranslated": "2026-05-06T08:16:05.649Z",
           "sourceHash": "8b217c681573246f",
-          "targetHash": "7b89b8ff717bba09",
+          "targetHash": "7de9d5d351f2cb55",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated"
           ],
@@ -34,9 +34,9 @@
         },
         "af-worth-it/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:17:43.239Z",
+          "lastTranslated": "2026-05-06T08:16:11.933Z",
           "sourceHash": "77b2f1f6be525dad",
-          "targetHash": "286efaa94a9ee75e",
+          "targetHash": "458b32b606ef6b20",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -49,9 +49,9 @@
         },
         "compare/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:03:10.745Z",
+          "lastTranslated": "2026-05-06T08:41:02.830Z",
           "sourceHash": "24742ebe6fd4495c",
-          "targetHash": "b842e544356f7c42",
+          "targetHash": "2f5d7d1cb4743b31",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -59,14 +59,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "debt-planner/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:04:27.987Z",
+          "lastTranslated": "2026-05-06T08:41:46.818Z",
           "sourceHash": "8dce5d2dba3b1c28",
-          "targetHash": "861d6454159eeb90",
+          "targetHash": "1ada57ca6a638edb",
           "issues": [
             "untranslated_p: 10 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -74,7 +74,7 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "disclosure.html": {
@@ -93,9 +93,9 @@
         },
         "loan-vs-bt/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:13:09.732Z",
+          "lastTranslated": "2026-05-06T08:46:28.633Z",
           "sourceHash": "5e8ba7975669dbcb",
-          "targetHash": "621c2f0155e1df21",
+          "targetHash": "b62a2e640bd38a83",
           "issues": [
             "untranslated_p: 1 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -103,14 +103,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "min-payment/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:38:11.644Z",
+          "lastTranslated": "2026-05-06T08:56:21.856Z",
           "sourceHash": "5b6e6af376f161e2",
-          "targetHash": "247d0a77c87c4f1b",
+          "targetHash": "ab9721e96e4cc24f",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -118,7 +118,7 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "offline.html": {
@@ -135,9 +135,9 @@
         },
         "rewards/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:39:08.163Z",
+          "lastTranslated": "2026-05-06T08:56:28.685Z",
           "sourceHash": "4d3013489c3da051",
-          "targetHash": "a4c521ce0708d73a",
+          "targetHash": "0395ffe7a96ed065",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -145,14 +145,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "score-simulator/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:39:56.039Z",
+          "lastTranslated": "2026-05-06T08:56:36.948Z",
           "sourceHash": "e262382678f244f4",
-          "targetHash": "c793694ffc45a896",
+          "targetHash": "d236ab3d1d0bf4a4",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -160,7 +160,7 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "tools/api.html": {
@@ -179,23 +179,23 @@
         },
         "tools/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:40:51.613Z",
+          "lastTranslated": "2026-05-06T08:56:41.935Z",
           "sourceHash": "db5fa99651af21f0",
-          "targetHash": "fcd93d1c6cb46282",
+          "targetHash": "be29fe5470e00bab",
           "issues": [
             "untranslated_p: 10 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/affirm-interest-rates-explained.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:18:14.808Z",
+          "lastTranslated": "2026-05-06T08:16:56.743Z",
           "sourceHash": "b69c75f125e0c1fe",
-          "targetHash": "3bd8638ac7e12bb9",
+          "targetHash": "b9bda9f744bf4b3f",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -208,9 +208,9 @@
         },
         "blog/amex-gold-worth-it.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:18:35.790Z",
+          "lastTranslated": "2026-05-06T08:17:38.991Z",
           "sourceHash": "d036815fc132da76",
-          "targetHash": "1d2d5afca2b0b7ef",
+          "targetHash": "d8eb6d7069097b1e",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -223,9 +223,9 @@
         },
         "blog/best-0-apr-credit-cards.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T18:18:55.062Z",
+          "lastTranslated": "2026-05-06T08:18:09.403Z",
           "sourceHash": "9e96abe141fce5dc",
-          "targetHash": "46cd04e7d3b2a8c4",
+          "targetHash": "feae77dea3356c41",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -253,9 +253,9 @@
         },
         "blog/best-credit-cards-for-groceries.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:14:07.707Z",
+          "lastTranslated": "2026-05-06T08:18:48.790Z",
           "sourceHash": "6a520db1c92c6203",
-          "targetHash": "d72e3dc58a456e99",
+          "targetHash": "a55cdfa3516c9bee",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -263,14 +263,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/best-credit-cards-for-travel.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:14:53.729Z",
+          "lastTranslated": "2026-05-06T08:19:26.928Z",
           "sourceHash": "9fd7a61231ecd2f8",
-          "targetHash": "1eb8803793b4cdfb",
+          "targetHash": "dfb8bd12a4edcb4c",
           "issues": [
             "untranslated_p: 13 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -278,14 +278,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/bnpl-hidden-fees.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:16:20.059Z",
+          "lastTranslated": "2026-05-06T08:20:12.643Z",
           "sourceHash": "6cc970c9222854bf",
-          "targetHash": "f95b283b979591a6",
+          "targetHash": "2b5cc6a0d89c2b74",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -293,14 +293,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/bnpl-vs-credit-card.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:16:45.549Z",
+          "lastTranslated": "2026-05-06T08:21:00.885Z",
           "sourceHash": "ce64dcdd795dee43",
-          "targetHash": "4b235d676a8f25e6",
+          "targetHash": "763c2beb33f5ef6e",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -308,14 +308,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/cheapest-way-to-finance-purchase.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:17:12.616Z",
+          "lastTranslated": "2026-05-06T08:21:30.072Z",
           "sourceHash": "853830aba9eb6824",
-          "targetHash": "e1aa70b79a70c094",
+          "targetHash": "36f47851e48fc3c3",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -323,7 +323,7 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/credit-card-benefits-youre-not-using.html": {
@@ -367,9 +367,9 @@
         },
         "blog/does-klarna-affect-credit-score.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:18:29.504Z",
+          "lastTranslated": "2026-05-06T08:22:12.873Z",
           "sourceHash": "3169bf06fa7bdd84",
-          "targetHash": "b72707a07f5ef1e4",
+          "targetHash": "8cb4098dce8fd82f",
           "issues": [
             "untranslated_p: 21 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -377,14 +377,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/how-to-build-credit-from-scratch.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:19:40.761Z",
+          "lastTranslated": "2026-05-06T08:23:04.132Z",
           "sourceHash": "4a760079c7af7529",
-          "targetHash": "f614e5edfa9b520f",
+          "targetHash": "0f710ade5b15548b",
           "issues": [
             "untranslated_p: 15 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -392,28 +392,28 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:20:07.610Z",
+          "lastTranslated": "2026-05-06T08:23:42.863Z",
           "sourceHash": "fac18880522606b2",
-          "targetHash": "aa860c679e87f043",
+          "targetHash": "b077b8c9d0456a6c",
           "issues": [
             "untranslated_p: 11 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/klarna-vs-afterpay-vs-affirm.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:20:31.051Z",
+          "lastTranslated": "2026-05-06T08:24:26.633Z",
           "sourceHash": "71fcc928d0ecae5c",
-          "targetHash": "3fad5ebcb12b939a",
+          "targetHash": "30fa9376c306c210",
           "issues": [
             "untranslated_p: 16 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -421,7 +421,7 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/minimum-payment-trap.html": {
@@ -440,16 +440,16 @@
         },
         "blog/sneaky-credit-card-pitfalls.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:20:50.652Z",
+          "lastTranslated": "2026-05-06T08:25:07.017Z",
           "sourceHash": "1a85a49c7e8b7b07",
-          "targetHash": "f0632ae7b5191f17",
+          "targetHash": "308dd0a1d02924a7",
           "issues": [
             "untranslated_p: 12 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "blog/snowball-vs-avalanche.html": {
@@ -468,9 +468,9 @@
         },
         "cards/amazon-prime-visa-signature/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:21:29.894Z",
+          "lastTranslated": "2026-05-06T08:25:41.403Z",
           "sourceHash": "3825a895a3705ccd",
-          "targetHash": "e853a3ff9e99bc9f",
+          "targetHash": "f640c6e0c56d16a6",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -478,14 +478,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/amex-blue-cash-everyday/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:22:52.377Z",
+          "lastTranslated": "2026-05-06T08:26:11.544Z",
           "sourceHash": "9d23e2cf2e52e7f2",
-          "targetHash": "de9be91c79108042",
+          "targetHash": "5196a530a7158280",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -493,14 +493,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/amex-blue-cash-preferred/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:24:27.877Z",
+          "lastTranslated": "2026-05-06T08:26:42.733Z",
           "sourceHash": "225f81c2b21f4c1f",
-          "targetHash": "8d6232ff07d19ff5",
+          "targetHash": "3261dbe83b229290",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -508,14 +508,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/amex-gold/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:25:26.112Z",
+          "lastTranslated": "2026-05-06T08:27:08.773Z",
           "sourceHash": "616e9d39fbc44ee0",
-          "targetHash": "b1a34750fe6133f8",
+          "targetHash": "60f5877978343b06",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -523,14 +523,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/amex-platinum/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:26:37.614Z",
+          "lastTranslated": "2026-05-06T08:27:48.678Z",
           "sourceHash": "13cf381fb68e7ee6",
-          "targetHash": "06fa4e4b78ba0a03",
+          "targetHash": "8c6ad7cbc1179445",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -538,14 +538,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/apple-card/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:28:22.829Z",
+          "lastTranslated": "2026-05-06T08:28:28.384Z",
           "sourceHash": "c5b13385d3a22904",
-          "targetHash": "57cc787feb4957e7",
+          "targetHash": "e3646c9230501d7d",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -553,14 +553,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/barclays-uber-pro/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:29:32.955Z",
+          "lastTranslated": "2026-05-06T08:28:33.534Z",
           "sourceHash": "92bc3c658c42c133",
-          "targetHash": "f3299258ca2d0c71",
+          "targetHash": "d15367c488e44098",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -568,14 +568,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/bilt-mastercard/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:30:29.867Z",
+          "lastTranslated": "2026-05-06T08:28:39.386Z",
           "sourceHash": "8974f38accd5303f",
-          "targetHash": "87f35276be116d0d",
+          "targetHash": "b0c792294252c5cc",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -583,14 +583,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/bofa-customized-cash-rewards/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:32:42.630Z",
+          "lastTranslated": "2026-05-06T08:29:22.067Z",
           "sourceHash": "ea2a577864173f9b",
-          "targetHash": "ae442523bc2b2548",
+          "targetHash": "d46ea5c0df24a2b4",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -598,14 +598,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/capital-one-quicksilver/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:33:55.230Z",
+          "lastTranslated": "2026-05-06T08:29:57.103Z",
           "sourceHash": "ad530a6d7e3c8100",
-          "targetHash": "92fa8ccff14329b2",
+          "targetHash": "fd4903abe11ad41f",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -613,14 +613,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/capital-one-savor/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:35:29.095Z",
+          "lastTranslated": "2026-05-06T08:30:29.274Z",
           "sourceHash": "2c19defd352273dc",
-          "targetHash": "a73f5818353a6adc",
+          "targetHash": "26427894e61339dc",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -628,14 +628,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/capital-one-savorone/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:37:05.050Z",
+          "lastTranslated": "2026-05-06T08:31:07.269Z",
           "sourceHash": "9744f43f8359dcd6",
-          "targetHash": "1b7a090755ccc479",
+          "targetHash": "3a838f4b90366b38",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -643,14 +643,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/capital-one-venture-x/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:38:44.278Z",
+          "lastTranslated": "2026-05-06T08:31:41.346Z",
           "sourceHash": "426eccdda63fa4d3",
-          "targetHash": "fefa59f243e2e536",
+          "targetHash": "6d0be3cb2982b7a4",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -658,14 +658,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/chase-freedom-flex/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:40:33.359Z",
+          "lastTranslated": "2026-05-06T08:32:07.753Z",
           "sourceHash": "a5f2340acc3e88da",
-          "targetHash": "7afd25a6e9b9c8cb",
+          "targetHash": "91306cd802d0eed2",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -673,14 +673,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/chase-ink-business-preferred/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:41:50.551Z",
+          "lastTranslated": "2026-05-06T08:32:12.906Z",
           "sourceHash": "c53760b87edfe3d6",
-          "targetHash": "4d0bad900a92520c",
+          "targetHash": "cb2ac8557fc572e5",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -688,14 +688,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/chase-sapphire-preferred/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:44:29.456Z",
+          "lastTranslated": "2026-05-06T08:33:01.637Z",
           "sourceHash": "8ca0fc2dc7ecb6e5",
-          "targetHash": "3dc4e4ab05ca5c2c",
+          "targetHash": "dc6bcde68eb79aee",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -703,14 +703,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/chase-sapphire-reserve/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:45:58.206Z",
+          "lastTranslated": "2026-05-06T08:33:36.672Z",
           "sourceHash": "e7564f44232af6b8",
-          "targetHash": "854a3b63da7a423d",
+          "targetHash": "a3e537346b0c23a8",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -718,14 +718,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/citi-custom-cash/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:47:27.732Z",
+          "lastTranslated": "2026-05-06T08:33:59.482Z",
           "sourceHash": "89d9c96ca621d681",
-          "targetHash": "d54dbb8362a8eb2c",
+          "targetHash": "c84a58d9ef07fc6e",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -733,14 +733,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/citi-double-cash/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:48:21.149Z",
+          "lastTranslated": "2026-05-06T08:34:36.674Z",
           "sourceHash": "d998e6a15ec7bfe3",
-          "targetHash": "f9ab0e41940b63b9",
+          "targetHash": "0fb39a3b6c79423b",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -748,14 +748,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/citi-premier/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:49:09.851Z",
+          "lastTranslated": "2026-05-06T08:35:10.908Z",
           "sourceHash": "a9bc7de13ea5a97f",
-          "targetHash": "40522f56d11fa0cf",
+          "targetHash": "778f0d07a6e826c2",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -763,14 +763,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/citi-strata-premier/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:50:45.582Z",
+          "lastTranslated": "2026-05-06T08:35:57.455Z",
           "sourceHash": "939c00f0cb74e928",
-          "targetHash": "0d1d24322cc6cd18",
+          "targetHash": "8b66674221d295a2",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -778,14 +778,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/discover-it-cash-back/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:51:48.860Z",
+          "lastTranslated": "2026-05-06T08:36:33.048Z",
           "sourceHash": "1607894596772036",
-          "targetHash": "4a5db255f2b7ff45",
+          "targetHash": "19b1b6f63b6fc2a1",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -793,14 +793,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/ihg-one-rewards-premier/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:53:14.993Z",
+          "lastTranslated": "2026-05-06T08:36:58.250Z",
           "sourceHash": "d056b51a2cbf33a1",
-          "targetHash": "a7fab545da6d7b81",
+          "targetHash": "1c89b490b55fbdab",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -808,28 +808,28 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:54:15.830Z",
+          "lastTranslated": "2026-05-06T08:37:14.560Z",
           "sourceHash": "cc39d67cf48b1775",
-          "targetHash": "3949d6a930099f0d",
+          "targetHash": "160e0f2d891cd659",
           "issues": [
             "untranslated_p: 19 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/southwest-priority-card/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:55:34.646Z",
+          "lastTranslated": "2026-05-06T08:37:40.073Z",
           "sourceHash": "f6b1211c6c634a56",
-          "targetHash": "eccbe0831532c67e",
+          "targetHash": "ea7075bc10ea050f",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -837,14 +837,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/us-bank-altitude-go/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:56:44.265Z",
+          "lastTranslated": "2026-05-06T08:38:05.955Z",
           "sourceHash": "098c74e8fb215a98",
-          "targetHash": "8635bc36ff734d19",
+          "targetHash": "ff19bdd3c9d8eb2a",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -852,14 +852,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/us-bank-cash-plus/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T22:58:48.966Z",
+          "lastTranslated": "2026-05-06T08:38:48.686Z",
           "sourceHash": "af52e034a195745c",
-          "targetHash": "3ae7c037537ceed0",
+          "targetHash": "884ba698f321b2b3",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -867,14 +867,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/wells-fargo-active-cash/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:01:07.483Z",
+          "lastTranslated": "2026-05-06T08:39:36.716Z",
           "sourceHash": "022a0f652e663811",
-          "targetHash": "66593380bbc389bc",
+          "targetHash": "ddec2b76a3e164c8",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -882,14 +882,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "cards/wells-fargo-autograph/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:01:50.061Z",
+          "lastTranslated": "2026-05-06T08:40:10.137Z",
           "sourceHash": "a64be64b13bd7ebf",
-          "targetHash": "26cca4063e3ce7e8",
+          "targetHash": "eaafa99b97885b17",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -897,14 +897,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "learn/balance-transfer-calculator.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:07:08.958Z",
+          "lastTranslated": "2026-05-06T08:42:29.839Z",
           "sourceHash": "3aea4313e11d4eb8",
-          "targetHash": "a691acbd5173a3fb",
+          "targetHash": "54cc9cdef9ff35f8",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -912,14 +912,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "learn/bnpl-interest-calculator.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:08:15.673Z",
+          "lastTranslated": "2026-05-06T08:43:42.977Z",
           "sourceHash": "c5292c5c9020917b",
-          "targetHash": "359109510846380b",
+          "targetHash": "084a3c4d6f273bf8",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -927,14 +927,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "learn/crypto-credit-card-rewards.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:09:06.382Z",
+          "lastTranslated": "2026-05-06T08:44:22.884Z",
           "sourceHash": "a2e4a707f837282c",
-          "targetHash": "14f5312c5272fdb8",
+          "targetHash": "672e9305661d2975",
           "issues": [
             "untranslated_p: 16 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -942,28 +942,28 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "learn/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:09:47.548Z",
+          "lastTranslated": "2026-05-06T08:44:29.049Z",
           "sourceHash": "adcebfa78b420472",
-          "targetHash": "3fbfb83188bb2846",
+          "targetHash": "46d6725fd66d7f39",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "learn/pay-off-10k-debt.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:10:48.053Z",
+          "lastTranslated": "2026-05-06T08:45:38.245Z",
           "sourceHash": "f44c5acf4ea61b22",
-          "targetHash": "13421835ee0c6b6d",
+          "targetHash": "f7acad2971a57e0c",
           "issues": [
             "untranslated_p: 11 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -971,14 +971,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "learn/snowball-vs-avalanche.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:11:46.995Z",
+          "lastTranslated": "2026-05-06T08:46:23.413Z",
           "sourceHash": "e6e5da0b699c4617",
-          "targetHash": "0965a9c2140f8abe",
+          "targetHash": "72825803c43f9e78",
           "issues": [
             "untranslated_p: 17 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -986,14 +986,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/amazon.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:14:21.958Z",
+          "lastTranslated": "2026-05-06T08:46:34.048Z",
           "sourceHash": "93a98ab28762703e",
-          "targetHash": "92a301abdabb2f7a",
+          "targetHash": "b1646a54b2b2e011",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1001,14 +1001,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/costco.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:15:23.070Z",
+          "lastTranslated": "2026-05-06T08:46:42.222Z",
           "sourceHash": "83115c262f7b22b7",
-          "targetHash": "73171b42f4cc9ed7",
+          "targetHash": "d0b4118110ffb507",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1016,14 +1016,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/dining.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:16:46.136Z",
+          "lastTranslated": "2026-05-06T08:46:50.501Z",
           "sourceHash": "26c32aaca68d0e2d",
-          "targetHash": "04b72ca3616a4c4c",
+          "targetHash": "86da31c2b385662e",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1031,14 +1031,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/ev-charging.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:17:38.838Z",
+          "lastTranslated": "2026-05-06T08:47:53.178Z",
           "sourceHash": "de18ab9864bc338f",
-          "targetHash": "4ede6f26b56dd303",
+          "targetHash": "03afef9d6fcbbfc1",
           "issues": [
             "untranslated_p: 7 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1046,14 +1046,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/fitness.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:18:45.799Z",
+          "lastTranslated": "2026-05-06T08:48:40.887Z",
           "sourceHash": "8ed2e414824e53b2",
-          "targetHash": "af89164c0f80542b",
+          "targetHash": "0f2b72708626449d",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1061,14 +1061,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/gas-stations.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:19:56.760Z",
+          "lastTranslated": "2026-05-06T08:48:46.804Z",
           "sourceHash": "3ff13adb9c2cbfce",
-          "targetHash": "ba217f95c5c8c0f6",
+          "targetHash": "abbf2bec565d0c6a",
           "issues": [
             "untranslated_p: 4 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1076,14 +1076,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/groceries.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:21:06.202Z",
+          "lastTranslated": "2026-05-06T08:49:16.918Z",
           "sourceHash": "e786e93be5724d93",
-          "targetHash": "6236739283e9e78d",
+          "targetHash": "f974e80a3ac875b7",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1091,14 +1091,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/home-improvement.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:21:46.270Z",
+          "lastTranslated": "2026-05-06T08:49:22.359Z",
           "sourceHash": "b8e1d4974f4ad500",
-          "targetHash": "93c66838e4981718",
+          "targetHash": "5c0d53e477bad3b6",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1106,28 +1106,28 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/index.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:22:30.914Z",
+          "lastTranslated": "2026-05-06T08:49:27.062Z",
           "sourceHash": "62a377ec6ab2fbce",
-          "targetHash": "f46a1fbecad22159",
+          "targetHash": "ce5ee75ea8840818",
           "issues": [
             "untranslated_p: 1 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/insurance.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:23:51.005Z",
+          "lastTranslated": "2026-05-06T08:50:18.636Z",
           "sourceHash": "606c36a99e6a42be",
-          "targetHash": "5a7d18f3f4b7c04a",
+          "targetHash": "5af3f37cdc26872d",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1135,14 +1135,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/online-shopping.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:25:20.353Z",
+          "lastTranslated": "2026-05-06T08:50:28.558Z",
           "sourceHash": "5650a10c052fbbeb",
-          "targetHash": "3f723a90c4a9bf3a",
+          "targetHash": "efc0399ae052bb7f",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1150,14 +1150,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/pharmacy.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:26:03.927Z",
+          "lastTranslated": "2026-05-06T08:51:11.345Z",
           "sourceHash": "e233cd06221eee5b",
-          "targetHash": "476cf6ef370308bb",
+          "targetHash": "c3f30df58015a8be",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1165,14 +1165,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/rent.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:26:58.215Z",
+          "lastTranslated": "2026-05-06T08:52:00.526Z",
           "sourceHash": "5953a6d0ed361593",
-          "targetHash": "8ec99ea22f2ac534",
+          "targetHash": "4390e0e16404edaf",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1180,14 +1180,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/restaurants.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:27:38.443Z",
+          "lastTranslated": "2026-05-06T08:52:06.069Z",
           "sourceHash": "00ef26d0e3c8d7a2",
-          "targetHash": "ea00b19e8ac81cfe",
+          "targetHash": "825c20165344b3c3",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1195,14 +1195,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/streaming.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:28:19.692Z",
+          "lastTranslated": "2026-05-06T08:52:13.342Z",
           "sourceHash": "6dddbcffdeefddc9",
-          "targetHash": "f99d753c7bf8126c",
+          "targetHash": "7ac0ee6b84671b30",
           "issues": [
             "untranslated_p: 3 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1210,14 +1210,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/student.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:29:34.471Z",
+          "lastTranslated": "2026-05-06T08:53:03.366Z",
           "sourceHash": "d52b0d253261a84c",
-          "targetHash": "7aa1ab08f08fbffa",
+          "targetHash": "57cdb68eb9d169a8",
           "issues": [
             "untranslated_p: 8 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1225,14 +1225,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/subscription.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:30:22.679Z",
+          "lastTranslated": "2026-05-06T08:53:42.751Z",
           "sourceHash": "4695e2b73d62817e",
-          "targetHash": "b49526e525813eb5",
+          "targetHash": "d5979d3df919634a",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1240,28 +1240,28 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/target.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:30:53.901Z",
+          "lastTranslated": "2026-05-06T08:53:48.369Z",
           "sourceHash": "b20fb56bf80ce699",
-          "targetHash": "55d88ef33d8c2723",
+          "targetHash": "54cea1c78bb716af",
           "issues": [
             "untranslated_p: 1 paragraph(s) may be untranslated"
           ],
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/travel-hotels.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:31:55.030Z",
+          "lastTranslated": "2026-05-06T08:54:30.149Z",
           "sourceHash": "2e671135dda7f8f3",
-          "targetHash": "ab994f84e2cd734b",
+          "targetHash": "6c29b0189f8d2661",
           "issues": [
             "untranslated_p: 9 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1269,14 +1269,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/travel.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:32:57.108Z",
+          "lastTranslated": "2026-05-06T08:54:36.381Z",
           "sourceHash": "78ddb491e770ae55",
-          "targetHash": "7e47d572df8faa23",
+          "targetHash": "913c9fd7bde5b3d1",
           "issues": [
             "untranslated_p: 4 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1284,14 +1284,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/uber-lyft.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:34:22.709Z",
+          "lastTranslated": "2026-05-06T08:54:42.489Z",
           "sourceHash": "fadbb4528bf59c48",
-          "targetHash": "089967cbfda5b93b",
+          "targetHash": "6332862e59d08841",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1299,14 +1299,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/utilities.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:35:02.405Z",
+          "lastTranslated": "2026-05-06T08:55:35.312Z",
           "sourceHash": "622247bcc1b2b285",
-          "targetHash": "5a4e779e79ceb535",
+          "targetHash": "24d6598302ad6fc1",
           "issues": [
             "untranslated_p: 5 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1314,14 +1314,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/walmart.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:36:03.064Z",
+          "lastTranslated": "2026-05-06T08:55:41.747Z",
           "sourceHash": "7554e5d98f7f8509",
-          "targetHash": "41b7cabdf08b66c7",
+          "targetHash": "18b65b959d6c1588",
           "issues": [
             "untranslated_p: 4 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1329,14 +1329,14 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         },
         "merchant/warehouse-clubs.html": {
           "stage": "reviewed",
-          "lastTranslated": "2026-05-05T23:37:02.044Z",
+          "lastTranslated": "2026-05-06T08:56:15.574Z",
           "sourceHash": "6144835dc1103760",
-          "targetHash": "dc2378ba75486030",
+          "targetHash": "53571e166453fe59",
           "issues": [
             "untranslated_p: 6 paragraph(s) may be untranslated",
             "FAQ JSON-LD untranslated (client-side OK)"
@@ -1344,7 +1344,7 @@
           "type": "i18n",
           "translatedBy": "build-system",
           "reviewedBy": "sonnet-4.6",
-          "spotCheckedBy": null,
+          "spotCheckedBy": "gpt-5.4",
           "sourceChanged": false
         }
       }
