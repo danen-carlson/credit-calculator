@@ -123,7 +123,7 @@
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <nav class="top-nav">
-      <a href="/" class="nav-link">Home</a>
+      <a href="/" class="nav-link active">Home</a>
       <div class="nav-dropdown">
         <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
           Calculators ▾
@@ -173,123 +173,317 @@
 <!-- /HEADER -->
 
     <main id="main">
-      <!-- Hero Section -->
-      <section class="landing-hero" style="text-align:center; padding:3rem 1rem 2rem; max-width:800px; margin:0 auto;">
-        <h2 style="font-size:2rem; font-weight:800; margin-bottom:0.5rem;">Find the Cheapest Way to Pay</h2>
-        <p style="font-size:1.15rem; color:#4b5563; max-width:600px; margin:0 auto 2rem;">Whether you're buying something new, paying off debt, or choosing a credit card — we'll crunch the numbers so you don't have to.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;">
-          <a href="/compare/" class="btn-primary btn-large" style="text-decoration:none;">Compare Payment Options →</a>
-          <a href="/debt-planner/" class="btn-ghost btn-large" style="text-decoration:none;">Plan Debt Payoff →</a>
-          <a href="/rewards/" class="btn-ghost btn-large" style="text-decoration:none;">Maximize Rewards →</a>
+      <section class="landing-hero">
+        <h1 class="hero-title">Find the Cheapest Way to Pay</h1>
+        <p class="hero-subtitle">Whether you're buying something new, paying off debt, or choosing a credit card — we'll crunch the numbers so you don't have to.</p>
+        <div class="hero-actions">
+          <a href="/compare/" class="btn-primary btn-large">Compare Payment Options →</a>
+          <a href="/debt-planner/" class="btn-ghost btn-large">Plan Debt Payoff →</a>
+          <a href="/rewards/" class="btn-ghost btn-large">Maximize Rewards →</a>
         </div>
       </section>
 
       <!-- Calculator Cards -->
-      <section style="padding:2rem 1rem; max-width:900px; margin:0 auto;">
-        <div class="calc-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.5rem;">
+      <section class="calc-section container-wide">
+        <div class="calc-grid">
 
           <!-- Credit Comparison -->
-          <a href="/compare/" class="calc-card" style="display:block; padding:2rem; background:#fff; border:1px solid #e2e6ed; border-radius:16px; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
-            <div style="font-size:2.5rem; margin-bottom:0.75rem;">💳</div>
-            <h3 style="font-size:1.25rem; font-weight:700; color:#111; margin:0 0 0.5rem;">Credit Comparison</h3>
-            <p style="color:#4b5563; font-size:0.9rem; line-height:1.5; margin:0 0 1rem;">Compare credit cards, BNPL services, and payment plans side by side. Enter a purchase amount and find the cheapest way to pay.</p>
-            <span style="color:#2563eb; font-weight:600; font-size:0.85rem;">Try it now →</span>
+          <a href="/compare/" class="calc-card">
+            <div class="calc-card-icon">💳</div>
+            <h3 class="calc-card-title">Credit Comparison</h3>
+            <p class="calc-card-desc">Compare credit cards, BNPL services, and payment plans side by side. Enter a purchase amount and find the cheapest way to pay.</p>
+            <span class="calc-card-link">Try it now →</span>
           </a>
 
           <!-- Debt Planner -->
-          <a href="/debt-planner/" class="calc-card" style="display:block; padding:2rem; background:#fff; border:1px solid #e2e6ed; border-radius:16px; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
-            <div style="font-size:2.5rem; margin-bottom:0.75rem;">💰</div>
-            <h3 style="font-size:1.25rem; font-weight:700; color:#111; margin:0 0 0.5rem;">Debt Planner</h3>
-            <p style="color:#4b5563; font-size:0.9rem; line-height:1.5; margin:0 0 1rem;">Create a personalized payoff plan. Compare snowball vs avalanche, model balance transfers, and see your debt-free date with a credit score simulator.</p>
-            <span style="color:#2563eb; font-weight:600; font-size:0.85rem;">Try it now →</span>
+          <a href="/debt-planner/" class="calc-card">
+            <div class="calc-card-icon">💰</div>
+            <h3 class="calc-card-title">Debt Planner</h3>
+            <p class="calc-card-desc">Create a personalized payoff plan. Compare snowball vs avalanche, model balance transfers, and see your debt-free date with a credit score simulator.</p>
+            <span class="calc-card-link">Try it now →</span>
           </a>
 
           <!-- Rewards Calculator -->
-          <a href="/rewards/" class="calc-card" style="display:block; padding:2rem; background:#fff; border:1px solid #e2e6ed; border-radius:16px; text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;">
-            <div style="font-size:2.5rem; margin-bottom:0.75rem;">🏆</div>
-            <h3 style="font-size:1.25rem; font-weight:700; color:#111; margin:0 0 0.5rem;">Rewards Calculator</h3>
-            <p style="color:#4b5563; font-size:0.9rem; line-height:1.5; margin:0 0 1rem;">Find the best credit card for your spending habits. Compare cash back, points, and annual fees across 30+ cards. Build your wallet for maximum rewards.</p>
-            <span style="color:#2563eb; font-weight:600; font-size:0.85rem;">Try it now →</span>
+          <a href="/rewards/" class="calc-card">
+            <div class="calc-card-icon">🏆</div>
+            <h3 class="calc-card-title">Rewards Calculator</h3>
+            <p class="calc-card-desc">Find the best credit card for your spending habits. Compare cash back, points, and annual fees across 30+ cards. Build your wallet for maximum rewards.</p>
+            <span class="calc-card-link">Try it now →</span>
           </a>
         </div>
       </section>
 
-      <!-- How It Works -->
-      <section style="padding:2rem 1rem; max-width:800px; margin:0 auto;">
-        <h2 style="text-align:center; font-size:1.5rem; font-weight:700; margin-bottom:1.5rem;">How It Works</h2>
-        <div style="display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center;">
-          <div style="flex:1; min-width:200px; text-align:center; padding:1.25rem;">
-            <div style="font-size:2rem; margin-bottom:0.5rem;">📝</div>
-            <h3 style="font-size:1rem; font-weight:600; margin:0 0 0.25rem;">1. Enter your info</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Purchase amount, credit score, and payoff timeline</p>
+      <section class="how-it-works container-wide">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-grid">
+          <div class="step-item">
+            <div class="step-item-icon">📝</div>
+            <h3 class="step-item-title">1. Enter your info</h3>
+            <p class="step-item-desc">Purchase amount, credit score, and payoff timeline</p>
           </div>
-          <div style="flex:1; min-width:200px; text-align:center; padding:1.25rem;">
-            <div style="font-size:2rem; margin-bottom:0.5rem;">🧮</div>
-            <h3 style="font-size:1rem; font-weight:600; margin:0 0 0.25rem;">2. Compare options</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">We crunch the numbers — APR, fees, rewards, intro offers</p>
+          <div class="step-item">
+            <div class="step-item-icon">🧮</div>
+            <h3 class="step-item-title">2. Compare options</h3>
+            <p class="step-item-desc">We crunch the numbers — APR, fees, rewards, intro offers</p>
           </div>
-          <div style="flex:1; min-width:200px; text-align:center; padding:1.25rem;">
-            <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
-            <h3 style="font-size:1rem; font-weight:600; margin:0 0 0.25rem;">3. Choose & save</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Pick the cheapest option and share or bookmark your results</p>
+          <div class="step-item">
+            <div class="step-item-icon">✅</div>
+            <h3 class="step-item-title">3. Choose & save</h3>
+            <p class="step-item-desc">Pick the cheapest option and share or bookmark your results</p>
           </div>
         </div>
       </section>
 
-      <!-- Popular Questions / Learn Links -->
-      <section style="padding:2rem 1rem 3rem; max-width:800px; margin:0 auto;">
-        <h2 style="text-align:center; font-size:1.5rem; font-weight:700; margin-bottom:1rem;">Popular Questions</h2>
-        <div class="faq-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1rem;">
-          <a href="/learn/pay-off-10k-debt.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
-            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">Fastest way to pay off $10K debt?</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Compare snowball vs avalanche with a pre-filled calculator</p>
+      <section class="faq-section container-wide">
+        <h2 class="section-title">Popular Questions</h2>
+        <div class="faq-grid">
+          <a href="/learn/pay-off-10k-debt.html" class="faq-card">
+            <h3 class="faq-card-title">Fastest way to pay off $10K debt?</h3>
+            <p class="faq-card-desc">Compare snowball vs avalanche with a pre-filled calculator</p>
           </a>
-          <a href="/learn/bnpl-interest-calculator.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
-            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">BNPL interest rate calculator</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">See the true cost of Klarna, Afterpay, and Affirm</p>
+          <a href="/learn/bnpl-interest-calculator.html" class="faq-card">
+            <h3 class="faq-card-title">BNPL interest rate calculator</h3>
+            <p class="faq-card-desc">See the true cost of Klarna, Afterpay, and Affirm</p>
           </a>
-          <a href="/learn/balance-transfer-calculator.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
-            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">0% APR balance transfer calculator</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Calculate how much you save with a balance transfer</p>
+          <a href="/learn/balance-transfer-calculator.html" class="faq-card">
+            <h3 class="faq-card-title">0% APR balance transfer calculator</h3>
+            <p class="faq-card-desc">Calculate how much you save with a balance transfer</p>
           </a>
-          <a href="/learn/crypto-credit-card-rewards.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
-            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">Are crypto credit cards worth it?</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Compare crypto rewards vs cash back with real data</p>
+          <a href="/learn/crypto-credit-card-rewards.html" class="faq-card">
+            <h3 class="faq-card-title">Are crypto credit cards worth it?</h3>
+            <p class="faq-card-desc">Compare crypto rewards vs cash back with real data</p>
           </a>
-          <a href="/learn/snowball-vs-avalanche.html" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
-            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">Snowball vs Avalanche: Which is better?</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Side-by-side comparison with interactive calculator</p>
+          <a href="/learn/snowball-vs-avalanche.html" class="faq-card">
+            <h3 class="faq-card-title">Snowball vs Avalanche: Which is better?</h3>
+            <p class="faq-card-desc">Side-by-side comparison with interactive calculator</p>
           </a>
-          <a href="/merchant/" class="faq-card" style="display:block; padding:1.25rem; background:#f8fafc; border:1px solid #e2e6ed; border-radius:12px; text-decoration:none; transition:box-shadow 0.2s;">
-            <h3 style="font-size:1rem; font-weight:600; color:#111; margin:0 0 0.25rem;">Best credit card for…</h3>
-            <p style="font-size:0.85rem; color:#6b7280; margin:0;">Amazon, groceries, gas, travel — find the best card for your spending</p>
+          <a href="/merchant/" class="faq-card">
+            <h3 class="faq-card-title">Best credit card for…</h3>
+            <p class="faq-card-desc">Amazon, groceries, gas, travel — find the best card for your spending</p>
           </a>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary. <a href="/disclosure.html">Affiliate Disclosure</a> Rates verified: 2026-04-28.</p>
-        <p style="margin-top: 8px; font-size: 0.85rem;">
-          <a href="/compare/">Credit Comparison</a> ·
-          <a href="/debt-planner/">Debt Planner</a> ·
-          <a href="/rewards/">Rewards</a> ·
-          <a href="/learn/">Learn</a> ·
-          <a href="/merchant/">Merchants</a> ·
-          <a href="/blog/">Blog</a>
-        </p>
+      <div class="container-wide">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4 class="footer-heading">Calculators</h4>
+            <ul class="footer-links">
+              <li><a href="/compare/">Credit Comparison</a></li>
+              <li><a href="/debt-planner/">Debt Planner</a></li>
+              <li><a href="/rewards/">Rewards Calculator</a></li>
+              <li><a href="/min-payment/">Minimum Payment</a></li>
+              <li><a href="/loan-vs-bt/">Loan vs Balance Transfer</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">Learn</h4>
+            <ul class="footer-links">
+              <li><a href="/learn/snowball-vs-avalanche.html">Snowball vs Avalanche</a></li>
+              <li><a href="/learn/balance-transfer-calculator.html">Balance Transfer Calculator</a></li>
+              <li><a href="/learn/bnpl-interest-calculator.html">BNPL Interest Calculator</a></li>
+              <li><a href="/learn/pay-off-10k-debt.html">How to Pay Off $10K Debt</a></li>
+              <li><a href="/learn/crypto-credit-card-rewards.html">Crypto Credit Cards</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">Company</h4>
+            <ul class="footer-links">
+              <li><a href="/about/">About</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/disclosure.html">Affiliate Disclosure</a></li>
+              <li><a href="/merchant/">Merchant Directory</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>CreditStud.io is for informational purposes only. Actual rates, terms, and eligibility may vary. Rates verified: 2026-04-28.</p>
+        </div>
       </div>
     </footer>
   </div>
 
   <style>
-    .calc-card:hover, .faq-card:hover {
-      transform: translateY(-2px);
+    /* Hero */
+    .landing-hero {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+    }
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #4b5563;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    .hero-actions .btn-primary,
+    .hero-actions .btn-ghost {
+      text-decoration: none;
+    }
+    /* Calculator cards */
+    .calc-section {
+      padding: 2rem 1rem;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .calc-card {
+      display: block;
+      padding: 2rem;
+      background: #fff;
+      border: 1px solid #e2e6ed;
+      border-radius: 16px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .calc-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .calc-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 0.5rem;
+    }
+    .calc-card-desc {
+      color: #4b5563;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0 0 1rem;
+    }
+    .calc-card-link {
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    /* How it works */
+    .how-it-works {
+      padding: 2rem 1rem;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .steps-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .step-item {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      padding: 1.25rem;
+    }
+    .step-item-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .step-item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+      color: #111;
+    }
+    .step-item-desc {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin: 0;
+    }
+    /* FAQ section */
+    .faq-section {
+      padding: 2rem 1rem 3rem;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .faq-card {
+      display: block;
+      padding: 1.25rem;
+      background: #f8fafc;
+      border: 1px solid #e2e6ed;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .faq-card:hover {
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .faq-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+      margin: 0 0 0.25rem;
+    }
+    .faq-card-desc {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin: 0;
+    }
+    /* Footer grid */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-heading {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-align: center;
     }
     @media (max-width: 600px) {
-      .landing-hero h2 { font-size: 1.5rem; }
+      .landing-hero h1, .hero-title { font-size: 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .calc-card { padding: 1.5rem; }
     }
   </style>
 
