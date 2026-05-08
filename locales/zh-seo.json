@@ -19,7 +19,29 @@
     "twitter_description": "这张信用卡的年费值得吗？计算奖励、账单抵扣与专属权益相对于年费的实际价值。",
     "ld_headline": "年费是否值得计算器",
     "ld_description": "这张信用卡的年费值得吗？计算奖励、账单抵扣与专属权益相对于年费的实际价值。",
-    "ld_breadcrumb_last": "年费是否值得计算器"
+    "ld_breadcrumb_last": "年费是否值得计算器",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/affirm-interest-rates-explained.html": {
     "title": "Affirm 利率详解：您实际需要支付多少 — CreditStud.io",
@@ -30,7 +52,25 @@
     "twitter_description": "全面了解 Affirm 的利率，从 0% 优惠方案到 36% APR。通过我们的详细分析与真实案例，准确掌握实际购买时的支付金额。",
     "ld_headline": "Affirm 利率详解：您实际需要支付多少",
     "ld_description": "全面了解 Affirm 的利率，从 0% 优惠方案到 36% APR。通过我们的详细分析与真实案例，准确掌握实际购买时的支付金额。",
-    "ld_breadcrumb_last": "Affirm 利率详解：您实际需要支付多少"
+    "ld_breadcrumb_last": "Affirm 利率详解：您实际需要支付多少",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/amex-gold-worth-it.html": {
     "title": "Amex Gold 卡值得吗？$325 年费诚实详解 | CreditStud.io",
@@ -41,7 +81,33 @@
     "twitter_description": "Amex Gold 年费为 $325。我们逐一拆解每项账单抵扣、奖励倍率与注意事项——真实计算，不含水分。",
     "ld_headline": "Amex Gold 卡值得吗？$325 年费诚实详解",
     "ld_description": "Amex Gold 年费为 $325。我们逐一拆解每项账单抵扣、奖励倍率与注意事项——真实计算，不含水分。",
-    "ld_breadcrumb_last": "Amex Gold 卡值得吗？$325 年费诚实详解"
+    "ld_breadcrumb_last": "Amex Gold 卡值得吗？$325 年费诚实详解",
+    "faq": [
+      {
+        "name": "Amex Gold Card 值得 $325 的年费吗？",
+        "acceptedAnswer": "这完全取决于你是否使用账单抵扣。如果你用满 $424 的年度账单抵扣（Uber Cash、餐饮、Dunkin'、Resy）并且每月在餐饮或超市消费 $400+，这张卡实际上是在倒贴你。如果你不用账单抵扣或很少外出就餐，那就别申请了——仅为了 4x 餐饮和 4x 超市积分，这个年费太高了。"
+      },
+      {
+        "name": "Amex Gold 的年度账单抵扣价值多少？",
+        "acceptedAnswer": "Gold 提供 $424 的年度账单抵扣：$120 Uber Cash（每月 $10）、$120 餐饮抵扣（每月 $10，适用于 Grubhub、Resy 等）、$84 Dunkin' 抵扣（每月 $7）和 $100 Resy 抵扣（每半年 $50）。这些需要每月主动使用——它们不会自动应用。"
+      },
+      {
+        "name": "在餐饮方面，Amex Gold 比 Chase Sapphire Preferred 更好吗？",
+        "acceptedAnswer": "就纯餐饮奖励而言，Gold（4x）胜过 Preferred（3x）。但 Preferred 每年的年费少 $230，有更好的旅行保险，而且它的 points 可以转移到更好的合作伙伴。如果你经常外出就餐并且经常使用 Uber/Grubhub，Gold 胜出。如果你想要餐饮之外的整体价值，Preferred 是更好的卡。"
+      },
+      {
+        "name": "我可以降级 Amex Gold 以避免年费吗？",
+        "acceptedAnswer": "你可以转卡为 Amex Blue Cash Everyday（无年费，超市/加油/在线购物 3%）或 Amex Green（$150 年费，旅行/餐饮 3x）。两者都不保留 4x 的餐饮返点率，但如果你不使用 Gold 的账单抵扣，这两者都更便宜。"
+      },
+      {
+        "name": "如果我不使用 Amex Gold 的账单抵扣会怎样？",
+        "acceptedAnswer": "如果你不用账单抵扣，你实际上是在为 4x 的餐饮和超市积分支付 $325/年的年费。将其与 Capital One SavorOne（$0 年费，餐饮和超市 3%）或 US Bank Altitude Go（$0 年费，餐饮 4x）进行比较。如果没有账单抵扣，Gold 就不值这个年费。"
+      },
+      {
+        "name": "我该如何最大化利用 Amex Gold 的餐饮账单抵扣？",
+        "acceptedAnswer": "设置每月提醒：使用 $10 Uber Cash 打车或点 Uber Eats，在 Grubhub/Resy 合作伙伴处使用 $10 餐饮抵扣，在 Dunkin' 使用 $7，并每年通过 Resy 预订两次以获得 $50 的抵扣。关键是把账单抵扣当作每月 $35 的订阅，并从中提取价值——如果你不会使用它们，就不要申请这张卡。"
+      }
+    ]
   },
   "blog/best-0-apr-credit-cards.html": {
     "title": "2026 年大额消费最佳 0% APR 信用卡 — CreditStud.io",
@@ -52,7 +118,25 @@
     "twitter_description": "2026 年适合大额消费融资的最佳 0% 入门期 APR 信用卡。比较免息期限、年费与奖励积分，找到最适合您的选择。",
     "ld_headline": "2026 年大额消费最佳 0% APR 信用卡",
     "ld_description": "2026 年适合大额消费融资的最佳 0% 入门期 APR 信用卡。比较免息期限、年费与奖励积分，找到最适合您的选择。",
-    "ld_breadcrumb_last": "2026 年大额消费最佳 0% APR 信用卡"
+    "ld_breadcrumb_last": "2026 年大额消费最佳 0% APR 信用卡",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/best-balance-transfer-credit-cards.html": {
     "title": "2026年最佳余额转移信用卡 | CreditStud.io",
@@ -63,7 +147,33 @@
     "twitter_description": "比较2026年最佳余额转移信用卡。余额转移手续费的真实测算、应避免的陷阱及正确操作方法。",
     "ld_headline": "2026年最佳余额转移信用卡",
     "ld_description": "比较2026年最佳余额转移信用卡。详细测算余额转移手续费的合算时机、常见陷阱，以及正确操作余额转移的分步指南。",
-    "ld_breadcrumb_last": "2026年最佳余额转移信用卡"
+    "ld_breadcrumb_last": "2026年最佳余额转移信用卡",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/best-credit-cards-for-groceries.html": {
     "title": "2026年最佳超市消费信用卡——最大化您的超市奖励 | CreditStud.io",
@@ -74,7 +184,33 @@
     "twitter_description": "比较2026年最佳超市消费信用卡。从6%返现到4倍积分——找到最契合您购物预算的信用卡。",
     "ld_headline": "2026年最佳超市消费信用卡——最大化您的超市奖励",
     "ld_description": "比较2026年最佳超市消费信用卡。从超市6%返现到餐饮食品4倍积分——找到最契合您购物预算的信用卡。",
-    "ld_breadcrumb_last": "2026年最佳超市消费信用卡——最大化您的超市奖励"
+    "ld_breadcrumb_last": "2026年最佳超市消费信用卡——最大化您的超市奖励",
+    "faq": [
+      {
+        "name": "哪张信用卡在买菜时提供最多的返现？",
+        "acceptedAnswer": "Amex Blue Cash Preferred 在美国超市提供 6% 返现（每年最多 $6,000，之后为 1%），使其成为买菜返现最高的信用卡。然而，它有 $95 的年费。对于无年费的选项，Amex Blue Cash Everyday 在美国超市提供 3%（每年最多 $6,000），而 Capital One Savor 在买菜时提供 3%，没有上限。"
+      },
+      {
+        "name": "买菜信用卡值得交年费吗？",
+        "acceptedAnswer": "这取决于你的消费情况。Amex Blue Cash Preferred 的年费为 $95，但在买菜时可获得 6% 的回报。如果你每月买菜花费 $200，你每年将获得 $144——勉强覆盖年费。如果每月花费 $500，你每年将获得 $360，扣除年费后净赚 $265。通常来说，如果你每月买菜花费 $400+，一张 $95 年费的信用卡是值得的。"
+      },
+      {
+        "name": "Walmart 在信用卡奖励中算作超市吗？",
+        "acceptedAnswer": "通常不算。大多数信用卡发卡机构将 Walmart Supercenters 归类为“折扣店”或“超级市场（superstores）”，而不是“超市（supermarkets）”。这意味着使用大多数信用卡在 Walmart 消费无法获得买菜的额外奖励。Target 同样被归类为折扣店。Costco 和 Sam's Club 通常被归类为仓储式会员店，因此也被排除在超市奖励之外。"
+      },
+      {
+        "name": "在奖励方面，supermarket 和 grocery store 有什么区别？",
+        "acceptedAnswer": "对于大多数信用卡来说，“supermarket”和“grocery store”的意思是一样的——主要销售食品的独立商店。主要的例外是像 Walmart、Target 这样的超级市场（superstores）以及像 Costco 这样的仓储式会员店。像 Amex Blue Cash Preferred 这样的信用卡明确标明“美国超市（U.S. supermarkets）”，并将 superstores 和仓储式会员店排除在奖励类别之外。"
+      },
+      {
+        "name": "我可以用 Amex Gold 卡买菜吗？",
+        "acceptedAnswer": "可以，Amex Gold 在美国超市可获得 4 倍 Membership Rewards points（每年最多 $25,000，之后为 1 倍）。按每 point 价值 2¢ 计算，这相当于 8% 的回报——这是目前最高的买菜奖励率。然而，$325 的年费意味着你需要每月在买菜上花费 $500+ 并且使用年度报销额度（Uber、餐饮、Dunkin'、Resy）才划算。"
+      },
+      {
+        "name": "最好的无年费买菜信用卡是哪张？",
+        "acceptedAnswer": "无年费的 Capital One Savor 在买菜时提供 3% 的回报，没有上限。Amex Blue Cash Everyday 在美国超市提供 3%（每年最多 $6,000，之后为 1%）。Citi Custom Cash 每月在你消费最高的类别提供 5%（每月最多 $500）——如果买菜是你消费最高的类别，这是适合中等买菜消费者的最佳无年费选择。"
+      }
+    ]
   },
   "blog/best-credit-cards-for-travel.html": {
     "title": "2026年最佳旅行信用卡——最大化积分、里程 &amp; 特权 | CreditStud.io",
@@ -85,7 +221,29 @@
     "twitter_description": "比较2026年最佳旅行信用卡。从免年费选项到含机场贵宾室权益的高端卡。",
     "ld_headline": "2026年最佳旅行信用卡——最大化积分、里程 &amp; 特权",
     "ld_description": "比较2026年最佳旅行信用卡。从免年费选项到含机场贵宾室权益的高端卡。",
-    "ld_breadcrumb_last": "2026年最佳旅行信用卡——最大化积分、里程 &amp; 特权"
+    "ld_breadcrumb_last": "2026年最佳旅行信用卡——最大化积分、里程 &amp; 特权",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/bnpl-hidden-fees.html": {
     "title": "先买后付的隐藏费用：他们没有告诉你的事——CreditStud.io",
@@ -96,7 +254,21 @@
     "twitter_description": "先买后付服务并非总是免费的。了解Klarna、Afterpay和Affirm收取的隐藏费用——逾期费、服务费及大多数人容易忽视的其他费用。",
     "ld_headline": "先买后付的隐藏费用：他们没有告诉你的事",
     "ld_description": "先买后付服务并非总是免费的。了解Klarna、Afterpay和Affirm收取的隐藏费用——逾期费、服务费及大多数人容易忽视的其他费用。",
-    "ld_breadcrumb_last": "先买后付的隐藏费用：他们没有告诉你的事——CreditStud.io"
+    "ld_breadcrumb_last": "先买后付的隐藏费用：他们没有告诉你的事——CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/bnpl-vs-credit-card.html": {
     "title": "先买后付比信用卡花费更多吗？——CreditStud.io",
@@ -107,7 +279,21 @@
     "twitter_description": "了解先买后付服务与信用卡哪种消费成本更高。真实费用明细、实例分析及各选项的最佳适用场景。",
     "ld_headline": "先买后付比信用卡花费更多吗？",
     "ld_description": "了解先买后付服务与信用卡哪种消费成本更高。真实费用明细、实例分析及各选项的最佳适用场景。",
-    "ld_breadcrumb_last": "先买后付比信用卡花费更多吗？——CreditStud.io"
+    "ld_breadcrumb_last": "先买后付比信用卡花费更多吗？——CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/cheapest-way-to-finance-purchase.html": {
     "title": "2026年为1,000美元消费融资的最聪明方式 — CreditStud.io",
@@ -118,7 +304,25 @@
     "twitter_description": "比较为1,000美元消费融资的每一种方式：先买后付、信用卡、个人贷款等。找到最划算的分期付款方法。",
     "ld_headline": "2026年为1,000美元消费融资的最聪明方式",
     "ld_description": "比较为1,000美元消费融资的每一种方式：先买后付、信用卡、个人贷款等。找到最划算的分期付款方法。",
-    "ld_breadcrumb_last": "为1,000美元消费融资的最聪明方式"
+    "ld_breadcrumb_last": "为1,000美元消费融资的最聪明方式",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/credit-card-benefits-youre-not-using.html": {
     "title": "12个您可能未曾使用的信用卡权益（价值1,000美元以上/年）— CreditStud.io",
@@ -129,7 +333,25 @@
     "twitter_description": "大多数信用卡持卡人将数百甚至数千美元的权益白白浪费。探索那些被忽视的隐藏福利以及如何实际使用它们。",
     "ld_headline": "12个您可能未曾使用的信用卡权益（价值1,000美元以上/年）",
     "ld_description": "大多数信用卡持卡人将数百甚至数千美元的权益白白浪费。探索那些被忽视的隐藏福利——从手机保险到行程延误保障——并了解如何实际使用它们。",
-    "ld_breadcrumb_last": "您可能未曾使用的信用卡权益"
+    "ld_breadcrumb_last": "您可能未曾使用的信用卡权益",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/credit-card-points-offset-interest.html": {
     "title": "信用卡积分真的能抵消利息吗？计算结果会让您大吃一惊 — CreditStud.io",
@@ -140,7 +362,25 @@
     "twitter_description": "信用卡奖励真的能抵消您支付的利息吗？我们对持有余额与赚取返现进行了数据测算。",
     "ld_headline": "信用卡积分真的能抵消利息吗？计算结果会让您大吃一惊",
     "ld_description": "信用卡奖励真的能抵消您支付的利息吗？我们对持有余额与赚取返现进行了数据测算。结果揭示了积分何时真正有用——以及何时不过是一种幻觉。",
-    "ld_breadcrumb_last": "信用卡积分能否抵消利息"
+    "ld_breadcrumb_last": "信用卡积分能否抵消利息",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/does-klarna-affect-credit-score.html": {
     "title": "Klarna会影响您的信用评分吗？真相揭晓 — CreditStud.io",
@@ -151,7 +391,29 @@
     "twitter_description": "了解Klarna究竟如何影响您的信用评分。软查询、硬查询、逾期还款——使用Klarna前您需要了解的一切。",
     "ld_headline": "Klarna会影响您的信用评分吗？真相揭晓",
     "ld_description": "了解Klarna究竟如何影响您的信用评分。软查询、硬查询、逾期还款——使用Klarna前您需要了解的一切。",
-    "ld_breadcrumb_last": "Klarna会影响信用评分吗"
+    "ld_breadcrumb_last": "Klarna会影响信用评分吗",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/how-to-build-credit-from-scratch.html": {
     "title": "如何从零开始建立信用——分步指南（2026年）| CreditStud.io",
@@ -162,7 +424,33 @@
     "twitter_description": "没有信用记录？学习如何通过担保信用卡、授权用户策略和良好习惯从零开始建立信用。",
     "ld_headline": "如何从零开始建立信用——分步指南（2026年）",
     "ld_description": "没有信用记录？本分步指南教您如何通过担保信用卡、授权用户策略和良好习惯从零开始建立信用。包含逐月行动时间表。",
-    "ld_breadcrumb_last": "如何从零开始建立信用"
+    "ld_breadcrumb_last": "如何从零开始建立信用",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/index.html": {
     "title": "博客 — CreditStud.io | 信用卡还款指南与比较",
@@ -184,7 +472,25 @@
     "twitter_description": "并排比较 Klarna、Afterpay 和 Affirm。了解 2026 年各先买后付服务的真实费用、手续费、利率，以及哪一款最省钱。",
     "ld_headline": "Klarna vs Afterpay vs Affirm：真实费用比较（2026）",
     "ld_description": "并排比较 Klarna、Afterpay 和 Affirm。了解 2026 年各先买后付服务的真实费用、手续费、利率，以及哪一款最省钱。",
-    "ld_breadcrumb_last": "Klarna vs Afterpay vs Affirm：真实费用比较（2026）"
+    "ld_breadcrumb_last": "Klarna vs Afterpay vs Affirm：真实费用比较（2026）",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "blog/minimum-payment-trap.html": {
     "title": "最低还款额陷阱：真实代价究竟有多高 | CreditStud.io",
@@ -195,7 +501,29 @@
     "twitter_description": "以 24% APR 偿还 $5,000 余额，只付最低还款额 = 22 年 + 超过 $13,000 利息。了解原因及逃脱方法。",
     "ld_headline": "最低还款额陷阱：真实代价究竟有多高",
     "ld_description": "以 24% APR 偿还 $5,000 余额，只付最低还款额 = 22 年 + 超过 $13,000 利息。了解最低还款额的运作机制、为何设计成陷阱，以及 3 种逃脱策略。",
-    "ld_breadcrumb_last": "最低还款额陷阱：真实代价究竟有多高"
+    "ld_breadcrumb_last": "最低还款额陷阱：真实代价究竟有多高",
+    "faq": [
+      {
+        "name": "仅按最低还款额还款，需要多长时间才能还清信用卡？",
+        "acceptedAnswer": "对于 $5,000 的余额，在 24% APR 和每月 $50 最低还款的情况下，大约需要 22 年才能还清，并产生超过 $13,000 的利息。仅利息一项，您将支付近 3 倍的原始余额。"
+      },
+      {
+        "name": "最低还款是如何计算的？",
+        "acceptedAnswer": "大多数发卡机构使用以下两种方法之一：(1) 余额百分比——通常为您总余额的 1-3%，或 (2) 利息 + 1% 本金——您的月利息加上一小部分实际债务。这两种方法算出的还款额都勉强够支付利息，会让您负债数十年。"
+      },
+      {
+        "name": "如果我只按最低还款额还款会怎样？",
+        "acceptedAnswer": "您将支付 2-3 倍于原始余额的利息，需要数十年才能还清，您的信用额度使用率会保持在高位（损害您的信用分），并且您几乎没有可用于紧急情况的可用信用额度。最低还款是最慢、最昂贵的还债方式。"
+      },
+      {
+        "name": "我应该在最低还款之上多还多少？",
+        "acceptedAnswer": "在您能负担的范围内尽可能多还——即使在最低还款之上多还 $25-50 也会产生巨大的影响。对于 $5,000 的余额和 24% APR，每月还款 $150 而不是 $50，可以节省超过 $11,000 的利息，并将还清时间从 22 年缩短到 2 年以内。"
+      },
+      {
+        "name": "是按最低还款额还款并将剩余的钱存起来更好，还是多还信用卡更好？",
+        "acceptedAnswer": "这取决于您的储蓄利率与信用卡的 APR。如果您的信用卡收取 24% APR，而您的储蓄账户赚取 4%，那么您用于还信用卡而不是存起来的每一美元都能“赚取” 24% 的保证回报。先还清高息债务，然后再建立储蓄。"
+      }
+    ]
   },
   "blog/sneaky-credit-card-pitfalls.html": {
     "title": "7 个暗藏的信用卡陷阱，悄悄让您损失金钱 — CreditStud.io",
@@ -217,7 +545,33 @@
     "twitter_description": "债务雪球法 vs 债务雪崩法——哪种还款更快？真实数学案例与混合策略详解。",
     "ld_headline": "债务雪球法 vs 债务雪崩法：哪种更适合您？",
     "ld_description": "债务雪球法 vs 债务雪崩法——哪种还款更快？真实数学、真实案例，以及兼顾两者优势的混合策略。",
-    "ld_breadcrumb_last": "债务雪球法 vs 债务雪崩法：哪种更适合您？| CreditStud.io"
+    "ld_breadcrumb_last": "债务雪球法 vs 债务雪崩法：哪种更适合您？| CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/amazon-prime-visa-signature/index.html": {
     "title": "Amazon Prime Visa Signature 信用卡评测 — 优缺点与综合评价 | CreditStud.io",
@@ -228,7 +582,33 @@
     "twitter_description": "对 Amazon Prime Visa Signature 信用卡的客观评测。优缺点、真实数据测算，及哪些人不适合申请。批准后获赠 $150 亚马逊礼品卡（适用于 Prime 会员）。",
     "ld_breadcrumb_last": "Amazon Prime Visa Signature 信用卡评测",
     "ld_headline": "Amazon Prime Visa Signature 信用卡评测 — 优缺点与综合评价",
-    "ld_description": "对 Amazon Prime Visa Signature 信用卡的客观评测。优缺点、真实数据测算，及哪些人不适合申请。批准后获赠 $150 亚马逊礼品卡（适用于 Prime 会员）。"
+    "ld_description": "对 Amazon Prime Visa Signature 信用卡的客观评测。优缺点、真实数据测算，及哪些人不适合申请。批准后获赠 $150 亚马逊礼品卡（适用于 Prime 会员）。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/amex-blue-cash-everyday/index.html": {
     "title": "Blue Cash Everyday® Card from American Express 评测 — 优缺点与综合评价 | CreditStud.io",
@@ -239,7 +619,33 @@
     "twitter_description": "对 Blue Cash Everyday® Card from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $2,000 后获得 $200 账单抵扣。",
     "ld_breadcrumb_last": "Blue Cash Everyday® Card from American Express 评测",
     "ld_headline": "Blue Cash Everyday® Card from American Express 评测 — 优缺点与综合评价",
-    "ld_description": "对 Blue Cash Everyday® Card from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $2,000 后获得 $200 账单抵扣。"
+    "ld_description": "对 Blue Cash Everyday® Card from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $2,000 后获得 $200 账单抵扣。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/amex-blue-cash-preferred/index.html": {
     "title": "Blue Cash Preferred® Card from American Express 评测 — 优缺点与综合评价 | CreditStud.io",
@@ -250,7 +656,33 @@
     "twitter_description": "对 Blue Cash Preferred® Card from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $3,000 后获得 $250 账单抵扣。",
     "ld_breadcrumb_last": "Blue Cash Preferred® Card from American Express 评测",
     "ld_headline": "Blue Cash Preferred® Card from American Express 评测 — 优缺点与综合评价",
-    "ld_description": "对 Blue Cash Preferred® Card from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $3,000 后获得 $250 账单抵扣。"
+    "ld_description": "对 Blue Cash Preferred® Card from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $3,000 后获得 $250 账单抵扣。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/amex-gold/index.html": {
     "title": "American Express® Gold Card 评测 — 优缺点与综合评价 | CreditStud.io",
@@ -261,7 +693,33 @@
     "twitter_description": "对 American Express® Gold Card 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $6,000 后获得 60,000 Membership Rewards 积分。",
     "ld_breadcrumb_last": "American Express® Gold Card 评测",
     "ld_headline": "American Express® Gold Card 评测 — 优缺点与综合评价",
-    "ld_description": "对 American Express® Gold Card 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $6,000 后获得 60,000 Membership Rewards 积分。"
+    "ld_description": "对 American Express® Gold Card 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $6,000 后获得 60,000 Membership Rewards 积分。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/amex-platinum/index.html": {
     "title": "The Platinum Card® from American Express 评测 — 优缺点与综合评价 | CreditStud.io",
@@ -272,7 +730,33 @@
     "twitter_description": "对 The Platinum Card® from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $8,000 后获得 80,000 Membership Rewards 积分。",
     "ld_breadcrumb_last": "The Platinum Card® from American Express 评测",
     "ld_headline": "The Platinum Card® from American Express 评测 — 优缺点与综合评价",
-    "ld_description": "对 The Platinum Card® from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $8,000 后获得 80,000 Membership Rewards 积分。"
+    "ld_description": "对 The Platinum Card® from American Express 的客观评测。优缺点、真实数据测算，及哪些人不适合申请。6 个月内消费 $8,000 后获得 80,000 Membership Rewards 积分。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/apple-card/index.html": {
     "title": "Apple Card 评测 — 优缺点与综合评价 | CreditStud.io",
@@ -283,7 +767,33 @@
     "twitter_description": "Apple Card 客观评测。优缺点、真实数据分析，以及哪些人应当跳过。前3个月所有 Apple 消费享3% Daily Cash 返现。",
     "ld_breadcrumb_last": "Apple Card 评测",
     "ld_headline": "Apple Card 评测 — 优缺点与综合评价",
-    "ld_description": "Apple Card 客观评测。优缺点、真实数据分析，以及哪些人应当跳过。前3个月所有 Apple 消费享3% Daily Cash 返现。"
+    "ld_description": "Apple Card 客观评测。优缺点、真实数据分析，以及哪些人应当跳过。前3个月所有 Apple 消费享3% Daily Cash 返现。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/barclays-uber-pro/index.html": {
     "title": "Barclays Uber Pro 信用卡评测 — 优缺点与综合评价 | CreditStud.io",
@@ -294,7 +804,33 @@
     "twitter_description": "Barclays Uber Pro 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。3个月内消费满$500可获$100 Uber Cash。",
     "ld_breadcrumb_last": "Barclays Uber Pro 信用卡评测",
     "ld_headline": "Barclays Uber Pro 信用卡评测 — 优缺点与综合评价",
-    "ld_description": "Barclays Uber Pro 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。3个月内消费满$500可获$100 Uber Cash。"
+    "ld_description": "Barclays Uber Pro 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。3个月内消费满$500可获$100 Uber Cash。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/bilt-mastercard/index.html": {
     "title": "Bilt Mastercard® 评测 — 优缺点与综合评价 | CreditStud.io",
@@ -305,7 +841,33 @@
     "twitter_description": "Bilt Mastercard® 客观评测。优缺点、真实数据分析，以及哪些人应当跳过。前12个月房租支付可享2倍积分（无上限）。",
     "ld_breadcrumb_last": "Bilt Mastercard® 评测",
     "ld_headline": "Bilt Mastercard® 评测 — 优缺点与综合评价",
-    "ld_description": "Bilt Mastercard® 客观评测。优缺点、真实数据分析，以及哪些人应当跳过。前12个月房租支付可享2倍积分（无上限）。"
+    "ld_description": "Bilt Mastercard® 客观评测。优缺点、真实数据分析，以及哪些人应当跳过。前12个月房租支付可享2倍积分（无上限）。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/bofa-customized-cash-rewards/index.html": {
     "title": "Bank of America® Customized Cash Rewards 信用卡评测 — 优缺点与综合评价 | CreditStud.io",
@@ -316,7 +878,33 @@
     "twitter_description": "Bank of America® Customized Cash Rewards 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。90天内消费满$1,000可获$200在线现金返现奖励。",
     "ld_breadcrumb_last": "Bank of America® Customized Cash Rewards 信用卡评测",
     "ld_headline": "Bank of America® Customized Cash Rewards 信用卡评测 — 优缺点与综合评价",
-    "ld_description": "Bank of America® Customized Cash Rewards 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。90天内消费满$1,000可获$200在线现金返现奖励。"
+    "ld_description": "Bank of America® Customized Cash Rewards 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。90天内消费满$1,000可获$200在线现金返现奖励。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/capital-one-quicksilver/index.html": {
     "title": "Capital One Quicksilver Cash Rewards 信用卡评测 — 优缺点与综合评价 | CreditStud.io",
@@ -327,7 +915,33 @@
     "twitter_description": "Capital One Quicksilver Cash Rewards 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。3个月内消费满$500可获$200返现。",
     "ld_breadcrumb_last": "Capital One Quicksilver Cash Rewards 信用卡评测",
     "ld_headline": "Capital One Quicksilver Cash Rewards 信用卡评测 — 优缺点与综合评价",
-    "ld_description": "Capital One Quicksilver Cash Rewards 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。3个月内消费满$500可获$200返现。"
+    "ld_description": "Capital One Quicksilver Cash Rewards 信用卡客观评测。优缺点、真实数据分析，以及哪些人应当跳过。3个月内消费满$500可获$200返现。",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/capital-one-savor/index.html": {
     "title": "Capital One Savor Cash Rewards 信用卡评测——优缺点与综合评价 | CreditStud.io",
@@ -338,7 +952,33 @@
     "twitter_description": "对 Capital One Savor Cash Rewards 信用卡的客观评测。优点、缺点、真实数据及不适合人群。前3个月消费满$500可获$200返现。",
     "ld_headline": "Capital One Savor Cash Rewards 信用卡评测——优缺点与综合评价",
     "ld_description": "对 Capital One Savor Cash Rewards 信用卡的客观评测。优点、缺点、真实数据及不适合人群。前3个月消费满$500可获$200返现。",
-    "ld_breadcrumb_last": "Capital One Savor Cash Rewards 信用卡评测"
+    "ld_breadcrumb_last": "Capital One Savor Cash Rewards 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/capital-one-savorone/index.html": {
     "title": "Capital One SavorOne Cash Rewards 信用卡评测——优缺点与综合评价 | CreditStud.io",
@@ -349,7 +989,33 @@
     "twitter_description": "对 Capital One SavorOne Cash Rewards 信用卡的客观评测。优点、缺点、真实数据及不适合人群。3个月内消费满$500可获$200返现。",
     "ld_headline": "Capital One SavorOne Cash Rewards 信用卡评测——优缺点与综合评价",
     "ld_description": "对 Capital One SavorOne Cash Rewards 信用卡的客观评测。优点、缺点、真实数据及不适合人群。3个月内消费满$500可获$200返现。",
-    "ld_breadcrumb_last": "Capital One SavorOne Cash Rewards 信用卡评测"
+    "ld_breadcrumb_last": "Capital One SavorOne Cash Rewards 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/capital-one-venture-x/index.html": {
     "title": "Capital One Venture X Rewards 信用卡评测——优缺点与综合评价 | CreditStud.io",
@@ -360,7 +1026,33 @@
     "twitter_description": "对 Capital One Venture X Rewards 信用卡的客观评测。优点、缺点、真实数据及不适合人群。3个月内消费满$4,000可获75,000英里奖励。",
     "ld_headline": "Capital One Venture X Rewards 信用卡评测——优缺点与综合评价",
     "ld_description": "对 Capital One Venture X Rewards 信用卡的客观评测。优点、缺点、真实数据及不适合人群。3个月内消费满$4,000可获75,000英里奖励。",
-    "ld_breadcrumb_last": "Capital One Venture X Rewards 信用卡评测"
+    "ld_breadcrumb_last": "Capital One Venture X Rewards 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/chase-freedom-flex/index.html": {
     "title": "Chase Freedom Flex℠ 信用卡评测——优缺点与综合评价 | CreditStud.io",
@@ -371,7 +1063,33 @@
     "twitter_description": "对 Chase Freedom Flex℠ 信用卡的客观评测。优点、缺点、真实数据及不适合人群。3个月内消费满$500可获$200返现，每季度合并消费最高$1,500可享5%返现（需激活）。",
     "ld_headline": "Chase Freedom Flex℠ 信用卡评测——优缺点与综合评价",
     "ld_description": "对 Chase Freedom Flex℠ 信用卡的客观评测。优点、缺点、真实数据及不适合人群。3个月内消费满$500可获$200返现，每季度合并消费最高$1,500可享5%返现（需激活）。",
-    "ld_breadcrumb_last": "Chase Freedom Flex℠ 信用卡评测"
+    "ld_breadcrumb_last": "Chase Freedom Flex℠ 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/chase-ink-business-preferred/index.html": {
     "title": "Chase Ink Business Preferred® 信用卡评测——优缺点与综合评价 | CreditStud.io",
@@ -382,7 +1100,33 @@
     "twitter_description": "对 Chase Ink Business Preferred® 信用卡的客观评测。优点、缺点、真实数据及不适合人群。3个月内消费满$8,000可获100,000积分（旅行兑换价值$1,250）。",
     "ld_headline": "Chase Ink Business Preferred® 信用卡评测——优缺点与综合评价",
     "ld_description": "对 Chase Ink Business Preferred® 信用卡的客观评测。优点、缺点、真实数据及不适合人群。3个月内消费满$8,000可获100,000积分（旅行兑换价值$1,250）。",
-    "ld_breadcrumb_last": "Chase Ink Business Preferred® 信用卡评测"
+    "ld_breadcrumb_last": "Chase Ink Business Preferred® 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/chase-sapphire-preferred/index.html": {
     "title": "Chase Sapphire Preferred® 信用卡测评 — 优缺点及综合评价 | CreditStud.io",
@@ -393,7 +1137,33 @@
     "twitter_description": "Chase Sapphire Preferred® 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。3个月内消费满$4,000，可获60,000积分（价值$750旅行奖励）。",
     "ld_headline": "Chase Sapphire Preferred® 信用卡测评 — 优缺点及综合评价",
     "ld_description": "Chase Sapphire Preferred® 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。3个月内消费满$4,000，可获60,000积分（价值$750旅行奖励）。",
-    "ld_breadcrumb_last": "Chase Sapphire Preferred® 信用卡测评"
+    "ld_breadcrumb_last": "Chase Sapphire Preferred® 信用卡测评",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/chase-sapphire-reserve/index.html": {
     "title": "Chase Sapphire Reserve® 信用卡测评 — 优缺点及综合评价 | CreditStud.io",
@@ -404,7 +1174,33 @@
     "twitter_description": "Chase Sapphire Reserve® 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。3个月内消费满$5,000，可获75,000积分（价值$1,125旅行奖励）。",
     "ld_headline": "Chase Sapphire Reserve® 信用卡测评 — 优缺点及综合评价",
     "ld_description": "Chase Sapphire Reserve® 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。3个月内消费满$5,000，可获75,000积分（价值$1,125旅行奖励）。",
-    "ld_breadcrumb_last": "Chase Sapphire Reserve® 信用卡测评"
+    "ld_breadcrumb_last": "Chase Sapphire Reserve® 信用卡测评",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/citi-custom-cash/index.html": {
     "title": "Citi Custom Cash® 信用卡测评 — 优缺点及综合评价 | CreditStud.io",
@@ -415,7 +1211,33 @@
     "twitter_description": "Citi Custom Cash® 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。6个月内消费满$1,500，可获$200返现。",
     "ld_headline": "Citi Custom Cash® 信用卡测评 — 优缺点及综合评价",
     "ld_description": "Citi Custom Cash® 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。6个月内消费满$1,500，可获$200返现。",
-    "ld_breadcrumb_last": "Citi Custom Cash® 信用卡测评"
+    "ld_breadcrumb_last": "Citi Custom Cash® 信用卡测评",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/citi-double-cash/index.html": {
     "title": "Citi® Double Cash 信用卡测评 — 优缺点及综合评价 | CreditStud.io",
@@ -426,7 +1248,33 @@
     "twitter_description": "Citi® Double Cash 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。无开卡奖励——从第一天起所有消费均可获得2%返现。",
     "ld_headline": "Citi® Double Cash 信用卡测评 — 优缺点及综合评价",
     "ld_description": "Citi® Double Cash 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。无开卡奖励——从第一天起所有消费均可获得2%返现。",
-    "ld_breadcrumb_last": "Citi® Double Cash 信用卡测评"
+    "ld_breadcrumb_last": "Citi® Double Cash 信用卡测评",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/citi-premier/index.html": {
     "title": "Citi Premier® 信用卡测评 — 优缺点及综合评价 | CreditStud.io",
@@ -437,7 +1285,33 @@
     "twitter_description": "Citi Premier® 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。3个月内消费满$4,000，可获60,000 ThankYou® Points（价值$600旅行奖励）。",
     "ld_headline": "Citi Premier® 信用卡测评 — 优缺点及综合评价",
     "ld_description": "Citi Premier® 信用卡客观测评：优缺点、实际收益计算及不适合人群分析。3个月内消费满$4,000，可获60,000 ThankYou® Points（价值$600旅行奖励）。",
-    "ld_breadcrumb_last": "Citi Premier® 信用卡测评"
+    "ld_breadcrumb_last": "Citi Premier® 信用卡测评",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/citi-strata-premier/index.html": {
     "title": "Citi Strata Premier℠ 信用卡评测 — 优缺点与综合评价 | CreditStud.io",
@@ -448,7 +1322,33 @@
     "twitter_description": "Citi Strata Premier℠ 信用卡客观评测：优缺点、实际数据分析及不适合申请人群。3个月内消费$4,000可获60,000 ThankYou积分（可兑换约$600旅行价值）。",
     "ld_headline": "Citi Strata Premier℠ 信用卡评测 — 优缺点与综合评价",
     "ld_description": "Citi Strata Premier℠ 信用卡客观评测：优缺点、实际数据分析及不适合申请人群。3个月内消费$4,000可获60,000 ThankYou积分（可兑换约$600旅行价值）。",
-    "ld_breadcrumb_last": "Citi Strata Premier℠ 信用卡评测"
+    "ld_breadcrumb_last": "Citi Strata Premier℠ 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/discover-it-cash-back/index.html": {
     "title": "Discover it® Cash Back 评测 — 优缺点与综合评价 | CreditStud.io",
@@ -459,7 +1359,33 @@
     "twitter_description": "Discover it® Cash Back 客观评测：优缺点、实际数据分析及不适合申请人群。Cashback Match — Discover将您第一年获得的所有返现进行等额匹配（无上限）。",
     "ld_headline": "Discover it® Cash Back 评测 — 优缺点与综合评价",
     "ld_description": "Discover it® Cash Back 客观评测：优缺点、实际数据分析及不适合申请人群。Cashback Match — Discover将您第一年获得的所有返现进行等额匹配（无上限）。",
-    "ld_breadcrumb_last": "Discover it® Cash Back 评测"
+    "ld_breadcrumb_last": "Discover it® Cash Back 评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/ihg-one-rewards-premier/index.html": {
     "title": "IHG One Rewards® Premier 信用卡评测 — 优缺点与综合评价 | CreditStud.io",
@@ -470,7 +1396,33 @@
     "twitter_description": "IHG One Rewards® Premier 信用卡客观评测：优缺点、实际数据分析及不适合申请人群。3个月内消费$3,000可获175,000 IHG积分（可兑换约$875酒店住宿价值）。",
     "ld_headline": "IHG One Rewards® Premier 信用卡评测 — 优缺点与综合评价",
     "ld_description": "IHG One Rewards® Premier 信用卡客观评测：优缺点、实际数据分析及不适合申请人群。3个月内消费$3,000可获175,000 IHG积分（可兑换约$875酒店住宿价值）。",
-    "ld_breadcrumb_last": "IHG One Rewards® Premier 信用卡评测"
+    "ld_breadcrumb_last": "IHG One Rewards® Premier 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/index.html": {
     "title": "信用卡评测 — 客观公正的综合评价 | CreditStud.io",
@@ -492,7 +1444,33 @@
     "twitter_description": "Southwest Rapid Rewards® Priority 信用卡客观评测：优缺点、实际数据分析及不适合申请人群。3个月内消费$2,000可获60,000积分（可兑换约$900 Southwest旅行价值）。",
     "ld_headline": "Southwest Rapid Rewards® Priority 信用卡评测 — 优缺点与综合评价",
     "ld_description": "Southwest Rapid Rewards® Priority 信用卡客观评测：优缺点、实际数据分析及不适合申请人群。3个月内消费$2,000可获60,000积分（可兑换约$900 Southwest旅行价值）。",
-    "ld_breadcrumb_last": "Southwest Rapid Rewards® Priority 信用卡评测"
+    "ld_breadcrumb_last": "Southwest Rapid Rewards® Priority 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/us-bank-altitude-go/index.html": {
     "title": "US Bank Altitude® Go Visa Signature 信用卡评测 — 优缺点与总结 | CreditStud.io",
@@ -503,7 +1481,33 @@
     "twitter_description": "US Bank Altitude® Go Visa Signature 信用卡诚实评测。优缺点、真实数据测算及不适合人群说明。在90天内消费$1,000可获20,000奖励积分（价值约$200）。",
     "ld_headline": "US Bank Altitude® Go Visa Signature 信用卡评测 — 优缺点与总结",
     "ld_description": "US Bank Altitude® Go Visa Signature 信用卡诚实评测。优缺点、真实数据测算及不适合人群说明。在90天内消费$1,000可获20,000奖励积分（价值约$200）。",
-    "ld_breadcrumb_last": "US Bank Altitude® Go Visa Signature 信用卡评测"
+    "ld_breadcrumb_last": "US Bank Altitude® Go Visa Signature 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/us-bank-cash-plus/index.html": {
     "title": "U.S. Bank Cash+® Visa Signature® 信用卡评测 — 优缺点与总结 | CreditStud.io",
@@ -514,7 +1518,33 @@
     "twitter_description": "U.S. Bank Cash+® Visa Signature® 信用卡诚实评测。优缺点、真实数据测算及不适合人群说明。在90天内消费$1,000可获$200返现。",
     "ld_headline": "U.S. Bank Cash+® Visa Signature® 信用卡评测 — 优缺点与总结",
     "ld_description": "U.S. Bank Cash+® Visa Signature® 信用卡诚实评测。优缺点、真实数据测算及不适合人群说明。在90天内消费$1,000可获$200返现。",
-    "ld_breadcrumb_last": "U.S. Bank Cash+® Visa Signature® 信用卡评测"
+    "ld_breadcrumb_last": "U.S. Bank Cash+® Visa Signature® 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/wells-fargo-active-cash/index.html": {
     "title": "Wells Fargo Active Cash® 信用卡评测 — 优缺点与总结 | CreditStud.io",
@@ -525,7 +1555,33 @@
     "twitter_description": "Wells Fargo Active Cash® 信用卡诚实评测。优缺点、真实数据测算及不适合人群说明。在3个月内消费$1,000可获$200现金奖励。",
     "ld_headline": "Wells Fargo Active Cash® 信用卡评测 — 优缺点与总结",
     "ld_description": "Wells Fargo Active Cash® 信用卡诚实评测。优缺点、真实数据测算及不适合人群说明。在3个月内消费$1,000可获$200现金奖励。",
-    "ld_breadcrumb_last": "Wells Fargo Active Cash® 信用卡评测"
+    "ld_breadcrumb_last": "Wells Fargo Active Cash® 信用卡评测",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "cards/wells-fargo-autograph/index.html": {
     "title": "Wells Fargo Autograph℠ 信用卡评测 — 优缺点与总结 | CreditStud.io",
@@ -536,7 +1592,33 @@
     "twitter_description": "Wells Fargo Autograph℠ 信用卡诚实评测。优缺点、真实数据测算及不适合人群说明。在3个月内消费$1,000可获20,000积分（旅行价值约$330）。",
     "ld_headline": "Wells Fargo Autograph℠ 信用卡评测 — 优缺点与总结",
     "ld_description": "Wells Fargo Autograph℠ 信用卡诚实评测。优缺点、真实数据测算及不适合人群说明。在3个月内消费$1,000可获20,000积分（旅行价值约$330）。",
-    "ld_breadcrumb_last": "Wells Fargo Autograph℠ 信用卡评测"
+    "ld_breadcrumb_last": "Wells Fargo Autograph℠ 信用卡评测",
+    "faq": [
+      {
+        "name": "Wells Fargo Autograph 值得申请吗？",
+        "acceptedAnswer": "值得——如果你在餐饮、加油、交通、流媒体或电话套餐上有消费。无年费且在5个类别提供 3x 返点，是目前最好的无年费配置之一。对于一张 $0 年费的信用卡来说，开卡奖励（价值 $330）非常不错。"
+      },
+      {
+        "name": "Wells Fargo points 价值多少？",
+        "acceptedAnswer": "当通过他们的门户网站兑换旅行时，Wells Fargo Go Far Rewards points 价值约 1.65¢，或者兑换 cash back 价值 1¢。拥有11个转点伙伴，你在航空转点上可能获得每 point 1.5–2¢+ 的价值，尽管伙伴列表不如 Chase 或 Amex 丰富。"
+      },
+      {
+        "name": "Autograph 与 Chase Freedom Flex 相比如何？",
+        "acceptedAnswer": "Autograph 在5个类别提供稳定的 3x 返点，无需激活。Chase Freedom Flex 在轮换类别提供 5%（每季度最高 $1,500），如果你关注日历会更划算，外加餐饮和药店 3%。Autograph 适合一劳永逸；Chase Freedom Flex 适合喜欢优化收益的人。"
+      },
+      {
+        "name": "Autograph 会将加油和交通分开计算吗？",
+        "acceptedAnswer": "不会——加油站和交通（网约车、公交、火车、停车、过路费）合并为一个“加油和交通”类别。这意味着你的 Uber 乘车和加油都能获得 3x 返点。"
+      },
+      {
+        "name": "手机保护福利好吗？",
+        "acceptedAnswer": "它涵盖损坏和盗窃，每次索赔最高 $600（每年最高 $1,200，$25 免赔额）。你需要用该卡支付每月的电话账单才能符合资格。如果你目前通过运营商支付手机保险，仅此一项每月就能为你节省 $10-15。"
+      },
+      {
+        "name": "我以后可以降级或升级吗？",
+        "acceptedAnswer": "你可以转卡为其他 Wells Fargo 信用卡（例如提供固定 2% 的 Active Cash）。升级/降级没有惩罚，但 Autograph 是他们提供的最好的无年费卡之一。"
+      }
+    ]
   },
   "compare/index.html": {
     "title": "信用比较计算器 | CreditStud.io",
@@ -547,7 +1629,33 @@
     "twitter_description": "并排比较信用卡、先买后付服务及还款方案，找到最经济实惠的消费融资方式。",
     "ld_headline": "信用比较计算器",
     "ld_description": "并排比较信用卡、先买后付服务及还款方案，找到最经济实惠的消费融资方式。",
-    "ld_breadcrumb_last": "信用比较计算器"
+    "ld_breadcrumb_last": "信用比较计算器",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "debt-planner/index.html": {
     "title": "债务还清规划器 — 债务雪球法 vs 债务雪崩法计算器 | CreditStud.io",
@@ -558,7 +1666,29 @@
     "twitter_description": "免费债务还清规划器。比较债务雪球法与债务雪崩法策略，查看无债日期，并可视化您通往零债务的路径。",
     "ld_headline": "债务还清规划器 — 债务雪球法 vs 债务雪崩法计算器",
     "ld_description": "免费债务还清规划器。比较债务雪球法与债务雪崩法策略，查看无债日期，并可视化您通往零债务的路径。",
-    "ld_breadcrumb_last": "债务还清规划器"
+    "ld_breadcrumb_last": "债务还清规划器",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "disclosure.html": {
     "title": "联盟合作披露 | CreditStud.io",
@@ -580,7 +1710,25 @@
     "twitter_description": "比较信用卡、规划债务还清，并找到最优奖励方案。免费计算器为您自动完成所有计算。",
     "ld_headline": "CreditStud.io — 免费信用卡与债务计算器",
     "ld_description": "比较信用卡、规划债务还清，并找到最优奖励方案。免费计算器为您自动完成所有计算。",
-    "ld_breadcrumb_last": "CreditStud.io"
+    "ld_breadcrumb_last": "CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "learn/balance-transfer-calculator.html": {
     "title": "0% APR 余额转移计算器 — 您是否应该转移余额？— CreditStud.io",
@@ -591,7 +1739,37 @@
     "twitter_description": "计算将高息债务转移至 0% APR 卡片所能节省的金额。",
     "ld_headline": "0% APR 余额转移计算器 — 您是否应该转移余额？",
     "ld_description": "计算将高息债务转移至 0% APR 卡片所能节省的金额。综合考量转移手续费、优惠期及优惠期后利率。",
-    "ld_breadcrumb_last": "0% APR 余额转移计算器"
+    "ld_breadcrumb_last": "0% APR 余额转移计算器",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "learn/bnpl-interest-calculator.html": {
     "title": "BNPL 利率计算器 — 比较 Afterpay、Klarna、Affirm 与 Zip — CreditStud.io",
@@ -602,7 +1780,37 @@
     "twitter_description": "了解先买后付服务的真实成本。比较 Afterpay、Klarna、Affirm 和 Zip 的利率、逾期费用及总费用。",
     "ld_headline": "BNPL 利率计算器 — 比较 Afterpay、Klarna、Affirm 与 Zip",
     "ld_description": "了解先买后付服务的真实成本。比较 Afterpay、Klarna、Affirm 和 Zip 的利率、逾期费用及总费用。",
-    "ld_breadcrumb_last": "BNPL 利率计算器"
+    "ld_breadcrumb_last": "BNPL 利率计算器",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "learn/crypto-credit-card-rewards.html": {
     "title": "加密货币信用卡奖励值得吗？— CreditStud.io",
@@ -613,7 +1821,37 @@
     "twitter_description": "将加密货币奖励与传统返现进行比较。了解波动性风险、税务影响以及消费赚取加密货币的实际价值。",
     "ld_headline": "加密货币信用卡奖励值得吗？",
     "ld_description": "将加密货币奖励与传统返现进行比较。了解波动性风险、税务影响以及消费赚取加密货币的实际价值。",
-    "ld_breadcrumb_last": "加密货币信用卡奖励值得吗？— CreditStud.io"
+    "ld_breadcrumb_last": "加密货币信用卡奖励值得吗？— CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "learn/index.html": {
     "title": "金融教育中心 | CreditStud.io",
@@ -635,7 +1873,37 @@
     "twitter_description": "比较债务雪崩法、债务雪球法、余额转移和债务整合——附真实数据与互动还款计算器。",
     "ld_headline": "还清一万美元信用卡债务的最快方法",
     "ld_description": "比较债务雪崩法、债务雪球法、余额转移和债务整合——附真实数据与互动还款计算器。",
-    "ld_breadcrumb_last": "还清一万美元信用卡债务的最快方法"
+    "ld_breadcrumb_last": "还清一万美元信用卡债务的最快方法",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "learn/snowball-vs-avalanche.html": {
     "title": "债务雪球法 vs 雪崩法：哪种更好？— CreditStud.io",
@@ -646,7 +1914,37 @@
     "twitter_description": "债务雪球法与雪崩法还款方式的逐项对比。了解哪种更省钱，以及哪种更契合您的个人风格。",
     "ld_headline": "债务雪球法 vs 雪崩法：哪种更好？",
     "ld_description": "债务雪球法与雪崩法还款方式的逐项对比。了解哪种更省钱，以及哪种更契合您的个人风格。",
-    "ld_breadcrumb_last": "债务雪球法 vs 雪崩法：哪种更好？— CreditStud.io"
+    "ld_breadcrumb_last": "债务雪球法 vs 雪崩法：哪种更好？— CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "loan-vs-bt/index.html": {
     "title": "个人贷款 vs 余额转移——哪种更省钱？| CreditStud.io",
@@ -657,7 +1955,29 @@
     "twitter_description": "您应该申请个人贷款还是余额转移信用卡？比较总费用，找出更划算的选择。",
     "ld_headline": "个人贷款 vs 余额转移——哪种更省钱？| CreditStud.io",
     "ld_description": "您应该申请个人贷款还是余额转移信用卡？比较总费用、每月还款额和还款期限。",
-    "ld_breadcrumb_last": "个人贷款 vs 余额转移——哪种更省钱？| CreditStud.io"
+    "ld_breadcrumb_last": "个人贷款 vs 余额转移——哪种更省钱？| CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "merchant/amazon.html": {
     "title": "Amazon购物最佳信用卡 | CreditStud.io",
@@ -668,7 +1988,29 @@
     "twitter_description": "发现最适合Amazon购物的顶级信用卡，享受网购额外奖励积分。",
     "ld_headline": "Amazon购物最佳信用卡",
     "ld_description": "找到Amazon购物的最佳信用卡。比较网购、Prime Day优惠及日常Amazon消费的奖励积分比率，最大化您Amazon购物车的返现与积分。",
-    "ld_breadcrumb_last": "Amazon购物最佳信用卡"
+    "ld_breadcrumb_last": "Amazon购物最佳信用卡",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "merchant/costco.html": {
     "title": "Costco最佳信用卡 | CreditStud.io",
@@ -679,7 +2021,25 @@
     "twitter_description": "Costco购物（含加油站及食品杂货）的顶级信用卡推荐。",
     "ld_headline": "Costco最佳信用卡",
     "ld_description": "Costco购物、加油及批量采购的最佳信用卡。利用固定比率返现卡最大化仓储会员超市的奖励积分。",
-    "ld_breadcrumb_last": "Costco最佳信用卡"
+    "ld_breadcrumb_last": "Costco最佳信用卡",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "merchant/dining.html": {
     "title": "餐饮最佳信用卡（2026年）| CreditStud.io",
@@ -690,7 +2050,29 @@
     "twitter_description": "利用最佳餐饮信用卡，最大化餐厅、外卖及食品配送的奖励积分。",
     "ld_headline": "餐饮最佳信用卡（2026年）",
     "ld_description": "找到餐厅、外卖及食品配送的最佳信用卡。比较外出就餐的餐饮奖励积分比率。",
-    "ld_breadcrumb_last": "餐饮最佳信用卡（2026年）| CreditStud.io"
+    "ld_breadcrumb_last": "餐饮最佳信用卡（2026年）| CreditStud.io",
+    "faq": [
+      {
+        "name": "哪张信用卡在餐厅消费提供最多的 cash back？",
+        "acceptedAnswer": "Capital One Savor 提供 4% 的餐饮 cash back，年费为 $95。US Bank Altitude Go 提供 4x 餐饮 points，无年费。对于无年费的 cash back，Capital One SavorOne 提供 3% 的餐饮 cash back。"
+      },
+      {
+        "name": "外卖送餐应用算作餐饮消费吗？",
+        "acceptedAnswer": "对于大多数信用卡，大多数外卖送餐应用（DoorDash、Uber Eats、Grubhub）都算作餐饮。然而，一些通过平台聚合器结算的餐厅可能会有不同的代码。请检查您的账单以确认。"
+      },
+      {
+        "name": "Amex Gold 和 Savor 哪个更适合餐饮消费？",
+        "acceptedAnswer": "Amex Gold 提供 4x 餐饮 points（年费 $325），而 Capital One Savor 提供 4% 餐饮 cash back（年费 $95）。如果纯粹为了 cash back，Savor 胜出。如果为了通过转点伙伴获取旅游奖励，Gold 的 4x points 在与航空公司伙伴兑换时价值可达 6%+。"
+      },
+      {
+        "name": "星巴克在信用卡上算作餐饮消费吗？",
+        "acceptedAnswer": "是的，星巴克通常被归类为餐厅或咖啡店（MCC 5811 或 5814），在大多数信用卡中属于餐饮类别。使用餐饮信用卡在星巴克消费，您将获得额外的奖励。"
+      },
+      {
+        "name": "哪张是最好的无年费餐饮信用卡？",
+        "acceptedAnswer": "US Bank Altitude Go 提供 4x 餐饮 points，无年费。Capital One SavorOne 提供 3% 的餐饮奖励，外加 8% 的 Capital One Entertainment 奖励。两者都是非常好的无年费餐饮奖励选择。"
+      }
+    ]
   },
   "merchant/ev-charging.html": {
     "title": "电动车充电最佳信用卡（2026年）| CreditStud.io",
@@ -701,7 +2083,29 @@
     "twitter_description": "利用最佳信用卡，最大化Tesla Supercharger、ChargePoint及电动车充电的奖励积分。",
     "ld_headline": "电动车充电最佳信用卡（2026年）",
     "ld_description": "找到电动车充电的最佳信用卡——Tesla Supercharger、ChargePoint、EVgo等。比较电动车车主的奖励积分。",
-    "ld_breadcrumb_last": "电动车充电最佳信用卡（2026年）| CreditStud.io"
+    "ld_breadcrumb_last": "电动车充电最佳信用卡（2026年）| CreditStud.io",
+    "faq": [
+      {
+        "name": "信用卡在EV充电上有额外奖励吗？",
+        "acceptedAnswer": "越来越多的信用卡将EV充电作为额外奖励类别。Citi Strata Premier在EV充电上提供3x，US Bank Cash+允许您将其选为5%类别，Wells Fargo Autograph在加油和交通（可能包括一些充电站）上提供3x。"
+      },
+      {
+        "name": "Tesla Supercharger在信用卡上算作EV充电吗？",
+        "acceptedAnswer": "是的，根据支付处理商的不同，Tesla Supercharger通常被标记为EV充电（MCC 5552）或加油站。具有加油或EV充电奖励的信用卡通常涵盖Supercharger的消费。Tesla的应用程序内充电可能会有不同的代码。"
+      },
+      {
+        "name": "EV车主在充电上花费多少？",
+        "acceptedAnswer": "普通EV车主每月在公共充电上花费$30-80，在家庭充电上花费$50-100（按$0.15/kWh计算）。家庭充电按电费（而不是EV充电）计费，因此只有公共/直流快充才能获得额外奖励。对于典型驾驶员，每年的公共充电成本在$400-1,000之间。"
+      },
+      {
+        "name": "EV充电比加油便宜吗？",
+        "acceptedAnswer": "是的，便宜很多。驾驶EV的电费约为$0.04-0.06/mile，而汽油费为$0.10-0.15/mile。即使在公共直流快充站（$0.30-0.50/kWh），每英里行驶的EV充电成本通常也比汽油便宜40-60%。"
+      },
+      {
+        "name": "哪张是用于EV充电的最佳无年费信用卡？",
+        "acceptedAnswer": "US Bank Cash+（无年费）允许您将EV充电选为5%类别。Wells Fargo Autograph（无年费）在加油和交通上提供3x。对于同时在家充电的EV车主来说，像Citi Double Cash这样提供统一2%的信用卡最适合支付家庭电费账单。"
+      }
+    ]
   },
   "merchant/fitness.html": {
     "title": "健身房与健身最佳信用卡（2026年）| CreditStud.io",
@@ -712,7 +2116,29 @@
     "twitter_description": "利用最佳健身信用卡，最大化健身房会员、健身App、Peloton及私教课程的奖励积分。",
     "ld_headline": "健身房与健身最佳信用卡（2026年）",
     "ld_description": "找到健身房会员、健身App、Peloton及运动订阅的最佳信用卡。比较健身消费的奖励积分比率。",
-    "ld_breadcrumb_last": "健身房与健身最佳信用卡（2026年）| CreditStud.io"
+    "ld_breadcrumb_last": "健身房与健身最佳信用卡（2026年）| CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "merchant/gas-stations.html": {
     "title": "加油站最佳信用卡 | CreditStud.io",
@@ -723,7 +2149,29 @@
     "twitter_description": "用最佳信用卡最大化燃油消费奖励积分。",
     "ld_headline": "加油站最佳信用卡",
     "ld_description": "用最佳信用卡最大化燃油消费奖励积分。",
-    "ld_breadcrumb_last": "加油站最佳信用卡"
+    "ld_breadcrumb_last": "加油站最佳信用卡",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "merchant/groceries.html": {
     "title": "超市购物最佳信用卡（Whole Foods、Trader Joe's）| CreditStud.io",
@@ -734,7 +2182,29 @@
     "twitter_description": "用最佳信用卡最大化在 Whole Foods 和 Trader Joe's 的超市购物奖励积分。",
     "ld_headline": "超市购物最佳信用卡（Whole Foods、Trader Joe's）| CreditStud.io",
     "ld_description": "用最佳信用卡最大化在 Whole Foods 和 Trader Joe's 的超市购物奖励积分。",
-    "ld_breadcrumb_last": "超市购物最佳信用卡（Whole Foods、Trader Joe's）| CreditStud.io"
+    "ld_breadcrumb_last": "超市购物最佳信用卡（Whole Foods、Trader Joe's）| CreditStud.io",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "merchant/home-improvement.html": {
     "title": "Home Depot & Lowe's 最佳信用卡 | CreditStud.io",
@@ -745,7 +2215,29 @@
     "twitter_description": "最大化在 Home Depot 和 Lowe's 家装消费的返现奖励。",
     "ld_headline": "Home Depot & Lowe's 最佳信用卡",
     "ld_description": "最大化在 Home Depot 和 Lowe's 家装消费的返现奖励。",
-    "ld_breadcrumb_last": "Home Depot & Lowe's 最佳信用卡"
+    "ld_breadcrumb_last": "Home Depot & Lowe's 最佳信用卡",
+    "faq": [
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      },
+      {
+        "name": "",
+        "acceptedAnswer": ""
+      }
+    ]
   },
   "merchant/index.html": {
     "title": "热门商家最佳信用卡 | CreditStud.io",
@@ -767,7 +2259,25 @@
     "twitter_description": "最大化汽车、房屋、健康及人寿保险保费的奖励积分。",
     "ld_headline": "保险缴费最佳信用卡（2026年）| CreditStud.io",
     "ld_description": "选择合适的信用卡，最大化汽车、房屋、健康及人寿保险保费的奖励积分。",
-    "ld_breadcrumb_last": "保险缴费最佳信用卡（2026年）| CreditStud.io"
+    "ld_breadcrumb_last": "保险缴费最佳信用卡（2026年）| CreditStud.io",
+    "faq": [
+      {
+        "name": "可以用信用卡支付保险费吗？",
+        "acceptedAnswer": "大多数汽车和房屋保险公司接受信用卡付款。通过ACA市场购买的健康保险接受信用卡。许多人寿保险公司也接受信用卡支付保费，尽管有些仅限首次付款。请务必与您的保险公司确认。"
+      },
+      {
+        "name": "哪张信用卡最适合支付保险费？",
+        "acceptedAnswer": "Citi Double Cash（所有消费2%）是支付保险费的最佳固定比例信用卡，因为大多数保险公司不属于奖励类别。Chase Ink Business Preferred在电话/互联网/有线电视服务上提供3x，如果捆绑在一起，可能包含部分保险付款。"
+      },
+      {
+        "name": "保险公司会对信用卡付款收取费用吗？",
+        "acceptedAnswer": "有些会。汽车保险公司很少收费，但人寿和健康保险公司有时会增加2-3%的便利费。如果有手续费，通常会抵消所赚取的任何奖励。付款前请务必确认。"
+      },
+      {
+        "name": "用信用卡支付保险费值得吗？",
+        "acceptedAnswer": "值得，前提是没有便利费。平均每个家庭每年在保险上花费$8,000+——2%返现相当于每年$160+的免费资金。使用固定比例信用卡设置自动付款，然后就不用操心了。"
+      }
+    ]
   },
   "merchant/online-shopping.html": {
     "title": "2026年最佳网购信用卡（Amazon、Target等）| CreditStud.io",
@@ -778,7 +2288,29 @@
     "twitter_description": "最大化网购奖励——比较Amazon、Target及各大电商平台的最佳信用卡。",
     "ld_headline": "2026年最佳网购信用卡（Amazon、Target等）| CreditStud.io",
     "ld_description": "最大化网购奖励——比较Amazon、Target及各大电商平台的最佳信用卡。",
-    "ld_breadcrumb_last": "2026年最佳网购信用卡（Amazon、Target等）| CreditStud.io"
+    "ld_breadcrumb_last": "2026年最佳网购信用卡（Amazon、Target等）| CreditStud.io",
+    "faq": [
+      {
+        "name": "在Amazon购物最好的信用卡是哪张？",
+        "acceptedAnswer": "Amazon Prime Visa Signature Card在Amazon和Whole Foods提供5% cash back（需Prime会员）。对于非Prime会员，Amazon Visa提供3%。两者都没有年费和外币交易费。另外，Chase Freedom Flex在第四季度的轮换类别中在Amazon提供5%。"
+      },
+      {
+        "name": "网上购物在普通信用卡上能获得额外奖励吗？",
+        "acceptedAnswer": "一些信用卡提供网购奖励。Amex Blue Cash Everyday在美国在线零售购物提供3%（每年最高$6K）。Chase Freedom Flex经常将网购包含在其5%的季度类别中。否则，大多数普通消费获得1–2%。"
+      },
+      {
+        "name": "Target算作网购奖励类别吗？",
+        "acceptedAnswer": "对于大多数信用卡，Target.com的消费被归类为在线零售。Target Circle Card在Target实体店和网购均提供5%。对于非Target信用卡，Target网购订单将获得该卡的网购比率（如果适用）或普通的1–2%。"
+      },
+      {
+        "name": "哪张是网购最好的固定比率信用卡？",
+        "acceptedAnswer": "Citi Double Cash在所有消费上提供固定的2%，无需追踪类别。Capital One SavorOne在普通网购提供1%，但在餐饮和超市提供3%。为了获得最大的固定比率价值，可以将2%的信用卡与特定网站的5%信用卡搭配使用。"
+      },
+      {
+        "name": "我应该为每个网店使用不同的信用卡吗？",
+        "acceptedAnswer": "如果你主要在一家商店购物（例如主要在Amazon），使用联名卡获得5% cash back是合理的。如果你在许多网站购物，一张固定的2%信用卡或网购奖励卡更简单，且回报几乎一样高。大多数人使用2–3张卡就足够了：一张5%的Amazon卡，一张3%的网购卡，以及一张2%的万能卡。"
+      }
+    ]
   },
   "merchant/pharmacy.html": {
     "title": "2026年最佳药店信用卡（CVS、Walgreens）| CreditStud.io",
@@ -789,7 +2321,29 @@
     "twitter_description": "最大化药店奖励——比较CVS、Walgreens及处方药消费的最佳信用卡。",
     "ld_headline": "2026年最佳药店信用卡（CVS、Walgreens）| CreditStud.io",
     "ld_description": "最大化药店奖励——比较CVS、Walgreens及处方药消费的最佳信用卡。",
-    "ld_breadcrumb_last": "2026年最佳药店信用卡（CVS、Walgreens）| CreditStud.io"
+    "ld_breadcrumb_last": "2026年最佳药店信用卡（CVS、Walgreens）| CreditStud.io",
+    "faq": [
+      {
+        "name": "CVS和Walgreens在信用卡奖励中算作药店吗？",
+        "acceptedAnswer": "是的，CVS、Walgreens、Rite Aid和大多数独立药房在Visa/Mastercard网络上都被归类为药店。具有药店奖励类别的信用卡（如Chase Freedom Flex的3%）将自动触发奖励。"
+      },
+      {
+        "name": "我可以通过处方药获得额外奖励吗？",
+        "acceptedAnswer": "这取决于药房如何处理该笔费用。在CVS/Walgreens的店内药房购买通常被归类为药店，从而获得奖励。在线药房订单（如CVS.com）的分类可能不同。请务必检查您的账单类别。"
+      },
+      {
+        "name": "哪张是适合药店消费的最佳无年费信用卡？",
+        "acceptedAnswer": "Chase Freedom Flex全年提供3%的药店消费奖励，且无年费。如果想在特定季度获得更高比例，当药店作为轮换类别时，Discover it Cash Back和Freedom Flex都提供5%的奖励。"
+      },
+      {
+        "name": "Walmart Pharmacy算作药店吗？",
+        "acceptedAnswer": "通常不算。Walmart的店内药房通常被归类为折扣店/仓储超市，而不是药店。在大多数信用卡上，您只能获得1%的基础比例。建议考虑使用Capital One SavorOne（杂货消费3%）或Walmart Rewards Card。"
+      },
+      {
+        "name": "使用药店奖励信用卡我能赚取多少？",
+        "acceptedAnswer": "美国人平均每月在药店花费$50-150。按3%的比例（Chase Freedom Flex），每年是$18-54。在轮换季度的5%比例下，仅该季度就是$30-90。对于经常购买处方药的人来说，这些奖励会积少成多。"
+      }
+    ]
   },
   "merchant/rent.html": {
     "title": "2026年最佳租金支付信用卡 | CreditStud.io",
@@ -800,7 +2354,29 @@
     "twitter_description": "用信用卡支付房租并赚取奖励。比较Bilt Mastercard及其他选项。",
     "ld_headline": "2026年最佳租金支付信用卡",
     "ld_description": "用信用卡支付房租并赚取奖励。比较Bilt Mastercard及其他租金支付选项。",
-    "ld_breadcrumb_last": "2026年最佳租金支付信用卡"
+    "ld_breadcrumb_last": "2026年最佳租金支付信用卡",
+    "faq": [
+      {
+        "name": "可以用信用卡付房租吗？",
+        "acceptedAnswer": "可以，通过像Bilt、Plastx这样的房租支付平台或您房东的门户网站。Bilt Mastercard允许您通过支票支付房租，且没有交易费。其他方法通常收取2.5-3%的处理费，这会抵消信用卡的奖励。"
+      },
+      {
+        "name": "支付房租最好的信用卡是哪张？",
+        "acceptedAnswer": "Bilt Mastercard是唯一一张在没有交易费的情况下通过付房租赚取奖励的信用卡。它在房租上每消费1美元可赚取1x point（每月最高$2,500），并向您的房东发送支票或ACH。所有其他卡都会产生2.5-3%的处理费，超过了奖励。"
+      },
+      {
+        "name": "如果有手续费，用信用卡付房租值得吗？",
+        "acceptedAnswer": "通常不值得。如果您的房东收取2.5-3%的处理费，即使是2% cash back的卡也会亏钱。唯一的例外是：如果您正在为了获得大额开卡奖励而努力达到最低消费要求，那么支付一次手续费可能是值得的。"
+      },
+      {
+        "name": "Bilt Mastercard是如何运作的？",
+        "acceptedAnswer": "Bilt在每月1日向您的房东发送实体支票或ACH付款。您付钱给Bilt，Bilt付钱给房东。没有交易费，并且您在房租上每消费1美元可赚取1x point，每月最高$2,500。points可以转移给航空和酒店合作伙伴。"
+      },
+      {
+        "name": "用信用卡付房租能建立信用吗？",
+        "acceptedAnswer": "可以，如果该卡向信用局报告（所有主要信用卡都会）。使用Bilt Mastercard按时支付房租有助于建立您的还款历史和信用额度使用率。Bilt还通过与信用局的合作关系单独报告房租支付情况。"
+      }
+    ]
   },
   "merchant/restaurants.html": {
     "title": "最佳餐厅及餐饮信用卡 | CreditStud.io",
@@ -811,7 +2387,25 @@
     "twitter_description": "本地餐厅、连锁餐厅及外送服务的顶级餐饮奖励。",
     "ld_headline": "最佳餐厅及餐饮信用卡",
     "ld_description": "本地餐厅、连锁餐厅及外送服务的顶级餐饮奖励。",
-    "ld_breadcrumb_last": "最佳餐厅及餐饮信用卡"
+    "ld_breadcrumb_last": "最佳餐厅及餐饮信用卡",
+    "faq": [
+      {
+        "name": "哪张是最好的餐厅信用卡？",
+        "acceptedAnswer": "Amex Gold Card 在全球餐厅提供 4x points（最高 $50k/yr）。当餐饮是最高消费类别时，Citi Custom Cash 提供 5%。"
+      },
+      {
+        "name": "外卖算作餐饮吗？",
+        "acceptedAnswer": "算的，DoorDash、Uber Eats、Grubhub 大多被标记为餐厅。Amex Gold 4x，Chase Sapphire Preferred 3x。"
+      },
+      {
+        "name": "最好的无年费餐饮卡是哪张？",
+        "acceptedAnswer": "Chase Freedom Flex（持续 3% 餐饮），Citi Custom Cash（最高类别 5%），以及餐饮作为特色类别时的轮换 5%。"
+      },
+      {
+        "name": "快餐连锁店符合条件吗？",
+        "acceptedAnswer": "符合，McDonald's、Starbucks、Chipotle 被标记为餐厅以获取奖励。"
+      }
+    ]
   },
   "merchant/streaming.html": {
     "title": "最佳流媒体服务信用卡 | CreditStud.io",
@@ -822,7 +2416,25 @@
     "twitter_description": "Netflix、Hulu、Spotify、Disney+、YouTube Premium的顶级奖励。",
     "ld_headline": "最佳流媒体服务信用卡",
     "ld_description": "Netflix、Hulu、Spotify、Disney+、YouTube Premium的顶级奖励。",
-    "ld_breadcrumb_last": "最佳流媒体服务信用卡"
+    "ld_breadcrumb_last": "最佳流媒体服务信用卡",
+    "faq": [
+      {
+        "name": "哪张是用于流媒体服务的最佳信用卡？",
+        "acceptedAnswer": "Amex Blue Cash Preferred 对精选的美国流媒体订阅（Netflix、Hulu、Disney+ 等）提供 6% 返现。"
+      },
+      {
+        "name": "哪些服务符合 6% 的条件？",
+        "acceptedAnswer": "Netflix、Hulu、Disney+、ESPN+、Peacock、Sling、YouTube TV、Spotify、SiriusXM、Pandora。不包括 Apple Music/TV+。"
+      },
+      {
+        "name": "最佳无年费流媒体信用卡是哪张？",
+        "acceptedAnswer": "Citi Custom Cash（如果是最高消费类别则为 5%），或像 Citi Double Cash 这样固定 2% 的信用卡。"
+      },
+      {
+        "name": "捆绑服务符合条件吗？",
+        "acceptedAnswer": "如果单独收费则符合（Disney Bundle 结算为 Disney+）。通过 Prime 订阅的 Amazon Prime Video 则不符合。"
+      }
+    ]
   },
   "merchant/student.html": {
     "title": "大学生最佳信用卡 (2026) | CreditStud.io",
@@ -833,7 +2445,29 @@
     "twitter_description": "用最佳学生信用卡建立信用并赚取奖励。无年费、易于审批，专为大学生活设计的真实奖励。",
     "ld_headline": "大学生最佳信用卡 (2026)",
     "ld_description": "用最佳学生信用卡建立信用并赚取奖励。无年费、易于审批，专为大学生活设计的真实奖励。",
-    "ld_breadcrumb_last": "大学生最佳信用卡 (2026)"
+    "ld_breadcrumb_last": "大学生最佳信用卡 (2026)",
+    "faq": [
+      {
+        "name": "大学生在没有信用记录的情况下能申请信用卡吗？",
+        "acceptedAnswer": "可以。学生信用卡和担保信用卡就是为没有信用记录的人设计的。Discover it Student Cash Back 和 Capital One Quicksilver Student 是目前最容易获批的两张卡。"
+      },
+      {
+        "name": "大学生最好的第一张信用卡是什么？",
+        "acceptedAnswer": "Discover it Student Cash Back 是最好的入门卡。它提供5%轮换类别 cash back（第一年双倍），无年费，免费提供 FICO 信用分，并免除首次逾期还款罚金。Capital One Quicksilver Student 也非常适合获取简单的1.5% cash back。"
+      },
+      {
+        "name": "学生信用卡有助于建立信用吗？",
+        "acceptedAnswer": "是的。学生信用卡会向三大信用局（Equifax、Experian、TransUnion）报告。使用该卡进行小额消费并每月全额还款，您的信用分将快速提升。大多数学生在6-12个月内就能达到700+。"
+      },
+      {
+        "name": "我作为学生18岁能申请信用卡吗？",
+        "acceptedAnswer": "可以，但您需要有独立收入（兼职工作、奖学金津贴）或共同签名人。CARD法案要求21岁以下的申请人证明其还款能力。来自兼职工作的学生收入（$5,000+/年）通常足以获批。"
+      },
+      {
+        "name": "我应该申请担保信用卡还是学生信用卡？",
+        "acceptedAnswer": "如果您符合条件，学生卡更好——它们不需要押金，有奖励，而且同样能建立信用。如果您无法获批学生卡，担保卡是备选方案。Discover it Secured 是最好的担保卡，8个月后可升级为无担保信用卡。"
+      }
+    ]
   },
   "merchant/subscription.html": {
     "title": "流媒体与订阅服务最佳信用卡 (2026) | CreditStud.io",
@@ -844,7 +2478,29 @@
     "twitter_description": "Netflix、Hulu、Spotify、Disney+、YouTube Premium 及所有订阅的顶级奖励。",
     "ld_headline": "流媒体与订阅服务最佳信用卡 (2026)",
     "ld_description": "Netflix、Hulu、Spotify、Disney+、YouTube Premium、Amazon Prime 及所有月度订阅的顶级奖励。",
-    "ld_breadcrumb_last": "流媒体与订阅服务最佳信用卡 (2026)"
+    "ld_breadcrumb_last": "流媒体与订阅服务最佳信用卡 (2026)",
+    "faq": [
+      {
+        "name": "哪张信用卡最适合流媒体订阅？",
+        "acceptedAnswer": "Amex Blue Cash Preferred 对精选的美国流媒体订阅（Netflix、Hulu、Disney+ 等）提供 6% cash back，这是目前最高的比例。对于无年费信用卡，Citi Custom Cash 在您的最高消费类别（可包含流媒体）提供 5% cash back。"
+      },
+      {
+        "name": "哪些流媒体服务符合 6% cash back 的条件？",
+        "acceptedAnswer": "Amex Blue Cash Preferred 的 6% 涵盖 Netflix、Hulu、Disney+、ESPN+、Peacock、Sling、YouTube TV、Spotify、SiriusXM 和 Pandora。Apple Music 和 Apple TV+ 通常不符合条件。"
+      },
+      {
+        "name": "Amazon Prime 算作流媒体订阅吗？",
+        "acceptedAnswer": "Amazon Prime 会员（$139/年）通常不会被标记为流媒体订阅，而是标记为会员/零售。但是，如果您作为独立服务订阅 Prime Video（$8.99/月），则可能符合条件。Amazon Prime Visa Signature 对所有 Amazon 消费（包括 Prime）提供 5% cash back。"
+      },
+      {
+        "name": "最适合订阅的无年费信用卡是哪张？",
+        "acceptedAnswer": "Citi Custom Cash 在您的最高消费类别（每月最高 $500）提供 5% cash back，如果流媒体是您的最高类别，您可以在无年费的情况下获得 5%。Capital One SavorOne 对流媒体提供 3% cash back，无上限且无年费。"
+      },
+      {
+        "name": "我可以为不同的订阅使用多张信用卡吗？",
+        "acceptedAnswer": "可以。您可以将不同的订阅设置为在不同的信用卡上扣款，以最大化奖励。例如，使用 Blue Cash Preferred 支付 Netflix/Hulu（6%），使用 Amazon Prime Visa 支付 Prime（5%），以及使用 Apple Card 支付 Apple 服务（通过 Apple Pay 获得 3% cash back）。"
+      }
+    ]
   },
   "merchant/target.html": {
     "title": "Target 购物最佳信用卡 | CreditStud.io",
@@ -866,7 +2522,29 @@
     "twitter_description": "用最佳信用卡最大化 Marriott、Hilton、IHG、Hyatt 及各大预订平台的酒店住宿奖励。",
     "ld_headline": "酒店住宿最佳信用卡 (2026)",
     "ld_description": "用最佳信用卡最大化 Marriott、Hilton、IHG、Hyatt 及各大预订平台的酒店住宿奖励。",
-    "ld_breadcrumb_last": "酒店住宿最佳信用卡 (2026)"
+    "ld_breadcrumb_last": "酒店住宿最佳信用卡 (2026)",
+    "faq": [
+      {
+        "name": "哪张信用卡提供最好的酒店奖励？",
+        "acceptedAnswer": "这取决于您的忠诚度。对于Marriott，Marriott Bonvoy卡可赚取高达6x points。对于IHG，IHG Premier提供26x。对于Hyatt，Chase Sapphire卡可赚取5-10x。对于灵活的酒店预订，Capital One Venture X通过其门户网站预订酒店可赚取10x。"
+      },
+      {
+        "name": "酒店信用卡值得交年费吗？",
+        "acceptedAnswer": "大多数酒店卡都包含价值$150-300的免费房晚奖励，这足以抵消年费。如果您每年哪怕只住一两次酒店，单凭免费房晚就让这张卡物超所值。"
+      },
+      {
+        "name": "我应该申请特定酒店卡还是通用旅游卡？",
+        "acceptedAnswer": "如果您忠于某个连锁品牌且每年入住5晚以上，联名酒店卡可以提供精英会籍福利和奖励points。如果您入住不同品牌，像Chase Sapphire Preferred或Capital One Venture X这样灵活的旅游卡能提供更好的整体价值。"
+      },
+      {
+        "name": "酒店信用卡提供免费房晚吗？",
+        "acceptedAnswer": "是的——大多数联名酒店卡在每个持卡周年都会包含一个免费房晚奖励。IHG Premier提供40K-point房晚，外加奖励住宿第四晚免费。Marriott Bonvoy Boundless提供35K免费房晚。单是这些通常就超过了年费。"
+      },
+      {
+        "name": "酒店忠诚度计划如何与信用卡配合使用？",
+        "acceptedAnswer": "联名酒店卡通常包含精英会籍（如Bonvoy Silver/Gold或IHG Platinum），在品牌住宿时赚取奖励points，并提供延迟退房和客房升级等福利。通过信用卡赚取的points是独立的，但会添加到您的忠诚度账户余额中。"
+      }
+    ]
   },
   "merchant/travel.html": {
     "title": "旅行与航空最佳信用卡 | CreditStud.io",
@@ -877,7 +2555,25 @@
     "twitter_description": "机票、酒店、租车的顶级旅行奖励。",
     "ld_headline": "旅行与航空最佳信用卡",
     "ld_description": "机票、酒店、租车的顶级旅行奖励。",
-    "ld_breadcrumb_last": "旅行与航空最佳信用卡"
+    "ld_breadcrumb_last": "旅行与航空最佳信用卡",
+    "faq": [
+      {
+        "name": "购买机票最好的信用卡是哪张？",
+        "acceptedAnswer": "Capital One Venture X 通过 Capital One Travel 门户预订机票可获得 5x miles，预订酒店可获得 10x miles。实际价值为 9-18%。"
+      },
+      {
+        "name": "直接向航空公司购买机票有额外奖励吗？",
+        "acceptedAnswer": "通常只有 1-2x，除非是航空联名卡。通过门户网站预订可解锁 5x+ 的倍数。"
+      },
+      {
+        "name": "预订酒店最好的是哪张？",
+        "acceptedAnswer": "Capital One Venture X（通过门户预订 10x），Chase Sapphire Preferred（门户预订 5x），以及 Hilton/Marriott 联名卡。"
+      },
+      {
+        "name": "灵活的旅游卡与特定航空公司的信用卡相比如何？",
+        "acceptedAnswer": "灵活的卡（Chase UR、Amex MR、Cap One miles）可以在任何地方兑换；航空卡则绑定于单一航空公司。"
+      }
+    ]
   },
   "merchant/uber-lyft.html": {
     "title": "Uber &amp; Lyft 最佳信用卡（2026）| CreditStud.io",
@@ -888,7 +2584,25 @@
     "twitter_description": "选择合适的信用卡，最大化 Uber、Lyft 打车及 Uber Eats 的奖励积分。",
     "ld_headline": "Uber &amp; Lyft 最佳信用卡（2026）| CreditStud.io",
     "ld_description": "选择合适的信用卡，最大化 Uber、Lyft 打车及 Uber Eats 的奖励积分。比较热门推荐卡片。",
-    "ld_breadcrumb_last": "Uber &amp; Lyft 最佳信用卡（2026）| CreditStud.io"
+    "ld_breadcrumb_last": "Uber &amp; Lyft 最佳信用卡（2026）| CreditStud.io",
+    "faq": [
+      {
+        "name": "哪张信用卡最适合Uber和Lyft？",
+        "acceptedAnswer": "Barclays Uber Pro Card在Uber和Uber Eats上提供7%的cash back，使其成为最适合Uber的信用卡。对于Lyft，Chase Sapphire Preferred和Reserve在包括共享出行在内的旅行消费上提供3x points，或者Capital One SavorOne在娱乐消费（包括部分共享出行）上提供3%。"
+      },
+      {
+        "name": "Uber算作信用卡奖励的旅行消费吗？",
+        "acceptedAnswer": "是的。大多数信用卡发行商将Uber和Lyft归类为旅行，因此像Chase Sapphire Preferred（旅行消费3x）和Capital One Venture X（所有消费2x）这样的旅行类别信用卡可以在共享出行上赚取额外奖励。"
+      },
+      {
+        "name": "哪张信用卡在Uber Eats上提供最多的cash back？",
+        "acceptedAnswer": "Barclays Uber Pro Card在Uber Eats上提供7%的cash back。Amex Gold在餐饮（包括Uber Eats）上提供4x points。对于无年费的选项，Capital One SavorOne在餐饮上提供3%。"
+      },
+      {
+        "name": "我可以将我的Amex Gold Uber福利用于Uber Eats吗？",
+        "acceptedAnswer": "是的。Amex Gold每月$10的Uber Cash可用于美国的Uber乘车和Uber Eats订单。这项每年$120的福利有效地降低了Gold卡的成本。"
+      }
+    ]
   },
   "merchant/utilities.html": {
     "title": "水电气网络账单最佳信用卡（电费、水费、网费）2026 | CreditStud.io",
@@ -899,7 +2613,29 @@
     "twitter_description": "最大化水电气账单奖励——电费、水费、网费、电话费。",
     "ld_headline": "水电气及账单最佳信用卡（2026）| CreditStud.io",
     "ld_description": "最大化水电气账单奖励——电费、水费、网费、电话费。比较每月固定支出的最佳信用卡。",
-    "ld_breadcrumb_last": "水电气网络账单最佳信用卡（电费、水费、网费）2026"
+    "ld_breadcrumb_last": "水电气网络账单最佳信用卡（电费、水费、网费）2026",
+    "faq": [
+      {
+        "name": "我可以用信用卡支付水电费吗？",
+        "acceptedAnswer": "大多数公共事业服务商接受信用卡，但许多会收取1.5–2.5%的手续费。如果手续费超过了你的奖励率（通常为1–2%），你就会亏钱。一些服务商会免除自动扣款或特定支付方式的手续费。在使用信用卡支付水电费前，请务必确认。"
+      },
+      {
+        "name": "哪张信用卡在支付水电费时提供最多的cash back？",
+        "acceptedAnswer": "Bilt Mastercard在支付租金时可获得1x points且无交易费——它也适用于通过其平台支付的水电费。Citi Double Cash在所有消费（包括水电费）上提供统一的2% cash back。如果你的公共事业服务商不收取手续费，2%的统一费率是很难被超越的。"
+      },
+      {
+        "name": "支付水电费算作开卡奖励的消费要求吗？",
+        "acceptedAnswer": "是的，支付水电费算作开卡奖励的要求。3个月内每月$300的电费 = $4,000消费要求中的$900。只需确保手续费（如果有的话）不会超过奖励的价值。"
+      },
+      {
+        "name": "为了赚取信用卡奖励而支付手续费值得吗？",
+        "acceptedAnswer": "只有当你的奖励率超过手续费时才值得。一张2% cash back的信用卡如果收取2.5%的手续费，每次支付会损失0.5%。例外情况：在开卡奖励期间，为了达到消费门槛，额外的消费可能值得支付少量手续费。"
+      },
+      {
+        "name": "支付网费和电话费最好的信用卡是哪张？",
+        "acceptedAnswer": "网费和电话费通常被归类为电信服务。Amex Blue Cash Preferred在流媒体上提供6% cash back，但不包括网费/电话费。大多数统一费率信用卡（Citi Double Cash为2%，Capital One Quicksilver为1.5%）是你最好的选择，因为很少有信用卡专门针对电信服务提供奖励。"
+      }
+    ]
   },
   "merchant/walmart.html": {
     "title": "Walmart 购物最佳信用卡 | CreditStud.io",
@@ -910,7 +2646,29 @@
     "twitter_description": "选择合适的信用卡，最大化 Walmart 购物返现。",
     "ld_headline": "Walmart 购物最佳信用卡",
     "ld_description": "选择合适的信用卡，最大化 Walmart 购物返现。",
-    "ld_breadcrumb_last": "Walmart 购物最佳信用卡"
+    "ld_breadcrumb_last": "Walmart 购物最佳信用卡",
+    "faq": [
+      {
+        "name": "Walmart 在信用卡奖励中算作杂货类别吗？",
+        "acceptedAnswer": "Walmart Supercenters 通常被标记为杂货店。Walmart Neighborhood Markets 总是被标记为杂货店。Walmart.com 的订单被标记为在线购物。"
+      },
+      {
+        "name": "哪张信用卡最适合 Walmart 在线订单？",
+        "acceptedAnswer": "Citi Custom Cash（如果在线购物是最高消费类别可获 5%）或为了简单起见使用像 Citi Double Cash 这样统一 2% 的信用卡。"
+      },
+      {
+        "name": "Walmart Rewards Card 值得申请吗？",
+        "acceptedAnswer": "Capital One Walmart Rewards Card 在 Walmart.com 提供 5%，在实体店提供 2%，但 5% 仅限在线购物。一张通用的 5% 类别信用卡在 Walmart 之外提供更多灵活性。"
+      },
+      {
+        "name": "每月在 Walmart 消费 $400 可以赚取多少奖励？",
+        "acceptedAnswer": "使用 5% 类别信用卡：每年约 $240。使用统一 2% 信用卡：每年约 $96。差额为每年 $144。"
+      },
+      {
+        "name": "我应该使用 Walmart+ 来获得额外节省吗？",
+        "acceptedAnswer": "Walmart+（每年 $98）提供免费送货和燃油折扣。如果您每月在 Walmart 消费 $200+，单是送货节省的费用就足以回本——这与您的信用卡策略是分开的。"
+      }
+    ]
   },
   "merchant/warehouse-clubs.html": {
     "title": "Costco &amp; Sam's Club 最佳信用卡（2026）| CreditStud.io",
@@ -921,7 +2679,29 @@
     "twitter_description": "最大化仓储会员店奖励——Costco 和 Sam's Club 大宗购物最佳信用卡推荐。",
     "ld_headline": "Costco &amp; Sam's Club 最佳信用卡（2026）| CreditStud.io",
     "ld_description": "最大化仓储会员店奖励——Costco 和 Sam's Club 大宗购物最佳信用卡推荐。",
-    "ld_breadcrumb_last": "Costco &amp; Sam's Club 最佳信用卡（2026）| CreditStud.io"
+    "ld_breadcrumb_last": "Costco &amp; Sam's Club 最佳信用卡（2026）| CreditStud.io",
+    "faq": [
+      {
+        "name": "Costco只接受Visa吗？",
+        "acceptedAnswer": "是的，Costco实体店只接受Visa信用卡。您不能在Costco实体店内使用Mastercard、Amex或Discover。然而，Costco.com接受Visa、Mastercard和大多数Discover卡。Costco Anywhere Visa by Citi是专为Costco消费设计的联名卡。"
+      },
+      {
+        "name": "哪张信用卡最适合在Costco使用？",
+        "acceptedAnswer": "Costco Anywhere Visa by Citi在加油上赚取4%（每年首个$7K），在餐厅和旅行上赚取3%，在所有Costco消费上赚取2%，其他所有消费赚取1%。无年费（包含在$65+的会员费中）。对于更高的仓储式会员店回报率，Capital One SavorOne在超市提供3%，但Costco的商户类别是仓储式会员店（1%），而不是超市。"
+      },
+      {
+        "name": "Sam's Club接受Mastercard吗？",
+        "acceptedAnswer": "是的，Sam's Club接受Visa、Mastercard、Discover和American Express。这为您提供了比Costco更多的信用卡选择。Sam's Club Mastercard在加油上赚取5% cash back（每年首个$6K），在餐饮上赚取3%，在Sam's Club消费上赚取3%，其他所有地方赚取1%。"
+      },
+      {
+        "name": "在计算信用卡奖励时，Costco算作超市吗？",
+        "acceptedAnswer": "不算。Costco在所有信用卡网络上的商户类别都是仓储式会员店，而不是超市。这意味着具有超市奖励的卡（如在超市获得3%）在Costco将不会获得该奖励。请改用统一2%回报率的卡或专门针对仓储式会员店的卡。"
+      },
+      {
+        "name": "我应该在Costco使用Costco Visa还是统一2%回报率的卡？",
+        "acceptedAnswer": "Costco Visa在Costco赚取2%，与Citi Double Cash等统一2%回报率的卡相同。但Costco Visa在加油上还赚取4%，在餐饮/旅行上赚取3%，如果您在Costco购物并在那里加油，它是一张更好的全能卡。统一2%回报率的卡更简单，但无法匹敌Costco Visa的类别奖励。"
+      }
+    ]
   },
   "min-payment/index.html": {
     "title": "最低还款额陷阱计算器 — CreditStud.io",
@@ -932,7 +2712,29 @@
     "twitter_description": "了解信用卡仅还最低还款额的真实惊人成本。免费计算器显示总利息、还清所需时间及可节省金额。",
     "ld_headline": "最低还款额陷阱计算器",
     "ld_description": "了解信用卡仅还最低还款额的真实惊人成本。免费计算器显示总利息、还清所需时间及可节省金额。",
-    "ld_breadcrumb_last": "最低还款额陷阱计算器"
+    "ld_breadcrumb_last": "最低还款额陷阱计算器",
+    "faq": [
+      {
+        "name": "如果只还最低还款，还清信用卡需要多长时间？",
+        "acceptedAnswer": "这取决于你的欠款余额和APR，但可能需要几十年。例如，欠款 $5,000，APR 为 24.99%，最低还款为 2%，需要超过 32 年才能还清，并且要支付超过 $11,000 的利息——你支付的总额将超过原始欠款的 3 倍。"
+      },
+      {
+        "name": "最低还款是如何计算的？",
+        "acceptedAnswer": "大多数发卡机构将最低还款计算为欠款余额的百分比（通常为 1-3%），加上利息和费用，最低下限为 $25-35。有些使用固定百分比；另一些使用分层方法。请查看你的信用卡协议以了解确切的计算公式。"
+      },
+      {
+        "name": "如果我只还信用卡的最低还款会怎样？",
+        "acceptedAnswer": "你会陷入债务更长时间，并支付更多的利息。最低还款的设计是为了让你持续还款，而不是帮你摆脱债务。你的信用额度使用率也会保持在高位，这会损害你的信用分。"
+      },
+      {
+        "name": "支付超过最低还款的金额能帮我省多少钱？",
+        "acceptedAnswer": "即使是小幅增加也会带来巨大的改变。对于 $5,000 的欠款和 25% 的 APR，每月只需多还 $25 就能缩短数年的还款时间，并节省数千美元的利息。每月多还 $100 可以将几十年的还款期缩短到几年。"
+      },
+      {
+        "name": "我应该申请一张余额转移信用卡来逃离最低还款陷阱吗？",
+        "acceptedAnswer": "如果你能在介绍期（通常为 12-21 个月）内还清欠款，0% APR 的余额转移信用卡将是一个强大的工具。3-5% 的转移费通常远低于你在当前信用卡上需要支付的利息。只需确保避免增加新的债务。"
+      }
+    ]
   },
   "offline.html": {
     "title": "无网络连接 — CreditStud.io",
@@ -954,7 +2756,33 @@
     "twitter_description": "输入您的消费习惯，立即找出哪张信用卡能为您赚取最多奖励。比较返现、旅行积分和加密货币奖励。",
     "ld_headline": "信用卡奖励计算器 — 找到您的最佳信用卡",
     "ld_description": "输入您的消费习惯，立即找出哪张信用卡能为您赚取最多奖励。比较返现、旅行积分和加密货币奖励。",
-    "ld_breadcrumb_last": "信用卡奖励计算器"
+    "ld_breadcrumb_last": "信用卡奖励计算器",
+    "faq": [
+      {
+        "name": "信用卡奖励计算器是如何工作的？",
+        "acceptedAnswer": "输入您在各个类别（超市、餐饮、加油、旅行等）的每月支出。计算器会将您的支出乘以每张卡的赚取率，使用当前估值将 points 转换为美元价值，减去年费，并按净年度奖励价值对卡片进行排名。当您调整支出时，结果会立即更新。"
+      },
+      {
+        "name": "信用卡奖励 points 值多少钱？",
+        "acceptedAnswer": "points 的价值因计划而异。截至 2026 年 4 月，Chase Ultimate Rewards points 的价值约为每个 2.05 美分，Amex Membership Rewards 约为 2.0 美分，Capital One Miles 约为 1.85 美分，而 cash back 始终为每个 point 1 美分。旅行兑换和转点伙伴可以显著提高其价值。"
+      },
+      {
+        "name": "加密货币信用卡奖励比 cash back 更好吗？",
+        "acceptedAnswer": "加密货币奖励具有更高的上涨潜力，但也伴随着波动风险。如果加密货币价格上涨，赚取 4% 比特币的卡可能价值更高，如果价格下跌则价值更低。cash back 是稳定且可预测的。Coinbase Card（借记卡）提供高达 4% 的加密货币返还且无年费，而 Coinbase One Credit Card 提供 4% 的比特币返还，订阅费为每月 $30。"
+      },
+      {
+        "name": "我应该申请有年费的卡吗？",
+        "acceptedAnswer": "这取决于您的支出。一张年费为 $95 的卡，如果其赚取的奖励比无年费卡多 $400，那么它仍然领先 $305。我们的计算器会自动计入年费——只需查看净年度价值即可。像 Capital One Venture X 这样的高级旅行卡年费很高（$395），但附带的账单抵扣（$300 旅行抵扣）可以抵消大部分成本。"
+      },
+      {
+        "name": "哪张是日常消费的最佳信用卡？",
+        "acceptedAnswer": "对大多数人来说，最佳的日常用卡取决于他们的消费习惯。超市支出大户可以从 Amex Blue Cash Preferred（超市 6%）中受益。追求简单的人适合使用 Citi Double Cash 或 Wells Fargo Active Cash（所有消费 2%）。旅行者可以通过 Chase Sapphire Preferred 实现价值最大化。使用我们的计算器，根据您的实际支出找到最适合您的卡。"
+      },
+      {
+        "name": "第一年（First Year）和持续（Ongoing）价值有什么区别？",
+        "acceptedAnswer": "第一年价值包括开卡奖励，这可以显著提升卡片的价值，但仅在第一年提供。持续价值不包括开卡奖励，代表卡片的长期赚取潜力。像 Discover it Cash Back 这样的一些卡提供特殊的第一年福利（如 Cashback Match），使您的收益翻倍。使用切换按钮，根据您的优先事项比较卡片：短期收益（第一年）或长期价值（持续）。"
+      }
+    ]
   },
   "score-simulator/index.html": {
     "title": "信用评分模拟器 — 了解评分如何影响您的 APR | CreditStud.io",
@@ -965,7 +2793,29 @@
     "twitter_description": "模拟金融行为对您信用评分的影响。查看还清债务、开设新信用卡、逾期还款等操作所带来的变化。",
     "ld_headline": "信用评分模拟器",
     "ld_description": "模拟金融行为对您信用评分的影响。查看还清债务、开设新信用卡、逾期还款等操作所带来的变化。",
-    "ld_breadcrumb_last": "信用评分模拟器"
+    "ld_breadcrumb_last": "信用评分模拟器",
+    "faq": [
+      {
+        "name": "我的信用分是如何计算的？",
+        "acceptedAnswer": "FICO分数使用五个因素：还款历史（35%），欠款金额/信用额度使用率（30%），信用历史长度（15%），信用类型（10%）和新信用/查询（10%）。我们的模拟器根据这些权重来估算分数变化。"
+      },
+      {
+        "name": "还清信用卡债务能提高多少信用分？",
+        "acceptedAnswer": "还清所有信用卡债务可以使您的信用分提高40-100+ points，具体取决于您当前的信用额度使用率。从高使用率（75%+）降至10%以下是您能做出的最大单项提升之一。"
+      },
+      {
+        "name": "逾期还款会降低多少信用分？",
+        "acceptedAnswer": "30天的逾期还款可能会使您的信用分降低60-110 points，具体取决于您的初始分数。分数越高，惩罚越重。其影响会随着时间的推移而减弱——2年后影响会小得多，并在7年后从您的报告中消失。"
+      },
+      {
+        "name": "开设新信用卡会损害我的信用分吗？",
+        "acceptedAnswer": "开设新卡有混合影响。通常，硬查询和平均账户年龄的轻微下降会使您损失5-10 points。然而，新的信用额度可以降低您的使用率，这可能会在1-2个账单周期内抵消最初的打击。"
+      },
+      {
+        "name": "这个信用分模拟器有多准确？",
+        "acceptedAnswer": "该模拟器提供基于通用FICO评分模型的估算。实际分数变化因信用局、评分模型版本和您的完整信用档案而异。请将其作为有用的指南，而不是保证。"
+      }
+    ]
   },
   "tools/api.html": {
     "title": "CreditStud.io API 文档 — 免费金融计算器 API",
