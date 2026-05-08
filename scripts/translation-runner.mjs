@@ -27,7 +27,7 @@ import { execSync } from 'child_process';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const STATE_FILE = path.join(ROOT, '.states', 'translation-runner.json');
-const PROGRESS_FILE = path.join(ROOT, '.states', 'translate-body-progress.json');
+const getProgressFile = (lang) => path.join(ROOT, '.states', `translate-body-${lang}-progress.json`);
 const MANIFEST_PATH = path.join(ROOT, 'translation-manifest.json');
 const DASHBOARD_PATH = path.join(ROOT, 'docs', 'translation-dashboard.html');
 
@@ -118,17 +118,19 @@ async function callVenice(model, messages, timeoutMs = API_TIMEOUT_MS) {
 
 // ── State Management ──
 
-async function loadProgress() {
+async function loadProgress(lang) {
+  const filePath = getProgressFile(lang);
   try {
-    return JSON.parse(await fs.readFile(PROGRESS_FILE, 'utf8'));
+    return JSON.parse(await fs.readFile(filePath, 'utf8'));
   } catch {
     return {};
   }
 }
 
-async function saveProgress(progress) {
-  await fs.mkdir(path.dirname(PROGRESS_FILE), { recursive: true });
-  await fs.writeFile(PROGRESS_FILE, JSON.stringify(progress, null, 2));
+async function saveProgress(progress, lang) {
+  const filePath = getProgressFile(lang);
+  await fs.mkdir(path.dirname(filePath), { recursive: true });
+  await fs.writeFile(filePath, JSON.stringify(progress, null, 2));
 }
 
 async function loadState() {
@@ -167,9 +169,11 @@ async function discoverPages(lang) {
   return htmlFiles.sort();
 }
 
-function getPendingPages(progress, allPages) {
+function getPendingPages(progress, allPages, lang) {
   return allPages.filter(p => {
-    if (MANUALLY_TRANSLATED.has(p) || SKIP_PAGES.has(p)) return false;
+    // MANUALLY_TRANSLATED only applies to Spanish (es)
+    if (lang === 'es' && MANUALLY_TRANSLATED.has(p)) return false;
+    if (SKIP_PAGES.has(p)) return false;
     const info = progress[p];
     if (!info) return true; // Not in progress file = needs translation
     if (info.done === true && !info.reason) return false; // Completed successfully
@@ -258,16 +262,85 @@ function validateTranslation(sourceBody, translatedBody) {
   return { srcWords, transWords, ratio };
 }
 
+// Validate that translated content contains target-language characters
+function validateLanguageContent(html, lang) {
+  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  // Skip very short text (nav-only pages)
+  if (text.length < 200) return true;
+  
+  switch (lang) {
+    case 'zh': {
+      const cjk = [...text].filter(ch => ch.charCodeAt(0) >= 0x4e00 && ch.charCodeAt(0) <= 0x9fff).length;
+      const ratio = cjk / text.length;
+      if (ratio < 0.05) throw new Error(`Language validation failed: only ${ratio.toFixed(3)} CJK characters (expected >0.05). Translation may be English.`);
+      return true;
+    }
+    case 'ko': {
+      const hangul = [...text].filter(ch => ch.charCodeAt(0) >= 0xAC00 && ch.charCodeAt(0) <= 0xD7A3).length;
+      const ratio = hangul / text.length;
+      if (ratio < 0.05) throw new Error(`Language validation failed: only ${ratio.toFixed(3)} Hangul characters (expected >0.05). Translation may be English or wrong language.`);
+      return true;
+    }
+    case 'es': {
+      const spanishMarkers = (text.match(/[áéíóúñ¿¡]/g) || []).length;
+      const ratio = spanishMarkers / text.length;
+      // Spanish can have few accented chars, so low bar
+      if (ratio < 0.001 && text.length > 1000) {
+        // Check for common Spanish words instead
+        const spanishWords = (text.match(/\b(de|en|el|la|los|las|un|una|que|por|con|para|es|son|se|no|lo|más|este|esta|pero|como|también|puede|tarjeta|crédito)\b/gi) || []).length;
+        if (spanishWords < 5) throw new Error(`Language validation failed: no Spanish markers found. Translation may be English.`);
+      }
+      return true;
+    }
+    default:
+      return true; // No validation for other langs yet
+  }
+}
+
 // ── Translation ──
 
-const SYSTEM_PROMPT = `You translate web page HTML to US Spanish for CreditStud.io.
+const LANG_CONFIG = {
+  es: {
+    name: 'US Spanish',
+    code: 'es',
+    terms: '',
+    instruction: 'Use US Spanish: "puntaje de crédito", "transferencia de saldo", "cuota anual", "pago mínimo". "debt snowball" → "método bola de nieve", "debt avalanche" → "método avalancha".'
+  },
+  zh: {
+    name: 'Simplified Chinese',
+    code: 'zh-CN',
+    terms: '',
+    instruction: 'Use Simplified Chinese for US Chinese-speaking audience: 信用分 (credit score), 余额转移 (balance transfer), 年费 (annual fee), 最低还款 (minimum payment), 开卡奖励 (signup bonus), 返现 (cash back), 雪球法 (debt snowball), 雪崩法 (debt avalanche), 利率 (interest rate), 年利率 (APR), 信用额度 (credit limit), 外币交易费 (foreign transaction fee), 账单抵扣 (statement credit). Use 。instead of . for sentence endings. Questions end with ？not ?.'
+  },
+  ko: {
+    name: 'Korean',
+    code: 'ko-KR',
+    terms: '',
+    instruction: 'Use Korean for US Korean-speaking audience: 신용점수 (credit score), 잔액이체 (balance transfer), 연회비 (annual fee), 최소결제 (minimum payment), 가입 보너스 (signup bonus), 캐시백 (cash back), 눈덩이 방법 (debt snowball), 눈사태 방법 (debt avalanche), 이자율 (interest rate), 신용한도 (credit limit), 해외거래수수료 (foreign transaction fee), 스테이트먼트 크레딧 (statement credit).'
+  },
+  tl: {
+    name: 'Filipino/Tagalog',
+    code: 'tl',
+    terms: '',
+    instruction: 'Use Filipino/Tagalog for US Filipino audience: credit score → iskor sa kredito, balance transfer → transfer sa balanse, annual fee → taunang bayad, minimum payment → pinakamababang bayad, signup bonus → bonus sa pag-sign up, cash back → cash back (keep in English).'
+  },
+  hi: {
+    name: 'Hindi',
+    code: 'hi',
+    terms: '',
+    instruction: 'Use Hindi for US Hindi-speaking audience: credit score → क्रेडिट स्कोर, balance transfer → बैलेंस ट्रांसफर, annual fee → वार्षिक शुल्क, minimum payment → न्यूनतम भुगतान, cash back → कैशबैक.'
+  }
+};
+
+function getSystemPrompt(lang) {
+  const cfg = LANG_CONFIG[lang] || LANG_CONFIG.es;
+  return `You translate web page HTML to ${cfg.name} for CreditStud.io.
 
 RULES:
 - NEVER translate: card names (Chase Sapphire Preferred, Amex Gold, Capital One Quicksilver, etc.), bank names (Chase, Citi, Capital One, Wells Fargo, Discover, Amex), BNPL names (Klarna, Afterpay, Affirm, Sezzle, Zip), credit score brands (FICO, VantageScore)
-- Keep APR, BNPL, cash back in English (widely understood by US Spanish speakers)
+- Keep APR, BNPL, cash back in English (widely understood terms)
 - Keep ALL dollar amounts ($XX), percentages (XX%), and numbers exactly as written
-- Use US Spanish: "puntaje de crédito", "transferencia de saldo", "cuota anual", "pago mínimo"
-- "debt snowball" → "método bola de nieve", "debt avalanche" → "método avalancha"
+- ${cfg.instruction}
 - Keep ALL HTML tags, attributes, classes, IDs, data-* attributes EXACTLY as-is
 - Keep ALL URLs (href, src) EXACTLY as-is
 - Keep ALL JavaScript in <script> tags EXACTLY as-is
@@ -277,6 +350,7 @@ RULES:
 - Keep same tone: helpful, direct, slightly informal but trustworthy
 - Do NOT add or remove HTML elements
 - Return ONLY the translated HTML, no markdown fences, no explanations`;
+};
 
 async function translatePage(relPath, lang, { dryRun = false } = {}) {
   const enPath = path.join(ROOT, relPath);
@@ -308,9 +382,10 @@ async function translatePage(relPath, lang, { dryRun = false } = {}) {
     const chunk = chunks[i];
     const chunkWords = chunk.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().split(/\s+/).length;
 
+    const cfg = LANG_CONFIG[lang] || LANG_CONFIG.es;
     const result = await callVenice(VENICE_MODELS.translate, [
-      { role: 'system', content: SYSTEM_PROMPT },
-      { role: 'user', content: `Translate this HTML to US Spanish. Return ONLY the translated HTML, no markdown fences, no explanations:\n\n${chunk}` }
+      { role: 'system', content: getSystemPrompt(lang) },
+      { role: 'user', content: `Translate this HTML to ${cfg.name}. Return ONLY the translated HTML, no markdown fences, no explanations:\n\n${chunk}` }
     ]);
 
     // Clean markdown fences if present
@@ -329,6 +404,10 @@ async function translatePage(relPath, lang, { dryRun = false } = {}) {
   // Validate
   const { srcWords, transWords, ratio } = validateTranslation(sourceBody, translatedBody);
   console.log(`  ✅ Validated: ${srcWords}→${transWords}w (${ratio.toFixed(2)}x)`);
+
+  // Validate target language content
+  validateLanguageContent(translatedBody, lang);
+  console.log(`  ✅ Language validation passed (${lang})`);
 
   // Write the translated file
   await fs.mkdir(path.dirname(targetPath), { recursive: true });
@@ -369,9 +448,9 @@ function updateManifestAndDashboard(lang) {
 // ── Commands ──
 
 async function cmdTranslate(lang, opts) {
-  const progress = await loadProgress();
+  const progress = await loadProgress(lang);
   const allPages = await discoverPages(lang);
-  const pending = getPendingPages(progress, allPages);
+  const pending = getPendingPages(progress, allPages, lang);
 
   // --only filter
   let toDo = pending;
@@ -396,7 +475,7 @@ async function cmdTranslate(lang, opts) {
   const maxPages = opts.maxPages || 999;
   toDo = toDo.slice(0, maxPages);
 
-  console.log(`\n🎨 Translate ES: ${pending.length} pending, processing ${toDo.length} (max ${maxPages})`);
+  console.log(`\n🎨 Translate ${lang.toUpperCase()}: ${pending.length} pending, processing ${toDo.length} (max ${maxPages})`);
 
   if (toDo.length === 0) {
     console.log('✅ No pages to translate — all done!');
@@ -419,7 +498,7 @@ async function cmdTranslate(lang, opts) {
         ...(result.translated ? { srcWords: result.srcWords, transWords: result.transWords, ratio: result.ratio } : {}),
         ...(result.dryRun ? { dryRun: true } : {})
       };
-      await saveProgress(progress);
+      await saveProgress(progress, lang);
 
       // Update manifest & dashboard
       if (!result.dryRun) {
@@ -437,7 +516,7 @@ async function cmdTranslate(lang, opts) {
         words: pageWordCounts[relPath] || 0,
         date: new Date().toISOString()
       };
-      await saveProgress(progress);
+      await saveProgress(progress, lang);
     }
 
     // Rate limit between pages
@@ -449,10 +528,21 @@ async function cmdTranslate(lang, opts) {
   console.log(`\n=== RESULTS ===`);
   console.log(`✅ Completed: ${completed}`);
   console.log(`❌ Failed: ${failed}`);
-  console.log(`📊 Progress saved: ${PROGRESS_FILE}`);
+  console.log(`📊 Progress saved: ${getProgressFile(lang)}`);
 
   if (completed > 0) {
-    console.log(`\n💡 Next: node build.js --lang es  (rebuild SEO tags & partials)`);
+    console.log(`\n💡 Next: node build.js --lang ${lang}  (rebuild SEO tags & partials)`);
+  }
+
+  // Auto-commit after successful translations
+  if (completed > 0) {
+    try {
+      console.log(`\n📦 Auto-committing translations...`);
+      execSync(`git add ${lang}/ .states/ && git commit -m "feat: ${lang} body translation — ${completed} pages completed"`, { cwd: ROOT, stdio: 'pipe' });
+      console.log(`✅ Committed ${completed} translations to git`);
+    } catch (err) {
+      console.log(`⚠️ Git commit failed (non-fatal): ${err.message.slice(0, 100)}`);
+    }
   }
 }
 
@@ -494,12 +584,14 @@ function countSections(html) {
   };
 }
 
-const REVIEW_PROMPT = `You are a Spanish translation reviewer for CreditStud.io. Compare the English ARTICLE content with the Spanish translation and check for:
+function getReviewPrompt(lang) {
+  const cfg = LANG_CONFIG[lang] || LANG_CONFIG.es;
+  return `You are a ${cfg.name} translation reviewer for CreditStud.io. Compare the English ARTICLE content with the ${cfg.name} translation and check for:
 
-1. MISSING CONTENT — Sections, paragraphs, or headings present in English but missing in Spanish
-2. UNTRANSLATED TEXT — English text that should be Spanish (NOT: brand names, URLs, code, numbers, which stay in English)
+1. MISSING CONTENT — Sections, paragraphs, or headings present in English but missing in the translation
+2. UNTRANSLATED TEXT — English text that should be ${cfg.name} (NOT: brand names like "Chase Sapphire Preferred", "Amex Gold", URLs, code, numbers, which stay in English)
 3. ACCURACY — Wrong translations, changed meanings
-4. TERMINOLOGY — US Spanish: "puntaje de crédito" (not "puntuación"), "transferencia de saldo", "cuota anual", "pago mínimo"
+4. TERMINOLOGY — ${cfg.instruction}
 5. NUMBERS — Dollar amounts, percentages, APRs must be identical
 
 IMPORTANT: Navigation menus, disclosure banners, and footer text are shared partials injected by the build system. Ignore differences in those areas. Focus ONLY on the article content.
@@ -507,20 +599,24 @@ IMPORTANT: Navigation menus, disclosure banners, and footer text are shared part
 Reply in this exact format:
 PASS — (if no issues found in the article content)
 ISSUES — (list each issue with section reference)
-VERDICT: PASS|NEEDS_FIX`
+VERDICT: PASS|NEEDS_FIX`;
+}
 
-const SPOTCHECK_PROMPT = `You are a translation quality auditor. For each pair below, check:
+function getSpotCheckPrompt(lang) {
+  const cfg = LANG_CONFIG[lang] || LANG_CONFIG.es;
+  return `You are a translation quality auditor. For each pair below, check:
 - Critical accuracy errors (wrong meaning)
 - Missing content (sections not translated)
-- Untranslated English text that should be Spanish
+- Untranslated English text that should be ${cfg.name}
 - Numbers/amounts changed from source
 
 Reply concisely:
 PASS — if no critical issues
-FAIL: [brief reason] — if critical issues found`
+FAIL: [brief reason] — if critical issues found`;
+}
 
 async function cmdReview(lang, opts) {
-  const progress = await loadProgress();
+  const progress = await loadProgress(lang);
   const manifest = JSON.parse(await fs.readFile(MANIFEST_PATH, 'utf8'));
   const state = await loadState();
   state.stages.review = state.stages.review || { completed: [], errors: [] };
@@ -579,9 +675,11 @@ async function cmdReview(lang, opts) {
         console.log(`  ⚠️  Section mismatch: EN has ${enSections.h2} h2s, ES has ${esSections.h2} h2s`);
       }
 
+      const reviewPrompt = getReviewPrompt(lang);
+      const langLabel = (LANG_CONFIG[lang] || LANG_CONFIG.es).name;
       const result = await callVenice(VENICE_MODELS.review, [
-        { role: 'system', content: REVIEW_PROMPT },
-        { role: 'user', content: `ENGLISH ARTICLE (first 4000 chars):\n${enText}\n\nSPANISH ARTICLE (first 4000 chars):\n${esText}\n\nStructural comparison: EN has ${enSections.h2} h2, ${enSections.h3} h3, ${enSections.tables} tables. ES has ${esSections.h2} h2, ${esSections.h3} h3, ${esSections.tables} tables.` }
+        { role: 'system', content: reviewPrompt },
+        { role: 'user', content: `ENGLISH ARTICLE (first 4000 chars):\n${enText}\n\n${langLabel.toUpperCase()} ARTICLE (first 4000 chars):\n${esText}\n\nStructural comparison: EN has ${enSections.h2} h2, ${enSections.h3} h3, ${enSections.tables} tables. ${langLabel.toUpperCase()} has ${esSections.h2} h2, ${esSections.h3} h3, ${esSections.tables} tables.` }
       ]);
 
       const verdict = result.match(/VERDICT:\s*(PASS|NEEDS_FIX)/i)?.[1]?.toUpperCase() || 'UNKNOWN';
@@ -606,7 +704,7 @@ async function cmdReview(lang, opts) {
       progress[relPath].reviewedBy = 'sonnet-4.6';
       progress[relPath].reviewDate = new Date().toISOString();
       progress[relPath].reviewNotes = isPass ? 'pass' : result.slice(0, 500);
-      await saveProgress(progress);
+      await saveProgress(progress, lang);
 
       // Update manifest
       try {
@@ -634,7 +732,7 @@ async function cmdReview(lang, opts) {
 }
 
 async function cmdSpotCheck(lang, opts) {
-  const progress = await loadProgress();
+  const progress = await loadProgress(lang);
   const state = await loadState();
   state.stages.spotcheck = state.stages.spotcheck || { completed: [], errors: [] };
 
@@ -692,7 +790,7 @@ async function cmdSpotCheck(lang, opts) {
         progress[relPath].spotChecked = 'fail';
         progress[relPath].spotCheckedBy = 'structural';
         progress[relPath].spotCheckDate = new Date().toISOString();
-        await saveProgress(progress);
+        await saveProgress(progress, lang);
         await saveState(state);
         continue;
       }
@@ -702,9 +800,11 @@ async function cmdSpotCheck(lang, opts) {
         // Still do API check for content accuracy
       }
 
+      const spotCheckPrompt = getSpotCheckPrompt(lang);
+      const langLabel = (LANG_CONFIG[lang] || LANG_CONFIG.es).name;
       const result = await callVenice(VENICE_MODELS.spotcheck, [
-        { role: 'system', content: SPOTCHECK_PROMPT },
-        { role: 'user', content: `ENGLISH ARTICLE:\n${enText}\n\nSPANISH ARTICLE:\n${esText}\n\nStructural: ${enSections.h2} h2, ${enSections.tables} tables. Compare ONLY article content, not nav/disclosure/footer.` }
+        { role: 'system', content: spotCheckPrompt },
+        { role: 'user', content: `ENGLISH ARTICLE:\n${enText}\n\n${langLabel.toUpperCase()} ARTICLE:\n${esText}\n\nStructural: ${enSections.h2} h2, ${enSections.tables} tables. Compare ONLY article content, not nav/disclosure/footer.` }
       ]);
 
       const isPass = /PASS/i.test(result) && !/FAIL/i.test(result.slice(0, 20));
@@ -722,7 +822,7 @@ async function cmdSpotCheck(lang, opts) {
       progress[relPath].spotChecked = isPass ? 'pass' : 'fail';
       progress[relPath].spotCheckedBy = 'gpt-5.4';
       progress[relPath].spotCheckDate = new Date().toISOString();
-      await saveProgress(progress);
+      await saveProgress(progress, lang);
       await saveState(state);
 
       try {
@@ -745,7 +845,7 @@ async function cmdSpotCheck(lang, opts) {
 }
 
 async function cmdReset(lang, opts) {
-  const progress = await loadProgress();
+  const progress = await loadProgress(lang);
 
   if (opts.only) {
     const pages = opts.only.split(',');
@@ -770,14 +870,14 @@ async function cmdReset(lang, opts) {
     console.log(`🔄 Reset all ${Object.keys(progress).length} pages`);
   }
 
-  await saveProgress(progress);
+  await saveProgress(progress, lang);
   console.log('Done. Run `translate es` to re-translate.');
 }
 
 async function cmdStatus(lang) {
-  const progress = await loadProgress();
+  const progress = await loadProgress(lang);
   const allPages = await discoverPages(lang);
-  const pending = getPendingPages(progress, allPages);
+  const pending = getPendingPages(progress, allPages, lang);
 
   let done = 0, errored = 0, dryRun = 0;
   for (const [p, info] of Object.entries(progress)) {
