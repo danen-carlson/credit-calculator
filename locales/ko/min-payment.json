@@ -1,0 +1,21 @@
+{
+  "payoffTime": "완납 시간",
+  "totalInterest": "총 이자",
+  "totalPaid": "총상환액",
+  "totalPaidSub.toClear": "{amount} 청산 시",
+  "totalPaidSub.interestExceedsPayment": "이자가 결제액 초과",
+  "neverPaidOff": "상환 불가",
+  "principal": "원금",
+  "interest": "이자",
+  "interestExceedsPayments": "이자가 결제액을 초과합니다",
+  "months.format.singular": "{count}개월",
+  "months.format.plural": "{count}개월",
+  "months.format.years": "{years}년 {months}개월",
+  "months.neverExceeds": "절대 다 갚을 수 없습니다 (이자가 결제액보다 높음)",
+  "balance": "잔액",
+  "apr": "APR",
+  "minPaymentPercent": "최소결제 비율 %",
+  "calculate": "계산하기",
+  "resultSummary": "최소결제만 납부할 경우, {balance} 부채 완납까지 {time}이(가) 걸립니다. 총 {totalInterest}의 이자가 발생하며, 총 상환액은 {totalPaid}이(가) 됩니다.",
+  "tryExtraPayment": "매월 ${extra} 추가로 납부해 보세요. {monthsEarlier}개월 일찍 상환 완료하고 이자를 ${interestSaved} 만큼 절감할 수 있습니다."
+}
