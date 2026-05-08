@@ -1,0 +1,755 @@
+{
+  "blog/affirm-interest-rates-explained.html": {
+    "status": "pass",
+    "issues": [
+      "Q3/A3 minor nuance: 'missed payments' is rendered as 'pagos atrasados' (late payments). 'Missed payments' can imply payments skipped entirely, not just delayed. A slightly more precise phrasing would be 'pagos no realizados' or 'pagos incumplidos', though 'pagos atrasados' is widely understood in this BNPL context and does not introduce a factual error."
+    ],
+    "summary": "All four translations are accurate, complete, and natural. Proper nouns and financial terms (Affirm, Pay in 4, APR, FICO, Klarna, Afterpay, Amazon, Peloton) are correctly preserved in English. US Spanish terminology is appropriate throughout: 'puntaje de crédito', 'burós de crédito', 'tarjeta de crédito', 'financiamiento mensual'. All numerical values (0%, 36%, 15%, 30–36%, 20–29%, 670+) are accurately carried over. No facts were added or removed. One minor semantic nuance in Q3 ('pagos atrasados' vs 'missed payments') does not affect the factual meaning in context.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T15:42:45.667Z"
+  },
+  "blog/amex-gold-worth-it.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "All six FAQ translations are accurate, complete, and natural. Card names (Amex Gold Card, Chase Sapphire Preferred, Amex Blue Cash Everyday, Amex Green, Capital One SavorOne, US Bank Altitude Go), brand names (Uber Cash, Grubhub, Resy, Dunkin'), and reward multipliers are preserved exactly. Key terminology is consistent throughout: 'cuota anual' for annual fee, 'supermercados' for groceries, 'restaurantes' for dining, 'cambio de producto' for product-change, 'semestralmente' for semi-annually. All dollar amounts, percentages, and credit figures match the source precisely. No facts were added, removed, or altered across any of the six pairs.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T15:37:57.638Z"
+  },
+  "blog/best-0-apr-credit-cards.html": {
+    "status": "pass",
+    "issues": [
+      "FAQ 2 minor inconsistency: 'cuota anual' is correctly used for 'annual fee' but then 'tarifa' is used later in the same answer ('no estás pagando una tarifa') instead of 'cuota'. Using 'cuota' throughout would be more consistent, though the meaning is not changed."
+    ],
+    "summary": "All four translations are accurate and complete. Card names (Citi Simplicity, Chase Freedom Unlimited, Discover it, Wells Fargo Active Cash, Amex Blue Cash Everyday, Citi Double Cash), product terms (BNPL, BNPL Pay in 4), and financial acronyms (APR, FICO, cash back) are correctly preserved in English. Key Spanish credit terminology is properly applied: 'transferencias de saldo', 'cuota anual', 'puntaje FICO', 'tasa promocional'. All numerical data (21 months, 18 months, 12 months, 15 months, $500, $2,000, 2%, $40, 670, 700, mid-600s) are faithfully reproduced. The only finding is a minor intra-answer inconsistency in FAQ 2 between 'cuota' and 'tarifa', which carries no factual impact. Overall translation quality is high.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T15:38:27.994Z"
+  },
+  "blog/best-balance-transfer-credit-cards.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "All six translations are accurate, complete, and natural. Financial figures and percentages are correctly preserved across all answers (3-5% fee, 12-21 months, $5,000/$150/$1,200/$1,050, 7-14 days, 18-29% APR, $2,000/$40/month, 5-10 point drop, 3-6 months). Required English terminology is maintained: APR, Chase, Citi. US Spanish preferred terms are used correctly throughout: 'transferencia de saldo', 'puntaje de crédito', 'índice de utilización de crédito', 'consulta dura', 'emisor'. The em-dash in Q3 is appropriately replaced with a semicolon without any change in meaning. Terminology is consistent across all six FAQs.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T15:38:48.458Z"
+  },
+  "blog/best-credit-cards-for-groceries.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "All six FAQ translations are accurate and complete. Card names (Amex Blue Cash Preferred, Amex Blue Cash Everyday, Capital One Savor, Amex Gold, Citi Custom Cash), brand names (Walmart, Target, Costco, Sam's Club, Uber, Dunkin', Resy), and reward terminology (cash back, Membership Rewards, 4x, 1x) are correctly preserved in English. Financial figures and calculations are exact ($144/year, $360/year, $265 net, $6,000/year cap, $25,000/year cap, $95 and $325 annual fees). Spanish-market terminology is appropriate throughout: 'cuota anual', 'tienda de comestibles', 'supertiendas', 'clubes de almacén', 'sin límite', 'tiendas independientes'. No facts were added, omitted, or distorted. Terminology is consistent across all six FAQs.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T15:39:13.042Z"
+  },
+  "af-worth-it/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q4: \"consulta dura\" is a literal calque of \"hard inquiry\" and sounds unnatural in US Spanish; a more natural credit term would be preferable.",
+      "Q5: \"el continuo (sin bono)\" is awkward in US Spanish; \"valor recurrente\" or similar would read more naturally."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall, with key English card names preserved correctly. Only minor naturalness issues appear in a couple of phrases, but no facts were added, removed, or changed.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:06:19.815Z"
+  },
+  "blog/best-credit-cards-for-travel.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The Spanish translations accurately preserve the English source, keep required card and brand names in English, and are complete and consistent overall. There are only minor stylistic choices, with no factual errors, omissions, or added information.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T20:04:39.622Z"
+  },
+  "blog/bnpl-hidden-fees.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The Spanish translations are accurate, complete, and consistent with the English source. Key terms like BNPL, Klarna, Afterpay, Pay in 4, and APR are preserved in English, and the Spanish reads naturally overall with only minor stylistic nuances that do not affect meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:07:21.555Z"
+  },
+  "blog/bnpl-vs-credit-card.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness note in Q2: \"no construirá tu crédito\" is understandable, but more natural US Spanish would be \"no te ayudará a crear historial de crédito\" or similar."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Required English terms like BNPL, Pay in 4, APR, and cash back are preserved, and the Spanish reads naturally with only a small literal phrasing issue in Q2.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:07:56.129Z"
+  },
+  "blog/cheapest-way-to-finance-purchase.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in Q3: \"verificaciones suaves\" is understandable, but \"consultas suaves al crédito\" would read more naturally in US Spanish.",
+      "Minor naturalness issue in Q3: \"crédito regular\" for \"fair credit\" is understandable, though \"crédito aceptable\" would sound more natural.",
+      "Minor style issue in Q2: \"gana de 1 a 5% de cash back\" is slightly awkward; \"obtiene 1–5% de cash back\" would read more naturally."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Key English financial terms and brand names are preserved correctly. Only minor wording/naturalness improvements are suggested; no factual errors or omissions were found.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:08:22.296Z"
+  },
+  "blog/credit-card-benefits-youre-not-using.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in ES A3: \"eso es $75–$150 que puedes omitir por completo\" sounds awkward in US Spanish; \"que puedes evitar por completo\" would read more naturally.",
+      "Minor naturalness issue in ES A4: \"aumenta el retraso de viaje a $500 por día\" is slightly awkward because the amount refers to the reimbursement/coverage, not the delay itself."
+    ],
+    "summary": "Overall, the translations are accurate, complete, and consistent. Card names are preserved in English, key facts and amounts match the source, and the Spanish reads naturally overall, with only minor style/wording improvements suggested.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:08:59.461Z"
+  },
+  "blog/credit-card-points-offset-interest.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in ES A3: \"60+ días de atraso\" would read more naturally as \"60 días o más de atraso\".",
+      "Minor naturalness issue in ES A4: \"Fuera de un período del 0%\" would read more naturally as \"Fuera de un período de 0% APR\"."
+    ],
+    "summary": "The translations are accurate and complete, preserve key English financial terminology and card names, and are consistent across the FAQs. Only a couple of minor phrasing choices sound slightly less natural in US Spanish, but they do not change the meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:09:54.205Z"
+  },
+  "blog/does-klarna-affect-credit-score.html": {
+    "status": "pass",
+    "issues": [
+      "Minor terminology/naturalness issue in Q1: \"verificación de crédito dura/suave\" is understandable, but \"consulta dura/blanda de crédito\" would sound more natural in US Spanish.",
+      "Minor consistency issue in Q1: the translation uses both \"verificación\" and \"consulta\" for the same concept.",
+      "Minor naturalness issue in Q4: \"omito un pago\" / \"pago omitido\" is less natural than \"no hago un pago\" or \"pago atrasado\" in US Spanish.",
+      "Minor style issue in Q2-Q3: \"construir su crédito\" is understandable, though \"mejorar su crédito\" or \"crear historial crediticio\" may read more naturally depending on house style."
+    ],
+    "summary": "The 5 Spanish FAQs accurately preserve the English meaning and facts, and key product and bureau names remain in English where appropriate. The main issues are minor naturalness and consistency choices in US Spanish, not factual errors.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:10:26.084Z"
+  },
+  "blog/how-to-build-credit-from-scratch.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in Q5: \"tarjeta de crédito regular\" is understandable but less natural in US Spanish than \"tarjeta de crédito tradicional\" or \"no asegurada\".",
+      "Minor naturalness issue in Q3: \"facturas reportables\" sounds a bit literal; \"facturas que se pueden reportar\" would read more naturally.",
+      "Minor naturalness issue in Q4: \"mejorar tu tarjeta asegurada a una tarjeta no asegurada\" is understandable, but \"convertir/cambiar tu tarjeta asegurada a una no asegurada\" would sound more natural."
+    ],
+    "summary": "Overall the translations are accurate, complete, and consistent, and they correctly preserve English product names like Self, Bilt, Experian Boost, and Apple Card. Only minor wording/naturalness issues appear in a few phrases, with no factual errors or omissions.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:10:53.383Z"
+  },
+  "blog/klarna-vs-afterpay-vs-affirm.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness/consistency issues only: phrases like \"verificación de crédito dura/suave,\" mixing \"verificación\" and \"consulta,\" \"agencias de crédito,\" and \"no construirá tu crédito\" sound slightly calqued in US Spanish. More natural options would be \"hard/soft credit check\" or \"consulta de crédito,\" \"burós de crédito,\" and \"no te ayudará a crear historial crediticio\"."
+    ],
+    "summary": "The translations are accurate and complete, preserve the key facts and English brand/BNPL terminology, and are acceptable overall. Only minor wording and consistency improvements are suggested for more natural US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:11:29.691Z"
+  },
+  "blog/minimum-payment-trap.html": {
+    "status": "pass",
+    "issues": [
+      "Q4/A4: \"Paga tanto como puedas permitirte\" y \"diferencia dramática\" suenan algo calcados; en US Spanish sería más natural \"Paga todo lo que puedas\" / \"gran diferencia\".",
+      "Q5/A5: \"tasa de ahorro\" puede sonar ambiguo; \"rendimiento de tus ahorros\" o \"tasa de interés de tu cuenta de ahorros\" sería más natural."
+    ],
+    "summary": "La traducción es precisa, completa y consistente; conserva APR en inglés y mantiene bien el sentido del original. Solo hay detalles menores de naturalidad en algunas frases, sin cambios de significado.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:12:05.288Z"
+  },
+  "blog/snowball-vs-avalanche.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness: some phrasing is slightly literal in US Spanish, for example '¿Qué paga la deuda más rápido?' would sound more natural as '¿Cuál paga/liquida la deuda más rápido?'.",
+      "Minor wording: expressions like 'pones cualquier dinero extra hacia', 'terminó el pago', and 'tarifas de transferencia' are understandable but slightly less natural than 'destinas', 'terminó de pagarse', and 'comisiones de transferencia'."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Key facts and terminology like APR are preserved, and there are no meaning changes; only minor naturalness/style issues are present.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:12:34.364Z"
+  },
+  "cards/amazon-prime-visa-signature/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor style/naturalness issue in Q2: \"tasas de ganancia\" sounds less natural than \"tasas de recompensas\" or \"tasas de acumulación\".",
+      "Minor style issue in Q5: \"transferir a aerolíneas/hoteles asociados\" would read more naturally as \"transferir a socios o programas de aerolíneas y hoteles\"."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Required English brand and card names are preserved, and only a couple of minor phrasing choices are slightly less natural in US Spanish without changing the meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:13:16.796Z"
+  },
+  "cards/amex-blue-cash-everyday/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q3 ES question uses \"¿cuál es la correcta?\", which is understandable but less natural than \"¿cuál te conviene?\" or \"¿cuál es la adecuada?\"",
+      "Q3 ES answer uses \"3% en tránsito\" for \"3% transit\"; in US Spanish, \"transporte\" or \"tránsito/transporte\" would read more naturally in card-benefit context",
+      "A few phrases are slightly literal (e.g., \"rastrear categorías rotativas\", \"después de la cuota\"), but they do not change the meaning"
+    ],
+    "summary": "The translations are accurate and complete, preserve the key English card/product names, and remain consistent overall. Only minor naturalness/style issues appear in a few places, with no factual errors or omissions.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:13:47.583Z"
+  },
+  "cards/amex-blue-cash-preferred/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q2: \"Supermercados independientes\" is a slightly awkward/ambiguous rendering of \"standalone grocery stores\" in US Spanish; \"supermercados tradicionales\" or similar would sound more natural.",
+      "Q4: \"transfieres puntos a socios\" is understandable but less natural/precise than \"socios de transferencia\" or \"programas asociados\" in rewards-card terminology.",
+      "Q1 has a couple of literal phrases (for example, \"territorio positivo\" / \"la matemática se invierte\") that are understandable but not the most natural US Spanish."
+    ],
+    "summary": "Overall the translations are accurate, complete, and consistent, with card and brand names preserved in English. Only minor wording/naturalness issues appear, but there are no material factual errors or omissions.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:14:33.300Z"
+  },
+  "cards/amex-gold/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor style/naturalness only in A1: \"El truco\" is a bit awkward for \"The catch,\" and \"se dividen mensual o semestralmente\" would read more naturally as \"se dividen en créditos mensuales o semestrales\".",
+      "Minor wording awkwardness in A4: \"tarjeta de cargo\" and \"plan rotativo con intereses\" are understandable, though slightly less natural in US Spanish than alternative phrasings."
+    ],
+    "summary": "The translations are accurate and complete, preserve the key English product/brand terminology, and stay consistent overall. Only minor phrasing/naturalness issues are present, with no factual errors or omissions.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:15:15.058Z"
+  },
+  "cards/amex-platinum/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q4/Q5: \"tasas de ganancia\" is understandable but not the most natural US Spanish for \"earning rates\"; \"tasas de acumulación\" or similar would read better.",
+      "Q6: \"solicitarla por separado\" is slightly ambiguous about which card must be applied for separately; \"solicitar otra tarjeta por separado\" would be clearer."
+    ],
+    "summary": "Overall accurate, complete, and consistent. Key English card and program names are preserved, and no material facts were added or removed. Only minor phrasing/naturalness tweaks would improve readability.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:40:08.265Z"
+  },
+  "cards/apple-card/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q1: \"tarjeta sin cuota anual\" narrows \"no-fee card\" somewhat; \"sin cargos/comisiones\" would match the English more closely, and it also differs from Q4's wording.",
+      "Q1: \"tarjetas de tasa fija\" is understandable but sounds literal; a more natural rewards term in US Spanish would be closer to \"tarjetas con porcentaje fijo\" or similar.",
+      "Q3: \"ayuda a construir crédito\" is accurate but not very natural in US Spanish; \"crear historial crediticio\" or \"mejorar tu crédito\" would read better.",
+      "Q5: \"Aplicas\" and \"maximizar la tarjeta\" are anglicized; more natural would be \"la solicitas\" and \"aprovecharla al máximo\"."
+    ],
+    "summary": "Accurate and complete overall, with card and bank names kept in English. The remaining issues are minor naturalness and consistency choices, not factual translation errors.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:40:57.139Z"
+  },
+  "cards/barclays-uber-pro/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q3: \"prioridad para emparejarte\" suena un poco poco natural en español de EE. UU.; algo como \"prioridad para conectarte/asignarte con conductores mejor calificados\" sería más fluido, aunque no cambia el significado."
+    ],
+    "summary": "La traducción es precisa, completa y consistente en general. Se preservan los nombres y términos en inglés relevantes, no se agregan ni se omiten hechos, y el español suena natural salvo un pequeño detalle de estilo en Q3.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:41:23.958Z"
+  },
+  "cards/bilt-mastercard/index.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The translations are accurate and complete, preserve the key facts and English product names, and are generally consistent. A few phrases are slightly less natural in US Spanish, but these are minor style issues only and do not change meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:42:07.249Z"
+  },
+  "cards/bofa-customized-cash-rewards/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness: \"impulso\" in Q2 sounds awkward for \"boost\"; \"bonificación\" or \"aumento\" would read more naturally in US Spanish.",
+      "Minor naturalness: \"categoría a elección\" is understandable but \"categoría de tu elección\" would sound more natural and consistent.",
+      "Minor naturalness in Q5: \"se codifican como supermercados\" is a bit literal; \"se clasifican como compras de supermercado\" would be clearer."
+    ],
+    "summary": "Overall the translations are accurate, complete, and consistent, with card and program names kept in English. Only minor wording/naturalness improvements are suggested; no factual errors or omissions were found.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:43:02.491Z"
+  },
+  "cards/capital-one-quicksilver/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness/style: \"recompensas continuas puras\", \"límite a largo plazo\", \"verificación de crédito suave\", and \"nunca pensar en ello\" sound somewhat literal/awkward in US Spanish, but the meaning is preserved."
+    ],
+    "summary": "Accurate and complete overall; key English financial/card terminology is preserved and terminology is mostly consistent. Only minor phrasing tweaks could improve naturalness.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:43:46.145Z"
+  },
+  "cards/capital-one-savor/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q5: \"transferencias de viaje\" is a slightly literal/awkward rendering of \"travel transfers\"; something like \"transferencias a socios de viaje\" would sound more natural in US Spanish."
+    ],
+    "summary": "The translations are accurate, complete, and consistent, with card and bank names preserved in English. Overall the Spanish reads naturally; only a minor phrasing issue appears in Q5.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:44:27.663Z"
+  },
+  "cards/capital-one-savorone/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q1: \"intercambio\" is a very literal rendering of \"interchange\"; \"comisiones de intercambio\" would sound more natural in US Spanish.",
+      "Q6: \"consulta suave\" for \"soft pull,\" \"aplicar,\" and \"más indulgentes\" are understandable but less natural than standard credit-card Spanish (for example, \"consulta sin impacto\", \"solicitar\", \"más flexibles\").",
+      "Q2: \"comensales casuales\" is understandable but somewhat literal; a more natural phrasing would be something like \"quienes comen fuera ocasionalmente\"."
+    ],
+    "summary": "The translations are accurate and complete overall, and they keep key English product/brand terms intact. No material facts were added or removed, though a few phrases read a bit too literally rather than naturally in US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:44:58.743Z"
+  },
+  "cards/capital-one-venture-x/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q3: \"purchase eraser\" was translated as \"borrar compras\"; if this is intended as the feature name, keeping it in English/in quotes would be more consistent.",
+      "Q6: \"consultas recientes limpias\" is understandable but slightly unnatural in US Spanish for credit context."
+    ],
+    "summary": "Overall accurate, complete, and consistent. Card and bank names are preserved correctly, and no facts were added or removed. Only minor terminology/naturalness tweaks are advisable.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:45:54.102Z"
+  },
+  "cards/chase-freedom-flex/index.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The 6 translations are accurate, complete, and consistent. Key English terms and brand names are preserved appropriately, and the Spanish reads naturally for a US audience with only minor stylistic variation and no meaning changes.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:46:30.621Z"
+  },
+  "cards/chase-sapphire-preferred/index.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The Spanish translations are accurate, complete, and consistent with the English source. Key terms and card names remain in English where appropriate, and the Spanish reads naturally for a US Spanish audience. Only minor stylistic choices appear, with no meaning changes.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:48:03.188Z"
+  },
+  "cards/chase-sapphire-reserve/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q3: \"canjeadores expertos\" preserves the meaning but sounds slightly awkward in US Spanish; something like \"si sabes canjearlos bien\" would read more naturally.",
+      "Q5: \"el crédito se publica\" is understandable but feels calqued from English; \"se refleja\" or \"aparece\" would sound more natural."
+    ],
+    "summary": "Overall accurate, complete, and consistent. Card/program names stay in English and no facts were added or removed. Only minor phrasing in Q3 and Q5 could be made more natural for US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:48:36.604Z"
+  },
+  "cards/citi-custom-cash/index.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The Spanish translations are accurate, complete, and consistent. Key English terms like Citi Custom Cash, Freedom Flex, Double Cash, and APR are preserved, and the wording reads naturally in US Spanish with only minor stylistic differences that do not affect meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:49:00.463Z"
+  },
+  "cards/citi-double-cash/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness only: \"período de introducción\" / \"12 meses de introducción\" sound slightly literal; \"período introductorio\" / \"12 meses introductorios\" would read more naturally in US Spanish."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Card and bank names are preserved in English, APR is kept in English, and no facts were added or removed. Only a couple of slightly literal phrasing choices affect style, not meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:49:40.402Z"
+  },
+  "cards/citi-premier/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in Q1: \"dejando un neto de solo $5/año\" is awkward in US Spanish; \"dejando un costo neto de solo $5 al año\" would read more naturally.",
+      "Minor naturalness issue in Q3/Q6: \"socios de transferencia\" is understandable but awkward; \"socios para transferir puntos\" or \"socios de viaje\" would sound more natural.",
+      "Minor naturalness issue in Q4: \"configuraciones para ganar puntos disponibles\" is slightly awkward; a more natural phrasing would be \"estrategias\" or \"combinaciones para acumular puntos\"."
+    ],
+    "summary": "Overall accurate, complete, and consistent. Card/program names remain in English and no facts were added or removed. Only minor wording awkwardnesses in Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:50:21.836Z"
+  },
+  "cards/citi-strata-premier/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor style only: in Q5, \"esto es solo un gancho\" is slightly less natural than the English tone of \"this is a teaser,\" though the meaning is close.",
+      "Minor style only: in Q6, \"para transferencias de viaje\" reads a bit awkwardly; \"para transferirlos a socios de viaje\" would sound more natural in US Spanish."
+    ],
+    "summary": "Overall the translations are accurate, complete, and consistent. Card and program names remain in English, key facts and numbers are preserved, and only a couple of phrasing choices could be made more natural without affecting meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:51:10.518Z"
+  },
+  "cards/discover-it-cash-back/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor style/naturalness: \"tasas regulares\" in A1 sounds less natural than \"recompensas regulares\" or \"tasas normales\" in US Spanish.",
+      "Minor consistency: Q6 uses \"igualación del primer año\" while other entries use the branded term \"Cashback Match\"."
+    ],
+    "summary": "The translations accurately preserve the source content and keep key English product and brand names intact. Only minor wording and consistency improvements are suggested for more natural US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:51:41.384Z"
+  },
+  "cards/ihg-one-rewards-premier/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q2 y Q6: \"estadías de premio\" suena literal; en US Spanish sería más natural \"estadías con puntos\" o \"canjes de premio\".",
+      "Q3: \"13% de cash back\" es una formulación algo forzada; el sentido se conserva, pero podría expresarse de forma más natural.",
+      "Q5: \"propiedades Hyatt a donde viajas\" suena poco natural; \"en los lugares a los que viajas\" sería más fluido."
+    ],
+    "summary": "La traducción preserva correctamente los hechos y mantiene en inglés los nombres de tarjetas, marcas y banco. No hay errores de contenido ni omisiones; solo hay detalles menores de naturalidad/estilo.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:52:09.810Z"
+  },
+  "cards/southwest-priority-card/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness only: \"actividad de ganancia\" in Q5 sounds literal; \"actividad para acumular puntos\" would read more naturally in US Spanish.",
+      "Minor naturalness only: \"bono de registro\" in Q5 is understandable, though \"bono de bienvenida\" is more idiomatic.",
+      "Minor naturalness only: \"descontinuada\" and \"el mejor valor\" in Q3 read slightly calqued; more natural alternatives exist."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall, with card and program names kept in English as needed. Only a few phrases sound slightly literal in US Spanish, but no facts are added, removed, or mistranslated.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:52:42.784Z"
+  },
+  "cards/us-bank-altitude-go/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness: \"socios de viajes\" in Q2 would read more naturally as \"socios de viaje\".",
+      "Minor naturalness: \"verificación de crédito suave\" in Q5 is a literal calque; \"soft pull\" or \"consulta suave de crédito\" would sound more natural in US Spanish.",
+      "Minor naturalness: \"¿Es difícil ser aprobado para...\" in Q5 is less natural than \"¿Es difícil obtener aprobación para...\"."
+    ],
+    "summary": "The translations accurately preserve the English source and keep key English terminology intact. No facts were added or removed, though a few phrases are slightly literal and could be polished for more natural US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:53:20.673Z"
+  },
+  "cards/us-bank-cash-plus/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q1: \"servicios públicos del hogar\" is accurate but slightly stiff in US Spanish; a more natural phrasing could be used for \"home utilities.\"",
+      "Q6: \"verificación de crédito suave\" is understandable, but \"soft pull\" or \"consulta suave\" would sound more natural in US Spanish credit-card terminology."
+    ],
+    "summary": "The translations are accurate and complete, preserve key terms like Cash+, Chase Freedom Flex, US Bank, and FICO in English, and do not add or remove facts. Only minor wording/naturalness improvements are suggested.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:53:55.160Z"
+  },
+  "cards/wells-fargo-active-cash/index.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "Las 6 traducciones preservan correctamente la información del original, mantienen en inglés los nombres de tarjetas/bancos y usan terminología mayormente natural y consistente en español de EE. UU. Hay algunas frases algo literales, pero no cambian el significado.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:54:24.773Z"
+  },
+  "cards/wells-fargo-autograph/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in Q1: \"configuraciones sin cargo disponibles\" sounds awkward in US Spanish; \"opciones sin cuota anual\" would read more naturally.",
+      "Minor naturalness issue in Q3: \"Autograph es para configurar y olvidar\" is a literal calque of \"set-and-forget\" and sounds unnatural.",
+      "Minor naturalness issue in Q6: \"configuración fija del 2%\" is awkward; \"2% fijo\" would be more natural.",
+      "Minor consistency issue in Q1: \"no-fee\" is rendered once as \"sin cargo\" and elsewhere as \"sin cuota anual\"; using \"sin cuota anual\" consistently would be better."
+    ],
+    "summary": "All six translations preserve the source meaning and required English product/brand terminology. No facts were added or removed. A few phrases are slightly literal or awkward in US Spanish, but these are minor style issues only.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:55:04.029Z"
+  },
+  "compare/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q4/A4: \"consulta de crédito dura\" is understandable but not very natural in US Spanish for \"hard credit inquiry\"; consider a more standard phrasing such as \"consulta dura de crédito\" or keeping \"hard inquiry\" if desired."
+    ],
+    "summary": "All 6 translations are accurate, complete, and consistent overall. Key terms like APR and BNPL are preserved correctly, and no material facts were added or removed. Only a minor naturalness issue appears in Q4/A4.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:55:30.011Z"
+  },
+  "debt-planner/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q3: \"el que realmente mantendrás\" is awkward in US Spanish for \"the one you'll actually stick with\"; more natural would be \"el que realmente podrás seguir\" or \"el que de verdad mantendrás\".",
+      "Q1/Q3: \"victorias rápidas\" and \"victorias psicológicas\" are understandable but somewhat literal; \"logros rápidos\" or \"resultados rápidos\" would sound more natural.",
+      "Q4: \"fecha libre de deudas\" is understandable but not very natural; \"la fecha en que quedarás libre de deudas\" or \"cuándo saldrás de deudas\" reads better.",
+      "Q4/Q5: The planner term is slightly inconsistent: \"Planificador de Pago de Deudas\" in Q4 vs. \"planificador\" in Q5."
+    ],
+    "summary": "The translations are accurate and complete overall, with key terminology preserved correctly, including APR. Only minor naturalness and consistency improvements are recommended; no factual errors or omissions were found.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:55:56.139Z"
+  },
+  "index.html": {
+    "status": "pass",
+    "issues": [
+      "En A3, \"tarifas\" suena poco natural en contexto de crédito/tarjetas; \"comisiones\" o \"cargos\" sería más natural en US Spanish.",
+      "En A4, si \"Credit Comparison\", \"Debt Planner\" y \"Rewards Calculator\" son nombres oficiales de herramientas en la interfaz, convendría mantenerlos en English para mayor consistencia."
+    ],
+    "summary": "Las 4 traducciones preservan correctamente el significado del original y no agregan ni omiten hechos. La calidad general es buena, con solo ajustes menores de naturalidad/consistencia terminológica.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:56:31.720Z"
+  },
+  "learn/balance-transfer-calculator.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness/style issues only: \"lado a lado\" in Q2 is a calque and would read more naturally as \"una al lado de la otra\" or similar.",
+      "Minor naturalness/style issues only: \"aplicar\" and \"consultas duras\" in Q7 are understandable but less natural in US Spanish than \"solicitar\" and a more localized rendering of \"hard inquiries\".",
+      "Minor naturalness/style issues only: phrases like \"APR introductorio del 0%\" / \"0% de APR\" are accurate but slightly awkward in Spanish."
+    ],
+    "summary": "Overall the translations are accurate, complete, and consistent, with key financial terminology like APR kept in English as requested. No facts were added or removed; only a few minor phrasing choices sound slightly literal in US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:57:02.925Z"
+  },
+  "learn/bnpl-interest-calculator.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness: Q1 uses \"construcción de crédito,\" which is understandable but more literal than natural US Spanish; \"crear historial de crédito\" would read better.",
+      "Minor naturalness: Q2 \"¿Qué pasa si omito un pago de BNPL?\" is understandable but less natural than \"si no hago\" or \"si me atraso con\" un pago.",
+      "Minor naturalness: Q3 \"verificaciones de crédito suaves\" is a literal rendering of \"soft credit pulls\"; a more natural phrasing would be \"consultas de crédito blandas\" or similar."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Key English terminology such as BNPL brand names, Affirm, Klarna, PayPal Pay in 4, Zip, and APR is preserved correctly. Only a few phrases sound slightly literal in US Spanish, but there are no factual errors, omissions, or added claims.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:57:34.901Z"
+  },
+  "learn/crypto-credit-card-rewards.html": {
+    "status": "pass",
+    "issues": [
+      "Minor consistency issue in Q2/A2: the translation mixes informal and formal register ('ganas' vs. 'su billetera').",
+      "A few phrases are slightly literal for US Spanish, such as 'más fácil de presupuestar' and 'una utilidad más constante'.",
+      "In Q5/A5, 'cuotas anuales' is understandable, but 'cuota anual' or 'tarifa anual' would sound more natural in credit card context."
+    ],
+    "summary": "Overall accurate and complete. English product names and key terms are preserved, and no material facts were added or removed. Only minor style and consistency improvements are needed for more natural US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T20:05:50.797Z"
+  },
+  "learn/pay-off-10k-debt.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue: \"cronograma exacto\" / \"cronograma de pago exacto\" sounds less natural in US Spanish than \"plazo exacto\" or \"tiempo exacto\".",
+      "Minor naturalness issue in Q6: \"pagar los pagos mínimos\" is repetitive; \"hacer los pagos mínimos\" would read more naturally.",
+      "Minor wording ambiguity in Q2: \"una tarjeta de crédito de $10,000\" could be read as card amount/limit rather than a $10,000 balance, though the answer clarifies it."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall, with required financial terminology preserved. Only minor US Spanish phrasing improvements are recommended; no meaning changes or factual issues were found.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:58:42.084Z"
+  },
+  "learn/snowball-vs-avalanche.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in Q2: \"pasas a la siguiente tasa más alta\" is slightly awkward; more natural would be to refer to the next debt with the highest interest rate.",
+      "Minor naturalness issue in Q3: \"el que realmente mantendrás\" is a literal rendering of \"stick with\"; more natural US Spanish would be \"el que realmente podrás seguir\" or \"con el que serás constante\".",
+      "A few phrases are slightly literal but not incorrect, such as \"victorias rápidas/psicológicas\" and \"durante la vida de la deuda.\""
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall, with no factual omissions or additions. Terminology is handled appropriately, and the Spanish is generally natural, though a few phrases read slightly literal.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:59:13.393Z"
+  },
+  "loan-vs-bt/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issues: «período de introducción» would read more naturally as «período introductorio» in Q1-Q2.",
+      "Minor naturalness issue: «Omitir un pago» in Q2 is understandable but less natural than «no hacer un pago» or «perder un pago».",
+      "Minor naturalness/consistency issue: «crédito regular» for «fair credit» in Q4 is understandable but sounds less natural than a more standard rendering such as «crédito aceptable» or similar."
+    ],
+    "summary": "The translations are accurate and complete, with key English financial terms and card names preserved appropriately. Overall quality is good, with only minor wording choices that are slightly less natural in US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T16:59:36.321Z"
+  },
+  "merchant/amazon.html": {
+    "status": "pass",
+    "issues": [
+      "Q4 has a minor naturalness issue: \"en el Amazon Prime Day\" would read more naturally as \"durante Amazon Prime Day\" or \"en Prime Day de Amazon\".",
+      "Q5 has a minor style issue: \"sin tener que hacerles seguimiento\" sounds a bit awkward in US Spanish; something like \"sin tener que monitorear categorías\" would feel more natural."
+    ],
+    "summary": "The translations are accurate and complete, preserve the key English card/product names, and are generally consistent. Only minor wording/naturalness improvements are suggested; no factual errors or omissions were found.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:00:17.786Z"
+  },
+  "merchant/costco.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "All 4 translations preserve the source meaning, keep card and network names in English, and remain complete and consistent. There are a few slightly less natural phrasings such as \"de tasa fija\" and \"en sus tiendas,\" but they do not change the meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:00:44.205Z"
+  },
+  "merchant/dining.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness only: Q2 'agregadores de mercado' sounds literal in US Spanish; 'marketplaces' or 'plataformas/agregadores' would read more naturally.",
+      "Minor naturalness only: Q3 'socios de transferencia' and Q4 'tarjeta para restaurantes' are understandable but slightly literal."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Card and bank names remain in English, key facts are preserved, and the Spanish is generally natural, with only a few minor wording choices that feel literal but do not change meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:01:21.965Z"
+  },
+  "merchant/ev-charging.html": {
+    "status": "pass",
+    "issues": [
+      "Q1: \"recompensas de bonificación\" is accurate but slightly unnatural in US Spanish; \"recompensas extra\" or \"bonificaciones\" would read more naturally.",
+      "Q3: \"tasas de bonificación\" sounds a bit calqued; a more natural phrasing would be \"recompensas extra\" or similar.",
+      "Q1/Q5: \"tránsito\" is understandable, but \"transporte\" may sound more natural in US Spanish depending on site style."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Card and bank names remain in English, facts are preserved, and there are no material additions or omissions. Only minor wording choices could be made more natural for US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:02:01.888Z"
+  },
+  "merchant/fitness.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issues: 'mercancía'/'mercancía general', 'comercio minorista misceláneo', and 'ganar bonificaciones de streaming' sound somewhat literal in US Spanish.",
+      "Minor consistency/style issue: generic terms like 'fitness' and 'streaming' are left in English in some places; this does not change the meaning but could be localized more naturally."
+    ],
+    "summary": "The translations preserve the English meaning and all key facts, while keeping card and bank names in English. Overall quality is good, with only minor style/naturalness inconsistencies that do not affect accuracy.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:02:37.158Z"
+  },
+  "merchant/gas-stations.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness/style only: \"bonos de gasolina\" in A1 would sound more natural as \"bonificaciones/recompensas en gasolina\".",
+      "Minor naturalness/style only: Q3/A3 use slightly less natural phrasing in US Spanish (for example, \"ganan recompensas\" and \"código del comerciante\"), but the meaning is preserved.",
+      "Minor naturalness/style only: \"viajes diarios\" in A5 is a bit literal for \"commuting\"; \"trayectos diarios\" or \"desplazamientos\" would read more naturally."
+    ],
+    "summary": "Translations are accurate and complete, preserve the key English product names/brands, and are generally consistent. Only minor US-Spanish wording improvements are suggested; no factual errors or omissions were found.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:03:19.533Z"
+  },
+  "merchant/groceries.html": {
+    "status": "pass",
+    "issues": [
+      "Q2/A2: \"La condición\" suena poco natural para \"The catch\"; \"La desventaja\" o \"El detalle\" leería mejor.",
+      "Q3/A3: \"Una tarjeta gratuita del 3%\" puede sonar impreciso; \"una tarjeta sin cuota anual del 3%\" refleja mejor el original.",
+      "Q4/A4: \"club de almacenes\" y \"son separadas\" suenan poco naturales; \"club mayorista\" / \"club de almacén\" y \"son categorías separadas\" serían más fluidos."
+    ],
+    "summary": "Las traducciones conservan los hechos y mantienen bien los nombres de tarjetas y bancos en inglés. Hay algunos detalles menores de naturalidad en español de EE. UU., pero no cambian el significado.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:03:50.999Z"
+  },
+  "merchant/home-improvement.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "Las 5 traducciones conservan el significado del original, mantienen correctamente Home Depot, Lowe's y APR en inglés, y no agregan ni omiten hechos. Hay algunas frases algo literales, pero son diferencias menores de estilo y no afectan la precisión.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:04:18.802Z"
+  },
+  "merchant/insurance.html": {
+    "status": "pass",
+    "issues": [
+      "Q2/A2 has slightly literal phrasing: \"no se codifican como una categoría de bonificación\" and \"si están agrupados\" sound awkward in US Spanish, though the meaning is preserved.",
+      "Q2/A2 and Q4/A4 use \"tarjeta de tasa fija,\" which is understandable but less natural than a wording like \"tarjeta con recompensas de tasa fija.\""
+    ],
+    "summary": "Accurate and complete overall. Key facts, card names, and percentages are preserved, and terminology is mostly consistent. Only minor naturalness issues appear in Q2 and Q4, with no meaning changes.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:04:47.128Z"
+  },
+  "merchant/online-shopping.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "Las traducciones preservan correctamente la información del original, mantienen los nombres de tarjetas y marcas en inglés, y en general suenan naturales en español de EE. UU. Solo hay algunas elecciones de estilo ligeramente literales, pero no cambian el significado ni afectan la precisión.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:05:13.486Z"
+  },
+  "merchant/pharmacy.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The Spanish translations are accurate and complete, preserve the key facts from the English source, keep card and network names in English, and use generally natural and consistent US Spanish terminology. A few phrasings are slightly literal, but they do not change the meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:05:43.180Z"
+  },
+  "merchant/rent.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness: in Q2, \"gana recompensas en el alquiler\" would sound more natural as \"gana recompensas por el alquiler\".",
+      "Minor naturalness: in Q4, \"aerolíneas y hoteles asociados\" would be clearer as \"socios de aerolíneas y hoteles\" to match \"partners\" more precisely."
+    ],
+    "summary": "The Spanish translations are accurate, complete, and consistent overall. Key English product and payment terms are preserved correctly, with only minor phrasing opportunities for more natural US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:06:20.132Z"
+  },
+  "merchant/restaurants.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in Q1/A1: \"cuando restaurantes es la categoría principal\" would read more naturally as \"cuando la categoría principal es restaurantes\".",
+      "Minor naturalness issue in Q2: \"¿La entrega a domicilio cuenta como restaurantes?\" is understandable but somewhat awkward in US Spanish.",
+      "Minor clarity issue in Q3/A3: \"5% en la principal\" is elliptical; \"5% en la categoría principal\" would be clearer."
+    ],
+    "summary": "Overall accurate and complete. Card and brand names remain in English, no facts were added or removed, and terminology is mostly consistent. Only minor phrasing/naturalness improvements are needed.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:06:49.346Z"
+  },
+  "merchant/streaming.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The Spanish translations are accurate, complete, and consistent with the English source. Card names remain in English, key facts are preserved, and the phrasing reads naturally in US Spanish with only minor style differences that do not change meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:07:17.839Z"
+  },
+  "merchant/student.html": {
+    "status": "pass",
+    "issues": [
+      "Minor style/naturalness nits only: \"de más fácil aprobación\" and \"graduándose a una tarjeta no asegurada después de 8 meses\" sound slightly awkward in US Spanish, but they do not change the meaning."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Card names and FICO remain in English, and no facts were added or removed. Only minor phrasing could be made more natural in US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:08:27.284Z"
+  },
+  "merchant/subscription.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "All 5 translations are accurate, complete, and consistent with the English source. Card and service names are correctly kept in English, and the Spanish reads naturally for U.S. Spanish. Only very minor style nuances appear, with no meaning changes.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:22:13.172Z"
+  },
+  "merchant/travel-hotels.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness: \"premio de noche gratis\" in Q2 and Q4 is understandable but sounds literal; \"noche gratis\" or \"certificado de noche gratis\" would read more naturally in US Spanish.",
+      "Minor consistency: Q4 says \"una noche gratis de 35K\" while the IHG example uses \"40K puntos\"; adding \"puntos\" after \"35K\" would be clearer and more consistent.",
+      "Minor style: \"mejor valor general\" in Q3 is understandable, though \"mejor valor en general\" sounds slightly more natural."
+    ],
+    "summary": "The translations are accurate and complete, with card names and loyalty-program terminology preserved correctly. No factual content is added or removed; only a few minor wording and consistency improvements would make the Spanish sound more natural.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:22:53.403Z"
+  },
+  "merchant/travel.html": {
+    "status": "pass",
+    "issues": [
+      "Minor style only: Q2 '¿Las compras directas a aerolíneas ganan bonos?' and Q3 '¿La mejor para hoteles?' sound slightly literal in US Spanish, but the meaning is preserved."
+    ],
+    "summary": "The translations are accurate and complete, keep key English brand/card terminology, and are generally natural and consistent. Only minor phrasing could be smoothed in Q2 and Q3.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:23:22.688Z"
+  },
+  "merchant/uber-lyft.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "Las 4 traducciones preservan correctamente el contenido del original, mantienen los nombres de tarjetas en inglés y suenan naturales en español de EE. UU. Solo hay diferencias menores de estilo, sin cambios de significado ni omisiones.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:23:52.086Z"
+  },
+  "merchant/utilities.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness nits only: in US Spanish, \"renta\" may sound more natural than \"alquiler\" in Q2, and phrases like \"eximen las tarifas\" / \"dan bonos específicamente\" are slightly literal but still clear."
+    ],
+    "summary": "The translations are accurate, complete, and consistent overall. Required English card and brand names are preserved, and there are no factual omissions or additions. Only minor style tweaks could make a few lines sound more natural in US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T20:06:19.391Z"
+  },
+  "merchant/walmart.html": {
+    "status": "pass",
+    "issues": [],
+    "summary": "The Spanish translations accurately preserve the English meaning, keep required brand/card terminology in English, and read naturally for US Spanish. No facts were added or removed, and terminology is consistent across the FAQs.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:25:04.682Z"
+  },
+  "merchant/warehouse-clubs.html": {
+    "status": "pass",
+    "issues": [
+      "Minor style/naturalness points: in Q2, \"tasas más altas en clubes de almacenes\" could read more naturally as \"recompensas más altas\" or \"porcentajes más altos\" in a rewards context.",
+      "Minor style/naturalness point: \"gana\" is understandable for rewards, though \"ofrece\" or \"da\" may sound more natural in some answers."
+    ],
+    "summary": "The translations are accurate, complete, and preserve key English terminology such as card names and merchant names. No facts were added or removed. Overall quality is strong, with only minor wording choices that could be slightly more natural in US Spanish.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:25:23.387Z"
+  },
+  "min-payment/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness issue in Q2 A2: \"con un piso de $25-35\" is understandable but sounds literal; \"con un mínimo de $25-$35\" would read more naturally in US Spanish.",
+      "Minor naturalness issue in Q4 A4: \"puede restar años a su tiempo de pago\" is understandable but slightly awkward; a more natural phrasing would be \"puede acortar en años el tiempo para pagarla/liquidarla\"."
+    ],
+    "summary": "The translations are accurate, complete, and consistent, with key terms like APR preserved correctly. No facts were added or removed. A couple of phrases sound slightly literal in US Spanish, but they do not change the meaning.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:25:52.954Z"
+  },
+  "rewards/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor naturalness: Q6 \"Continuo\" for \"Ongoing\" sounds awkward in US Spanish; a more natural term or keeping the UI label in English may be clearer.",
+      "Minor naturalness: Q6 \"interruptor\" is a literal translation of \"toggle\" and feels unnatural in a UI context.",
+      "Minor naturalness: Q1 \"tasa de ganancia,\" Q5 \"mejor tarjeta personal,\" and Q6 \"bonos de registro\" are understandable but not the most natural US Spanish choices."
+    ],
+    "summary": "The translations are accurate and complete, with key card and program names correctly kept in English. No facts were added, removed, or changed. Only minor wording/naturalness issues appear, so overall this passes.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:26:45.969Z"
+  },
+  "score-simulator/index.html": {
+    "status": "pass",
+    "issues": [
+      "Q4/A4: \"consulta dura\" for \"hard inquiry\" is understandable but not the most natural US Spanish credit term; consider a more standard rendering for better naturalness."
+    ],
+    "summary": "The translations are accurate, complete, and mostly consistent, with all key facts preserved and required English terms like FICO kept in English. Only a minor naturalness issue appears in Q4.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T17:27:18.310Z"
+  },
+  "cards/chase-ink-business-preferred/index.html": {
+    "status": "pass",
+    "issues": [
+      "Minor style/naturalness only: \"Combinada con una tarjeta Sapphire\" in Q4 is slightly awkward; \"Al combinarla con una tarjeta Sapphire\" would sound more natural.",
+      "There is slight terminology variation between \"comercial\" and \"de negocios\" across the FAQs, but it does not change the meaning."
+    ],
+    "summary": "The translations are accurate and complete, preserve the key English card/program names, and are generally natural in US Spanish. Only minor fluency and consistency tweaks are suggested.",
+    "reviewer": "sonnet-4-6",
+    "date": "2026-05-06T20:07:07.402Z"
+  }
+}

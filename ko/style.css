@@ -1,12 +1,16 @@
 /* Reset & Base */
+html { scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 :root {
   --bg: #f8f9fb;
   --surface: #ffffff;
   --border: #e2e6ed;
   --text: #1a1d23;
-  --text-muted: #9ca3af;
+  --text-muted: #6b7280;
   --text-secondary: #5f6775;
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
@@ -35,7 +39,12 @@ body {
 }
 
 .container {
-  max-width: 720px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.container-wide {
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -80,7 +89,7 @@ body {
 }
 
 .nav-link {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.82);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -111,7 +120,7 @@ body {
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.82);
   padding: 4px 8px;
   border-radius: var(--radius-sm, 4px);
   transition: all 0.2s;
@@ -165,7 +174,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.55);
   padding: 4px 16px 2px;
   user-select: none;
 }
@@ -1151,7 +1160,7 @@ input:focus, select:focus {
 }
 
 .site-disclosure-container {
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -2008,4 +2017,57 @@ input:focus, select:focus {
   font-weight: 700;
   color: white;
   margin: 8px 0 4px;
+}
+
+/* Footer Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
