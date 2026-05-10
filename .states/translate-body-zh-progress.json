@@ -559,8 +559,10 @@
     "done": true,
     "words": 1242,
     "translator": "gemini-3.1-pro",
-    "date": "2026-05-09T17:40:00.000Z",
-    "note": "verified Chinese on disk"
+    "date": "2026-05-10T01:56:31.646Z",
+    "srcWords": 1242,
+    "transWords": 394,
+    "ratio": 0.3172302737520129
   },
   "blog/affirm-interest-rates-explained.html": {
     "done": true,
@@ -593,8 +595,10 @@
     "done": true,
     "words": 1488,
     "translator": "gemini-3.1-pro",
-    "date": "2026-05-09T17:40:00.000Z",
-    "note": "verified Chinese on disk"
+    "date": "2026-05-10T01:58:58.396Z",
+    "srcWords": 1488,
+    "transWords": 510,
+    "ratio": 0.34274193548387094
   },
   "blog/best-credit-cards-for-travel.html": {
     "done": true,
