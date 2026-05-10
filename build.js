@@ -355,13 +355,16 @@ function buildLang(lang) {
   // Manually-translated pages should not be overwritten by the build.
   // These files have full Spanish content in the body (not just i18n partials).
   // List them relative to the repo root (without language prefix).
-  const MANUALLY_TRANSLATED = new Set([
+  // Manually-translated pages should not be overwritten by the build.
+  // For es (Spanish): these have hand-crafted translations and were skipped in es.
+  // For zh/ko/other languages: these ARE translated by the runner, so don't skip them.
+  const MANUALLY_TRANSLATED = lang === 'es' ? new Set([
     'blog/best-balance-transfer-credit-cards.html',
     'blog/minimum-payment-trap.html',
     'blog/snowball-vs-avalanche.html',
     'blog/credit-card-benefits-youre-not-using.html',
     'blog/credit-card-points-offset-interest.html',
-  ]);
+  ]) : new Set();
 
   // Pages that have been body-translated by the translation runner.
   // These should use the translated file as base (not English source).
