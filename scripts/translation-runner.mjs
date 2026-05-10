@@ -229,7 +229,7 @@ function chunkBody(body, maxWords = MAX_CHUNK_WORDS) {
 
 // ── Validation ──
 
-function validateTranslation(sourceBody, translatedBody) {
+function validateTranslation(sourceBody, translatedBody, lang = 'es') {
   const stripHtml = (s) => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
   const srcText = stripHtml(sourceBody);
   const transText = stripHtml(translatedBody);
@@ -246,7 +246,9 @@ function validateTranslation(sourceBody, translatedBody) {
   if (ratio > MAX_WORD_RATIO) {
     throw new Error(`Word bloat: ${transWords}w output vs ${srcWords}w source (${ratio.toFixed(2)}x ratio). Likely hallucinated.`);
   }
-  if (ratio < 0.4) {
+  // CJK languages compress significantly (Chinese/Korean ~0.25-0.45x word count)
+  const MIN_WORD_RATIO = (lang === 'zh' || lang === 'ko' || lang === 'ja') ? 0.15 : 0.4;
+  if (ratio < MIN_WORD_RATIO) {
     throw new Error(`Truncation: ${transWords}w output vs ${srcWords}w source (${ratio.toFixed(2)}x ratio). Likely truncated.`);
   }
 
@@ -402,7 +404,7 @@ async function translatePage(relPath, lang, { dryRun = false } = {}) {
   }
 
   // Validate
-  const { srcWords, transWords, ratio } = validateTranslation(sourceBody, translatedBody);
+  const { srcWords, transWords, ratio } = validateTranslation(sourceBody, translatedBody, lang);
   console.log(`  ✅ Validated: ${srcWords}→${transWords}w (${ratio.toFixed(2)}x)`);
 
   // Validate target language content

@@ -366,7 +366,7 @@ function buildLang(lang) {
   // Pages that have been body-translated by the translation runner.
   // These should use the translated file as base (not English source).
   function isBodyTranslated(relPath) {
-    const progressFile = path.join(repoDir, '.states', 'translate-body-progress.json');
+    const progressFile = path.join(repoDir, '.states', `translate-body-${lang}-progress.json`);
     try {
       const progress = JSON.parse(fs.readFileSync(progressFile, 'utf8'));
       return progress[relPath]?.done === true && !progress[relPath]?.dryRun;

@@ -1,0 +1,476 @@
+{
+  "af-worth-it/index.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:15:05.880Z"
+  },
+  "blog/affirm-interest-rates-explained.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:15:18.487Z"
+  },
+  "blog/amex-gold-worth-it.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:15:36.342Z"
+  },
+  "blog/best-0-apr-credit-cards.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:15:51.303Z"
+  },
+  "blog/best-balance-transfer-credit-cards.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:16:10.272Z"
+  },
+  "blog/best-credit-cards-for-groceries.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:16:31.498Z"
+  },
+  "blog/best-credit-cards-for-travel.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:16:50.931Z"
+  },
+  "blog/bnpl-hidden-fees.html": {
+    "done": true,
+    "count": 3,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:17:04.983Z"
+  },
+  "blog/bnpl-vs-credit-card.html": {
+    "done": true,
+    "count": 3,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:17:18.549Z"
+  },
+  "blog/cheapest-way-to-finance-purchase.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:17:35.208Z"
+  },
+  "blog/credit-card-benefits-youre-not-using.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:17:56.698Z"
+  },
+  "blog/credit-card-points-offset-interest.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:18:18.526Z"
+  },
+  "blog/does-klarna-affect-credit-score.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:18:37.759Z"
+  },
+  "blog/how-to-build-credit-from-scratch.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:18:58.647Z"
+  },
+  "blog/klarna-vs-afterpay-vs-affirm.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:19:13.011Z"
+  },
+  "blog/minimum-payment-trap.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:19:29.137Z"
+  },
+  "blog/snowball-vs-avalanche.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:19:51.181Z"
+  },
+  "cards/amazon-prime-visa-signature/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:20:39.022Z"
+  },
+  "cards/amex-blue-cash-everyday/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:20:49.855Z"
+  },
+  "cards/amex-blue-cash-preferred/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:21:12.726Z"
+  },
+  "cards/amex-gold/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:21:31.740Z"
+  },
+  "cards/amex-platinum/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:21:48.323Z"
+  },
+  "cards/apple-card/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:22:05.124Z"
+  },
+  "cards/barclays-uber-pro/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:22:20.036Z"
+  },
+  "cards/bilt-mastercard/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:22:38.556Z"
+  },
+  "cards/bofa-customized-cash-rewards/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:23:00.533Z"
+  },
+  "cards/capital-one-quicksilver/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:23:18.236Z"
+  },
+  "cards/capital-one-savor/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:23:35.213Z"
+  },
+  "cards/capital-one-savorone/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:23:55.267Z"
+  },
+  "cards/capital-one-venture-x/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:24:13.218Z"
+  },
+  "cards/chase-freedom-flex/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:24:36.103Z"
+  },
+  "cards/chase-ink-business-preferred/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:24:58.797Z"
+  },
+  "cards/chase-sapphire-preferred/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:25:33.410Z"
+  },
+  "cards/chase-sapphire-reserve/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:25:49.873Z"
+  },
+  "cards/citi-custom-cash/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:26:07.836Z"
+  },
+  "cards/citi-double-cash/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:26:31.366Z"
+  },
+  "cards/citi-premier/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:28:28.433Z"
+  },
+  "cards/citi-strata-premier/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:28:53.803Z"
+  },
+  "cards/discover-it-cash-back/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:29:14.038Z"
+  },
+  "cards/ihg-one-rewards-premier/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:29:33.353Z"
+  },
+  "cards/southwest-priority-card/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T15:30:29.779Z"
+  },
+  "cards/us-bank-altitude-go/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:31:52.218Z"
+  },
+  "cards/us-bank-cash-plus/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:32:15.974Z"
+  },
+  "cards/wells-fargo-active-cash/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:32:37.638Z"
+  },
+  "cards/wells-fargo-autograph/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:32:55.095Z"
+  },
+  "compare/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T15:30:48.281Z"
+  },
+  "debt-planner/index.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:35:15.234Z"
+  },
+  "index.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:35:27.347Z"
+  },
+  "learn/balance-transfer-calculator.html": {
+    "done": true,
+    "count": 7,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:35:48.704Z"
+  },
+  "learn/bnpl-interest-calculator.html": {
+    "done": true,
+    "count": 7,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:36:12.809Z"
+  },
+  "learn/crypto-credit-card-rewards.html": {
+    "done": true,
+    "count": 7,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:36:32.847Z"
+  },
+  "learn/pay-off-10k-debt.html": {
+    "done": true,
+    "count": 7,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:36:55.959Z"
+  },
+  "learn/snowball-vs-avalanche.html": {
+    "done": true,
+    "count": 7,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:37:20.475Z"
+  },
+  "loan-vs-bt/index.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:37:39.792Z"
+  },
+  "merchant/amazon.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:37:56.952Z"
+  },
+  "merchant/costco.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:38:06.760Z"
+  },
+  "merchant/dining.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:38:25.142Z"
+  },
+  "merchant/ev-charging.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:38:45.381Z"
+  },
+  "merchant/fitness.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:38:59.382Z"
+  },
+  "merchant/gas-stations.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:39:12.028Z"
+  },
+  "merchant/groceries.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:39:25.483Z"
+  },
+  "merchant/home-improvement.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:39:41.051Z"
+  },
+  "merchant/insurance.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:39:54.374Z"
+  },
+  "merchant/online-shopping.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:40:13.302Z"
+  },
+  "merchant/pharmacy.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:40:31.176Z"
+  },
+  "merchant/rent.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:40:50.464Z"
+  },
+  "merchant/restaurants.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:41:05.387Z"
+  },
+  "merchant/streaming.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:41:16.512Z"
+  },
+  "merchant/student.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:41:33.630Z"
+  },
+  "merchant/subscription.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:41:50.772Z"
+  },
+  "merchant/travel-hotels.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:42:10.086Z"
+  },
+  "merchant/travel.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:42:19.304Z"
+  },
+  "merchant/uber-lyft.html": {
+    "done": true,
+    "count": 4,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:42:34.902Z"
+  },
+  "merchant/utilities.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:42:49.574Z"
+  },
+  "merchant/walmart.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:43:09.023Z"
+  },
+  "merchant/warehouse-clubs.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:43:30.822Z"
+  },
+  "min-payment/index.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:44:00.305Z"
+  },
+  "rewards/index.html": {
+    "done": true,
+    "count": 6,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:44:22.629Z"
+  },
+  "score-simulator/index.html": {
+    "done": true,
+    "count": 5,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-06T08:44:39.757Z"
+  }
+}

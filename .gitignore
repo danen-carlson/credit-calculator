@@ -5,3 +5,7 @@ api/worker/node_modules/
 api/worker/dist/
 review/
 .translation-state.json
+zh/.states/
+zh/ko-translate.js
+zh/scripts/
+ko-translate.js
