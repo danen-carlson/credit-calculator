@@ -714,10 +714,13 @@
     "ratio": 0.21795565170362358
   },
   "learn/crypto-credit-card-rewards.html": {
-    "done": false,
-    "error": "Truncation: 394w output vs 1983w source (0.20x ratio). Likely truncated.",
+    "done": true,
     "words": 1983,
-    "date": "2026-05-10T00:01:19.561Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-10T01:23:17.512Z",
+    "srcWords": 1983,
+    "transWords": 581,
+    "ratio": 0.2929904185577408
   },
   "learn/snowball-vs-avalanche.html": {
     "done": true,
