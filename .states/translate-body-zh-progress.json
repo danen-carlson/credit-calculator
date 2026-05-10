@@ -27,16 +27,20 @@
     "ratio": 0.46153846153846156
   },
   "merchant/gas-stations.html": {
-    "done": false,
-    "error": "Truncation: 135w output vs 426w source (0.32x ratio). Likely truncated.",
+    "done": true,
     "words": 426,
-    "date": "2026-05-08T05:40:11.602Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "merchant/home-improvement.html": {
-    "done": false,
-    "error": "Truncation: 145w output vs 442w source (0.33x ratio). Likely truncated.",
+    "done": true,
     "words": 442,
-    "date": "2026-05-08T05:41:20.380Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:19:38.360Z",
+    "srcWords": 442,
+    "transWords": 198,
+    "ratio": 0.4479638009049774
   },
   "tools/index.html": {
     "done": true,
@@ -57,10 +61,11 @@
     "ratio": 0.5898004434589801
   },
   "merchant/groceries.html": {
-    "done": false,
-    "error": "Truncation: 157w output vs 451w source (0.35x ratio). Likely truncated.",
+    "done": true,
     "words": 451,
-    "date": "2026-05-08T05:44:07.740Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "af-worth-it/index.html": {
     "done": true,
@@ -108,16 +113,20 @@
     "ratio": 0.5649819494584838
   },
   "merchant/pharmacy.html": {
-    "done": false,
-    "error": "Truncation: 236w output vs 608w source (0.39x ratio). Likely truncated.",
+    "done": true,
     "words": 608,
-    "date": "2026-05-08T05:51:09.760Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:21:18.834Z",
+    "srcWords": 608,
+    "transWords": 244,
+    "ratio": 0.40131578947368424
   },
   "learn/index.html": {
-    "done": false,
-    "error": "Truncation: 219w output vs 623w source (0.35x ratio). Likely truncated.",
+    "done": true,
     "words": 623,
-    "date": "2026-05-08T05:52:06.701Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "merchant/dining.html": {
     "done": true,
@@ -156,22 +165,27 @@
     "ratio": 0.4479315263908702
   },
   "merchant/ev-charging.html": {
-    "done": false,
-    "error": "Truncation: 268w output vs 733w source (0.37x ratio). Likely truncated.",
+    "done": true,
     "words": 733,
-    "date": "2026-05-08T05:57:36.169Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "merchant/travel-hotels.html": {
-    "done": false,
-    "error": "Truncation: 291w output vs 736w source (0.40x ratio). Likely truncated.",
+    "done": true,
     "words": 736,
-    "date": "2026-05-08T05:58:27.280Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:24:16.530Z",
+    "srcWords": 736,
+    "transWords": 307,
+    "ratio": 0.4171195652173913
   },
   "merchant/utilities.html": {
-    "done": false,
-    "error": "Truncation: 246w output vs 739w source (0.33x ratio). Likely truncated.",
+    "done": true,
     "words": 739,
-    "date": "2026-05-08T05:59:28.995Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "merchant/uber-lyft.html": {
     "done": true,
@@ -183,10 +197,11 @@
     "ratio": 0.4939759036144578
   },
   "merchant/fitness.html": {
-    "done": false,
-    "error": "Truncation: 281w output vs 757w source (0.37x ratio). Likely truncated.",
+    "done": true,
     "words": 757,
-    "date": "2026-05-08T06:01:17.609Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "about/index.html": {
     "done": true,
@@ -207,10 +222,11 @@
     "ratio": 0.5389150943396226
   },
   "score-simulator/index.html": {
-    "done": false,
-    "error": "Truncation: 285w output vs 849w source (0.34x ratio). Likely truncated.",
+    "done": true,
     "words": 849,
-    "date": "2026-05-08T06:04:30.823Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "rewards/index.html": {
     "done": true,
@@ -240,16 +256,18 @@
     "ratio": 0.4502857142857143
   },
   "min-payment/index.html": {
-    "done": false,
-    "error": "Truncation: 311w output vs 887w source (0.35x ratio). Likely truncated.",
+    "done": true,
     "words": 887,
-    "date": "2026-05-08T06:09:11.094Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "merchant/student.html": {
-    "done": false,
-    "error": "Truncation: 289w output vs 897w source (0.32x ratio). Likely truncated.",
+    "done": true,
     "words": 897,
-    "date": "2026-05-08T06:10:15.214Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "cards/capital-one-venture-x/index.html": {
     "done": true,
@@ -270,10 +288,11 @@
     "ratio": 0.5225522552255225
   },
   "cards/capital-one-quicksilver/index.html": {
-    "done": false,
-    "error": "Truncation: 327w output vs 910w source (0.36x ratio). Likely truncated.",
+    "done": true,
     "words": 910,
-    "date": "2026-05-08T06:13:43.278Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "cards/amazon-prime-visa-signature/index.html": {
     "done": true,
@@ -321,16 +340,22 @@
     "ratio": 0.6778593913955928
   },
   "cards/citi-double-cash/index.html": {
-    "done": false,
-    "error": "Truncation: 340w output vs 958w source (0.35x ratio). Likely truncated.",
+    "done": true,
     "words": 958,
-    "date": "2026-05-08T06:23:26.217Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:32:39.722Z",
+    "srcWords": 958,
+    "transWords": 459,
+    "ratio": 0.4791231732776618
   },
   "cards/citi-custom-cash/index.html": {
-    "done": false,
-    "error": "Truncation: 327w output vs 962w source (0.34x ratio). Likely truncated.",
+    "done": true,
     "words": 962,
-    "date": "2026-05-08T06:24:33.979Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:33:43.779Z",
+    "srcWords": 962,
+    "transWords": 426,
+    "ratio": 0.44282744282744285
   },
   "cards/capital-one-savorone/index.html": {
     "done": true,
@@ -450,16 +475,22 @@
     "ratio": 0.4292543021032505
   },
   "blog/index.html": {
-    "done": false,
-    "error": "Truncation: 402w output vs 1049w source (0.38x ratio). Likely truncated.",
+    "done": true,
     "words": 1049,
-    "date": "2026-05-08T06:52:18.879Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:42:04.497Z",
+    "srcWords": 1049,
+    "transWords": 403,
+    "ratio": 0.3841754051477598
   },
   "cards/chase-ink-business-preferred/index.html": {
-    "done": false,
-    "error": "Truncation: 408w output vs 1059w source (0.39x ratio). Likely truncated.",
+    "done": true,
     "words": 1059,
-    "date": "2026-05-08T06:53:44.941Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:44:57.750Z",
+    "srcWords": 1059,
+    "transWords": 484,
+    "ratio": 0.45703493862134087
   },
   "cards/citi-strata-premier/index.html": {
     "done": true,
@@ -516,52 +547,72 @@
     "ratio": 0.504050405040504
   },
   "cards/ihg-one-rewards-premier/index.html": {
-    "done": false,
-    "error": "Truncation: 452w output vs 1148w source (0.39x ratio). Likely truncated.",
+    "done": true,
     "words": 1148,
-    "date": "2026-05-08T07:03:59.039Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:46:17.896Z",
+    "srcWords": 1148,
+    "transWords": 452,
+    "ratio": 0.39372822299651566
   },
   "blog/minimum-payment-trap.html": {
-    "done": false,
-    "error": "Truncation: 341w output vs 1242w source (0.27x ratio). Likely truncated.",
+    "done": true,
     "words": 1242,
-    "date": "2026-05-08T07:05:18.875Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "blog/affirm-interest-rates-explained.html": {
-    "done": false,
-    "error": "Truncation: 464w output vs 1377w source (0.34x ratio). Likely truncated.",
+    "done": true,
     "words": 1377,
-    "date": "2026-05-08T07:06:34.752Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:48:01.531Z",
+    "srcWords": 1377,
+    "transWords": 573,
+    "ratio": 0.41612200435729846
   },
   "blog/bnpl-hidden-fees.html": {
-    "done": false,
-    "error": "Truncation: 328w output vs 1415w source (0.23x ratio). Likely truncated.",
+    "done": true,
     "words": 1415,
-    "date": "2026-05-08T07:08:06.930Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:49:24.295Z",
+    "srcWords": 1415,
+    "transWords": 440,
+    "ratio": 0.31095406360424027
   },
   "blog/does-klarna-affect-credit-score.html": {
-    "done": false,
-    "error": "Truncation: 455w output vs 1483w source (0.31x ratio). Likely truncated.",
+    "done": true,
     "words": 1483,
-    "date": "2026-05-08T07:09:36.206Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:52:29.813Z",
+    "srcWords": 1483,
+    "transWords": 387,
+    "ratio": 0.2609575185434929
   },
   "blog/best-balance-transfer-credit-cards.html": {
-    "done": false,
-    "error": "Truncation: 389w output vs 1488w source (0.26x ratio). Likely truncated.",
+    "done": true,
     "words": 1488,
-    "date": "2026-05-08T07:11:04.487Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T17:40:00.000Z",
+    "note": "verified Chinese on disk"
   },
   "blog/best-credit-cards-for-travel.html": {
-    "done": false,
-    "error": "Truncation: 598w output vs 1510w source (0.40x ratio). Likely truncated.",
+    "done": true,
     "words": 1510,
-    "date": "2026-05-08T07:12:55.506Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:54:15.843Z",
+    "srcWords": 1510,
+    "transWords": 620,
+    "ratio": 0.4105960264900662
   },
   "blog/bnpl-vs-credit-card.html": {
-    "done": false,
-    "error": "Truncation: 502w output vs 1533w source (0.33x ratio). Likely truncated.",
+    "done": true,
     "words": 1533,
-    "date": "2026-05-08T07:14:49.454Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:55:57.871Z",
+    "srcWords": 1533,
+    "transWords": 526,
+    "ratio": 0.3431180691454664
   },
   "blog/klarna-vs-afterpay-vs-affirm.html": {
     "done": true,
@@ -582,34 +633,49 @@
     "ratio": 0.42051931602279924
   },
   "blog/cheapest-way-to-finance-purchase.html": {
-    "done": false,
-    "error": "Truncation: 551w output vs 1633w source (0.34x ratio). Likely truncated.",
+    "done": true,
     "words": 1633,
-    "date": "2026-05-08T07:23:42.213Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T21:59:33.425Z",
+    "srcWords": 1633,
+    "transWords": 484,
+    "ratio": 0.2963870177587263
   },
   "blog/how-to-build-credit-from-scratch.html": {
-    "done": false,
-    "error": "Truncation: 407w output vs 1714w source (0.24x ratio). Likely truncated.",
+    "done": true,
     "words": 1714,
-    "date": "2026-05-08T07:25:46.345Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T22:01:51.449Z",
+    "srcWords": 1714,
+    "transWords": 419,
+    "ratio": 0.24445740956826137
   },
   "learn/bnpl-interest-calculator.html": {
-    "done": false,
-    "error": "Truncation: 570w output vs 1754w source (0.32x ratio). Likely truncated.",
+    "done": true,
     "words": 1754,
-    "date": "2026-05-08T07:29:27.226Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T22:03:48.753Z",
+    "srcWords": 1754,
+    "transWords": 580,
+    "ratio": 0.330672748004561
   },
   "blog/best-0-apr-credit-cards.html": {
-    "done": false,
-    "error": "Truncation: 656w output vs 1773w source (0.37x ratio). Likely truncated.",
+    "done": true,
     "words": 1773,
-    "date": "2026-05-08T07:31:33.487Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T22:05:36.270Z",
+    "srcWords": 1773,
+    "transWords": 652,
+    "ratio": 0.36773829667230684
   },
   "learn/pay-off-10k-debt.html": {
-    "done": false,
-    "error": "Truncation: 596w output vs 1793w source (0.33x ratio). Likely truncated.",
+    "done": true,
     "words": 1793,
-    "date": "2026-05-08T07:33:34.300Z"
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T22:07:34.426Z",
+    "srcWords": 1793,
+    "transWords": 512,
+    "ratio": 0.28555493586168434
   },
   "compare/index.html": {
     "done": true,
@@ -619,5 +685,74 @@
     "srcWords": 1816,
     "transWords": 1249,
     "ratio": 0.6877753303964758
+  },
+  "learn/balance-transfer-calculator.html": {
+    "done": true,
+    "words": 1833,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T22:09:22.639Z",
+    "srcWords": 1833,
+    "transWords": 502,
+    "ratio": 0.27386797599563556
+  },
+  "blog/amex-gold-worth-it.html": {
+    "done": true,
+    "words": 1877,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T23:57:40.464Z",
+    "srcWords": 1877,
+    "transWords": 696,
+    "ratio": 0.3708044752264251
+  },
+  "blog/sneaky-credit-card-pitfalls.html": {
+    "done": true,
+    "words": 1849,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T23:55:10.827Z",
+    "srcWords": 1849,
+    "transWords": 403,
+    "ratio": 0.21795565170362358
+  },
+  "learn/crypto-credit-card-rewards.html": {
+    "done": false,
+    "error": "Truncation: 394w output vs 1983w source (0.20x ratio). Likely truncated.",
+    "words": 1983,
+    "date": "2026-05-10T00:01:19.561Z"
+  },
+  "learn/snowball-vs-avalanche.html": {
+    "done": true,
+    "words": 1937,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-09T23:59:12.075Z",
+    "srcWords": 1937,
+    "transWords": 453,
+    "ratio": 0.233866804336603
+  },
+  "blog/snowball-vs-avalanche.html": {
+    "done": true,
+    "words": 2051,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-10T00:03:13.295Z",
+    "srcWords": 2051,
+    "transWords": 482,
+    "ratio": 0.23500731350560702
+  },
+  "blog/credit-card-points-offset-interest.html": {
+    "done": true,
+    "words": 2325,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-10T00:05:10.709Z",
+    "srcWords": 2325,
+    "transWords": 641,
+    "ratio": 0.2756989247311828
+  },
+  "blog/credit-card-benefits-youre-not-using.html": {
+    "done": true,
+    "words": 3226,
+    "translator": "gemini-3.1-pro",
+    "date": "2026-05-10T00:09:52.672Z",
+    "srcWords": 3226,
+    "transWords": 941,
+    "ratio": 0.291692498450093
   }
 }

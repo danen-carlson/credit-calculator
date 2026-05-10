@@ -172,49 +172,49 @@
 <!-- DISCLOSURE -->
   <div class="site-disclosure-banner">
     <div class="site-disclosure-container">
-      CreditStud.io puede ganar comisiones por solicitudes de tarjetas de crédito a través de enlaces de afiliados. Esto no afecta nuestras clasificaciones o recomendaciones.
-      <a href="/disclosure.html">Más información</a>
+      CreditStud.io 可能会通过联盟链接从信用卡申请中赚取佣金。这不会影响我们的排名或推荐。
+      <a href="/disclosure.html">了解更多</a>
     </div>
   </div>
 
   <!-- HEADER -->
 <header class="header">
   <div class="container">
-    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
+    <button class="nav-hamburger" aria-label="菜单" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <nav class="top-nav">
-      <a href="/" class="nav-link">Inicio</a>
+      <a href="/" class="nav-link">首页</a>
       <div class="nav-dropdown">
         <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          Calculadoras ▾
+          计算器 ▾
         </button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-group">
-            <span class="nav-dropdown-heading">Comparación de tarjetas</span>
-            <a href="/compare/" class="nav-dropdown-link">Comparar tarjetas de crédito y BNPL</a>
-            <a href="/rewards/" class="nav-dropdown-link">Calculadora de recompensas</a>
-            <a href="/cards/" class="nav-dropdown-link">Reseñas de tarjetas</a>
+            <span class="nav-dropdown-heading">信用卡比较</span>
+            <a href="/compare/" class="nav-dropdown-link">比较信用卡与 BNPL</a>
+            <a href="/rewards/" class="nav-dropdown-link">奖励计算器</a>
+            <a href="/cards/" class="nav-dropdown-link">信用卡评测</a>
           </div>
           <div class="nav-dropdown-group">
-            <span class="nav-dropdown-heading">Deuda y pago</span>
-            <a href="/debt-planner/" class="nav-dropdown-link">Planificador de pago de deudas</a>
-            <a href="/min-payment/" class="nav-dropdown-link">Calculadora de pago mínimo</a>
-            <a href="/loan-vs-bt/" class="nav-dropdown-link">Préstamo vs transferencia de saldo</a>
+            <span class="nav-dropdown-heading">债务与还款</span>
+            <a href="/debt-planner/" class="nav-dropdown-link">债务还款计划</a>
+            <a href="/min-payment/" class="nav-dropdown-link">最低还款计算器</a>
+            <a href="/loan-vs-bt/" class="nav-dropdown-link">贷款 vs 余额转移</a>
           </div>
           <div class="nav-dropdown-group">
-            <span class="nav-dropdown-heading">Buscador de tarjetas</span>
-            <a href="/af-worth-it/" class="nav-dropdown-link">Calculadora de cuota anual</a>
-            <a href="/score-simulator/" class="nav-dropdown-link">Simulador de puntaje de crédito</a>
+            <span class="nav-dropdown-heading">信用卡查找</span>
+            <a href="/af-worth-it/" class="nav-dropdown-link">年费计算器</a>
+            <a href="/score-simulator/" class="nav-dropdown-link">信用分模拟器</a>
           </div>
         </div>
       </div>
-      <a href="/learn/" class="nav-link">Aprender</a>
-      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/learn/" class="nav-link">学习</a>
+      <a href="/blog/" class="nav-link">博客</a>
     </nav>
     <div style="display:flex;align-items:center;gap:8px;">
       <div class="language-switcher">
-        <button class="lang-toggle" aria-label="Select language" aria-expanded="false">
+        <button class="lang-toggle" aria-label="选择语言" aria-expanded="false">
           🌐 <span class="current-lang">EN</span>
         </button>
         <div class="lang-dropdown">
@@ -228,7 +228,7 @@
       </div>
       <a href="/" class="logo"><img src="/logo-card-dark-header.png" alt="CreditStud.io" class="logo-img"><span class="logo-text">Credit<span>Stud.io</span></span></a>
     </div>
-    <p class="header-subtitle">Compara tarjetas de crédito, BNPL y planes de pago lado a lado</p>
+    <p class="header-subtitle">全面比较信用卡、BNPL 和还款计划。</p>
   </div>
 </header>
 <!-- /HEADER -->
@@ -237,53 +237,53 @@
     <section class="calc-section">
       <div class="step-header">
         <span class="step-number">1</span>
-        <h2>Tu perfil de crédito</h2>
+        <h2>您的信用档案</h2>
       </div>
 
       <div class="input-grid">
         <div class="input-group">
-          <label for="currentScore">Puntaje de crédito actual</label>
+          <label for="currentScore">当前信用分</label>
           <div class="slider-row">
             <input type="range" id="currentScore" min="300" max="850" value="650">
             <span class="slider-value" id="currentScoreVal">650</span>
           </div>
-          <span class="input-hint">Rango de 300–850</span>
+          <span class="input-hint">300–850 范围</span>
         </div>
         <div class="input-group">
-          <label for="utilization">Utilización de crédito (%)</label>
+          <label for="utilization">信用额度使用率 (%)</label>
           <div class="slider-row">
             <input type="range" id="utilization" min="0" max="100" value="45">
             <span class="slider-value" id="utilizationVal">45%</span>
           </div>
-          <span class="input-hint">Saldo ÷ Límite de crédito total</span>
+          <span class="input-hint">余额 ÷ 总信用额度</span>
         </div>
         <div class="input-group">
-          <label for="totalLimit">Límite de crédito total ($)</label>
+          <label for="totalLimit">总信用额度 ($)</label>
           <input type="number" id="totalLimit" value="20000" min="500" step="500">
-          <span class="input-hint" id="totalBalanceHint">≈ $9,000 de saldo</span>
+          <span class="input-hint" id="totalBalanceHint">≈ $9,000 余额</span>
         </div>
         <div class="input-group">
-          <label for="numAccounts">Número de cuentas</label>
+          <label for="numAccounts">账户数量</label>
           <input type="range" id="numAccounts" min="1" max="30" value="5">
           <span class="slider-value" id="numAccountsVal">5</span>
         </div>
         <div class="input-group">
-          <label for="hardInquiries">Consultas duras (últimos 12 meses)</label>
+          <label for="hardInquiries">硬查询 (过去 12 个月)</label>
           <input type="range" id="hardInquiries" min="0" max="10" value="2">
           <span class="slider-value" id="hardInquiriesVal">2</span>
         </div>
         <div class="input-group">
-          <label for="avgAge">Edad promedio de la cuenta (años)</label>
+          <label for="avgAge">平均账户年龄 (年)</label>
           <input type="range" id="avgAge" min="0" max="30" value="4" step="0.5">
-          <span class="slider-value" id="avgAgeVal">4 años</span>
+          <span class="slider-value" id="avgAgeVal">4 年</span>
         </div>
         <div class="input-group toggle-group">
-          <label for="latePayments">¿Algún pago atrasado?</label>
+          <label for="latePayments">有任何逾期还款吗？</label>
           <div class="toggle-switch">
             <input type="checkbox" id="latePayments">
             <label for="latePayments" class="toggle-label"></label>
           </div>
-          <span class="toggle-status" id="latePaymentsStatus">Sin pagos atrasados ✓</span>
+          <span class="toggle-status" id="latePaymentsStatus">无逾期还款 ✓</span>
         </div>
       </div>
     </section>
@@ -293,26 +293,26 @@
       <div class="gauge-container">
         <canvas id="scoreGauge" width="360" height="200"></canvas>
         <div class="gauge-score" id="gaugeScore">650</div>
-        <div class="gauge-bracket" id="gaugeBracket">Regular</div>
+        <div class="gauge-bracket" id="gaugeBracket">一般</div>
       </div>
-      <div class="gauge-label">Tu puntaje FICO® estimado</div>
-      <p class="disclaimer-text">Estimaciones basadas en factores de puntuación FICO; los puntajes reales varían según el buró y el modelo.</p>
+      <div class="gauge-label">您的预估 FICO® 信用分</div>
+      <p class="disclaimer-text">基于 FICO 评分因素的估算；实际分数因信用局和模型而异。</p>
     </section>
 
     <!-- What-If Scenarios -->
     <section class="scenarios-section">
       <div class="step-header">
         <span class="step-number">2</span>
-        <h2>¿Qué pasaría si...?</h2>
+        <h2>如果...会怎样？</h2>
       </div>
-      <p class="scenarios-intro">Alterna los escenarios para ver cómo las acciones cambiarían tu puntaje:</p>
+      <p class="scenarios-intro">切换场景以查看这些操作将如何改变您的信用分：</p>
 
       <div class="scenario-grid">
         <label class="scenario-card positive">
           <input type="checkbox" id="scenario-payoff">
           <div class="scenario-content">
             <span class="scenario-icon">💰</span>
-            <span class="scenario-title">Pagar toda la deuda de tarjetas de crédito</span>
+            <span class="scenario-title">还清所有信用卡债务</span>
             <span class="scenario-delta" id="delta-payoff"></span>
           </div>
         </label>
@@ -321,7 +321,7 @@
           <input type="checkbox" id="scenario-util10">
           <div class="scenario-content">
             <span class="scenario-icon">📉</span>
-            <span class="scenario-title">Reducir la utilización a &lt;10%</span>
+            <span class="scenario-title">将使用率降至 &lt;10%</span>
             <span class="scenario-delta" id="delta-util10"></span>
           </div>
         </label>
@@ -330,7 +330,7 @@
           <input type="checkbox" id="scenario-util30">
           <div class="scenario-content">
             <span class="scenario-icon">📊</span>
-            <span class="scenario-title">Reducir la utilización a &lt;30%</span>
+            <span class="scenario-title">将使用率降至 &lt;30%</span>
             <span class="scenario-delta" id="delta-util30"></span>
           </div>
         </label>
@@ -339,7 +339,7 @@
           <input type="checkbox" id="scenario-newcard">
           <div class="scenario-content">
             <span class="scenario-icon">🆕</span>
-            <span class="scenario-title">Abrir una nueva tarjeta</span>
+            <span class="scenario-title">开一张新卡</span>
             <span class="scenario-delta" id="delta-newcard"></span>
           </div>
         </label>
@@ -348,7 +348,7 @@
           <input type="checkbox" id="scenario-wait6">
           <div class="scenario-content">
             <span class="scenario-icon">⏰</span>
-            <span class="scenario-title">Esperar 6 meses (sin nuevos negativos)</span>
+            <span class="scenario-title">等待 6 个月 (无新的负面记录)</span>
             <span class="scenario-delta" id="delta-wait6"></span>
           </div>
         </label>
@@ -357,7 +357,7 @@
           <input type="checkbox" id="scenario-wait12">
           <div class="scenario-content">
             <span class="scenario-icon">📅</span>
-            <span class="scenario-title">Esperar 12 meses</span>
+            <span class="scenario-title">等待 12 个月</span>
             <span class="scenario-delta" id="delta-wait12"></span>
           </div>
         </label>
@@ -366,7 +366,7 @@
           <input type="checkbox" id="scenario-latepayment">
           <div class="scenario-content">
             <span class="scenario-icon">❌</span>
-            <span class="scenario-title">Un nuevo pago atrasado de 30 días</span>
+            <span class="scenario-title">新增一次 30 天逾期还款</span>
             <span class="scenario-delta" id="delta-latepayment"></span>
           </div>
         </label>
@@ -375,7 +375,7 @@
           <input type="checkbox" id="scenario-close-oldest">
           <div class="scenario-content">
             <span class="scenario-icon">✂️</span>
-            <span class="scenario-title">Cerrar la tarjeta más antigua</span>
+            <span class="scenario-title">关闭最老的信用卡</span>
             <span class="scenario-delta" id="delta-close-oldest"></span>
           </div>
         </label>
@@ -384,7 +384,7 @@
           <input type="checkbox" id="scenario-maxout">
           <div class="scenario-content">
             <span class="scenario-icon">🚨</span>
-            <span class="scenario-title">Llegar al límite de una tarjeta (90%+ de utilización)</span>
+            <span class="scenario-title">刷爆一张卡 (90%+ 使用率)</span>
             <span class="scenario-delta" id="delta-maxout"></span>
           </div>
         </label>
@@ -393,15 +393,15 @@
 
     <!-- Score Unlock Panel -->
     <section class="unlock-section" id="unlockSection">
-      <h3>🔓 Qué se desbloquea con este puntaje</h3>
+      <h3>🔓 此信用分可解锁的内容</h3>
       <div class="unlock-grid" id="unlockGrid"></div>
     </section>
 
     <!-- CTA -->
     <div class="cta-section">
-      <a href="/rewards/" class="btn-primary cta-btn" id="ctaCards">🏆 Ver tarjetas para las que calificarías →</a>
-      <a href="/debt-planner/" class="btn-ghost cta-btn">📊 Pagar la deuda más rápido →</a>
-      <a href="/min-payment/" class="btn-ghost cta-btn">⚠️ Escapar de la trampa del pago mínimo →</a>
+      <a href="/rewards/" class="btn-primary cta-btn" id="ctaCards">🏆 查看您符合条件的信用卡 →</a>
+      <a href="/debt-planner/" class="btn-ghost cta-btn">📊 最快还清债务 →</a>
+      <a href="/min-payment/" class="btn-ghost cta-btn">⚠️ 逃离最低还款陷阱 →</a>
     </div>
 
     <!-- Share -->
@@ -409,43 +409,43 @@
 
     <!-- Educational Content -->
     <section class="content-section">
-      <h2>Entendiendo tu puntaje de crédito</h2>
-      <p>Tu puntaje de crédito es un número de tres dígitos (300–850) que los prestamistas usan para evaluar el riesgo. Se basa en los datos de tu reporte de crédito y se calcula usando el modelo FICO, que pondera cinco factores:</p>
+      <h2>了解您的信用分</h2>
+      <p>您的信用分是一个三位数 (300–850)，贷款机构用来评估风险。它基于您的信用报告数据，并使用 FICO 模型计算，该模型衡量五个因素：</p>
       <ul>
-        <li><strong>Historial de pagos (35%)</strong> — ¿Pagas a tiempo? Este es el factor más importante. Incluso un pago atrasado de 30 días puede reducir tu puntaje significativamente.</li>
-        <li><strong>Utilización de crédito (30%)</strong> — ¿Cuánto de tu crédito disponible estás usando? Menos del 30% está bien; menos del 10% es ideal. Este es el factor más fácil de mejorar rápidamente.</li>
-        <li><strong>Longitud del historial de crédito (15%)</strong> — ¿Cuánto tiempo han estado abiertas tus cuentas? Las cuentas más antiguas ayudan a tu puntaje. Piénsalo dos veces antes de cerrar tu tarjeta más antigua.</li>
-        <li><strong>Mezcla de crédito (10%)</strong> — ¿Tienes diferentes tipos de crédito (tarjetas, préstamos para autos, hipoteca)? Una mezcla diversa puede ayudar un poco.</li>
-        <li><strong>Crédito nuevo (10%)</strong> — ¿Cuántas consultas recientes hay? Cada consulta dura puede bajar tu puntaje de 5 a 10 puntos, aunque buscar un préstamo dentro de 14 días cuenta como una sola consulta.</li>
+        <li><strong>还款历史 (35%)</strong> — 您是否按时还款？这是最重要的因素。即使是一次 30 天的逾期还款也会让您的信用分大幅下降。</li>
+        <li><strong>信用额度使用率 (30%)</strong> — 您使用了多少可用信用额度？低于 30% 是可以接受的；低于 10% 是最理想的。这是最容易快速改善的因素。</li>
+        <li><strong>信用历史长度 (15%)</strong> — 您的账户开通了多久？较老的账户有助于提高您的信用分。在关闭最老的信用卡之前请三思。</li>
+        <li><strong>信用组合 (10%)</strong> — 您是否有不同类型的信用 (信用卡、汽车贷款、抵押贷款)？多样化的组合会略有帮助。</li>
+        <li><strong>新信用 (10%)</strong> — 最近有多少次查询？每次硬查询可能会让您的信用分下降 5–10 分，不过在 14 天内货比三家申请贷款只算作一次查询。</li>
       </ul>
-      <h3>Victorias rápidas para mejorar tu puntaje</h3>
+      <h3>提高信用分的快速方法</h3>
       <ol>
-        <li><strong>Pagar los saldos de las tarjetas de crédito</strong> — Reducir la utilización es la forma más rápida de aumentar tu puntaje. Bajar del 10% puede valer más de 50 puntos.</li>
-        <li><strong>Nunca te pierdas un pago</strong> — Configura el pago automático para al menos el pago mínimo. El historial de pagos es el 35% de tu puntaje.</li>
-        <li><strong>No cierres tarjetas antiguas</strong> — Cerrar tarjetas reduce tu límite de crédito total (perjudicando la utilización) y acorta la edad promedio de tus cuentas.</li>
-        <li><strong>Limita las consultas duras</strong> — Solo solicita el crédito que realmente necesitas. Cada consulta es un pequeño golpe a tu puntaje.</li>
-        <li><strong>Revisa tus reportes en busca de errores</strong> — Disputa las inexactitudes en annualcreditreport.com. Los errores son más comunes de lo que piensas.</li>
+        <li><strong>偿还信用卡余额</strong> — 降低使用率是提高信用分最快的方法。降至 10% 以下可能会带来 50+ 分的提升。</li>
+        <li><strong>绝不逾期还款</strong> — 设置自动还款，至少支付最低还款额。还款历史占您信用分的 35%。</li>
+        <li><strong>不要关闭老卡</strong> — 关闭信用卡会降低您的总信用额度 (损害使用率) 并缩短您的平均账户年龄。</li>
+        <li><strong>限制硬查询</strong> — 只申请您真正需要的信用。每次查询都会对您的信用分造成小幅打击。</li>
+        <li><strong>检查您的报告是否有误</strong> — 在 annualcreditreport.com 上对不准确的信息提出异议。错误比您想象的更常见。</li>
       </ol>
     </section>
 
     <!-- FAQ -->
     <section class="content-section faq-section">
-      <h2>Preguntas frecuentes</h2>
+      <h2>常见问题</h2>
       <details class="faq-item">
-        <summary>¿Cómo se calcula mi puntaje de crédito?</summary>
-        <p>Los puntajes FICO usan cinco factores: historial de pagos (35%), montos adeudados/utilización de crédito (30%), longitud del historial de crédito (15%), mezcla de crédito (10%) y crédito nuevo/consultas (10%). Nuestro simulador modela estos pesos para estimar los cambios en el puntaje.</p>
+        <summary>我的信用分是如何计算的？</summary>
+        <p>FICO 信用分使用五个因素：还款历史 (35%)、欠款金额/信用额度使用率 (30%)、信用历史长度 (15%)、信用组合 (10%) 和新信用/查询 (10%)。我们的模拟器对这些权重进行建模以估算分数变化。</p>
       </details>
       <details class="faq-item">
-        <summary>¿Cuánto mejora mi puntaje pagar la deuda de tarjetas de crédito?</summary>
-        <p>Pagar toda la deuda de tarjetas de crédito puede mejorar tu puntaje en 40–100+ puntos dependiendo de tu utilización actual. Bajar de una alta utilización (75%+) a menos del 10% es una de las mayores mejoras individuales que puedes hacer.</p>
+        <summary>还清信用卡债务能提高多少信用分？</summary>
+        <p>还清所有信用卡债务可以使您的信用分提高 40–100+ 分，具体取决于您当前的使用率。从高使用率 (75%+) 降至 10% 以下是您可以做出的最大单项改善之一。</p>
       </details>
       <details class="faq-item">
-        <summary>¿Abrir una nueva tarjeta de crédito perjudica mi puntaje?</summary>
-        <p>Abrir una nueva tarjeta tiene efectos mixtos. Por lo general, perderás de 5 a 10 puntos por la consulta dura y una ligera disminución en la edad promedio de la cuenta. Sin embargo, el nuevo límite de crédito puede reducir tu utilización, lo que puede compensar el golpe inicial dentro de 1 a 2 ciclos de facturación.</p>
+        <summary>开一张新信用卡会损害我的信用分吗？</summary>
+        <p>开新卡的影响好坏参半。您通常会因为硬查询损失 5–10 分，并且平均账户年龄会略有下降。然而，新的信用额度可以降低您的使用率，这可能会在 1–2 个账单周期内抵消最初的打击。</p>
       </details>
       <details class="faq-item">
-        <summary>¿Qué tan preciso es este simulador?</summary>
-        <p>Este simulador proporciona estimaciones basadas en modelos generales de puntuación FICO. Los cambios reales en el puntaje varían según el buró de crédito, la versión del modelo de puntuación y tu perfil de crédito completo. Úsalo como una guía útil, no como una garantía.</p>
+        <summary>这个模拟器有多准确？</summary>
+        <p>此模拟器提供基于通用 FICO 评分模型的估算。实际分数变化因信用局、评分模型版本和您的完整信用档案而异。请将其作为有用的指南，而不是保证。</p>
       </details>
     </section>
   </main>
@@ -455,37 +455,37 @@
   <div class="container-wide">
     <div class="footer-grid">
       <div class="footer-col">
-        <h4 class="footer-heading">Calculadoras</h4>
+        <h4 class="footer-heading">计算器</h4>
         <ul class="footer-links">
-          <li><a href="/compare/">Comparación de crédito</a></li>
-          <li><a href="/debt-planner/">Planificador de deudas</a></li>
-          <li><a href="/rewards/">Calculadora de recompensas</a></li>
-          <li><a href="/min-payment/">Pago mínimo</a></li>
-          <li><a href="/loan-vs-bt/">Préstamo vs transferencia de saldo</a></li>
+          <li><a href="/compare/">信用比较</a></li>
+          <li><a href="/debt-planner/">债务计划</a></li>
+          <li><a href="/rewards/">奖励计算器</a></li>
+          <li><a href="/min-payment/">最低还款</a></li>
+          <li><a href="/loan-vs-bt/">贷款 vs 余额转移</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4 class="footer-heading">Aprender</h4>
+        <h4 class="footer-heading">学习</h4>
         <ul class="footer-links">
-          <li><a href="/learn/snowball-vs-avalanche.html">Método bola de nieve vs método avalancha</a></li>
-          <li><a href="/learn/balance-transfer-calculator.html">Calculadora de transferencia de saldo</a></li>
-          <li><a href="/learn/bnpl-interest-calculator.html">Calculadora de intereses BNPL</a></li>
-          <li><a href="/learn/pay-off-10k-debt.html">Cómo pagar $10K de deuda</a></li>
-          <li><a href="/learn/crypto-credit-card-rewards.html">Tarjetas de crédito cripto</a></li>
+          <li><a href="/learn/snowball-vs-avalanche.html">雪球法 vs 雪崩法</a></li>
+          <li><a href="/learn/balance-transfer-calculator.html">余额转移计算器</a></li>
+          <li><a href="/learn/bnpl-interest-calculator.html">BNPL 利率计算器</a></li>
+          <li><a href="/learn/pay-off-10k-debt.html">如何还清 $10K 债务</a></li>
+          <li><a href="/learn/crypto-credit-card-rewards.html">加密货币信用卡</a></li>
         </ul>
       </div>
       <div class="footer-col">
-<h4 class="footer-heading">Empresa</h4>
+<h4 class="footer-heading">公司</h4>
         <ul class="footer-links">
-          <li><a href="/about/">Acerca de</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/disclosure.html">Divulgación de afiliados</a></li>
-          <li><a href="/merchant/">Directorio de comercios</a></li>
+          <li><a href="/about/">关于我们</a></li>
+          <li><a href="/blog/">博客</a></li>
+          <li><a href="/disclosure.html">推广披露</a></li>
+          <li><a href="/merchant/">商家目录</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>CreditStud.io es solo para fines informativos. Las tasas, términos y elegibilidad reales pueden variar.</p>
+      <p>CreditStud.io 仅供参考。实际利率、条款和资格可能有所不同。</p>
     </div>
   </div>
 </footer>

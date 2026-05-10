@@ -131,42 +131,42 @@
 <!-- HEADER -->
 <header class="header">
   <div class="container">
-    <button class="nav-hamburger" aria-label="Menú" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
+    <button class="nav-hamburger" aria-label="菜单" aria-expanded="false" onclick="document.querySelector('.top-nav').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true');">
       <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
     <nav class="top-nav">
-      <a href="/" class="nav-link">Inicio</a>
+      <a href="/" class="nav-link">首页</a>
       <div class="nav-dropdown">
         <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-          Calculadoras ▾
+          计算器 ▾
         </button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-group">
-            <span class="nav-dropdown-heading">Comparación de tarjetas</span>
-            <a href="/compare/" class="nav-dropdown-link">Comparar tarjetas de crédito y BNPL</a>
-            <a href="/rewards/" class="nav-dropdown-link">Calculadora de recompensas</a>
-            <a href="/cards/" class="nav-dropdown-link">Reseñas de tarjetas</a>
+            <span class="nav-dropdown-heading">信用卡比较</span>
+            <a href="/compare/" class="nav-dropdown-link">比较信用卡与BNPL</a>
+            <a href="/rewards/" class="nav-dropdown-link">奖励计算器</a>
+            <a href="/cards/" class="nav-dropdown-link">信用卡评测</a>
           </div>
           <div class="nav-dropdown-group">
-            <span class="nav-dropdown-heading">Deuda y pago</span>
-            <a href="/debt-planner/" class="nav-dropdown-link">Planificador de pago de deudas</a>
-            <a href="/min-payment/" class="nav-dropdown-link">Calculadora de pago mínimo</a>
-            <a href="/loan-vs-bt/" class="nav-dropdown-link">Préstamo vs transferencia de saldo</a>
+            <span class="nav-dropdown-heading">债务与还款</span>
+            <a href="/debt-planner/" class="nav-dropdown-link">债务还款计划</a>
+            <a href="/min-payment/" class="nav-dropdown-link">最低还款计算器</a>
+            <a href="/loan-vs-bt/" class="nav-dropdown-link">贷款与余额转移</a>
           </div>
           <div class="nav-dropdown-group">
-            <span class="nav-dropdown-heading">Buscador de tarjetas</span>
-            <a href="/af-worth-it/" class="nav-dropdown-link">Calculadora de cuota anual</a>
-            <a href="/score-simulator/" class="nav-dropdown-link">Simulador de puntaje de crédito</a>
+            <span class="nav-dropdown-heading">找卡工具</span>
+            <a href="/af-worth-it/" class="nav-dropdown-link">年费计算器</a>
+            <a href="/score-simulator/" class="nav-dropdown-link">信用分模拟器</a>
           </div>
         </div>
       </div>
-      <a href="/learn/" class="nav-link">Aprender</a>
-      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/learn/" class="nav-link">学习</a>
+      <a href="/blog/" class="nav-link">博客</a>
     </nav>
     <div style="display:flex;align-items:center;gap:8px;">
       <div class="language-switcher">
-        <button class="lang-toggle" aria-label="Seleccionar idioma" aria-expanded="false">
-          🌐 <span class="current-lang">ES</span>
+        <button class="lang-toggle" aria-label="选择语言" aria-expanded="false">
+          🌐 <span class="current-lang">EN</span>
         </button>
         <div class="lang-dropdown">
           <a href="/" hreflang="en" lang="en">English</a>
@@ -179,7 +179,7 @@
       </div>
       <a href="/" class="logo"><img src="/logo-card-dark-header.png" alt="CreditStud.io" class="logo-img"><span class="logo-text">Credit<span>Stud.io</span></span></a>
     </div>
-    <p class="header-subtitle">Compara tarjetas de crédito, BNPL y planes de pago lado a lado</p>
+    <p class="header-subtitle">并排比较信用卡、BNPL和还款计划。</p>
   </div>
 </header>
 <!-- /HEADER -->
@@ -187,240 +187,240 @@
   <main>
     <div class="container">
       <nav class="breadcrumbs">
-        <a href="/">Inicio</a><span class="sep">›</span><a href="/blog/">Blog</a><span class="sep">›</span>BNPL vs Tarjeta de crédito
+        <a href="/">首页</a><span class="sep">›</span><a href="/blog/">博客</a><span class="sep">›</span>BNPL与信用卡对比
       </nav>
 
       <div class="article-header">
-        <h1 class="article-title">¿Cuesta más el Buy Now Pay Later que una tarjeta de crédito?</h1>
+        <h1 class="article-title">先买后付（BNPL）的成本比信用卡高吗？</h1>
         <div class="article-meta">
-          <span>📅 28 de abril de 2026</span>
-          <span>⏱️ 8 min de lectura</span>
+          <span>📅 2026年4月28日</span>
+          <span>⏱️ 8分钟阅读</span>
         </div>
       </div>
 
       <div class="article-body">
-        <p>Esta es una pregunta que nos hacen constantemente: <em>"¿Debería usar Klarna/Afterpay/Affirm, o simplemente ponerlo en mi tarjeta de crédito?"</em></p>
+        <p>这是一个我们经常被问到的问题：<em>“我应该使用Klarna/Afterpay/Affirm，还是直接刷信用卡？”</em></p>
 
-        <p>¿La respuesta honesta? <strong>Depende del monto de la compra, tu plazo de pago y qué tarjeta de crédito tengas.</strong> Hagamos los cálculos para que puedas decidir con confianza.</p>
+        <p>老实的回答？<strong>这取决于购买金额、你的还款时间表以及你拥有哪张信用卡。</strong>让我们算一算，这样你就能自信地做出决定。</p>
 
-        <h2>Cómo funcionan realmente los cargos de BNPL</h2>
+        <h2>BNPL费用实际上是如何运作的</h2>
 
-        <p>La mayoría de la gente piensa que BNPL siempre es gratis. No lo es, es <em>condicionalmente</em> gratis. Aquí está el desglose:</p>
-
-        <ul>
-          <li><strong>Planes de pago en 4:</strong> $0 de interés, $0 de cargos, pero solo si pagas cada cuota a tiempo. Si omites un pago, te enfrentarás a $7–$8 en cargos por pago atrasado por cada pago omitido.</li>
-          <li><strong>Financiamiento BNPL más largo (6–36 meses):</strong> Estos tienen tasas de interés de 0–36% APR, muy similares a las tarjetas de crédito. Las tasas de Affirm varían de 0–36%, las de Klarna de 0–29.99%.</li>
-          <li><strong>Cargos a comerciantes:</strong> Las tiendas pagan 4–6% de cada transacción de BNPL. Algunos economistas argumentan que este costo se incorpora a los precios minoristas con el tiempo, lo que significa que podrías pagar precios ligeramente más altos ya sea que uses BNPL o no.</li>
-        </ul>
-
-        <h2>Cómo funciona realmente el interés de las tarjetas de crédito</h2>
-
-        <p>Las tarjetas de crédito cobran intereses usando algo llamado <strong>saldo diario promedio</strong>. Esto es lo que significa en la práctica:</p>
-
-        <p>Si compras algo por $1,000 con una tarjeta con 24% APR y lo pagas en 6 meses, aquí están los cálculos:</p>
+        <p>大多数人认为BNPL总是免费的。其实不然——它是<em>有条件</em>免费的。以下是具体分析：</p>
 
         <ul>
-          <li>Tasa de interés mensual: 24% ÷ 12 = 2% por mes</li>
-          <li>Mes 1: $1,000 × 2% = $20 en intereses</li>
-          <li>Mes 2: ~$840 de saldo × 2% = $16.80 en intereses</li>
-          <li>Y así sucesivamente, disminuyendo cada mes a medida que pagas el saldo</li>
-          <li><strong>Interés total en 6 meses: aproximadamente $66</strong></li>
-          <li><strong>Costo total: $1,066</strong></li>
+          <li><strong>分4期付款计划：</strong>$0利息，$0费用——但前提是你按时支付每一期。如果错过还款，每次逾期将面临$7–$8的滞纳金。</li>
+          <li><strong>较长期的BNPL融资（6–36个月）：</strong>这些带有0–36% APR的利率，与信用卡非常相似。Affirm的利率范围为0–36%，Klarna的为0–29.99%。</li>
+          <li><strong>商户费：</strong>商店为每笔BNPL交易支付4–6%的费用。一些经济学家认为，随着时间的推移，这种成本会被计入零售价格中——这意味着无论你是否使用BNPL，你都可能支付略高的价格。</li>
         </ul>
 
-        <p>Compara eso con el pago en 4 de BNPL para la misma compra de $1,000: <strong>$1,000 en total</strong> (si se paga a tiempo). Eso es un <strong>ahorro de $66</strong> con BNPL.</p>
+        <h2>信用卡利息实际上是如何运作的</h2>
+
+        <p>信用卡使用所谓的<strong>平均每日余额</strong>来收取利息。在实践中这意味着：</p>
+
+        <p>如果你用24% APR的信用卡购买了$1,000的商品，并在6个月内还清，计算如下：</p>
+
+        <ul>
+          <li>月利率：24% ÷ 12 = 每月2%</li>
+          <li>第1个月：$1,000 × 2% = $20利息</li>
+          <li>第2个月：~$840余额 × 2% = $16.80利息</li>
+          <li>以此类推，随着你偿还余额，每月递减。</li>
+          <li><strong>6个月的总利息：约$66</strong></li>
+          <li><strong>总成本：$1,066</strong></li>
+        </ul>
+
+        <p>将此与同样购买$1,000商品的BNPL分4期付款相比：<strong>总计$1,000</strong>（如果按时还款）。使用BNPL可以<strong>节省$66</strong>。</p>
 
         <div class="info-box success">
-          <strong>✅ Conclusión clave</strong>
-          Para compras que puedes pagar en 6 semanas usando el pago en 4, BNPL es casi siempre más barato que mantener un saldo en la tarjeta de crédito. Los ahorros crecen con el tamaño de la compra: una compra de $2,000 en una tarjeta con 24% APR durante 6 meses cuesta alrededor de $132 en intereses. <a href="/compare/?methods=bnpl">Compara los costos de BNPL vs tarjeta de crédito para tu compra</a>.
+          <strong>✅ 核心要点</strong>
+          对于你可以使用分4期在6周内还清的购物，BNPL几乎总是比保留信用卡余额更便宜。节省的金额随着购买规模的增加而增加——在24% APR的信用卡上购买$2,000的商品，分6个月还款大约需要$132的利息。<a href="/compare/?methods=bnpl">比较你的购物使用BNPL与信用卡的成本</a>。
         </div>
 
-        <h2>Ejemplos prácticos: BNPL vs Tarjeta de crédito</h2>
+        <h2>实例计算：BNPL与信用卡对比</h2>
 
-        <h3>Ejemplo 1: Compra de $400, pago en 6 semanas</h3>
+        <h3>示例1：$400购物，6周还清</h3>
 
         <div class="comparison-table-wrapper">
           <table class="comparison-table">
             <thead>
               <tr>
-                <th>Opción</th>
-                <th>Costo total</th>
-                <th>Pago mensual</th>
+                <th>选项</th>
+                <th>总成本</th>
+                <th>每月还款</th>
               </tr>
             </thead>
             <tbody>
               <tr class="highlight-row">
-                <td><strong>BNPL Pago en 4</strong></td>
+                <td><strong>BNPL分4期</strong></td>
                 <td><strong>$400.00</strong></td>
-                <td>$100 cada 2 semanas</td>
+                <td>每2周$100</td>
               </tr>
               <tr>
-                <td>Tarjeta de crédito (24% APR, 2 meses)</td>
+                <td>信用卡（24% APR，2个月）</td>
                 <td>$408.00</td>
-                <td>~$204/mes</td>
+                <td>每月~$204</td>
               </tr>
               <tr>
-                <td>Tarjeta de crédito (24% APR, 6 meses)</td>
+                <td>信用卡（24% APR，6个月）</td>
                 <td>$426.00</td>
-                <td>~$71/mes</td>
+                <td>每月~$71</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <p><strong>Ganador: BNPL</strong> por $8–$26. Pero ten en cuenta la compensación: BNPL requiere $100 cada 2 semanas, mientras que la tarjeta de crédito te permite extenderlo a $71/mes.</p>
+        <p><strong>胜出者：BNPL</strong>，节省$8–$26。但请注意权衡：BNPL需要每2周支付$100，而信用卡则允许你延长至每月$71。</p>
 
-        <h3>Ejemplo 2: Compra de $1,500, pago en 6 meses</h3>
+        <h3>示例2：$1,500购物，6个月还清</h3>
 
         <div class="comparison-table-wrapper">
           <table class="comparison-table">
             <thead>
               <tr>
-                <th>Opción</th>
-                <th>Costo total</th>
-                <th>Pago mensual</th>
+                <th>选项</th>
+                <th>总成本</th>
+                <th>每月还款</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>BNPL Pago en 4</td>
+                <td>BNPL分4期</td>
                 <td>$1,500.00</td>
-                <td>$375 cada 2 semanas</td>
+                <td>每2周$375</td>
               </tr>
               <tr class="highlight-row">
-                <td><strong>Financiamiento BNPL (15% APR, 6 meses)</strong></td>
+                <td><strong>BNPL融资（15% APR，6个月）</strong></td>
                 <td><strong>$1,561.00</strong></td>
-                <td>~$260/mes</td>
+                <td>每月~$260</td>
               </tr>
               <tr>
-                <td>Tarjeta de crédito (24% APR, 6 meses)</td>
+                <td>信用卡（24% APR，6个月）</td>
                 <td>$1,599.00</td>
-                <td>~$267/mes</td>
+                <td>每月~$267</td>
               </tr>
               <tr>
-                <td>Tarjeta con 0% APR introductorio (15 meses)</td>
+                <td>0% intro APR信用卡（15个月）</td>
                 <td>$1,500.00</td>
-                <td>$100/mes</td>
+                <td>每月$100</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <p><strong>Ganador: BNPL Pago en 4</strong> si puedes pagar $375 cada 2 semanas. Si necesitas pagos mensuales, el <strong>financiamiento BNPL al 15% APR</strong> supera a la tarjeta de crédito por unos $38. Pero la <strong>tarjeta con 0% APR introductorio</strong> empata con el Pago en 4 de BNPL en $1,500 en total, al tiempo que te brinda pagos mensuales mucho más bajos.</p>
+        <p><strong>胜出者：BNPL分4期</strong>，如果你能负担得起每2周$375。如果你需要按月还款，<strong>15% APR的BNPL融资</strong>比信用卡便宜约$38。但是<strong>0% intro APR信用卡</strong>与BNPL分4期的总额同为$1,500，同时为你提供低得多的每月还款额。</p>
 
-        <h3>Ejemplo 3: Compra de $3,000, pago en 12 meses</h3>
+        <h3>示例3：$3,000购物，12个月还清</h3>
 
         <div class="comparison-table-wrapper">
           <table class="comparison-table">
             <thead>
               <tr>
-                <th>Opción</th>
-                <th>Costo total</th>
-                <th>Pago mensual</th>
+                <th>选项</th>
+                <th>总成本</th>
+                <th>每月还款</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Financiamiento BNPL (15% APR, 12 meses)</td>
+                <td>BNPL融资（15% APR，12个月）</td>
                 <td>$3,248.00</td>
-                <td>~$271/mes</td>
+                <td>每月~$271</td>
               </tr>
               <tr>
-                <td>Tarjeta de crédito (24% APR, 12 meses)</td>
+                <td>信用卡（24% APR，12个月）</td>
                 <td>$3,395.00</td>
-                <td>~$283/mes</td>
+                <td>每月~$283</td>
               </tr>
               <tr class="highlight-row">
-                <td><strong>Tarjeta con 0% APR introductorio (15 meses)</strong></td>
+                <td><strong>0% intro APR信用卡（15个月）</strong></td>
                 <td><strong>$3,000.00</strong></td>
-                <td>$200/mes</td>
+                <td>每月$200</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <p><strong>Ganador: Tarjeta de crédito con 0% APR introductorio</strong> por goleada. Ahorras $248–$395 en comparación con las opciones que generan intereses, además de que ganas recompensas en la compra.</p>
-<h2>La ventaja de las tarjetas con 0% intro APR</h2>
+        <p><strong>胜出者：0% intro APR信用卡</strong>以压倒性优势获胜。与计息选项相比，你节省了$248–$395，此外你还能在购物时获得奖励。</p>
+<h2>0% Intro APR 信用卡的优势</h2>
 
-        <p>Esta es la opción que la mayoría de la gente olvida. Muchas tarjetas de crédito ofrecen <strong>0% intro APR por 12–21 meses</strong> en compras. Si calificas para una de estas tarjetas, aquí te explicamos por qué a menudo supera a BNPL:</p>
+        <p>这是大多数人容易忽略的选项。许多信用卡在消费时提供<strong>12–21个月的 0% intro APR</strong>。如果你符合申请这些信用卡的条件，以下是它通常胜过 BNPL 的原因：</p>
 
         <ul>
-          <li><strong>0% de interés</strong> — igual que BNPL Pay in 4</li>
-          <li><strong>1–5% cash back</strong> — en una compra de $2,000 con 2% cash back, ganas $40. Eso lo hace <em>más barato que gratis</em>.</li>
-          <li><strong>Construye historial de crédito</strong> — los pagos a tiempo se reportan a los tres burós</li>
-          <li><strong>Plazo de pago más largo</strong> — 12–21 meses vs. 6 semanas para BNPL Pay in 4</li>
-          <li><strong>Pagos mensuales más bajos</strong> — dividir $2,000 en 15 meses = $133/mes vs. $500 cada 2 semanas con BNPL</li>
+          <li><strong>0% 利率</strong> — 与 BNPL 的 Pay in 4 相同</li>
+          <li><strong>1–5% 返现</strong> — 在一笔 $2,000 的消费中，如果获得 2% 返现，你可以赚取 $40。这让它变得<em>比免费更划算</em>。</li>
+          <li><strong>建立信用记录</strong> — 按时还款会被报告给三大信用局</li>
+          <li><strong>更长的还款期</strong> — 12–21个月，而 BNPL Pay in 4 只有6周</li>
+          <li><strong>更低的每月还款额</strong> — 将 $2,000 分摊到15个月 = 每月 $133，而 BNPL 是每两周 $500</li>
         </ul>
 
         <div class="info-box">
-          <strong>⚠️ La condición</strong>
-          Necesitas un puntaje de crédito de bueno a excelente (típicamente 670+) para calificar para tarjetas con 0% intro APR. Y si no pagas el saldo completo antes de que termine el período de introducción, el saldo restante recibirá el APR regular — a menudo 24–30%. Configura un recordatorio en tu calendario para 1 mes antes de que expire la promoción.
+          <strong>⚠️ 注意事项</strong>
+          你需要良好到优秀的信用（通常是 670+）才能获得 0% intro APR 信用卡的资格。如果你在优惠期结束前没有还清全部余额，剩余余额将被收取常规 APR — 通常是 24–30%。建议在优惠到期前1个月设置日历提醒。
         </div>
 
-        <h2>Implicaciones para el puntaje de crédito</h2>
+        <h2>对信用分的影响</h2>
 
-        <p>Aquí es donde las tarjetas de crédito toman la delantera para la mayoría de las personas:</p>
+        <p>这就是信用卡对大多数人来说更具优势的地方：</p>
 
         <ul>
-          <li><strong>Tarjetas de crédito</strong> reportan todo a los tres burós principales. Los pagos a tiempo construyen tu puntaje. Una alta utilización (usar más del 30% de tu límite) puede afectarlo temporalmente. Pero el uso responsable durante 6–12 meses puede aumentar tu puntaje en 20–50 puntos.</li>
-          <li><strong>BNPL</strong> en su mayoría no reporta los pagos a tiempo. Affirm reporta algunos préstamos a Experian, y Klarna reporta ciertos productos. Pero la gran mayoría del uso de BNPL es invisible para los burós de crédito — lo que significa que ni ayuda ni perjudica (a menos que incumplas).</li>
+          <li><strong>信用卡</strong>会将所有信息报告给三大主要信用局。按时还款能提高你的信用分。高使用率（使用超过 30% 的信用额度）可能会暂时降低分数。但在 6–12 个月内负责任地使用，可以将你的分数提高 20–50 分。</li>
+          <li><strong>BNPL</strong>通常不会报告按时还款记录。Affirm 会向 Experian 报告部分贷款，Klarna 也会报告某些产品。但绝大多数的 BNPL 使用情况对信用局来说是不可见的 — 这意味着它既没有帮助也没有坏处（除非你违约）。</li>
         </ul>
 
-        <p>Si estás tratando de construir o reparar tu crédito, <strong>una tarjeta de crédito usada responsablemente es casi siempre la mejor opción</strong>, incluso si cuesta un poco más en intereses. <a href="/rewards/">Mira cuánto podrías ganar con la tarjeta de crédito adecuada</a> usando nuestra Calculadora de Recompensas.</p>
+        <p>如果你正试图建立或修复你的信用，<strong>负责任地使用信用卡几乎总是更好的选择</strong>，即使它需要支付多一点利息。<a href="/rewards/">看看使用合适的信用卡你能赚取多少</a>，请使用我们的奖励计算器。</p>
 
-        <h2>Cuándo gana BNPL</h2>
+        <h2>什么时候 BNPL 胜出</h2>
 
         <ul>
-          <li><strong>No tienes una tarjeta de crédito</strong> — a menudo es más fácil calificar para BNPL</li>
-          <li><strong>Puedes pagar en 6 semanas</strong> — Pay in 4 es genuinamente gratis y más barato que mantener un saldo en la tarjeta</li>
-          <li><strong>Quieres evitar picos de utilización de crédito</strong> — una compra de $2,000 en una tarjeta con un límite de $3,000 te empuja al 67% de utilización, lo que puede bajar tu puntaje 20–40 puntos temporalmente</li>
-          <li><strong>Tienes un presupuesto ajustado</strong> — los pagos quincenales fijos son más fáciles de planificar que un saldo de tarjeta de crédito rotativo</li>
+          <li><strong>你没有信用卡</strong> — BNPL 通常更容易获得批准</li>
+          <li><strong>你能在6周内还清</strong> — Pay in 4 是真正免费的，比持有信用卡余额更便宜</li>
+          <li><strong>你想避免信用额度使用率飙升</strong> — 在额度为 $3,000 的信用卡上消费 $2,000 会让你的使用率达到 67%，这可能会让你的信用分暂时下降 20–40 分</li>
+          <li><strong>你的预算很紧</strong> — 固定的双周还款比循环的信用卡余额更容易规划</li>
         </ul>
 
-        <h2>Cuándo ganan las tarjetas de crédito</h2>
+        <h2>什么时候信用卡胜出</h2>
 
         <ul>
-          <li><strong>Tienes una tarjeta con 0% intro APR</strong> — financiamiento gratis más recompensas</li>
-          <li><strong>Pagas tu tarjeta en su totalidad cada mes</strong> — entonces el costo efectivo es $0, igual que BNPL, pero ganas recompensas</li>
-          <li><strong>Necesitas más de 6 semanas</strong> — BNPL Pay in 4 requiere un pago agresivo; las tarjetas de crédito te dan flexibilidad</li>
-          <li><strong>Estás construyendo crédito</strong> — el historial de pagos reportado importa</li>
-          <li><strong>Quieres protección de compra</strong> — las tarjetas de crédito ofrecen resolución de disputas, garantías extendidas y protección contra fraudes que los servicios de BNPL no igualan</li>
+          <li><strong>你有一张 0% intro APR 信用卡</strong> — 免费融资加上奖励</li>
+          <li><strong>你每个月全额还清信用卡</strong> — 那么实际成本就是 $0，和 BNPL 一样，但你能赚取奖励</li>
+          <li><strong>你需要超过6周的时间</strong> — BNPL Pay in 4 需要激进的还款；信用卡则为你提供灵活性</li>
+          <li><strong>你正在建立信用</strong> — 被报告的还款记录很重要</li>
+          <li><strong>你需要购物保护</strong> — 信用卡提供争议解决、延长保修和欺诈保护，这些是 BNPL 服务无法比拟的</li>
         </ul>
 
         <div class="cta-box">
-          <h3>🧮 Haz los cálculos para tu situación</h3>
-          <p>Ingresa el monto de tu compra, el plazo de pago y los métodos de pago. Nuestra calculadora gratuita te muestra la opción exacta más barata — BNPL, tarjeta de crédito o algo más.</p>
-          <a href="/compare/?methods=bnpl" class="cta-button">Compara BNPL vs Tarjetas de Crédito →</a>
+          <h3>🧮 为你的情况算算账</h3>
+          <p>输入你的消费金额、还款时间表和付款方式。我们的免费计算器会向你展示最便宜的选项 — BNPL、信用卡或其他方式。</p>
+          <a href="/compare/?methods=bnpl" class="cta-button">比较 BNPL 与信用卡 →</a>
         </div>
 
-        <h2>Preguntas Frecuentes</h2>
+        <h2>常见问题</h2>
 
-        <h3>¿Es BNPL más barato que una tarjeta de crédito?</h3>
-        <p>Para compras a corto plazo pagadas en 6 semanas, BNPL Pay in 4 es más barato porque cobra 0% de interés mientras que las tarjetas de crédito cobran 20–30% APR en saldos mantenidos. Para una compra de $1,000 a 6 meses, una tarjeta de crédito al 24% APR cuesta alrededor de $66 en intereses, mientras que BNPL Pay in 4 cuesta $0.</p>
+        <h3>BNPL 比信用卡便宜吗？</h3>
+        <p>对于在6周内还清的短期消费，BNPL Pay in 4 更便宜，因为它收取 0% 的利息，而信用卡对未还清的余额收取 20–30% 的 APR。对于一笔分6个月还清的 $1,000 消费，APR 为 24% 的信用卡大约需要 $66 的利息，而 BNPL Pay in 4 的成本为 $0。</p>
 
-        <h3>¿BNPL afecta tu puntaje de crédito?</h3>
-        <p>La mayoría de los servicios de BNPL no reportan los pagos a tiempo a los burós de crédito, por lo que el uso responsable no construirá tu crédito. Los pagos atrasados pueden ser reportados y dañar tu puntaje. Las tarjetas de crédito reportan todo — tanto el historial de pagos bueno como el malo.</p>
+        <h3>BNPL 会影响你的信用分吗？</h3>
+        <p>大多数 BNPL 服务不会向信用局报告按时还款记录，因此负责任地使用不会建立你的信用。逾期还款可能会被报告并损害你的信用分。信用卡会报告所有信息 — 包括良好和不良的还款记录。</p>
 
-        <h3>¿Es mejor una tarjeta de crédito con 0% intro APR que BNPL?</h3>
-        <p>A menudo sí. Una tarjeta con 0% intro APR te da financiamiento gratis como BNPL, pero también ganas recompensas (1–5% cash back) y construyes historial de crédito. Para una compra de $2,000 a 15 meses con 0% intro APR y 2% cash back, en realidad ganarías $40 — haciéndolo más barato que el BNPL gratuito.</p>
+        <h3>0% intro APR 信用卡比 BNPL 更好吗？</h3>
+        <p>通常是的。0% intro APR 信用卡为你提供像 BNPL 一样的免费融资，但你还可以赚取奖励（1–5% 返现）并建立信用记录。对于一笔 $2,000 的消费，在 15 个月内享受 0% intro APR 和 2% 返现，你实际上会赚取 $40 — 这让它比免费的 BNPL 更划算。</p>
 
         <div class="related-articles">
-          <h3>📚 Artículos Relacionados</h3>
+          <h3>📚 相关文章</h3>
           <div class="related-grid">
             <a href="klarna-vs-afterpay-vs-affirm.html" class="related-card">
               <div class="related-card-icon">⚔️</div>
               <h4>Klarna vs Afterpay vs Affirm</h4>
-              <p>Comparación cara a cara de los 3 principales servicios de BNPL.</p>
+              <p>三大顶级 BNPL 服务的正面交锋比较。</p>
             </a>
             <a href="best-0-apr-credit-cards.html" class="related-card">
               <div class="related-card-icon">🏆</div>
-              <h4>Las mejores tarjetas de crédito con 0% APR para compras grandes</h4>
-              <p>Compara las mejores tarjetas con 12–21 meses de financiamiento sin intereses.</p>
+              <h4>适合大额消费的最佳 0% APR 信用卡</h4>
+              <p>比较提供 12–21 个月免息融资的顶级信用卡。</p>
             </a>
             <a href="cheapest-way-to-finance-purchase.html" class="related-card">
               <div class="related-card-icon">💰</div>
-              <h4>La forma más inteligente de financiar una compra de $1,000</h4>
-              <p>Comparando todas las opciones — BNPL, tarjetas de crédito, préstamos personales — para encontrar la más barata.</p>
+              <h4>为 $1,000 消费融资的最聪明方式</h4>
+              <p>比较所有选项 — BNPL、信用卡、个人贷款 — 找出最便宜的。</p>
             </a>
           </div>
         </div>
@@ -432,37 +432,37 @@
   <div class="container-wide">
     <div class="footer-grid">
       <div class="footer-col">
-        <h4 class="footer-heading">Calculadoras</h4>
+        <h4 class="footer-heading">计算器</h4>
         <ul class="footer-links">
-          <li><a href="/compare/">Comparación de Crédito</a></li>
-          <li><a href="/debt-planner/">Planificador de Deudas</a></li>
-          <li><a href="/rewards/">Calculadora de Recompensas</a></li>
-          <li><a href="/min-payment/">Pago Mínimo</a></li>
-          <li><a href="/loan-vs-bt/">Préstamo vs Transferencia de Saldo</a></li>
+          <li><a href="/compare/">信用比较</a></li>
+          <li><a href="/debt-planner/">债务规划师</a></li>
+          <li><a href="/rewards/">奖励计算器</a></li>
+          <li><a href="/min-payment/">最低还款</a></li>
+          <li><a href="/loan-vs-bt/">贷款 vs 余额转移</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4 class="footer-heading">Aprende</h4>
+        <h4 class="footer-heading">学习</h4>
         <ul class="footer-links">
-          <li><a href="/learn/snowball-vs-avalanche.html">Método bola de nieve vs Método avalancha</a></li>
-          <li><a href="/learn/balance-transfer-calculator.html">Calculadora de Transferencia de Saldo</a></li>
-          <li><a href="/learn/bnpl-interest-calculator.html">Calculadora de Intereses BNPL</a></li>
-          <li><a href="/learn/pay-off-10k-debt.html">Cómo pagar $10K en deudas</a></li>
-          <li><a href="/learn/crypto-credit-card-rewards.html">Tarjetas de Crédito Cripto</a></li>
+          <li><a href="/learn/snowball-vs-avalanche.html">雪球法 vs 雪崩法</a></li>
+          <li><a href="/learn/balance-transfer-calculator.html">余额转移计算器</a></li>
+          <li><a href="/learn/bnpl-interest-calculator.html">BNPL 利息计算器</a></li>
+          <li><a href="/learn/pay-off-10k-debt.html">如何还清 $10K 债务</a></li>
+          <li><a href="/learn/crypto-credit-card-rewards.html">加密货币信用卡</a></li>
         </ul>
       </div>
       <div class="footer-col">
-<h4 class="footer-heading">Empresa</h4>
+<h4 class="footer-heading">公司</h4>
         <ul class="footer-links">
-          <li><a href="/about/">Acerca de</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/disclosure.html">Divulgación de afiliados</a></li>
-          <li><a href="/merchant/">Directorio de comerciantes</a></li>
+          <li><a href="/about/">关于我们</a></li>
+          <li><a href="/blog/">博客</a></li>
+          <li><a href="/disclosure.html">联盟披露</a></li>
+          <li><a href="/merchant/">商家目录</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>CreditStud.io es solo para fines informativos. Las tasas, términos y elegibilidad reales pueden variar.</p>
+      <p>CreditStud.io 仅供参考。实际利率、条款和申请资格可能有所不同。</p>
     </div>
   </div>
 </footer>
