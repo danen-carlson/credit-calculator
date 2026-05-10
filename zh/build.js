@@ -363,6 +363,18 @@ function buildLang(lang) {
     'blog/credit-card-points-offset-interest.html',
   ]);
 
+  // Pages that have been body-translated by the translation runner.
+  // These should use the translated file as base (not English source).
+  function isBodyTranslated(relPath) {
+    const progressFile = path.join(repoDir, '.states', `translate-body-${lang}-progress.json`);
+    try {
+      const progress = JSON.parse(fs.readFileSync(progressFile, 'utf8'));
+      return progress[relPath]?.done === true && !progress[relPath]?.dryRun;
+    } catch {
+      return false;
+    }
+  }
+
   for (const filePath of htmlFiles) {
     const relPath = path.relative(repoDir, filePath);
 
@@ -372,7 +384,18 @@ function buildLang(lang) {
       continue;
     }
 
-    let content = fs.readFileSync(filePath, 'utf8');
+    // Use the translated file as base if it exists and was body-translated,
+    // so we don't overwrite Spanish body content with English source.
+    const translatedPath = path.join(repoDir, lang, relPath);
+    const useTranslated = isBodyTranslated(relPath) && fs.existsSync(translatedPath);
+    let content;
+    if (useTranslated) {
+      content = fs.readFileSync(translatedPath, 'utf8');
+      // Make sure lang attribute is correct (translated file might have been based on English)
+      content = content.replace(/<html[^>]*\s+lang="[^"]*"/i, `<html lang="${lang}"`);
+    } else {
+      content = fs.readFileSync(filePath, 'utf8');
+    }
 
     const langDir = path.join(repoDir, lang);
     const outPath = path.join(langDir, relPath);
