@@ -509,12 +509,16 @@ function fixCanonicalUrl(content, lang) {
     `<meta content="https://creditstud.io/${lang}$1" property="og:url">`
   );
 
-  // Fix JSON-LD BreadcrumbList: translate Home → Inicio and fix item URLs
+  // Fix JSON-LD BreadcrumbList: translate Home label and fix item URLs
+  const HOME_LABELS = { es: 'Inicio', zh: '首页', ko: '홈', tl: 'Home', hi: 'होम' };
+  const homeLabel = HOME_LABELS[lang] || 'Home';
   content = content.replace(
     /<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
     function(match, jsonBlock) {
       if (!jsonBlock.includes('BreadcrumbList')) return match;
-      let fixed = jsonBlock.replace(/"name":\s*"Home"/g, '"name": "Inicio"');
+      let fixed = jsonBlock.replace(/"name":\s*"Home"/g, `"name": "${homeLabel}"`);
+      // Also fix any leftover Spanish 'Inicio' from previous builds
+      fixed = fixed.replace(/"name":\s*"Inicio"/g, `"name": "${homeLabel}"`);
       const langPrefix = `/${lang}/`;
       fixed = fixed.replace(
         /"item":\s*"https:\/\/creditstud\.io(\/[^"?]*)"/g,
