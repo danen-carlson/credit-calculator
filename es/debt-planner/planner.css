@@ -2,7 +2,7 @@
 
 /* Planner Header */
 .planner-header {
-  background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #134e4a 0%, #0d9488 100%);
   color: white;
   padding: 40px 0 32px;
   text-align: center;
@@ -320,7 +320,7 @@
 
 /* Savings Comparison Banner */
 .savings-banner {
-  background: linear-gradient(135deg, #ecfdf5 0%, #eff4ff 100%);
+  background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
   border: 1.5px solid var(--success);
   border-radius: var(--radius);
   padding: 16px 20px;
@@ -1544,8 +1544,8 @@
   margin-bottom: 14px;
 }
 .comparison-savings-callout {
-  background: linear-gradient(135deg, #eff4ff 0%, #f5f3ff 100%);
-  border: 1.5px solid var(--primary, #2563eb);
+  background: linear-gradient(135deg, #f0fdfa 0%, #f0fdfa 100%);
+  border: 1.5px solid var(--primary, #0d9488);
   border-radius: 8px;
   padding: 10px 16px;
   margin-bottom: 14px;
@@ -1554,7 +1554,7 @@
   color: var(--text);
 }
 .comparison-savings-callout strong {
-  color: var(--primary, #2563eb);
+  color: var(--primary, #0d9488);
 }
 .comparison-columns {
   display: grid;

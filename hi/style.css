@@ -2,15 +2,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #f8f9fb;
+  --bg: #f8fafb;
   --surface: #ffffff;
   --border: #e2e6ed;
   --text: #1a1d23;
   --text-muted: #9ca3af;
   --text-secondary: #5f6775;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-light: #eff4ff;
+  --primary: #0d9488;
+  --primary-hover: #0f766e;
+  --primary-light: #f0fdfa;
   --success: #059669;
   --success-light: #ecfdf5;
   --warning: #d97706;
@@ -66,7 +66,7 @@ body {
 
 /* Header */
 .header {
-  background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #134e4a 0%, #0d9488 100%);
   color: white;
   padding: 40px 0 32px;
   text-align: center;
@@ -135,7 +135,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   min-width: 280px;
-  background: #1e3a5f;
+  background: #134e4a;
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 8px;
   padding: 8px 0;
@@ -1045,7 +1045,7 @@ input:focus, select:focus {
 
 .avail-anywhere { background: var(--success-light); color: var(--success); }
 .avail-partner { background: var(--warning-light); color: var(--warning); }
-.avail-both { background: #eff4ff; color: var(--primary); }
+.avail-both { background: #f0fdfa; color: var(--primary); }
 
 /* Annual rewards & fee advice */
 .annual-rewards-box {
@@ -1351,7 +1351,7 @@ input:focus, select:focus {
 
 /* Quick Estimate */
 .quick-estimate {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background: linear-gradient(135deg, #f0fdfa 0%, #99f6e4 100%);
   border: 1.5px solid #bae6fd;
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
@@ -1533,8 +1533,8 @@ input:focus, select:focus {
 .new-card-option {
   margin: 1.5rem 0;
   padding: 1.25rem;
-  background: linear-gradient(135deg, #eff6ff 0%, #fff 100%);
-  border: 2px solid #3b82f6;
+  background: linear-gradient(135deg, #f0fdfa 0%, #fff 100%);
+  border: 2px solid #14b8a6;
   border-radius: var(--radius);
 }
 
@@ -1548,7 +1548,7 @@ input:focus, select:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  background: #dbeafe;
+  background: #ccfbf1;
   color: #1e40af;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -1939,8 +1939,8 @@ input:focus, select:focus {
   cursor: pointer;
   font-weight: 600;
 }
-.pwa-install-accept { background: #2563eb; color: #fff; }
-.pwa-install-accept:hover { background: #1d4ed8; }
+.pwa-install-accept { background: #0d9488; color: #fff; }
+.pwa-install-accept:hover { background: #0f766e; }
 .pwa-install-dismiss { background: #f3f4f6; color: #374151; }
 .pwa-install-dismiss:hover { background: #e5e7eb; }
 @keyframes pwa-slide-up {

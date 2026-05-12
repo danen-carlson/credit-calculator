@@ -1818,1036 +1818,423 @@
     ]
   },
   "learn/crypto-credit-card-rewards.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "크립토 신용카드 보상, 가치가 있을까? — CreditStud.io",
+    "description": "크립토 신용카드 보상을 전통 캐시백과 비교하세요. 변동성 위험, 세금 영향, Bitcoin 또는 Ethereum 적립이 정말 가치 있는지 이해하세요.",
+    "og_title": "크립토 신용카드 보상, 가치가 있을까? — CreditStud.io",
+    "og_description": "크립토 신용카드 보상을 전통 캐시백과 비교하세요. 변동성 위험, 세금 영향, Bitcoin 또는 Ethereum 적립이 정말 가치 있는지 이해하세요.",
+    "twitter_title": "크립토 신용카드 보상, 가치가 있을까? — CreditStud.io",
+    "twitter_description": "크립토 신용카드 보상을 전통 캐시백과 비교하세요. 변동성 위험, 세금 영향, Bitcoin 또는 Ethereum 적립이 정말 가치 있는지 이해하세요.",
+    "ld_headline": "크립토 신용카드 보상, 가치가 있을까? — CreditStud.io",
+    "ld_description": "크립토 신용카드 보상을 전통 캐시백과 비교하세요. 변동성 위험, 세금 영향, Bitcoin 또는 Ethereum 적립이 정말 가치 있는지 이해하세요.",
+    "ld_breadcrumb_last": "크립토 카드 보상",
+    "faq": []
   },
   "learn/index.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
+    "title": "재무 교육 센터 | CreditStud.io",
+    "description": "신용카드 부채 상환 전략, BNPL, 잔액이체, 크립토 리워드, 부채 제거 방법 완전 가이드로 재무 마스터.",
+    "og_title": "재무 교육 센터 | CreditStud.io",
+    "og_description": "신용카드 부채 상환 전략, BNPL, 잔액이체, 크립토 리워드, 부채 제거 방법 완전 가이드로 재무 마스터.",
+    "twitter_title": "재무 교육 센터 | CreditStud.io",
+    "twitter_description": "신용카드 부채 상환 전략, BNPL, 잔액이체, 크립토 리워드, 부채 제거 방법 완전 가이드로 재무 마스터.",
+    "ld_headline": "재무 교육 센터 | CreditStud.io",
+    "ld_description": "신용카드 부채 상환 전략, BNPL, 잔액이체, 크립토 리워드, 부채 제거 방법 완전 가이드로 재무 마스터.",
+    "ld_breadcrumb_last": "학습",
     "faq": []
   },
   "learn/pay-off-10k-debt.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": ",000 신용카드 부채 가장 빠른 상환 — CreditStud.io",
+    "description": ",000 부채 제거 최적 전략. Avalanche, snowball, 잔액이체, 통합 비교 — 실제 숫자 및 계산기.",
+    "og_title": ",000 신용카드 부채 가장 빠른 상환 — CreditStud.io",
+    "og_description": ",000 부채 제거 최적 전략. Avalanche, snowball, 잔액이체, 통합 비교 — 실제 숫자 및 계산기.",
+    "twitter_title": ",000 신용카드 부채 가장 빠른 상환 — CreditStud.io",
+    "twitter_description": ",000 부채 제거 최적 전략. Avalanche, snowball, 잔액이체, 통합 비교 — 실제 숫자 및 계산기.",
+    "ld_headline": ",000 신용카드 부채 가장 빠른 상환 — CreditStud.io",
+    "ld_description": ",000 부채 제거 최적 전략. Avalanche, snowball, 잔액이체, 통합 비교 — 실제 숫자 및 계산기.",
+    "ld_breadcrumb_last": "k 부채 상환",
+    "faq": []
   },
   "learn/snowball-vs-avalanche.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "Snowball vs Avalanche 부채 상환: 어떤 게 나을까? — CreditStud.io",
+    "description": "Snowball과 avalanche 방법 비교. 돈 절약, 속도, 성격 맞춤 — 실제 숫자 및 계산기.",
+    "og_title": "Snowball vs Avalanche 부채 상환: 어떤 게 나을까? — CreditStud.io",
+    "og_description": "Snowball과 avalanche 방법 비교. 돈 절약, 속도, 성격 맞춤 — 실제 숫자 및 계산기.",
+    "twitter_title": "Snowball vs Avalanche 부채 상환: 어떤 게 나을까? — CreditStud.io",
+    "twitter_description": "Snowball과 avalanche 방법 비교. 돈 절약, 속도, 성격 맞춤 — 실제 숫자 및 계산기.",
+    "ld_headline": "Snowball vs Avalanche 부채 상환: 어떤 게 나을까? — CreditStud.io",
+    "ld_description": "Snowball과 avalanche 방법 비교. 돈 절약, 속도, 성격 맞춤 — 실제 숫자 및 계산기.",
+    "ld_breadcrumb_last": "Snowball vs Avalanche",
+    "faq": []
   },
   "loan-vs-bt/index.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "개인 대출 vs 잔액이체 — 비용 비교 | CreditStud.io",
+    "description": "개인 대출 또는 잔액이체 카드 선택? 총 비용, 월 납부액, 상환 기간 무료 계산.",
+    "og_title": "개인 대출 vs 잔액이체 — 비용 비교 | CreditStud.io",
+    "og_description": "개인 대출 또는 잔액이체 카드 선택? 총 비용, 월 납부액, 상환 기간 무료 계산.",
+    "twitter_title": "개인 대출 vs 잔액이체 — 비용 비교 | CreditStud.io",
+    "twitter_description": "개인 대출 또는 잔액이체 카드 선택? 총 비용, 월 납부액, 상환 기간 무료 계산.",
+    "ld_headline": "개인 대출 vs 잔액이체 — 비용 비교 | CreditStud.io",
+    "ld_description": "개인 대출 또는 잔액이체 카드 선택? 총 비용, 월 납부액, 상환 기간 무료 계산.",
+    "ld_breadcrumb_last": "대출 vs 잔액이체",
+    "faq": []
   },
   "merchant/amazon.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "Amazon 최고 신용카드 | CreditStud.io",
+    "description": "Amazon 구매 최적 카드. 온라인 리워드, Prime Day, 일상 지출 캐시백/포인트 최대화.",
+    "og_title": "Amazon 최고 신용카드 | CreditStud.io",
+    "og_description": "Amazon 구매 최적 카드. 온라인 리워드, Prime Day, 일상 지출 캐시백/포인트 최대화.",
+    "twitter_title": "Amazon 최고 신용카드 | CreditStud.io",
+    "twitter_description": "Amazon 구매 최적 카드. 온라인 리워드, Prime Day, 일상 지출 캐시백/포인트 최대화.",
+    "ld_headline": "Amazon 최고 신용카드 | CreditStud.io",
+    "ld_description": "Amazon 구매 최적 카드. 온라인 리워드, Prime Day, 일상 지출 캐시백/포인트 최대화.",
+    "ld_breadcrumb_last": "Amazon",
+    "faq": []
   },
   "merchant/costco.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "Costco 최고 신용카드 | CreditStud.io",
+    "description": "Costco 쇼핑, 가스, 도매 구매 최적 카드. 평률 캐시백 최대화.",
+    "og_title": "Costco 최고 신용카드 | CreditStud.io",
+    "og_description": "Costco 쇼핑, 가스, 도매 구매 최적 카드. 평률 캐시백 최대화.",
+    "twitter_title": "Costco 최고 신용카드 | CreditStud.io",
+    "twitter_description": "Costco 쇼핑, 가스, 도매 구매 최적 카드. 평률 캐시백 최대화.",
+    "ld_headline": "Costco 최고 신용카드 | CreditStud.io",
+    "ld_description": "Costco 쇼핑, 가스, 도매 구매 최적 카드. 평률 캐시백 최대화.",
+    "ld_breadcrumb_last": "Costco",
+    "faq": []
   },
   "merchant/dining.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "레스토랑 최고 신용카드 (2026) | CreditStud.io",
+    "description": "레스토랑, 테이크아웃, 배달 최적 카드. 식사 리워드 비교.",
+    "og_title": "레스토랑 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "레스토랑, 테이크아웃, 배달 최적 카드. 식사 리워드 비교.",
+    "twitter_title": "레스토랑 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "레스토랑, 테이크아웃, 배달 최적 카드. 식사 리워드 비교.",
+    "ld_headline": "레스토랑 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "레스토랑, 테이크아웃, 배달 최적 카드. 식사 리워드 비교.",
+    "ld_breadcrumb_last": "다이닝",
+    "faq": []
   },
   "merchant/ev-charging.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "전기차 충전 최고 신용카드 (2026) | CreditStud.io",
+    "description": "Tesla Supercharger, ChargePoint, EVgo 등 EV 충전 최적 카드. EV 소유자 리워드 비교.",
+    "og_title": "전기차 충전 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "Tesla Supercharger, ChargePoint, EVgo 등 EV 충전 최적 카드. EV 소유자 리워드 비교.",
+    "twitter_title": "전기차 충전 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "Tesla Supercharger, ChargePoint, EVgo 등 EV 충전 최적 카드. EV 소유자 리워드 비교.",
+    "ld_headline": "전기차 충전 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "Tesla Supercharger, ChargePoint, EVgo 등 EV 충전 최적 카드. EV 소유자 리워드 비교.",
+    "ld_breadcrumb_last": "EV 충전",
+    "faq": []
   },
   "merchant/fitness.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "피트니스/짐 최고 신용카드 (2026) | CreditStud.io",
+    "description": "짐 멤버십, Peloton, 피트니스 앱 최적 카드. 운동 지출 리워드 비교.",
+    "og_title": "피트니스/짐 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "짐 멤버십, Peloton, 피트니스 앱 최적 카드. 운동 지출 리워드 비교.",
+    "twitter_title": "피트니스/짐 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "짐 멤버십, Peloton, 피트니스 앱 최적 카드. 운동 지출 리워드 비교.",
+    "ld_headline": "피트니스/짐 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "짐 멤버십, Peloton, 피트니스 앱 최적 카드. 운동 지출 리워드 비교.",
+    "ld_breadcrumb_last": "피트니스",
+    "faq": []
   },
   "merchant/gas-stations.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "주유소 최고 신용카드 | CreditStud.io",
+    "description": "가스, EV 충전, 편의점 최적 카드. 연료 리워드 비교.",
+    "og_title": "주유소 최고 신용카드 | CreditStud.io",
+    "og_description": "가스, EV 충전, 편의점 최적 카드. 연료 리워드 비교.",
+    "twitter_title": "주유소 최고 신용카드 | CreditStud.io",
+    "twitter_description": "가스, EV 충전, 편의점 최적 카드. 연료 리워드 비교.",
+    "ld_headline": "주유소 최고 신용카드 | CreditStud.io",
+    "ld_description": "가스, EV 충전, 편의점 최적 카드. 연료 리워드 비교.",
+    "ld_breadcrumb_last": "주유소",
+    "faq": []
   },
   "merchant/groceries.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "슈퍼마켓 최고 신용카드 (Whole Foods 등) | CreditStud.io",
+    "description": "Whole Foods, Trader Joe's 슈퍼마켓 구매 최적 카드. 식료품 리워드 비교.",
+    "og_title": "슈퍼마켓 최고 신용카드 (Whole Foods 등) | CreditStud.io",
+    "og_description": "Whole Foods, Trader Joe's 슈퍼마켓 구매 최적 카드. 식료품 리워드 비교.",
+    "twitter_title": "슈퍼마켓 최고 신용카드 (Whole Foods 등) | CreditStud.io",
+    "twitter_description": "Whole Foods, Trader Joe's 슈퍼마켓 구매 최적 카드. 식료품 리워드 비교.",
+    "ld_headline": "슈퍼마켓 최고 신용카드 (Whole Foods 등) | CreditStud.io",
+    "ld_description": "Whole Foods, Trader Joe's 슈퍼마켓 구매 최적 카드. 식료품 리워드 비교.",
+    "ld_breadcrumb_last": "식료품",
+    "faq": []
   },
   "merchant/home-improvement.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "Home Depot/Lowe's 최고 신용카드 | CreditStud.io",
+    "description": "홈 개선, DIY 프로젝트 최적 카드. 철물점 리워드 비교.",
+    "og_title": "Home Depot/Lowe's 최고 신용카드 | CreditStud.io",
+    "og_description": "홈 개선, DIY 프로젝트 최적 카드. 철물점 리워드 비교.",
+    "twitter_title": "Home Depot/Lowe's 최고 신용카드 | CreditStud.io",
+    "twitter_description": "홈 개선, DIY 프로젝트 최적 카드. 철물점 리워드 비교.",
+    "ld_headline": "Home Depot/Lowe's 최고 신용카드 | CreditStud.io",
+    "ld_description": "홈 개선, DIY 프로젝트 최적 카드. 철물점 리워드 비교.",
+    "ld_breadcrumb_last": "홈 개선",
+    "faq": []
   },
   "merchant/index.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
+    "title": "인기 상점 최고 신용카드 | CreditStud.io",
+    "description": "Amazon, Costco, Walmart, 식료품, 가스, 레스토랑, 스트리밍, 여행 최적 카드.",
+    "og_title": "인기 상점 최고 신용카드 | CreditStud.io",
+    "og_description": "Amazon, Costco, Walmart, 식료품, 가스, 레스토랑, 스트리밍, 여행 최적 카드.",
+    "twitter_title": "인기 상점 최고 신용카드 | CreditStud.io",
+    "twitter_description": "Amazon, Costco, Walmart, 식료품, 가스, 레스토랑, 스트리밍, 여행 최적 카드.",
+    "ld_headline": "인기 상점 최고 신용카드 | CreditStud.io",
+    "ld_description": "Amazon, Costco, Walmart, 식료품, 가스, 레스토랑, 스트리밍, 여행 최적 카드.",
+    "ld_breadcrumb_last": "상점",
     "faq": []
   },
   "merchant/insurance.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "보험료 최고 신용카드 (2026) | CreditStud.io",
+    "description": "자동차, 주택, 건강 보험 지불 최적 카드. 보험 리워드 비교.",
+    "og_title": "보험료 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "자동차, 주택, 건강 보험 지불 최적 카드. 보험 리워드 비교.",
+    "twitter_title": "보험료 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "자동차, 주택, 건강 보험 지불 최적 카드. 보험 리워드 비교.",
+    "ld_headline": "보험료 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "자동차, 주택, 건강 보험 지불 최적 카드. 보험 리워드 비교.",
+    "ld_breadcrumb_last": "보험",
+    "faq": []
   },
   "merchant/online-shopping.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "온라인 쇼핑 최고 신용카드 (Amazon, Target 2026) | CreditStud.io",
+    "description": "Amazon, Target 온라인 쇼핑 최적 카드. 전자상거래 리워드 최대화.",
+    "og_title": "온라인 쇼핑 최고 신용카드 (Amazon, Target 2026) | CreditStud.io",
+    "og_description": "Amazon, Target 온라인 쇼핑 최적 카드. 전자상거래 리워드 최대화.",
+    "twitter_title": "온라인 쇼핑 최고 신용카드 (Amazon, Target 2026) | CreditStud.io",
+    "twitter_description": "Amazon, Target 온라인 쇼핑 최적 카드. 전자상거래 리워드 최대화.",
+    "ld_headline": "온라인 쇼핑 최고 신용카드 (Amazon, Target 2026) | CreditStud.io",
+    "ld_description": "Amazon, Target 온라인 쇼핑 최적 카드. 전자상거래 리워드 최대화.",
+    "ld_breadcrumb_last": "온라인 쇼핑",
+    "faq": []
   },
   "merchant/pharmacy.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "약국 최고 신용카드 (CVS, Walgreens 2026) | CreditStud.io",
+    "description": "CVS, Walgreens 약국, 건강 지출 최적 카드. 처방약 리워드 비교.",
+    "og_title": "약국 최고 신용카드 (CVS, Walgreens 2026) | CreditStud.io",
+    "og_description": "CVS, Walgreens 약국, 건강 지출 최적 카드. 처방약 리워드 비교.",
+    "twitter_title": "약국 최고 신용카드 (CVS, Walgreens 2026) | CreditStud.io",
+    "twitter_description": "CVS, Walgreens 약국, 건강 지출 최적 카드. 처방약 리워드 비교.",
+    "ld_headline": "약국 최고 신용카드 (CVS, Walgreens 2026) | CreditStud.io",
+    "ld_description": "CVS, Walgreens 약국, 건강 지출 최적 카드. 처방약 리워드 비교.",
+    "ld_breadcrumb_last": "약국",
+    "faq": []
   },
   "merchant/rent.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "임대료 최고 신용카드 (2026) | CreditStud.io",
+    "description": "임대료 카드 지불 가능? Bilt Mastercard 등 수수료 없음 포인트 적립 카드 비교.",
+    "og_title": "임대료 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "임대료 카드 지불 가능? Bilt Mastercard 등 수수료 없음 포인트 적립 카드 비교.",
+    "twitter_title": "임대료 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "임대료 카드 지불 가능? Bilt Mastercard 등 수수료 없음 포인트 적립 카드 비교.",
+    "ld_headline": "임대료 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "임대료 카드 지불 가능? Bilt Mastercard 등 수수료 없음 포인트 적립 카드 비교.",
+    "ld_breadcrumb_last": "임대료",
+    "faq": []
   },
   "merchant/restaurants.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "레스토랑 최고 신용카드 | CreditStud.io",
+    "description": "레스토랑 외식, 배달 최적 카드. 4% 식사 리워드 비교.",
+    "og_title": "레스토랑 최고 신용카드 | CreditStud.io",
+    "og_description": "레스토랑 외식, 배달 최적 카드. 4% 식사 리워드 비교.",
+    "twitter_title": "레스토랑 최고 신용카드 | CreditStud.io",
+    "twitter_description": "레스토랑 외식, 배달 최적 카드. 4% 식사 리워드 비교.",
+    "ld_headline": "레스토랑 최고 신용카드 | CreditStud.io",
+    "ld_description": "레스토랑 외식, 배달 최적 카드. 4% 식사 리워드 비교.",
+    "ld_breadcrumb_last": "레스토랑",
+    "faq": []
   },
   "merchant/streaming.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "스트리밍 서비스 최고 신용카드 | CreditStud.io",
+    "description": "Netflix, Spotify, Hulu, Disney+ 최적 카드. 6% 구독 캐시백 비교.",
+    "og_title": "스트리밍 서비스 최고 신용카드 | CreditStud.io",
+    "og_description": "Netflix, Spotify, Hulu, Disney+ 최적 카드. 6% 구독 캐시백 비교.",
+    "twitter_title": "스트리밍 서비스 최고 신용카드 | CreditStud.io",
+    "twitter_description": "Netflix, Spotify, Hulu, Disney+ 최적 카드. 6% 구독 캐시백 비교.",
+    "ld_headline": "스트리밍 서비스 최고 신용카드 | CreditStud.io",
+    "ld_description": "Netflix, Spotify, Hulu, Disney+ 최적 카드. 6% 구독 캐시백 비교.",
+    "ld_breadcrumb_last": "스트리밍",
+    "faq": []
   },
   "merchant/student.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "학생 최고 신용카드 (2026) | CreditStud.io",
+    "description": "대학생 신용 구축, 리워드, 연회비 없음 카드. 신용 이력 없음 옵션.",
+    "og_title": "학생 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "대학생 신용 구축, 리워드, 연회비 없음 카드. 신용 이력 없음 옵션.",
+    "twitter_title": "학생 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "대학생 신용 구축, 리워드, 연회비 없음 카드. 신용 이력 없음 옵션.",
+    "ld_headline": "학생 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "대학생 신용 구축, 리워드, 연회비 없음 카드. 신용 이력 없음 옵션.",
+    "ld_breadcrumb_last": "학생",
+    "faq": []
   },
   "merchant/subscription.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "구독/스트리밍 최고 신용카드 (2026) | CreditStud.io",
+    "description": "Netflix, Spotify 등 구독 최적 카드. 6% 캐시백 비교.",
+    "og_title": "구독/스트리밍 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "Netflix, Spotify 등 구독 최적 카드. 6% 캐시백 비교.",
+    "twitter_title": "구독/스트리밍 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "Netflix, Spotify 등 구독 최적 카드. 6% 캐시백 비교.",
+    "ld_headline": "구독/스트리밍 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "Netflix, Spotify 등 구독 최적 카드. 6% 캐시백 비교.",
+    "ld_breadcrumb_last": "구독",
+    "faq": []
   },
   "merchant/target.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
+    "title": "Target 최고 신용카드 | CreditStud.io",
+    "description": "Target 쇼핑, Target.com 최적. RedCard vs 일반 리워드 비교.",
+    "og_title": "Target 최고 신용카드 | CreditStud.io",
+    "og_description": "Target 쇼핑, Target.com 최적. RedCard vs 일반 리워드 비교.",
+    "twitter_title": "Target 최고 신용카드 | CreditStud.io",
+    "twitter_description": "Target 쇼핑, Target.com 최적. RedCard vs 일반 리워드 비교.",
+    "ld_headline": "Target 최고 신용카드 | CreditStud.io",
+    "ld_description": "Target 쇼핑, Target.com 최적. RedCard vs 일반 리워드 비교.",
+    "ld_breadcrumb_last": "Target",
     "faq": []
   },
   "merchant/travel-hotels.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "호텔 최고 신용카드 (2026) | CreditStud.io",
+    "description": "Marriott, Hilton, IHG 무료 숙박 리워드, 혜택 비교.",
+    "og_title": "호텔 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "Marriott, Hilton, IHG 무료 숙박 리워드, 혜택 비교.",
+    "twitter_title": "호텔 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "Marriott, Hilton, IHG 무료 숙박 리워드, 혜택 비교.",
+    "ld_headline": "호텔 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "Marriott, Hilton, IHG 무료 숙박 리워드, 혜택 비교.",
+    "ld_breadcrumb_last": "호텔",
+    "faq": []
   },
   "merchant/travel.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "여행/항공 최고 신용카드 | CreditStud.io",
+    "description": "항공, 호텔, 여행 포털 5x 포인트 유연 마일리지 카드 비교.",
+    "og_title": "여행/항공 최고 신용카드 | CreditStud.io",
+    "og_description": "항공, 호텔, 여행 포털 5x 포인트 유연 마일리지 카드 비교.",
+    "twitter_title": "여행/항공 최고 신용카드 | CreditStud.io",
+    "twitter_description": "항공, 호텔, 여행 포털 5x 포인트 유연 마일리지 카드 비교.",
+    "ld_headline": "여행/항공 최고 신용카드 | CreditStud.io",
+    "ld_description": "항공, 호텔, 여행 포털 5x 포인트 유연 마일리지 카드 비교.",
+    "ld_breadcrumb_last": "여행",
+    "faq": []
   },
   "merchant/uber-lyft.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "Uber/Lyft 최고 신용카드 (2026) | CreditStud.io",
+    "description": "Uber, Lyft 이동/Uber Eats 최적. 공유 이동 캐시백 최대화.",
+    "og_title": "Uber/Lyft 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "Uber, Lyft 이동/Uber Eats 최적. 공유 이동 캐시백 최대화.",
+    "twitter_title": "Uber/Lyft 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "Uber, Lyft 이동/Uber Eats 최적. 공유 이동 캐시백 최대화.",
+    "ld_headline": "Uber/Lyft 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "Uber, Lyft 이동/Uber Eats 최적. 공유 이동 캐시백 최대화.",
+    "ld_breadcrumb_last": "Uber/Lyft",
+    "faq": []
   },
   "merchant/utilities.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "공과금 최고 신용카드 (전기, 수도 2026) | CreditStud.io",
+    "description": "전기, 가스, 인터넷 공과금 최적 카드. 반복 지출 리워드.",
+    "og_title": "공과금 최고 신용카드 (전기, 수도 2026) | CreditStud.io",
+    "og_description": "전기, 가스, 인터넷 공과금 최적 카드. 반복 지출 리워드.",
+    "twitter_title": "공과금 최고 신용카드 (전기, 수도 2026) | CreditStud.io",
+    "twitter_description": "전기, 가스, 인터넷 공과금 최적 카드. 반복 지출 리워드.",
+    "ld_headline": "공과금 최고 신용카드 (전기, 수도 2026) | CreditStud.io",
+    "ld_description": "전기, 가스, 인터넷 공과금 최적 카드. 반복 지출 리워드.",
+    "ld_breadcrumb_last": "공과금",
+    "faq": []
   },
   "merchant/walmart.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "Walmart 최고 신용카드 | CreditStud.io",
+    "description": "Walmart 일상, 식료품, Walmart+ 최적 리워드 비교.",
+    "og_title": "Walmart 최고 신용카드 | CreditStud.io",
+    "og_description": "Walmart 일상, 식료품, Walmart+ 최적 리워드 비교.",
+    "twitter_title": "Walmart 최고 신용카드 | CreditStud.io",
+    "twitter_description": "Walmart 일상, 식료품, Walmart+ 최적 리워드 비교.",
+    "ld_headline": "Walmart 최고 신용카드 | CreditStud.io",
+    "ld_description": "Walmart 일상, 식료품, Walmart+ 최적 리워드 비교.",
+    "ld_breadcrumb_last": "Walmart",
+    "faq": []
   },
   "merchant/warehouse-clubs.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "Costco/Sam's Club 최고 신용카드 (2026) | CreditStud.io",
+    "description": "도매 클럽 식료품, 가스 리워드 비교.",
+    "og_title": "Costco/Sam's Club 최고 신용카드 (2026) | CreditStud.io",
+    "og_description": "도매 클럽 식료품, 가스 리워드 비교.",
+    "twitter_title": "Costco/Sam's Club 최고 신용카드 (2026) | CreditStud.io",
+    "twitter_description": "도매 클럽 식료품, 가스 리워드 비교.",
+    "ld_headline": "Costco/Sam's Club 최고 신용카드 (2026) | CreditStud.io",
+    "ld_description": "도매 클럽 식료품, 가스 리워드 비교.",
+    "ld_breadcrumb_last": "도매 클럽",
+    "faq": []
   },
   "min-payment/index.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "최소 납부 함정 계산기 — CreditStud.io",
+    "description": "최소 납부만의 충격적 비용 확인. 총 이자, 상환 시간, 절약액 무료 계산.",
+    "og_title": "최소 납부 함정 계산기 — CreditStud.io",
+    "og_description": "최소 납부만의 충격적 비용 확인. 총 이자, 상환 시간, 절약액 무료 계산.",
+    "twitter_title": "최소 납부 함정 계산기 — CreditStud.io",
+    "twitter_description": "최소 납부만의 충격적 비용 확인. 총 이자, 상환 시간, 절약액 무료 계산.",
+    "ld_headline": "최소 납부 함정 계산기 — CreditStud.io",
+    "ld_description": "최소 납부만의 충격적 비용 확인. 총 이자, 상환 시간, 절약액 무료 계산.",
+    "ld_breadcrumb_last": "최소 납부",
+    "faq": []
   },
   "offline.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
+    "title": "오프라인 — CreditStud.io",
+    "description": "인터넷 연결 없음. 저장 계산 사용 가능.",
+    "og_title": "오프라인 — CreditStud.io",
+    "og_description": "인터넷 연결 없음. 저장 계산 사용 가능.",
+    "twitter_title": "오프라인 — CreditStud.io",
+    "twitter_description": "인터넷 연결 없음. 저장 계산 사용 가능.",
+    "ld_headline": "오프라인 — CreditStud.io",
+    "ld_description": "인터넷 연결 없음. 저장 계산 사용 가능.",
+    "ld_breadcrumb_last": "오프라인",
     "faq": []
   },
   "rewards/index.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "신용카드 리워드 계산기 — 최적 카드 찾기 | CreditStud.io",
+    "description": "지출 습관 입력으로 최고 리워드 카드 즉시 발견. 캐시백, 여행 포인트, 크립토 비교.",
+    "og_title": "신용카드 리워드 계산기 — 최적 카드 찾기 | CreditStud.io",
+    "og_description": "지출 습관 입력으로 최고 리워드 카드 즉시 발견. 캐시백, 여행 포인트, 크립토 비교.",
+    "twitter_title": "신용카드 리워드 계산기 — 최적 카드 찾기 | CreditStud.io",
+    "twitter_description": "지출 습관 입력으로 최고 리워드 카드 즉시 발견. 캐시백, 여행 포인트, 크립토 비교.",
+    "ld_headline": "신용카드 리워드 계산기 — 최적 카드 찾기 | CreditStud.io",
+    "ld_description": "지출 습관 입력으로 최고 리워드 카드 즉시 발견. 캐시백, 여행 포인트, 크립토 비교.",
+    "ld_breadcrumb_last": "리워드",
+    "faq": []
   },
   "score-simulator/index.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
-    "faq": [
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      },
-      {
-        "name": "",
-        "acceptedAnswer": ""
-      }
-    ]
+    "title": "신용점수 시뮬레이터 — FICO 영향 확인 | CreditStud.io",
+    "description": "부채 상환, 신카드 개설 등 행동이 신용점수에 미치는 영향 시뮬레이션. 무료 FICO 추정기.",
+    "og_title": "신용점수 시뮬레이터 — FICO 영향 확인 | CreditStud.io",
+    "og_description": "부채 상환, 신카드 개설 등 행동이 신용점수에 미치는 영향 시뮬레이션. 무료 FICO 추정기.",
+    "twitter_title": "신용점수 시뮬레이터 — FICO 영향 확인 | CreditStud.io",
+    "twitter_description": "부채 상환, 신카드 개설 등 행동이 신용점수에 미치는 영향 시뮬레이션. 무료 FICO 추정기.",
+    "ld_headline": "신용점수 시뮬레이터 — FICO 영향 확인 | CreditStud.io",
+    "ld_description": "부채 상환, 신카드 개설 등 행동이 신용점수에 미치는 영향 시뮬레이션. 무료 FICO 추정기.",
+    "ld_breadcrumb_last": "점수 시뮬레이터",
+    "faq": []
   },
   "tools/api.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
+    "title": "CreditStud.io API 문서 — 무료 금융 계산 API",
+    "description": "신용카드 비교, 부채 상환, 리워드 최적화 무료 API. JSON 응답, OpenAPI 스펙, LLM 호환.",
+    "og_title": "CreditStud.io API 문서 — 무료 금융 계산 API",
+    "og_description": "신용카드 비교, 부채 상환, 리워드 최적화 무료 API. JSON 응답, OpenAPI 스펙, LLM 호환.",
+    "twitter_title": "CreditStud.io API 문서 — 무료 금융 계산 API",
+    "twitter_description": "신용카드 비교, 부채 상환, 리워드 최적화 무료 API. JSON 응답, OpenAPI 스펙, LLM 호환.",
+    "ld_headline": "CreditStud.io API 문서 — 무료 금융 계산 API",
+    "ld_description": "신용카드 비교, 부채 상환, 리워드 최적화 무료 API. JSON 응답, OpenAPI 스펙, LLM 호환.",
+    "ld_breadcrumb_last": "API",
     "faq": []
   },
   "tools/index.html": {
-    "title": "",
-    "description": "",
-    "og_title": "",
-    "og_description": "",
-    "twitter_title": "",
-    "twitter_description": "",
-    "ld_headline": "",
-    "ld_description": "",
-    "ld_breadcrumb_last": "",
+    "title": "무료 신용카드/부채 계산기 — CreditStud.io 도구",
+    "description": "신용카드 비교, 부채 계획, 리워드 최적화 온라인 무료 계산기. 등록 불필요.",
+    "og_title": "무료 신용카드/부채 계산기 — CreditStud.io 도구",
+    "og_description": "신용카드 비교, 부채 계획, 리워드 최적화 온라인 무료 계산기. 등록 불필요.",
+    "twitter_title": "무료 신용카드/부채 계산기 — CreditStud.io 도구",
+    "twitter_description": "신용카드 비교, 부채 계획, 리워드 최적화 온라인 무료 계산기. 등록 불필요.",
+    "ld_headline": "무료 신용카드/부채 계산기 — CreditStud.io 도구",
+    "ld_description": "신용카드 비교, 부채 계획, 리워드 최적화 온라인 무료 계산기. 등록 불필요.",
+    "ld_breadcrumb_last": "도구",
     "faq": []
   }
 }

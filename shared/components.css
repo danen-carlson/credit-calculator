@@ -29,22 +29,22 @@
 }
 
 .btn-primary {
-  background: #2563eb;
+  background: #0d9488;
   color: #fff;
   padding: 12px 24px;
   font-size: 1rem;
 }
-.btn-primary:hover { background: #1d4ed8; }
+.btn-primary:hover { background: #0f766e; }
 .btn-primary:active { transform: scale(0.98); }
 
 .btn-ghost {
   background: transparent;
-  color: #2563eb;
+  color: #0d9488;
   border: 1px solid #e5e7eb;
   padding: 10px 20px;
   font-size: 0.9rem;
 }
-.btn-ghost:hover { background: #f3f4f6; border-color: #2563eb; }
+.btn-ghost:hover { background: #f3f4f6; border-color: #0d9488; }
 
 .btn-small {
   background: #f3f4f6;
@@ -56,14 +56,14 @@
 .btn-small:hover { background: #e5e7eb; }
 
 .btn-add {
-  background: #eff6ff;
-  color: #2563eb;
+  background: #f0fdfa;
+  color: #0d9488;
   padding: 8px 16px;
   font-size: 0.875rem;
-  border: 1px dashed #93c5fd;
+  border: 1px dashed #5eead4;
   border-radius: 8px;
 }
-.btn-add:hover { background: #dbeafe; border-color: #2563eb; }
+.btn-add:hover { background: #ccfbf1; border-color: #0d9488; }
 
 .btn-loading {
   opacity: 0.7;
@@ -108,7 +108,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #2563eb;
+  background: #0d9488;
   color: #fff;
   font-size: 0.8rem;
   font-weight: 700;
@@ -130,8 +130,8 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 .result-card:first-child {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px #2563eb22;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2px #0d948822;
 }
 
 /* ============================================ */
@@ -271,12 +271,12 @@
 
 .email-capture-input:focus {
   outline: none;
-  border-color: #2563eb;
+  border-color: #0d9488;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .email-capture-button {
-  background: #2563eb;
+  background: #0d9488;
   color: white;
   border: none;
   border-radius: 8px;
@@ -288,11 +288,11 @@
 }
 
 .email-capture-button:hover {
-  background: #1d4ed8;
+  background: #0f766e;
 }
 
 .email-capture-button:disabled {
-  background: #93c5fd;
+  background: #5eead4;
   cursor: not-allowed;
 }
 
@@ -313,7 +313,7 @@
 }
 
 .email-capture-inline-button {
-  background: #2563eb;
+  background: #0d9488;
   color: white;
   border: none;
   border-radius: 8px;
@@ -326,7 +326,7 @@
 }
 
 .email-capture-inline-button:hover {
-  background: #1d4ed8;
+  background: #0f766e;
 }
 
 /* Apply Now / Learn More Buttons */
@@ -338,7 +338,7 @@
 
 .learn-more-btn {
   background: transparent !important;
-  color: #2563eb !important;
+  color: #0d9488 !important;
   border: 1px solid #e5e7eb !important;
 }
 
@@ -351,7 +351,7 @@
 }
 
 .ftc-disclosure a {
-  color: #2563eb;
+  color: #0d9488;
   text-decoration: underline;
 }
 
@@ -478,7 +478,7 @@
 
 /* Focus visible for accessibility */
 *:focus-visible {
-  outline: 3px solid var(--primary, #2563eb);
+  outline: 3px solid var(--primary, #0d9488);
   outline-offset: 2px;
 }
 
@@ -518,7 +518,7 @@
   left: 50%;
   transform: translateX(-50%);
   min-width: 280px;
-  background: #1e3a5f;
+  background: #134e4a;
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 8px;
   padding: 8px 0;
@@ -623,7 +623,7 @@
 }
 
 .footer-links a:hover {
-  color: #2563eb;
+  color: #0d9488;
 }
 
 .footer-bottom {

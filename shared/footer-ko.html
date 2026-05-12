@@ -1,0 +1,77 @@
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="footer-heading">계산기</h4>
+        <ul class="footer-links">
+          <li><a href="/ko/compare/">신용 비교</a></li>
+          <li><a href="/ko/debt-planner/">부채 플래너</a></li>
+          <li><a href="/ko/rewards/">캐시백 계산기</a></li>
+          <li><a href="/ko/min-payment/">최소결제</a></li>
+          <li><a href="/ko/loan-vs-bt/">대출 대 잔액이체</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">학습</h4>
+        <ul class="footer-links">
+          <li><a href="/ko/learn/snowball-vs-avalanche.html">스노우볼 vs 아발란체</a></li>
+          <li><a href="/ko/learn/balance-transfer-calculator.html">잔액이체 계산기</a></li>
+          <li><a href="/ko/learn/bnpl-interest-calculator.html">BNPL 이자율 계산기</a></li>
+          <li><a href="/ko/learn/pay-off-10k-debt.html">$10K 부채 상환 방법</a></li>
+          <li><a href="/ko/learn/crypto-credit-card-rewards.html">암호화폐 신용카드</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">회사</h4>
+        <ul class="footer-links">
+          <li><a href="/ko/about/">소개</a></li>
+          <li><a href="/ko/blog/">블로그</a></li>
+          <li><a href="/ko/disclosure.html">제휴사 공지</a></li>
+          <li><a href="/ko/merchant/">가맹점 디렉토리</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>CreditStud.io는 참고용으로만 제공됩니다. 실제 이자율, 조건 및 자격은 다를 수 있습니다.</p>
+    </div>
+  </div>
+</footer>
+<script>
+// Mobile nav dropdown toggle
+if (document.querySelector('.nav-dropdown-toggle')) {
+  document.querySelector('.nav-dropdown-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    var dropdown = this.closest('.nav-dropdown');
+    var isOpen = dropdown.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function(d) {
+        d.classList.remove('open');
+        d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.querySelector('.top-nav').classList.remove('open');
+      document.querySelector('.nav-hamburger').setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+// Highlight active nav item
+(function() {
+  var path = window.location.pathname.replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-dropdown-link, .top-nav > .nav-link').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var linkPath = new URL(href, window.location.origin).pathname.replace(/\/$/, '') || '/';
+    if (linkPath === path) {
+      link.classList.add('active');
+    }
+  });
+})();
+</script>

@@ -86,7 +86,7 @@
 }
 
 .email-capture-input:focus {
-  border-color: #2563eb;
+  border-color: #0d9488;
 }
 
 .email-capture-input.email-capture-error {
@@ -95,7 +95,7 @@
 
 .email-capture-submit {
   padding: 10px 20px;
-  background: #2563eb;
+  background: #0d9488;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -107,11 +107,11 @@
 }
 
 .email-capture-submit:hover {
-  background: #1d4ed8;
+  background: #0f766e;
 }
 
 .email-capture-submit:disabled {
-  background: #93c5fd;
+  background: #5eead4;
   cursor: not-allowed;
 }
 
@@ -167,7 +167,7 @@
 }
 
 .email-capture-inline-input:focus {
-  border-color: #2563eb;
+  border-color: #0d9488;
 }
 
 .email-capture-inline-input.email-capture-error {
@@ -176,7 +176,7 @@
 
 .email-capture-inline-submit {
   padding: 8px 16px;
-  background: #2563eb;
+  background: #0d9488;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -188,7 +188,7 @@
 }
 
 .email-capture-inline-submit:hover {
-  background: #1d4ed8;
+  background: #0f766e;
 }
 
 .email-capture-inline-submit.email-capture-success {

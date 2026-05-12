@@ -2,7 +2,7 @@
 
 /* Rewards Header */
 .rewards-header {
-  background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #134e4a 0%, #0d9488 100%);
   color: white;
   padding: 40px 0 32px;
   text-align: center;
@@ -112,7 +112,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #eff4ff 0%, #f0f9ff 100%);
+  background: linear-gradient(135deg, #f0fdfa 0%, #f0fdfa 100%);
   border: 1.5px solid #bae6fd;
   border-radius: var(--radius);
   padding: 16px 20px;
@@ -1130,7 +1130,7 @@
 .btn-apply {
   display: inline-block;
   padding: 10px 24px;
-  background: #2563eb;
+  background: #0d9488;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -1140,7 +1140,7 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-.btn-apply:hover { background: #1d4ed8; }
+.btn-apply:hover { background: #0f766e; }
 .btn-apply-sm { padding: 6px 14px; font-size: 0.85rem; }
 .btn-learn-more { background: #6b7280; }
 .btn-learn-more:hover { background: #4b5563; }
@@ -1155,10 +1155,10 @@
 /* US Bank Cash+ Category Picker */
 .usb-picker {
   margin: 12px 0;
-  border: 1.5px solid var(--primary-light, #dbeafe);
+  border: 1.5px solid var(--primary-light, #ccfbf1);
   border-radius: var(--radius-sm, 8px);
   overflow: hidden;
-  background: #f0f7ff;
+  background: #f0fdfa;
 }
 
 .usb-picker-header {
@@ -1178,12 +1178,12 @@
 .usb-picker-title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--primary, #2563eb);
+  color: var(--primary, #0d9488);
 }
 
 .usb-picker-toggle {
   font-size: 0.75rem;
-  color: var(--primary, #2563eb);
+  color: var(--primary, #0d9488);
   transition: transform 0.2s;
 }
 
@@ -1230,8 +1230,8 @@
 
 .usb-picker-select:focus {
   outline: none;
-  border-color: var(--primary, #2563eb);
-  box-shadow: 0 0 0 3px var(--primary-light, #dbeafe);
+  border-color: var(--primary, #0d9488);
+  box-shadow: 0 0 0 3px var(--primary-light, #ccfbf1);
 }
 
 .usb-picker-note {
@@ -1272,9 +1272,9 @@
 }
 
 .spending-mode-btn.active {
-  background: var(--primary, #2563eb);
+  background: var(--primary, #0d9488);
   color: white;
-  border-color: var(--primary, #2563eb);
+  border-color: var(--primary, #0d9488);
 }
 
 .spending-mode-note {
@@ -1297,14 +1297,14 @@
   border-radius: var(--radius-sm, 8px);
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--primary, #2563eb);
+  color: var(--primary, #0d9488);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .btn-add-category:hover {
   background: #e8f0fe;
-  border-color: var(--primary, #2563eb);
+  border-color: var(--primary, #0d9488);
 }
 
 /* Cards I Already Have */
@@ -1329,12 +1329,12 @@
 }
 
 .cards-owned-toggle:hover {
-  border-color: var(--primary, #2563eb);
-  background: #f0f7ff;
+  border-color: var(--primary, #0d9488);
+  background: #f0fdfa;
 }
 
 .cards-owned-count {
-  background: var(--primary, #2563eb);
+  background: var(--primary, #0d9488);
   color: white;
   font-size: 0.7rem;
   font-weight: 700;
@@ -1420,13 +1420,13 @@
 }
 
 .cards-owned-radio:hover {
-  background: #f0f7ff;
+  background: #f0fdfa;
 }
 
 .cards-owned-radio input[type="radio"] {
   width: 13px;
   height: 13px;
-  accent-color: var(--primary, #2563eb);
+  accent-color: var(--primary, #0d9488);
 }
 
 /* FTX Badge */
@@ -1459,7 +1459,7 @@
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 10px;
-  background: #dbeafe;
+  background: #ccfbf1;
   color: #1e40af;
   margin-right: 6px;
 }
@@ -1468,12 +1468,12 @@
 .result-reasoning {
   font-size: 0.82rem;
   color: var(--text-secondary, #64748b);
-  background: linear-gradient(135deg, #f0f7ff, #eff6ff);
+  background: linear-gradient(135deg, #f0fdfa, #f0fdfa);
   padding: 8px 12px;
   border-radius: 6px;
   margin-bottom: 12px;
   line-height: 1.4;
-  border-left: 3px solid var(--primary, #2563eb);
+  border-left: 3px solid var(--primary, #0d9488);
 }
 
 /* Badges row */
@@ -1525,7 +1525,7 @@
 }
 
 .whats-next-card:hover {
-  border-color: var(--primary, #2563eb);
+  border-color: var(--primary, #0d9488);
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.12);
   transform: translateY(-1px);
 }
@@ -1563,17 +1563,17 @@
 }
 
 .filter-toggle-label:hover {
-  border-color: var(--primary, #2563eb);
+  border-color: var(--primary, #0d9488);
 }
 
 .filter-toggle-label input[type="checkbox"]:checked + span {
-  color: var(--primary, #2563eb);
+  color: var(--primary, #0d9488);
 }
 
 /* Wallet Optimizer Styles */
 .wallet-savings-badge {
-  background: linear-gradient(135deg, #dbeafe, #eff6ff);
-  border: 1.5px solid #93c5fd;
+  background: linear-gradient(135deg, #ccfbf1, #f0fdfa);
+  border: 1.5px solid #5eead4;
   border-radius: var(--radius-sm, 8px);
   padding: 10px 14px;
   font-size: 0.82rem;
@@ -1621,7 +1621,7 @@
 
 .wallet-assignment-card {
   flex: 1;
-  color: var(--primary, #2563eb);
+  color: var(--primary, #0d9488);
   font-weight: 600;
 }
 
@@ -1678,7 +1678,7 @@
   line-height: 1.4;
   margin-top: 6px;
   padding: 6px 10px;
-  background: var(--primary-light, #dbeafe);
+  background: var(--primary-light, #ccfbf1);
   border-radius: 6px;
 }
 

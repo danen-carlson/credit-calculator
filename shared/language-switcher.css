@@ -22,12 +22,12 @@
 
 .lang-toggle:hover,
 .lang-toggle:focus {
-  border-color: var(--accent, #2563eb);
+  border-color: var(--accent, #0d9488);
   background: var(--surface-hover, #f3f4f6);
 }
 
 .lang-toggle[aria-expanded="true"] {
-  border-color: var(--accent, #2563eb);
+  border-color: var(--accent, #0d9488);
   background: var(--surface-hover, #f3f4f6);
 }
 
@@ -79,7 +79,7 @@
 
 .lang-dropdown a.active-lang {
   font-weight: 700;
-  color: var(--accent, #2563eb);
+  color: var(--accent, #0d9488);
 }
 
 /* Mobile adjustments */
