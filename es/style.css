@@ -1630,6 +1630,12 @@ input:focus, select:focus {
   font-size: 1rem;
 }
 
+#quick-payoff-section .tier-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
 /* Other Periods Section */
 .other-periods-section {
   margin: 2rem 0;

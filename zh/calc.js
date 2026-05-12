@@ -562,20 +562,45 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, 
     }
   }
 
-  // Sort by net cost (ascending)
-  results.sort((a, b) => a.netCost - b.netCost);
-  results.forEach((r, i) => { r.rank = i + 1; });
+  // Separate results into term-matching and quick-payoff (shorter than target)
+  // BNPL pay-in-4 pays off in ~6 weeks regardless of targetMonths,
+  // so it's misleading to show them as "best for 12-month payoff"
+  const TERM_MATCH_TOLERANCE = 2; // months
+  const isTermMatch = (r) => {
+    const tm = r.termMonths || targetMonths;
+    // BNPL pay-in-4 always finishes in ~1.5 months (6 weeks)
+    if (r.finishesEarly || r.subtype === 'bnpl') return false;
+    return Math.abs(tm - targetMonths) <= TERM_MATCH_TOLERANCE;
+  };
 
-  // Find alternatives within ±2 months of target
-  const alternatives = results.filter(r => {
+  const termMatching = results.filter(isTermMatch);
+  const quickPayoff = results.filter(r => !isTermMatch(r));
+
+  // Sort both by net cost
+  termMatching.sort((a, b) => a.netCost - b.netCost);
+  quickPayoff.sort((a, b) => a.netCost - b.netCost);
+
+  // Assign ranks within term-matching (these are the main results)
+  termMatching.forEach((r, i) => { r.rank = i + 1; });
+  // Give quick-payoff items ranks after term-matching
+  quickPayoff.forEach((r, i) => { r.rank = termMatching.length + i + 1; });
+
+  // Find alternatives within ±2 months of target (from term-matching only)
+  const alternatives = termMatching.filter(r => {
     const termDiff = Math.abs((r.termMonths || 0) - targetMonths);
-    return termDiff <= 2 && termDiff > 0; // Exclude exact match (that's the best match)
+    return termDiff <= TERM_MATCH_TOLERANCE && termDiff > 0;
   });
 
   // Sort new card options
   newCardOptions.sort((a, b) => a.netCost - b.netCost);
 
-  return { all: results.slice(0, 15), newCardOptions: newCardOptions.slice(0, 3), alternatives };
+  return {
+    all: [...termMatching, ...quickPayoff].slice(0, 15),
+    termMatching: termMatching.slice(0, 15),
+    quickPayoff: quickPayoff.slice(0, 5),
+    newCardOptions: newCardOptions.slice(0, 3),
+    alternatives
+  };
 }
 
 // Calculate credit card WITHOUT intro APR benefits (fair comparison)

@@ -532,7 +532,7 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
         }
       });
 
-      const { all, newCardOptions, alternatives } = calculateOptions({
+      const { all, newCardOptions, alternatives, termMatching, quickPayoff } = calculateOptions({
         amount,
         creditScore,
         selectedMethods,
@@ -545,7 +545,7 @@ document.getElementById('calculate-btn').addEventListener('click', () => {
 
       state.results = all;
       const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
-      renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount);
+      renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount, quickPayoff, termMatching);
       document.getElementById('results-section').classList.remove('hidden');
       // Show email capture after first results
       if (!bnplEmailCaptureShown && typeof EmailCapture !== 'undefined') {
@@ -705,7 +705,7 @@ function recalculateResults() {
     }
   });
 
-  const { all, newCardOptions, alternatives } = calculateOptions({
+  const { all, newCardOptions, alternatives, termMatching, quickPayoff } = calculateOptions({
     amount,
     creditScore,
     selectedMethods,
@@ -718,13 +718,18 @@ function recalculateResults() {
 
   state.results = all;
   const methodsList = [...BNPL_METHODS, ...BNPL_MONTHLY_PLANS, ...CREDIT_CARDS, ...state.customMethods];
-  renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount);
+  renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount, quickPayoff, termMatching);
 }
 
 // Net Cost tooltip HTML (shared across render functions)
 const netCostTooltip = '<span class="net-cost-tooltip"><span class="net-cost-icon">?</span><span class="net-cost-tip">Net Cost = purchase + interest + fees − rewards earned. Lower is better.</span></span>';
 
-function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount) {
+function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount, quickPayoff, termMatching) {
+  // quickPayoff and termMatching are new params from calc.js
+  // If not provided (backward compat), derive from all
+  if (!quickPayoff) quickPayoff = all.filter(r => r.finishesEarly || r.subtype === 'bnpl');
+  if (!termMatching) termMatching = all.filter(r => !r.finishesEarly && r.subtype !== 'bnpl');
+
   const container = document.getElementById('results-cards');
   container.innerHTML = '';
 
@@ -769,8 +774,10 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths, 
   const bestMatchCard = document.getElementById('best-match-card');
   bestMatchSection.classList.remove('hidden');
 
-  // Find best match - exact or closest term match
-  const bestMatch = all[0]; // Already sorted by net cost
+  // Find best match — prefer term-matching results over quick-payoff
+  // BNPL (pay-in-4) always looks cheapest but doesn't match a 12-month payoff goal
+  const bestPool = termMatching.length > 0 ? termMatching : all;
+  const bestMatch = bestPool[0]; // Already sorted by net cost
   bestMatchCard.innerHTML = '';
   bestMatchCard.appendChild(createResultCard(bestMatch, 1, bestMatch, true));
 
@@ -805,9 +812,41 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths, 
     newCardSection.classList.add('hidden');
   }
 
-  // Alternatives Section
-  const altSection = document.getElementById('alternatives-section');
-  const altContainer = document.getElementById('alternatives-cards');
+  // Quick Payoff Options (BNPL, pay-in-4, etc.) — only show if targetMonths > 3
+  // These finish much faster than the selected term and are shown separately
+  const quickSection = document.getElementById('quick-payoff-section');
+  const quickContainer = document.getElementById('quick-payoff-cards');
+
+  if (quickPayoff.length > 0 && targetMonths > 3) {
+    quickSection.classList.remove('hidden');
+    const targetSpan = document.getElementById('quick-payoff-target');
+    if (targetSpan) targetSpan.textContent = targetMonths;
+    quickContainer.innerHTML = '';
+    quickPayoff.forEach((r, i) => {
+      const card = document.createElement('div');
+      card.className = 'result-card compact';
+      const months = r.termMonths || 1.5;
+      const termText = r.actualTermLabel || r.termDisplay || (months < 2 ? '~6 weeks' : months + ' months');
+      card.innerHTML = `
+        <div class="result-header">
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span style="font-size:0.875rem;font-weight:600;">${i === 0 ? '🚀' : (i === 1 ? '⚡' : '✓')} ${r.name}</span>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-weight:700;color:var(--primary, #059669);">${fmt(r.netCost)}</div>
+            <div style="font-size:0.75rem;color:var(--text-secondary);">total cost</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.5rem;font-size:0.8125rem;">
+          <span>${r.paymentLabel || fmt(r.monthlyPayment) + '/mo'}</span>
+          <span style="background:var(--primary-light, #d1fae5);color:var(--primary, #059669);padding:0.125rem 0.5rem;border-radius:9999px;font-size:0.75rem;font-weight:600;">${termText}</span>
+        </div>
+      `;
+      quickContainer.appendChild(card);
+    });
+  } else {
+    quickSection.classList.add('hidden');
+  }
 
   if (alternatives.length > 0) {
     altSection.classList.remove('hidden');
@@ -1148,7 +1187,7 @@ function renderOtherPeriods(allMethods, amount, creditScore, currentMonths) {
     card.className = 'period-card' + (months === currentMonths ? ' selected' : '');
 
     // Calculate best option for this timeframe
-    const { all } = calculateOptions({
+    const { all, termMatching: periodTermMatching } = calculateOptions({
       amount,
       creditScore,
       selectedMethods: allMethods.filter(m => state.selectedMethods.has(m.id)),
@@ -1157,7 +1196,7 @@ function renderOtherPeriods(allMethods, amount, creditScore, currentMonths) {
 
     if (all.length === 0) return;
 
-    const best = all[0];
+    const best = periodTermMatching.length > 0 ? periodTermMatching[0] : all[0];
     const hasInterest = (best.interestPaid || 0) + (best.fees || 0) > 0;
     const monthlyPmt = best.monthlyPayment || (amount / months);
 
