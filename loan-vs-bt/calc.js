@@ -126,7 +126,14 @@
     // Update BT display
     document.getElementById('btCardName').textContent = btCard.name;
     document.getElementById('btIntroAPR').textContent = btCard.introAPR === 0 ? `0% for ${btCard.introMonths} months` : `${btCard.introAPR}% intro`;
-    document.getElementById('btFee').textContent = `${btCard.btFee}% (${formatCurrency(debt * btCard.btFee / 100)})`;
+    // Show intro fee with standard fee disclosure if different
+    const introFeeAmount = debt * btCard.btFee / 100;
+    const standardFee = btCard.btFeeStandard || btCard.btFee;
+    let feeText = `${btCard.btFee}% intro (${formatCurrency(introFeeAmount)})`;
+    if (standardFee !== btCard.btFee && btCard.introFeeWindowDays) {
+      feeText += ` — jumps to ${standardFee}% after ${btCard.introFeeWindowDays} days`;
+    }
+    document.getElementById('btFee').textContent = feeText;
 
     if (btResult.paidOffInIntro) {
       document.getElementById('btMonthly').textContent = formatCurrency(btResult.monthly) + '/mo';
