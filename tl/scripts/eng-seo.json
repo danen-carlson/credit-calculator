@@ -1,0 +1,722 @@
+{
+  "about/index.html": {
+    "title": "About CreditStud.io — Methodology, Data Sources & Transparency",
+    "description": "How CreditStud.io collects data, calculates results, and maintains independence. Our methodology for credit card comparisons, debt planners, and reward valuations.",
+    "og_title": "About CreditStud.io — Methodology & Data Sources",
+    "og_description": "How we collect data, calculate results, and maintain independence. Full transparency on our methodology.",
+    "twitter_title": "About CreditStud.io — Methodology & Data Sources",
+    "twitter_description": "How we collect data, calculate results, and maintain independence."
+  },
+  "af-worth-it/index.html": {
+    "title": "Annual Fee Calculator — Is Your Card Worth It? | CreditStud.io",
+    "description": "Is that credit card annual fee worth it? Calculate the real value of rewards, credits, and perks vs. the fee. Free calculator with 20+ premium cards analyzed.",
+    "og_title": "Annual Fee Worth It Calculator — CreditStud.io",
+    "og_description": "Is that credit card annual fee worth it? Calculate the real value of rewards, credits, and perks vs. the fee.",
+    "twitter_title": "Annual Fee Worth It Calculator — CreditStud.io",
+    "twitter_description": "Is that credit card annual fee worth it? Calculate the real value of rewards, credits, and perks vs. the fee."
+  },
+  "blog/affirm-interest-rates-explained.html": {
+    "title": "Affirm Interest Rates Explained: What You'll Actually Pay — CreditStud.io",
+    "description": "Understand Affirm's interest rates, from 0% deals to 36% APR. See exactly what you'll pay on a real purchase with our breakdown and examples.",
+    "og_title": "Affirm Interest Rates Explained: What You'll Actually Pay",
+    "og_description": "Understand Affirm's interest rates, from 0% deals to 36% APR. See exactly what you'll pay on a real purchase with our breakdown and examples.",
+    "twitter_title": "Affirm Interest Rates Explained: What You'll Actually Pay",
+    "twitter_description": "Understand Affirm's interest rates, from 0% deals to 36% APR. See exactly what you'll pay on a real purchase with our breakdown and examples."
+  },
+  "blog/amex-gold-worth-it.html": {
+    "title": "Is the Amex Gold Card Worth It? Honest $325 Annual Fee Breakdown | CreditStud.io",
+    "description": "The Amex Gold charges $325/year. We break down every credit, every reward rate, and every catch so you can decide if it's worth keeping. Real math, no fluff.",
+    "og_title": "Is the Amex Gold Card Worth It? Honest $325 Annual Fee Breakdown",
+    "og_description": "The Amex Gold charges $325/year. We break down every credit, every reward rate, and every catch — real math, no fluff.",
+    "twitter_title": "Is the Amex Gold Card Worth It? Honest $325 Annual Fee Breakdown",
+    "twitter_description": "The Amex Gold charges $325/year. We break down every credit, reward rate, and catch — real math, no fluff."
+  },
+  "blog/best-0-apr-credit-cards.html": {
+    "title": "Best 0% APR Credit Cards for Large Purchases (2026) — CreditStud.io",
+    "description": "The best 0% intro APR credit cards for financing large purchases in 2026. Compare interest-free periods, fees, and rewards to find your best option.",
+    "og_title": "Best 0% APR Credit Cards for Large Purchases (2026)",
+    "og_description": "The best 0% intro APR credit cards for financing large purchases in 2026. Compare interest-free periods, fees, and rewards to find your best option.",
+    "twitter_title": "Best 0% APR Credit Cards for Large Purchases (2026)",
+    "twitter_description": "The best 0% intro APR credit cards for financing large purchases in 2026. Compare interest-free periods, fees, and rewards to find your best option."
+  },
+  "blog/best-balance-transfer-credit-cards.html": {
+    "title": "Best Balance Transfer Credit Cards 2026 | CreditStud.io",
+    "description": "The best balance transfer credit cards of 2026. Compare 0% intro APR periods, BT fees, and post-intro rates. Learn when a 3-5% fee is worth it and how to avoid pitfalls.",
+    "og_title": "Best Balance Transfer Credit Cards 2026",
+    "og_description": "Compare the best balance transfer cards of 2026. Real math on when a BT fee is worth it, common pitfalls, and a step-by-step guide to doing a balance transfer right.",
+    "twitter_title": "Best Balance Transfer Credit Cards 2026",
+    "twitter_description": "Compare the best balance transfer cards of 2026. Real math on BT fees, pitfalls to avoid, and how to do a balance transfer right."
+  },
+  "blog/best-credit-cards-for-groceries.html": {
+    "title": "Best Credit Cards for Groceries 2026 — Maximize Your Supermarket Rewards | CreditStud.io",
+    "description": "Compare the best grocery credit cards for 2026. From 6% cash back at supermarkets to 4x points on food — find the card that matches your grocery budget.",
+    "og_title": "Best Credit Cards for Groceries 2026 — Maximize Your Supermarket Rewards",
+    "og_description": "Compare the best grocery credit cards for 2026. From 6% cash back at supermarkets to 4x points on food — find the card that matches your grocery budget.",
+    "twitter_title": "Best Credit Cards for Groceries 2026 — Maximize Your Supermarket Rewards",
+    "twitter_description": "Compare the best grocery credit cards for 2026. From 6% cash back to 4x points — find the card that matches your grocery budget."
+  },
+  "blog/best-credit-cards-for-travel.html": {
+    "title": "Best Credit Cards for Travel in 2026 — Maximize Points, Miles &amp; Perks | CreditStud.io",
+    "description": "Compare the best travel credit cards for 2026. From no-annual-fee options to premium cards with lounge access — find the right card for flights, hotels, and international travel.",
+    "og_title": "Best Credit Cards for Travel in 2026 — Maximize Points, Miles &amp; Perks",
+    "og_description": "Compare the best travel credit cards for 2026. From no-annual-fee options to premium cards with lounge access.",
+    "twitter_title": "Best Credit Cards for Travel in 2026 — Maximize Points, Miles &amp; Perks",
+    "twitter_description": "Compare the best travel credit cards for 2026. From no-annual-fee options to premium cards with lounge access."
+  },
+  "blog/bnpl-hidden-fees.html": {
+    "title": "The Hidden Fees of Buy Now Pay Later: What They Don't Tell You — CreditStud.io",
+    "description": "BNPL services aren't always free. Discover the hidden fees Klarna, Afterpay, and Affirm charge — late fees, service charges, and costs most people miss.",
+    "og_title": "The Hidden Fees of Buy Now Pay Later: What They Don't Tell You",
+    "og_description": "BNPL services aren't always free. Discover the hidden fees Klarna, Afterpay, and Affirm charge — late fees, service charges, and costs most people miss.",
+    "twitter_title": "The Hidden Fees of Buy Now Pay Later: What They Don't Tell You",
+    "twitter_description": "BNPL services aren't always free. Discover the hidden fees Klarna, Afterpay, and Affirm charge — late fees, service charges, and costs most people miss."
+  },
+  "blog/bnpl-vs-credit-card.html": {
+    "title": "Does Buy Now Pay Later Cost More Than a Credit Card? — CreditStud.io",
+    "description": "Find out whether buy now pay later services or credit cards cost more for your purchase. Real cost breakdowns, examples, and when each option wins.",
+    "og_title": "Does Buy Now Pay Later Cost More Than a Credit Card?",
+    "og_description": "Find out whether buy now pay later services or credit cards cost more for your purchase. Real cost breakdowns, examples, and when each option wins.",
+    "twitter_title": "Does Buy Now Pay Later Cost More Than a Credit Card?",
+    "twitter_description": "Find out whether buy now pay later services or credit cards cost more for your purchase. Real cost breakdowns, examples, and when each option wins."
+  },
+  "blog/cheapest-way-to-finance-purchase.html": {
+    "title": "The Smartest Way to Finance a $1,000 Purchase in 2026 — CreditStud.io",
+    "description": "Comparing every option to finance a $1,000 purchase: BNPL, credit cards, personal loans, and more. Find the cheapest way to pay over time.",
+    "og_title": "The Smartest Way to Finance a $1,000 Purchase in 2026",
+    "og_description": "Comparing every option to finance a $1,000 purchase: BNPL, credit cards, personal loans, and more. Find the cheapest way to pay over time.",
+    "twitter_title": "The Smartest Way to Finance a $1,000 Purchase in 2026",
+    "twitter_description": "Comparing every option to finance a $1,000 purchase: BNPL, credit cards, personal loans, and more. Find the cheapest way to pay over time."
+  },
+  "blog/credit-card-benefits-youre-not-using.html": {
+    "title": "12 Credit Card Benefits You're Probably Not Using (Worth $1,000+/Year) — CreditStud.io",
+    "description": "Most credit cardholders leave hundreds or thousands of dollars in benefits on the table. Discover the overlooked perks — from cell phone insurance to trip delay coverage — and how to actually use them.",
+    "og_title": "12 Credit Card Benefits You're Probably Not Using (Worth $1,000+/Year)",
+    "og_description": "Most credit cardholders leave hundreds or thousands of dollars in benefits on the table. Discover the overlooked perks and how to actually use them.",
+    "twitter_title": "12 Credit Card Benefits You're Probably Not Using (Worth $1,000+/Year)",
+    "twitter_description": "Most credit cardholders leave hundreds or thousands of dollars in benefits on the table. Discover the overlooked perks and how to actually use them."
+  },
+  "blog/credit-card-points-offset-interest.html": {
+    "title": "Can Credit Card Points Actually Offset Interest? The Math Will Surprise You — CreditStud.io",
+    "description": "Do credit card rewards really offset the interest you pay? We ran the numbers on carrying balances vs. earning cash back. The math reveals when points help — and when they're an illusion.",
+    "og_title": "Can Credit Card Points Actually Offset Interest? The Math Will Surprise You",
+    "og_description": "Do credit card rewards really offset the interest you pay? We ran the numbers on carrying balances vs. earning cash back.",
+    "twitter_title": "Can Credit Card Points Actually Offset Interest? The Math Will Surprise You",
+    "twitter_description": "Do credit card rewards really offset the interest you pay? We ran the numbers on carrying balances vs. earning cash back."
+  },
+  "blog/does-klarna-affect-credit-score.html": {
+    "title": "Does Klarna Affect Your Credit Score? Here's the Truth — CreditStud.io",
+    "description": "Find out exactly how Klarna affects your credit score. Soft checks, hard pulls, missed payments — everything you need to know before using Klarna.",
+    "og_title": "Does Klarna Affect Your Credit Score? Here's the Truth",
+    "og_description": "Find out exactly how Klarna affects your credit score. Soft checks, hard pulls, missed payments — everything you need to know before using Klarna.",
+    "twitter_title": "Does Klarna Affect Your Credit Score? Here's the Truth",
+    "twitter_description": "Find out exactly how Klarna affects your credit score. Soft checks, hard pulls, missed payments — everything you need to know before using Klarna."
+  },
+  "blog/how-to-build-credit-from-scratch.html": {
+    "title": "How to Build Credit from Scratch — A Step-by-Step Guide (2026) | CreditStud.io",
+    "description": "No credit history? This step-by-step guide shows you how to build credit from scratch using secured cards, authorized user策略, and smart habits. Includes a month-by-month timeline.",
+    "og_title": "How to Build Credit from Scratch — A Step-by-Step Guide (2026)",
+    "og_description": "No credit history? Learn how to build credit from scratch using secured cards, authorized user strategy, and smart habits. Includes a month-by-month timeline.",
+    "twitter_title": "How to Build Credit from Scratch — A Step-by-Step Guide (2026)",
+    "twitter_description": "No credit history? Learn how to build credit from scratch using secured cards, authorized user strategy, and smart habits."
+  },
+  "blog/index.html": {
+    "title": "Blog — CreditStud.io | Credit Payment Guides & Comparisons",
+    "description": "Expert guides on BNPL services, credit cards, and payment strategies. Compare Klarna, Afterpay, Affirm and more to save money.",
+    "og_title": "Blog — CreditStud.io",
+    "og_description": "Expert guides on BNPL services, credit cards, and payment strategies. Compare options and save money.",
+    "twitter_title": "Credit Card Tips & Guides — CreditStud.io Blog",
+    "twitter_description": "Free guides on credit cards, debt payoff, BNPL, and personal finance. Updated weekly with data-driven analysis."
+  },
+  "blog/klarna-vs-afterpay-vs-affirm.html": {
+    "title": "Klarna vs Afterpay vs Affirm: Real Cost Comparison (2026) — CreditStud.io",
+    "description": "Compare Klarna, Afterpay, and Affirm side by side. See the real costs, fees, interest rates, and which BNPL service saves you the most money in 2026.",
+    "og_title": "Klarna vs Afterpay vs Affirm: Real Cost Comparison (2026)",
+    "og_description": "Compare Klarna, Afterpay, and Affirm side by side. See the real costs, fees, interest rates, and which BNPL service saves you the most money in 2026.",
+    "twitter_title": "Klarna vs Afterpay vs Affirm: Real Cost Comparison (2026)",
+    "twitter_description": "Compare Klarna, Afterpay, and Affirm side by side. See the real costs, fees, interest rates, and which BNPL service saves you the most money in 2026."
+  },
+  "blog/minimum-payment-trap.html": {
+    "title": "Minimum Payment Trap: How Much It Really Costs | CreditStud.io",
+    "description": "Paying the minimum on a $5,000 balance at 24% APR costs $13,000+ and takes 22 years. Learn how minimum payments are designed to keep you in debt — and 3 strategies to escape.",
+    "og_title": "Minimum Payment Trap: How Much It Really Costs",
+    "og_description": "Paying the minimum on $5K at 24% APR = 22 years and $13K+ in interest. How minimum payments work, why they're designed to trap you, and 3 strategies to escape.",
+    "twitter_title": "Minimum Payment Trap: How Much It Really Costs",
+    "twitter_description": "Paying the minimum on $5K at 24% APR = 22 years and $13K+ in interest. Learn why and how to escape."
+  },
+  "blog/sneaky-credit-card-pitfalls.html": {
+    "title": "7 Sneaky Credit Card Pitfalls That Cost You Money — CreditStud.io",
+    "description": "From deferred interest traps to post-promo APR cliffs, these credit card pitfalls can quietly cost you hundreds. Learn how to spot and avoid every one.",
+    "og_title": "7 Sneaky Credit Card Pitfalls That Cost You Money",
+    "og_description": "From deferred interest traps to post-promo APR cliffs, these credit card pitfalls can quietly cost you hundreds. Learn how to spot and avoid every one.",
+    "twitter_title": "7 Sneaky Credit Card Pitfalls That Cost You Money",
+    "twitter_description": "From deferred interest traps to post-promo APR cliffs, these credit card pitfalls can quietly cost you hundreds. Learn how to spot and avoid every one."
+  },
+  "blog/snowball-vs-avalanche.html": {
+    "title": "Debt Snowball vs Avalanche: Which Should You Choose? | CreditStud.io",
+    "description": "Debt snowball vs debt avalanche — which pays off debt faster? We break down both methods with real math examples so you can choose the strategy that actually works.",
+    "og_title": "Debt Snowball vs Avalanche: Which Should You Choose?",
+    "og_description": "Debt snowball vs debt avalanche — which pays off debt faster? Real math, real examples, and a hybrid strategy that gets the best of both.",
+    "twitter_title": "Debt Snowball vs Avalanche: Which Should You Choose?",
+    "twitter_description": "Debt snowball vs debt avalanche — which pays off debt faster? Real math examples and a hybrid strategy."
+  },
+  "cards/amazon-prime-visa-signature/index.html": {
+    "title": "Amazon Prime Visa Signature Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Amazon Prime Visa Signature Card. Pros, cons, real math, and who should skip. $150 Amazon gift card upon approval (for Prime members).",
+    "og_title": "Amazon Prime Visa Signature Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Amazon Prime Visa Signature Card. Pros, cons, real math, and who should skip. $150 Amazon gift card upon approval (for Prime members).",
+    "twitter_title": "Amazon Prime Visa Signature Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Amazon Prime Visa Signature Card. Pros, cons, real math, and who should skip. $150 Amazon gift card upon approval (for Prime members)."
+  },
+  "cards/amex-blue-cash-everyday/index.html": {
+    "title": "Blue Cash Everyday® Card from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Blue Cash Everyday® Card from American Express. Pros, cons, real math, and who should skip. $200 statement credit after $2,000 spend in 6 months.",
+    "og_title": "Blue Cash Everyday® Card from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Blue Cash Everyday® Card from American Express. Pros, cons, real math, and who should skip. $200 statement credit after $2,000 spend in 6 months.",
+    "twitter_title": "Blue Cash Everyday® Card from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Blue Cash Everyday® Card from American Express. Pros, cons, real math, and who should skip. $200 statement credit after $2,000 spend in 6 months."
+  },
+  "cards/amex-blue-cash-preferred/index.html": {
+    "title": "Blue Cash Preferred® Card from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Blue Cash Preferred® Card from American Express. Pros, cons, real math, and who should skip. $250 statement credit after $3,000 spend in 6 months.",
+    "og_title": "Blue Cash Preferred® Card from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Blue Cash Preferred® Card from American Express. Pros, cons, real math, and who should skip. $250 statement credit after $3,000 spend in 6 months.",
+    "twitter_title": "Blue Cash Preferred® Card from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Blue Cash Preferred® Card from American Express. Pros, cons, real math, and who should skip. $250 statement credit after $3,000 spend in 6 months."
+  },
+  "cards/amex-gold/index.html": {
+    "title": "American Express® Gold Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the American Express® Gold Card. Pros, cons, real math, and who should skip. 60,000 Membership Rewards points after $6,000 spend in 6 months.",
+    "og_title": "American Express® Gold Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the American Express® Gold Card. Pros, cons, real math, and who should skip. 60,000 Membership Rewards points after $6,000 spend in 6 months.",
+    "twitter_title": "American Express® Gold Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the American Express® Gold Card. Pros, cons, real math, and who should skip. 60,000 Membership Rewards points after $6,000 spend in 6 months."
+  },
+  "cards/amex-platinum/index.html": {
+    "title": "The Platinum Card® from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the The Platinum Card® from American Express. Pros, cons, real math, and who should skip. 80,000 Membership Rewards points after $8,000 spend in 6 months.",
+    "og_title": "The Platinum Card® from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the The Platinum Card® from American Express. Pros, cons, real math, and who should skip. 80,000 Membership Rewards points after $8,000 spend in 6 months.",
+    "twitter_title": "The Platinum Card® from American Express Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the The Platinum Card® from American Express. Pros, cons, real math, and who should skip. 80,000 Membership Rewards points after $8,000 spend in 6 months."
+  },
+  "cards/apple-card/index.html": {
+    "title": "Apple Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Apple Card. Pros, cons, real math, and who should skip. 3% Daily Cash on all Apple purchases in the first 3 months.",
+    "og_title": "Apple Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Apple Card. Pros, cons, real math, and who should skip. 3% Daily Cash on all Apple purchases in the first 3 months.",
+    "twitter_title": "Apple Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Apple Card. Pros, cons, real math, and who should skip. 3% Daily Cash on all Apple purchases in the first 3 months."
+  },
+  "cards/barclays-uber-pro/index.html": {
+    "title": "Barclays Uber Pro Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Barclays Uber Pro Credit Card. Pros, cons, real math, and who should skip. $100 Uber Cash after $500 spend in 3 months.",
+    "og_title": "Barclays Uber Pro Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Barclays Uber Pro Credit Card. Pros, cons, real math, and who should skip. $100 Uber Cash after $500 spend in 3 months.",
+    "twitter_title": "Barclays Uber Pro Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Barclays Uber Pro Credit Card. Pros, cons, real math, and who should skip. $100 Uber Cash after $500 spend in 3 months."
+  },
+  "cards/bilt-mastercard/index.html": {
+    "title": "Bilt Mastercard® Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Bilt Mastercard®. Pros, cons, real math, and who should skip. Earn 2x points on rent payments for the first 12 months (no cap).",
+    "og_title": "Bilt Mastercard® Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Bilt Mastercard®. Pros, cons, real math, and who should skip. Earn 2x points on rent payments for the first 12 months (no cap).",
+    "twitter_title": "Bilt Mastercard® Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Bilt Mastercard®. Pros, cons, real math, and who should skip. Earn 2x points on rent payments for the first 12 months (no cap)."
+  },
+  "cards/bofa-customized-cash-rewards/index.html": {
+    "title": "Bank of America® Customized Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Bank of America® Customized Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 online cash rewards bonus after $1,000 spend in 90 days.",
+    "og_title": "Bank of America® Customized Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Bank of America® Customized Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 online cash rewards bonus after $1,000 spend in 90 days.",
+    "twitter_title": "Bank of America® Customized Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Bank of America® Customized Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 online cash rewards bonus after $1,000 spend in 90 days."
+  },
+  "cards/capital-one-quicksilver/index.html": {
+    "title": "Capital One Quicksilver Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Capital One Quicksilver Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months.",
+    "og_title": "Capital One Quicksilver Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Capital One Quicksilver Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months.",
+    "twitter_title": "Capital One Quicksilver Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Capital One Quicksilver Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months."
+  },
+  "cards/capital-one-savor/index.html": {
+    "title": "Capital One Savor Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Capital One Savor Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in first 3 months.",
+    "og_title": "Capital One Savor Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Capital One Savor Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in first 3 months.",
+    "twitter_title": "Capital One Savor Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Capital One Savor Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in first 3 months."
+  },
+  "cards/capital-one-savorone/index.html": {
+    "title": "Capital One SavorOne Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Capital One SavorOne Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months.",
+    "og_title": "Capital One SavorOne Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Capital One SavorOne Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months.",
+    "twitter_title": "Capital One SavorOne Cash Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Capital One SavorOne Cash Rewards Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months."
+  },
+  "cards/capital-one-venture-x/index.html": {
+    "title": "Capital One Venture X Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Capital One Venture X Rewards Credit Card. Pros, cons, real math, and who should skip. 75,000 miles after $4,000 spend in 3 months.",
+    "og_title": "Capital One Venture X Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Capital One Venture X Rewards Credit Card. Pros, cons, real math, and who should skip. 75,000 miles after $4,000 spend in 3 months.",
+    "twitter_title": "Capital One Venture X Rewards Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Capital One Venture X Rewards Credit Card. Pros, cons, real math, and who should skip. 75,000 miles after $4,000 spend in 3 months."
+  },
+  "cards/chase-freedom-flex/index.html": {
+    "title": "Chase Freedom Flex℠ Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Chase Freedom Flex℠ Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months, plus 5% on up to $1,500 in combined purchases each quarter (activation required).",
+    "og_title": "Chase Freedom Flex℠ Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Chase Freedom Flex℠ Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months, plus 5% on up to $1,500 in combined purchases each quarter (activation required).",
+    "twitter_title": "Chase Freedom Flex℠ Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Chase Freedom Flex℠ Credit Card. Pros, cons, real math, and who should skip. $200 cash back after $500 spend in 3 months, plus 5% on up to $1,500 in combined purchases each quarter (activation required)."
+  },
+  "cards/chase-ink-business-preferred/index.html": {
+    "title": "Chase Ink Business Preferred® Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Chase Ink Business Preferred® Credit Card. Pros, cons, real math, and who should skip. 100,000 points (worth $1,250 in travel) after $8,000 spend in 3 months.",
+    "og_title": "Chase Ink Business Preferred® Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Chase Ink Business Preferred® Credit Card. Pros, cons, real math, and who should skip. 100,000 points (worth $1,250 in travel) after $8,000 spend in 3 months.",
+    "twitter_title": "Chase Ink Business Preferred® Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Chase Ink Business Preferred® Credit Card. Pros, cons, real math, and who should skip. 100,000 points (worth $1,250 in travel) after $8,000 spend in 3 months."
+  },
+  "cards/chase-sapphire-preferred/index.html": {
+    "title": "Chase Sapphire Preferred® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Chase Sapphire Preferred® Card. Pros, cons, real math, and who should skip. 60,000 points (worth $750 in travel) after $4,000 spend in 3 months.",
+    "og_title": "Chase Sapphire Preferred® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Chase Sapphire Preferred® Card. Pros, cons, real math, and who should skip. 60,000 points (worth $750 in travel) after $4,000 spend in 3 months.",
+    "twitter_title": "Chase Sapphire Preferred® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Chase Sapphire Preferred® Card. Pros, cons, real math, and who should skip. 60,000 points (worth $750 in travel) after $4,000 spend in 3 months."
+  },
+  "cards/chase-sapphire-reserve/index.html": {
+    "title": "Chase Sapphire Reserve® Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Chase Sapphire Reserve®. Pros, cons, real math, and who should skip. 75,000 points (worth $1,125 in travel) after $5,000 spend in 3 months.",
+    "og_title": "Chase Sapphire Reserve® Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Chase Sapphire Reserve®. Pros, cons, real math, and who should skip. 75,000 points (worth $1,125 in travel) after $5,000 spend in 3 months.",
+    "twitter_title": "Chase Sapphire Reserve® Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Chase Sapphire Reserve®. Pros, cons, real math, and who should skip. 75,000 points (worth $1,125 in travel) after $5,000 spend in 3 months."
+  },
+  "cards/citi-custom-cash/index.html": {
+    "title": "Citi Custom Cash® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Citi Custom Cash® Card. Pros, cons, real math, and who should skip. $200 cash back after $1,500 spend in 6 months.",
+    "og_title": "Citi Custom Cash® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Citi Custom Cash® Card. Pros, cons, real math, and who should skip. $200 cash back after $1,500 spend in 6 months.",
+    "twitter_title": "Citi Custom Cash® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Citi Custom Cash® Card. Pros, cons, real math, and who should skip. $200 cash back after $1,500 spend in 6 months."
+  },
+  "cards/citi-double-cash/index.html": {
+    "title": "Citi® Double Cash Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Citi® Double Cash Card. Pros, cons, real math, and who should skip. No signup bonus — earns 2% on everything from day one.",
+    "og_title": "Citi® Double Cash Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Citi® Double Cash Card. Pros, cons, real math, and who should skip. No signup bonus — earns 2% on everything from day one.",
+    "twitter_title": "Citi® Double Cash Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Citi® Double Cash Card. Pros, cons, real math, and who should skip. No signup bonus — earns 2% on everything from day one."
+  },
+  "cards/citi-premier/index.html": {
+    "title": "Citi Premier® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Citi Premier® Card. Pros, cons, real math, and who should skip. 60,000 ThankYou® Points (worth $600 in travel) after $4,000 spend in 3 months.",
+    "og_title": "Citi Premier® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Citi Premier® Card. Pros, cons, real math, and who should skip. 60,000 ThankYou® Points (worth $600 in travel) after $4,000 spend in 3 months.",
+    "twitter_title": "Citi Premier® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Citi Premier® Card. Pros, cons, real math, and who should skip. 60,000 ThankYou® Points (worth $600 in travel) after $4,000 spend in 3 months."
+  },
+  "cards/citi-strata-premier/index.html": {
+    "title": "Citi Strata Premier℠ Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Citi Strata Premier℠ Card. Pros, cons, real math, and who should skip. 60,000 ThankYou Points (worth ~$600 in travel) after $4,000 spend in 3 months.",
+    "og_title": "Citi Strata Premier℠ Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Citi Strata Premier℠ Card. Pros, cons, real math, and who should skip. 60,000 ThankYou Points (worth ~$600 in travel) after $4,000 spend in 3 months.",
+    "twitter_title": "Citi Strata Premier℠ Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Citi Strata Premier℠ Card. Pros, cons, real math, and who should skip. 60,000 ThankYou Points (worth ~$600 in travel) after $4,000 spend in 3 months."
+  },
+  "cards/discover-it-cash-back/index.html": {
+    "title": "Discover it® Cash Back Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Discover it® Cash Back. Pros, cons, real math, and who should skip. Cashback Match — Discover matches ALL cash back earned in your first year (unlimited).",
+    "og_title": "Discover it® Cash Back Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Discover it® Cash Back. Pros, cons, real math, and who should skip. Cashback Match — Discover matches ALL cash back earned in your first year (unlimited).",
+    "twitter_title": "Discover it® Cash Back Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Discover it® Cash Back. Pros, cons, real math, and who should skip. Cashback Match — Discover matches ALL cash back earned in your first year (unlimited)."
+  },
+  "cards/ihg-one-rewards-premier/index.html": {
+    "title": "IHG One Rewards® Premier Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the IHG One Rewards® Premier Credit Card. Pros, cons, real math, and who should skip. 175,000 IHG points after $3,000 spend in 3 months (worth ~$875 in hotels).",
+    "og_title": "IHG One Rewards® Premier Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the IHG One Rewards® Premier Credit Card. Pros, cons, real math, and who should skip. 175,000 IHG points after $3,000 spend in 3 months (worth ~$875 in hotels).",
+    "twitter_title": "IHG One Rewards® Premier Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the IHG One Rewards® Premier Credit Card. Pros, cons, real math, and who should skip. 175,000 IHG points after $3,000 spend in 3 months (worth ~$875 in hotels)."
+  },
+  "cards/index.html": {
+    "title": "Credit Card Reviews — Honest Verdicts | CreditStud.io",
+    "description": "Honest credit card reviews with real math, perks breakdowns, and editorial verdicts. No fluff, no SEO filler — just the numbers.",
+    "og_title": "Credit Card Reviews — Honest Verdicts | CreditStud.io",
+    "og_description": "Honest credit card reviews with real math, perks breakdowns, and editorial verdicts. No fluff, no SEO filler — just the numbers.",
+    "twitter_title": "Best Credit Card Reviews & Comparisons — CreditStud.io",
+    "twitter_description": "Compare credit cards with real math. In-depth reviews of 28+ cards with signup bonuses, reward values, and honest verdicts."
+  },
+  "cards/southwest-priority-card/index.html": {
+    "title": "Southwest Rapid Rewards® Priority Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Southwest Rapid Rewards® Priority Credit Card. Pros, cons, real math, and who should skip. 60,000 points after $2,000 spend in 3 months (worth ~$900 in Southwest travel).",
+    "og_title": "Southwest Rapid Rewards® Priority Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Southwest Rapid Rewards® Priority Credit Card. Pros, cons, real math, and who should skip. 60,000 points after $2,000 spend in 3 months (worth ~$900 in Southwest travel).",
+    "twitter_title": "Southwest Rapid Rewards® Priority Credit Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Southwest Rapid Rewards® Priority Credit Card. Pros, cons, real math, and who should skip. 60,000 points after $2,000 spend in 3 months (worth ~$900 in Southwest travel)."
+  },
+  "cards/us-bank-altitude-go/index.html": {
+    "title": "US Bank Altitude® Go Visa Signature Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the US Bank Altitude® Go Visa Signature Card. Pros, cons, real math, and who should skip. 20,000 bonus points (worth ~$200) after $1,000 spend in 90 days.",
+    "og_title": "US Bank Altitude® Go Visa Signature Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the US Bank Altitude® Go Visa Signature Card. Pros, cons, real math, and who should skip. 20,000 bonus points (worth ~$200) after $1,000 spend in 90 days.",
+    "twitter_title": "US Bank Altitude® Go Visa Signature Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the US Bank Altitude® Go Visa Signature Card. Pros, cons, real math, and who should skip. 20,000 bonus points (worth ~$200) after $1,000 spend in 90 days."
+  },
+  "cards/us-bank-cash-plus/index.html": {
+    "title": "U.S. Bank Cash+® Visa Signature® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the U.S. Bank Cash+® Visa Signature® Card. Pros, cons, real math, and who should skip. $200 cash back after $1,000 spend in 90 days.",
+    "og_title": "U.S. Bank Cash+® Visa Signature® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the U.S. Bank Cash+® Visa Signature® Card. Pros, cons, real math, and who should skip. $200 cash back after $1,000 spend in 90 days.",
+    "twitter_title": "U.S. Bank Cash+® Visa Signature® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the U.S. Bank Cash+® Visa Signature® Card. Pros, cons, real math, and who should skip. $200 cash back after $1,000 spend in 90 days."
+  },
+  "cards/wells-fargo-active-cash/index.html": {
+    "title": "Wells Fargo Active Cash® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Wells Fargo Active Cash® Card. Pros, cons, real math, and who should skip. $200 cash rewards after $1,000 spend in 3 months.",
+    "og_title": "Wells Fargo Active Cash® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Wells Fargo Active Cash® Card. Pros, cons, real math, and who should skip. $200 cash rewards after $1,000 spend in 3 months.",
+    "twitter_title": "Wells Fargo Active Cash® Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Wells Fargo Active Cash® Card. Pros, cons, real math, and who should skip. $200 cash rewards after $1,000 spend in 3 months."
+  },
+  "cards/wells-fargo-autograph/index.html": {
+    "title": "Wells Fargo Autograph℠ Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "description": "Honest review of the Wells Fargo Autograph℠ Card. Pros, cons, real math, and who should skip. 20,000 points (worth ~$330 in travel) after $1,000 spend in 3 months.",
+    "og_title": "Wells Fargo Autograph℠ Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "og_description": "Honest review of the Wells Fargo Autograph℠ Card. Pros, cons, real math, and who should skip. 20,000 points (worth ~$330 in travel) after $1,000 spend in 3 months.",
+    "twitter_title": "Wells Fargo Autograph℠ Card Review — Pros, Cons &amp; Verdict | CreditStud.io",
+    "twitter_description": "Honest review of the Wells Fargo Autograph℠ Card. Pros, cons, real math, and who should skip. 20,000 points (worth ~$330 in travel) after $1,000 spend in 3 months."
+  },
+  "compare/index.html": {
+    "title": "Credit Comparison Calculator | CreditStud.io",
+    "description": "Compare credit cards, BNPL services, and payment plans side by side. Find the cheapest way to finance any purchase.",
+    "og_title": "Credit Comparison Calculator | CreditStud.io",
+    "og_description": "Compare credit cards, BNPL services, and payment plans side by side. Find the cheapest way to finance any purchase.",
+    "twitter_title": "Credit Comparison Calculator | CreditStud.io",
+    "twitter_description": "Compare credit cards, BNPL services, and payment plans side by side. Find the cheapest way to finance any purchase."
+  },
+  "debt-planner/index.html": {
+    "title": "Debt Payoff Planner — Snowball vs Avalanche Calculator | CreditStud.io",
+    "description": "Free debt payoff planner. Compare snowball vs avalanche strategies, see your debt-free date, and visualize your path to zero debt.",
+    "og_title": "Debt Payoff Planner — Snowball vs Avalanche Calculator | CreditStud.io",
+    "og_description": "Free debt payoff planner. Compare snowball vs avalanche strategies, see your debt-free date, and visualize your path to zero debt.",
+    "twitter_title": "Debt Payoff Planner — Snowball vs Avalanche Calculator | CreditStud.io",
+    "twitter_description": "Free debt payoff planner. Compare snowball vs avalanche strategies, see your debt-free date, and visualize your path to zero debt."
+  },
+  "disclosure.html": {
+    "title": "Affiliate Disclosure | CreditStud.io",
+    "description": "CreditStud.io affiliate disclosure policy. Learn how we make money and maintain editorial independence.",
+    "og_title": "Affiliate Disclosure | CreditStud.io",
+    "og_description": "CreditStud.io affiliate disclosure policy. Learn how we make money and maintain editorial independence.",
+    "twitter_title": "",
+    "twitter_description": ""
+  },
+  "index.html": {
+    "title": "CreditStud.io — Free Credit Card & Debt Calculators",
+    "description": "Compare credit cards, plan debt payoff, and find the best rewards. Free calculators that do the math for you — no sign-up required.",
+    "og_title": "CreditStud.io — Free Credit Card & Debt Calculators",
+    "og_description": "Compare credit cards, plan debt payoff, and find the best rewards. Free calculators that do the math for you.",
+    "twitter_title": "CreditStud.io — Free Credit Card & Debt Calculators",
+    "twitter_description": "Compare credit cards, plan debt payoff, and find the best rewards. Free calculators that do the math for you."
+  },
+  "learn/balance-transfer-calculator.html": {
+    "title": "0% APR Balance Transfer Calculator — Should You Transfer Your Balance? — CreditStud.io",
+    "description": "Calculate how much you can save by transferring credit card debt to a 0% APR card. Factor in transfer fees, promo periods, and post-promo rates to make the right call.",
+    "og_title": "0% APR Balance Transfer Calculator — Should You Transfer Your Balance?",
+    "og_description": "Calculate your savings from transferring high-interest debt to a 0% APR card. Factor in transfer fees, promo periods, and post-promo rates.",
+    "twitter_title": "0% APR Balance Transfer Calculator — Should You Transfer Your Balance?",
+    "twitter_description": "Calculate your savings from transferring high-interest debt to a 0% APR card."
+  },
+  "learn/bnpl-interest-calculator.html": {
+    "title": "BNPL Interest Rate Calculator — Compare Afterpay, Klarna, Affirm & Zip — CreditStud.io",
+    "description": "Understand the true cost of Buy Now Pay Later services. Compare interest rates, late fees, and total cost across Afterpay, Klarna, Affirm, and Zip with our BNPL interest calculator.",
+    "og_title": "BNPL Interest Rate Calculator — Compare Afterpay, Klarna, Affirm & Zip",
+    "og_description": "Understand the true cost of Buy Now Pay Later services. Compare interest rates, late fees, and total cost across Afterpay, Klarna, Affirm, and Zip.",
+    "twitter_title": "BNPL Interest Rate Calculator — Compare Afterpay, Klarna, Affirm & Zip",
+    "twitter_description": "Understand the true cost of Buy Now Pay Later services. Compare interest rates, late fees, and total cost across Afterpay, Klarna, Affirm, and Zip."
+  },
+  "learn/crypto-credit-card-rewards.html": {
+    "title": "Are Crypto Credit Card Rewards Worth It? — CreditStud.io",
+    "description": "Compare crypto credit card rewards against traditional cash back. Understand volatility risks, tax implications, and whether earning Bitcoin or Ethereum on your spending is actually worth it.",
+    "og_title": "Are Crypto Credit Card Rewards Worth It?",
+    "og_description": "Compare crypto rewards against traditional cash back. Understand volatility risks, tax implications, and real value of earning crypto on spending.",
+    "twitter_title": "Are Crypto Credit Card Rewards Worth It?",
+    "twitter_description": "Compare crypto rewards against traditional cash back. Understand volatility risks, tax implications, and real value of earning crypto on spending."
+  },
+  "learn/index.html": {
+    "title": "Financial Education Center | CreditStud.io",
+    "description": "Master your finances with our comprehensive guides on credit card debt payoff strategies, BNPL services, balance transfers, crypto rewards, and debt elimination methods.",
+    "og_title": "Financial Education Center | CreditStud.io",
+    "og_description": "Master your finances with comprehensive guides on credit card debt payoff, BNPL services, balance transfers, crypto rewards, and debt elimination methods.",
+    "twitter_title": "Financial Education Center | CreditStud.io",
+    "twitter_description": "Master your finances with comprehensive guides on credit card debt payoff, BNPL services, balance transfers, crypto rewards, and debt elimination methods."
+  },
+  "learn/pay-off-10k-debt.html": {
+    "title": "Fastest Way to Pay Off $10,000 in Credit Card Debt — CreditStud.io",
+    "description": "Discover the fastest strategies to eliminate $10,000 in credit card debt. Compare avalanche, snowball, balance transfers, and consolidation — with real numbers and an interactive payoff calculator.",
+    "og_title": "Fastest Way to Pay Off $10,000 in Credit Card Debt",
+    "og_description": "Compare avalanche, snowball, balance transfers, and consolidation — with real numbers and an interactive payoff calculator.",
+    "twitter_title": "Fastest Way to Pay Off $10,000 in Credit Card Debt",
+    "twitter_description": "Compare avalanche, snowball, balance transfers, and consolidation — with real numbers and an interactive payoff calculator."
+  },
+  "learn/snowball-vs-avalanche.html": {
+    "title": "Debt Snowball vs Avalanche: Which Is Better? — CreditStud.io",
+    "description": "Side-by-side comparison of the debt snowball and debt avalanche methods. See which saves more money, which works faster, and which fits your personality — with real numbers and an interactive calculator.",
+    "og_title": "Debt Snowball vs Avalanche: Which Is Better?",
+    "og_description": "Side-by-side comparison of snowball and avalanche debt payoff methods. See which saves more and which fits your personality.",
+    "twitter_title": "Debt Snowball vs Avalanche: Which Is Better?",
+    "twitter_description": "Side-by-side comparison of snowball and avalanche debt payoff methods. See which saves more and which fits your personality."
+  },
+  "loan-vs-bt/index.html": {
+    "title": "Loan vs Balance Transfer — Which Saves More? | CreditStud.io",
+    "description": "Should you get a personal loan or a balance transfer card? Compare total costs, monthly payments, and payoff timelines with our free calculator.",
+    "og_title": "Personal Loan vs Balance Transfer — Which Saves More? | CreditStud.io",
+    "og_description": "Should you get a personal loan or a balance transfer card? Compare total costs, monthly payments, and payoff timelines.",
+    "twitter_title": "Personal Loan vs Balance Transfer — CreditStud.io",
+    "twitter_description": "Should you get a personal loan or a balance transfer card? Compare total costs and find the cheaper option."
+  },
+  "merchant/amazon.html": {
+    "title": "Best Credit Card for Amazon Purchases | CreditStud.io",
+    "description": "Find the best credit card for Amazon purchases. Compare rewards rates for online shopping, Prime Day deals, and everyday Amazon spending. Maximize cash back and points on your Amazon cart.",
+    "og_title": "Best Credit Card for Amazon Purchases | CreditStud.io",
+    "og_description": "Discover top credit cards for Amazon shopping with bonus rewards on online purchases.",
+    "twitter_title": "Best Credit Card for Amazon Purchases | CreditStud.io",
+    "twitter_description": "Discover top credit cards for Amazon shopping with bonus rewards on online purchases."
+  },
+  "merchant/costco.html": {
+    "title": "Best Credit Card for Costco | CreditStud.io",
+    "description": "Best credit cards for Costco shopping, gas, and bulk buys. Maximize rewards at warehouse clubs with flat-rate cash back cards.",
+    "og_title": "Best Credit Card for Costco | CreditStud.io",
+    "og_description": "Top cards for Costco purchases including gas stations and groceries.",
+    "twitter_title": "Best Credit Card for Costco | CreditStud.io",
+    "twitter_description": "Top cards for Costco purchases including gas stations and groceries."
+  },
+  "merchant/dining.html": {
+    "title": "Best Credit Cards for Dining & Restaurants (2026) | CreditStud.io",
+    "description": "Find the best credit card for restaurants, takeout, and food delivery. Compare dining rewards rates for eating out.",
+    "og_title": "Best Credit Cards for Dining & Restaurants (2026) | CreditStud.io",
+    "og_description": "Maximize rewards on restaurants, takeout, and food delivery with the best dining credit cards.",
+    "twitter_title": "Best Credit Cards for Dining & Restaurants (2026) | CreditStud.io",
+    "twitter_description": "Maximize rewards on restaurants, takeout, and food delivery with the best dining credit cards."
+  },
+  "merchant/ev-charging.html": {
+    "title": "Best Credit Cards for EV Charging (2026) | CreditStud.io",
+    "description": "Find the best credit card for electric vehicle charging — Tesla Supercharger, ChargePoint, EVgo, and more. Compare rewards for EV owners.",
+    "og_title": "Best Credit Cards for EV Charging (2026) | CreditStud.io",
+    "og_description": "Maximize rewards on EV charging with the best credit cards for Tesla Supercharger, ChargePoint, and electric vehicle charging.",
+    "twitter_title": "Best Credit Cards for EV Charging (2026) | CreditStud.io",
+    "twitter_description": "Maximize rewards on EV charging with the best credit cards for Tesla Supercharger, ChargePoint, and electric vehicle charging."
+  },
+  "merchant/fitness.html": {
+    "title": "Best Credit Cards for Gym & Fitness (2026) | CreditStud.io",
+    "description": "Find the best credit card for gym memberships, fitness apps, Peloton, and workout subscriptions. Compare rewards rates for fitness spending.",
+    "og_title": "Best Credit Cards for Gym & Fitness (2026) | CreditStud.io",
+    "og_description": "Maximize rewards on gym memberships, fitness apps, Peloton, and personal training with the best credit cards for fitness spending.",
+    "twitter_title": "Best Credit Cards for Gym & Fitness (2026) | CreditStud.io",
+    "twitter_description": "Maximize rewards on gym memberships, fitness apps, Peloton, and personal training with the best credit cards for fitness spending."
+  },
+  "merchant/gas-stations.html": {
+    "title": "Best Credit Card for Gas Stations | CreditStud.io",
+    "description": "Find the best credit card for gas station purchases. Compare rewards rates for fuel, EV charging, and convenience store spending.",
+    "og_title": "Best Credit Card for Gas Stations | CreditStud.io",
+    "og_description": "Maximize gas rewards with the best credit card for fuel purchases.",
+    "twitter_title": "Best Credit Card for Gas Stations | CreditStud.io",
+    "twitter_description": "Maximize gas rewards with the best credit card for fuel purchases."
+  },
+  "merchant/groceries.html": {
+    "title": "Best Credit Card for Groceries (Whole Foods, Trader Joe's) | CreditStud.io",
+    "description": "Find the best credit card for grocery purchases at Whole Foods, Trader Joe's, and more. Compare rewards rates for supermarket spending.",
+    "og_title": "Best Credit Card for Groceries (Whole Foods, Trader Joe's) | CreditStud.io",
+    "og_description": "Maximize grocery rewards with the best credit card for Whole Foods and Trader Joe's.",
+    "twitter_title": "Best Credit Card for Groceries (Whole Foods, Trader Joe's) | CreditStud.io",
+    "twitter_description": "Maximize grocery rewards with the best credit card for Whole Foods and Trader Joe's."
+  },
+  "merchant/home-improvement.html": {
+    "title": "Best Credit Card for Home Depot & Lowe's | CreditStud.io",
+    "description": "Find the best credit card for home improvement purchases at Home Depot, Lowe's, and hardware stores. Compare rewards for DIY projects.",
+    "og_title": "Best Credit Card for Home Depot & Lowe's | CreditStud.io",
+    "og_description": "Maximize cash back on home improvement purchases at Home Depot and Lowe's.",
+    "twitter_title": "Best Credit Card for Home Depot & Lowe's | CreditStud.io",
+    "twitter_description": "Maximize cash back on home improvement purchases at Home Depot and Lowe's."
+  },
+  "merchant/index.html": {
+    "title": "Best Credit Cards for Popular Merchants | CreditStud.io",
+    "description": "Find the best credit card for your favorite stores and categories. Amazon, Costco, Walmart, groceries, gas, dining, streaming, travel.",
+    "og_title": "Best Credit Cards for Popular Merchants | CreditStud.io",
+    "og_description": "Find the best credit card for your favorite stores and categories. Amazon, Costco, Walmart, groceries, gas, dining, streaming, travel.",
+    "twitter_title": "Best Credit Cards for Popular Merchants | CreditStud.io",
+    "twitter_description": "Find the best credit card for your favorite stores and categories. Amazon, Costco, Walmart, groceries, gas, dining, streaming, travel."
+  },
+  "merchant/insurance.html": {
+    "title": "Best Credit Cards for Insurance Payments (2026) | CreditStud.io",
+    "description": "Which credit cards earn the most on insurance payments? Compare rewards for auto, home, health, and life insurance premiums.",
+    "og_title": "Best Credit Cards for Insurance Payments (2026) | CreditStud.io",
+    "og_description": "Maximize rewards on auto, home, health, and life insurance premiums with the right credit card.",
+    "twitter_title": "Best Credit Cards for Insurance Payments (2026) | CreditStud.io",
+    "twitter_description": "Maximize rewards on auto, home, health, and life insurance premiums."
+  },
+  "merchant/online-shopping.html": {
+    "title": "Best Credit Cards for Online Shopping (Amazon, Target, More) 2026 | CreditStud.io",
+    "description": "Find the best credit card for online shopping at Amazon, Target, and more. Compare rewards rates for e-commerce spending and maximize your online purchases.",
+    "og_title": "Best Credit Cards for Online Shopping (Amazon, Target, More) 2026 | CreditStud.io",
+    "og_description": "Maximize online shopping rewards — compare the best cards for Amazon, Target, and e-commerce.",
+    "twitter_title": "Best Credit Cards for Online Shopping (Amazon, Target, More) 2026 | CreditStud.io",
+    "twitter_description": "Maximize online shopping rewards — compare the best cards for Amazon, Target, and e-commerce."
+  },
+  "merchant/pharmacy.html": {
+    "title": "Best Credit Cards for Pharmacy & Drugstores (CVS, Walgreens) 2026 | CreditStud.io",
+    "description": "Find the best credit card for pharmacy and drugstore purchases at CVS, Walgreens, Rite Aid, and more. Compare rewards rates for prescriptions and health spending.",
+    "og_title": "Best Credit Cards for Pharmacy & Drugstores (CVS, Walgreens) 2026 | CreditStud.io",
+    "og_description": "Maximize your pharmacy rewards — compare the best cards for CVS, Walgreens, and prescription spending.",
+    "twitter_title": "Best Credit Cards for Pharmacy & Drugstores (CVS, Walgreens) 2026 | CreditStud.io",
+    "twitter_description": "Maximize your pharmacy rewards — compare the best cards for CVS, Walgreens, and prescription spending."
+  },
+  "merchant/rent.html": {
+    "title": "Best Credit Cards for Rent Payments (2026) | CreditStud.io",
+    "description": "Can you pay rent with a credit card? Compare the best cards for rent payments, including the Bilt Mastercard that earns points with no transaction fees.",
+    "og_title": "Best Credit Cards for Rent Payments (2026) | CreditStud.io",
+    "og_description": "Pay rent with a credit card and earn rewards. Compare the Bilt Mastercard and other options for renting payments.",
+    "twitter_title": "Best Credit Cards for Rent Payments (2026) | CreditStud.io",
+    "twitter_description": "Pay rent with a credit card and earn rewards. Compare the Bilt Mastercard and other options."
+  },
+  "merchant/restaurants.html": {
+    "title": "Best Credit Card for Restaurants & Dining | CreditStud.io",
+    "description": "Find the best credit card for restaurants and dining out. Compare 4% rewards cards for meals, takeout, and delivery services.",
+    "og_title": "Best Credit Card for Restaurants & Dining | CreditStud.io",
+    "og_description": "Top dining rewards for local spots, chains, and delivery.",
+    "twitter_title": "Best Credit Card for Restaurants & Dining | CreditStud.io",
+    "twitter_description": "Top dining rewards for local spots, chains, and delivery."
+  },
+  "merchant/streaming.html": {
+    "title": "Best Credit Card for Streaming Services | CreditStud.io",
+    "description": "Find the best credit card for Netflix, Spotify, Hulu, Disney+. Compare 6% cash back cards for subscriptions.",
+    "og_title": "Best Credit Card for Streaming Services | CreditStud.io",
+    "og_description": "Top rewards for Netflix, Hulu, Spotify, Disney+, YouTube Premium.",
+    "twitter_title": "Best Credit Card for Streaming Services | CreditStud.io",
+    "twitter_description": "Top rewards for Netflix, Hulu, Spotify, Disney+, YouTube Premium."
+  },
+  "merchant/student.html": {
+    "title": "Best Credit Cards for College Students (2026) | CreditStud.io",
+    "description": "Find the best credit card for college students — build credit, earn rewards, and avoid annual fees. Compare student cards and options for no credit history.",
+    "og_title": "Best Credit Cards for College Students (2026) | CreditStud.io",
+    "og_description": "Build credit and earn rewards with the best student credit cards. No annual fee, easy approval, and real rewards for college life.",
+    "twitter_title": "Best Credit Cards for College Students (2026) | CreditStud.io",
+    "twitter_description": "Build credit and earn rewards with the best student credit cards. No annual fee, easy approval, and real rewards for college life."
+  },
+  "merchant/subscription.html": {
+    "title": "Best Credit Cards for Streaming &amp; Subscriptions (2026) | CreditStud.io",
+    "description": "Find the best credit card for Netflix, Spotify, Disney+, Hulu, YouTube Premium, and more. Compare 6% cash back on streaming subscriptions.",
+    "og_title": "Best Credit Cards for Streaming &amp; Subscriptions (2026) | CreditStud.io",
+    "og_description": "Top rewards for Netflix, Hulu, Spotify, Disney+, YouTube Premium, Amazon Prime, and all your monthly subscriptions.",
+    "twitter_title": "Best Credit Cards for Streaming &amp; Subscriptions (2026) | CreditStud.io",
+    "twitter_description": "Top rewards for Netflix, Hulu, Spotify, Disney+, YouTube Premium, and all subscriptions."
+  },
+  "merchant/target.html": {
+    "title": "Best Credit Card for Target | CreditStud.io",
+    "description": "Best credit cards for Target shopping. Compare Target RedCard vs general rewards cards for in-store and Target.com purchases.",
+    "og_title": "Best Credit Card for Target | CreditStud.io",
+    "og_description": "Top cards for Target in-store and online shopping.",
+    "twitter_title": "Best Credit Card for Target | CreditStud.io",
+    "twitter_description": "Top cards for Target in-store and online shopping."
+  },
+  "merchant/travel-hotels.html": {
+    "title": "Best Credit Cards for Hotels (2026) | CreditStud.io",
+    "description": "Find the best credit card for hotel stays — Marriott, Hilton, IHG, Hyatt, and booking sites. Compare rewards rates and free night perks.",
+    "og_title": "Best Credit Cards for Hotels (2026) | CreditStud.io",
+    "og_description": "Maximize rewards on hotel stays with the best credit cards for Marriott, Hilton, IHG, Hyatt, and booking sites.",
+    "twitter_title": "Best Credit Cards for Hotels (2026) | CreditStud.io",
+    "twitter_description": "Maximize rewards on hotel stays with the best credit cards for Marriott, Hilton, IHG, Hyatt, and booking sites."
+  },
+  "merchant/travel.html": {
+    "title": "Best Credit Card for Travel & Airlines | CreditStud.io",
+    "description": "Find the best credit card for airlines, hotels, and travel. Compare 5x portal bookings and flexible miles cards.",
+    "og_title": "Best Credit Card for Travel & Airlines | CreditStud.io",
+    "og_description": "Top travel rewards for flights, hotels, car rentals.",
+    "twitter_title": "Best Credit Card for Travel & Airlines | CreditStud.io",
+    "twitter_description": "Top travel rewards for flights, hotels, car rentals."
+  },
+  "merchant/uber-lyft.html": {
+    "title": "Best Credit Cards for Uber &amp; Lyft (2026) | CreditStud.io",
+    "description": "Compare the best credit cards for Uber and Lyft rides and Uber Eats delivery. Maximize cash back on rideshare and food delivery spending.",
+    "og_title": "Best Credit Cards for Uber &amp; Lyft (2026) | CreditStud.io",
+    "og_description": "Maximize rewards on Uber, Lyft rides, and Uber Eats with the right credit card. Compare top picks.",
+    "twitter_title": "Best Credit Cards for Uber &amp; Lyft (2026) | CreditStud.io",
+    "twitter_description": "Maximize rewards on Uber, Lyft rides, and Uber Eats with the right credit card."
+  },
+  "merchant/utilities.html": {
+    "title": "Best Credit Cards for Utilities & Bills (Electric, Water, Internet) 2026 | CreditStud.io",
+    "description": "Find the best credit card for paying utilities and bills — electric, gas, water, internet, and phone. Compare rewards rates for recurring monthly expenses.",
+    "og_title": "Best Credit Cards for Utilities & Bills (2026) | CreditStud.io",
+    "og_description": "Maximize rewards on utility bills — electric, water, internet, phone. Compare the best cards for recurring monthly expenses.",
+    "twitter_title": "Best Credit Cards for Utilities & Bills (2026) | CreditStud.io",
+    "twitter_description": "Maximize rewards on utility bills — electric, water, internet, phone."
+  },
+  "merchant/walmart.html": {
+    "title": "Best Credit Card for Walmart Purchases | CreditStud.io",
+    "description": "Find the best credit card for Walmart shopping. Compare rewards rates for everyday essentials, groceries, and Walmart+ purchases.",
+    "og_title": "Best Credit Card for Walmart Purchases | CreditStud.io",
+    "og_description": "Maximize cash back on Walmart purchases with the right credit card.",
+    "twitter_title": "Best Credit Card for Walmart Purchases | CreditStud.io",
+    "twitter_description": "Maximize cash back on Walmart purchases with the right credit card."
+  },
+  "merchant/warehouse-clubs.html": {
+    "title": "Best Credit Cards for Costco & Sam's Club (2026) | CreditStud.io",
+    "description": "Find the best credit card for Costco and Sam's Club purchases. Compare rewards rates for warehouse club spending on bulk groceries, gas, and more.",
+    "og_title": "Best Credit Cards for Costco & Sam's Club (2026) | CreditStud.io",
+    "og_description": "Maximize warehouse club rewards — best cards for Costco and Sam's Club bulk shopping.",
+    "twitter_title": "Best Credit Cards for Costco & Sam's Club (2026) | CreditStud.io",
+    "twitter_description": "Maximize warehouse club rewards — best cards for Costco and Sam's Club bulk shopping."
+  },
+  "min-payment/index.html": {
+    "title": "Minimum Payment Trap Calculator — CreditStud.io",
+    "description": "See the shocking true cost of making only minimum payments on your credit card. Free calculator shows total interest, time to payoff, and how much you could save.",
+    "og_title": "Minimum Payment Trap Calculator — CreditStud.io",
+    "og_description": "See the shocking true cost of making only minimum payments on your credit card. Free calculator shows total interest, time to payoff, and how much you could save.",
+    "twitter_title": "Minimum Payment Trap Calculator — CreditStud.io",
+    "twitter_description": "See the shocking true cost of making only minimum payments on your credit card. Free calculator shows total interest, time to payoff, and how much you could save."
+  },
+  "offline.html": {
+    "title": "Offline — CreditStud.io",
+    "description": "",
+    "og_title": "",
+    "og_description": "",
+    "twitter_title": "",
+    "twitter_description": ""
+  },
+  "rewards/index.html": {
+    "title": "Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io",
+    "description": "Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards.",
+    "og_title": "Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io",
+    "og_description": "Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards.",
+    "twitter_title": "Credit Card Rewards Calculator — Find Your Best Card | CreditStud.io",
+    "twitter_description": "Input your spending habits and instantly find which credit card earns you the most rewards. Compare cashback, travel points, and crypto rewards."
+  },
+  "score-simulator/index.html": {
+    "title": "Credit Score Simulator — How Scores Affect Your APR | CreditStud.io",
+    "description": "Simulate how financial actions affect your credit score. See the impact of paying off debt, opening new cards, late payments, and more with our free FICO score estimator.",
+    "og_title": "Credit Score Simulator — CreditStud.io",
+    "og_description": "Simulate how financial actions affect your credit score. See the impact of paying off debt, opening new cards, late payments, and more.",
+    "twitter_title": "Credit Score Simulator — CreditStud.io",
+    "twitter_description": "Simulate how financial actions affect your credit score. See the impact of paying off debt, opening new cards, late payments, and more."
+  },
+  "tools/api.html": {
+    "title": "CreditStud.io API Documentation — Free Financial Calculators API",
+    "description": "Free, no-auth API for credit card comparisons, debt payoff calculations, and rewards optimization. JSON responses, OpenAPI spec, and LLM-friendly endpoints.",
+    "og_title": "CreditStud.io API — Free Financial Calculators",
+    "og_description": "Free JSON API for credit card comparisons, debt payoff, and rewards calculations. No auth required.",
+    "twitter_title": "CreditStud.io API — Free Financial Calculators",
+    "twitter_description": "Free JSON API for credit card comparisons, debt payoff, and rewards calculations."
+  },
+  "tools/index.html": {
+    "title": "Free Credit Card & Debt Calculators — CreditStud.io Tools",
+    "description": "Free online calculators for credit card comparison, debt payoff planning, reward optimization, and more. No sign-up required.",
+    "og_title": "Free Credit Card & Debt Calculators — CreditStud.io",
+    "og_description": "Free online calculators for credit card comparison, debt payoff, rewards, and more. No sign-up required.",
+    "twitter_title": "Free Credit Card & Debt Calculators — CreditStud.io",
+    "twitter_description": "Free online calculators for credit card comparison, debt payoff, rewards, and more."
+  }
+}

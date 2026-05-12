@@ -330,7 +330,9 @@ function getEffectiveAmount(rawAmount) {
 
 function updateMonthsDisplay(val) {
   const months = parseInt(val);
-  const label = months === 1 ? '1 month' : months + ' months';
+  const label = months === 1
+    ? (typeof t === 'function' ? t('calc.monthsSingular') : '1 month')
+    : (typeof t === 'function' ? t('calc.monthsPlural', { count: months }) : months + ' months');
   if (monthsDisplay) monthsDisplay.textContent = label;
   state.payoffMonths = months;
   updateLiveEstimate();
@@ -418,6 +420,31 @@ function updateLiveEstimate() {
 
 if (monthsSlider) {
   monthsSlider.addEventListener('input', (e) => updateMonthsDisplay(e.target.value));
+}
+
+// +/- buttons for months control
+const monthsBtnMinus = document.getElementById('months-btn-minus');
+const monthsBtnPlus = document.getElementById('months-btn-plus');
+
+if (monthsBtnMinus) {
+  monthsBtnMinus.addEventListener('click', () => {
+    const slider = document.getElementById('payoff-months');
+    const current = parseInt(slider.value) || 6;
+    if (current > 1) {
+      slider.value = current - 1;
+      updateMonthsDisplay(current - 1);
+    }
+  });
+}
+if (monthsBtnPlus) {
+  monthsBtnPlus.addEventListener('click', () => {
+    const slider = document.getElementById('payoff-months');
+    const current = parseInt(slider.value) || 6;
+    if (current < 36) {
+      slider.value = current + 1;
+      updateMonthsDisplay(current + 1);
+    }
+  });
 }
 
 if (purchaseInput) {
@@ -1146,7 +1173,7 @@ function renderOtherPeriods(allMethods, amount, creditScore, currentMonths) {
     // Click to update the main calculator
     card.addEventListener('click', () => {
       document.getElementById('payoff-months').value = months;
-      state.payoffMonths = months;
+      updateMonthsDisplay(months);
       document.getElementById('calculate-btn').click();
     });
 

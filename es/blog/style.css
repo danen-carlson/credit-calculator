@@ -25,6 +25,9 @@
 
 html { scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;

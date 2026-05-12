@@ -20,7 +20,7 @@
   <meta name="apple-mobile-web-app-title" content="CreditStud">
   <meta property="og:title" content="信用比较计算器 | CreditStud.io">
   <meta property="og:description" content="并排比较信用卡、先买后付服务及还款方案，找到最经济实惠的消费融资方式。">
-  <meta property="og:url" content="https://creditstud.io/zh/zh/zh/zh/zh/compare/">
+  <meta property="og:url" content="https://creditstud.io/zh/zh/zh/zh/zh/zh/compare/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CreditStud.io">
   <meta property="og:image" content="https://creditstud.io/og-images/compare.png">
@@ -129,6 +129,8 @@
 <script src="/locales/zh.js"></script>
 <script>window.__lang = 'zh';</script>
 <script src="/locales/zh.js"></script>
+<script>window.__lang = 'zh';</script>
+<script src="/locales/zh.js"></script>
 <link rel="alternate" hreflang="en" href="https://creditstud.io/compare/">
 <link rel="alternate" hreflang="es" href="https://creditstud.io/es/compare/">
 <link rel="alternate" hreflang="zh" href="https://creditstud.io/zh/compare/">
@@ -210,7 +212,7 @@
 <!-- /HEADER -->
 <!-- /HEADER -->
 <!-- /HEADER -->
-<link rel="canonical" href="https://creditstud.io/zh/zh/zh/zh/zh/compare/">
+<link rel="canonical" href="https://creditstud.io/zh/zh/zh/zh/zh/zh/compare/">
 
     <!-- Step 1: Purchase Info -->
     <section class="step" id="step-purchase">
@@ -349,8 +351,16 @@
           </div>
 
           <!-- Months slider (shown in months mode) -->
+          <!-- Months slider (shown in months mode) -->
           <div id="payoff-months-group">
-            <label for="payoff-months">在 <span id="payoff-months-display" class="months-display">6 个月</span> 内还清</label>
+            <div class="payoff-months-header">
+              <label for="payoff-months">在</label>
+              <div class="payoff-months-control">
+                <button type="button" class="months-btn months-btn-minus" id="months-btn-minus" aria-label="减少月数">−</button>
+                <span id="payoff-months-display" class="months-display">6 个月</span>
+                <button type="button" class="months-btn months-btn-plus" id="months-btn-plus" aria-label="增加月数">+</button>
+              </div>
+            </div>
             <input type="range" id="payoff-months" min="1" max="36" value="6" step="1" class="slider months-slider">
             <div class="slider-labels months-labels">
               <span>1个月</span>

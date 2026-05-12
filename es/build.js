@@ -355,18 +355,21 @@ function buildLang(lang) {
   // Manually-translated pages should not be overwritten by the build.
   // These files have full Spanish content in the body (not just i18n partials).
   // List them relative to the repo root (without language prefix).
-  const MANUALLY_TRANSLATED = new Set([
+  // Manually-translated pages should not be overwritten by the build.
+  // For es (Spanish): these have hand-crafted translations and were skipped in es.
+  // For zh/ko/other languages: these ARE translated by the runner, so don't skip them.
+  const MANUALLY_TRANSLATED = lang === 'es' ? new Set([
     'blog/best-balance-transfer-credit-cards.html',
     'blog/minimum-payment-trap.html',
     'blog/snowball-vs-avalanche.html',
     'blog/credit-card-benefits-youre-not-using.html',
     'blog/credit-card-points-offset-interest.html',
-  ]);
+  ]) : new Set();
 
   // Pages that have been body-translated by the translation runner.
   // These should use the translated file as base (not English source).
   function isBodyTranslated(relPath) {
-    const progressFile = path.join(repoDir, '.states', 'translate-body-progress.json');
+    const progressFile = path.join(repoDir, '.states', `translate-body-${lang}-progress.json`);
     try {
       const progress = JSON.parse(fs.readFileSync(progressFile, 'utf8'));
       return progress[relPath]?.done === true && !progress[relPath]?.dryRun;
@@ -506,12 +509,16 @@ function fixCanonicalUrl(content, lang) {
     `<meta content="https://creditstud.io/${lang}$1" property="og:url">`
   );
 
-  // Fix JSON-LD BreadcrumbList: translate Home → Inicio and fix item URLs
+  // Fix JSON-LD BreadcrumbList: translate Home label and fix item URLs
+  const HOME_LABELS = { es: 'Inicio', zh: '首页', ko: '홈', tl: 'Home', hi: 'होम' };
+  const homeLabel = HOME_LABELS[lang] || 'Home';
   content = content.replace(
     /<script\s+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
     function(match, jsonBlock) {
       if (!jsonBlock.includes('BreadcrumbList')) return match;
-      let fixed = jsonBlock.replace(/"name":\s*"Home"/g, '"name": "Inicio"');
+      let fixed = jsonBlock.replace(/"name":\s*"Home"/g, `"name": "${homeLabel}"`);
+      // Also fix any leftover Spanish 'Inicio' from previous builds
+      fixed = fixed.replace(/"name":\s*"Inicio"/g, `"name": "${homeLabel}"`);
       const langPrefix = `/${lang}/`;
       fixed = fixed.replace(
         /"item":\s*"https:\/\/creditstud\.io(\/[^"?]*)"/g,

@@ -20,7 +20,7 @@
   <meta name="apple-mobile-web-app-title" content="CreditStud">
   <meta property="og:title" content="Calculadora de Comparación de Crédito | CreditStud.io">
   <meta property="og:description" content="Compara tarjetas de crédito, servicios BNPL y planes de pago lado a lado. Encuentra la forma más barata de financiar cualquier compra.">
-  <meta property="og:url" content="https://creditstud.io/es/es/es/es/compare/">
+  <meta property="og:url" content="https://creditstud.io/es/es/es/es/es/compare/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CreditStud.io">
   <meta property="og:image" content="https://creditstud.io/og-images/compare.png">
@@ -127,6 +127,8 @@
 <script src="/locales/es.js"></script>
 <script>window.__lang = 'es';</script>
 <script src="/locales/es.js"></script>
+<script>window.__lang = 'es';</script>
+<script src="/locales/es.js"></script>
 <link rel="alternate" hreflang="en" href="https://creditstud.io/compare/">
 <link rel="alternate" hreflang="es" href="https://creditstud.io/es/compare/">
 <link rel="alternate" hreflang="zh" href="https://creditstud.io/zh/compare/">
@@ -208,7 +210,7 @@
 <!-- /HEADER -->
 <!-- /HEADER -->
 <!-- /HEADER -->
-<link rel="canonical" href="https://creditstud.io/es/es/es/es/compare/">
+<link rel="canonical" href="https://creditstud.io/es/es/es/es/es/compare/">
 
     <!-- Step 1: Purchase Info -->
     <section class="step" id="step-purchase">
@@ -347,8 +349,16 @@
           </div>
 
           <!-- Months slider (shown in months mode) -->
+          <!-- Months slider (shown in months mode) -->
           <div id="payoff-months-group">
-            <label for="payoff-months">Pagar en <span id="payoff-months-display" class="months-display">6 meses</span></label>
+            <div class="payoff-months-header">
+              <label for="payoff-months">Pagar en</label>
+              <div class="payoff-months-control">
+                <button type="button" class="months-btn months-btn-minus" id="months-btn-minus" aria-label="Menos meses">−</button>
+                <span id="payoff-months-display" class="months-display">6 meses</span>
+                <button type="button" class="months-btn months-btn-plus" id="months-btn-plus" aria-label="Más meses">+</button>
+              </div>
+            </div>
             <input type="range" id="payoff-months" min="1" max="36" value="6" step="1" class="slider months-slider">
             <div class="slider-labels months-labels">
               <span>1 mes</span>
@@ -358,6 +368,7 @@
               <span>24 meses</span>
               <span>36 meses</span>
             </div>
+          </div>
           </div>
 
           <!-- Monthly payment input (shown in payment mode) -->

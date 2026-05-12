@@ -1,6 +1,9 @@
 /* Reset & Base */
 html { scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 :root {
   --bg: #f8fafb;
@@ -1340,6 +1343,59 @@ input:focus, select:focus {
   font-size: 0.8125rem;
   font-weight: 600;
   margin-left: 0.5rem;
+}
+
+.payoff-months-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.payoff-months-control {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.months-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid var(--border, #e2e8f0);
+  border-radius: 8px;
+  background: var(--surface, #f8fafc);
+  color: var(--text, #1e293b);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: background .15s, border-color .15s, color .15s;
+  padding: 0;
+  line-height: 1;
+}
+
+.months-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary, #2563eb);
+  color: var(--primary, #2563eb);
+}
+
+.months-btn:active {
+  background: var(--primary, #2563eb);
+  color: #fff;
+  border-color: var(--primary, #2563eb);
+}
+
+.months-btn-minus {
+  font-size: 1.2rem;
+}
+
+.months-btn-plus {
+  font-size: 1rem;
 }
 
 .months-slider {
