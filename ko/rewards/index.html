@@ -380,9 +380,17 @@
         <!-- Annual Credits Toggle -->
         <div class="annual-credits-toggle-container">
           <label class="toggle-label" style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:0.9rem;padding:14px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);">
-            <input type="checkbox" id="include-annual-credits" data-action="toggle-annual-credits" style="display:none;">
+            <input type="checkbox" id="include-annual-credits" data-action="toggle-annual-credits" style="display:none;" checked>
             <span class="toggle-switch"></span>
-            <span>Include annual credits in first-year value</span>
+            <span>Include annual statement credits (recurring every year)</span>
+          </label>
+        </div>
+
+        <!-- International Spend Input -->
+        <div class="intl-spend-container" style="margin-top:0.75rem;">
+          <label class="toggle-label" style="display:flex;align-items:center;gap:10px;font-size:0.9rem;padding:14px 16px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-sm);">
+            <span style="flex:1;">Monthly international spending (factors in foreign transaction fees)</span>
+            <span style="display:inline-flex;align-items:center;gap:4px;">$<input type="number" id="international-spend" value="0" min="0" step="50" inputmode="decimal" style="width:80px;padding:6px 8px;border:1px solid var(--border);border-radius:6px;"></span>
           </label>
         </div>
 

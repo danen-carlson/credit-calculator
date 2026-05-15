@@ -395,23 +395,18 @@ function updateLiveEstimate() {
       return;
     }
   } else {
-    // Months mode
-    const monthsElapsed = months;
-    const baseMonthly = amount / monthsElapsed;
-    let totalInterest = 0;
-    let balance = amount;
-    const graceMonths = 2;
-    for (let i = 0; i < monthsElapsed; i++) {
-      if (i >= graceMonths && balance > 0) {
-        const interest = balance * r;
-        totalInterest += interest;
-        balance += interest;
-      }
-      balance -= baseMonthly;
-    }
-    const totalCost = amount + totalInterest;
-    const effectiveMonthly = totalCost / monthsElapsed;
-    if (estimatePayment) estimatePayment.textContent = fmt(effectiveMonthly) + '/mo';
+    // Months mode — use standard amortization formula
+    // monthlyRate = apr / 100 / 12
+    // monthlyPmt = principal * monthlyRate / (1 - (1 + monthlyRate)^(-months))
+    const annualRatePercent = avgApr * 100; // convert decimal to percentage
+    const pmt = (typeof monthlyPayment === 'function')
+      ? monthlyPayment(amount, annualRatePercent, months)
+      : (annualRatePercent === 0 ? amount / months : amount * (r * Math.pow(1 + r, months)) / (Math.pow(1 + r, months) - 1));
+    const totalInt = (typeof totalInterest === 'function')
+      ? totalInterest(amount, annualRatePercent, months)
+      : (pmt * months - amount);
+    const totalCost = amount + totalInt;
+    if (estimatePayment) estimatePayment.textContent = fmt(pmt) + '/mo';
     if (estimateTotal) estimateTotal.textContent = fmt(totalCost) + ' total';
     if (estimateTotalRow) estimateTotalRow.style.display = 'flex';
   }
@@ -734,13 +729,13 @@ function recalculateResults() {
 }
 
 // Net Cost tooltip HTML (shared across render functions)
-const netCostTooltip = '<span class="net-cost-tooltip"><span class="net-cost-icon">?</span><span class="net-cost-tip">Net Cost = purchase + interest + fees − rewards earned. Lower is better.</span></span>';
+const netCostTooltip = '<span class="net-cost-tooltip">ⓘ<span class="tooltip-text">Net Cost = Purchase amount + Interest + Fees − Rewards earned. Lower is better.</span></span>';
 
 function renderResults(all, newCardOptions, alternatives, amount, targetMonths, methodsList, creditScore, rawAmount, quickPayoff, termMatching) {
   // quickPayoff and termMatching are new params from calc.js
   // If not provided (backward compat), derive from all
-  if (!quickPayoff) quickPayoff = all.filter(r => r.finishesEarly || r.subtype === 'bnpl');
-  if (!termMatching) termMatching = all.filter(r => !r.finishesEarly && r.subtype !== 'bnpl');
+  if (!quickPayoff) quickPayoff = all.filter(r => (r.earlyPayoff || r.finishesEarly || r.subtype === 'bnpl') && r.earlyPayoff !== false);
+  if (!termMatching) termMatching = all.filter(r => !r.earlyPayoff && !r.finishesEarly && r.subtype !== 'bnpl');
 
   const container = document.getElementById('results-cards');
   container.innerHTML = '';
@@ -824,12 +819,13 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths, 
     newCardSection.classList.add('hidden');
   }
 
-  // Quick Payoff Options (BNPL, pay-in-4, etc.) — only show if targetMonths > 3
-  // These finish much faster than the selected term and are shown separately
+  // Quick Payoff Options (BNPL, pay-in-4, etc.)
+  // These finish faster than the selected term and are always shown —
+  // Pay-in-4 is 0% interest and always the cheapest option if it fits.
   const quickSection = document.getElementById('quick-payoff-section');
   const quickContainer = document.getElementById('quick-payoff-cards');
 
-  if (quickPayoff.length > 0 && targetMonths > 3) {
+  if (quickPayoff.length > 0) {
     quickSection.classList.remove('hidden');
     const targetSpan = document.getElementById('quick-payoff-target');
     if (targetSpan) targetSpan.textContent = targetMonths;
@@ -839,10 +835,11 @@ function renderResults(all, newCardOptions, alternatives, amount, targetMonths, 
       card.className = 'result-card compact';
       const months = r.termMonths || 1.5;
       const termText = r.actualTermLabel || r.termDisplay || (months < 2 ? '~6 weeks' : months + ' months');
+      const earlyPayoffBadge = r.earlyPayoff ? ' <span style="background:#fef3c7;color:#92400e;padding:0.125rem 0.5rem;border-radius:9999px;font-size:0.6875rem;font-weight:600;margin-left:0.25rem;">⚡ Early payoff</span>' : '';
       card.innerHTML = `
         <div class="result-header">
           <div style="display:flex;align-items:center;gap:0.5rem;">
-            <span style="font-size:0.875rem;font-weight:600;">${i === 0 ? '🚀' : (i === 1 ? '⚡' : '✓')} ${r.name}</span>
+            <span style="font-size:0.875rem;font-weight:600;">${i === 0 ? '🚀' : (i === 1 ? '⚡' : '✓')} ${r.name}${earlyPayoffBadge}</span>
           </div>
           <div style="text-align:right;">
             <div style="font-weight:700;color:var(--primary, #059669);">${fmt(r.netCost)}</div>
@@ -1469,7 +1466,7 @@ function renderPayoffTable(results) {
         <th>Purchase</th>
         <th>Interest + Fees</th>
         <th>Rewards</th>
-        <th>Net Total <span class=\"net-cost-tooltip\"><span class=\"net-cost-icon\">?</span><span class=\"net-cost-tip\">Net Cost = purchase + interest + fees − rewards earned. Lower is better.</span></span></th>
+        <th>Net Total <span class=\"net-cost-tooltip\">ⓘ<span class=\"tooltip-text\">Net Cost = Purchase amount + Interest + Fees − Rewards earned. Lower is better.</span></span></th>
         <th>Where</th>
       </tr>
     </thead>

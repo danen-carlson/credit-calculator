@@ -330,9 +330,21 @@ function getEffectiveAmount(rawAmount) {
 
 function updateMonthsDisplay(val) {
   const months = parseInt(val);
-  const label = months === 1
-    ? (typeof t === 'function' ? t('calc.monthsSingular') : '1 month')
-    : (typeof t === 'function' ? t('calc.monthsPlural', { count: months }) : months + ' months');
+  let label;
+  if (typeof t === 'function') {
+    // Try i18n first, but validate the result isn't a raw key
+    const singular = t('calc.monthsSingular');
+    const plural = t('calc.monthsPlural', { count: months });
+    if (months === 1 && !singular.includes('calc.')) {
+      label = singular;
+    } else if (!plural.includes('calc.')) {
+      label = plural;
+    } else {
+      label = months === 1 ? '1 month' : months + ' months';
+    }
+  } else {
+    label = months === 1 ? '1 month' : months + ' months';
+  }
   if (monthsDisplay) monthsDisplay.textContent = label;
   state.payoffMonths = months;
   updateLiveEstimate();

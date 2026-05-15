@@ -600,6 +600,22 @@
       </div>
     </section>
 
+<div class="cross-tool-cta">
+  <h3>Explore More Tools</h3>
+  <div class="cross-tool-cards">
+    <a href="/debt-planner/" class="cross-tool-card">
+      <span class="cross-tool-icon">💰</span>
+      <strong>Debt Payoff Planner</strong>
+      <p>Already have debt? Create a personalized payoff plan with snowball vs avalanche comparison.</p>
+    </a>
+    <a href="/rewards/" class="cross-tool-card">
+      <span class="cross-tool-icon">🏆</span>
+      <strong>Rewards Calculator</strong>
+      <p>Find the best credit card for your spending habits. Compare 30+ cards side by side.</p>
+    </a>
+  </div>
+</div>
+
     <!-- FOOTER -->
 <footer class="footer">
   <div class="container-wide">
@@ -686,55 +702,6 @@ if (document.querySelector('.nav-dropdown-toggle')) {
   <script src="../data.js?v=20260430"></script>
   <script src="../calc.js?v=20260430"></script>
   <style>
-    /* Net Cost tooltip */
-    .net-cost-tooltip {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      cursor: help;
-    }
-    .net-cost-tooltip .net-cost-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--border, #cbd5e1);
-      color: var(--text-secondary, #64748b);
-      font-size: 11px;
-      font-weight: 700;
-      margin-left: 4px;
-    }
-    .net-cost-tooltip:hover .net-cost-tip,
-    .net-cost-tooltip:focus .net-cost-tip {
-      display: block;
-    }
-    .net-cost-tooltip .net-cost-tip {
-      display: none;
-      position: absolute;
-      bottom: 130%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--text, #1e293b);
-      color: #fff;
-      padding: 6px 10px;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 400;
-      white-space: nowrap;
-      z-index: 20;
-      box-shadow: 0 2px 8px rgba(0,0,0,.2);
-    }
-    .net-cost-tooltip .net-cost-tip::after {
-      content: '';
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 5px solid transparent;
-      border-top-color: var(--text, #1e293b);
-    }
     /* Best Match connector badge */
     .best-match-connector {
       display: inline-flex;

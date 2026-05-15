@@ -448,6 +448,14 @@
               </select>
             </div>
             <div class="input-group">
+              <label>Your Approved Credit Limit <small style="color:var(--text-secondary);font-weight:normal;">(optional — override card's typical limit)</small></label>
+              <div class="input-with-prefix">
+                <span class="prefix">$</span>
+                <input type="number" id="consolidation-credit-limit" value="" min="0" step="500" inputmode="numeric" placeholder="e.g. 10000" style="padding-left:38px;">
+              </div>
+              <small style="color:var(--text-secondary);font-size:0.75rem;margin-top:4px;display:block;">Actual limits vary by your creditworthiness. Leave blank to use the card's typical limit for the selected credit tier.</small>
+            </div>
+            <div class="input-group">
               <label>Transfer Amount</label>
               <div class="input-with-prefix">
                 <span class="prefix">$</span>

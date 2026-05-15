@@ -266,11 +266,13 @@
       <h3 class="subheading">Monthly spending by category</h3>
       <div class="spending-grid" id="spendingGrid"></div>
 
+      <div id="valuationToggleWrap" class="valuation-toggle-wrap" style="display:none;"></div>
+
       <div class="perk-toggle-header">
         <h3 class="subheading">Perks & credits you'll actually use</h3>
         <label class="would-spend-toggle">
           <input type="checkbox" id="wouldSpendAnyway" checked>
-          <span>I would spend this anyway (not card-specific)</span>
+          <span title="When checked, perks count at full value. When unchecked, manual perks are discounted 40% to account for the hassle of remembering to use them.">Perks at full value (otherwise 60% for manual ones)</span>
         </label>
       </div>
       <div class="perks-grid" id="perksGrid"></div>

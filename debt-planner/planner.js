@@ -217,6 +217,15 @@ function renderDebtCards() {
   const container = document.getElementById('debt-list');
   container.innerHTML = '';
   debts.forEach((debt, i) => {
+    // Find projected APR if simulator is active
+    const projected = simulatorState.projectedDebts
+      ? simulatorState.projectedDebts.find(d => d.id === debt.id)
+      : null;
+    const projectedApr = projected ? projected.projectedApr : null;
+    const projectedAprNote = projectedApr !== null
+      ? `<div style="font-size:0.7rem;color:var(--primary, #059669);margin-top:2px;">Projected: ${projectedApr.toFixed(2)}% if score = ${simulatorState.score}</div>`
+      : '';
+
     const card = document.createElement('div');
     card.className = 'debt-card';
     card.dataset.debtId = debt.id;
@@ -244,6 +253,7 @@ function renderDebtCards() {
         <label>APR %</label>
         <input type="number" value="${debt.apr}" min="0" max="99" step="0.01" inputmode="decimal"
                onchange="updateDebt(${debt.id}, 'apr', this.value)" id="apr-${debt.id}">
+        ${projectedAprNote}
       </div>
       <div class="input-group">
         <label>Min Payment</label>
@@ -266,6 +276,14 @@ function updateSummary() {
     ? debts.reduce((s, d) => s + d.apr * (d.balance / totalBalance), 0)
     : 0;
 
+  // Calculate projected weighted APR if simulator is active
+  let projectedWeightedApr = null;
+  if (simulatorState.projectedDebts && simulatorState.projectedDebts.length > 0) {
+    projectedWeightedApr = totalBalance > 0
+      ? simulatorState.projectedDebts.reduce((s, d) => s + d.projectedApr * (d.balance / totalBalance), 0)
+      : null;
+  }
+
   // Cache DOM elements to avoid duplicate queries
   const totalBalanceEl = document.getElementById('total-balance');
   const totalMinEl = document.getElementById('total-min');
@@ -273,7 +291,13 @@ function updateSummary() {
   
   if (totalBalanceEl) totalBalanceEl.textContent = formatCurrency(totalBalance);
   if (totalMinEl) totalMinEl.textContent = formatCurrency(totalMin);
-  if (weightedAprEl) weightedAprEl.textContent = weightedApr.toFixed(2) + '%';
+  if (weightedAprEl) {
+    let aprText = weightedApr.toFixed(2) + '%';
+    if (projectedWeightedApr !== null) {
+      aprText += ` → <span style="color:var(--primary, #059669);">${projectedWeightedApr.toFixed(2)}%</span> <span style="font-size:0.75rem;color:var(--text-secondary);">projected</span>`;
+    }
+    weightedAprEl.innerHTML = aprText;
+  }
 
   // Update slider max based on debt size
   const slider = document.getElementById('extra-slider');
@@ -489,18 +513,23 @@ function calculateAll() {
     return;
   }
 
+  // Use projected debts (simulated APRs) if simulator is active, otherwise real debts
+  const debtsForCalc = (simulatorState.projectedDebts && simulatorState.projectedDebts.length > 0)
+    ? simulatorState.projectedDebts
+    : debts;
+
   try {
-    results.minimum = simulateMinimums(debts);
+    results.minimum = simulateMinimums(debtsForCalc);
     console.log('Minimum simulation complete');
   } catch(e) { console.error('Minimum sim error:', e); }
 
   try {
-    results.snowball = simulateStrategy(debts, extraPayment, (a, b) => a.balance - b.balance);
+    results.snowball = simulateStrategy(debtsForCalc, extraPayment, (a, b) => a.balance - b.balance);
     console.log('Snowball simulation complete');
   } catch(e) { console.error('Snowball sim error:', e); }
 
   try {
-    results.avalanche = simulateStrategy(debts, extraPayment, (a, b) => b.apr - a.apr);
+    results.avalanche = simulateStrategy(debtsForCalc, extraPayment, (a, b) => b.apr - a.apr);
     console.log('Avalanche simulation complete');
   } catch(e) { console.error('Avalanche sim error:', e); }
 }
@@ -941,7 +970,15 @@ function updateConsolidationOptions() {
   if (debts.filter(d => d.balance > 0).length > 0) {
     debtCheckboxesContainer.innerHTML = debts
       .filter(d => d.balance > 0)
-      .map(d => `
+      .map(d => {
+        // Show projected APR if simulator is active
+        const projected = simulatorState.projectedDebts
+          ? simulatorState.projectedDebts.find(pd => pd.id === d.id)
+          : null;
+        const aprDisplay = (projected && projected.projectedApr !== undefined)
+          ? `${d.apr.toFixed(2)}% → <span style="color:var(--primary, #059669);">${projected.projectedApr.toFixed(2)}%</span> <span style="font-size:0.75rem;color:var(--text-secondary);">projected</span>`
+          : `${d.apr.toFixed(2)}%`;
+        return `
         <div class="debt-checkbox-item">
           <label>
             <input type="checkbox" 
@@ -949,10 +986,10 @@ function updateConsolidationOptions() {
                    data-debt-id="${d.id}" 
                    data-debt-balance="${d.balance}" 
                    onchange="handleDebtCheckboxChange()">
-            ${escapeHtml(d.name)} — ${formatCurrency(d.balance)} at ${d.apr.toFixed(2)}% APR
+            ${escapeHtml(d.name)} — ${formatCurrency(d.balance)} at ${aprDisplay} APR
           </label>
         </div>
-      `)
+      `;})
       .join('');
   } else {
     debtCheckboxesContainer.innerHTML = '<p style="color:var(--text-secondary);">No debts available for transfer.</p>';

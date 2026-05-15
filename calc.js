@@ -531,11 +531,16 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, 
         result = evaluateCustom(method, amount, creditScore, targetMonths);
       } else if (method.type === 'bnpl-4') {
         result = evaluateBnpl(method, amount, isWorstCase, creditScore, targetMonths);
-        if (result && targetMonths > 3) {
-          result.finishesEarly = true;
-          result.actualTermLabel = '~6 weeks';
-          result.notes = result.notes || [];
-          result.notes.push(`Pays off in ~6 weeks (ahead of your ${targetMonths}-month goal)`);
+        if (result) {
+          // Pay-in-4 always finishes in ~6 weeks; add earlyPayoff badge when it
+          // beats the user's target timeline
+          const payIn4Months = result.termMonths || 1.5;
+          if (payIn4Months < targetMonths) {
+            result.earlyPayoff = true;
+            result.actualTermLabel = result.termDisplay || '~6 weeks';
+            result.notes = result.notes || [];
+            result.notes.push(`Pays off in ${result.termDisplay || '~6 weeks'} (ahead of your ${targetMonths}-month goal)`);
+          }
         }
       } else if (method.type === 'bnpl-monthly') {
         result = evaluateBnplMonthly(method, amount, creditScore, targetMonths, isWorstCase);
@@ -568,8 +573,11 @@ function calculateOptions({ amount, creditScore, selectedMethods, targetMonths, 
   const TERM_MATCH_TOLERANCE = 2; // months
   const isTermMatch = (r) => {
     const tm = r.termMonths || targetMonths;
-    // BNPL pay-in-4 always finishes in ~1.5 months (6 weeks)
-    if (r.finishesEarly || r.subtype === 'bnpl') return false;
+    // BNPL pay-in-4 is always a valid option — don't exclude from results.
+    // It gets an earlyPayoff badge when its term < targetMonths.
+    if (r.subtype === 'bnpl') return true;
+    if (r.earlyPayoff) return true;
+    if (r.finishesEarly) return true; // backward compat
     return Math.abs(tm - targetMonths) <= TERM_MATCH_TOLERANCE;
   };
 

@@ -1,6 +1,10 @@
 // Card Database — CreditStud.io Rewards Calculator
 // Data sourced from REWARDS-RESEARCH.md (April 2026)
 // Point valuations from The Points Guy (TPG), April 2026
+//
+// Bulk last-verified date: 2026-05-12
+// Individual cards may have a `lastVerified` field that overrides this for that card.
+const CARDS_DATA_LAST_VERIFIED = '2026-05-12';
 
 const cardsData = [
   {
@@ -380,8 +384,9 @@ const cardsData = [
     name: 'Amazon Prime Rewards Visa Signature',
     issuer: 'Chase',
     type: 'cashback',
-    annualFee: 139,
-    annualFeeNote: 'Requires Amazon Prime membership ($139/yr) — counted as effective annual fee',
+    annualFee: 0,
+    requiresMembership: { name: 'Amazon Prime', annualCost: 139 },
+    annualFeeNote: 'Card has no annual fee, but requires an active Amazon Prime membership ($139/yr) to earn 5% back. Toggle membership cost in the calculator if Prime is incremental for you.',
     signupBonus: { amount: 150, unit: 'cash', value: 150, requirement: 'Amazon gift card upon approval + 5% back on purchases' },
     rewards: {
       groceries: { rate: 2, note: 'Whole Foods Market' },
@@ -395,7 +400,7 @@ const cardsData = [
       amazon: { rate: 5, note: 'Amazon.com & Whole Foods Market' }
     },
     pointValue: 1.0,
-    perks: ['5% back at Amazon.com & Whole Foods (Prime members)', '$150 Amazon gift card upon approval', '2% back at restaurants, gas stations & drugstores', '1% back on everything else', 'No card annual fee, but requires Amazon Prime ($139/yr)', 'No foreign transaction fees', 'Purchase protection & extended warranty'],
+    perks: ['5% back at Amazon.com & Whole Foods (Prime members only)', '$150 Amazon gift card upon approval', '2% back at restaurants, gas stations & drugstores', '1% back on everything else', 'No annual fee on the card itself', 'Requires active Amazon Prime ($139/yr) for 5% bonus', 'No foreign transaction fees', 'Purchase protection & extended warranty'],
     bestFor: 'Amazon Shoppers',
     affiliateLink: '',
     affiliateNetwork: 'cj',
@@ -434,7 +439,9 @@ const cardsData = [
     name: 'Coinbase One Credit Card',
     issuer: 'Coinbase',
     type: 'crypto',
-    annualFee: 360,
+    annualFee: 0,
+    requiresMembership: { name: 'Coinbase One', annualCost: 360 },
+    annualFeeNote: 'Card has no annual fee, but requires an active Coinbase One subscription (~$30/mo, $360/yr) to earn 4% back.',
     signupBonus: { amount: 0, unit: 'crypto', value: 0, requirement: '' },
     rewards: {
       groceries: { rate: 4 },
@@ -640,7 +647,8 @@ const cardsData = [
       rent: { rate: 1, note: '1x on rent (up to 100k pts/yr) — NO surcharge fee' },
       everything: { rate: 1 }
     },
-    pointValue: 2.2, // TPG: Bilt points highly valued via transfer partners
+    pointValue: 2.2, // TPG: Bilt points highly valued via transfer partners (optimistic)
+    pointValueConservative: 1.0, // Cash redemption value (1¢/pt) — use for users who don't transfer
     perks: ['1x on rent — no transaction fee (KEY differentiator)', '3x dining', '2x travel', 'Transfer to airlines & hotels (Hyatt, AA, etc.)', 'Rent Day 2x bonus on the 1st of each month', 'No annual fee'],
     bestFor: 'Renters & Foodies',
     affiliateLink: '',

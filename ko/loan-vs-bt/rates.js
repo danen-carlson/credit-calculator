@@ -1,4 +1,9 @@
 // Personal Loan Rates & Balance Transfer Card Data — CreditStud.io
+// Last verified: 2026-05-12
+//
+// BT cards: btFee = intro/promo BT fee (applies if you transfer within the promo window,
+// usually 60-120 days). btFeeStandard = standard fee after that window.
+// Most users will hit the intro fee since they transfer right after opening the card.
 
 const LOAN_RATES = {
   excellent: { aprMin: 5.99, aprMax: 12.49, originationMin: 0, originationMax: 3, label: 'Excellent (720+)', examples: ['SoFi', 'LightStream', 'Marcus by Goldman Sachs'] },
@@ -13,42 +18,48 @@ const BT_CARDS = [
     issuer: 'Citi',
     introAPR: 0,
     introMonths: 21,
-    btFee: 5,
+    btFee: 3,           // Intro: 3% (first 4 months)
+    btFeeStandard: 5,    // Standard: 5% after
+    introFeeWindowDays: 120,
     btFeeMin: 5,
     regularAPR: 18.24,
     regularAPRRange: '18.24% - 28.99% Variable',
     minCredit: 'good',
     creditScoreRange: '670-739',
     affiliateLink: '',
-    highlights: ['0% intro APR for 21 months on BT', 'No annual fee', '0% intro APR for 12 months on purchases']
+    highlights: ['0% intro APR for 21 months on BT', 'No annual fee', '0% intro APR for 12 months on purchases', '3% intro BT fee (first 4 months), then 5%']
   },
   {
     name: 'Wells Fargo Reflect',
     issuer: 'Wells Fargo',
     introAPR: 0,
     introMonths: 21,
-    btFee: 5,
+    btFee: 3,           // Intro: 3% (first 120 days)
+    btFeeStandard: 5,
+    introFeeWindowDays: 120,
     btFeeMin: 5,
     regularAPR: 17.49,
     regularAPRRange: '17.49% - 29.49% Variable',
     minCredit: 'good',
     creditScoreRange: '670-739',
     affiliateLink: '',
-    highlights: ['0% intro APR for up to 21 months on BT', 'No annual fee', 'Up to $600 cell phone protection']
+    highlights: ['0% intro APR for up to 21 months on BT', 'No annual fee', '3% intro BT fee (first 120 days), then 5%', 'Up to $600 cell phone protection']
   },
   {
     name: 'Citi Simplicity',
     issuer: 'Citi',
     introAPR: 0,
     introMonths: 21,
-    btFee: 5,
+    btFee: 3,
+    btFeeStandard: 5,
+    introFeeWindowDays: 120,
     btFeeMin: 5,
     regularAPR: 19.24,
     regularAPRRange: '19.24% - 29.99% Variable',
     minCredit: 'good',
     creditScoreRange: '670-739',
     affiliateLink: '',
-    highlights: ['0% intro APR for 21 months on BT', 'No late fees ever', 'No annual fee', 'No penalty APR']
+    highlights: ['0% intro APR for 21 months on BT', 'No late fees ever', 'No annual fee', 'No penalty APR', '3% intro BT fee, then 5%']
   },
   {
     name: 'Chase Slate Edge',
@@ -56,13 +67,15 @@ const BT_CARDS = [
     introAPR: 0,
     introMonths: 18,
     btFee: 3,
+    btFeeStandard: 5,
+    introFeeWindowDays: 60,
     btFeeMin: 5,
     regularAPR: 20.49,
     regularAPRRange: '20.49% - 28.99% Variable',
     minCredit: 'good',
     creditScoreRange: '670-739',
     affiliateLink: '',
-    highlights: ['0% intro APR for 18 months on BT', 'Intro BT fee of 3%', 'No annual fee']
+    highlights: ['0% intro APR for 18 months on BT', '3% intro BT fee (first 60 days), then 5%', 'No annual fee']
   },
   {
     name: 'Bank of America Customized Cash',
@@ -70,6 +83,8 @@ const BT_CARDS = [
     introAPR: 0,
     introMonths: 15,
     btFee: 3,
+    btFeeStandard: 4,
+    introFeeWindowDays: 60,
     btFeeMin: 10,
     regularAPR: 19.24,
     regularAPRRange: '19.24% - 29.24% Variable',
@@ -84,6 +99,8 @@ const BT_CARDS = [
     introAPR: 0,
     introMonths: 15,
     btFee: 3,
+    btFeeStandard: 5,
+    introFeeWindowDays: 120,
     btFeeMin: 0,
     regularAPR: 18.24,
     regularAPRRange: '18.24% - 27.24% Variable',
@@ -98,6 +115,8 @@ const BT_CARDS = [
     introAPR: 0,
     introMonths: 15,
     btFee: 3,
+    btFeeStandard: 4,
+    introFeeWindowDays: 60,
     btFeeMin: 0,
     regularAPR: 19.99,
     regularAPRRange: '19.99% - 29.99% Variable',
@@ -112,13 +131,15 @@ const BT_CARDS = [
     introAPR: 0,
     introMonths: 15,
     btFee: 3,
+    btFeeStandard: 3, // Amex generally doesn't tier BT fees
+    introFeeWindowDays: 60,
     btFeeMin: 5,
     regularAPR: 18.49,
     regularAPRRange: '18.49% - 29.49% Variable',
     minCredit: 'good',
     creditScoreRange: '670-739',
     affiliateLink: '',
-    highlights: ['0% intro APR for 15 months on BT', '2x points at supermarkets', 'No annual fee']
+    highlights: ['0% intro APR for 15 months on BT', '2x points at supermarkets', 'No annual fee', '3% flat BT fee']
   }
 ];
 

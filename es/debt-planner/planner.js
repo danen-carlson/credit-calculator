@@ -70,6 +70,17 @@ const CARD_APR_SUGGEST = [
 let windfallAmount = 0;
 let windfallMonth = 6;
 
+// User-provided BT credit limit override (null = use card's typical limit)
+let userCreditLimitOverride = null;
+
+// Get the effective credit limit for a BT card (user override if set, otherwise typical)
+function getEffectiveCreditLimit(card) {
+  if (userCreditLimitOverride && userCreditLimitOverride > 0) {
+    return userCreditLimitOverride;
+  }
+  return card.creditLimit;
+}
+
 // DEBT_COLORS is defined in charts.js — that's the only place it's used
 // Balance transfer card data — verified against issuer pages 2026-04-28.
 // Many issuers offer a lower intro fee for transfers in the first ~60 days/4 months,
@@ -948,7 +959,7 @@ function updateConsolidationOptions() {
   }
 
   cardSelect.innerHTML = '<option value="">— Choose a card —</option>' + BALANCE_TRANSFER_CARDS
-    .map(card => `<option value="${card.id}">${card.name} — ${card.introAprMonths} mo 0% APR • ${card.transferFeePct}% fee • Limit ${formatCurrency(card.creditLimit)}</option>`)
+    .map(card => `<option value="${card.id}">${card.name} — ${card.introAprMonths} mo 0% APR • ${card.transferFeePct}% fee • Typical limit ~${formatCurrency(card.creditLimit)}</option>`)
     .join('');
 
   updateConsolidationAmountHint();
@@ -986,9 +997,10 @@ function updateConsolidationAmountHint() {
   // Cap at total selected balance
   defaultTransferAmount = Math.min(defaultTransferAmount, totalSelectedBalance);
   
-  // If card is selected, also cap at card limit
+  // If card is selected, also cap at card limit (user override or typical)
   if (card) {
-    defaultTransferAmount = Math.min(defaultTransferAmount, card.creditLimit);
+    const limit = getEffectiveCreditLimit(card);
+    defaultTransferAmount = Math.min(defaultTransferAmount, limit);
   }
   
   amountInput.value = Math.round(defaultTransferAmount);
@@ -998,14 +1010,15 @@ function updateConsolidationAmountHint() {
     return;
   }
 
-  const cappedByCard = defaultTransferAmount >= card.creditLimit;
+  const effectiveLimit = getEffectiveCreditLimit(card);
+  const cappedByCard = defaultTransferAmount >= effectiveLimit;
   const cappedByBalance = defaultTransferAmount >= totalSelectedBalance;
   
   let capInfo = '';
   if (cappedByCard && cappedByBalance) {
     capInfo = ' (limited by both card limit and total debt balance)';
   } else if (cappedByCard) {
-    capInfo = ` (limited by ${formatCurrency(card.creditLimit)} card limit)`;
+    capInfo = ` (limited by ${formatCurrency(effectiveLimit)} card limit${userCreditLimitOverride ? ' — your override' : ' — typical estimate'})`;
   } else if (cappedByBalance) {
     capInfo = ' (limited by total debt balance)';
   }
@@ -1031,7 +1044,7 @@ function simulateConsolidation(selectedDebtIds, newCardTerms, transferAmount) {
   }
   
   // Cap transfer amount at card limit
-  const cappedTransferAmount = Math.min(originalTransferAmount, totalSelectedBalance, newCardTerms.creditLimit);
+  const cappedTransferAmount = Math.min(originalTransferAmount, totalSelectedBalance, getEffectiveCreditLimit(newCardTerms));
   const transferFee = cappedTransferAmount * (newCardTerms.transferFeePct / 100);
   const transferredBalance = cappedTransferAmount + transferFee;
   const originalTotalMin = debts.reduce((sum, debt) => sum + debt.minPayment, 0);
@@ -1069,8 +1082,9 @@ function simulateConsolidation(selectedDebtIds, newCardTerms, transferAmount) {
 
   const warnings = [];
   
-  if (totalSelectedBalance > newCardTerms.creditLimit) {
-    warnings.push(`Insufficient credit limit: only ${formatCurrency(newCardTerms.creditLimit)} of ${formatCurrency(totalSelectedBalance)} can be transferred.`);
+  const effectiveCardLimit = getEffectiveCreditLimit(newCardTerms);
+  if (totalSelectedBalance > effectiveCardLimit) {
+    warnings.push(`Insufficient credit limit: only ${formatCurrency(effectiveCardLimit)} of ${formatCurrency(totalSelectedBalance)} can be transferred${userCreditLimitOverride ? '' : ' (based on a typical limit estimate — set your actual limit above for accuracy)'}.`);
   }
   
   // Check if post-promo APR is better than average of selected debts
@@ -1953,6 +1967,7 @@ function init() {
 
   const consolidationCardSelect = document.getElementById('consolidation-card-select');
   const consolidationAmount = document.getElementById('consolidation-amount');
+  const consolidationCreditLimit = document.getElementById('consolidation-credit-limit');
   if (consolidationCardSelect) consolidationCardSelect.addEventListener('change', updateConsolidationAmountHint);
   if (consolidationAmount) consolidationAmount.addEventListener('input', () => {
     consolidationResults = null;
@@ -1961,6 +1976,17 @@ function init() {
     if (resultsEl) resultsEl.style.display = 'none';
     if (resetBtn) resetBtn.style.display = 'none';
   });
+  if (consolidationCreditLimit) {
+    let creditLimitTimer;
+    consolidationCreditLimit.addEventListener('input', (e) => {
+      clearTimeout(creditLimitTimer);
+      creditLimitTimer = setTimeout(() => {
+        const v = parseFloat(e.target.value);
+        userCreditLimitOverride = (isFinite(v) && v > 0) ? v : null;
+        updateConsolidationAmountHint();
+      }, 200);
+    });
+  }
 
   // Set up credit score simulator sliders
   const creditScoreSlider = document.getElementById('credit-score-slider');

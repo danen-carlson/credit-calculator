@@ -1,6 +1,16 @@
 {
-  "lastUpdated": "2026-04-30",
-  "displayDate": "April 30, 2026",
+  "lastUpdated": "2026-05-12",
+  "displayDate": "May 12, 2026",
   "source": "Provider websites + manual verification",
-  "refreshSchedule": "Weekly automated scrape + manual review"
+  "refreshSchedule": "Weekly automated scrape + manual review",
+  "changelog": [
+    {
+      "date": "2026-05-12",
+      "notes": "Fixed annual fee calculator rewards math (was severely overestimating). Added FTX fees and required membership costs to rewards calculator. Updated CSR ($795), Amex Platinum ($895), Bilt cards. Added intro vs standard BT fee distinction. Made BT credit limits user-editable."
+    },
+    {
+      "date": "2026-04-30",
+      "notes": "Added US Bank Altitude Go and Capital One Quicksilver. Verified all 28 rewards cards."
+    }
+  ]
 }

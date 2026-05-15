@@ -2078,6 +2078,96 @@ input:focus, select:focus {
   margin: 8px 0 4px;
 }
 
+/* Cross-tool navigation CTAs */
+.cross-tool-cta {
+  max-width: 800px;
+  margin: 48px auto 32px;
+  padding: 0 16px;
+}
+.cross-tool-cta h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-primary, #1a1a2e);
+}
+.cross-tool-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.cross-tool-card {
+  display: block;
+  padding: 20px;
+  border: 1px solid var(--border, #e5e7eb);
+  border-radius: 12px;
+  background: var(--card-bg, #fff);
+  color: var(--text-primary, #1a1a2e);
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.cross-tool-card:hover {
+  border-color: var(--primary, #059669);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
+}
+.cross-tool-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+.cross-tool-card strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.cross-tool-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Net Cost tooltip */
+.net-cost-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+.net-cost-tooltip .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 100;
+  transition: opacity 0.2s, visibility 0.2s;
+  pointer-events: none;
+  max-width: 320px;
+  white-space: normal;
+  text-align: left;
+  line-height: 1.4;
+}
+.net-cost-tooltip .tooltip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #1a1a2e;
+}
+.net-cost-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Footer Grid */
 .footer-grid {
   display: grid;

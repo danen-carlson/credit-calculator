@@ -55,7 +55,9 @@
   let previousRankings = {}; // Store previous rankings for comparison
   let walletCards = []; // Wallet state
   let walletOpen = false; // Track if wallet panel is open
-  let includeAnnualCredits = false; // Include annual credits in first-year value
+  let includeAnnualCredits = true; // Include annual credits in first-year value (changed to true by default 2026-05-12)
+  let internationalSpendMonthly = 0; // Foreign-transaction-exposed spend per month
+  let includeMembershipCosts = true; // Subtract required membership costs (Amazon Prime, Coinbase One) when card requires them
 
   // ===================== NEW STATE =====================
   let noAnnualFee = false; // Filter: hide cards with annualFee > 0
@@ -110,6 +112,54 @@
   }
 
   // ===================== CALCULATIONS =====================
+
+  // Apply post-processing adjustments (annual credits, FTX fees, required membership costs)
+  // to a card calculation result. Returns a NEW result object.
+  // Annual credits are a recurring yearly benefit — they apply EVERY year, not just first year.
+  function applyAdjustments(card, calc, spending) {
+    if (!calc) return calc;
+    let netAdjust = 0;
+    const adjustments = [];
+
+    // Annual recurring credits (e.g. Amex Platinum $200 airline, CSR $300 travel).
+    // These recur every year so they should apply to both 'first' and 'ongoing' views.
+    // Only add if not already included by the per-card calc (which only adds them for 'first' year).
+    const alreadyIncludedCredits = (calc.signupBonusValue || 0) > 0 && calc.annualCreditsNote;
+    if (includeAnnualCredits && card.annualCredits && card.annualCredits > 0 && !alreadyIncludedCredits) {
+      netAdjust += card.annualCredits;
+      adjustments.push({
+        label: `Annual credits (${card.annualCreditNote || 'recurring statement credits'})`,
+        amount: card.annualCredits
+      });
+    }
+
+    // Foreign transaction fees on international spend
+    const ftxFee = getForeignTransactionFee(card);
+    if (ftxFee > 0 && internationalSpendMonthly > 0) {
+      const ftxCost = internationalSpendMonthly * 12 * (ftxFee / 100);
+      netAdjust -= ftxCost;
+      adjustments.push({
+        label: `Foreign transaction fees (${ftxFee}% on $${internationalSpendMonthly}/mo intl spend)`,
+        amount: -ftxCost
+      });
+    }
+
+    // Required membership costs (Amazon Prime, Coinbase One)
+    if (includeMembershipCosts && card.requiresMembership && card.requiresMembership.annualCost) {
+      netAdjust -= card.requiresMembership.annualCost;
+      adjustments.push({
+        label: `Required ${card.requiresMembership.name} membership`,
+        amount: -card.requiresMembership.annualCost
+      });
+    }
+
+    return {
+      ...calc,
+      netAnnual: (calc.netAnnual || 0) + netAdjust,
+      grossAnnual: (calc.grossAnnual || 0) + Math.max(0, netAdjust),
+      adjustments
+    };
+  }
 
   // Check if signup bonus requirements are met
   function isSignupBonusEligible(card, spending) {
@@ -901,7 +951,8 @@
 
           // For "had" cards, enable signup bonus eligibility
           const effectiveYearView = ownership === 'had' && yearView === 'ongoing' ? 'first' : yearView;
-          const calc = calculateCardRewards(card, effectiveSpending, effectiveYearView);
+          const rawCalc = calculateCardRewards(card, effectiveSpending, effectiveYearView);
+          const calc = applyAdjustments(card, rawCalc, effectiveSpending);
           return { ...card, ...calc };
         }).filter(Boolean);
 
@@ -2121,7 +2172,7 @@
     }
   });
   
-  // Handle crypto toggle change
+  // Handle toggle/input changes
   document.addEventListener('change', function(event) {
     if (event.target.id === 'crypto-toggle' && event.target.hasAttribute('data-action')) {
       toggleCrypto(event.target);
@@ -2129,6 +2180,30 @@
     if (event.target.id === 'include-annual-credits') {
       includeAnnualCredits = event.target.checked;
       renderCards(currentFilter);
+    }
+    if (event.target.id === 'international-spend') {
+      internationalSpendMonthly = Math.max(0, parseFloat(event.target.value) || 0);
+      renderCards(currentFilter);
+    }
+  });
+
+  // Live-update international spend on every keystroke (debounced)
+  let intlSpendDebounce;
+  document.addEventListener('input', function(event) {
+    if (event.target.id === 'international-spend') {
+      clearTimeout(intlSpendDebounce);
+      intlSpendDebounce = setTimeout(() => {
+        internationalSpendMonthly = Math.max(0, parseFloat(event.target.value) || 0);
+        renderCards(currentFilter);
+      }, 250);
+    }
+  });
+
+  // Sync includeAnnualCredits checkbox to default "checked" on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const cb = document.getElementById('include-annual-credits');
+    if (cb && !cb.checked && includeAnnualCredits) {
+      cb.checked = true;
     }
   });
 })();
