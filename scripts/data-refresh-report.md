@@ -1,9 +1,9 @@
 # Credit Data Refresh Report
 
-- **Run:** 2026-04-21T23:10:00.126Z
-- **Targets scraped:** 17
-- **Changes detected:** 3
-- **Errors / blank scrapes:** 4
+- **Run:** 2026-07-20T16:23:13.141Z
+- **Targets scraped:** 18
+- **Changes detected:** 5
+- **Errors / blank scrapes:** 5
 
 ## 🔔 Changes Detected
 
@@ -12,8 +12,15 @@ Source: https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred
 
 | Field | Current | Scraped |
 |---|---|---|
-| `signupBonus.amount` | `60000` | `75000` |
-| `signupBonus.requirement` | `$4` | `5000` |
+| `signupBonus.amount` | `75000` | `100000` |
+| `signupBonus.requirement` | `$5` | `6000` |
+
+### Chase Freedom Flex (`chase-freedom-flex`)
+Source: https://creditcards.chase.com/cash-back-credit-cards/freedom/flex
+
+| Field | Current | Scraped |
+|---|---|---|
+| `signupBonus.amount` | `500` | `200` |
 
 ### Capital One Venture (`capital-one-venture`)
 Source: https://www.capitalone.com/credit-cards/venture/
@@ -21,6 +28,13 @@ Source: https://www.capitalone.com/credit-cards/venture/
 | Field | Current | Scraped |
 |---|---|---|
 | `signupBonus.requirement` | `$4` | `4000` |
+
+### U.S. Bank Cash+ (`us-bank-cash-plus`)
+Source: https://www.usbank.com/credit-cards/cash-plus-visa-signature-credit-card.html
+
+| Field | Current | Scraped |
+|---|---|---|
+| `signupBonus.amount` | `200` | `250` |
 
 ### Zip (Quadpay) (`zip`)
 Source: https://zip.co/us/how-it-works
@@ -37,3 +51,4 @@ These targets returned no extractable data. Selectors may be stale or the site m
 - **Amex Blue Cash Preferred** (`amex-blue-cash-preferred`): manual-check: JS-rendered page, requires manual verification
 - **Amex Blue Cash Everyday** (`amex-blue-cash-everyday`): manual-check: JS-rendered page, requires manual verification
 - **Capital One Venture X** (`capital-one-venture-x`): manual-check: JS-rendered page, requires manual verification
+- **Klarna Pay in 4** (`klarna-pay4`): no fields extracted (selectors may be stale)
